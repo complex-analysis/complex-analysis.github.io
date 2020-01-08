@@ -1,0 +1,303 @@
+<!doctype html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+	<title>Complex Analysis</title>
+
+	<!-- dublin core -->
+	<meta name="dc.title" CONTENT="Complex Analysis">
+	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+	<meta name="dc.date" CONTENT="26-01-2019">
+        <meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
+	<meta name="dc.type" CONTENT="Interactive Resource">
+	<meta name="dc.format" CONTENT="HTML">
+	<meta name="dc.language" CONTENT="en-US">
+	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+	<!-- social media cards -->
+	<meta property="og:title" content="Complex Analysis">
+	<meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+	<meta property="og:type" content="website">
+	<!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+	<meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+	<meta property="og:site_name" content="Complex Analysis">
+        
+	
+	<!-- FONTS AND CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet' type='text/css'>
+	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/w3.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+	<!-- CODE PRETTIFY -->
+	<!-- via: https://github.com/google/code-prettify -->
+	<script src="../js/run_prettify.js"></script>
+
+	
+
+	<!-- JQUERY FANCY ADDITIONS -->
+	<!-- add code class, hover text, etc -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+
+		$(document).ready(function() {
+
+			// prettyprint the code, pls
+			$('pre').addClass('prettyprint lang-java');
+
+			// add word-breaks to anything with a / or - in it
+			$('h1').each(function() {
+				var t = $(this).text();
+				t = t.replace('/', '/<wbr>');
+				t = t.replace('-', '-<wbr>');
+				$(this).html(t);
+			});
+
+			// set formatting
+			resizeCommands();
+		});
+
+		// when the window gets resized, do some stuff to keep everything
+		// looking pretty
+		$(window).resize( function() {
+			resizeCommands();
+		});
+
+		// things to do when the page is loaded or window resized
+		function resizeCommands() {
+			// large-screen stuff...
+			if ($(window).width() > 600) {
+
+				// long headline on intro page
+				// $('#introHeadline').html('TABLE OF CONTENTS');
+
+				// menu hover stuff on larger screens
+				// (does weird formatting on larger screens)
+				// hover over title to show "Table of Contents"
+				$('#title a').hover(
+					function() {
+						$('#title a').text('Table of Contents');
+					},
+					function() {
+						$('#title a').text('Complex Analysis');	// set back when moving out
+					}
+				);
+
+				// set prev/next titles
+				$('#prev a').hover(
+					function() {
+						$('#title a').text('Prev: Roots of Complex Numbers');
+					},
+					function() {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+				$('#next a').hover(
+					function() {
+						$('#title a').text('Next: The Logarithmic Function');
+					},
+					function() {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+			}
+
+			// small-screen stuff
+			else {
+				// short headline on intro page
+				// $('#introHeadline').html('INTRO');
+			}
+		}
+	</script>
+
+	<!-- ANALYTICS -->
+    
+    <!-- ANALYTICS -->
+    
+    <!--MathJax starts-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                           TeX: { equationNumbers: { autoNumber: "AMS" } }
+                           });
+        </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+
+    <!--GeoGebra embeding-->
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<script>
+    var applet1 = new GGBApplet({material_id: "vgbbnfp9",
+                                borderColor:"888888",
+                                playButton: "true",
+                                showFullscreenButton: "true",
+                                enableShiftDragZoom: "true",
+                                showResetIcon: "true"}, true);
+    window.addEventListener("load", function() {
+          applet1.inject('applet_container1');
+      });
+</script>
+<!--GeoGebra embeding ends-->
+    
+   
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121691678-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-121691678-1');
+        </script>
+    
+    <!--GeoGebra embeding-->
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<script>
+    var applet1 = new GGBApplet({material_id: "q8cagcc5",
+                                borderColor:"888888",
+                                playButton: "true",
+                                showFullscreenButton: "true",
+                                enableShiftDragZoom: "true",
+                                showResetIcon: "true"}, true);
+    window.addEventListener("load", function() {
+          applet1.inject('applet_container1');
+      });
+</script>
+<!--GeoGebra embeding ends-->
+    
+
+    
+</head>
+
+<body>
+<div id="wrapper">
+        
+<header><p><span id="prev"><a href="roots_complex_numbers.html">&larr;</a></span><span id="title"><a href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a href="logarithmic_function.html">&rarr;</a></span><div class="clear"></div></p></header>
+
+<p><img src="../images/complex_functions.jpg" alt="f(z)=z^2" title="f(z)=z^2"></p>
+
+<h1>Complex functions</h1>
+
+<hr>
+
+<p>Let $S$ be a set of complex numbers. A <em>function</em> $f$ defined on $S$ is a rule that assigns to each $z$ in $S$ a complex number $w$. The number $w$ is called the value of $f$ at $z$ and is denoted by $f (z)$; that is, $w = f (z)$. The set $S$ is called the domain of definition of $f$.</p>
+
+<p>If only one value of $w$ corresponds to each value of $z$, we say that $w$ is a <em>single-valued</em> function of $z$ or that $f(z)$ is single-valued. If more than one value of $w$ corresponds to each value of $z$, we say that $w$ is a <em>multiple-valued</em> or <em>many-valued</em> function of $z$.
+</p>
+
+<p>
+A <em>multiple-valued</em> function can be considered as a collection of single-valued functions, each member of which is called a <em>branch</em> of the function. In general, we consider on particular member as a <em>principal branch</em> of the multiple-valued function and the value of the function corresponding to this branch as the <em>principal branch</em>.
+</p>
+
+<div class="w3-padding">
+<p>
+<strong>Example 1:</strong> The function $w=z^2$ is a single-valued function of $z$. On the other hand, if $w=z^{\frac{1}{2}},$ then to each value of $z$ there are two values of $w$. Hence, the function $$w=z^{\frac{1}{2}}$$ is a multiple-valued (in this case two-valued) function of $z$.
+</p>
+</div>
+
+<p>Suppose that $w=u+iv$ is the value of a function $f$ at $z= x+iy$, so that
+$$u+iv=f(x+iy)$$
+Each of the real numbers $u$ and $v$ depends on the real variables $x$ and $y$, and it
+follows that $f(z)$ can be expressed in terms of a pair of real-valued functions of
+the real variables $x$ and $y$:
+\begin{eqnarray}\label{eq1}
+f(z)= u(x,y)+iv(x,y).
+\end{eqnarray}
+If the polar coordinates $r$ and $\theta$, instead of $x$ and $y$ , are used, then
+$$u+iv=f\left(re^{i\theta}\right)$$
+where $w=u+iv$ and $z=re^{i\theta}$. In this case, we write
+\begin{eqnarray}\label{eq2}
+f(z)=u\left(r, \theta\right)+iv\left(r, \theta\right).
+\end{eqnarray}
+</p>
+
+<div class="w3-padding w3-responsive">
+    <p>
+    <strong>Example 2:</strong> If $f(z)= z^2$ then
+    $$f(x+iy)=(x+iy)^2=x^2-y^2+i(2xy).$$
+    Hence
+    $$u(x,y)= x^2-y^2\quad \text{and}\quad v(x,y)= 2xy.$$
+    When we use polar coordinates, we have
+    $$u\left(r, \theta\right)= r^2\cos 2\theta \quad \text{and}\quad v\left(r, \theta\right)= r^2\sin 2\theta.$$
+    </p>
+</div>
+
+ <p><strong>Question:</strong> What happens when in either of equations (\ref{eq1}) and (\ref{eq2}) the function $v$ always has a value zero?</p>
+
+<hr>
+
+<h2>Explore the real and imaginary components</h2>
+
+<p>Use the following applet to explore the real and imaginary components of some complex functions</p>
+
+<div class="w3-center w3-hide-small">
+    <!--<iframe scrolling="no" title="Real and Imaginary components" src="https://www.geogebra.org/material/iframe/id/vgbbnfp9/width/772/height/541/border/888888/sfsb/false/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/true" width="772px" height="541px" style="border:0px;"> </iframe>-->
+    <div style="width:772px;height:541px;display:block" id="applet_container1"></div>
+    
+    <!--<div class="w3-container w3-center">
+        <button onclick="var ifr=document.getElementsByName('JoukAirfoil')[0]; ifr.src=ifr.src;" class="w3-btn w3-ripple w3-grey w3-hover-text-white">Reset</button>
+         
+         <a href="../applets/p5js/joukowsky/index.html" class="w3-btn w3-ripple w3-grey w3-hover-text-white" target="_blank">Open other tab</a>
+    </div>-->
+    
+</div>
+
+<br>
+
+<div class="w3-hide-large w3-hide-medium w3-khaki w3-round w3-padding w3-panel">
+    <p><i class="fas fa-sad-tear"></i> Sorry, the applet is  not supported for small screens. Rotate your device to landscape. Or resize your window so it's more wide than tall.</p>
+</div>
+
+<div class="w3-padding w3-hide-small">
+<details>
+    <summary class="w3-hover-text-blue"><strong>Code</strong></summary>
+    <br>
+    <p>Enter the following scripts in <a href="https://www.geogebra.org/classic#3d" target="_blank">GeoGebra</a> to explore it yourself. Open the 3D view. The symbol # indicates comments.</p>
+
+<pre><code>#Define complex function
+    
+f(z) := z + 1/z
+
+#Define components
+
+Re = Surface(u, v, real( f(u + ί v) ), u, -5, 5, v, -5, 5)
+
+Im = Surface(u, v, imaginary( f(u + ί v) ), u, -5, 5, v, -5, 5)
+</code></pre>
+</details>
+</div>
+
+<br>
+
+<hr>
+    
+   <!-- <p><strong>Note:</strong> The applet was made with <a href="https://www.geogebra.org/material/show/id/y9pnh3hu">GeoGebra</a>.</p>-->
+
+	<!-- link to the next page -->
+	<a href="logarithmic_function.html"><p class="nextPage">NEXT: The Logarithmic Function</p></a>
+	<footer>
+		<p>[ <a href="../">intro</a>, <a href="https://github.com/jcponce/cabook">source</a>, <a href="https://github.com/jcponce/cabook/issues">issues</a> ]</p>
+
+		<p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+			<img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+		</a></p>
+	</footer>
+
+</div> <!-- end wrapper -->
+
+<!-- nice smart quotes, via: http://smartquotesjs.com -->
+<script src="../js/smartquotes.min.js"></script>
+
+</body>
+</html>

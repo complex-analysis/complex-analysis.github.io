@@ -1,0 +1,297 @@
+<!doctype html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+	<title>Complex Analysis</title>
+
+	<!-- dublin core -->
+	<meta name="dc.title" CONTENT="Complex Analysis">
+	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+	<meta name="dc.date" CONTENT="26-01-2019">
+    <meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
+	<meta name="dc.type" CONTENT="Interactive Resource">
+	<meta name="dc.format" CONTENT="HTML">
+	<meta name="dc.language" CONTENT="en-US">
+	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+	<!-- social media cards -->
+	<meta property="og:title" content="Complex Analysis">
+	<meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+	<meta property="og:type" content="website">
+	<!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+	<meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+	<meta property="og:site_name" content="Complex Analysis">
+    
+	
+	<!-- FONTS AND CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet' type='text/css'>
+	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/w3.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+	<!-- CODE PRETTIFY -->
+	<!-- via: https://github.com/google/code-prettify -->
+	<script src="../js/run_prettify.js"></script>
+
+	
+
+	<!-- JQUERY FANCY ADDITIONS -->
+	<!-- add code class, hover text, etc -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+
+		$(document).ready(function() {
+
+			// prettyprint the code, pls
+			$('pre').addClass('prettyprint lang-java');
+
+			// add word-breaks to anything with a / or - in it
+			$('h1').each(function() {
+				var t = $(this).text();
+				t = t.replace('/', '/<wbr>');
+				t = t.replace('-', '-<wbr>');
+				$(this).html(t);
+			});
+
+			// set formatting
+			resizeCommands();
+		});
+
+		// when the window gets resized, do some stuff to keep everything
+		// looking pretty
+		$(window).resize( function() {
+			resizeCommands();
+		});
+
+		// things to do when the page is loaded or window resized
+		function resizeCommands() {
+			// large-screen stuff...
+			if ($(window).width() > 600) {
+
+				// long headline on intro page
+				// $('#introHeadline').html('TABLE OF CONTENTS');
+
+				// menu hover stuff on larger screens
+				// (does weird formatting on larger screens)
+				// hover over title to show "Table of Contents"
+				$('#title a').hover(
+					function() {
+						$('#title a').text('Table of Contents');
+					},
+					function() {
+						$('#title a').text('Complex Analysis');	// set back when moving out
+					}
+				);
+
+				// set prev/next titles
+				$('#prev a').hover(
+					function() {
+						$('#title a').text('Prev: License');
+					},
+					function() {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+				$('#next a').hover(
+					function() {
+						$('#title a').text('Next: The Principal Argument');
+					},
+					function() {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+			}
+
+			// small-screen stuff
+			else {
+				// short headline on intro page
+				// $('#introHeadline').html('INTRO');
+			}
+		}
+	</script>
+
+	<!-- ANALYTICS -->
+    
+    <!-- ANALYTICS -->
+    
+    <!--MathJax starts-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                           TeX: { equationNumbers: { autoNumber: "AMS" } }
+                           });
+        </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+    
+   
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121691678-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-121691678-1');
+        </script>
+    
+    <!--GeoGebra embeding-->
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<script>
+    var applet1 = new GGBApplet({material_id: "gut3ffpm",
+                                borderColor:"888888",
+                                playButton: "true",
+                                showFullscreenButton: "true",
+                                enableShiftDragZoom: "true",
+                                showResetIcon: "true"}, true);
+    window.addEventListener("load", function() {
+          applet1.inject('applet_container1');
+      });
+</script>
+<!--GeoGebra embeding ends-->
+    
+</head>
+
+<body>
+<div id="wrapper">
+        
+<header><p><span id="prev"><a href="license.html">&larr;</a></span><span id="title"><a href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a href="principal_argument.html">&rarr;</a></span><div class="clear"></div></p></header>
+        
+
+<h1>Terminology and Notation</h1>
+
+<hr>
+
+<p>A <em>complex number</em> $z$ is a number that can be expressed in the form $x + iy$, where $x$ and $y$ are real numbers and $i$ is the imaginary unit, that is, $i^2 = -1$. In this expression, $x$ is the real part and $y$ is the imaginary part of the complex number.</p>
+
+<p>The complex numbers, denoted by $\mathbb C$, extend the concept of the one-dimensional number line to the two-dimensional complex plane (also known as Argand plane) by using the horizontal axis for the real part and the vertical axis for the imaginary part. The analogy with two-dimensional vectors is immediate. The complex number $x+iy$ can be identified with the point $(x, y)$ in the complex plane but also it can be interpreted as a two-dimensional vector.</p>
+
+<div class="w3-responsive">
+<p>It is useful to introduce another representation of complex numbers, namely
+polar coordinates $(r, \theta)$:
+\begin{eqnarray}\label{par}
+x= r\cos \theta, \quad y=r\sin \theta \quad (r\geq 0)
+\end{eqnarray}
+Hence the complex number $z$ can be written in the alternative polar form:
+\begin{eqnarray}\label{polar}
+z=x+iy=r(\cos \theta + i \sin \theta).
+\end{eqnarray}</p>
+</div>
+
+<p>The radius $r$ is denoted by
+$$r=\sqrt{x^2+y^2}=|z|$$
+and naturally gives us a notion of the <em>absolute value</em> of $z$, denoted by $|z|$, that is, it is the length of the vector associated with $z$. The value $|z|$ is often referred to as the <emg>modulus</em> of $z$. The angle $\theta$ is called the <em>argument</em> (or <em>phase</em>) of $z$  and is denoted by $\textbf{arg}(z)$. When $z\neq 0$, the values of $\theta$ can be found from (\ref{par}) via standard trigonometry:
+$$\tan \theta = \frac{y}{x}$$
+where the quadrant in which $x$, $y$ lie is understood as given.
+</p>
+
+<p>At this point it is convenient to introduce a special exponential function. The
+polar exponential is defined by
+$$\cos \theta +i\sin \theta = e^{i\theta}.$$
+Hence equation (\ref{polar}) implies that $z$ can be written in the form
+$$z=r e^{i\theta}.$$
+This exponential function has all of the standard properties we are familiar
+within elementary calculus and is a special case of the complex exponential
+function.</p>
+
+<p>Finally, the <em>complex conjugate</em> of $z$ is defined as
+$$\overline{z}=x-iy.$$
+</p>
+
+<div class="w3-responsive">
+<p>Addition, subtraction, multiplication, and division of complex numbers follow
+from the rules governing real numbers. Thus, noting $i^2=-1$, we have
+$$z_1\pm z_2=(x_1\pm x_2)+i(y_1\pm y_2)$$
+and
+$$z_1z_2=(x_1+iy_1)(x_2+iy_2)=(x_1x_2-y_1y_2)+i(x_1y_2+x_2y_1).$$
+Now, we note that
+$$z\overline{z}= (x + iy)(x − iy) = x^2+y^2=|z|^2.$$
+This fact is useful for division of complex numbers,
+\[
+\frac{z_1}{z_2}=\frac{x_1x_2+y_1y_2}{x_2^2+y_2^2}+i\frac{x_2y_1-x_1y_2}{x_2^2+y_2^2}.
+\]
+It is easily shown that the commutative, associative, and distributive laws of
+addition and multiplication hold.
+Geometrically speaking, addition of two complex numbers is equivalent to
+that of the parallelogram law of vectors.
+</p>
+</div>
+
+<p>Use the following applet to practice the basic operations with complex numbers (in cartesian or polar form). Select an operation from the list, drag points and calculate the result. Check your results by entering the real and imaginary parts in the input boxes at the bottom.</p>
+
+<!-- ctl=play button; sfsb=fullscreen button-->
+<div class="w3-hide-small">
+
+<div style="width:788px;height:430px;display:block" id="applet_container1"></div>
+</div>
+<div class="w3-hide-large w3-hide-medium w3-khaki w3-round w3-padding w3-panel">
+    <p><i class="fas fa-sad-tear"></i> Sorry, the applet is  not supported for small screens. Rotate your device to landscape. Or resize your window so it's more wide than tall.</p>
+</div>
+<br>
+
+<p>Some of the terminology and notation used to describe complex numbers is summarized in  Figure 1.</p>
+
+
+<figure class="w3-center">
+    <img  src="../images/diagramcomplex.jpg" alt="Summarized information" title="Summarized information" style="width:100%;">
+         <figcaption>
+             <b>Figure 1:</b> Summarized information.
+         </figcaption>
+  </figure>
+
+<div class="w3-responsive">
+<p>I suggest you to make yourself comfortable with the concepts, terminology, and notation introduced thus far. To do so, try to convince yourself geometrically (and/or algebraically) of each of the following facts:
+\begin{eqnarray*}
+\textbf{Re}(z)=\frac{1}{2}\left(z+\overline{z}\right)\quad\quad \textbf{Im}(z)=\frac{1}{2i}\left(z-\overline{z}\right)\quad \quad|z|=\sqrt{x^2+y^2}
+\end{eqnarray*}
+\begin{eqnarray*}
+\tan\left(\textbf{arg}(z)\right)=\frac{\textbf{Im}(z)}{\textbf{Re}(z)}\quad \quad  re^{i\theta}=r(\cos \theta +i \sin \theta)
+\end{eqnarray*}
+\begin{eqnarray*}
+\overline{\overline{z}}=z\quad \quad \left|z_1z_2\right|=\left|z_1\right|\left|z_2\right|\quad \quad \left|\frac{z_1}{z_2}\right|=\frac{\left|z_1\right|}{\left|z_2\right|},\; (z_2\neq0)
+\end{eqnarray*}
+\begin{eqnarray*}
+\overline{z_1\pm z_2}=\overline{z_1}\pm\overline{z_2}\quad  \quad  \quad \overline{z_1z_2}=\overline{z_1}\cdot \overline{z_2}\quad  \quad \quad \overline{\left(\frac{z_1}{z_2}\right)}=\frac{\overline{z_1}}{\overline{z_2}},\; (z_2\neq0)
+\end{eqnarray*}
+\begin{eqnarray*}
+\left|z_1\pm z_2\right|\leq \left|z_1\right|+\left|z_2\right| \quad  \quad \quad \left|\left|z_1\right|-\left|z_2\right|\right|\leq \left|z_1\pm z_2\right|
+\end{eqnarray*}
+
+The following is called the <em>generalized triangle inequality</em>:
+\begin{eqnarray*}
+|z_1+z_2+\cdots +z_n|\leq |z_1|+ |z_2|+\cdots |z_n|
+\end{eqnarray*}
+When does equality hold?</p>
+</div>
+
+    <br>
+    
+   <!-- <p><strong>Note:</strong> The applet was made with <a href="https://www.geogebra.org/material/show/id/y9pnh3hu">GeoGebra</a>.</p>-->
+
+	<!-- link to the next page -->
+	<a href="principal_argument.html"><p class="nextPage">NEXT: The Principal Argument</p></a>
+	<footer>
+		<p>[ <a href="../">intro</a>, <a href="https://github.com/jcponce/cabook">source</a>, <a href="https://github.com/jcponce/cabook/issues">issues</a> ]</p>
+
+		<p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+			<img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+		</a></p>
+	</footer>
+
+</div> <!-- end wrapper -->
+
+<!-- nice smart quotes, via: http://smartquotesjs.com -->
+<script src="../js/smartquotes.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Widget which can enter fullscreen mode</title>
+    <link rel="icon" href="/assets/img/logo_small.png" type="image/png">
+    <link rel="stylesheet" href="assets/app.css" />
+    <link rel="stylesheet" href="assets/CindyJS.css" />
+<script type="text/javascript" src="assets/Cindy.js"></script>
+  </head>
+  <body class="with-footer">
+
+    <!-- Header
+    <header id="top-bar">
+      <div>
+        <h1><a href="/"><span style="font-weight:400">Cindy</span><span style="font-weight:700">JS</span><img alt="CindyJS logo" class="logo" src="/assets/img/logo_small.png"></a></h1>
+        <nav>
+          <ul id="topBarLinks">
+            <li><a href="/gallery/main/">Gallery</a></li>
+            <li><a href="/docs/">Docs</a></li>
+            <li><a href="/project/">Project</a></li>
+            <li><a href="https://github.com/CindyJS/CindyJS"><img src="/assets/img/octoicons-mark-github.svg" alt="GitHub" title="GitHub project" style="display:inline; position:relative; top:0.2ex; width:1.7ex;"></a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>-->
+
+    <div id="between-bars">
+
+      <!-- Main part -->
+      <main>
+      <!-- navigation within gallery 
+      <div class="gallerynav"><ul>
+          <li><a href="/gallery">Overview</a></li>
+          <li><a href="/gallery/main">Showcase</a></li>
+          <li><a href="/gallery/cindygl">CindyGL-Gallery</a></li>
+          <li class="highlight"><a href="/examples">Examples shipped with the source tree</a></li>
+        </ul>
+      </div>-->
+
+        <h1>Widget which can enter fullscreen mode</h1>
+
+
+  <div id="outer">
+    <div id="CSCanvas"></div>
+  </div>
+  <button id="fs">Fullscreen</button>
+  <script type="text/javascript">
+
+var cdy = CindyJS({
+  ports: [{
+    id: "CSCanvas",
+    transform: [{visibleRect:[-1,1,1,-1]}],
+    background: "rgb(255,255,255)"
+  }],
+  scripts: "cs*",
+  language: "en",
+  geometry: [
+    {name:"A", type:"Free", pos:[0,0]},
+    {name:"B", type:"Free", pos:[0.7071,0.7071]},
+    {name:"C", type:"CircleMP", args:["A","B"]}
+  ]
+});
+
+var btn = document.getElementById("fs");
+var div = document.getElementById("CSCanvas");
+btn.onclick = function() {
+  (div.requestFullscreen ||
+   div.webkitRequestFullscreen ||
+   div.mozRequestFullScreen ||
+   div.msRequestFullscreen ||
+   function(){}).call(div);
+};
+  </script>
+
+      </main>
+    </div>
+
+    <footer id="bottom-bar">
+      <div>
+        <div class="footer-item">
+          <p class="footer-label">Made possible by:</p>
+          <ul class="footer-links">
+            <li><a href="http://ma.tum.de/">Technische Universität München, Zentrum Mathematik, Germany</a></li>
+            <li><a href="http://discretization.de/">DFG SFB Transregio 109 DGD, Germany</a></li>
+            <li><a href="http://mc2-project.eu/">M C Squared, 7th Framework Programme, EU</a></li>
+          </ul>
+          <p class="footer-label"><a href="/imprint/">Legal notice and privacy policy</a></p>
+        </div>
+        <div class="footer-sep"><hr></div>
+        <div class="footer-item">
+          <p class="footer-label">This page:</p>
+          <ul class="footer-links">
+            <li><a href="https://github.com/CindyJS/CindyJS/blob/master/examples/fullscreen.html">View source</a></li>
+            <li><a href="https://github.com/CindyJS/CindyJS/edit/master/examples/fullscreen.html">Edit page</a></li>
+            <li><a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license">CC-BY-SA 4.0 License
+              <img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" alt="CC-BY-SA 4.0 License">
+            </a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/assets/js/app.js"></script>
+  </body>
+</html>

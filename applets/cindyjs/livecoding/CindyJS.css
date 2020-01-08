@@ -1,0 +1,121 @@
+.CindyJS-toolbar button, .CindyJS-animbuttons button, .CindyJS-button button, .CindyJS-button label {
+  background-color: #bfc4d0;
+  border: 1px solid #d0d0d0;
+  box-shadow: inset 1px 1px 2px #fff, inset -1px -1px 2px #aaa;
+  outline: none; }
+
+.CindyJS-toolbar button:active, .CindyJS-animbuttons button:active, .CindyJS-toolbar button.CindyJS-active, .CindyJS-animbuttons button.CindyJS-active, .CindyJS-button button:active, .CindyJS-button label:active, .CindyJS-button input[type=checkbox]:checked + label {
+  background-color: #aaafbb;
+  box-shadow: inset 1px 1px 2px #999, inset -1px -1px 2px #ccc; }
+
+.CindyJS-toolbar, .CindyJS-animbuttons {
+  line-height: 0px; }
+  .CindyJS-toolbar button, .CindyJS-animbuttons button {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px; }
+  .CindyJS-toolbar button:focus, .CindyJS-animbuttons button:focus {
+    border-color: #06f; }
+  .CindyJS-toolbar img, .CindyJS-animbuttons img {
+    margin: 0px;
+    border: none;
+    display: block; }
+
+.CindyJS-widget {
+  overflow: hidden;
+  z-index: 0; }
+  .CindyJS-widget canvas {
+    z-index: 1; }
+  .CindyJS-widget .CindyJS-baseline {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    position: absolute;
+    white-space: nowrap;
+    margin-top: -1000px; }
+    .CindyJS-widget .CindyJS-baseline > img {
+      margin: 0px;
+      padding: 0px;
+      border: none;
+      display: inline;
+      position: static;
+      vertical-align: baseline;
+      visibility: hidden;
+      margin-right: -1px; }
+    .CindyJS-widget .CindyJS-baseline .CindyJS-button {
+      display: inline-block; }
+  .CindyJS-widget .CindyJS-button {
+    position: relative;
+    z-index: 2; }
+  .CindyJS-widget .CindyJS-toolbar, .CindyJS-widget .CindyJS-animbuttons {
+    position: absolute; }
+    .CindyJS-widget .CindyJS-toolbar button, .CindyJS-widget .CindyJS-animbuttons button {
+      position: relative;
+      z-index: 3; }
+  .CindyJS-widget .CindyJS-animspeed {
+    position: relative;
+    z-index: 3; }
+  .CindyJS-widget .CindyJS-animcontrols {
+    bottom: 5px;
+    left: 5px; }
+
+.CindyJS-button input[type=checkbox] {
+  position: absolute;
+  left: -10000px; }
+
+.CindyJS-button button, .CindyJS-button label {
+  margin: -6px -7px;
+  padding: 5px 6px;
+  border-radius: 4px; }
+
+.CindyJS-button button:focus, .CindyJS-button input[type=checkbox]:focus + label {
+  box-shadow: 0px 0px 3px #06f, inset 1px 1px 2px #fff, inset -1px -1px 2px #aaa; }
+
+.CindyJS-button button:focus:active, .CindyJS-button input[type=checkbox]:focus:checked + label {
+  background-color: #aaafbb;
+  box-shadow: 0px 0px 3px #06f, inset 1px 1px 2px #999, inset -1px -1px 2px #ccc; }
+
+.CindyJS-editabletext {
+  border: 1px solid #000;
+  margin: -4px -4px -1px;
+  padding: 4px 4px 1px; }
+  .CindyJS-editabletext:focus {
+    box-shadow: 0px 0px 3px #06f; }
+
+.CindyJS-toolbar div {
+  line-height: 0px; }
+
+.CindyJS-toolbar span.CindyJS-spacer {
+  display: inline-block;
+  margin: 0px;
+  padding: 1px;
+  width: 32px;
+  height: 24px; }
+
+.CindyJS-animcontrols {
+  position: absolute;
+  background-color: #00f;
+  height: 36px;
+  width: 102px; }
+  .CindyJS-animcontrols .CindyJS-animspeed {
+    height: 10px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: #ff7f7f;
+    box-shadow: inset 1px 1px 2px #999, inset -1px -1px 2px #ccc; }
+    .CindyJS-animcontrols .CindyJS-animspeed div {
+      width: 50%;
+      height: 100%;
+      border-radius: 4px;
+      background-color: #cc0000;
+      box-shadow: inset 1px 1px 2px #fff, inset -1px -1px 2px #aaa; }
+  .CindyJS-animcontrols .CindyJS-animbuttons {
+    white-space: nowrap; }
+
+.CindyJS-animbuttons button {
+  border-radius: 4px;
+  width: 34px;
+  height: 26px;
+  box-sizing: border-box; }
+
+/*# sourceMappingURL=CindyJS.css.map */

@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+	<title>Complex Analysis</title>
+
+	<!-- dublin core -->
+	<meta name="dc.title" CONTENT="Complex Analysis">
+	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+	<meta name="dc.date" CONTENT="26-01-2019">
+    <meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
+	<meta name="dc.type" CONTENT="Interactive Resource">
+	<meta name="dc.format" CONTENT="HTML">
+	<meta name="dc.language" CONTENT="en-US">
+	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+	<!-- social media cards -->
+	<meta property="og:title" content="Complex Analysis">
+	<meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+	<meta property="og:type" content="website">
+	<!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+	<meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+	<meta property="og:site_name" content="Complex Analysis">
+    
+	
+	<!-- FONTS AND CSS -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet' type='text/css'>
+	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+
+	<!-- CODE PRETTIFY -->
+	<!-- via: https://github.com/google/code-prettify -->
+	<script src="../js/run_prettify.js"></script>
+
+	<!-- PROCESSING.JS
+	<!--[if lt IE 9]>
+			<script type="text/javascript">alert("Your browser does not support the canvas tag!");</script>
+	<![endif]
+	<script src="js/processing.js" type="text/javascript"></script>
+	<script>
+		function getProcessingSketchId() {
+			return '';
+		}
+	</script>
+     -->
+
+	<!-- JQUERY FANCY ADDITIONS -->
+	<!-- add code class, hover text, etc -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+
+		$(document).ready(function() {
+
+			// prettyprint the code, pls
+			$('pre').addClass('prettyprint lang-java');
+
+			// add word-breaks to anything with a / or - in it
+			$('h1').each(function() {
+				var t = $(this).text();
+				t = t.replace('/', '/<wbr>');
+				t = t.replace('-', '-<wbr>');
+				$(this).html(t);
+			});
+
+			// set formatting
+			resizeCommands();
+		});
+
+		// when the window gets resized, do some stuff to keep everything
+		// looking pretty
+		$(window).resize( function() {
+			resizeCommands();
+		});
+
+		// things to do when the page is loaded or window resized
+		function resizeCommands() {
+			// large-screen stuff...
+			if ($(window).width() > 600) {
+
+				// long headline on intro page
+				// $('#introHeadline').html('TABLE OF CONTENTS');
+
+				// menu hover stuff on larger screens
+				// (does weird formatting on larger screens)
+				// hover over title to show "Table of Contents"
+				$('#title a').hover(
+					function() {
+						$('#title a').text('Table of Contents');
+					},
+					function() {
+						$('#title a').text('Complex Analysis');	// set back when moving out
+					}
+				);
+
+				// set prev/next titles
+				$('#prev a').hover(
+					function() {
+						$('#title a').text('Prev: Taylor Series');
+					},
+					function() {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+				$('#next a').hover(
+					function() {
+						$('#title a').text('Next: ');
+					},
+					function() {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+			}
+
+			// small-screen stuff
+			else {
+				// short headline on intro page
+				// $('#introHeadline').html('INTRO');
+			}
+		}
+	</script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121691678-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-121691678-1');
+        </script>
+	
+</head>
+
+<body>
+	<div id="wrapper">
+        
+        <header><p><span id="prev"><a href="taylor_series.html">&larr;</a></span><span id="title"><a href="table_of_contents.html">Complex Analysis</a></span><span id="next">&nbsp;</span><div class="clear"></div></p></header>
+        
+
+<h1>Thanks</h1>
+
+<p>Since 2015 I tried many times to integrate my complex analysis notes with applets that I have designed or adapted from other people. Finally, in 2019, I was able acomplish this task thanks to the development of mathematical, open-source, software capable to run online in (almost) any browser. This book would not have been possible without a ton of people sharing their great work. As much as possible, I've tried to keep track of all the online resources, books and articles that I have used.</p>
+
+<p>A big "thank you" to:</p>
+
+<ul>
+    <li><a href="http://www.jeffreythompson.org/">Jeffrey Thompson</a> for allowing me to fork the design of his book <a href="http://www.jeffreythompson.org/collision-detection/index.php">Collision Detection</a>.</li>
+    <li><a href="https://geo.ma.tum.de/en/people/aaron-montag.html">Aaron Montag</a>, <a href="http://martin.von-gagern.net/">Martin von Gagern</a>, <a href="https://github.com/kranich">Stefan Kranich</a> and <a href="https://github.com/strobelm">Michael Strobel</a> <!--<a href="https://github.com/konnerthg">Gerhard Konnerth</a>,-->  creators, developers and contributors of the <a href="https://cindyjs.org/">Cindy.js</a> project. Thanks for allowing me to adapt your great applets.</li>
+    <li><a href="http://www.science-to-touch.com/en/about.html">Jürgen Richter-Gebert</a>, one of the authors of the interactive mathematics software <a href="https://www.cinderella.de/tiki-index.php">Cinderella</a>, who now works on the <a href="https://cindyjs.org/">Cindy.js</a> project.</li>
+    <li>The <a href="https://www.geogebra.org/">GeoGebra</a> developers and community of  people sharing their materials.</li>
+    <li><a href="https://shiffman.net/">Daniel Shiffman</a>, an amazing teacher who shares his knowledge with the world. I have learned all the basics about programming from his <a href="https://shiffman.net/books/">books</a> and video tutorials <a href="https://thecodingtrain.com/">The Coding Train</a>.</li>
+    <li><a href="http://lauren-mccarthy.com/about">Lauren McCarthy</a>, the creator of <a href="https://p5js.org/">p5.js</a>, and to the great community of creative people who use the language.</li>
+    <li>The equations in the book are displayed thanks to <a href="https://www.mathjax.org/">MathJax</a>. However, in some applets <a href="https://katex.org/">KaTeX</a> is used instead.</li>
+</ul>
+
+<p>About the applets:</p>
+
+<ul>
+    <li>The applets "Exploring Complex Functions", "Analytic Landscapes" and "Taylor Series" were all adapted for the purposes of this book. The original versions can be found in the <a href="https://cindyjs.org/gallery/cindygl/">CindyGL-Gallery</a>.</li>
+    <li>I designed all the GeoGebra applets. They can be downloaded from <a href="https://ggbm.at/m8qcakxd">here</a>.</li>
+    <li>I also designed all the p5.js applets and the source code can be found <a href="https://github.com/jcponce/cabook/tree/gh-pages/applets/p5js">here</a>.</li>
+</ul>
+
+<br>
+
+
+<p class="callout"><strong>That's it!</strong> If you found this book useful and help you in your journey to understand <em>Complex Analysis</em>, please <a href="mailto:j.ponce@uq.edu.au">let me know!</a></p>
+
+
+	<footer>
+		<p>[ <a href="../">intro</a>, <a href="https://github.com/jcponce/cabook">source</a>, <a href="https://github.com/jcponce/cabook/issues">issues</a> ]</p>
+
+		<p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+			<img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+		</a></p>
+	</footer>
+
+	</div> <!-- end footer -->
+
+<!-- nice smart quotes, via: http://smartquotesjs.com -->
+<script src="../js/smartquotes.min.js"></script>
+
+</body>
+</html>

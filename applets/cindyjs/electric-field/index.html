@@ -1,0 +1,374 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="https://jcponce.github.io/assets/img/png/icon/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://jcponce.github.io/assets/img/png/icon/infinity16.png" sizes="16x16">
+    <title>Exploring Complex Functions</title>
+    <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+    <link rel="stylesheet" href="https://jcponce.github.io/cabook/css/w3.css">
+    <link rel="stylesheet" href="../assets/app.css" />
+    <link rel="stylesheet" href="../assets/CindyJS.css" />
+<script type="text/javascript" src="../assets/Cindy.js"></script>
+<script type="text/javascript" src="../assets/CindyGL.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121691678-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'UA-121691678-1');
+    </script>
+
+<script id="csinit" type="text/x-cindyscript">
+f(z, a, b, c, d, e, A, B, C, D) := z;
+
+grid1=true;   
+grid2=true;
+linear=false;   
+bw=false;
+webcam=false;
+camvideo=(;);
+iscam=false;
+
+t0 = seconds();
+</script>
+<script id="csdraw" type="text/x-cindyscript">
+//UI
+
+/*//speed that I don't need
+x=S.x;
+if(x<S1.x,x=S1.x);
+if(x>S2.x,x=S2.x);
+S.xy=(x,S1.y);
+speed=(S.x-S1.x)/2;
+ */
+
+x=R.x;
+if(x<R1.x,x=R1.x);
+if(x>R2.x,x=R2.x);
+R.xy=(x,R1.y);
+
+x=T.x;
+if(x<T1.x,x=T1.x);
+if(x>T2.x,x=T2.x);
+T.xy=(x,T1.y);
+
+drawimage(S2+(0.04,-.06),S2+(0.13,0)+(0.04,-.06),"Rot");
+drawimage(T2+(0.04,-.03),T2+(0.13,0)+(0.04,-.03),"Sat");
+drawimage(R2+(0.04,-.04),R2+(0.13,0)+(0.04,-.04),"Grid");
+
+sat = |T,T1|/|T2,T1|;
+grid = round(|R,R1|/|R2,R1|*20);
+
+//translate((1.6,0));
+apply(-5..5,i,
+  draw((i*.1+1.6,-.02),(i*.1+1.6,.02),color->(0,0,0),size->if(i==0,2,.5));
+  if(i==0,draw((-.5+1.6,i*.1),(.5+1.6,i*.1),color->(0,0,0),size->2));
+);
+//translate((-1.6,0));
+x=E.x;
+if(x<1.1,x=1.1);
+if(x>2.1,x=2.1);
+E.xy=(x,0);
+xx=round((E.x-1.2)*10);
+xx=(E.x-1.6)*2;
+yy=0;
+
+
+if(A.x>1,A.size=6;drawtext(A+(.03,.03),"A"),A.size=4);
+if(B.x>1,B.size=6;drawtext(B+(.03,.03),"B"),B.size=4);
+if(C.x>1,C.size=6;drawtext(C+(.03,.03),"C"),C.size=4);
+if(D.x>1,D.size=6;drawtext(D+(.03,.03),"D"),D.size=4);
+
+drawtext((1.1,.8),"Complex Numbers Variables:",size->18);
+drawtext((1.1,.7),"a=z-A, b=z-B, c=z-C, d=z-D",size->18);
+
+drawtext((1.1,.17),"Real Scalar:",size->18);
+//drawtext((1.1,.1),"e",size->18);
+
+drawtext(E+(.03,.03),"e");
+drawtext((1,E.y)+(.05,-.1),"-1");
+drawtext((1,E.y)+(1.08,-.1),"+1");
+
+
+
+//PLOT
+
+
+hsvToRGB(h, s, v) := (
+  regional(j, p, q, t, f);
+  
+  h = (h-floor(h))*6;
+  
+  j = floor(h);
+  f = h - j;
+  
+  p = 1 - s;
+  q = 1 - s*f;
+  t = 1 - s*(1-f);
+
+  if(j == 0, [1, t, p],
+  if(j == 1, [q, 1, p],
+  if(j == 2, [p, 1, t],
+  if(j == 3, [p, q, 1],
+  if(j == 4, [t, p, 1],
+  if(j == 5, [1, p, q]))))))*v
+);
+
+
+time = t0-seconds();
+
+if (webcam & isundefined(camvideo), camvideo=cameravideo());
+if (webcam & imageready(camvideo), (
+  if (!iscam, iscam=true; err("webcam on"); forcerecompile(););
+  color(z) := ( //what color should be given to a complex number z?
+    z = if(linear, z/5, log(z));
+    z = z * (grid+1);
+    c = imagergb([-.2,0],[1.2,0],camvideo, mod(z/2/pi + .5+0.5*i, 1+1*i));
+    b = c*[1,1,1]/3;
+    sat*c + (1-sat)*[b,b,b]
+  );
+), (
+  if (iscam, iscam=false; err("webcam off"); forcerecompile(););
+color(z) := ( //what color should be given to a complex number z?
+  regional(n, grey1, grey2);
+  
+  n = 2*grid*if(bw, .5, 1)*if(linear, .5, 1);
+    z = if(!linear, log(z), 2*i*z)/2/pi;// + i*time*speed;
+  
+  zfract = n*z - floor(n*z); //value of n*z in C mod Z[i]
+  
+  grey1 = if(grid1 & n>0, im(zfract), 1);
+  grey2 = if(grid2 & n>0, re(zfract), 1);
+  
+  if(bw,
+    grey1 = if(grey1<0.5, 1, -1);
+    grey2 = if(grey2<0.5, 1, -1);
+  );
+  
+  hsvToRGB(
+     if(!linear, im(z), (pi-arctan2(-im(z), -re(z)))/(2*pi)),
+     if(bw, 0, sat),
+     0.5 + 0.5 * if(bw, grey1*grey2, re(sqrt(grey1*grey2)))
+  )
+);
+));
+
+colorplot(
+  regional(z, ac, bc, cc, dc);
+  
+  z = complex(#)*5;
+  ac = complex(A)*5;
+  bc = complex(B)*5;
+  cc = complex(C)*5;
+  dc = complex(D)*5;
+  
+  fval = f(z, z-ac, z-bc, z-cc, z-dc, xx, ac, bc, cc, dc);
+  
+  color(fval),
+  (-1,-1), (1,1)
+);
+
+draw((1,-1),(1,1), color->(0,0,0), size->2);
+
+</script>
+<script type="text/javascript">
+
+var cdy = CindyJS({
+  ports: [{
+    id: "CSCanvas",
+      width: 800,
+      height: 545,
+      transform: [ { visibleRect: [-1, -1, 2.2, 1] } ]
+  }],
+  scripts: "cs*",
+  geometry: [
+    {name:"A", type:"Free", pos:[1.2,0.5],color:[1,0,0],pinned:false,size:4},
+    {name:"B", type:"Free", pos:[1.4,0.5],color:[0,1,0],pinned:false,size:4},
+    {name:"C", type:"Free", pos:[1.6,0.5],color:[0,0,1],pinned:false,size:4},
+    {name:"D", type:"Free", pos:[1.8,0.5],color:[1,1,0],pinned:false,size:4},
+    {name:"E", type:"Free", pos:[1.7,0],color:[1,1,1],pinned:false,size:6},
+    //{name:"S1", type:"Free", pos:[1.2,-.8],color:[0,0,0],pinned:true,size:2},
+    //{name:"S2", type:"Free", pos:[2.0,-.8],color:[0,0,0],pinned:true,size:2},
+    //{name:"S", type:"Free", pos:[1.201,-.8],color:[1,1,1],pinned:false,size:4},
+    {name:"l", type:"Segment", args:["S1","S2"],color:[0,0,0],pinned:false,size:2},
+    {name:"R1", type:"Free", pos:[1.2,-.6],color:[0,0,0],pinned:true,size:2},
+    {name:"R2", type:"Free", pos:[2.0,-.6],color:[0,0,0],pinned:true,size:2},
+    {name:"R", type:"Free", pos:[1.7,-.6],color:[1,1,1],pinned:false,size:4},
+    {name:"m", type:"Segment", args:["R1","R2"],color:[0,0,0],pinned:false,size:2},
+    {name:"T1", type:"Free", pos:[1.2,-.4],color:[0,0,0],pinned:true,size:2},
+    {name:"T2", type:"Free", pos:[1.99,-.4],color:[0,0,0],pinned:true,size:2},
+    {name:"T", type:"Free", pos:[2.0,-.4],color:[1,1,1],pinned:false,size:4},
+    {name:"o", type:"Segment", args:["T1","T2"],color:[0,0,0],pinned:false,size:2}
+  ],
+  animation: {autoplay: true},
+  //transform:[{translate:[0,0]},{scale:10}],
+  images:{//Rot:"uiImages/Rot.png",
+            Sat:"uiImages/SSat.png",
+            Grid:"uiImages/Grid.png"},
+  use: ["CindyGL"]
+});
+
+
+
+var typ=function(e, b){
+  var chCode=e.which ? e.which:e.keyCode;
+  if(chCode==13){
+    console.log("*************");
+    console.log(b.value);
+    cdy.evokeCS('f(z, a, b, c, d, e, A, B, C, D) := (' + b.value + '); forcerecompile();');
+  }
+}
+
+//var sel=function(e, b){
+//  document.getElementById("inp").value = b.value;
+//  cdy.evokeCS('f(z, a, b, c, d, e, A, B, C, D) := (' + b.value + '); forcerecompile();');
+//}
+var sel=function(e, b){
+    document.getElementById("inp").value = b.value;
+    cdy.evokeCS('f(z, a, b, c, d, e, A, B, C, D) := (' + b.value + ');');
+    var script = b.options[b.selectedIndex].getAttribute("data-cdy");
+    console.log(b);
+    console.log(script);
+    if(script) {
+        cdy.evokeCS(script);
+    }
+    script = false;
+}
+
+var check1=function(){
+       if(document.getElementById("ch1").checked){
+          cdy.evokeCS('grid1=true;');
+       } else {
+           cdy.evokeCS('grid1=false;');
+
+       }
+}
+
+var check2=function(){
+       if(document.getElementById("ch2").checked){
+          cdy.evokeCS('grid2=true;');
+       } else {
+           cdy.evokeCS('grid2=false;');
+
+       }
+}
+
+var check3=function(){
+       if(document.getElementById("ch3").checked){
+           cdy.evokeCS('linear=true;');
+           document.getElementById("t1").innerHTML = "Real";
+           document.getElementById("t2").innerHTML = "Imaginary";
+       } else {
+           cdy.evokeCS('linear=false;');
+           document.getElementById("t1").innerHTML = "Phase";
+           document.getElementById("t2").innerHTML = "Modulus";
+       }
+}
+
+    var check4=function(){
+       if(document.getElementById("ch4").checked){
+          cdy.evokeCS('bw=true;');
+       } else {
+           cdy.evokeCS('bw=false;');
+
+       }
+}
+
+    var check5=function(){
+       if(document.getElementById("ch5").checked){
+          cdy.evokeCS('webcam=true;');
+          document.getElementById("ch1").disabled = 
+          document.getElementById("ch2").disabled = 
+          document.getElementById("ch4").disabled = true;
+       } else {
+           cdy.evokeCS('webcam=false;');
+          document.getElementById("ch1").disabled = 
+          document.getElementById("ch2").disabled = 
+          document.getElementById("ch4").disabled = false;
+
+       }
+}
+</script>
+  </head>
+  <body class="with-footer">
+
+    <!-- Header -->
+
+    <div id="between-bars">
+
+      <!-- Main part -->
+      <main>
+      <!-- navigation within gallery -->
+      
+
+<div style="float: left;">
+    
+<div class="w3-hide-small w3-hide-medium">
+  
+  <div id="CSCanvas" style="border:2px solid black"></div>
+
+  <div style="display: flex; justify-content: space-between; width: 820px;">
+      <div><input id="ch1" onclick="check1()" checked type="checkbox"><span id="t1">Phase</span></div>
+      <div><input id="ch2" onclick="check2()" checked type="checkbox"><span id="t2">Modulus</span></div>
+      <div><input id="ch3" onclick="check3()" type="checkbox" >Re/Im components</div>
+      <div><input id="ch4" onclick="check4()" type="checkbox" >Chessboard</div>
+      <div><input id="ch5" onclick="check5()" type="checkbox" >Webcam</div>
+  </div>
+  
+<span style="font-size:18px">f(z) = </span><input type="text" id="inp" value="z"  onkeypress="typ(event, this)" size="45" style="font-size:18px">
+
+</div><!--End hide small-->
+
+</div>
+
+<div class="w3-hide-small w3-hide-medium">
+<p>You can also select one function of the following list:</p>
+    <select id="sel" onchange="sel(event, this)" style="width:16em;">
+        <option>z</option>
+        <option>(z-1)/(z^2+z+1)</option>
+        <option value="(1-a)*(1+a)" data-cdy="A.xy=(-0.168, 0.15);">(1-a)*(1+a) - Move point A</option>
+        <option value="(z-A)/(z-B)" data-cdy="A.xy=(-0.168, 0.05);B.xy=(0.5, 0.3)">(z-A)/(z-B) - Move points A &amp; B</option>
+        <option>z^(1+i)</option>
+        <option value="z^A" data-cdy="A.xy=(0.168, -0.15);">z^A - Move point A</option>
+        <option value="(sin(a)/sin(b))^(1+i)" data-cdy="A.xy=(-0.38, -0.45);B.xy=(0.5, 0.3)">(sin(a)/sin(b))^(1+i) - Move A &amp; B</option>
+        <option value="(e*z)^(1+14*cos(0.2*seconds())*i)*cos(((e*z)-1)/((e*z)^13+(e*z)+1))" data-cdy="E.x=1.72;grid1=false;grid2=false;">13 Essential singularities</option>
+        <option value="(exp(z)-exp(-z))/2">sinh(z)</option>
+        <option value="z = 0; repeat(50, z = z*z +a/4; z = z/abs(z)*min(abs(z),10));" data-cdy="A.xy=(1/2, 0);">Mandelbrot set</option>
+        <option value="z=z/4; repeat(11, z = z*z + A/5);" data-cdy="A.xy=(0.3, 0.01);">Julia set</option>
+        <option value="z = a/3;(1-z^(20*e))/(1-z)">Convergence of Geometric series</option>
+        <option value="repeat(5, z = z - (z^3-A)/(3*z^2));">Newton - Move point A</option>
+        <option value="z=a; repeat(11, z = z - (z^3-b*c*d)/(3*z^2));" data-cdy="A.xy=(-0.38, -0.45);B.xy=(0.5, 0.3)">Newton-like - Move points A,B,C &amp; D</option>
+        <option value="U=|A|;C=10*im(A);T=(e+1)/2;a=1;r=0.23*sqrt(13*2);center=-0.15+0.23*i;z1=(z-sqrt(z^2-4))/2;z2=(z+sqrt(z^2-4))/2;z=(1-T)*z+T*if(|z1-center|>|z2-center|,z1,z2);z=(z-center)/r;if(|z|<|a|,-1,(U*z+(U*a^2)/z-(i*C)/(2*pi)*log(z)))/10;" data-cdy="A.xy=(-0.568, 0.05);E.x=2.1;linear=true;">Joukowsky Airfoil - Move point A &amp; e</option>
+    </select>
+</div>
+
+<div class="w3-hide-large w3-padding w3-display-middle w3-red w3-round w3-large">
+    <p>Pssst! Rotate your device to landscape.</p>
+    <p>Or resize your window so it's more wide than tall.</p>
+    <p>Not supported for phones.</p>
+</div>
+
+<div class="w3-hide-small w3-hide-medium" style="float: left; font-size: 16px">
+    <br><br><br><hr>
+    <p><strong>Note:</strong> The applet was written by <a href="https://geo.ma.tum.de/en/people/aaron-montag.html">Aaron Montag</a> based on a
+    work of <a href="https://geo.ma.tum.de/en/people/juergen-richter-gebert.html">Jürgen Richter-Gebert</a> using <a href="https://cindyjs.org/">Cindy.js</a>. The source code can be found at <a href="https://github.com/jcponce/cabook/blob/gh-pages/applets/cindyjs/domcoloring/index.html">GitHub.</a></p>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+
+      </main>
+    </div>
+
+    <script src="../assets/app.js"></script>
+  </body>
+</html>

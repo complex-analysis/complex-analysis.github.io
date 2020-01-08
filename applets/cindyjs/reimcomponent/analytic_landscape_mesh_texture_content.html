@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Analytic Landscapes</title>
+<!--Adapted from http://science-to-touch.com/CJS/CindyJS/complexFunctions/04_Explorer.html -->
+<!--Mathematical concept from http://www.springer.com/gp/book/9783034801799, p.27f-->
+<!--Adapted from https://github.com/konnerthg/cindyjs-complex-phase-plots/blob/master/analytic_landscape_mesh_texture.html -->
+<meta charset="UTF-8">
+  <script type="text/javascript" src="./deploy/Cindy.js"></script>
+  <script type="text/javascript" src="./deploy/CindyGL.js"></script>
+  <script type="text/javascript" src="./deploy/Cindy3D.js"></script>
+
+<script id="csmousedown" type="text/x-cindyscript">
+      dragging=true;
+</script>
+<script id="csmouseup" type="text/x-cindyscript">
+      dragging=false;
+</script>
+
+<script id="csinit" type="text/x-cindyscript">
+/*
+ * Control panel setup.
+ */
+PanelUL = (0.2, 5.3);
+PanelBR = (2.3, 0.2);
+rowHeight = 0.5;
+slidersTopY = PanelUL.y - rowHeight * 2;
+slidersBotY = PanelBR.y + (PanelUL.y - slidersTopY)/2;
+colWidth = (PanelBR.x - PanelUL.x) / 2;
+
+slidersLeftX = PanelUL.x + colWidth / 4;
+slidersRightX = slidersLeftX + colWidth;
+
+top = [W2, R2];
+bot = [W1, R1];
+left = [W1, W2];
+right = [R1, R2];
+
+forall(top, #.y = slidersTopY);
+forall(bot, #.y = slidersBotY);
+forall(left, #.x = slidersLeftX);
+forall(right, #.x = slidersRightX);
+
+textAbovePoint = (0, rowHeight/2);
+textAfterPoint = (0.1, 0);
+
+/*
+grid1=true;
+grid2=true;
+linear=false;
+bw=false;
+sat = 1;
+grid = 10;
+speed = 0;
+logScale = false;
+dragging = false;
+loading = true;
+
+t0 = seconds();
+ */
+
+// Plot setup.
+plotRange = 3.5;
+plotRangeMin = 0.5;
+plotRangeMax = 8;
+plotRangeOld = plotRange;
+R.y = R1.y + (plotRange - plotRangeMin) / (plotRangeMax - plotRangeMin) * (R2.y - R1.y);
+plotW = 0.15;
+plotWMin = 0.1;
+plotWMax = 1;
+plotWOld = plotW;
+W.y = W1.y + (plotW - plotWMin) / (plotWMax - plotWMin) * (W2.y - W1.y);
+cutInf = false;
+rePlot = false;
+bCol = (156/255, 174/255, 175/255);
+optimizeZerosPoles = true;
+
+/*
+ * Recursion not possible in colorplot.
+ * Lanczos approximation of the Gamma function.
+ * https://en.wikipedia.org/wiki/Lanczos_approximation
+ */
+gammaHelper (z) := (
+ regional(p, EPS, x, t, y);
+  p = [676.5203681218851
+    ,-1259.1392167224028
+    ,771.32342877765313
+    ,-176.61502916214059
+    ,12.507343278686905
+    ,-0.13857109526572012
+    ,9.9843695780195716e-6
+    ,1.5056327351493116e-7
+    ];
+  EPS = 1e-07;
+  if (re(z) < 0.5,
+    // Never get here.
+    0
+    , // Reflection formula
+    z = z - 1;
+    x = 0.99999999999980993 + p_1 / (z + 1) + p_2 / (z + 2) + p_3 / (z + 3) + p_4 / (z + 4) + p_5 / (z + 5) + p_6 / (z + 6) + p_7 / (z + 7) + p_8 / (z + 8);
+    t = z + 7.5;
+    y = sqrt(2*pi) * t^(z+0.5)*exp(-t)*x;
+    if(|im(y)| <= EPS, re(y), y);
+  );
+);
+
+/*
+ * Lanczos approximation of the Gamma function.
+ * https://en.wikipedia.org/wiki/Lanczos_approximation
+ */
+gamma (z) := (
+ regional(p, EPS, x, t, y);
+  p = [676.5203681218851
+    ,-1259.1392167224028
+    ,771.32342877765313
+    ,-176.61502916214059
+    ,12.507343278686905
+    ,-0.13857109526572012
+    ,9.9843695780195716e-6
+    ,1.5056327351493116e-7
+    ];
+  EPS = 1e-07;
+  if (re(z) < 0.5,
+    pi / (sin(pi*z) * gammaHelper(1-z));
+    , // Reflection formula
+    z = z - 1;
+    x = 0.99999999999980993 + p_1 / (z + 1) + p_2 / (z + 2) + p_3 / (z + 3) + p_4 / (z + 4) + p_5 / (z + 5) + p_6 / (z + 6) + p_7 / (z + 7) + p_8 / (z + 8);
+    t = z + 7.5;
+    y = sqrt(2*pi) * t^(z+0.5)*exp(-t)*x;
+    if(|im(y)| <= EPS, re(y), y);
+  );
+);
+
+f (z) :=  (z-1)/(z^2+z+1);
+
+/*
+ * Start: Helper functions.
+ */
+
+/*
+ * Based on: S. Kranich, "Continuity in dynamic geometry: An algorithmic approach," PhD thesis, München, Technische Universität München, Diss., 2016, 2016. p. 90.
+ */
+color (z) := ( //what color should be given to a complex number z?
+  regional(n, grey1, grey2);
+  n = 12;
+  z = log(z)/2/pi;
+
+  zfract = n*z - floor(n*z); //value of n*z in C mod Z[i]
+
+  grey1 = im(zfract);
+  grey2 = re(zfract);
+
+  hue(im(z))*(.7+.3*re(sqrt(grey1*grey2)));
+);
+
+getHeight (x, z) := (
+  regional(h);
+  // Reverse the z-direction. Ugly workaround. Possible bug?
+  h = |f(complex((x, -z)))|;
+  if (logScale, h = log(h)/log(10); if (cutInf & h <= -plotInf, h = -plotInf));
+  if (cutInf & h >= plotInf, h = plotInf);
+  h;
+);
+
+getLandscapePoint (p) := (
+  (p.x, getHeight(p.x, p.z), p.z)
+);
+
+/*
+ * End: Helper functions.
+ */
+
+/*
+ * Start: Plot setup.
+ */
+
+/*
+ * Source: E. W. Weisstein, "Newton's method," 2002.
+ */
+optimizeZeros(z) := (
+  regional(initZ, eps, delta, ct, F, d);
+  initZ = z;
+  eps = 0.001;
+  delta = 0.001;
+  ct = 10;
+  while(ct > 0, (
+    F = f(z);
+    if (|F| <= eps, ct = 0, (
+      // central difference: http://mathfaculty.fullerton.edu/mathews/n2003/differentiation/numericaldiffproof.pdf
+      d = (f(z + delta) - f(z - delta))/(2*delta);
+      if (d != 0, z = z - F / d; , ct = 0);
+    ) );
+    ct = ct - 1;
+  ) );
+  if (|F| <= eps, z, initZ);
+);
+
+/*
+ * Source: E. W. Weisstein, "Newton's method," 2002.
+ */
+optimizePoles(z) := (
+  regional(initZ, eps, delta, ct, F, d);
+  initZ = z;
+  eps = 0.001;
+  delta = 0.001;
+  ct = 10;
+  while(ct > 0, (
+    F = 1/f(z);
+    if (|F| <= eps, ct = 0, (
+      // central difference: http://mathfaculty.fullerton.edu/mathews/n2003/differentiation/numericaldiffproof.pdf
+      d = (1/f(z + delta) - 1/f(z - delta))/(2*delta);
+      if (d != 0, z = z - F / d; , ct = 0);
+    ) );
+    ct = ct - 1;
+  ) );
+  z
+);
+
+setUpPlot() := (
+  regional(sampleZ, sampleX, endZ, endX, lzw, lxw, lz, lx, plotMinX, plotMaxX, plotMinZ, plotMaxZ, pOffset, EPS, EPSINF, zeros, poles, step, z, x, zerosPolesZ, zerosPolesX, sampleZ, sampleX, index, point, poleOffsets, poleOffset, poleOffsetMul);
+
+  tmp = seconds();
+
+  loading = true;
+
+  // Sampling along zeros & poles.
+  EPS = 0.03;
+  step = 0.1;
+  // Got to stop force-adding poles & zeros at some point. Gamma function for example has a couple of thousands...
+  maxZeros = 300;
+  maxPoles = 300;
+  // Sampling coordinates for zeros & poles.
+  zerosPolesZ = [];
+  zerosPolesX = [];
+  // Final sampling coordinates.
+  sampleX = [];
+  sampleZ = [];
+  // Tiny offset on the sampling points to avoid division by 0.
+  pOffset = (1e-5, 0, 1e-5);
+
+  plotO = (0, 0, 0); // Plot origin.
+  plotMinX = -plotRange + plotO.x;
+  plotMaxX = plotRange + plotO.x;
+  plotMinZ = -plotRange + plotO.z;
+  plotMaxZ = plotRange + plotO.z;
+
+  plotA = (plotMinX, 0, plotMinZ);
+  plotB = (plotMinX, 0, plotMaxZ);
+  plotC = (plotMaxX, 0, plotMaxZ);
+  plotD = (plotMaxX, 0, plotMinZ);
+  lx = |plotA.x - plotD.x|;
+  lz = |plotA.z - plotB.z|;
+  plotX = (plotD - plotA) / |plotD - plotA| * plotW;
+  plotY = (0, 1, 0);
+  plotZ = (plotB - plotA) / |plotB - plotA| * plotW;
+  lxw = floor(lx / plotW);
+  lzw = floor(lz / plotW);
+  plotAXZ = [plotA, plotX, plotZ];
+
+  // Add points at the end of the plotting range, so that the plot always has the same dimensions (on the x,z-plane) regardless of the sampling width.
+  // Compute the lists of z- & x-steps first, because we want to add: end points of the plotting range, zeros, poles.
+  // Sample through all the values and look for points where f is "pretty close" to 0 / infinity.
+
+  z = plotMinZ;
+  // Avoid adding the same point multiple times. Check for each point if it is far enough away from the lastPoint. Start with (plotMinX, plotMinZ) since it is rendered anyway.
+  lastZero = plotMinX + i * plotMinZ;
+  lastPole = plotMinX + i * plotMinZ;
+
+  /*
+   * Add the point to the sampling.
+   */
+  appendPoint(point, zero) := (
+    regional(poleOffset, poleOffsetMul, sX, sZ);
+    poleOffset = 0.1;
+    poleOffsetMul = [];
+    lastPoint = if(zero, lastZero, lastPole);
+    if ((zero & maxZeros > 0 % !zero & maxPoles > 0),
+      if (zero, maxZeros = maxZeros - 1, maxPoles = maxPoles - 1);
+      if (zero, lastZero = point, lastPole = point);
+      // Adding some points around a pole yields a more beautiful representation, but it is slow so it is left out here.
+      poleOffsets = flatten(
+        apply(poleOffsetMul,
+          [poleOffset, -poleOffset, poleOffset * i, -poleOffset * i] * #;
+        );
+      );
+      // Add points close to the poles, but not to the zeros, as there may be too many.
+      forall([0] ++ if(zero, [], poleOffsets),
+        // Add offset to avoid division by 0.
+        sX = (re(point + #) - plotMinX + pOffset.x) / plotW;
+        sZ = (im(point + #) - plotMinZ + pOffset.z) / plotW;
+        append = true;
+        if (sX < 0 % sX > lx / plotW % sZ < 0 % sZ > lz / plotW, append = false);
+        if (append,
+          zerosPolesX = append(zerosPolesX, sX);
+          zerosPolesZ = append(zerosPolesZ, sZ);
+        );
+      );
+    );
+  );
+
+  /*
+   * Sample the plotting range in very small steps and look for points very close to a root or a pole.
+   */
+  if (optimizeZerosPoles, (
+    delta = 0.0001;
+    while(z <= plotMaxZ, (
+      x = plotMinX;
+      while(x <= plotMaxX, (
+        dx = (|f(complex((x + delta,z)))| - |f(complex((x - delta,z)))|) / (2*delta);
+        dz = (|f(complex((x,z + delta)))| - |f(complex((x,z - delta)))|) / (2*delta);
+        grad = (dx, dz);
+        // If gradient is 0, derivative is 0.
+        d = if(|grad| == 0, 0, grad = grad/|grad|*delta; |(|f(complex((x,z) + grad))| - |f(complex((x,z) - grad))|) / (2*delta)|);
+        // If derivative is 0, disregard it.
+        if (d == 0, d = 1);
+        if (|f(complex((x,z)))| < EPS / d,
+          point = optimizeZeros(complex((x,z)));
+          appendPoint(point, true);
+        );
+        if (|f(complex((x,z)))| != 0,
+            if (1/|f(complex((x,z)))| < EPS * d,
+              point = optimizePoles(complex((x,z)));
+              appendPoint(point, false);
+            );
+         );
+        x = x + step;
+      ) );
+      z = z + step;
+    ) );
+  ) );
+  zerosPolesZ = sort(zerosPolesZ);
+  zerosPolesX = sort(zerosPolesX);
+
+  last = -1;
+  // Remove multiple points which converged to the same root/pole.
+  epsTmp = 0.05;
+  zerosPolesZ = select(zerosPolesZ, if (|# - last| < epsTmp, false, last = #; true));
+  last = -1;
+  zerosPolesX = select(zerosPolesX, if (|# - last| < epsTmp, false, last = #; true));
+
+  sampleXTmp = 0..lxw ++ if(plotW * lxw < lx, [lx / plotW], []);
+  sampleZTmp = 0..lzw ++ if(plotW * lzw < lz, [lz / plotW], []);
+  index = 1;
+  forall(sampleZTmp, z,
+    while (index <= length(zerosPolesZ) & zerosPolesZ_index <= z,
+      sampleZ = append(sampleZ, zerosPolesZ_index); index = index + 1;
+    );
+    sampleZ = append(sampleZ, z);
+  );
+  index = 1;
+  forall(sampleXTmp, x,
+    while (index <= length(zerosPolesX) & zerosPolesX_index <= x,
+      sampleX = append(sampleX, zerosPolesX_index); index = index + 1;
+    );
+    sampleX = append(sampleX, x);
+  );
+
+  // Last sampling point (in order to fit the range exactly).
+  endZ = sampleZ_(length(sampleZ));
+  endX = sampleX_(length(sampleX));
+  dimZ = length(sampleZ);
+  dimX = length(sampleX);
+
+  mesh = flatten(
+    apply(sampleZ, z, (
+      apply(sampleX, x, (
+        MUL = [1, x, z];
+        getLandscapePoint(MUL * plotAXZ + pOffset);
+      ) );
+    ) );
+  );
+
+  meshUv = flatten(
+    apply(sampleZ, z, (
+      apply(sampleX, x, (
+        (x/endX, z/endZ);
+      ) );
+    ) );
+  );
+
+  loading = false;
+);
+
+use("Cindy3D");
+
+createimage("texture", 1024, 1024); //possible experiment/vary with texture size
+
+cPlotA = (-1, -1);
+cPlotB = (1, 1);
+
+recolor() := (
+  regional(A, B);
+  A = (plotA.x, plotA.z);
+  B = (plotD.x, plotD.z);
+    colorplot(A, B, "texture",
+      color(f(complex(#)))
+    );
+  canvas(A, B, "texture", drawimage(A, B, "texture")); //quick fix to force to copy texture to CPU... :-/
+  drawimage(A, B, "texture");
+);
+
+// Re-calculate both texture and mesh on every change for safety.
+computePlot () := (
+  regional(tmpTime);
+  tmpTime = seconds();
+  setUpPlot();
+  recolor();
+  rePlot = false;
+);
+
+setPlotInf(inf) := (
+  plotInf = inf;
+  plotMinY = -1 * plotInf;
+  plotMaxY = plotInf;
+  computePlot();
+);
+
+setPlotInf(4);
+
+/*
+ * End: Plot setup.
+ */
+
+begin3d();
+lookat3d((3, 7, 10), (0, 2, 0), (0, 1, 0));
+end3d();
+
+</script>
+<script id="csdraw" type="text/x-cindyscript">
+
+// UX
+plotOnMouseUp () := (
+  rePlot = true;
+);
+
+if(!dragging & rePlot, computePlot(););
+
+W.x = W1.x;
+if (W.y < W1.y, W.y = W1.y);
+if (W.y > W2.y, W.y = W2.y);
+plotW = plotWMin + (W.y - W1.y) / (W2.y - W1.y) * (plotWMax - plotWMin);
+
+if (plotW != plotWOld, plotOnMouseUp(); plotWOld = plotW);
+
+//drawtext(W2 + (0, rowHeight) + textAbovePoint, "Accuracy:");
+//drawtext(W2 + textAbovePoint, plotWMax + " (coarse)");
+//drawtext(W1 - textAbovePoint, plotWMin + " (fine)");
+//drawtext(W + textAfterPoint, "" + plotW);
+
+R.x = R1.x;
+if (R.y < R1.y, R.y = R1.y);
+if (R.y > R2.y, R.y = R2.y);
+plotRange = plotRangeMin + (R.y - R1.y) / (R2.y - R1.y) * (plotRangeMax - plotRangeMin);
+
+if (plotRange != plotRangeOld, plotOnMouseUp(); plotRangeOld = plotRange);
+
+drawtext(R2 + (-0.3, rowHeight) + textAbovePoint, "Range:");
+drawtext(R2 + textAbovePoint, plotRangeMax);
+drawtext(R1 - textAbovePoint + (0,-0.1), plotRangeMin);
+drawtext(R + textAfterPoint, "" + round(plotRange*100)/100);
+
+renderMesh() := (
+  begin3d();
+  background3d(bCol);
+
+  mesh3d(dimZ, dimX,
+    mesh,
+    normaltype->"perVertex"
+    , uv ->meshUv
+    , texture->"texture"
+  );
+  end3d();
+);
+renderMesh();
+</script>
+<script type="text/javascript">
+
+var cdy = CindyJS({
+  ports: [{
+    id: "CSCanvas",
+      width: 110,
+      height: 450,
+      transform: [ { visibleRect: [1, 1, 2.5, 4.6] } ]
+  }],
+  scripts: "cs*",
+  geometry: [
+
+          // Sampling width.
+    {name:"W1", type:"Free", pos:[-.8,.8],color:[0,0,0],pinned:true,size:2},
+    {name:"W2", type:"Free", pos:[.8,.8],color:[0,0,0],pinned:true,size:2},
+    {name:"Wl", type:"Segment", args:["W1","W2"],color:[0,0,0],pinned:false,size:2},
+    {name:"W", type:"Free", pos:[0,.8],color:[1,1,1],pinned:false,size:4},
+
+          // Plotting range.
+    {name:"R1", type:"Free", pos:[-.8,.3],color:[0,0,0],pinned:true,size:2},
+    {name:"R2", type:"Free", pos:[.8,.3],color:[0,0,0],pinned:true,size:2},
+    {name:"Rl", type:"Segment", args:["R1","R2"],color:[0,0,0],pinned:false,size:2},
+    {name:"R", type:"Free", pos:[0,.3],color:[0.4,0.2,0.9],pinned:false,size:6}
+  ],
+  //animation: {autoplay: true},
+  //images:{Rot:"uiImages/Rot.png",Sat:"uiImages/SSat.png",Grid:"uiImages/Grid.png"},
+  use: ["CindyGL"]
+});
+</script>
+
+</head>
+
+<body >
+    
+  <table>
+      <tr>
+      <td><canvas id="Cindy3D" style="border: none; display: inline;" width="665px" height="460px"></canvas>
+      </td>
+      <td><div id="CSCanvas" style="border:2px solid black; width: 250px; height: 550px;"></div>
+      </td>
+      </tr>
+</table>
+  
+  
+   Settings:
+<input type="checkbox" onclick="cdy.evokeCS('logScale = ' + this.checked + '; computePlot();');">Use logarithmic scale
+<input type="checkbox" onclick="cdy.evokeCS('cutInf = ' + this.checked + '; computePlot();');">Cut landscape off at z = <input type="text" value="4" onkeypress="if((event.which ? event.which : event.keyCode)==13) { cdy.evokeCS('setPlotInf(' + this.value + ');' ); }">
+<div>
+f(z) = <input type="text" id="inp_f" value="(z-1)/(z^2+z+1)" onkeypress="if((event.which ? event.which : event.keyCode)==13) { cdy.evokeCS('f(z) := (' + this.value + '); computePlot();' ); }">
+</div>
+
+<br>
+
+<div>
+Examples: <select style="margin: auto" id="sel" onchange="cdy.evokeCS('f(z) := (' + this.value + '); computePlot();'); document.getElementById('inp_f').value = this.value;">
+    <option>(z-1)/(z^2+z+1)</option>
+    <option>1/(z^5-1)</option>
+    <option>exp(-1/z)</option>
+    <option>gamma(z)</option>
+          <!--Example from: https://github.com/CindyJS/CindyJS/blob/master/examples/cindygl/22_explorer.html-->
+          <option value="repeat(5, z = z - (z^3-1)/(3*z^2))">Newton</option>-->
+     </select>
+</div>
+
+
+
+<br>
+
+
+</body>
+
+</html>

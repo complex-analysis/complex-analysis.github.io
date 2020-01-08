@@ -1,0 +1,820 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+    <title>Complex Analysis</title>
+
+    <!-- dublin core -->
+    <meta name="dc.title" CONTENT="Complex Analysis">
+    <meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+    <meta name="dc.date" CONTENT="26-01-2019">
+    <meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
+    <meta name="dc.type" CONTENT="Interactive Resource">
+    <meta name="dc.format" CONTENT="HTML">
+    <meta name="dc.language" CONTENT="en-US">
+    <meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+    <!-- social media cards -->
+    <meta property="og:title" content="Complex Analysis">
+    <meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+    <meta property="og:type" content="website">
+    <!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+    <meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+    <meta property="og:site_name" content="Complex Analysis">
+
+
+    <!-- FONTS AND CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet'
+        type='text/css'>
+    <link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/w3.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- CODE PRETTIFY -->
+    <!-- via: https://github.com/google/code-prettify -->
+    <script src="../js/run_prettify.js"></script>
+
+
+
+    <!-- JQUERY FANCY ADDITIONS -->
+    <!-- add code class, hover text, etc -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            // prettyprint the code, pls
+            $('pre').addClass('prettyprint lang-java');
+
+            // add word-breaks to anything with a / or - in it
+            $('h1').each(function () {
+                var t = $(this).text();
+                t = t.replace('/', '/<wbr>');
+                t = t.replace('-', '-<wbr>');
+                $(this).html(t);
+            });
+
+            // set formatting
+            resizeCommands();
+        });
+
+        // when the window gets resized, do some stuff to keep everything
+        // looking pretty
+        $(window).resize(function () {
+            resizeCommands();
+        });
+
+        // things to do when the page is loaded or window resized
+        function resizeCommands() {
+            // large-screen stuff...
+            if ($(window).width() > 600) {
+
+                // long headline on intro page
+                // $('#introHeadline').html('TABLE OF CONTENTS');
+
+                // menu hover stuff on larger screens
+                // (does weird formatting on larger screens)
+                // hover over title to show "Table of Contents"
+                $('#title a').hover(
+                    function () {
+                        $('#title a').text('Table of Contents');
+                    },
+                    function () {
+                        $('#title a').text('Complex Analysis'); // set back when moving out
+                    }
+                );
+
+                // set prev/next titles
+                $('#prev a').hover(
+                    function () {
+                        $('#title a').text('Prev: Analytic Landscapes');
+                    },
+                    function () {
+                        $('#title a').text('Complex Analysis');
+                    }
+                );
+                $('#next a').hover(
+                    function () {
+                        $('#title a').text('Next: The Complex Power Function');
+                    },
+                    function () {
+                        $('#title a').text('Complex Analysis');
+                    }
+                );
+            }
+
+            // small-screen stuff
+            else {
+                // short headline on intro page
+                // $('#introHeadline').html('INTRO');
+            }
+        }
+    </script>
+
+    <!-- ANALYTICS -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121691678-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-121691678-1');
+    </script>
+    <!-- ANALYTICS -->
+
+    <!--MathJax starts-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                           TeX: { equationNumbers: { autoNumber: "AMS" } }
+                           });
+        </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <!-- Cindy.js -->
+    <!--<link rel="stylesheet" href="../domcoloring/app.css" />
+    <link rel="stylesheet" href="../domcoloring/CindyJS.css" />-->
+    <!--<script type="text/javascript" src="https://cindyjs.org/dist/v0.7.11/Cindy.js"></script>
+    <script type="text/javascript" src="https://cindyjs.org/dist/v0.7.11/CindyGL.js"></script>-->
+    <script type="text/javascript" src="../applets/cindyjs/assets/v0.7.11/Cindy.js"></script>
+    <script type="text/javascript" src="../applets/cindyjs/assets/v0.7.11/CindyGL.js"></script>
+    <script type="text/javascript" src="../applets/cindyjs/assets/symbolic.js"></script>
+
+    <script id="csinit" type="text/x-cindyscript">
+        f(z, a, b, c, d, e, A, B, C, D) := z;
+
+grid1=true;
+grid2=true;
+linear=false;
+bw=false;
+webcam=false;
+camvideo=(;);
+iscam=false;
+
+t0 = seconds();
+</script>
+
+    <script id="csdraw" type="text/x-cindyscript">
+        //UI
+/*
+x=S.x;//speed that I don't need
+if(x<S1.x,x=S1.x);
+if(x>S2.x,x=S2.x);
+S.xy=(x,S1.y);
+speed=0;//(S.x-S1.x)/2;
+ */
+
+x=R.x;
+if(x<R1.x,x=R1.x);
+if(x>R2.x,x=R2.x);
+R.xy=(x,R1.y);
+
+x=T.x;
+if(x<T1.x,x=T1.x);
+if(x>T2.x,x=T2.x);
+T.xy=(x,T1.y);
+
+//drawimage(S2+(0.04,-.06),S2+(0.13,0)+(0.04,-.06),"Rot");
+drawimage(T2+(0.04,-.03),T2+(0.13,0)+(0.04,-.03),"Sat");
+drawimage(R2+(0.04,-.04),R2+(0.13,0)+(0.04,-.04),"Grid");
+
+sat = |T,T1|/|T2,T1|;
+grid = round(|R,R1|/|R2,R1|*20);
+
+//translate((1.6,0));
+apply(-5..5,i,
+  draw((i*.1+1.6,-.02),(i*.1+1.6,.02),color->(0,0,0),size->if(i==0,2,.5));
+  if(i==0,draw((-.5+1.6,i*.1),(.5+1.6,i*.1),color->(0,0,0),size->2));
+);
+//translate((-1.6,0));
+x=E.x;
+if(x<1.1,x=1.1);
+if(x>2.1,x=2.1);
+E.xy=(x,0);
+xx=round((E.x-1.2)*10);
+xx=(E.x-1.6)*2;
+yy=0;
+
+
+if(A.x>1,A.size=6;drawtext(A+(.03,.03),"A"),A.size=4);
+if(B.x>1,B.size=6;drawtext(B+(.03,.03),"B"),B.size=4);
+if(C.x>1,C.size=6;drawtext(C+(.03,.03),"C"),C.size=4);
+if(D.x>1,D.size=6;drawtext(D+(.03,.03),"D"),D.size=4);
+
+drawtext((1.1,.8),"Complex Numbers Variables:",size->18);
+drawtext((1.1,.7),"a=z-A, b=z-B, c=z-C, d=z-D",size->18);
+
+drawtext((1.1,.17),"Real Scalar:",size->18);
+//drawtext((1.1,.1),"e",size->18);
+
+drawtext(E+(.03,.03),"e");
+drawtext((1,E.y)+(.05,-.1),"-1");
+drawtext((1,E.y)+(1.08,-.1),"+1");
+
+
+//PLOT
+
+
+hsvToRGB(h, s, v) := (
+  regional(j, p, q, t, f);
+  
+  h = (h-floor(h))*6;
+  
+  j = floor(h);
+  f = h - j;
+  
+  p = 1 - s;
+  q = 1 - s*f;
+  t = 1 - s*(1-f);
+
+  if(j == 0, [1, t, p],
+  if(j == 1, [q, 1, p],
+  if(j == 2, [p, 1, t],
+  if(j == 3, [p, q, 1],
+  if(j == 4, [t, p, 1],
+  if(j == 5, [1, p, q]))))))*v
+);
+
+
+time = t0-seconds();
+
+if (webcam & isundefined(camvideo), camvideo=cameravideo());
+if (webcam & imageready(camvideo), (
+  if (!iscam, iscam=true; err("webcam on"); forcerecompile(););
+  color(z) := ( //what color should be given to a complex number z?
+    z = if(linear, z/5, log(z));
+    z = z * (grid+1);
+    
+    r = (imagesize(camvideo).y/imagesize(camvideo).x);
+    // w1 = 1;
+    // w2 = i*r; //image is w1 and w2 periodic
+    c = imagergb((0,0),(1,0),camvideo, (z)/(2*pi)-complex((1,r/2)), repeat->true);
+               
+    //c = imagergb([-.2,0],[1.2,0],camvideo, mod(z/2/pi + .5+0.5*i, 1+1*i));
+               
+    b = c*[1,1,1]/3;
+    sat*c + (1-sat)*[b,b,b]
+  );
+), (
+  if (iscam, iscam=false; err("webcam off"); forcerecompile(););
+color(z) := ( //what color should be given to a complex number z?
+  regional(n, grey1, grey2);
+  
+  n = 2*grid*if(bw, .5, 1)*if(linear, .5, 1);
+             z = if(!linear, log(z), 2*i*z)/2/pi;// + i*time*speed;
+  
+  zfract = n*z - floor(n*z); //value of n*z in C mod Z[i]
+  
+  grey1 = if(grid1 & n>0, im(zfract), 1);
+  grey2 = if(grid2 & n>0, re(zfract), 1);
+  
+  if(bw,
+    grey1 = if(grey1<0.5, 1, -1);
+    grey2 = if(grey2<0.5, 1, -1);
+  );
+  
+  hsvToRGB(im(z), if(bw, 0, sat), .5+.5*if(bw, grey1*grey2, re(sqrt(grey1*grey2))));
+  //hsvToRGB(
+  //   if(!linear, im(z), (pi-arctan2(-im(z), -re(z)))/(2*pi)),
+  //   if(bw, 0, sat),
+  //   0.5 + 0.5 * if(bw, grey1*grey2, re(sqrt(grey1*grey2)))
+  //)
+);
+));
+
+colorplot(
+  regional(z, ac, bc, cc, dc);
+  
+  //Plotted in the square [-5,5]X[-5,5]
+  
+  z = complex(#)*4;
+  ac = complex(A)*4;
+  bc = complex(B)*4;
+  cc = complex(C)*4;
+  dc = complex(D)*4;
+  
+  fval = f(z, z-ac, z-bc, z-cc, z-dc, xx, ac, bc, cc, dc);
+  
+  color(fval),
+  (-1,-1), (1,1)
+);
+
+draw((1,-1),(1,1), color->(0,0,0), size->2);
+                                    
+//draw((-1,0),(1,0),color->gray(.5),size->3);
+//draw((0,1),(0,-1),color->gray(.5),size->3);
+
+                                    
+</script>
+
+    <script type="text/javascript">
+        var cdy = CindyJS({
+            ports: [{
+                id: "CSCanvas",
+                width: 800,
+                height: 445,
+                transform: [{
+                    visibleRect: [-1, -1, 2.2, 1]
+                }]
+            }],
+            scripts: "cs*",
+            geometry: [{
+                    name: "A",
+                    type: "Free",
+                    pos: [1.2, 0.5],
+                    color: [1, 0, 0],
+                    pinned: false,
+                    size: 4
+                },
+                {
+                    name: "B",
+                    type: "Free",
+                    pos: [1.4, 0.5],
+                    color: [0, 1, 0],
+                    pinned: false,
+                    size: 4
+                },
+                {
+                    name: "C",
+                    type: "Free",
+                    pos: [1.6, 0.5],
+                    color: [0, 0, 1],
+                    pinned: false,
+                    size: 4
+                },
+                {
+                    name: "D",
+                    type: "Free",
+                    pos: [1.8, 0.5],
+                    color: [1, 1, 0],
+                    pinned: false,
+                    size: 4
+                },
+                {
+                    name: "E",
+                    type: "Free",
+                    pos: [1.7, 0],
+                    color: [1, 1, 1],
+                    pinned: false,
+                    size: 6
+                },
+                //{name:"S1", type:"Free", pos:[1.2,-.8],color:[0,0,0],pinned:true,size:2},
+                //{name:"S2", type:"Free", pos:[2.0,-.8],color:[0,0,0],pinned:true,size:2},
+                //{name:"S", type:"Free", pos:[1.201,-.8],color:[1,1,1],pinned:false,size:4},
+                //{name:"l", type:"Segment", args:["S1","S2"],color:[0,0,0],pinned:false,size:2},
+                {
+                    name: "R1",
+                    type: "Free",
+                    pos: [1.2, -.6],
+                    color: [0, 0, 0],
+                    pinned: true,
+                    size: 2
+                },
+                {
+                    name: "R2",
+                    type: "Free",
+                    pos: [2.0, -.6],
+                    color: [0, 0, 0],
+                    pinned: true,
+                    size: 2
+                },
+                {
+                    name: "R",
+                    type: "Free",
+                    pos: [1.4, -.6],
+                    color: [1, 1, 1],
+                    pinned: false,
+                    size: 6
+                }, //Grid
+                {
+                    name: "m",
+                    type: "Segment",
+                    args: ["R1", "R2"],
+                    color: [0, 0, 0],
+                    pinned: false,
+                    size: 2
+                },
+                {
+                    name: "T1",
+                    type: "Free",
+                    pos: [1.2, -.4],
+                    color: [0, 0, 0],
+                    pinned: true,
+                    size: 2
+                },
+                {
+                    name: "T2",
+                    type: "Free",
+                    pos: [1.99, -.4],
+                    color: [0, 0, 0],
+                    pinned: true,
+                    size: 2
+                },
+                {
+                    name: "T",
+                    type: "Free",
+                    pos: [2.0, -.4],
+                    color: [1, 1, 1],
+                    pinned: false,
+                    size: 6
+                }, //Color
+                {
+                    name: "o",
+                    type: "Segment",
+                    args: ["T1", "T2"],
+                    color: [0, 0, 0],
+                    pinned: false,
+                    size: 2
+                }
+            ],
+            animation: {
+                autoplay: true
+            },
+            //transform:[{translate:[0,0]},{scale:10}],
+            images: {
+                //Rot:"../domcoloring/uiImages/Rot.png",
+                Sat: "../applets/cindyjs/domcoloring/uiImages/SSat.png",
+                Grid: "../applets/cindyjs/domcoloring/uiImages/Grid.png"
+            },
+            use: ["CindyGL"]
+        });
+
+        var typ = function (e, b) {
+            var chCode = e.which ? e.which : e.keyCode;
+            if (chCode == 13) {
+                console.log("*************");
+                console.log(b.value);
+                cdy.evokeCS('f(z, a, b, c, d, e, A, B, C, D) := (' + b.value + '); forcerecompile();');
+            }
+        }
+
+        //var sel=function(e, b){
+        //  document.getElementById("inp").value = b.value;
+        //  cdy.evokeCS('f(z, a, b, c, d, e, A, B, C, D) := (' + b.value + '); forcerecompile();');
+        //}
+        var sel = function (e, b) {
+            document.getElementById("inp").value = b.value;
+            cdy.evokeCS('f(z, a, b, c, d, e, A, B, C, D) := (' + b.value + ');');
+            var script = b.options[b.selectedIndex].getAttribute("data-cdy");
+            console.log(b);
+            console.log(script);
+            if (script) {
+                cdy.evokeCS(script);
+            }
+            script = false;
+        }
+
+        var check1 = function () {
+            if (document.getElementById("ch1").checked) {
+                cdy.evokeCS('grid1=true;');
+            } else {
+                cdy.evokeCS('grid1=false;');
+
+            }
+        }
+
+        var check2 = function () {
+            if (document.getElementById("ch2").checked) {
+                cdy.evokeCS('grid2=true;');
+            } else {
+                cdy.evokeCS('grid2=false;');
+
+            }
+        }
+
+        var check3 = function () {
+            if (document.getElementById("ch3").checked) {
+                cdy.evokeCS('linear=true;');
+                document.getElementById("t1").innerHTML = "Real";
+                document.getElementById("t2").innerHTML = "Imaginary";
+            } else {
+                cdy.evokeCS('linear=false;');
+                document.getElementById("t1").innerHTML = "Phase";
+                document.getElementById("t2").innerHTML = "Modulus";
+            }
+        }
+
+        var check4 = function () {
+            if (document.getElementById("ch4").checked) {
+                cdy.evokeCS('bw=true;');
+            } else {
+                cdy.evokeCS('bw=false;');
+
+            }
+        }
+
+        var check5 = function () {
+            if (document.getElementById("ch5").checked) {
+                cdy.evokeCS('webcam=true;');
+                document.getElementById("ch1").disabled =
+                    document.getElementById("ch2").disabled =
+                    document.getElementById("ch4").disabled = true;
+            } else {
+                cdy.evokeCS('webcam=false;');
+                document.getElementById("ch1").disabled =
+                    document.getElementById("ch2").disabled =
+                    document.getElementById("ch4").disabled = false;
+
+            }
+        }
+    </script>
+
+    <!-- End Cindy.js -->
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <header>
+            <p><span id="prev"><a href="analytic_landscapes.html">&larr;</a></span><span id="title"><a
+                        href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a
+                        href="power_function.html">&rarr;</a></span>
+                <div class="clear"></div>
+            </p>
+        </header>
+
+        <h1>Domain coloring</h1>
+
+        <hr>
+
+        <h2>Complex phase portraits</h2>
+        <p>A way to visualize complex functions $f:\mathbb{C}\to\mathbb{C}$ is using phase-portraits. A complex number
+            can be assigned a color according to its argument/phase. Positive numbers are colored red; negative numbers
+            are colored in cyan and numbers with a non-zero imaginary part are colored as in Figure 1, which shows a
+            phase portrait for the function $f(z)=z$.</p>
+
+        <figure class="w3-center">
+            <img class="w3-image w3-mobile" src="../applets/cindyjs/domcoloring/phaseportrait.png"
+                alt="phase portrait for z" title="phase portrait for the function f(z)=z" style="width:50%;">
+            <figcaption>
+                <b>Figure 1:</b> Phase portrait of $f(z)=z$.
+            </figcaption>
+        </figure>
+
+        <p>In his book <a href="http://www.springer.com/de/book/9783034801799"> <em>Visual Complex Functions</em></a>,
+            Elias Wegert employs phase portraits with contour lines of phase and modulus (<em>enhanced phase
+                portraits</em>) for the study of the theory of complex functions. See for example Figures 2 and 3 for
+            the function $f(z)=z$.</p>
+
+        <div class="w3-row-padding">
+            <div id="phase" class="w3-half w3-container w3-margin-bottom">
+                <figure class="w3-center">
+                    <img class="w3-image w3-mobile" src="../applets/cindyjs/domcoloring/phase.png"
+                        alt="phase portrait for z" title="Contour lines of phase" style="width:100%;">
+                    <figcaption>
+                        <b>Figure 2:</b> Contour lines of phase.
+                    </figcaption>
+                </figure>
+            </div>
+            <div id="modulus" class="w3-half w3-container w3-margin-bottom">
+                <figure class="w3-center">
+                    <img class="w3-image w3-mobile" src="../applets/cindyjs/domcoloring/modulus.png"
+                        alt="phase portrait for z" title="Contour lines of modulus" style="width:100%;">
+                    <figcaption>
+                        <b>Figure 3:</b> Contour lines of modulus.
+                    </figcaption>
+                </figure>
+            </div>
+
+        </div>
+
+        <p>With the use of enhanced phase portraits, roots and poles of a complex function $f(z)$ can be easily spotted
+            at the points where all colors meet. Figures <a href="#F4">4</a> and <a href="#F5">5</a> show the enhanced
+            phase portrait of the functions $$f(z)=z \quad \text{and}\quad g(z)=1/z,$$ respectively. Observe the
+            contrast between the level curves of modulus in each case.</p>
+
+        <div class="w3-row-padding">
+            <div id="enhanced" class="w3-half w3-container w3-margin-bottom">
+                <figure id="F4" class="w3-center">
+                    <img class="w3-image w3-mobile" src="../applets/cindyjs/domcoloring/enhancedz.png"
+                        alt="phase portrait for z" title="Enhanced phase portrait for the function f(z)=z"
+                        style="width:100%;">
+                    <figcaption>
+                        <b>Figure 4:</b> Root at $z=0$.
+                    </figcaption>
+                </figure>
+            </div>
+            <div id="enhanced2" class="w3-half w3-container w3-margin-bottom">
+                <figure id="F5" class="w3-center">
+                    <img class="w3-image w3-mobile" src="../applets/cindyjs/domcoloring/enhanced1z.png"
+                        alt="phase portrait for z" title="Enhanced phase portrait for the function g(z)=1/z"
+                        style="width:100%;">
+                    <figcaption>
+                        <b>Figure 5:</b> Pole at $z=0$.
+                    </figcaption>
+                </figure>
+            </div>
+
+        </div>
+
+        <div class="w3-responsive">
+            <p>Consider now the function
+                \begin{eqnarray}\label{eq1}
+                f(z)=\frac{z-1}{z^2+z+1}
+                \end{eqnarray}
+                which has a root at $z_0=1$ and two poles at
+                $$z_{1}=\frac{-1 + \sqrt{3}\,i}{2} \quad \text{and} \quad z_{2}=\frac{-1 - \sqrt{3}\,i}{2}.$$</p>
+        </div>
+        <p>Figure 6 shows the enhanced portrait of (\ref{eq1}) with level curves of the modulus. Notice the behaviour of
+            the level curves of the modulus around the root (right side) and the poles (left side). Can you see the
+            difference?</p>
+
+
+        <figure class="w3-center">
+            <img class="w3-image w3-mobile" src="../applets/cindyjs/domcoloring/plotfz.png" alt="(z-1)(z^2+z+1)"
+                style="width:85%;">
+            <figcaption>
+                <b>Figure 6:</b> Plot of $f(z)=(z-1)/(z^2+z+1)$ with level curves of the modulus.
+            </figcaption>
+        </figure>
+
+        <hr>
+
+        <h2 id="plotter">Explore complex functions</h2>
+
+        <p>Use the applet below to explore enhanced phase portraits of complex functions.
+            Variables accessible in the freely editable formula are
+            \[\text{z, A, B, C, D, a, b, c, d}\]
+            where $\text{a, b, c}$ and $\text{d}$ depend on the position of the colored complex points $\text{A, B, C}$
+            and $\text{D}$, respectively. The dependence is
+            \[\text{
+            a=z-A,
+            b=z-B,
+            c=z-C,
+            d=z-D.}
+            \]
+            Here $z$ is the location in the image. The parameter $\text{'e'}$ is a real scalar that can be adjusted
+            between $-1$ and $1$. Finally, the functions are plotted on the region \([-4,4]\times [-4,4]\).</p>
+
+
+        <div>
+
+            <div class="w3-hide-small w3-hide-medium">
+
+                <div id="CSCanvas" style="border:2px solid black"></div><!-- Canvas-->
+
+                <div style="display: flex; justify-content: space-between; width: 800px;">
+                    <div><input id="ch1" onclick="check1()" checked type="checkbox"><span id="t1">Phase</span></div>
+                    <div><input id="ch2" onclick="check2()" checked type="checkbox"><span id="t2">Modulus</span></div>
+                    <div><input id="ch3" onclick="check3()" type="checkbox">Re/Im components</div>
+                    <div><input id="ch4" onclick="check4()" type="checkbox">Chessboard</div>
+                    <div><input id="ch5" onclick="check5()" type="checkbox">Webcam</div>
+                    <div><a href="../applets/cindyjs/domcoloring/" target="_blank" title="Open Tab"><i
+                                class="fas fa-expand"></i></a></div>
+                </div><!-- Ends justified-->
+
+                <br>
+
+                <div>
+                    <span style="font-size:18px">f(z) = </span><input type="text" id="inp" value="z"
+                        onkeypress="typ(event, this)" size="50" style="font-size:18px">
+                </div><!-- Input box-->
+
+                <br>
+
+                <p>You can also select one function of the following list:</p>
+                <select id="sel" onchange="sel(event, this)" style="width:19em;">
+                    <option>z</option>
+                    <option>(z-1)/(z^2+z+1)</option>
+                    <option value="(1-a)*(1+a)" data-cdy="A.xy=(-0.168, 0.15);">(1-a)*(1+a) - Move point A</option>
+                    <option value="(z-A)/(z-B)" data-cdy="A.xy=(-0.168, 0.05);B.xy=(0.5, 0.3)">(z-A)/(z-B) - Move points
+                        A &amp; B</option>
+                    <option>z^(1+i)</option>
+                    <option value="z^A" data-cdy="linear=false;A.xy=(0.168, -0.15);">z^A - Move point A</option>
+                    <option value="(sin(a)/sin(b))^(1+i)" data-cdy="linear=false;A.xy=(-0.38, -0.45);B.xy=(0.5, 0.3)">
+                        (sin(a)/sin(b))^(1+i) - Move A &amp; B</option>
+                    <option value="z/2*exp(cos(seconds()/2)*pi*i*exp(-abs(z/2)^2))"
+                        data-cdy="linear=true;grid1=true;grid2=true;R.x=1.69;">Distortion</option>
+                    <option value="(e*z)^(1+14*cos(0.2*seconds())*i)*cos(((e*z)-1)/((e*z)^13+(e*z)+1))"
+                        data-cdy="E.x=1.78;grid1=false;grid2=false;">13 Essential singularities</option>
+                    <option value="(exp(z)-exp(-z))/2">sinh(z)</option>
+                    <option value="z = 0; repeat(50, z = z*z +a/4; z = z/abs(z)*min(abs(z),10));"
+                        data-cdy="A.xy=(1/2, 0);">Mandelbrot set</option>
+                    <option value="z=z*0.4; repeat(11, z = z*z + A/5);" data-cdy="A.xy=(0.5, -0.1);">Julia set</option>
+                    <option value="z = a/2;(1-z^(floor(20 * (e+1)/2 + 2)))/(1-z)"
+                        data-cdy="linear=false;A.xy=(0, 0);E.x=-1;">Convergence of Geometric series - Drag 'e'</option>
+                    <option value="repeat(5, z = z - (z^3-A)/(3*z^2));" data-cdy="linear=false;A.xy=(0.5, -0.1);">Newton
+                        - Move point A</option>
+                    <option value="z=a; repeat(11, z = z - (z^3-b*c*d)/(3*z^2));"
+                        data-cdy="linear=false;A.xy=(-0.38, -0.45);B.xy=(0.5, 0.3)">Newton-like - Move points A,B,C
+                        &amp; D</option>
+                    <option
+                        value="U=|A|;C=10*im(A);T=(e+1)/2;a=1;r=0.23*sqrt(13*2);center=-0.15+0.23*i;z1=(z-sqrt(z^2-4))/2;z2=(z+sqrt(z^2-4))/2;z=(1-T)*z+T*if(|z1-center|>|z2-center|,z1,z2);z=(z-center)/r;if(|z|<|a|,0,(U*z+(U*a^2)/z-(i*C)/(2*pi)*log(z)))/10;"
+                        data-cdy="A.xy=(-0.868, -0.001);E.x=-1;linear=true;R.x=1.99;">Joukowsky Airfoil - Move point A
+                        &amp; e</option>
+                    <!--<option value="U=re(B);C=10*im(C);T=(e+1)/2;center=D;a=|A-D|;z1=(z-sqrt(z^2-4))/2;z2=(z+sqrt(z^2-4))/2;z=(1-T)*z+T*if(|z1-center|>|z2-center|,z1,z2);z=z-center;if(|z|<|a|,-1,(U*z+(U*a^2)/z-(i*C)/(2*pi)*log(z)+i*pi))/10" data-cdy="D.xy=(-0.0493, 0.0712); A.xy=(0.218, 0.0868); E.x=100; S.x=1.2595; linear=true;">Joukowsky airfoil</option>-->
+                </select>
+
+
+            </div>
+            <!--hide small-->
+
+
+            <br>
+
+
+        </div>
+        <!--end left-->
+
+        <div class="w3-hide-large  w3-khaki w3-round w3-padding w3-panel">
+            <p><i class="fas fa-sad-tear"></i> Sorry, the applet is not supported for small screens. Rotate your device
+                to landscape. Or resize your window so it's more wide than tall.</p>
+        </div>
+
+        <br>
+        <hr>
+
+        <h2>Warning!</h2>
+
+        <p>If we do not impose additional restrictions,
+            like continuity or differentiability, the isochromatic sets of complex functions can
+            be arbitrary - but this is not so for <em>analytic</em> functions, which are the objects
+            of prime interest in this text.</p>
+
+        <div class="w3-responsive">
+            <p>In fact, analytic functions are (almost) uniquely
+                determined by their (pure) phase portraits, but this is
+                not so for general functions. For example, the functions $f$ (analytic) and $g$ (not
+                analytic) defined by
+                \begin{eqnarray}\label{example}
+                f(z)=\frac{z-1}{z^2+z+1}, \qquad g(z)=(z-1)\left(\overline{z}^2+\overline{z}+1\right)
+                \end{eqnarray}
+                have the same phase (except at their zeros and poles) though they are completely
+                different.
+            </p>
+        </div>
+
+        <p>Since pure phase portraits do not always display enough information for exploring general complex functions,
+            I recommend the use of their enhanced versions with contour lines of modulus and phase in such cases. Figure
+            7 shows two such portraits of the functions $f$ (left) and $g$ (right) defined in (\ref{example}).</p>
+
+        <div class="w3-hide-small w3-hide-medium">
+            <iframe name="Same phase" src="../applets/p5js/samephase/index.html" width="800px" height="400px"
+                style="border:none;" style="overflow:hidden;"></iframe>
+            <br>
+            <figcaption>
+                <b>Figure 7:</b> Enhanced phase portraits of $f$ (left) and $g$ (right). Drag slider.
+            </figcaption>
+
+        </div>
+
+        <div class="w3-hide-large w3-khaki w3-round w3-padding w3-panel">
+            <p><i class="fas fa-sad-tear"></i> Sorry, the applet is not supported for small screens. Rotate your device
+                to landscape. Or resize your window so it's more wide than tall.</p>
+        </div>
+
+        <p>A notable distinction between the two portraits is the shape of the tiles. In the left picture most of them
+            are almost squares and have right-angled corners. In contrast, many tiles in the portrait of $g$ are prolate
+            and their angles differ significantly from $\pi/2$ - at some points the contour lines of modulus and phase
+            are even mutually tangent.</p>
+
+        <p>If you want to learn more details about the code for visualizing complex functions, then follow the link to
+            access the online tutorial: <a href="../applets/cindyjs/livecoding" target="_blank">Live Coding</a></p>
+
+        <br>
+        <hr>
+
+
+        <p style="font-size: 16px"><strong>Note:</strong> The applet for exploring complex functions was written by <a
+                href="https://geo.ma.tum.de/en/people/aaron-montag.html">Aaron Montag</a> based on the work of <a
+                href="https://geo.ma.tum.de/en/people/juergen-richter-gebert.html">Jürgen Richter-Gebert</a> using <a
+                href="https://cindyjs.org/">Cindy.js</a>. The source code can be found at <a
+                href="https://github.com/jcponce/cabook/tree/gh-pages/applets/cindyjs/domcoloring">GitHub.</a></p>
+
+        <!-- link to the next page -->
+        <a href="power_function.html">
+            <p class="nextPage">NEXT: The Complex Power Function</p>
+        </a>
+        <footer>
+            <p>[ <a href="../">intro</a>, <a href="https://github.com/jcponce/cabook">source</a>, <a
+                    href="https://github.com/jcponce/cabook/issues">issues</a> ]</p>
+
+            <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                    <img id="license" alt="Creative Commons License" style="border-width:0"
+                        src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+                </a></p>
+        </footer>
+
+    </div> <!-- end wrapper -->
+
+    <!-- nice smart quotes, via: http://smartquotesjs.com -->
+    <script src="../js/smartquotes.min.js"></script>
+    <script src="../applets/cindyjs/assets/app.js"></script>
+</body>
+
+</html>

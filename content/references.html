@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+	<title>Complex Analysis</title>
+
+	<!-- dublin core -->
+	<meta name="dc.title" CONTENT="Complex Analysis">
+	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+	<meta name="dc.date" CONTENT="26-01-2019">
+    <meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
+	<meta name="dc.type" CONTENT="Interactive Resource">
+	<meta name="dc.format" CONTENT="HTML">
+	<meta name="dc.language" CONTENT="en-US">
+	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+	<!-- social media cards -->
+	<meta property="og:title" content="Complex Analysis">
+	<meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+	<meta property="og:type" content="website">
+	<!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+	<meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+	<meta property="og:site_name" content="Complex Analysis">
+    
+	
+	<!-- FONTS AND CSS -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet' type='text/css'>
+	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+	<!-- CODE PRETTIFY -->
+	<!-- via: https://github.com/google/code-prettify -->
+	<script src="../js/run_prettify.js"></script>
+
+	<!-- PROCESSING.JS
+	<!--[if lt IE 9]>
+			<script type="text/javascript">alert("Your browser does not support the canvas tag!");</script>
+	<![endif]
+	<script src="js/processing.js" type="text/javascript"></script>
+	<script>
+		function getProcessingSketchId() {
+			return '';
+		}
+	</script>
+     -->
+
+	<!-- JQUERY FANCY ADDITIONS -->
+	<!-- add code class, hover text, etc -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+
+		$(document).ready(function() {
+
+			// prettyprint the code, pls
+			$('pre').addClass('prettyprint lang-java');
+
+			// add word-breaks to anything with a / or - in it
+			$('h1').each(function() {
+				var t = $(this).text();
+				t = t.replace('/', '/<wbr>');
+				t = t.replace('-', '-<wbr>');
+				$(this).html(t);
+			});
+
+			// set formatting
+			resizeCommands();
+		});
+
+		// when the window gets resized, do some stuff to keep everything
+		// looking pretty
+		$(window).resize( function() {
+			resizeCommands();
+		});
+
+		// things to do when the page is loaded or window resized
+		function resizeCommands() {
+			// large-screen stuff...
+			if ($(window).width() > 600) {
+
+				// long headline on intro page
+				// $('#introHeadline').html('TABLE OF CONTENTS');
+
+				// menu hover stuff on larger screens
+				// (does weird formatting on larger screens)
+				// hover over title to show "Table of Contents"
+				$('#title a').hover(
+					function() {
+						$('#title a').text('Table of Contents');
+					},
+					function() {
+						$('#title a').text('Complex Analysis');	// set back when moving out
+					}
+				);
+
+				// set prev/next titles
+				$('#prev a').hover(
+					function() {
+						$('#title a').text('Prev: Taylor Series');
+					},
+					function() {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+				$('#next a').hover(
+					function() {
+						$('#title a').text('Next: ');
+					},
+					function() {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+			}
+
+			// small-screen stuff
+			else {
+				// short headline on intro page
+				// $('#introHeadline').html('INTRO');
+			}
+		}
+	</script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121691678-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-121691678-1');
+        </script>
+	
+</head>
+
+<body>
+	<div id="wrapper">
+        
+        <header><p><span id="prev"><a href="taylor_series.html">&larr;</a></span><span id="title"><a href="table_of_contents.html">Complex Analysis</a></span><span id="next">&nbsp;</span><div class="clear"></div></p></header>
+        
+
+<h1>References</h1>
+
+
+<p>
+<ul>
+    <li>Ablowitz, M. J., Fokas, A. S. (2003). <em>Complex variables: introduction and applications</em> (2nd ed). Cambridge University Press.</li>
+    <li>Brown, J. W., Churchill, R. V. (2009). <em>Complex Variables and Applications.</em> 8th Edition. New York: McGraw-Hill Higher Education.
+    </li>
+    <li>Needham, T. (1997). <em>Visual Complex Analysis.</em> New York: The Clarendon Press,
+        Oxford University Press.</li>
+    <li>Ablowitz, M. J. &amp; Fokas, A. S. (2003). <em>Complex variables: introduction and applications</em> (2nd ed). Cambridge University Press.</li>
+    <li>Breda, A. Trocado, A. &amp; Santos, J. (2013). O GeoGebra para além da segunda dimensão. <em>Indagatio Didactica</em>, 5(1). Recuperado el 12 de junio de 2018, de
+        <a href="http://revistas.ua.pt/index.php/ID/article/view/2421" target="_blank" title="Open link" class="w3-text-indigo w3-hover-text-blue"><i class="fas fa-external-link-alt"></i></a></li>
+    <li>Crone, L. (s.f) <em>Color graphs of complex functions.</em> <a href="http://fs2.american.edu/lcrone/www/ComplexPlot.html" target="_blank" title="Open link" class="w3-text-indigo w3-hover-text-blue"><i class="fas fa-external-link-alt"></i></a></li>
+    <li>Farris, F. (1997). <em>Visualizing complex-valued functions in the plane.</em> <a href="http://www.maa.org/pubs/amm_complements/complex.html" target="_blank" title="Open link" class="w3-text-indigo w3-hover-text-blue"><i class="fas fa-external-link-alt"></i></a></li>
+    <li>Farris, F. A. (1998). Review of Visual Complex Analysis. By Tristan Needham. <em>American Mathematical Monthly</em> 105 (1998), 570–576.</li>
+    <li>Liste, R. L. (2014). El color dinámico de GeoGebra. <em>Gaceta De La Real Sociedad Matematica Española</em>, 17, 525–547, Madrid. </li>
+    <li>Lundmark, H. (2004). <em>Visualizing complex analytic functions using domain coloring.</em>   <a href="http://users.mai.liu.se/hanlu09/complex/domain_coloring.html" target="_blank" title="Open link" class="w3-text-indigo w3-hover-text-blue"><i class="fas fa-external-link-alt"></i></a></li>
+    <li>Needham, T. (1997). <em>Visual Complex Analysis.</em> Oxford University Press, Oxford.</li>
+    <li>Marsden, J. E. &amp; Hoffman, M. J. (1987) <em>Basic Complex Analysis.</em> (2nd ed.) W. H. Freeman and Co,
+        New York.</li>
+    <li>Farris, F. A. (1998). Review of Visual Complex Analysis. By Tristan Needham. <em>American Mathematical Monthly</em> 105 (1998), 570–576.</li>
+    <li>Wegert, E. (2010). Phase diagrams of meromorphic functions. <em>Comput. Methods Funct.</em> Theory 10, 639-661.</li>
+    <li>Wegert, E. (2012). <em>Visual Complex Functions: An introduction with phase portraits.</em> New York: Springer Basel.</li>
+    <li>Wegert, E. &amp; Semmler, G. (2011). Phase plots of complex functions: a journey in illustration. <em>Notices Amer. Math. Soc.</em> 58, 768-780. <a href="https://www.ams.org/notices/201106/rtx110600768p.pdf" target="_blank" title="Open link" class="w3-text-indigo w3-hover-text-blue"><i class="fas fa-external-link-alt"></i></a></li>
+    <li>Wikipedia: <em>Domain Coloring</em> <a href="https://en.wikipedia.org/wiki/Domain_coloring" target="_blank" title="Open link" class="w3-text-indigo w3-hover-text-blue"><i class="fas fa-external-link-alt"></i></a></li>
+</ul>
+</p>
+
+
+	<footer>
+		<p>[ <a href="../">intro</a>, <a href="https://github.com/jcponce/cabook">source</a>, <a href="https://github.com/jcponce/cabook/issues">issues</a> ]</p>
+
+		<p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+			<img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+		</a></p>
+	</footer>
+
+	</div> <!-- end footer -->
+
+<!-- nice smart quotes, via: http://smartquotesjs.com -->
+<script src="../js/smartquotes.min.js"></script>
+
+</body>
+</html>

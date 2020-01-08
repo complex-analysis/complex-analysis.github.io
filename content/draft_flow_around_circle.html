@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+	<title>Complex Analysis</title>
+
+	<!-- dublin core -->
+	<meta name="dc.title" CONTENT="Complex Analysis">
+	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+	<meta name="dc.date" CONTENT="26-01-2019">
+        <meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
+	<meta name="dc.type" CONTENT="Interactive Resource">
+	<meta name="dc.format" CONTENT="HTML">
+	<meta name="dc.language" CONTENT="en-US">
+	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+	<!-- social media cards -->
+	<meta property="og:title" content="Complex Analysis">
+	<meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+	<meta property="og:type" content="website">
+	<!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+	<meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+	<meta property="og:site_name" content="Complex Analysis">
+    
+	
+	<!-- FONTS AND CSS -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet' type='text/css'>
+	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/w3.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+	<!-- CODE PRETTIFY -->
+	<!-- via: https://github.com/google/code-prettify -->
+	<script src="../js/run_prettify.js"></script>
+
+	
+
+	<!-- JQUERY FANCY ADDITIONS -->
+	<!-- add code class, hover text, etc -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+
+		$(document).ready(function() {
+
+			// prettyprint the code, pls
+			$('pre').addClass('prettyprint lang-java');
+
+			// add word-breaks to anything with a / or - in it
+			$('h1').each(function() {
+				var t = $(this).text();
+				t = t.replace('/', '/<wbr>');
+				t = t.replace('-', '-<wbr>');
+				$(this).html(t);
+			});
+
+			// set formatting
+			resizeCommands();
+		});
+
+		// when the window gets resized, do some stuff to keep everything
+		// looking pretty
+		$(window).resize( function() {
+			resizeCommands();
+		});
+
+		// things to do when the page is loaded or window resized
+		function resizeCommands() {
+			// large-screen stuff...
+			if ($(window).width() > 600) {
+
+				// long headline on intro page
+				// $('#introHeadline').html('TABLE OF CONTENTS');
+
+				// menu hover stuff on larger screens
+				// (does weird formatting on larger screens)
+				// hover over title to show "Table of Contents"
+				$('#title a').hover(
+					function() {
+						$('#title a').text('Table of Contents');
+					},
+					function() {
+						$('#title a').text('Complex Analysis');	// set back when moving out
+					}
+				);
+
+				// set prev/next titles
+				$('#prev a').hover(
+					function() {
+						$('#title a').text('Prev: Applications');
+					},
+					function() {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+				$('#next a').hover(
+					function() {
+						$('#title a').text('Next: Acknowledgements');
+					},
+					function() {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+			}
+
+			// small-screen stuff
+			else {
+				// short headline on intro page
+				// $('#introHeadline').html('INTRO');
+			}
+		}
+	</script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121691678-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-121691678-1');
+        </script>
+    
+    <!--MathJax starts-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                           TeX: { equationNumbers: { autoNumber: "AMS" } }
+                           });
+        </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+    
+    <!-- Cindy.js
+    <link rel="stylesheet" href="dclandscape/app.css" />
+    <link rel="stylesheet" href="dclandscape/CindyJS.css" />
+    <script type="text/javascript" src="dclandscape/Cindy.js"></script>
+    <script type="text/javascript" src="dclandscape/CindyGL.js"></script>
+    <script type="text/javascript" src="dclandscape/symbolic.js"></script>
+     Cindy.js -->
+	
+</head>
+
+<body>
+<div id="wrapper">
+        
+        <header><p><span id="prev"><a href="applications_conformal.html">&larr;</a></span><span id="title"><a href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a href="thanks.html">&rarr;</a></span><div class="clear"></div></p></header>
+        
+
+<h1>Uniform flow around a circle</h1>
+<hr>
+<div class="w3-responsive">
+    <p>Consider the uniform flow past a circular cylinder with circulation $C$ and speed $U>0$ given by the complex potential
+    \begin{eqnarray}\label{eq1}
+    F(z)=Uz+\frac{Ua^2}{z}-\frac{i C}{2\pi}\log z.
+    \end{eqnarray}
+    The stream function is just the imaginary part of (\ref{eq1}), namely
+    \begin{eqnarray}\label{eq2}
+    \psi = Uy\left(1-\frac{a^2}{x^2+y^2}\right)-\frac{C}{4\pi}\log\left(x^2+y^2\right).
+    \end{eqnarray}
+Hence the circle $x^2+y^2=a^2$ is still a streamline, with $\psi = -(C/2\pi)\log a$.
+</p>
+</div>
+
+<div class="w3-padding">
+    <p><strong>Exercise:</strong>  Find the real part component of the complex potential defined in (\ref{eq1}). The imaginary component is already given, try to find it in order to confirm expression (\ref{eq2}).</p>
+</div>
+<!--
+
+<div class="w3-padding">
+<details>
+    <summary class:"w3-hover-text-white" style="background-color:#f2f2f2; width:95%" ><b style="font-size:18px" >Solition</b> </summary>
+
+<p>
+</p>
+
+</details>
+</div>
+-->
+<hr>
+
+<h2>Simulation</h2>
+
+<p>The following simulation shows the uniform flow past the circular cylinder $c$. Drag the sliders to explore. Press the <code>Trace</code> button to show <em>streamlines</em>.</p>
+
+<div class="w3-hide-small">
+    <iframe name="UniformFlow" src="../applets/p5js/flowaroundcircle/index.html" width="800px" height="500px" style="border:none;" style="overflow:hidden;"></iframe>
+    <br>
+    <div class="w3-container w3-center">
+        <button onclick="var ifr=document.getElementsByName('UniformFlow')[0]; ifr.src=ifr.src;" class="w3-btn w3-ripple w3-grey w3-hover-text-white">Reset</button>
+
+        <!--<a href="../applets/p5js/joukowsky/index.html" class="w3-btn w3-ripple w3-grey w3-hover-text-white" target="_blank">Open other tab</a>
+        
+        <a href="../applets/p5js/joukowsky/joukowsky.zip" class="w3-btn w3-ripple w3-grey w3-hover-text-white" target="_blank"> Download <i class="fa fa-download w3-hover-text-blue" aria-hidden="true"></i> </a>-->
+    </div>
+</div>
+    
+    <div class="w3-hide-large w3-hide-medium">
+        <p class="callout"><strong>Oops!</strong> Sorry, the applet is  not supported for small screens.</p>
+    </div>
+    
+    <br><br><br><hr>
+    
+    <p style="font-size: 16px"><strong>Note:</strong> This applet was made with <a href="https://p5js.org/">p5.js</a>.</p>
+
+	<!-- link to the next page -->
+	<a href="thanks.html"><p class="nextPage">NEXT: Acknowledgements</p></a>
+	<footer>
+		<p>[ <a href="../">intro</a>, <a href="https://github.com/jcponce/cabook">source</a>, <a href="https://github.com/jcponce/cabook/issues">issues</a> ]</p>
+
+		<p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+			<img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+		</a></p>
+	</footer>
+
+</div> <!-- end wrapper -->
+
+<!-- nice smart quotes, via: http://smartquotesjs.com -->
+<script src="../js/smartquotes.min.js"></script>
+
+</body>
+</html>

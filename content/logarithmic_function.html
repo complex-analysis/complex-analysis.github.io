@@ -1,0 +1,374 @@
+<!doctype html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+	<title>Complex Analysis</title>
+
+	<!-- dublin core -->
+	<meta name="dc.title" CONTENT="Complex Analysis">
+	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+	<meta name="dc.date" CONTENT="26-01-2019">
+    <meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
+	<meta name="dc.type" CONTENT="Interactive Resource">
+	<meta name="dc.format" CONTENT="HTML">
+	<meta name="dc.language" CONTENT="en-US">
+	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+	<!-- social media cards -->
+	<meta property="og:title" content="Complex Analysis">
+	<meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+	<meta property="og:type" content="website">
+	<!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+	<meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+	<meta property="og:site_name" content="Complex Analysis">
+    
+	
+	<!-- FONTS AND CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet' type='text/css'>
+	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/w3.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+	<!-- CODE PRETTIFY -->
+	<!-- via: https://github.com/google/code-prettify -->
+	<script src="../js/run_prettify.js"></script>
+
+
+	<!-- JQUERY FANCY ADDITIONS -->
+	<!-- add code class, hover text, etc -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+
+		$(document).ready(function() {
+
+			// prettyprint the code, pls
+			$('pre').addClass('prettyprint lang-java');
+
+			// add word-breaks to anything with a / or - in it
+			$('h1').each(function() {
+				var t = $(this).text();
+				t = t.replace('/', '/<wbr>');
+				t = t.replace('-', '-<wbr>');
+				$(this).html(t);
+			});
+
+			// set formatting
+			resizeCommands();
+		});
+
+		// when the window gets resized, do some stuff to keep everything
+		// looking pretty
+		$(window).resize( function() {
+			resizeCommands();
+		});
+
+		// things to do when the page is loaded or window resized
+		function resizeCommands() {
+			// large-screen stuff...
+			if ($(window).width() > 600) {
+
+				// long headline on intro page
+				// $('#introHeadline').html('TABLE OF CONTENTS');
+
+				// menu hover stuff on larger screens
+				// (does weird formatting on larger screens)
+				// hover over title to show "Table of Contents"
+				$('#title a').hover(
+					function() {
+						$('#title a').text('Table of Contents');
+					},
+					function() {
+						$('#title a').text('Complex Analysis');	// set back when moving out
+					}
+				);
+
+				// set prev/next titles
+				$('#prev a').hover(
+					function() {
+						$('#title a').text('Prev: Complex Functions');
+					},
+					function() {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+				$('#next a').hover(
+					function() {
+						$('#title a').text('Next: Riemann Surfaces');
+					},
+					function() {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+			}
+
+			// small-screen stuff
+			else {
+				// short headline on intro page
+				// $('#introHeadline').html('INTRO');
+			}
+		}
+	</script>
+
+	<!-- ANALYTICS -->
+    
+    <!-- ANALYTICS -->
+    
+    <!--MathJax starts-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                           TeX: { equationNumbers: { autoNumber: "AMS" } }
+                           });
+        </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+    
+   
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121691678-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-121691678-1');
+        </script>
+    
+    <!--GeoGebra embeding-->
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<script>
+    var applet1 = new GGBApplet({material_id: "f8gps6kv",
+                                borderColor:"888888",
+                                playButton: "true",
+                                showFullscreenButton: "true",
+                                showResetIcon: "false",
+                                enableShiftDragZoom: "true"
+                                }, true);
+    var applet2 = new GGBApplet({material_id: "wmhduekw",
+                                borderColor:"888888",
+                                playButton: "true",
+                                showFullscreenButton: "true",
+                                showResetIcon: "false",
+                                enableShiftDragZoom: "true"}, true);
+    window.addEventListener("load", function() {
+          applet1.inject('applet_container1');
+          applet2.inject('applet_container2');
+      });
+</script>
+<!--GeoGebra embeding ends-->
+    
+    <!-- Cindy.js
+    <link rel="stylesheet" href="../applets/cindyjs/taylorseries/app.css" />
+    <link rel="stylesheet" href="../applets/cindyjs/taylorseries/dist/v08/CindyJS.css" />
+    <script type="text/javascript" src="../applets/cindyjs/taylorseries/dist/v07/Cindy.js"></script>
+    <script type="text/javascript" src="../applets/cindyjs/taylorseries/dist/v07/CindyGL.js"></script>
+    <script type="text/javascript" src="../applets/cindyjs/domcoloring/symbolic.js"></script>
+  Cindy.js -->
+    
+</head>
+
+<body>
+<div id="wrapper">
+        
+<header><p><span id="prev"><a href="complex_functions.html">&larr;</a></span><span id="title"><a href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a href="riemann_surfaces.html">&rarr;</a></span><div class="clear"></div></p></header>
+        
+
+<h1>The Logarithmic Function</h1>
+
+<hr>
+<div class="w3-responsive">
+<p>Consider $z$  any nonzero complex number. We would like to solve for $w$, the equation
+\begin{eqnarray}\label{log1}
+e^w=z.
+\end{eqnarray}
+If  $\Theta=\textbf{Arg} (z)$ with $-\pi &lt; \Theta \leq \pi$, then $z$ and $w$ can be written as follows
+\begin{eqnarray*}
+z=re^{i\Theta} \quad \text{and}\quad w=u+iv.
+\end{eqnarray*}
+Then equation (\ref{log1}) becomes
+$$e^ue^{iv}=re^{i\Theta}.$$
+Thus, we have
+\begin{eqnarray*}
+e^u=r\quad\text{and}\quad v=\Theta +2n\pi
+\end{eqnarray*}
+where $n\in \mathbb Z $. Since $e^u=r$ is the same as $u=\ln r$, it follows that equation (\ref{log1}) is satisfied if and only if $w$ has one of the values
+\begin{eqnarray*}
+w=\ln r +i(\Theta + 2n\pi )\quad (n\in \mathbb Z ).
+\end{eqnarray*}
+</p>
+</div>
+
+<div class="w3-responsive">
+<p>Therefore, the (multiple-valued) logarithmic function of a nonzero complex variable $z=re^{i\Theta}$ is defined by the formula
+\begin{eqnarray}\label{log2}
+\log z=\ln r +i\left(\Theta + 2n\pi \right)\quad \quad(n\in \mathbb Z ).
+\end{eqnarray}
+</p>
+</div>
+
+
+
+<div class="w3-padding w3-responsive">
+<p>
+<strong>Example 1:</strong> Calculate $\log z$ for $z=-1-\sqrt{3}i$.<br><br>
+
+<em>Solution:</em> If $z=-1-\sqrt{3}i$, then $r=2$ and $\Theta=-\frac{2\pi}{3}$. Hence
+$$\log(-1-\sqrt{3}i)=\ln 2 +i\left(-\frac{2\pi}{3}+2n\pi\right)=\ln 2 +2\left(n-\frac{1}{3}\right)\pi i$$
+with $n\in \mathbb Z .$
+</p>
+</div>
+
+<p>
+The <em>principal value</em> of $\log z$ is the value obtained from equation (\ref{log2}) when $n = 0$
+and is denoted by $\text{Log} \,z$. Thus
+$$\text{Log}\, z=\ln r +i\Theta .$$
+The function $\text{Log}\, z$ is well defined and single-valued when $z\neq 0$ and that
+$$\log z=\text{Log}\, z+2n\pi i\quad (n\in \mathbb Z )
+$$
+This is reduced to the usual logarithm in calculus when $z$ is a positive real number.
+</p>
+
+<div class="w3-padding">
+<div class="w3-responsive">
+<p>
+<strong>Example 2:</strong> Calculate $\log \left(1\right)$ and $\log \left(-1\right)$.<br><br>
+<em>Solution:</em> From expression (\ref{log2})
+$$\log \left(1\right)=\ln 1+i\left(0+2n\pi\right)=2n\pi i\quad \quad(n\in \mathbb Z )
+$$
+and
+$$\log \left(-1\right)=\ln 1+i\left(\pi+2n\pi\right)=\left(2n+1\right)\pi i\quad \quad(n\in \mathbb Z )
+$$
+Notice that $\text{Log}\, (1)=0$ and $\text{Log}\, (-1)=\pi i$.
+</p>
+</div>
+</div>
+
+<div class="w3-responsive">
+    <p>
+    Expression (\ref{log2}) is also equivalent to the following:
+    \begin{eqnarray*}
+    \log z&amp;=&amp;\ln |z| +i\,\textbf{arg} (z)\\
+    &amp;=&amp;\ln |z| +i\,\textbf{Arg} (z)+2ni\,\pi \quad \quad(n\in \mathbb Z )
+    \end{eqnarray*}
+    </p>
+</div>
+
+<p>
+Some basic properties of the function $\log z$ are the following:
+<ol>
+    <li> $\log \left(z_1 \,z_2\right)=\log z_1\log  z_2$ </li>
+    <li> $\log\left( \frac{z_1}{z_2}\right)=\log z_1 -\log z_2$</li>
+    <li> There may hold $\text{Log}\,\left(z_1 \,z_2\right)\neq \text{Log}\, z_1\text{Log}\,  z_2$</li>
+</ol></p>
+
+
+<hr>
+
+<h2>Branches of Logarithms</h2>
+
+<p>From definition (\ref{log2}) let $\theta = \Theta + 2n\pi$ ($n\in \mathbb Z$), so we can write
+    \begin{eqnarray}\label{log30}
+    \log z = \ln r +i\theta.
+    \end{eqnarray}
+</p>
+<div class="w3-responsive">
+<p>Now, let $\alpha$ be any real number. If we restrict the value of $\theta$ so that $\alpha &lt; \theta &lt; \alpha + 2n\pi$ , then the function
+\begin{eqnarray}\label{log3}
+\log z=\ln r +i\theta \quad (r&gt; 0, \alpha &lt; \theta &lt; \alpha + 2\pi ),
+\end{eqnarray}
+with components
+\begin{eqnarray*}
+u(r, \theta)=\ln r, \quad v(r,\theta)=\theta,
+\end{eqnarray*}
+is a <em>single-value</em> and continuous function in the stated domain.
+</p>
+</div>
+
+<p>A <em>branch</em> of a multiple-valued function $f$ is any single-valued function $F$ that is analytic in some domain at each point $z$ of which the value $F(z)$ is one of the values of $f$. The requirement of analyticity, of course, prevents $F$ from taking on a random selection of the values of $f$.
+
+<div class="w3-responsive">
+Observe that for each fixed α, the single-valued function (\ref{log3}) is a branch of the multiple-valued function (\ref{log30}). The function
+\begin{eqnarray}\label{log4}
+\text{Log } z=\ln r +i\Theta \quad (r&gt; 0, -\pi &lt; \theta &lt; \pi ),
+\end{eqnarray}
+is called the principal branch.
+</p>
+</div>
+
+<p> A <em>branch cut</em> is a portion of a line or curve that is introduced in order to define a branch $F$ of a multiple-valued function $f$. Points on the branch cut for $F$ are <em>singular points</em> of $F$, and any point that is common to all branch cuts of $f$ is called a <em>branch point</em>. The origin and the ray $\theta = \alpha$ make up the branch cut for the branch (\ref{log3}) of the logarithmic function. The branch cut for the principal branch (\ref{log4}) consists of the origin and the ray $= \pi$. The origin is evidently a branch point for branches of the multiple-valued logarithmic function.</p>
+
+<p>We can visualize the multiple-valued nature of $\log z$ by using <a href="http://mathworld.wolfram.com/RiemannSurface.html">Riemann surfaces</a>.  The following interactive images show the real and imaginary components of $\log(z)$. Each branch of the imaginary part is identified with a different color.</p>
+
+<div class="w3-hide-small w3-hide-medium w3-center">
+<table class="w3-table w3-centered">
+    <tr>
+        <td><div style="width:395px;height:380px;display:block" id="applet_container1"></div></td>
+        <td><div style="width:395px;height:380px;display:block" id="applet_container2"></div></td>
+    </tr>
+</table>
+</div><!--responsive ends-->
+
+<div class="w3-hide-large w3-khaki w3-round w3-padding w3-panel">
+    <p><i class="fas fa-sad-tear"></i> Sorry, the applet is  not supported for small screens. Rotate your device to landscape. Or resize your window so it's more wide than tall.</p>
+</div>
+<br>
+
+<p>Special care must be taken in using branches of the logarithmic function, especially since expected identities involving logarithms do not always carry over from calculus.</p>
+
+<hr>
+
+<h2>Final Remark</h2>
+
+<div class="w3-responsive">
+<p>
+Notice that for $z\neq 0$, we have
+\begin{eqnarray}\label{exp001}
+e^{\log z}=z\quad \text{and}\quad \log(e^z) =z+2n\pi i
+\end{eqnarray}
+with $n\in \mathbb Z .$
+</p>
+</div>
+
+<div class="w3-padding">
+<p>
+<strong>Example 3:</strong> Calculate $e^{\log z}$, and $\log \left(e^z\right)$ for $z=4i$.<br><br>
+
+<em>Solution:</em> If $z=4i$, then $e^z=e^{4i}$. Hence
+$$\log\left(e^{4i}\right)=4i +2n\pi i$$
+with $n\in \mathbb Z .$
+On the other hand, we have
+$$e^{\log\left(4i\right)}=4i.$$
+</p>
+</div>
+
+<br>
+    
+    <!--<p><strong>Note:</strong> The applet was made with <a href="https://www.geogebra.org/material/show/id/y9pnh3hu">GeoGebra</a>.</p>-->
+
+	<!-- link to the next page -->
+	<a href="riemann_surfaces.html"><p class="nextPage">NEXT: Riemann surfaces</p></a>
+	<footer>
+		<p>[ <a href="../">intro</a>, <a href="https://github.com/jcponce/cabook">source</a>, <a href="https://github.com/jcponce/cabook/issues">issues</a> ]</p>
+
+		<p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+			<img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+		</a></p>
+	</footer>
+
+</div> <!-- end wrapper -->
+
+<!-- nice smart quotes, via: http://smartquotesjs.com -->
+<script src="../js/smartquotes.min.js"></script>
+<script src="../applets/cindyjs/taylorseries/app.js"></script>
+</body>
+</html>
