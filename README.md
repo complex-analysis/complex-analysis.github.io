@@ -26,7 +26,7 @@ This book is an interactive introduction to the theory and applications of compl
 Some of the topics covered here are basic arithmetic of complex numbers, complex functions, domain coloring, analytic landscapes and some applications of conformal mappings.
 
 What distinguishes this book from other texts in the first instance is the
-use of interactive applets that allow you to explore properties of complex numbers geometrically and analyze complex functions by using different techniques to visualize them. For the design of applets I used the following open-source softwares: [GeoGebra](https://geogebra.org/), [p5.js](https://p5js.org/) and [Cindy.js](https://cindyjs.org/).
+use of interactive applets that allow you to explore properties of complex numbers geometrically and analyze complex functions by using different techniques to visualize them. For the design of applets I used the following open-source softwares: [GeoGebra](https://geogebra.org/), [p5.js](https://p5js.org/), [Cindy.js](https://cindyjs.org/) and [MathCell](http://mathcell.org/).
 
 ---
 
