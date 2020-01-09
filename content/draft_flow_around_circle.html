@@ -116,15 +116,15 @@
 		}
 	</script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-155852901-1');
-</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121691678-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'UA-121691678-1');
+        </script>
     
     <!--MathJax starts-->
     <script type="text/x-mathjax-config">
@@ -156,18 +156,31 @@
 
 <h1>Uniform flow around a circle</h1>
 <hr>
+
+<h2>Velocity field and the stream function in two dimensions</h2>
 <div class="w3-responsive">
-    <p>Consider the uniform flow past a circular cylinder with circulation $C$ and speed $U>0$ given by the complex potential
-    \begin{eqnarray}\label{eq1}
-    F(z)=Uz+\frac{Ua^2}{z}-\frac{i C}{2\pi}\log z.
-    \end{eqnarray}
-    The stream function is just the imaginary part of (\ref{eq1}), namely
-    \begin{eqnarray}\label{eq2}
-    \psi = Uy\left(1-\frac{a^2}{x^2+y^2}\right)-\frac{C}{4\pi}\log\left(x^2+y^2\right).
-    \end{eqnarray}
-Hence the circle $x^2+y^2=a^2$ is still a streamline, with $\psi = -(C/2\pi)\log a$.
-</p>
+    <p>If we have a (steady-state) incompressible, nonviscous fluid in two dimensions, we are interested in finding its <b style="text-shadow:0px 0px 0 #444">velocity field</b> $$\mathbf V = \left(u(x,y), v(x,y)\right).$$
+		From vector analysis we know that the <b style="text-shadow:0px 0px 0 #444">stream function</b> $\psi$ must satisfy
+			\begin{eqnarray}\label{cond1}
+			u=\frac{\partial \psi}{\partial y},\quad v=-\frac{\partial \psi}{\partial x}.
+			\end{eqnarray}
+		</p>
+	
+		<p>Knowing this, consider the stream function
+			$$\psi = Uy\left(1- \frac{a^2}{x^2+y^2} \right)$$
+			The level curves $\psi = \text{const}$ are called
+			<b style="text-shadow:0px 0px 0 #444">streamlines</b> of the 
+			flow and they follow the direction of the velocity field, see 
+			figure below.</p>
 </div>
+
+<div class="w3-responsive">
+    <p>In this case, from (\ref{cond1}), the components of the velocity field $\mathbf V$ are
+    \begin{eqnarray}\label{vel1}
+    u = U\left(1 - a^2\frac{x^2-y^2}{(x^2+y^2)^2}\right),\qquad v= -2  U^{2}  a^{2}  \frac{ x y}{ \left(x^{2} + y^{2} \right)^{2}}.
+    \end{eqnarray}
+    This field represents a <b style="text-shadow:0px 0px 0 #444">uniform flow around a circle</b> of radius $a$ with center at $(0,0)$ and speed $U$, in the $x$-direction.</p>
+    </div>
 
 <div class="w3-padding">
     <p><strong>Exercise:</strong>  Find the real part component of the complex potential defined in (\ref{eq1}). The imaginary component is already given, try to find it in order to confirm expression (\ref{eq2}).</p>
@@ -187,6 +200,21 @@ Hence the circle $x^2+y^2=a^2$ is still a streamline, with $\psi = -(C/2\pi)\log
 <hr>
 
 <h2>Simulation</h2>
+
+<p>For this simulation I used equations (\ref{vel1}) but considering a circle with 
+	center at $(x_0, y_0)$. Thus the components of the velocity field $\mathbf V $ are
+	\begin{eqnarray*}
+	u &amp; = &amp;U \left(1 - a^2\frac{(x-x_0)^2-(y-y_0)^2}{ \left((x-x_0)^2+(y-y_0)^2\right)^2}\right),\\
+   v &amp; = &amp; -2  U^{2}  a^{2}  \frac{ (x-x_0) (y-y_0)}{ \left((x-x_0)^{2} + (y-y_0)^{2} \right)^{2}}.
+   \end{eqnarray*}
+  </p>
+  
+  <p>Since the fluid particles move in accordance with the autonomous, first order system of ordinary differential equations
+  \begin{eqnarray}\label{system}
+  \dfrac{dx}{dt} = u, \quad
+  \dfrac{dy}{dt} = v;
+  \end{eqnarray}
+  an individual particle's position $\mathbf x(t)= (x(t), y(t))$ is uniquely determined solely by its initial condition, that is, when  $t=0$.</p>
 
 <p>The following simulation shows the uniform flow past the circular cylinder $c$. Drag the sliders to explore. Press the <code>Trace</code> button to show <em>streamlines</em>.</p>
 
@@ -213,7 +241,7 @@ Hence the circle $x^2+y^2=a^2$ is still a streamline, with $\psi = -(C/2\pi)\log
 	<!-- link to the next page -->
 	<a href="thanks.html"><p class="nextPage">NEXT: Acknowledgements</p></a>
 	<footer>
-		<p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+		<p>[ <a href="../">intro</a>, <a href="https://github.com/jcponce/cabook">source</a>, <a href="https://github.com/jcponce/cabook/issues">issues</a> ]</p>
 
 		<p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
 			<img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
