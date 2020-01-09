@@ -134,6 +134,7 @@ function controls(){
     buttonTrace.position(10, 15);
     buttonTrace.mousePressed(traceShow);
     buttonTrace.style('font-size', '20px');
+    buttonTrace.addClass('button');
     
     //checkbox = createCheckbox('More', false);
     //checkbox.style('font-size', '20px');
