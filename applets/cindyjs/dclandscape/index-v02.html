@@ -16,8 +16,6 @@
 <script type="text/javascript" src="../assets/Cindy.js"></script>
 <script type="text/javascript" src="../assets/CindyGL.js"></script>
 <script type="text/javascript" src="../assets/symbolic.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algebrite@1.2.1/dist/algebrite.bundle-for-browser.js"></script>
-
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
@@ -46,18 +44,14 @@
 <div style="float: left;">
   
   <div class="w3-hide-small w3-hide-medium">
-    <script id="csmousedown" type="text/x-cindyscript">
-      playanimation();
-      framesdelay=0;
+      <script id="csmousedown" type="text/x-cindyscript">
       sx = mouse().x;
       sy = mouse().y;
       dragging = sx < .5;
-    </script>
-    <script id="csmouseup" type="text/x-cindyscript">
-      framesdelay=0;
+      </script>
+      <script id="csmouseup" type="text/x-cindyscript">
       dragging = false;
-    </script>
-    
+      </script>
       
       <script id="csinit" type="text/x-cindyscript">
       speciala = .5;
@@ -105,25 +99,30 @@
       q(z):= z^2+z+a;
       dp(z) = 1;
       dq(z) = 2*z+1;
+      //fun is the rendered algebraic function
       
-      //F takes vec3 instead of 3 variables and is zoomed
-      F(p) := (p.z=p.z+.7;p=p/zoom;
-        z = p.z;
-        xi = complex([p.x,p.y]);
+      fun(x, y, z) := (
+        z = z;
+        xi = complex([x,y]);
         pxi = p(xi);
         qxi = q(xi);
         //z = |pxi/qxi| <=> z>=0 and z^2*|qxi|^2 - |pxi|^2=0
-        z*z*(gauss(qxi)*gauss(qxi))-gauss(pxi)*gauss(pxi)  
+        z*z*(gauss(qxi)*gauss(qxi))-gauss(pxi)*gauss(pxi)
+        //re(pxi/qxi);
       );
+      
+      //F takes vec3 instead of 3 variables and is zoomed
+      F(p) := (p.z=p.z+.7;p=p/zoom;fun(p.x, p.y, p.z));
       
       dF(p) := (p.z=p.z+.7;p=p/zoom;
         z = p.z;
+        z = z;
         xi = complex([p.x,p.y]);
         pxi = p(xi);
         qxi = q(xi);
         dpxi = dp(xi); //use symbolic differentiated function
         dqxi = dq(xi);
-        ( 
+        (
           z*z*(2*(re(qxi)*re(dqxi)+im(qxi)*im(dqxi)))-2*(re(pxi)*re(dpxi)+im(pxi)*im(dpxi)), //d/dx(z*z*(gauss(qxi)*gauss(qxi))-gauss(pxi)*gauss(pxi))
           (z*z*(2*(-re(qxi)*im(dqxi)+im(qxi)*re(dqxi)))-2*(-re(pxi)*im(dpxi)+im(pxi)*re(dpxi))), //d/dx(z*z*(gauss(qxi)*gauss(qxi))-gauss(pxi)*gauss(pxi)), check https://en.wikiversity.org/wiki/Cauchy-Riemann_Equations
           2*z*(gauss(qxi)*gauss(qxi))
@@ -222,45 +221,6 @@
         ldir = ray(0);
         ldir = ldir /|ldir|;
         color*(.5+.2*abs(normal*(.3,.5,.6)) + .3*abs(normal*ldir)) + .5*[1,1,1]*(normal*ldir)^16
-      );
-
-      //what color should be given to pixel with pixel-coordinate pixel (vec2)
-      computeColor(pixel, l, u, color) := (
-        regional(a, b);
-        //traverse binary tree (DFS) using heap-indices
-        //1 is root node and node v has children 2*v and 2*v+1
-        id = 1; 
-        //maximum number of steps
-        intersect = false;
-        repeat(min(newN*7,50),
-          //id=0 means we are done; do only a DFS-step if we are not finished yet
-          if(!intersect & id>0,
-            s = gets(id); //s = floor(log_2(id))
-            
-            //the intervals [a,b] are chossen such that (id in binary notation)
-            //id = 1   => [a,b]=[l,u]
-            //id = 10  => [a,b]=[l,(u+l)/2]
-            //id = 101 => [a,b]=[l,(u+3*l)/4]
-            //id = 11  => [a,b]=[(u+l)/2,u]
-            //...
-            a = l + (u-l)*((id+0)/s-1);
-            b = l + (u-l)*((id+1)/s-1);
-            
-            //how many sign changes has F(ray(·)) in (a,b)?
-            cnt = nsign(pixel, a, b);
-            if(cnt == 1 % (b-a)<1e-4, //in this case we found a root (or it is likely to have a multiple root)
-              //=>colorize and break DFS
-              intersect = true;
-              id = next(id),
-            if(cnt == 0, //there is no root
-              id = next(id), //break DFS
-              
-              //otherwise cnt>=2: there are cnt - 2*k roots.
-              id = 2*id;  //visit first child within DFS
-            )
-        );  
-        ));
-        if(intersect, colorize(pixel, bisectf(pixel, a, b)), color)
       );
       
 
@@ -370,6 +330,47 @@
       if (PC.y > .4, PC.y = .4);
       if (PC.y < -.4, PC.y = -.4);
       zoom = exp(3 * PC.y - 1);
+      
+
+      //what color should be given to pixel with pixel-coordinate pixel (vec2)
+        computeColor(pixel, l, u, color) := (
+          regional(a, b);
+          //traverse binary tree (DFS) using heap-indices
+          //1 is root node and node v has children 2*v and 2*v+1
+          id = 1;
+          //maximum number of steps
+          intersect = false;
+          repeat(min(newN*7,50),
+            //id=0 means we are done; do only a DFS-step if we are not finished yet
+            if(!intersect & id>0,
+              s = gets(id); //s = floor(log_2(id))
+              
+              //the intervals [a,b] are chossen such that (id in binary notation)
+              //id = 1   => [a,b]=[l,u]
+              //id = 10  => [a,b]=[l,(u+l)/2]
+              //id = 101 => [a,b]=[l,(u+3*l)/4]
+              //id = 11  => [a,b]=[(u+l)/2,u]
+              //...
+              a = l + (u-l)*((id+0)/s-1);
+              b = l + (u-l)*((id+1)/s-1);
+              
+              //how many sign changes has F(ray(·)) in (a,b)?
+              cnt = nsign(pixel, a, b);
+              if(cnt == 1 % (b-a)<1e-4, //in this case we found a root (or it is likely to have a multiple root)
+                //=>colorize and break DFS
+                intersect = true;
+                id = next(id),
+              if(cnt == 0, //there is no root
+                id = next(id), //break DFS
+                
+                //otherwise cnt>=2: there are cnt - 2*k roots.
+                id = 2*id;  //visit first child within DFS
+              )
+          );
+          ));
+          if(intersect, colorize(pixel, bisectf(pixel, a, b)), color)
+        );
+        
 
       
       rd = (0,0,1);
@@ -443,26 +444,10 @@
                         transform: [ { visibleRect: [ -0.7, -0.5, 0.7, 0.5 ] } ]
                       }]
           });
-
-          var updatef = function(fun){
-          let p = fun;
-          let q = "1";
-          if(Algebrite) {
-            let rat = Algebrite.run(`rationalize(${fun})`);
-            p = Algebrite.run(`numerator(${rat})`);
-            q = Algebrite.run(`denominator(${rat})`);
-          }
-          
-          //document.getElementById('inpp').innerHTML = p;
-          //document.getElementById('inpq').innerHTML = q;
-
-          cdy.evokeCS('p(z) := (' + p + '); q(z) := (' + q + '); init();');
-        };
       </script>
       <div>
-        <!--<p style="font-size:18px"> f(z) = p(z)/q(z) </p>
-        <p><span style="font-size:18px">p(z) = </span><input type="text" id="inpp" value="z-1"  onkeypress="if((event.which ? event.which : event.keyCode)==13) { cdy.evokeCS('p(z) := (' + this.value + '); init();'); }" size="50" style="font-size:18px"><br><span style="font-size:18px">q(z) = </span><input type="text" id="inpq" value="z^2+z+1"  onkeypress="if((event.which ? event.which : event.keyCode)==13) { cdy.evokeCS('q(z) := (' + this.value + '); init();'); }" size="50" style="font-size:18px"></p>--->
-        <span style="font-size:18px"> f(z) = </span><input type="text" id="inp" value="(z-1)/(z^2+z+a)"  onkeypress="if((event.which ? event.which : event.keyCode)==13) { updatef(this.value); }" size="50" style="font-size:18px">
+        <!--<p style="font-size:18px"> f(z) = p(z)/q(z) </p>-->
+        <p><span style="font-size:18px">p(z) = </span><input type="text" id="inpp" value="z-1"  onkeypress="if((event.which ? event.which : event.keyCode)==13) { cdy.evokeCS('p(z) := (' + this.value + '); init();'); }" size="50" style="font-size:18px"><br><span style="font-size:18px">q(z) = </span><input type="text" id="inpq" value="z^2+z+1"  onkeypress="if((event.which ? event.which : event.keyCode)==13) { cdy.evokeCS('q(z) := (' + this.value + '); init();'); }" size="50" style="font-size:18px"></p>
       </div>
       
       
@@ -477,7 +462,7 @@
 </div>
 
 <div class="w3-hide-small  w3-hide-medium">
-<p>You can enter your own function $f$ or select one function of the following list:</p>
+<p>You can enter your own function f(z) = p(z)/q(z) or select one function of the following list:</p>
 <p><select id="sel" size="6" style="width:10em;">
     <option data-a="1" data-p="z">z</option>
     <option data-zoom=".15" data-p="z^2">z^2</option>
@@ -507,23 +492,22 @@
 
 <script type="text/javascript">
     var select = document.getElementById("sel");
-select.addEventListener('change', function(event) {
-var p = this.options[this.selectedIndex].getAttribute("data-p") || "1";
-var q = this.options[this.selectedIndex].getAttribute("data-q") || "1";
+    select.addEventListener('change', function(event) {
+    var p = this.options[this.selectedIndex].getAttribute("data-p") || "1";
+    var q = this.options[this.selectedIndex].getAttribute("data-q") || "1";
 
-document.getElementById('inp').value = this.value;
-//document.getElementById('inpp').innerHTML = p;
-//document.getElementById('inpq').innerHTML = q;
+    document.getElementById('inpp').value = p;
+    document.getElementById('inpq').value = q;
 
-cdy.evokeCS('p(z) := (' + p + '); q(z) := (' + q + '); init();');
+    cdy.evokeCS('p(z) := (' + p + '); q(z) := (' + q + '); init();');
 
-var a = this.options[this.selectedIndex].getAttribute("data-a") || .5;
-cdy.evokeCS('seta(' + a + ')');
+    var a = this.options[this.selectedIndex].getAttribute("data-a") || .5;
+    cdy.evokeCS('seta(' + a + ')');
 
-var zoom = this.options[this.selectedIndex].getAttribute("data-zoom");
-if(zoom) cdy.evokeCS('setzoom(' + zoom + ')');
+    var zoom = this.options[this.selectedIndex].getAttribute("data-zoom");
+    if(zoom) cdy.evokeCS('setzoom(' + zoom + ')');
 
-}, false);
+    }, false);
     </script>
     
     <div class="w3-hide-large w3-padding w3-display-middle w3-red w3-round w3-large">
@@ -535,7 +519,7 @@ if(zoom) cdy.evokeCS('setzoom(' + zoom + ')');
 
 <div class="w3-hide-small w3-hide-medium"  style="float: left;">
     <br><br><br><hr>
-<p style="font-size: 16px"><strong>Note:</strong> The applet was originally written by <a href="https://geo.ma.tum.de/en/people/aaron-montag.html">Aaron Montag</a> using <a href="https://cindyjs.org/">CindyJS</a>. The source can be found at <a href="https://github.com/jcponce/cabook/tree/gh-pages/applets/cindyjs/dclandscape">GitHub.</a></p>
+<p style="font-size: 16px"><strong>Note:</strong> The applet was originally written by <a href="https://geo.ma.tum.de/en/people/aaron-montag.html">Aaron Montag</a> using <a href="https://cindyjs.org/">Cindy.js</a>. The source can be found at <a href="https://github.com/jcponce/cabook/tree/gh-pages/applets/cindyjs/dclandscape">GitHub.</a></p>
 </div><!--End second left -->
 
 
