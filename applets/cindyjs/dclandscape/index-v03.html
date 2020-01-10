@@ -462,7 +462,7 @@
       <div>
         <!--<p style="font-size:18px"> f(z) = p(z)/q(z) </p>
         <p><span style="font-size:18px">p(z) = </span><input type="text" id="inpp" value="z-1"  onkeypress="if((event.which ? event.which : event.keyCode)==13) { cdy.evokeCS('p(z) := (' + this.value + '); init();'); }" size="50" style="font-size:18px"><br><span style="font-size:18px">q(z) = </span><input type="text" id="inpq" value="z^2+z+1"  onkeypress="if((event.which ? event.which : event.keyCode)==13) { cdy.evokeCS('q(z) := (' + this.value + '); init();'); }" size="50" style="font-size:18px"></p>--->
-        <span style="font-size:18px"> f(z) = </span><input type="text" id="inp" value="(z-1)/(z^3+1-i)"  onkeypress="if((event.which ? event.which : event.keyCode)==13) { updatef(this.value); }" size="50" style="font-size:18px">
+        <span style="font-size:18px"> f(z) = </span><input type="text" id="inp" value="(z-1)/(z^2+z+a)"  onkeypress="if((event.which ? event.which : event.keyCode)==13) { updatef(this.value); }" size="50" style="font-size:18px">
       </div>
       
       
@@ -477,7 +477,7 @@
 </div>
 
 <div class="w3-hide-small  w3-hide-medium">
-<p>You can enter your own function f(z) = p(z)/q(z) or select one function of the following list:</p>
+<p>You can enter your own function $f$ or select one function of the following list:</p>
 <p><select id="sel" size="6" style="width:10em;">
     <option data-a="1" data-p="z">z</option>
     <option data-zoom=".15" data-p="z^2">z^2</option>
@@ -535,7 +535,7 @@ if(zoom) cdy.evokeCS('setzoom(' + zoom + ')');
 
 <div class="w3-hide-small w3-hide-medium"  style="float: left;">
     <br><br><br><hr>
-<p style="font-size: 16px"><strong>Note:</strong> The applet was originally written by <a href="https://geo.ma.tum.de/en/people/aaron-montag.html">Aaron Montag</a> using <a href="https://cindyjs.org/">Cindy.js</a>. The source can be found at <a href="https://github.com/jcponce/cabook/tree/gh-pages/applets/cindyjs/dclandscape">GitHub.</a></p>
+<p style="font-size: 16px"><strong>Note:</strong> The applet was originally written by <a href="https://geo.ma.tum.de/en/people/aaron-montag.html">Aaron Montag</a> using <a href="https://cindyjs.org/">CindyJS</a>. The source can be found at <a href="https://github.com/jcponce/cabook/tree/gh-pages/applets/cindyjs/dclandscape">GitHub.</a></p>
 </div><!--End second left -->
 
 
