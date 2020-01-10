@@ -507,22 +507,23 @@
 
 <script type="text/javascript">
     var select = document.getElementById("sel");
-    select.addEventListener('change', function(event) {
-    var p = this.options[this.selectedIndex].getAttribute("data-p") || "1";
-    var q = this.options[this.selectedIndex].getAttribute("data-q") || "1";
+select.addEventListener('change', function(event) {
+var p = this.options[this.selectedIndex].getAttribute("data-p") || "1";
+var q = this.options[this.selectedIndex].getAttribute("data-q") || "1";
 
-    document.getElementById('inpp').value = p;
-    document.getElementById('inpq').value = q;
+document.getElementById('inp').value = this.value;
+//document.getElementById('inpp').innerHTML = p;
+//document.getElementById('inpq').innerHTML = q;
 
-    cdy.evokeCS('p(z) := (' + p + '); q(z) := (' + q + '); init();');
+cdy.evokeCS('p(z) := (' + p + '); q(z) := (' + q + '); init();');
 
-    var a = this.options[this.selectedIndex].getAttribute("data-a") || .5;
-    cdy.evokeCS('seta(' + a + ')');
+var a = this.options[this.selectedIndex].getAttribute("data-a") || .5;
+cdy.evokeCS('seta(' + a + ')');
 
-    var zoom = this.options[this.selectedIndex].getAttribute("data-zoom");
-    if(zoom) cdy.evokeCS('setzoom(' + zoom + ')');
+var zoom = this.options[this.selectedIndex].getAttribute("data-zoom");
+if(zoom) cdy.evokeCS('setzoom(' + zoom + ')');
 
-    }, false);
+}, false);
     </script>
     
     <div class="w3-hide-large w3-padding w3-display-middle w3-red w3-round w3-large">
