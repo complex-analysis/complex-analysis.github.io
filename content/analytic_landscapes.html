@@ -184,14 +184,18 @@
     <p>In the applet below you can explore colored analytic landscapes. Use the blue slider on the right side for zooming out/in. The black slider defines a real scalar <strong>a</strong> $ \in [ -0.14, 1.14]$.</p>
 
   
-      <script id="csmousedown" type="text/x-cindyscript">
+    <script id="csmousedown" type="text/x-cindyscript">
+      playanimation();
+      framesdelay=0;
       sx = mouse().x;
       sy = mouse().y;
       dragging = sx < .5;
-      </script>
-      <script id="csmouseup" type="text/x-cindyscript">
+    </script>
+    <script id="csmouseup" type="text/x-cindyscript">
+      framesdelay=0;
       dragging = false;
-      </script>
+    </script>
+    
       
       <script id="csinit" type="text/x-cindyscript">
       speciala = .5;
@@ -239,30 +243,25 @@
       q(z):= z^2+z+a;
       dp(z) = 1;
       dq(z) = 2*z+1;
-      //fun is the rendered algebraic function
       
-      fun(x, y, z) := (
-        z = z;
-        xi = complex([x,y]);
+      //F takes vec3 instead of 3 variables and is zoomed
+      F(p) := (p.z=p.z+.7;p=p/zoom;
+        z = p.z;
+        xi = complex([p.x,p.y]);
         pxi = p(xi);
         qxi = q(xi);
         //z = |pxi/qxi| <=> z>=0 and z^2*|qxi|^2 - |pxi|^2=0
-        z*z*(gauss(qxi)*gauss(qxi))-gauss(pxi)*gauss(pxi)
-        //re(pxi/qxi);
+        z*z*(gauss(qxi)*gauss(qxi))-gauss(pxi)*gauss(pxi)  
       );
-      
-      //F takes vec3 instead of 3 variables and is zoomed
-      F(p) := (p.z=p.z+.7;p=p/zoom;fun(p.x, p.y, p.z));
       
       dF(p) := (p.z=p.z+.7;p=p/zoom;
         z = p.z;
-        z = z;
         xi = complex([p.x,p.y]);
         pxi = p(xi);
         qxi = q(xi);
         dpxi = dp(xi); //use symbolic differentiated function
         dqxi = dq(xi);
-        (
+        ( 
           z*z*(2*(re(qxi)*re(dqxi)+im(qxi)*im(dqxi)))-2*(re(pxi)*re(dpxi)+im(pxi)*im(dpxi)), //d/dx(z*z*(gauss(qxi)*gauss(qxi))-gauss(pxi)*gauss(pxi))
           (z*z*(2*(-re(qxi)*im(dqxi)+im(qxi)*re(dqxi)))-2*(-re(pxi)*im(dpxi)+im(pxi)*re(dpxi))), //d/dx(z*z*(gauss(qxi)*gauss(qxi))-gauss(pxi)*gauss(pxi)), check https://en.wikiversity.org/wiki/Cauchy-Riemann_Equations
           2*z*(gauss(qxi)*gauss(qxi))
@@ -361,6 +360,45 @@
         ldir = ray(0);
         ldir = ldir /|ldir|;
         color*(.5+.2*abs(normal*(.3,.5,.6)) + .3*abs(normal*ldir)) + .5*[1,1,1]*(normal*ldir)^16
+      );
+
+      //what color should be given to pixel with pixel-coordinate pixel (vec2)
+      computeColor(pixel, l, u, color) := (
+        regional(a, b);
+        //traverse binary tree (DFS) using heap-indices
+        //1 is root node and node v has children 2*v and 2*v+1
+        id = 1; 
+        //maximum number of steps
+        intersect = false;
+        repeat(min(newN*7,50),
+          //id=0 means we are done; do only a DFS-step if we are not finished yet
+          if(!intersect & id>0,
+            s = gets(id); //s = floor(log_2(id))
+            
+            //the intervals [a,b] are chossen such that (id in binary notation)
+            //id = 1   => [a,b]=[l,u]
+            //id = 10  => [a,b]=[l,(u+l)/2]
+            //id = 101 => [a,b]=[l,(u+3*l)/4]
+            //id = 11  => [a,b]=[(u+l)/2,u]
+            //...
+            a = l + (u-l)*((id+0)/s-1);
+            b = l + (u-l)*((id+1)/s-1);
+            
+            //how many sign changes has F(ray(·)) in (a,b)?
+            cnt = nsign(pixel, a, b);
+            if(cnt == 1 % (b-a)<1e-4, //in this case we found a root (or it is likely to have a multiple root)
+              //=>colorize and break DFS
+              intersect = true;
+              id = next(id),
+            if(cnt == 0, //there is no root
+              id = next(id), //break DFS
+              
+              //otherwise cnt>=2: there are cnt - 2*k roots.
+              id = 2*id;  //visit first child within DFS
+            )
+        );  
+        ));
+        if(intersect, colorize(pixel, bisectf(pixel, a, b)), color)
       );
       
 
@@ -470,47 +508,6 @@
       if (PC.y > .4, PC.y = .4);
       if (PC.y < -.4, PC.y = -.4);
       zoom = exp(3 * PC.y - 1);
-      
-
-      //what color should be given to pixel with pixel-coordinate pixel (vec2)
-        computeColor(pixel, l, u, color) := (
-          regional(a, b);
-          //traverse binary tree (DFS) using heap-indices
-          //1 is root node and node v has children 2*v and 2*v+1
-          id = 1;
-          //maximum number of steps
-          intersect = false;
-          repeat(min(newN*7,50),
-            //id=0 means we are done; do only a DFS-step if we are not finished yet
-            if(!intersect & id>0,
-              s = gets(id); //s = floor(log_2(id))
-              
-              //the intervals [a,b] are chossen such that (id in binary notation)
-              //id = 1   => [a,b]=[l,u]
-              //id = 10  => [a,b]=[l,(u+l)/2]
-              //id = 101 => [a,b]=[l,(u+3*l)/4]
-              //id = 11  => [a,b]=[(u+l)/2,u]
-              //...
-              a = l + (u-l)*((id+0)/s-1);
-              b = l + (u-l)*((id+1)/s-1);
-              
-              //how many sign changes has F(ray(·)) in (a,b)?
-              cnt = nsign(pixel, a, b);
-              if(cnt == 1 % (b-a)<1e-4, //in this case we found a root (or it is likely to have a multiple root)
-                //=>colorize and break DFS
-                intersect = true;
-                id = next(id),
-              if(cnt == 0, //there is no root
-                id = next(id), //break DFS
-                
-                //otherwise cnt>=2: there are cnt - 2*k roots.
-                id = 2*id;  //visit first child within DFS
-              )
-          );
-          ));
-          if(intersect, colorize(pixel, bisectf(pixel, a, b)), color)
-        );
-        
 
       
       rd = (0,0,1);
@@ -566,6 +563,9 @@
       draw((.65, .4), (.65, -.4), color -> (0, 0, 0));
       drawtext((.64, -.441),"Z-");
       drawtext((.64, .420),"Z+");
+      </script>
+
+      
       </script>
       
 <div id="applet">
