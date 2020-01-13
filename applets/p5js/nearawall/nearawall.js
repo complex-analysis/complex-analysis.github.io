@@ -109,11 +109,11 @@ function draw() {
     if(starting==true) {
         
         //Reference xy
-        //stroke(255, 0, 0,100);
-        //strokeWeight(2);
-        //line(0,0,100,0);//xAxis
-        //stroke(51, 204, 51,100);
-        //line(0,0,0,-100);//yAxis, the value is negative since axis in p5js is upside down
+        stroke(255, 0, 0,100);
+        strokeWeight(2);
+        line(0,-1,100,-1);//xAxis
+        stroke(51, 204, 51,100);
+        line(0,0,0,-100);//yAxis, the value is negative since axis in p5js is upside down
         
         t += h;
         
