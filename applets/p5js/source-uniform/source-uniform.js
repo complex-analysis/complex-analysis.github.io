@@ -1,12 +1,12 @@
-/* Vortex simulation designed with p5.js (https://p5js.org/)
+/* Source and Uniform flow simulation designed with p5.js (https://p5js.org/)
  Under Creative Commons License
  https://creativecommons.org/licenses/by-sa/3.0/
  
- Writen by Juan Carlos Ponce Campuzano, 19-August-2017
+ Writen by Juan Carlos Ponce Campuzano, 13-Jan-2020
  */
 
 /*
- Last update 23-June-2018
+ Last update 13-Jan-2020
  */
 
 let numMax = 700;
