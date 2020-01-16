@@ -38,10 +38,10 @@ let buttonField;
 let buttonTrace;
 let slidera, sliderU, r, time, gamma;
 
-let myFont;
-function preload() {
-  myFont = loadFont('WP-Symbol.otf');
-}
+//let myFont;
+//function preload() {
+//  myFont = loadFont('WP-Symbol.otf');
+//}
 
 function setup() {
     createCanvas(WIDTH, HEIGHT);
