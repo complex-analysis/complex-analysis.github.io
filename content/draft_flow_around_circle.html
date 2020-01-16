@@ -168,16 +168,12 @@
     <br>
     <div class="w3-container w3-center">
         <button onclick="var ifr=document.getElementsByName('Uniform-cirlce')[0]; ifr.src=ifr.src;" class="w3-btn w3-ripple w3-grey w3-hover-text-white">Reset</button>
-
-        <!--<a href="../applets/p5js/joukowsky/index.html" class="w3-btn w3-ripple w3-grey w3-hover-text-white" target="_blank">Open other tab</a>
-        
-        <a href="../applets/p5js/joukowsky/joukowsky.zip" class="w3-btn w3-ripple w3-grey w3-hover-text-white" target="_blank"> Download <i class="fa fa-download w3-hover-text-blue" aria-hidden="true"></i> </a>-->
     </div>
 </div>
 
 <br/>
 
- <p>In order to find the disturbed flow we can use a well known result in fluid 
+ <p>To find this flow we can use a well known result in fluid 
 	dynamics established by the English mathematician 
 	<a href="http://mathshistory.st-andrews.ac.uk/Biographies/Milne-Thomson.html">L. M. Milne-Thompson</a>:
 </p>
@@ -192,14 +188,9 @@
 	(where the bar denotes complex conjugate) has the same singularities as $F(z)$ in $|z|\gt a$
 	and the circle $|z|=a$ is a streamline.</em></p>
 	</div>
-<!--
-	<div class="w3-padding w3-responsive">
-		<details>
-		<summary class:"w3-hover-text-white" style="background-color:#f2f2f2" ><b style="font-size:20px" >Proof</b></summary>
-		
-		-->
+
 <br>
- <p><b style="font-size:20px" >Proof:</b> Let $F(z)$ be a complex potential such that any singularities occur only in the region
+ <p><em>Proof:</em> Let $F(z)$ be a complex potential such that any singularities occur only in the region
 	 $|z|\gt a$ (with $a>0$) and define
 	 \begin{eqnarray}\label{circle-01}
 	 w = F(z) + \overline{F\left(\frac{a^2}{\overline{z}}\right)}.
@@ -217,10 +208,9 @@
 	 $$\left. w \right|_{|z|=a}= F(z)+ \overline{F\left(\frac{a^2}{\overline{z}}\right)} = F(z) + \overline{F\left(z\right)} = 2 \text{Re}\left(f(z)\right),$$
 	which is entirely real. Therefore on the boundary
 	$$\psi  = \text{Im}\, w = 0.$$ 
-	This shows that the the circle $|z|=a$ is a streamline. 
+	This shows that the the circle $|z|=a$ is a streamline. $\blacksquare$
 </p>
-<!--</details>
-</div>-->
+
 
 <p>Notice that the complex potential $F(z)=Uz$ satisfies the hypothesis of the Circle Theorem. We
 	can therefore obtain the complex potential of the uniform flow around a circle
@@ -269,10 +259,10 @@
 	</p>
 </div>
 
-<br/>
+
 <hr>
 
-<h2>Uniform around circle with circulation</h2>
+<h2>Uniform flow around circle with circulation</h2>
 
 <p>If we add a vortex to the complex potential defined in (\ref{potential}), we obtain
    a uniform flow around a circle with circulation:
@@ -282,25 +272,33 @@
    where $C\in \mathbb R$ represents the <em>circulation</em>  about the circle.
    
 </p>
-
+<div ass="w3-padding w3-responsive">
 <p>In this case, the streamfunction is 
 	\begin{eqnarray*}
 	 \psi = U y \left( 1 - \frac{a^2}{x^2+y^2} \right) - \frac{C}{4\pi} \log\left(x^2+y^2\right).
 	\end{eqnarray*}
 	Notice that the circle $x^2+y^2=a^2$ is still a streamline, with $\psi = - (C/2\pi)\log a$.
-	Any stagnation point in the flow must satisfy
+	Any stagnation point in the flow satisfies the equation
 	$$0 = U - \frac{Ua^2}{z^2} - \frac{iC}{2\pi z},$$
 	which can be rearranged to the quadratic equation
 	$$z^2-2i\gamma a z - a^2 = 0, \quad \text{with}\quad \gamma =\frac{C}{4\pi Ua}.$$
 	The roots of this equation are
 	$$\frac{z}{a} = i\gamma \pm \sqrt{1-\gamma^2}.$$
+	</p>
+</div>
+
+<p>
+
+</p>
 	Thus when $\gamma = 0$, there is no circulation with
-    stagnation points at $z = \pm a$. As $\gamma$ increases, the anticlockwise 
+    stagnation points at $z =\pm a$. As $\gamma$ increases, the anticlockwise 
 	circulation causes the stagnation points to move upwards around the circle. 
-	When reaches the value 1, the two stagnation points coalesce at the top of the 
+	When it reaches the value 1, the two stagnation points coalesce at the top of the 
 	cylinder $z = ia$. If  $\gamma > 1$, then one stagnation point moves into the 
-	flow; the other one is inside the circle. You can explore all these cases
-	in the following applet with a circle of radius 1, speed $U$ and circulation $C$.
+	flow; the other one is inside the circle. </p>
+
+<p>Explore all the cases in the applet below which shows the flow and a circle of
+	radius 1. Drag the sliders $U$ and $C$ to change speed and circulation, respectively.
 </p>
 
 <div class="w3-hide-small w3-center">

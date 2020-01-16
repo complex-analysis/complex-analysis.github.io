@@ -38,6 +38,11 @@ let buttonField;
 let buttonTrace;
 let slidera, sliderU, r, time, gamma;
 
+let myFont;
+function preload() {
+  myFont = loadFont('WP-Symbol.otf');
+}
+
 function setup() {
     createCanvas(WIDTH, HEIGHT);
     cursor(HAND);
@@ -101,6 +106,7 @@ function draw() {
     
     //Initial message
     if (starting==false) {
+        background(190);
         fill(0);
         stroke(0);
         textAlign(CENTER);
@@ -242,7 +248,7 @@ class Particle{
 //Set sliders and buttons
 function controls() {
     
-    slidera = createSlider(-30, 30, 0, 0.1);
+    slidera = createSlider(-20, 20, 0, 0.1);
     slidera.position(250, 470);
     slidera.style('width', '150px');
 
