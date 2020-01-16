@@ -88,7 +88,7 @@ function traceShow() {
 function draw() {
     
     //This is for drawing the trace of particles
-    if(tshow==true){
+    if(tshow==false){
         fill(0,6);
     } else{
         fill(0,110);
