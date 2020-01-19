@@ -144,7 +144,7 @@ function draw() {
     textSize(16);
     fill(250);
     
-    text('G = '+nfc(sliderk.value(),1),-40, 200);//for slider k
+    text('C = '+nfc(sliderk.value(),1),-40, 200);//for slider k
     
     
 }

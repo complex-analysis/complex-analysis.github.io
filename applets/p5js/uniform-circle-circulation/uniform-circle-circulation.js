@@ -36,7 +36,12 @@ let starting = false;
 
 let buttonField;
 let buttonTrace;
-let slidera, sliderU, r, time;
+let slidera, sliderU, r, time, gamma;
+
+//let myFont;
+//function preload() {
+//  myFont = loadFont('WP-Symbol.otf');
+//}
 
 function setup() {
     createCanvas(WIDTH, HEIGHT);
@@ -91,7 +96,7 @@ function traceShow() {
 function draw() {
     
     //This is for drawing the trace of particles
-    if(tshow==true){
+    if(tshow==false){
         fill(255,6);
     } else{
         fill(255,110);
@@ -101,13 +106,15 @@ function draw() {
     
     //Initial message
     if (starting==false) {
-        fill(255);
-        stroke(255);
+        background(190);
+        fill(0);
+        stroke(0);
         textAlign(CENTER);
         textSize(32);
         text("Click on screen to start", width/2, height/2);
     }
     
+    gamma = slidera.value()/(4*PI*sliderU.value()*r);
     
     translate(width/2, height/2);//we need the oringin at the center
     
@@ -129,19 +136,43 @@ function draw() {
             if ( p.x > frameWidth ||  p.y > frameHeight || p.x < -frameWidth ||  p.y < -frameHeight ) {
                 particles.splice(i,1);
                 currentParticle--;
-                particles.push(new Particle(-frameWidth/2-1,random(-frameHeight, frameHeight),t,h) );
+                particles.push(new Particle(-frameWidth/2-2,random(-frameHeight, frameHeight),t,h) );
             }
         }
 
         stroke(100);
-        fill(100);
-        let rad = map(r, 0, 5, 0, height);
-        //ellipse(0, 0, 2 * rad);
+        fill(110);
+        let rad = map(r, 0, 6.8, 0, height);
+        ellipse(0, 0, 2 * r * 700 / 9);
+
+        let x_, y_, z_;
+        fill(200,0,0);
+        if(-1 <= gamma && gamma <= 1){
+            x_ = map(r*sqrt(1-gamma*gamma), -9, 9, -width, width);
+            y_ = map(r*gamma, -6.42, 6.42, -height, height);
+            
+            ellipse(x_, -y_, 10);
+            ellipse(-x_, -y_, 10);
+        } else {
+            z_ = map(gamma + Math.sign(slidera.value())*sqrt(gamma*gamma-1), -9, 9, -width, width);
+            ellipse(0, -z_, 10);
+        }
+        
+
         
         //if(fshow == true){
         //    field(t);
         //}
+
         
+        //console.log(gamma);
+        
+    }
+    let dec;
+    if(sliderU.value()>0){
+        dec = 2;
+    } else {
+        dec = 0;
     }
     
     //Black background for text and sliders
@@ -153,8 +184,9 @@ function draw() {
     textSize(16);
     fill(250);
     
-    text('Drag Q = '+nfc(slidera.value(),1),-60, 210);//for slider Q
-    text('U = '+nfc(sliderU.value(),1),-230, 210);//for slider U
+    text('C = '+nfc(slidera.value(),1),-20, 210);//for slider Q
+    text('U = '+nfc(sliderU.value(),1),-260, 210);//for slider U
+    text('gamma = '+nfc(gamma,dec),140, 220);//for slider U
     
     //time +=0.01;
     //if(time > 3.5){
@@ -170,8 +202,8 @@ function mousePressed() {
     starting = true;
 }
 
-let P = (t, x, y) => sliderU.value() + 2*r*r*sliderU.value()/pow(x*x+y*y,2)-r*r*sliderU.value()/(x*x+y*y)+slidera.value()*y/(2*PI*(x*x+y*y))//2* sliderU.value() * pow(r, 2) * y * y / pow(x*x+y*y,2) + sliderU.value() * ( 1 - pow(r, 2) * (1)/pow(x*x+y*y,2) ) - (slidera.value()*y)/(2*PI*(x*x + y*y));//Change this function
-let Q = (t, x, y) =>  (1/PI*slidera.value()*x*(x*x+y*y)-4*sliderU.value()*r*r*x*y)/(2*pow(x*x+y*y,2))//-2* sliderU.value() * pow(r, 2) * x * y / pow(x*x+y*y,2) + (slidera.value()*x)/(2*PI*(x*x + y*y));//Change this function
+let P = (t, x, y) => sliderU.value() - r*r*sliderU.value() * (x*x-y*y)/pow(x*x+y*y,2)-slidera.value()*y/(2*PI*(x*x+y*y));//2* sliderU.value() * pow(r, 2) * y * y / pow(x*x+y*y,2) + sliderU.value() * ( 1 - pow(r, 2) * (1)/pow(x*x+y*y,2) ) - (slidera.value()*y)/(2*PI*(x*x + y*y));//Change this function
+let Q = (t, x, y) =>  -2*r*r*sliderU.value() * (x*y)/pow(x*x+y*y,2)+slidera.value()*x/(2*PI*(x*x+y*y));//-2* sliderU.value() * pow(r, 2) * x * y / pow(x*x+y*y,2) + (slidera.value()*x)/(2*PI*(x*x + y*y));//Change this function
 
 
 //Define particles and how they are moved with Runge–Kutta method of 4th degree.
@@ -206,8 +238,8 @@ class Particle{
     display() {
         fill(this.r, this.b, this.g, this.op);
         noStroke();
-        this.updatex = map(this.x, -7, 7, -width, width);
-        this.updatey = map(-this.y, -5, 5, -height, height);
+        this.updatex = map(this.x, -9, 9, -width, width);
+        this.updatey = map(-this.y, -6.42, 6.42, -height, height);
         ellipse(this.updatex, this.updatey, 2*this.radius, 2*this.radius);
     }
     
@@ -216,7 +248,7 @@ class Particle{
 //Set sliders and buttons
 function controls() {
     
-    slidera = createSlider(-2, 2, 0, 0.1);
+    slidera = createSlider(-20, 20, 0, 0.1);
     slidera.position(250, 470);
     slidera.style('width', '150px');
 
@@ -224,13 +256,13 @@ function controls() {
     sliderU.position(20, 470);
     sliderU.style('width', '150px');
     
-    buttonField = createButton('Field');
-    buttonField.position(590, 464);
-    buttonField.mousePressed(fieldShow);
+    //buttonField = createButton('Field');
+    //buttonField.position(590, 464);
+    //buttonField.mousePressed(fieldShow);
     
-    //buttonTrace = createButton('Trace');
-    //buttonTrace.position(420, 364);
-    //buttonTrace.mousePressed(traceShow);
+    buttonTrace = createButton('Trace');
+    buttonTrace.position(590, 460);
+    buttonTrace.mousePressed(traceShow);
     
 }
 
