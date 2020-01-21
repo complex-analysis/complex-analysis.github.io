@@ -3,7 +3,7 @@ A visual and interactive introduction to [Complex Analysis](https://complex-anal
 
 ISBN 978-0-6485736-0-9
 
-![alt tag](https://github.com/jcponce/cabook/blob/gh-pages/images/preview.png)
+![alt tag](https://github.com/complex-analysis/complex-analysis.github.io/blob/master/images/preview.png)
 
 ---
 #### INTRO
