@@ -168,12 +168,44 @@
 <div class="w3-responsive">
   <p>A complex function $f(z)$ is <em>differentiable</em> at a point $z_0\in \mathbb C$ if and only
     if the following limit difference quotient exists
-    \[f'(z_0) = \lim_{z \rightarrow z_0} \frac{f(z)-f(z_0)}{z-z_0}\]</p>
+    \begin{eqnarray}\label{diff01}
+    f'(z_0) = \lim_{z \rightarrow z_0} \frac{f(z)-f(z_0)}{z-z_0}.
+    \end{eqnarray}
+  Alternatively, letting $\Delta z = z-z_0$, we can write
+  \begin{eqnarray}\label{diff02}
+  f'(z_0) = \lim_{\Delta z \rightarrow 0} \frac{f(z_0+\Delta z)-f(z_0)}{\Delta z}.
+  \end{eqnarray}
+  We often drop the subscript on $z_0$ and introduce the number
+  \[\Delta w = f(z+\Delta z)-f(z).\]
+  which denotes the change in the value $w=f(z)$ correspoding to a change $\Delta z$
+  in the point at which $f$ is evaluated. Then we can write equation (\ref{diff02}) as
+  \[\frac{d w}{d z}= \lim_{\Delta z \rightarrow 0}\frac{\Delta w}{\Delta z}.\]
+  </p>
 </div>
 
-<p>The main feature of this definition is that the limit value $f'(z)$ of the 
-  difference quotient must be <em>independent</em> of how $w$ converges to $z$.
+<p>Despite the fact that the formula (\ref{diff01}) for a derivative is identical in form to that of 
+  the derivative of a real-valued function, a significant point to note is that $f'(z_0)$
+  follows from a two-dimensional limit. Thus
+  for $f'(z_0)$ to exist, the relevant limit must exist independent of the direction 
+  from which $z$ approaches the limit point $z_0$. For a function of one real variable
+  we only have two directions, that is, $x\lt x_0$ and $x\gt x_0$.
 </p>
+
+<div class="w3-center w3-hide-medium w3-hide-small">
+  <iframe scrolling="no" title="Complex differentiation" src="https://www.geogebra.org/material/iframe/id/yn5rs5wg/width/617/height/474/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="617px" height="474px" style="border:0px;" allowfullscreen> </iframe>
+  <!--<div style="width:776px;height:548px;display:block" id="applet_container1"></div>-->
+  </div>
+  
+  <div class="w3-hide-large ">
+    <img class="w3-image w3-mobile" src="../images/derivative.gif" alt="derivative" title="Geometric interpretation" style="width:703px;">
+  </div>
+
+
+<figure class="w3-center">
+      <figcaption>
+          <b>Figure 1:</b> There are an infinite variety of directions to approach $z_0$.
+      </figcaption>
+</figure>
 
 <h2>Simulation</h2>
 
