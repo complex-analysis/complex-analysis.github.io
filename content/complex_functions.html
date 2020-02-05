@@ -224,6 +224,70 @@ f(z)=u\left(r, \theta\right)+iv\left(r, \theta\right).
 
 <hr>
 
+<h2>Examples of complex functions</h2>
+
+<p><em>Polynomial functions:</em> For $a_n, a_{n-1}, \ldots, a_0$ complex constants we define
+$$p(z) = a_n z^n + a_{n-1} z^{n-1} +\cdots +a_{1}z + a_0$$
+where  $a_n\neq 0$ and $n$ is a positive integer
+called the <em>degree</em> of the polynomial $p(z)$.
+</p>
+
+<p><em>Rational functions:</em> Ratios
+	$$\frac{p(z)}{q(z)}$$
+	where $p(z)$ and $q(z)$ are polynomials and $q(z)\neq 0$.
+</p>
+
+<p><em>Exponential function:</em> If $z=x+iy$, the exponential 
+	function $e^z$ is defined by writing
+	\begin{eqnarray*}
+	e^z=e^xe^{iy}.
+	\end{eqnarray*}
+	Because
+	\begin{eqnarray*}
+	e^{iy}=\cos y +i\sin y,
+	\end{eqnarray*}
+	then we have
+	\begin{eqnarray*}
+	e^z=e^x\left(\cos y +i\sin y\right).
+	\end{eqnarray*}
+</p>
+
+<p><em>Logarithmic function:</em>  In a similar fashion, the complex logarithm is a complex extension
+	of the usual real natural (i.e., base $e$) logarithm. In terms of polar coordinates
+	$z = r e^{i\theta}$, the complex logarithm has the form
+	$$\log z = \log\left(r e^{i\theta}\right) = \log r + \log e^{i\theta}  = \log r + i \theta.$$
+	We will explore in detail this function in the following section.
+	</p>
+
+<p><em id="trig-functions">Trigonometric functions:</em> The sine and cosine of a complex variable 
+	$z$ are defined as follows:
+\begin{eqnarray*}
+\sin z=\frac{e^{i z}-e^{-iz}}{2i}\quad \text{and}\quad  \cos z=\frac{e^{iz} +e^{-i z}}{2}.
+\end{eqnarray*}
+
+The other four trigonometric functions are defined in terms of the sine and cosine functions with  the following  relations:
+\begin{align*}
+\tan z&=\frac{\sin z}{\cos z}     &   \cot z&=\frac{\cos z}{\sin z}         \\
+\sec z&=\frac{1}{\cos z}        &  \csc z&=\frac{1}{\sin z}.
+\end{align*}
+</p>
+
+<p><em>Hyperbolic trigonometric functions:</em> The hyperbolic sine and the hyperbolic cosine of a complex variable are defined as
+they are with a real variable; that is,
+\begin{eqnarray*}
+\sinh z=\frac{e^{z}-e^{-z}}{2}\quad \text{and}\quad  \cosh z=\frac{e^{z} +e^{- z}}{2}.
+\end{eqnarray*}
+
+
+The other four hyperbolic functions are defined in terms of the hyperbolic sine and cosine functions but the relations:
+\begin{align*}
+\tanh z&=\frac{\sinh z}{\cosh z}   &   \coth z&=\frac{\cosh z}{\sinh z}     \\
+\text{sech } z&=\frac{1}{\cosh z}       &  \text{csch } z&=\frac{1}{\sinh z}.
+\end{align*}
+</p>
+
+<hr>
+
 <h2>Explore the real and imaginary components</h2>
 
 <p>Use the following applet to explore the real and imaginary components of some complex functions</p>

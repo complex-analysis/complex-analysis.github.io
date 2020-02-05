@@ -208,63 +208,79 @@
 
 <div class="w3-responsive">
 <p>To understand the consequences of this definition, let us first see what happens when
-	we approach $z_0$ along the two simplest directions - horizontal and vertical. If we write
-	out
+	we approach $z_0$ along the two simplest directions - horizontal and vertical. If 
+	we set 
+	$$z= z_0 + h = (x_0+h)+iy_0,\quad h\in \mathbb R,$$
+	then $z \rightarrow z_0$ along a horizontal line as $h\rightarrow 0.$ 
+	If we write out
 	$$f(z) = u(x,y)+iv(x,y)$$
-in terms of its real and imaginary components,
-we start by writing
-$$z_0=x_0+iy_0, \qquad \Delta z = \Delta x+i\Delta y,$$
-and
-\begin{eqnarray*}
-\Delta w &amp;= &amp; f(z_0+\Delta z)-f(z_0)\\
-         &amp;= &amp; \left[ u \left( x_0 +\Delta x, y_0 +\Delta y \right) - u \left( x_0 , y_0 \right)\right] - i \left[ v \left( x_0 +\Delta x, y_0 +\Delta y \right) - v \left( x_0 , y_0 \right)\right].
-\end{eqnarray*}
-Assuming that the derivative exists, that is 
-$$f'(z_0)= \lim_{\Delta z \rightarrow 0}\frac{\Delta w}{\Delta z},$$
+in terms of its real and imaginary parts, then 
+$$f'(z_0)= \lim_{h \rightarrow 0}\frac{f(z_0+h)-f(z_0)}{h}$$
 then
-$$f'(z_0)= \lim_{(\Delta x, \Delta y) \rightarrow (0,0)}\left(\text{Re}\,\frac{\Delta w}{\Delta z}\right)+ i \lim_{(\Delta x, \Delta y) \rightarrow (0,0)}\left(\text{Im}\,\frac{\Delta w}{\Delta z}\right).$$
-Since these limits must exist independent of the direction, we let $(\Delta x, \Delta y)$ 
-tend to $(0,0)$ horizontally through the points $(\Delta x, 0)$. In this case the quotient $\Delta w / \Delta z$ becomes
-$$\frac{\Delta w}{\Delta z}=\frac{u \left( x_0 +\Delta x, y_0  \right) - u \left( x_0 , y_0 \right)}{\Delta x}+i \frac{v \left( x_0 +\Delta x, y_0  \right) - v \left( x_0 , y_0 \right)}{\Delta x}$$
-Thus
 \begin{eqnarray*}
-f'(z_0)&amp;= &amp;\lim_{\Delta x \rightarrow 0} \left[ \frac{u \left( x_0 +\Delta x, y_0  \right) - u \left( x_0 , y_0 \right)}{\Delta x}\right]+i \lim_{\Delta x \rightarrow 0} \left[ \frac{v \left( x_0 +\Delta x, y_0  \right) - v \left( x_0 , y_0 \right)}{\Delta x}\right] \\
+f'(z_0)&amp;= &amp; \lim_{h \rightarrow 0} \frac{f(z_0+h)-f(z_0)}{h}  = \lim_{h \rightarrow 0} \frac{f(x_0+h + iy_0)-f(x_0+iy_0)}{h} \\
+&amp;= &amp;  \lim_{h \rightarrow 0} \left[ \frac{u \left( x_0 +h, y_0  \right) - u \left( x_0 , y_0 \right)}{h}\right]+i \lim_{h \rightarrow 0} \left[ \frac{v \left( x_0 +h, y_0  \right) - v \left( x_0 , y_0 \right)}{h}\right] \\
 &amp;= &amp; u_x(x_0, y_0)+ i v_x(x_0,y_0)
 \end{eqnarray*}
 where $u_x(x_0, y_0)$ and  $v_x(x_0,y_0)$ denote the first-order partial derivatives with respect 
 to $x$ of the function $u$ and $v$, respectively, at $(x_0, y_0)$.
-If now we let $\Delta z$ tend to zero vertically through the points $(0,\Delta y )$. In this case 
-$\Delta x = 0$ and 
+If now we set
+$z = z_0+ik = x_0 + i(y_0+k), \quad k\in \mathbb R$,
+then $z\rightarrow 0$ along a vertical line as $k\rightarrow 0$. Therefore, we also have
 \begin{eqnarray*}
-\frac{\Delta w}{\Delta z} &amp;= &amp;  \frac{u \left( x_0 , y_0  +\Delta y\right) - u \left( x_0 , y_0 \right)}{i\Delta y}+i \frac{v \left( x_0 , y_0 +\Delta y \right) - v \left( x_0 , y_0 \right)}{i\Delta y}\\
-&amp;= &amp;\frac{v \left( x_0 , y_0  +\Delta y\right) - v \left( x_0 , y_0 \right)}{\Delta y}-i \frac{u \left( x_0 , y_0 +\Delta y \right) - u \left( x_0 , y_0 \right)}{\Delta y}
-\end{eqnarray*}
-Hence
-\begin{eqnarray*}
-f'(z_0)&amp;= &amp;\lim_{\Delta x \rightarrow 0} \left[ \frac{v \left( x_0 , y_0  +\Delta y\right) - v \left( x_0 , y_0 \right)}{\Delta y}-i \frac{u \left( x_0 , y_0 +\Delta y \right) - u \left( x_0 , y_0 \right)}{\Delta y}\right] \\
+f'(z_0)&amp;= &amp;  \lim_{k \rightarrow 0} \frac{f(z_0+ik)-f(z_0)}{ik}  = \lim_{h \rightarrow 0} \left[ -i \frac{f(x_0 + i(y_0+k))-f(x_0+iy_0)}{k} \right] \\
+&amp;= &amp; \lim_{k \rightarrow 0} \left[ \frac{v \left( x_0 , y_0  + k\right) - v \left( x_0 , y_0 \right)}{k}-i \frac{u \left( x_0 , y_0 +k \right) - u \left( x_0 , y_0 \right)}{k}\right] \\
 &amp;= &amp; v_y(x_0, y_0)- i u_y(x_0,y_0)
 \end{eqnarray*}
 where the partial derivatives of $u$ and $v$ are, this time, with respect to $y$.
 When we equate the real and imaginary parts of these two formulae for the complex derivative
 $f'(z_0)$, we discover that the real and components of $f(z)$ must satisfy a 
 homogeneous linear system of partial differential equations:
-$$u_x=v_y, \quad u_y=-v_x$$
+$$u_x=v_y, \quad u_y=-v_x.$$
 These are the <em>Cauchy-Riemann equations</em> named after the famous nineteenth
 century mathematicians Augustin-Louis Cauchy and Bernhard Riemann, two of the
 founders of modern complex analysis.
 </p>
 </div>
 
-<h2>Simulation</h2>
+<div class="w3-responsive">
+	<p class="theorem"><strong>Theorem 1:</strong> <em>A complex function $f(z)=u(x,y)+iv(x,y)$
+		has a complex derivative $f'(z)$ if and only if its real and imaginary part are 
+		continuously differentiable and satisfy</em> the Cauchy-Riemann equations
+	\begin{eqnarray*}
+	u_x=v_y, \quad u_y=-v_x
+	\end{eqnarray*}
+	<em>In this case, the complex derivative of $f(z)$ is equal to any of the following
+	expressions:
+	$$f'(z)=u_x+iv_x = v_y - i u_y.$$
+    </em></p>
+</div>
+<br/>
 
+<div class="w3-padding w3-responsive">
+	<p><strong>Example:</strong> Consider the function $f(z)=z^2$, which can be written as
+	$$z^2 = \left(x^2-y^2\right)+  i \left(2xy\right).$$
+	Its real part $u = x^2-y^2$ and imaginary part $v=2xy$ satisfy the Cauchy-Riemann equations,
+	since
+	$$u_x=2x = v_y, \quad u_y = -2y = -v_x.$$
+	Theorem 1 implies that $f(z)=z^2$ is differentiable. Its derivative turns out to be
+	$$f'(z)=u_x+iv_x = v_y - i u_y = 2x + i 2y = 2(x+iy) =  2z$$
+	</p>
+</div>
 
-
-
-
-    
-    <br><br><br><hr>
-    
-    <p style="font-size: 16px"><strong>Note:</strong> This applet was originally made by Montaga with CindyJS. The source code can be found on <a href="#">GitHub</a>.</p>
+	<div class="w3-responsive">
+	<p>Fortunately, the complex derivative obeys all of the usual rules that you learned in
+	real-variable calculus. For example,
+	$$\frac{d}{dz}z^n = nz^{n-1}, \quad \frac{d}{dz} e^{cz} = ce^{cz}, \quad \frac{d}{dz} \log z = \frac{1}{z},$$
+    and so on.  Here, the power $n$ can be non-integral — or even, in view of the identity
+	$z^n = e^n \log z$, complex, while $c$ is any complex constant. The <a href="complex_functions.html#trig-functions">exponential formulae</a>
+	for the complex trigonometric functions  implies that they also satisfy the standard rules
+	$$\frac{d}{dz}\sin z= \cos z, \quad \frac{d}{dz} \cos z = -\sin z.$$
+	The formulae for differentiating sums, products, ratios, inverses, and compositions of complex
+functions are all identical to their real counterparts, with similar proofs. Thus, fortunately,
+you don’t need to learn any new rules for performing complex differentiation!
+</p>
+</div>
 
 	<!-- link to the next page -->
 	<a href="thanks.html"><p class="nextPage">NEXT: Acknowledgements</p></a>
