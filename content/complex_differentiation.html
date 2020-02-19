@@ -216,7 +216,7 @@
 
 <h2>Cauchy-Riemann equations</h2>
 
-<p class="w3-responsive">To understand the consequences of this definition, let us first see what happens when
+<p class="w3-responsive">To understand the consequences of this definition (\ref{diff01}), let us first see what happens when
 	we approach $z_0$ along the two simplest directions - horizontal and vertical. If 
 	we set 
 	$$z= z_0 + h = (x_0+h)+iy_0,\quad h\in \mathbb R,$$
@@ -234,7 +234,7 @@ f'(z_0)&amp;= &amp; \lim_{h \rightarrow 0} \frac{f(z_0+h)-f(z_0)}{h}  = \lim_{h 
 where $u_x(x_0, y_0)$ and  $v_x(x_0,y_0)$ denote the first-order partial derivatives with respect 
 to $x$ of the function $u$ and $v$, respectively, at $(x_0, y_0)$.
 If now we set
-$z = z_0+ik = x_0 + i(y_0+k), \quad k\in \mathbb R$,
+$$z = z_0+ik = x_0 + i(y_0+k), \quad k\in \mathbb R,$$
 then $z\rightarrow 0$ along a vertical line as $k\rightarrow 0$. Therefore, we also have
 \begin{eqnarray*}
 f'(z_0)&amp;= &amp;  \lim_{k \rightarrow 0} \frac{f(z_0+ik)-f(z_0)}{ik}  = \lim_{h \rightarrow 0} \left[ -i \frac{f(x_0 + i(y_0+k))-f(x_0+iy_0)}{k} \right] \\
@@ -281,8 +281,8 @@ founders of modern complex analysis.
 	<p class="w3-responsive">Fortunately, the complex derivative obeys all of the usual rules that you learned in
 	real-variable calculus. For example,
 	$$\frac{d}{dz}z^n = nz^{n-1}, \quad \frac{d}{dz} e^{cz} = ce^{cz}, \quad \frac{d}{dz} \log z = \frac{1}{z},$$
-and so on.  Here, the power $n$ can be non-integral — or even, in view of the identity
-	$z^n = e^n \log z$, complex, while $c$ is any complex constant. The <a href="complex_functions.html#trig-functions">exponential formulae</a>
+and so on.  Here, the power $n$ can be a real number (or even complex in view of the identity
+	$z^n = e^n \log z$,  while $c$ is any complex constant. The <a href="complex_functions.html#trig-functions">exponential formulae</a>
 	for the complex trigonometric functions  implies that they also satisfy the standard rules
 	
 		$$\frac{d}{dz}\sin z= \cos z, \quad \frac{d}{dz} \cos z = -\sin z.$$
