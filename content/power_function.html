@@ -186,12 +186,15 @@ f(z) = z^c = \exp(c\log z), \quad \text{with}\quad z\neq  0.
 <div class="w3-responsive">
 <p>Due to the multi-valued nature of $\log z$, it follows that (\ref{gcp}) is also multi-valued for any non-integer value of $c$, with a branch point at $z=0$. In other words
 \begin{eqnarray*}
-f(z)=z^c=\exp(c \log z)=\exp(c \,\text{Log}\,z)\exp(2 n \pi  c\, i), \text{ with } n\in \mathbb Z.
+f(z) = z^c&amp;= &amp;\exp\left(c \log z\right) = \exp\left[c \left( \text{Log}\,z + 2n\pi i \right)\right], \text{ with } n\in \mathbb Z.
+	 %&amp;= &amp; \exp\left(c \,\text{Log}\,z\right)\cdot \exp\left(2 n \pi  c\, i\right) \\
+	 %&amp;= &amp; \exp\left[ c \left( \ln |z| +i\, \textbf{Arg} \left(z\right)\right) \right] \cdot \exp\left(2 n \pi  c\, i\right)\\
+	 %&amp;= &amp; |z|^c \cdot \exp\left[ c\left(\textbf{Arg} (z) + 2n\pi \right) i\right], \quad\text{ with } n\in \mathbb Z.
 \end{eqnarray*}
 </p>
 <p>On the other hand, we have that the <em>generalized exponential function</em>, for $c \neq 0 $, is defined as:
 \begin{eqnarray}\label{gef}
-f(z)=c^z=\exp(z\log c)=\exp\left(z \left(\text{Log}\,c +2 n \pi \, i\right)\right),
+f(z)=c^z=\exp(z\log c)=\exp\left[z \left(\text{Log}\,c +2 n \pi \, i\right)\right],
 \end{eqnarray}
 with $n\in \mathbb Z$.</p>
 
