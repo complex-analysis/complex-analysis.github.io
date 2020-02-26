@@ -31,7 +31,7 @@ let frameHeight = HEIGHT/100-1;
 let currentParticle = 0;
 
 let fshow = false;
-let tshow = false;
+let tshow = true;
 let starting = false;
 
 let buttonField;
@@ -54,7 +54,7 @@ function resetSketch() {
         particles[i] = new Particle(valX, valY, t, h);
     }
     fshow = false;
-    tshow = false;
+    tshow = true;
     
 }
 
@@ -88,7 +88,7 @@ function traceShow() {
 function draw() {
     
     //This is for drawing the trace of particles
-    if(tshow==false){
+    if(tshow==true){
         fill(0,6);
     } else{
         fill(0,110);
