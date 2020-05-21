@@ -147,7 +147,7 @@ function draw() {
     
 }
 
-function mousePressed() {
+function touchStarted() {
     starting = true;
 }
 
