@@ -322,7 +322,7 @@ class Mandelbrot {
     
 }
 
-function mouseClicked() {
+function touchStarted() {
     starting = true;
     if (changeC) {
         changeC = false;
