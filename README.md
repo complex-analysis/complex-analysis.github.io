@@ -3,7 +3,7 @@ A visual and interactive introduction to [Complex Analysis](https://complex-anal
 
 ISBN 978-0-6485736-0-9
 
-![alt tag](https://github.com/complex-analysis/complex-analysis.github.io/blob/master/images/preview.png)
+![alt tag](https://2.bp.blogspot.com/-KBBRUufstws/XIzQlUY26pI/AAAAAAAAXnA/KDodGKOF9w4nGkPv03RHY2DeHeQkL-z4ACLcBGAs/s1600/complex_prev.gif)
 
 ---
 #### INTRO
@@ -25,8 +25,7 @@ This book is an interactive introduction to the theory and applications of compl
 
 Some of the topics covered here are basic arithmetic of complex numbers, complex functions, domain coloring, analytic landscapes and some applications of conformal mappings.
 
-What distinguishes this book from other texts in the first instance is the
-use of interactive applets that allow you to explore properties of complex numbers geometrically and analyze complex functions by using different techniques to visualize them. For the design of applets I used the following open-source softwares: [GeoGebra](https://geogebra.org/), [p5.js](https://p5js.org/), [Cindy.js](https://cindyjs.org/) and [MathCell](http://mathcell.org/).
+What distinguishes this online book from other traditional texts in the first instance is the use of interactive applets that allow you to explore properties of complex numbers geometrically and analyze complex functions by using different techniques to visualize them. For the design of applets I used the following open-source softwares: [GeoGebra](https://geogebra.org/), [p5.js](https://p5js.org/), [Cindy.js](https://cindyjs.org/) and [MathCell](http://mathcell.org/).
 
 ---
 
