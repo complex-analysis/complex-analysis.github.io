@@ -3,7 +3,7 @@ A visual and interactive introduction to [Complex Analysis](https://complex-anal
 
 ISBN 978-0-6485736-0-9
 
-![alt tag](https://2.bp.blogspot.com/-KBBRUufstws/XIzQlUY26pI/AAAAAAAAXnA/KDodGKOF9w4nGkPv03RHY2DeHeQkL-z4ACLcBGAs/s1600/complex_prev.gif)
+![alt tag](https://github.com/complex-analysis/complex-analysis.github.io/blob/master/images/preview.png)
 
 ---
 #### INTRO
