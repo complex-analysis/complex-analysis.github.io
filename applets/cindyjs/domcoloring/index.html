@@ -14,18 +14,21 @@
   <script type="text/javascript" src="../assets/Cindy.js"></script>
   <script type="text/javascript" src="../assets/CindyGL.js"></script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-155852901-1');
-</script>
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
 
-  <script id="csinit" type="text/x-cindyscript">
-    f(z, a, b, c, d, e, A, B, C, D) := z;
+    gtag('config', 'UA-155852901-1');
+  </script>
+
+<script id="csinit" type="text/x-cindyscript">
+f(z, a, b, c, d, e, A, B, C, D) := z;
 
 grid1=true;   
 grid2=true;
@@ -37,8 +40,9 @@ iscam=false;
 
 t0 = seconds();
 </script>
-  <script id="csdraw" type="text/x-cindyscript">
-    //UI
+
+<script id="csdraw" type="text/x-cindyscript">
+//UI
 
 /*//speed that I don't need
 x=S.x;
@@ -95,10 +99,7 @@ drawtext(E+(.03,.03),"e");
 drawtext((1,E.y)+(.05,-.1),"-1");
 drawtext((1,E.y)+(1.08,-.1),"+1");
 
-
-
 //PLOT
-
 
 hsvToRGB(h, s, v) := (
   regional(j, p, q, t, f);
@@ -178,6 +179,7 @@ colorplot(
 draw((1,-1),(1,1), color->(0,0,0), size->2);
 
 </script>
+
   <script type="text/javascript">
     var cdy = CindyJS({
       ports: [{
@@ -432,7 +434,7 @@ draw((1,-1),(1,1), color->(0,0,0), size->2);
 
       </div>
 
-      <div class="w3-hide-small w3-hide-medium">
+      <div style="float: left;" class="w3-hide-small w3-hide-medium">
         <p>You can also select one function of the following list:</p>
         <select id="sel" onchange="sel(event, this)" style="width:16em;">
           <option>z</option>
