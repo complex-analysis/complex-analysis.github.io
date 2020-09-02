@@ -204,9 +204,16 @@ for the remaining values of $z$.
 
 <h2>Mappings by $1/z$</h2>
 
-<p>An interesting property of the mapping $w = 1/z$ is that it transforms circles and lines into circles and lines.</p>
+<p>An interesting property of the mapping $w = 1/z$ is that it transforms 
+	circles and lines into circles and lines.</p>
 
-<p>You can observe this intuitively in the following applet. Choose a Line or Circle. Drag points around on the left-side, you can also drag the line or circle. Observe what happens to the image of each point on the right-side window.</p>
+<p>You can observe this intuitively in the following applet. Things to try:
+	<ul>
+		<li>Select between a <code>Line</code> or <code>Circle</code>.</li>
+		<li>Drag points around on the left-side window. You can also change the position 
+			of the line or circle by dragging the grey points.</li>
+	</ul>
+</p>
 
 <div class="w3-hide-small">
 <!-- ctl=play button; sfsb=fullscreen button-->
@@ -216,6 +223,17 @@ for the remaining values of $z$.
     <p><i class="fas fa-sad-tear"></i> Sorry, the applet is  not supported for small screens. Rotate your device to landscape. Or resize your window so it's more wide than tall.</p>
 </div>
 <br>
+
+<p>
+	Observe carefully what happens to the points $w_1, w_2$ (the image of $z_1$ and $z_2$, respectively) on the $uv$-plane, 
+	shown on the right-side window.
+	   <ul>
+		   <li>What do you notice when the line on the $xy$-plane crosses the origin?</li>
+		   <li>What happens when the circle on the $xy$-plane crosses the origin?</li>
+	   </ul>
+</p>
+
+
 
 <!--<p>If a point $w = u + iv$ is the image of a nonzero point $z = x + iy$ in the finite
 plane under the transformation $w = 1/z$, and considering the equation
@@ -256,9 +274,9 @@ not both zero.
 
 <div class="w3-responsive">
 <p>Now, using the relations
-\begin{eqnarray*}
+\begin{eqnarray}\label{exp01}
 x=\frac{z+\overline{z}}{2},\quad y=\frac{z-\overline{z}}{2i},
-\end{eqnarray*}
+\end{eqnarray}
 we can rewrite equation (\ref{circle01}) in the form
 \begin{eqnarray}\label{circle03}
 2Az\overline{z}+(B-iC)z+(B+iC)\overline{z}+2D=0.
@@ -268,9 +286,9 @@ Since $w=1/z$, equation (\ref{circle03}) becomes
 2Dw\overline{w}+(B+iC)w+(B-iC)\overline{w}+2A=0
 \end{eqnarray*}
 and using the relations
-\begin{eqnarray*}
+\begin{eqnarray}\label{exp02}
 u=\frac{w+\overline{w}}{2},\quad v=\frac{w-\overline{w}}{2i},
-\end{eqnarray*}
+\end{eqnarray}
 we obtain
 \begin{eqnarray}\label{circle04}
 D(u^2+v^2)+Bu-Cv+A=0
@@ -290,9 +308,12 @@ line through the origin in the $w$ plane.</li>
 </p>
 
 
-<!--<div class="w3-responsive">
-
-</div>-->
+<div class="w3-padding">
+	<p><strong>Exercise:</strong>  Verify that the expression 
+		\(D(u^2+v^2)+Bu-Cv+A=0\) can be obtained from (\ref{circle01}) using the relations 
+		(\ref{exp01}) and (\ref{exp02}).
+	</p>
+</div>
 
 
     
