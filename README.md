@@ -1,9 +1,6 @@
 # Complex Analysis
 A visual and interactive introduction to [Complex Analysis](https://complex-analysis.github.io).
 
-##### Juan Carlos Ponce Campuzano 
-##### 2019
-
 ##### ISBN 978-0-6485736-0-9
 
 ![alt tag](https://github.com/complex-analysis/complex-analysis.github.io/blob/master/images/preview.png)
