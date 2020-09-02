@@ -6,7 +6,7 @@ A visual and interactive introduction to [Complex Analysis](https://complex-anal
 ![alt tag](https://github.com/complex-analysis/complex-analysis.github.io/blob/master/images/preview.png)
 
 ---
-#### INTRO
+## INTRO
 The study of complex analysis is important for students in engineering and the
 physical sciences and is a central subject in mathematics. In addition to being
 mathematically elegant, complex analysis provides powerful tools for solving
@@ -19,7 +19,7 @@ Ready to get started? Skip ahead to the [Table of Contents](https://complex-anal
 
 ---
 
-#### WHAT IT IS ABOUT
+## WHAT IT IS ABOUT
 
 This book is an interactive introduction to the theory and applications of complex functions 
 from a visual point of view. However, it <strong>does not</strong> cover all the topics of a 
@@ -48,7 +48,7 @@ are ephemeral things in comparison with mathematical ideas, which are timeless.
 
 ---
 
-#### ISSUES?
+## ISSUES?
 Of course, no project such as this can be free from errors and incompleteness. 
 If you find applets that don't run correctly, or the examples that aren't explained 
 quite right, or a typo, please 
@@ -56,12 +56,12 @@ quite right, or a typo, please
 
 ---
 
-#### DESIGN CREDITS
+## DESIGN CREDITS
 The design of this book is based upon the fantastic book [Collision Detection](http://www.jeffreythompson.org/collision-detection/index.php) written by [Jeffrey Thompson](http://www.jeffreythompson.org/). If you want to learn about the algorithms behind collisions using basic geometrical shapes, you should check it!
 
 --- 
 
-#### SUPPORT THIS PROJECT
+## SUPPORT THIS PROJECT
 If you like this work and would like to suppor it, you can make a 
 direct donation using the link below. Thank you for your support!
 
@@ -70,12 +70,6 @@ direct donation using the link below. Thank you for your support!
 
 ---
 
-#### LICENSE
+## LICENSE
 
 This book is released under the license: [Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/).
-
----
-
-#### ISSUES
-
-Please, report any typos or issues [here](https://github.com/complex-analysis/complex-analysis.github.io/issues).
