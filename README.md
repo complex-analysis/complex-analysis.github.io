@@ -34,7 +34,7 @@ some applications of conformal mappings.
 What distinguishes this online book from other traditional texts in the first instance is the use of interactive applets that allow you to explore properties of complex numbers geometrically and analyze complex functions by using different techniques to visualize them. For the design of applets I used the following open-source softwares: [GeoGebra](https://geogebra.org/), [p5.js](https://p5js.org/), [Cindy.js](https://cindyjs.org/) and [MathCell](http://mathcell.org/).
 
 Although I advocate for the use of computers as an aid to geometric reasoning,
-I highly encorage you to practice your problem solving skills by solving
+I highly encourage you to practice your problem solving skills by solving
 the suggested exercises (or filling the missing details) that you will 
 encounter throughout the sections.
 
