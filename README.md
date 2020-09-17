@@ -62,7 +62,7 @@ The design of this book is based upon the fantastic book [Collision Detection](h
 --- 
 
 ## SUPPORT THIS PROJECT
-If you like this work and would like to suppor it, you can make a 
+If you like this work and would like to support it, you can make a 
 direct donation using the link below. Thank you for your support!
 
 * [Donate](https://paypal.me/jcarlosponce/3)
