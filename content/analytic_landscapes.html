@@ -1,209 +1,265 @@
 <!doctype html>
 <html>
+
 <head>
 
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
-	<title>Complex Analysis</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+  <title>Complex Analysis</title>
 
-	<!-- dublin core -->
-	<meta name="dc.title" CONTENT="Complex Analysis">
-	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
-	<meta name="dc.date" CONTENT="26-01-2019">
-    <meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
-	<meta name="dc.type" CONTENT="Interactive Resource">
-	<meta name="dc.format" CONTENT="HTML">
-	<meta name="dc.language" CONTENT="en-US">
-	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+  <!-- dublin core -->
+  <meta name="dc.title" CONTENT="Complex Analysis">
+  <meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+  <meta name="dc.date" CONTENT="26-01-2019">
+  <meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
+  <meta name="dc.type" CONTENT="Interactive Resource">
+  <meta name="dc.format" CONTENT="HTML">
+  <meta name="dc.language" CONTENT="en-US">
+  <meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 
-	<!-- social media cards -->
-	<meta property="og:title" content="Complex Analysis">
-	<meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
-	<meta property="og:type" content="website">
-	<!--<meta property="og:image" content="">
+  <!-- social media cards -->
+  <meta property="og:title" content="Complex Analysis">
+  <meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta property="og:type" content="website">
+  <!--<meta property="og:image" content="">
 	<meta property="og:url" content="">-->
-	<meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
-	<meta property="og:site_name" content="Complex Analysis">
-    
-	
-	<!-- FONTS AND CSS -->
-	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
-	<link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet' type='text/css'>
-	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="../css/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" >
-	<!-- CODE PRETTIFY -->
-	<!-- via: https://github.com/google/code-prettify -->
-	<script src="../js/run_prettify.js"></script>
+  <meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+  <meta property="og:site_name" content="Complex Analysis">
 
-	
 
-	<!-- JQUERY FANCY ADDITIONS -->
-	<!-- add code class, hover text, etc -->
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script>
+  <!-- FONTS AND CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet'
+    type='text/css'>
+  <link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="../css/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <!-- CODE PRETTIFY -->
+  <!-- via: https://github.com/google/code-prettify -->
+  <script src="../js/run_prettify.js"></script>
 
-		$(document).ready(function() {
 
-			// prettyprint the code, pls
-			$('pre').addClass('prettyprint lang-java');
 
-			// add word-breaks to anything with a / or - in it
-			$('h1').each(function() {
-				var t = $(this).text();
-				t = t.replace('/', '/<wbr>');
-				t = t.replace('-', '-<wbr>');
-				$(this).html(t);
-			});
+  <!-- JQUERY FANCY ADDITIONS -->
+  <!-- add code class, hover text, etc -->
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script>
+    $(document).ready(function () {
 
-			// set formatting
-			resizeCommands();
-		});
+      // prettyprint the code, pls
+      $('pre').addClass('prettyprint lang-java');
 
-		// when the window gets resized, do some stuff to keep everything
-		// looking pretty
-		$(window).resize( function() {
-			resizeCommands();
-		});
+      // add word-breaks to anything with a / or - in it
+      $('h1').each(function () {
+        var t = $(this).text();
+        t = t.replace('/', '/<wbr>');
+        t = t.replace('-', '-<wbr>');
+        $(this).html(t);
+      });
 
-		// things to do when the page is loaded or window resized
-		function resizeCommands() {
-			// large-screen stuff...
-			if ($(window).width() > 600) {
+      // set formatting
+      resizeCommands();
+    });
 
-				// long headline on intro page
-				// $('#introHeadline').html('TABLE OF CONTENTS');
+    // when the window gets resized, do some stuff to keep everything
+    // looking pretty
+    $(window).resize(function () {
+      resizeCommands();
+    });
 
-				// menu hover stuff on larger screens
-				// (does weird formatting on larger screens)
-				// hover over title to show "Table of Contents"
-				$('#title a').hover(
-					function() {
-						$('#title a').text('Table of Contents');
-					},
-					function() {
-						$('#title a').text('Complex Analysis');	// set back when moving out
-					}
-				);
+    // things to do when the page is loaded or window resized
+    function resizeCommands() {
+      // large-screen stuff...
+      if ($(window).width() > 600) {
 
-				// set prev/next titles
-				$('#prev a').hover(
-					function() {
-						$('#title a').text('Prev: Riemann Sphere');
-					},
-					function() {
-						$('#title a').text('Complex Analysis');
-					}
-				);
-				$('#next a').hover(
-					function() {
-						$('#title a').text('Next: Domain Coloring');
-					},
-					function() {
-						$('#title a').text('Complex Analysis');
-					}
-				);
-			}
+        // long headline on intro page
+        // $('#introHeadline').html('TABLE OF CONTENTS');
 
-			// small-screen stuff
-			else {
-				// short headline on intro page
-				// $('#introHeadline').html('INTRO');
-			}
-		}
-	</script>
+        // menu hover stuff on larger screens
+        // (does weird formatting on larger screens)
+        // hover over title to show "Table of Contents"
+        $('#title a').hover(
+          function () {
+            $('#title a').text('Table of Contents');
+          },
+          function () {
+            $('#title a').text('Complex Analysis'); // set back when moving out
+          }
+        );
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        // set prev/next titles
+        $('#prev a').hover(
+          function () {
+            $('#title a').text('Prev: Riemann Sphere');
+          },
+          function () {
+            $('#title a').text('Complex Analysis');
+          }
+        );
+        $('#next a').hover(
+          function () {
+            $('#title a').text('Next: Domain Coloring');
+          },
+          function () {
+            $('#title a').text('Complex Analysis');
+          }
+        );
+      }
 
-  gtag('config', 'UA-155852901-1');
-</script>
-    
-    
-    <!-- Cindy.js
+      // small-screen stuff
+      else {
+        // short headline on intro page
+        // $('#introHeadline').html('INTRO');
+      }
+    }
+  </script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-155852901-1');
+  </script>
+
+  <script src="../applets/mathcell/math.js"></script>
+  <script src="../applets/mathcell/mathcell.js"></script>
+
+
+  <!-- Cindy.js
     <link rel="stylesheet" href="../dclandscape/app.css" />
     <link rel="stylesheet" href="../dclandscape/CindyJS.css" /> -->
-    <script type="text/javascript" src="../applets/cindyjs/assets/Cindy.js"></script>
-    <script type="text/javascript" src="../applets/cindyjs/assets/CindyGL.js"></script>
-    <script type="text/javascript" src="../applets/cindyjs/assets/symbolic.js"></script>
-    <!-- Cindy.js -->
-	
+  <script type="text/javascript" src="../applets/cindyjs/assets/Cindy.js"></script>
+  <script type="text/javascript" src="../applets/cindyjs/assets/CindyGL.js"></script>
+  <script type="text/javascript" src="../applets/cindyjs/assets/symbolic.js"></script>
+  <!-- Cindy.js -->
+
 </head>
 
 <body>
-	<div id="wrapper">
-        
-        <header><p><span id="prev"><a href="riemann_sphere.html">&larr;</a></span><span id="title"><a href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a href="domain_coloring.html">&rarr;</a></span><div class="clear"></div></p></header>
+  <div id="wrapper">
 
-             
-<h1>Analytic Landscapes</h1>
+    <header>
+      <p><span id="prev"><a href="riemann_sphere.html">&larr;</a></span><span id="title"><a
+            href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a
+            href="domain_coloring.html">&rarr;</a></span>
+        <div class="clear"></div>
+      </p>
+    </header>
 
-<hr>
 
-<h2>A brief history</h2>
+    <h1>Analytic Landscapes</h1>
+
+    <hr>
+
+    <h2>A brief history</h2>
+
+    <p>A traditional concept for visualizing complex functions is the so called <em>analytic landscape</em>.
+      Probably introduced by <a href="https://fr.wikipedia.org/wiki/Edmond_Maillet">Edmond Maillet</a> in 1903, it
+      depicts the
+      graph of the absolute value of a function.</p>
+
+    <p>In the first half of the preceding century analytic landscapes became rather popular. The Figure 1 reproduces a
+      historical illustration from the book <em>Funktionentafeln mit Formeln und Kurven</em> by Jahnke and Emde of 1909.
+      It shows the
+      analytic landscape of the complex <a href="http://mathworld.wolfram.com/GammaFunction.html">Gamma function</a> and
+      reached an almost
+      iconic status. Today it is hard to believe that this detailed hand-drawn picture could be created without the help
+      of computers!<p>
+
+        <figure class="w3-center">
+          <img class="w3-image w3-mobile" src="../applets/cindyjs/dclandscape/Jahnke_gamma_function.png"
+            alt="Analytic landscape" title="Analytic landscape" style="width:90%;">
+          <figcaption>
+            <b>Figure 1:</b> A historical analytic landscape of $\Gamma(z)$.
+          </figcaption>
+        </figure>
+
+        <!--<p><img class="center" src="../images/Jahnke_gamma_function.png" alt="Analytic landscape" title="Analytic landscape"></p>-->
+
+        <p>In the era of black-and-white illustrations this shortcoming was often compensated by endowing the analytic
+          landscape with lines of constant argument as in the previous figure, where the argument is explicitly
+          indicated by its numerical value. Modern computer technology allows us to achieve the same effect much better
+          using colors, which yields the <em>colored analytic landscape</em> shown in Figure 2.</p>
+
+        <figure class="w3-center">
+          <!--<img class="w3-image w3-mobile" src="../applets/cindyjs/dclandscape/coloredlandscape.jpg"
+            alt="Colored analytic landscape" title="Colored analytic landscape" style="width:90%;">-->
+            <div class="mathcell" style="width: 6in; height: 6in">
+              <script>
+                var parent = document.currentScript.parentNode;
     
-<p>A traditional concept for visualizing complex functions is the so called <em>analytic landscape</em>. 
-  Probably introduced by <a href="https://fr.wikipedia.org/wiki/Edmond_Maillet">Edmond Maillet</a> in 1903, it depicts the 
-  graph of the absolute value of a function.</p>
-
-<p>In the first half of the preceding century analytic landscapes became rather popular. The Figure 1 reproduces a 
-  historical illustration from the book <em>Funktionentafeln mit Formeln und Kurven</em> by Jahnke and Emde of 1909. It shows the 
-  analytic landscape of the complex <a href="http://mathworld.wolfram.com/GammaFunction.html">Gamma function</a> and reached an almost 
-  iconic status. Today it is hard to believe that this detailed hand-drawn picture could be created without the help of computers!<p>
-
-<figure class="w3-center">
-     <img class="w3-image w3-mobile" src="../applets/cindyjs/dclandscape/Jahnke_gamma_function.png" alt="Analytic landscape" title="Analytic landscape" style="width:90%;">
-         <figcaption>
-             <b>Figure 1:</b> A historical analytic landscape of $\Gamma(z)$.
-         </figcaption>
-  </figure>
-
-<!--<p><img class="center" src="../images/Jahnke_gamma_function.png" alt="Analytic landscape" title="Analytic landscape"></p>-->
+                var id = generateId();
+                parent.id = id;
     
-<p>In the era of black-and-white illustrations this shortcoming was often compensated by endowing the analytic landscape with lines of constant argument as in the previous figure, where the argument is explicitly indicated by its numerical value. Modern computer technology allows us to achieve the same effect much better using colors, which yields the <em>colored analytic landscape</em> shown in Figure 2.</p>
-
-
-<figure class="w3-center w3-grayscale-min">
-    <img class="w3-image w3-mobile" src="../applets/cindyjs/dclandscape/coloredlandscape.jpg" alt="Colored analytic landscape" title="Colored analytic landscape" style="width:90%;">
-        <figcaption>
+                MathCell(id, []);
+    
+                parent.update = function (id) {
+    
+                  var p = parametric(
+                    (x, y) => [x, y, gamma(complex(x, y))], [-4.999, 4.999, 201], [-4.999, 4.999, 201], {
+                      complexFunction: 'abs',
+                      colormap: 'complexArgument'
+                    }
+                  );
+    
+                  var config = {
+                    type: 'threejs',
+                    zMax: 8,
+                    viewpoint: [-0.2,-1,0.5]
+                  };
+    
+                  evaluate(id, [p], config);
+    
+                }
+    
+                parent.update(id);
+              </script>
+            </div>
+            <figcaption>
             <b>Figure 2:</b> Colored analytic landscape of $\Gamma(z)$.
-        </figcaption>
-</figure>
+          </figcaption>
+        </figure>
 
 
-<hr>
+        <hr>
 
-<div id="complexLandscapes">
-    
-<h2>Dynamic Exploration</h2>
-    
-    <p>Complex functions $ f:\mathbb{C}\to\mathbb{C} $ can be visualized by plotting the function $g: \mathbb{R^2} \to \mathbb{R}$ with $$g(x,y) = |f\left(x + i y\right)|.$$ 
-      The color of each point $\left(x, y, g(x,y)\right)$ indicates <a href="terminology_notation.html#phase-argument" target="_blank">the phase (or argument)</a> of the complex number $f(x + i y)$.</p>
-    
-    <p>In the applet below you can explore colored analytic landscapes. Use the blue slider on the right side for zooming out/in. The black slider defines a real scalar <strong>a</strong> $ \in [ -0.14, 1.14]$.</p>
+        <div id="complexLandscapes">
 
-  
-    <script id="csmousedown" type="text/x-cindyscript">
-      playanimation();
+          <h2>Dynamic Exploration</h2>
+
+          <p>Complex functions $ f:\mathbb{C}\to\mathbb{C} $ can be visualized by plotting the function $g: \mathbb{R^2}
+            \to \mathbb{R}$ with $$g(x,y) = |f\left(x + i y\right)|.$$
+            The color of each point $\left(x, y, g(x,y)\right)$ indicates <a
+              href="terminology_notation.html#phase-argument" target="_blank">the phase (or argument)</a> of the complex
+            number $f(x + i y)$.</p>
+
+          <p>In the applet below you can explore colored analytic landscapes. Use the blue slider on the right side for
+            zooming out/in. The black slider defines a real scalar <strong>a</strong> $ \in [ -0.14, 1.14]$.</p>
+
+
+          <script id="csmousedown" type="text/x-cindyscript">
+            playanimation();
       framesdelay=0;
       sx = mouse().x;
       sy = mouse().y;
       dragging = sx < .5;
     </script>
-    <script id="csmouseup" type="text/x-cindyscript">
-      framesdelay=0;
+          <script id="csmouseup" type="text/x-cindyscript">
+            framesdelay=0;
       dragging = false;
     </script>
-    
-      
-      <script id="csinit" type="text/x-cindyscript">
-      speciala = .5;
+
+
+          <script id="csinit" type="text/x-cindyscript">
+            speciala = .5;
       smootha(x) := if(x<speciala,
         (-1/(speciala+.01))*(x-speciala)^2+speciala,
         (1/(1.01-speciala))*(x-speciala)^2+speciala
@@ -469,9 +525,9 @@
         if(id==1, 0, id) //return value - id 0 means we stop our DFS
       );
       </script>
-      
-      <script id="csdraw" type="text/x-cindyscript">
-      //the following is executed for every rendered frame
+
+          <script id="csdraw" type="text/x-cindyscript">
+            //the following is executed for every rendered frame
       if (dragging,
           dx = 3 * (sx - mouse().x); dy = 3 * (sy - mouse().y);,
           dx = .9*dx; dy = .9*dy;
@@ -570,129 +626,170 @@
       drawtext((.64, .420),"Z+");
       </script>
 
-      
-      </script>
-      
-<div id="applet">
-      <div class="w3-hide-small">
-          
-      <div  id="CSCanvas" style="border:0px"></div>
-      
-      
-      <script type="text/javascript">
-          var cdy = CindyJS({canvasname:"CSCanvas",
-                      scripts: "cs*",
-                      animation: {autoplay: true},
-                      csconsole: false,
-                      use : ["CindyGL", "symbolic"],
-                      geometry: [ { name:"PA", kind:"P", type:"Free", pos: [.5,.355,1], narrow: true, color: [1,1,1], size:8 },
-                                  { name:"PC", kind:"P", type:"Free", pos: [.5,.1,1], narrow: true, color: [0,1,1], size:8 } ],
-                      ports: [{
-                        id: "CSCanvas",
-                        width: 790,
-                        height: 520,
-                        transform: [ { visibleRect: [ -0.7, -0.5, 0.7, 0.5 ] } ]
-                      }]
-          });
-      </script>
-      <br>
-      
-      <!--<span style="font-size:18px">f(z) = </span><input type="text" id="inp" value="(z-1)/(z^2+z+a)"  onkeypress="if((event.which ? event.which : event.keyCode)==13) { cdy.evokeCS('fun(z) := (' + this.value + '); init();'); }" size="55" style="font-size:18px">-->
-      </div>
-  
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+          </script>
+
+          <div id="applet">
+            <div class="w3-hide-small">
+
+              <div id="CSCanvas" style="border:0px"></div>
+
+
+              <script type="text/javascript">
+                var cdy = CindyJS({
+                  canvasname: "CSCanvas",
+                  scripts: "cs*",
+                  animation: {
+                    autoplay: true
+                  },
+                  csconsole: false,
+                  use: ["CindyGL", "symbolic"],
+                  geometry: [{
+                      name: "PA",
+                      kind: "P",
+                      type: "Free",
+                      pos: [.5, .355, 1],
+                      narrow: true,
+                      color: [1, 1, 1],
+                      size: 8
+                    },
+                    {
+                      name: "PC",
+                      kind: "P",
+                      type: "Free",
+                      pos: [.5, .1, 1],
+                      narrow: true,
+                      color: [0, 1, 1],
+                      size: 8
+                    }
+                  ],
+                  ports: [{
+                    id: "CSCanvas",
+                    width: 790,
+                    height: 520,
+                    transform: [{
+                      visibleRect: [-0.7, -0.5, 0.7, 0.5]
+                    }]
+                  }]
+                });
+              </script>
+              <br>
+
+              <!--<span style="font-size:18px">f(z) = </span><input type="text" id="inp" value="(z-1)/(z^2+z+a)"  onkeypress="if((event.which ? event.which : event.keyCode)==13) { cdy.evokeCS('fun(z) := (' + this.value + '); init();'); }" size="55" style="font-size:18px">-->
+            </div>
+
+
+            <script type="text/javascript"
+              src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+            </script>
+            <script type="text/x-mathjax-config">
+              MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </script>
 
 
-<div class="w3-hide-small">
- <div style="display: flex; justify-content: space-between; width: 800px;">
-    <p>Select one function f(z) from the following list:
-<select id="sel" style="width:10em;">
-    <option data-a="1" data-p="z-1" data-q="z^2+z+1">(z-1)/(z^2+z+1)</option>
-    <option data-a="1" data-p="z">z</option>
-    <option data-zoom=".15" data-p="z^2">z^2</option>
-    <option data-a="1" data-zoom="0.1" data-q="z">1/z</option>
-    <option data-a="1" data-zoom="0.1" data-q="z^3">1/z^3</option>
-    <option data-zoom="0.1" data-p="z^7+z+2">z^7+z+2</option>
-    <option data-a="1" data-zoom="0.1" data-q="z^5-1">1/(z^5-1)</option>
-    <option data-a="1" data-zoom="0.1" data-p="z^5+1" data-q="z^5-1">(z^5+1)/(z^5-1)</option>
-    <option data-a="1" data-p="z-1" data-q="z*z+1">(z-1)/(z*z+1)</option>
-    <option data-a="1" data-p="z*z+1" data-q="z*z-1">(z*z+1)/(z*z-1)</option>
-    <option data-a="1" data-q="z^round(20*a-10)-1">1/(z^round(20*a-10)-1)</option>
-    <option data-a="1" data-p="sqrt(z)">sqrt(z)</option>
-    <option data-a="1" data-p="log(z)">log(z)</option>
-    <option data-a="1" data-p="sin(z)">sin(z)</option>
-    <option data-a="1" data-p="exp(z)">exp(z)</option>
-    <option data-a="1" data-p="sqrt(1-z*z)">sqrt(1-z*z)</option>
-    <option data-a="1" data-zoom="0" data-p="sin(z)" data-q="cos(z)">tan(z)</option>
-    <option data-a=".2" data-p="sin(z+3*a)" data-q="sin(z+i)">sin(z+3*a)/sin(z+i)</option>
-    <option data-a="1/3" data-zoom="0.1" data-q="sin(pi*a+z^3)">1/sin(pi*a+z^3)</option>
-    <option data-a="1" data-zoom="0.05" data-q="sin((z+1)/(z-1))">1/sin((z+1)/(z-1))</option>
-    <option data-a="1" data-zoom="-.2" data-p="z^z">z^z</option>
-    <option data-a="1" data-zoom="-.2" data-p="log(z^z)" data-q="z">log(z^z)/z</option>
-</select></p>
-<div><a href="../applets/cindyjs/dclandscape/" target="_blank" title="Open Tab"><i class="fas fa-expand"></i></a></div>
-</div>
-</div>
+            <div class="w3-hide-small">
+              <div style="display: flex; justify-content: space-between; width: 800px;">
+                <p>Select one function f(z) from the following list:
+                  <select id="sel" style="width:10em;">
+                    <option data-a="1" data-p="z-1" data-q="z^2+z+1">(z-1)/(z^2+z+1)</option>
+                    <option data-a="1" data-p="z">z</option>
+                    <option data-zoom=".15" data-p="z^2">z^2</option>
+                    <option data-a="1" data-zoom="0.1" data-q="z">1/z</option>
+                    <option data-a="1" data-zoom="0.1" data-q="z^3">1/z^3</option>
+                    <option data-zoom="0.1" data-p="z^7+z+2">z^7+z+2</option>
+                    <option data-a="1" data-zoom="0.1" data-q="z^5-1">1/(z^5-1)</option>
+                    <option data-a="1" data-zoom="0.1" data-p="z^5+1" data-q="z^5-1">(z^5+1)/(z^5-1)</option>
+                    <option data-a="1" data-p="z-1" data-q="z*z+1">(z-1)/(z*z+1)</option>
+                    <option data-a="1" data-p="z*z+1" data-q="z*z-1">(z*z+1)/(z*z-1)</option>
+                    <option data-a="1" data-q="z^round(20*a-10)-1">1/(z^round(20*a-10)-1)</option>
+                    <option data-a="1" data-p="sqrt(z)">sqrt(z)</option>
+                    <option data-a="1" data-p="log(z)">log(z)</option>
+                    <option data-a="1" data-p="sin(z)">sin(z)</option>
+                    <option data-a="1" data-p="exp(z)">exp(z)</option>
+                    <option data-a="1" data-p="sqrt(1-z*z)">sqrt(1-z*z)</option>
+                    <option data-a="1" data-zoom="0" data-p="sin(z)" data-q="cos(z)">tan(z)</option>
+                    <option data-a=".2" data-p="sin(z+3*a)" data-q="sin(z+i)">sin(z+3*a)/sin(z+i)</option>
+                    <option data-a="1/3" data-zoom="0.1" data-q="sin(pi*a+z^3)">1/sin(pi*a+z^3)</option>
+                    <option data-a="1" data-zoom="0.05" data-q="sin((z+1)/(z-1))">1/sin((z+1)/(z-1))</option>
+                    <option data-a="1" data-zoom="-.2" data-p="z^z">z^z</option>
+                    <option data-a="1" data-zoom="-.2" data-p="log(z^z)" data-q="z">log(z^z)/z</option>
+                  </select></p>
+                <div><a href="../applets/cindyjs/dclandscape/" target="_blank" title="Open Tab"><i
+                      class="fas fa-expand"></i></a></div>
+              </div>
+            </div>
 
-<script type="text/javascript">
-    var select = document.getElementById("sel");
-    select.addEventListener('change', function(event) {
-    var p = this.options[this.selectedIndex].getAttribute("data-p") || "1";
-    var q = this.options[this.selectedIndex].getAttribute("data-q") || "1";
+            <script type="text/javascript">
+              var select = document.getElementById("sel");
+              select.addEventListener('change', function (event) {
+                var p = this.options[this.selectedIndex].getAttribute("data-p") || "1";
+                var q = this.options[this.selectedIndex].getAttribute("data-q") || "1";
 
-    //document.getElementById('inpp').value = p;
-    //document.getElementById('inpq').value = q;
+                //document.getElementById('inpp').value = p;
+                //document.getElementById('inpq').value = q;
 
-    cdy.evokeCS('p(z) := (' + p + '); q(z) := (' + q + '); init();');
+                cdy.evokeCS('p(z) := (' + p + '); q(z) := (' + q + '); init();');
 
-    var a = this.options[this.selectedIndex].getAttribute("data-a") || .5;
-    cdy.evokeCS('seta(' + a + ')');
+                var a = this.options[this.selectedIndex].getAttribute("data-a") || .5;
+                cdy.evokeCS('seta(' + a + ')');
 
-    var zoom = this.options[this.selectedIndex].getAttribute("data-zoom");
-    if(zoom) cdy.evokeCS('setzoom(' + zoom + ')');
+                var zoom = this.options[this.selectedIndex].getAttribute("data-zoom");
+                if (zoom) cdy.evokeCS('setzoom(' + zoom + ')');
 
-    }, false);
-    </script>
+              }, false);
+            </script>
 
-</div> <!--Applet ends-->
+          </div>
+          <!--Applet ends-->
 
-<div class="w3-hide-large w3-hide-medium w3-khaki w3-round w3-padding w3-panel">
-    <p><i class="fas fa-sad-tear"></i> Sorry, the applet is  not supported for small screens. Rotate your device to landscape. Or resize your window so it's more wide than tall.</p>
-</div>
+          <div class="w3-hide-large w3-hide-medium w3-khaki w3-round w3-padding w3-panel">
+            <p><i class="fas fa-sad-tear"></i> Sorry, the applet is not supported for small screens. Rotate your device
+              to landscape. Or resize your window so it's more wide than tall.</p>
+          </div>
 
-<br><hr>
+          <br>
+          <hr>
 
-<p>In practice, it is often difficult to generate analytic landscapes which allow us to read off properties of the complex function easily and precisely. An alternative approach is not only simpler but even more general: Instead of drawing a graph in $\mathbb R^3$, we can depict a function directly on its domain by color coding its values completely. This method is called <em>domain coloring</em>.</p>
+          <p>In practice, it is often difficult to generate analytic landscapes which allow us to read off properties of
+            the complex function easily and precisely. An alternative approach is not only simpler but even more
+            general: Instead of drawing a graph in $\mathbb R^3$, we can depict a function directly on its domain by
+            color coding its values completely. This method is called <em>domain coloring</em>.</p>
 
-<br><hr>
+          <br>
+          <hr>
 
-<p style="font-size: 16px"><strong>Note:</strong> The applet was written by <a href="https://geo.ma.tum.de/en/people/aaron-montag.html">Aaron Montag</a> using <a href="https://cindyjs.org/">CindyJS</a>. The source code can be found at <a href="https://github.com/complex-analysis/complex-analysis.github.io/tree/master/applets/cindyjs/analyticlandscape">GitHub.</a></p>
+          <p style="font-size: 16px"><strong>Note:</strong> The last applet was written by <a
+              href="https://geo.ma.tum.de/en/people/aaron-montag.html">Aaron Montag</a> using <a
+              href="https://cindyjs.org/">CindyJS</a>. The source code can be found at <a
+              href="https://github.com/complex-analysis/complex-analysis.github.io/tree/master/applets/cindyjs/analyticlandscape">GitHub.</a>
+          </p>
 
-</div> <!-- end complex analytic landscapes -->
+        </div> <!-- end complex analytic landscapes -->
 
-	<!-- link to the next page -->
-	<a href="domain_coloring.html"><p class="nextPage">NEXT: Domain Coloring</p></a>
-	<footer>
-		<p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+        <!-- link to the next page -->
+        <a href="domain_coloring.html">
+          <p class="nextPage">NEXT: Domain Coloring</p>
+        </a>
+        <footer>
+          <p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
+              href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
 
-		<p class="license">
-			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-				<img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
-			</a>
-		<br/>
-		<strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
-		<strong style="font-size: 18px">2019</strong> 
-	    </p>
-	</footer>
+          <p class="license">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+              <img id="license" alt="Creative Commons License" style="border-width:0"
+                src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+            </a>
+            <br />
+            <strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
+            <strong style="font-size: 18px">2019</strong>
+          </p>
+        </footer>
 
-	</div> <!-- end wrapper -->
+  </div> <!-- end wrapper -->
 
-<!-- nice smart quotes, via: http://smartquotesjs.com -->
-<script src="../js/smartquotes.min.js"></script>
-<script src="../applets/cindyjs/assets/app.js"></script>
+  <!-- nice smart quotes, via: http://smartquotesjs.com -->
+  <script src="../js/smartquotes.min.js"></script>
+  <script src="../applets/cindyjs/assets/app.js"></script>
 </body>
+
 </html>
