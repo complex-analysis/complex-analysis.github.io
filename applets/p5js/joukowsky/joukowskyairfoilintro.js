@@ -73,8 +73,8 @@ function resetSketch() {
 
     //seting up particles
     for (let i = 0; i < numMax; i++) {
-        let valX = random(-5, 5);
-        let valY = random(-3, 3);
+        let valX = random(-5, 4);
+        let valY = random(-2, 2);
 
         particles[i] = new Particle(valX, valY, t, h);
 
@@ -109,7 +109,7 @@ function draw() {
             if (p.x > 4 || p.y > 2.5 || p.x < -5 || p.y < -2.5 || pow(pow(p.x, 2) + pow(p.y, 2), 1 / 2) < a) {
                 particles.splice(i, 1);
                 currentParticle--;
-                particles.push(new Particle(random(-5, -3), random(-3, 3), t, h));
+                particles.push(new Particle(random(-6, -4), random(-2.5, 2.5), t, h));
             }
         }
     }
