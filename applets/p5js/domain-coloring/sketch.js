@@ -84,7 +84,7 @@ function userInt() {
 
     zI = createButton('(+)');
     zI.addClass('w3-large');
-    zI.position(width + 80, 350);
+    zI.position(width + 60, 350);
     zI.mousePressed(zoomIn);
 
     zI = createButton('(-)');
