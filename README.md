@@ -67,7 +67,7 @@ direct donation using the link below. Thank you for your support!
 
 * [Patreon](https://www.patreon.com/join/jcponce?)
 
-* [Donate with PayPal](https://paypal.me/jcarlosponce/3)
+* [PayPal](https://paypal.me/jcarlosponce/3)
 
 
 ---
