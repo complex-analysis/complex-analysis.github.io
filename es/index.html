@@ -1,0 +1,349 @@
+<!doctype html>
+<html>
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="images/infinity32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="images/infinity16.png" sizes="16x16">
+	<title>Complex Analysis</title>
+
+	<!-- dublin core -->
+	<meta name="dc.title" CONTENT="Complex Analysis">
+	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+	<meta name="dc.date" CONTENT="26-01-2019">
+	<meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
+	<meta name="dc.type" CONTENT="Interactive Resource">
+	<meta name="dc.format" CONTENT="HTML">
+	<meta name="dc.language" CONTENT="en-US">
+	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+	<!-- social media cards -->
+	<meta property="og:title" content="Complex Analysis">
+	<meta property="og:description"
+		content="An online visual and interctive introduction to the study of complex analysis.">
+	<meta property="og:type" content="website">
+	<!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+	<meta name="twitter:card" content="An online visual and interctive introduction to the study of complex analysis.">
+	<meta property="og:site_name" content="Complex Analysis">
+
+
+	<!-- FONTS AND CSS -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet'
+		type='text/css'>
+	<link href="css/stylesheet.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/w3.css">
+
+	<!-- CODE PRETTIFY -->
+	<!-- via: https://github.com/google/code-prettify -->
+	<script src="js/run_prettify.js"></script>
+
+	<style>
+		img {
+			filter: gray;
+			/* IE6-9 */
+			-webkit-filter: grayscale(1);
+			/* Google Chrome, Safari 6+ & Opera 15+ */
+			filter: grayscale(1);
+			/* Microsoft Edge and Firefox 35+ */
+		}
+
+		/* Disable grayscale on hover */
+		img:hover {
+			-webkit-filter: grayscale(0);
+			filter: none;
+		}
+	</style>
+
+	<!-- JQUERY FANCY ADDITIONS -->
+	<!-- add code class, hover text, etc -->
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+		$(document).ready(function () {
+
+			// prettyprint the code, pls
+			$('pre').addClass('prettyprint lang-java');
+
+			// add word-breaks to anything with a / or - in it
+			$('h1').each(function () {
+				var t = $(this).text();
+				t = t.replace('/', '/<wbr>');
+				t = t.replace('-', '-<wbr>');
+				$(this).html(t);
+			});
+
+			// set formatting
+			resizeCommands();
+		});
+
+		// when the window gets resized, do some stuff to keep everything
+		// looking pretty
+		$(window).resize(function () {
+			resizeCommands();
+		});
+
+		// things to do when the page is loaded or window resized
+		function resizeCommands() {
+			// large-screen stuff...
+			if ($(window).width() > 600) {
+
+				// long headline on intro page
+				// $('#introHeadline').html('INTRODUCTION');
+
+				// menu hover stuff on larger screens
+				// (does weird formatting on larger screens)
+				// hover over title to show "Table of Contents"
+				$('#title a').hover(
+					function () {
+						$('#title a').text('Table of Contents');
+					},
+					function () {
+						$('#title a').text('Complex Analysis'); // set back when moving out
+					}
+				);
+
+				// set prev/next titles
+				$('#prev a').hover(
+					function () {
+						$('#title a').text('Prev: ');
+					},
+					function () {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+				$('#next a').hover(
+					function () {
+						$('#title a').text('Next: Table Of Contents');
+					},
+					function () {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+			}
+
+			// small-screen stuff
+			else {
+				// short headline on intro page
+				// $('#introHeadline').html('INTRO');
+			}
+		}
+	</script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-155852901-1');
+	</script>
+
+</head>
+
+<body>
+	<div id="wrapper">
+		<div class="w3-hide-small">
+			<iframe name="JoukAirfoil" src="applets/p5js/joukowsky/intro.html" width="800px" height="400px"
+				style="border:none;"></iframe>
+		</div>
+		<div class="w3-hide-large w3-hide-medium">
+			<br><br>
+			<!--<p><img src="images/intro.jpg" alt="Intro" title="Intro"></p>-->
+			<p><img src="images/airfoil.png" alt="Intro" title="Intro"></p>
+		</div>
+
+		<br>
+
+		<h1>COMPLEX ANALYSIS</h1>
+
+		<p class="w3-center" style="font-size: 28px">A Visual and Interactive Introduction</p>
+
+		<p class="w3-center w3-hide-small" style="font-size: 24px">Juan Carlos Ponce Campuzano <br>
+			<!--<a href="https://jcponce.com" target="_blank" style="font-size: 20px" >jcponce.com</a>-->
+		</p>
+		<p class="w3-center w3-hide-medium w3-hide-large" style="font-size: 20px">Juan Carlos <br>Ponce Campuzano <br></p>
+		
+        <p class="w3-center" style="font-size: 20px">2019</p>
+
+		<hr>
+		<p>The study of complex analysis is important for students in engineering and the
+			physical sciences and is a central subject in mathematics. In addition to being
+			mathematically elegant, complex analysis provides powerful tools for solving
+			problems that are either very difficult or virtually impossible to solve in any
+			other way.</p>
+
+		<p>In this book you will find examples, problems and applets that allow you to explore complex analysis by using
+			the visual interactive power of the computer (or tablet).</p>
+
+		<p class="callout"><strong>UPDATES!</strong> This site has been getting lots of visits which is fantastic.
+		I have fixed some typos and modified some applets for better performance. I am also planning to add some new sections
+		covering integration of complex functions.</p>
+
+		<p>Ready to get started? Skip ahead to the <a href="content/table_of_contents.html">Table of Contents.</a></p>
+
+
+		<h2>WHAT IT IS ABOUT</h2>
+
+		<p>This book is an interactive introduction to the theory and applications of complex functions
+			from a visual point of view. However, it <em>does not</em> cover all the topics of a
+			standard course. In fact, it is a collection of selected topics and interactive applets
+			that can be used as a supplementary learning resource by anyone interested in learning
+			this fascinating branch of mathematics.</p>
+
+		<p>Some of the topics covered here are basic arithmetic of complex numbers, complex functions,
+			Riemann surfaces, limits, derivatives, domain coloring, analytic landscapes and
+			some applications of conformal mappings.</p>
+
+		<p>What distinguishes this online book from other traditional texts in the first instance is the
+			use of interactive applets that allow you to explore properties of complex numbers
+			geometrically and analyze complex functions by using different techniques to visualize
+			them. For the design of applets I used the following open-source softwares:</p>
+
+		<div class="w3-row-padding w3-center">
+
+			<div id="ggb" class="w3-quarter w3-container w3-margin-bottom">
+				<div class="container">
+					<a href="https://geogebra.org/" target="_blank"><img class="w3-image" src="images/ggb.png" alt="GeoGebra"
+							title="GeoGebra" style="width:25%;">
+					</a>
+				</div>
+			</div>
+
+			<div id="p5js" class="w3-quarter w3-container w3-margin-bottom">
+				<div class="container">
+					<a href="https://p5js.org/" target="_blank"><img class="w3-image" src="images/p5js.png" alt="p5.js" title="p5.js"
+							style="width:25%;"></a>
+				</div>
+			</div>
+
+			<div id="cindyjs" class="w3-quarter w3-container w3-margin-bottom">
+				<div class="container">
+					<a href="https://cindyjs.org/" target="_blank"><img class="w3-image" src="images/cindyjs.png" alt="Cindy.js"
+							title="Cindy.js" style="width:25%;"></a>
+				</div>
+			</div>
+
+			<div id="cindyjs" class="w3-quarter w3-container w3-margin-bottom">
+				<div class="container">
+					<a href="http://mathcell.org/" target="_blank"><img class="w3-image" src="images/mathc.png" alt="MathCell"
+							title="MathCell" style="width:25%;"></a>
+				</div>
+			</div>
+
+		</div>
+
+		<br />
+
+		<p>Although I advocate for the use of computers as an aid to geometric reasoning,
+			I highly encourage you to practice your problem solving skills by solving
+			the suggested exercises (or filling the missing details) that you will
+			encounter throughout the sections.</p>
+
+		<p>Think of the computer as a physicist would his laboratory. It may be used
+			to check existing ideas about our world, or as a tool to discover new phenomena
+			which then poses new ideas or challenges for their explanation.
+			Throughout the sections I have provided detailed instructions (in some cases)
+			to explore concepts and relationships about complex numbers using specific softwares,
+			nevertheless you must still keep in mind that computer hardware and software
+			are ephemeral things in comparison with mathematical ideas, which are timeless.</p>
+
+		<p class="callout"><strong>NOTE!</strong> If you’re on a mobile device, some of the applets might not work super well for you. 
+		They are designed for mouse input, so if you’re getting frustrated or your finger is in the way, try the site on a computer.</p>
+		
+
+
+		<!--<p>Complex functions sometimes have the reputation of being mysterious entities;
+ seeing these alien objects may help to overcome the awe one might feel while
+ dealing with them.</p>
+ 
+ <p>Phase portraits provide functions with an individual face and deepen our
+ intuitive understanding of basic and advanced concepts in complex analysis. They
+ reveal intrinsic structures behind the formulas, literally open our eyes to the wonderful
+ realm of complex functions, and may serve students, teachers, scientists,
+ and engineers as simple and efficient tools in their work.
+ It is my conviction that even experienced mathematicians can benefit from
+ this visual approach as it might help them to get a fresh perspective on old problems
+ and inspire them to ask new and more challenging questions.</p>-->
+
+
+		<h2>ISSUES?</h2>
+		<p>Of course, no project such as this can be free from errors and incompleteness.
+			If you find applets that don't run correctly, or the examples that aren't explained
+			quite right, or a typo, please
+			<a href="https://github.com/complex-analysis/complex-analysis.github.io/issues">report them at this
+				project's GitHub repository</a>.
+			Thanks for your help!</p>
+
+		<h2>DESIGN CREDITS</h2>
+		<p>The design of this book is based upon the fantastic book
+			<a href="http://www.jeffreythompson.org/collision-detection/index.php" target="_blank">Collision Detection</a>
+			written by <a href="http://www.jeffreythompson.org/" target="_blank">Jeffrey Thompson</a>. If you
+			want to learn about the algorithms behind collisions using basic geometrical shapes,
+			you should check it!</p>
+
+
+		<h2>SUPPORT THIS PROJECT</h2>
+		<p>If you like this work and would like to support it, you can do it using the links below. Thank you for your support!</p>
+
+		<div class="w3-center">
+			<a class="w3-button w3-round w3-light-grey w3-hover-text-indigo" href="https://www.patreon.com/jcponce"><img src="https://image.flaticon.com/icons/png/512/2111/2111548.png" style="width:20px;"> Patreon</a>
+			
+			&nbsp;&nbsp;
+			
+			<a class="w3-button w3-light-grey w3-round w3-hover-text-blue" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=WTMTR7D8RYZ26&item_name=Your+support+will+help+me+to+improve+and+keep+up+to+date+the+applets+of+this+book.+Sincerely+appreciate+it%21&currency_code=AUD&source=url">❤️ PayPal</a> 
+		</div>
+		<br />
+
+		<div class="w3-center"><a class="w3-button w3-light-grey w3-round w3-hover-text-blue"
+				href="mailto:j.ponce@uq.edu.au">Just want to say thanks</a></div>
+		<br />
+
+		<div class="w3-center"><a href="https://twitter.com/share?ref_src=twsrc%5Etfw" target="_blank" class="twitter-share-button"
+				data-show-count="false">Tweet</a>
+			<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		</div>
+
+
+		<h2>NAVIGATION</h2>
+		<p>OK, let's begin! Click the link at the bottom the page, or the arrows at the top, to
+			move to the next chapter. The <code>Complex Analysis</code> link at the top will
+			take you back to the <a href="content/table_of_contents.html">Table of Contents</a>.</p>
+
+
+
+		<!-- link to the next page -->
+		<a href="content/table_of_contents.html">
+			<p class="nextPage">NEXT: Table of Contents</p>
+		</a>
+		<footer>
+
+			<p>[ <a href="">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
+					href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+
+			<p class="license">
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+					<img id="license" alt="Creative Commons License" style="border-width:0"
+						src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+				</a>
+				<br />
+				<strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
+				<strong style="font-size: 18px">2019</strong>
+			</p>
+
+		</footer>
+
+	</div> <!-- end wrapper -->
+
+	<!-- nice smart quotes, via: http://smartquotesjs.com -->
+	<script src="js/smartquotes.min.js"></script>
+
+</body>
+
+</html>
