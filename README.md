@@ -15,6 +15,8 @@ other way.
 
 In this book you will find examples, problems and applets that allow you to explore  complex analysis by using the visual interactive power of the computer (or tablet).
 
+UPDATES! This site has been getting lots of visits which is fantastic. I have fixed some typos and modified some applets for better performance. I am also planning to add some new sections covering integration of complex functions. Finally, I will start the Spanish version so more people can enjoy learning and playing with complex analysis.
+
 Ready to get started? Skip ahead to the [Table of Contents](https://complex-analysis.github.io/content/table_of_contents.html)
 
 ---
