@@ -1,0 +1,414 @@
+<!doctype html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+	<title>Complex Analysis</title>
+
+	<!-- dublin core -->
+	<meta name="dc.title" CONTENT="Análisis Complejo">
+	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+	<meta name="dc.date" CONTENT="26-01-2021">
+    <meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
+	<meta name="dc.type" CONTENT="Recurso Interactivo">
+	<meta name="dc.format" CONTENT="HTML">
+	<meta name="dc.language" CONTENT="es-MEX">
+	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+	<!-- social media cards -->
+	<meta property="og:title" content="Análisis Complejo">
+	<meta property="og:description" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:type" content="website">
+	<!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+	<meta name="twitter:card" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:site_name" content="Análisis Complejo">
+    
+	
+	<!-- FONTS AND CSS -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet' type='text/css'>
+	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="../css/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" >
+
+	
+	<!-- CODE PRETTIFY -->
+	<!-- via: https://github.com/google/code-prettify -->
+	<script src="../js/run_prettify.js"></script>
+
+	<!-- JQUERY FANCY ADDITIONS -->
+	<!-- add code class, hover text, etc -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+
+		$(document).ready(function() {
+
+			// prettyprint the code, pls
+			$('pre').addClass('prettyprint lang-java');
+
+			// add word-breaks to anything with a / or - in it
+			$('h1').each(function() {
+				var t = $(this).text();
+				t = t.replace('/', '/<wbr>');
+				t = t.replace('-', '-<wbr>');
+				$(this).html(t);
+			});
+
+			// set formatting
+			resizeCommands();
+		});
+
+		// when the window gets resized, do some stuff to keep everything
+		// looking pretty
+		$(window).resize( function() {
+			resizeCommands();
+		});
+
+		// things to do when the page is loaded or window resized
+		function resizeCommands() {
+			// large-screen stuff...
+			if ($(window).width() > 600) {
+
+				// long headline on intro page
+				// $('#introHeadline').html('TABLE OF CONTENTS');
+
+				// menu hover stuff on larger screens
+				// (does weird formatting on larger screens)
+				// hover over title to show "Table of Contents"
+				$('#title a').hover(
+					function() {
+						$('#title a').text('Tabla de Contenidos');
+					},
+					function() {
+						$('#title a').text('Análisis Complejo');	// set back when moving out
+					}
+				);
+
+				// set prev/next titles
+				$('#prev a').hover(
+					function() {
+						$('#title a').text('Prev: Agradecimientos');
+					},
+					function() {
+						$('#title a').text('Análisis Complejo');
+					}
+				);
+				$('#next a').hover(
+					function() {
+						$('#title a').text('Next: Terminiloía y Notación');
+					},
+					function() {
+						$('#title a').text('Análisis Complejo');
+					}
+				);
+			}
+
+			// small-screen stuff
+			else {
+				// short headline on intro page
+				// $('#introHeadline').html('INTRO');
+			}
+		}
+	</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-155852901-1');
+</script>
+	
+</head>
+
+<body>
+	<div id="wrapper">
+        
+        <header><p><span id="prev"><a href="agradecimientos.html">&larr;</a></span><span id="title"><a href="tabla_de_contenidos.html">Análisis Complejo</a></span><span id="next"><a href="#">&rarr;</a></span><div class="clear"></div></p></header>
+        
+
+<h1>Comentarios de los lectores</h1>
+
+<hr>
+<br>
+
+<p>
+	Many thanks to all the people around the world who have kindly shared their thoughts about 
+	this educational resource. If you want to share your thoughts, I'll be adding a link here soon. 
+	Thank you for your patience.
+</p>
+
+
+<hr>
+<br>
+
+<div class="w3-panel w3-leftbar">
+	<p>
+		The applets and flow are a splendid way to get exposure to complex numbers and analysis. I have enjoyed reviewing a topic I haven’t played with in a long time.
+
+There are enthusiastic and eye-catching visuals throughout. Even if math is not your thing, I recommend that you take a look and play with the applets. This is a great book for anyone interested the complex plane, imaginary numbers, and jumping into some of the wonders of math.
+		
+	
+		<br> 
+	
+		<span class="w3-right"><a href="https://fractalkitty.com/" target="_blank">&#x2014; Sophia Wood</a> 
+			<!--<br><span class="w3-right"style="font-size:15px">9 Jan, 2020</span>--></span>
+	
+	</p>
+</div>
+
+<br>
+<hr>
+<br>
+
+<div class="w3-panel w3-leftbar">
+	<p>
+		A book (site) that explains mathematical theory that is difficult to understand 
+		intuitively with tools that can create interactive content such as GeoGebra and p5.js. 
+		You can actually move the parameters and see how they change.
+	
+		<br> 
+	
+		<span class="w3-right"><a href="https://twitter.com/icoxfog417/status/1215090997484408832?s=20" target="_blank">&#x2014; piqcy</a> 
+			<!--<br><span class="w3-right"style="font-size:15px">9 Jan, 2020</span>--></span>
+	
+	</p>
+</div>
+
+<br>
+<hr>
+<br>
+
+<div class="w3-panel w3-leftbar">
+	<p>
+		Ideal para mi curso de Análisis Complejo. Gracias por compartirlo.
+	
+		<br> 
+	
+		<span class="w3-right"><a href="https://twitter.com/amtlucca/status/1214919877716250626?s=20" target="_blank">&#x2014; Ana María Lucca</a> 
+			<!--<br><span class="w3-right"style="font-size:15px">9 Jan, 2020</span>--></span>
+	
+	</p>
+</div>
+
+<br>
+<hr>
+<br>
+
+<div class="w3-panel w3-leftbar">
+	<p>
+		Por si alguno está estudiando análisis complejo, esta introducción está fetén.
+	
+		<br> 
+	
+		<span class="w3-right"><a href="https://twitter.com/PurpleSensati0n/status/1214981843029766150?s=20" target="_blank">&#x2014; ThePurpleSensation</a> 
+			<!--<br><span class="w3-right"style="font-size:15px">9 Jan, 2020</span>--></span>
+	
+	</p>
+</div>
+
+<br>
+<hr>
+<br>
+
+<div class="w3-panel w3-leftbar">
+	<p>
+		A neat interactive approach to learning about complex analysis.
+	
+		<br> 
+	
+		<span class="w3-right"><a href="https://twitter.com/SeanWal49402031/status/1216145653010706437?s=20" target="_blank">&#x2014; Sean Walker</a> 
+			<!--<br><span class="w3-right"style="font-size:15px">12 Jan, 2020</span>--></span>
+	
+	</p>
+</div>
+
+<br>
+<hr>
+<br>
+
+<div class="w3-panel w3-leftbar">
+	<p>
+		Las matemáticas viven en el razonamiento del ser humano y, dado su nivel de abstracción, una simple lectura no es suficiente para comprender y asimilar los conceptos. Todo resulta más fácil cuando dichos conceptos vienen acompañados por ilustraciones y explicaciones breves y sencillas. Pues bien, Juan Carlos consigue en este libro precisamente eso. Nadie como él para sacar partido a todos los recursos visuales posibles en forma de aplicaciones e ilustraciones interactivas para ilustrar la magia de los números imaginarios. Alégrense la vista y la mente con este fantástico libro.
+	
+		<br> 
+	
+		<span class="w3-right"><a href="https://elultimoversodefermat.wordpress.com/" target="_blank">&#x2014; Julio Mulero</a> 
+			<!--<br><span class="w3-right"style="font-size:15px">19 Nov, 2020</span>--></span>
+	
+	</p>
+</div>
+	
+
+<br>
+<hr>
+<br>
+
+<div class="w3-panel w3-leftbar">
+<p>
+	I like the way each page has careful and readable descriptions of the maths, while not shying 
+	away from the technical details. The particular strength here is that alongside the readable 
+	mathematics are regular interactive animations in Geogebra or p5.js (on every page!?). These 
+	really help the reader *literally* get to grips with the material. It's lovely stuff. I 
+	believe that making maths *move* in this way is the key for any of us trying to understand 
+	this subject better.
+	<br>
+	<span class="w3-right"><a href="https://www.bensparks.co.uk/" target="_blank">&#x2014; Ben Sparks</a> 
+		<!--<br><span class="w3-right"style="font-size:15px">22 Oct, 2020</span>--></span>
+</p>
+</div>
+
+
+<br>
+<hr>
+<br>
+
+<div class="w3-panel w3-leftbar">
+	<p>
+		I was just wanting to learn more about these holomorphic functions of the complex plane 
+		and conformal mapping and how this stuff relates to fluid flow myself, THANK YOU for 
+		making this!
+	
+		<br> 
+	
+		<span class="w3-right"><a href="https://twitter.com/c010011012/status/1214981437784375296?s=20" target="_blank">&#x2014; C010011012</a> 
+			<!--<br><span class="w3-right"style="font-size:15px">9 Jan, 2020</span>--></span>
+	
+	</p>
+</div>
+
+<br>
+<hr>
+<br>
+
+<div class="w3-panel w3-leftbar">
+	<p>
+		Awesome work, thanks for sharing this! The maths is clearly written and - no surprise - 
+		the @geogebra applets are just perfect.
+	
+		<br> 
+	
+		<span class="w3-right"><a href="https://twitter.com/panlepan/status/1216137495206924299?s=20" target="_blank">&#x2014; Vincent Pantaloni</a> 
+			<!--<br><span class="w3-right"style="font-size:15px">12 Jan, 2020</span>--></span>
+	
+	</p>
+</div>
+
+<br>
+<hr>
+<br>
+
+<div class="w3-panel w3-leftbar">
+	<p>
+		Brilliant work! It is a true honor to be included within it.
+	
+		<br> 
+	
+		<span class="w3-right"><a href="https://twitter.com/geogebra/status/1216162738415849472?s=20" target="_blank">&#x2014; GeoGebra</a> 
+			<!--<br><span class="w3-right"style="font-size:15px">12 Jan, 2020</span>--></span>
+	
+	</p>
+</div>
+
+<br>
+<hr>
+<br>
+
+<div class="w3-panel w3-leftbar">
+	<p>
+		Complex Analysis: A visual and Interactive Introduction is like a virtual or imaginary 
+		candy-store for those interested in mathematical visualizations in general or complex 
+		numbers in particular. I have never seen so many mesmerizing applets in one place. 
+		The tools given to the user to explore the mathematics beyond the text and the attention 
+		to detail make a very captivating adventure.
+	
+	</p>
+	<p>
+		Anyone interested in the Mandelbrot Set (which is probably just about everyone) 
+		should check out the chapter with the interactive Mandelbrot illustrations. I 
+		particularly like the applet that shows the changing character of the iterate 
+		orbitals as one moves among the various buds of the Mandelbrot set and another applet 
+		that connects the Mandelbrot set to the Julian sets.
+	
+	</p>
+	
+	<p>
+		After whetting one’s appetite on the Mandelbrot chapter, if you are like me, 
+		you will want to explore further. The colorful analytic landscapes and domain 
+		coloring apps are awesome. And don’t miss the cool conformal mapping applications 
+		in the last chapter!
+	
+	<br>
+	
+		<span class="w3-right"><a href="https://www.johnpauliihs.org/about-us/staff-directory?deptId=27475&gId=5305&letter=T" target="_blank">&#x2014; Ken Thele</a> 
+			<!--<br><span class="w3-right"style="font-size:15px">26 Oct, 2020</span>--></span>
+	</p>
+</div>
+
+
+<br>
+<hr>
+<br>
+
+<div class="w3-panel w3-leftbar">
+	<p>
+		Extraordinary....this will help a lot of guys.
+	
+		<br> 
+	
+		<span class="w3-right"><a href="https://twitter.com/AustinRousan/status/1214873904310673408?s=20" target="_blank">&#x2014; Azazaya</a> 
+			<!--<br><span class="w3-right"style="font-size:15px">8 Jan, 2020</span>--></span>
+	
+	</p>
+</div>
+
+<br>
+<hr>
+<br>
+
+<div class="w3-panel w3-leftbar">
+	<p>
+		This is indeed one of the best educational content. Let's study. Thank you.
+	
+		<br> 
+	
+		<span class="w3-right"><a href="https://twitter.com/ayushthakur0/status/1215275965409976321?s=20" target="_blank">&#x2014; ayush thakur</a> 
+			<!--<br><span class="w3-right"style="font-size:15px">8 Jan, 2020</span>--></span>
+	
+	</p>
+</div>
+
+
+<br>
+
+<br>
+
+<!-- link to the next page -->
+<a href="#"><p class="nextPage">NEXT: Terminología y Notación</p></a>
+
+	<footer>
+		<p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+
+		<p class="license">
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+				<img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+			</a>
+		<br/>
+		<strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
+		<strong style="font-size: 18px">2019</strong> 
+	    </p>
+	</footer>
+
+	</div> <!-- end footer -->
+
+<!-- nice smart quotes, via: http://smartquotesjs.com -->
+<script src="../js/smartquotes.min.js"></script>
+
+</body>
+</html>
