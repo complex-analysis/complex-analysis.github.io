@@ -1,0 +1,335 @@
+<!doctype html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+	<title>Análisis Complejo</title>
+
+	<!-- dublin core -->
+	<meta name="dc.title" CONTENT="Análisis Complejo">
+	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+	<meta name="dc.date" CONTENT="26-01-2021">
+    <meta name="dc.isbn" CONTENT="ISBN-13: ">
+	<meta name="dc.type" CONTENT="Recurso Interactivo">
+	<meta name="dc.format" CONTENT="HTML">
+	<meta name="dc.language" CONTENT="es-MEX">
+	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+	<!-- social media cards -->
+	<meta property="og:title" content="Análisis Complejo">
+	<meta property="og:description" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:type" content="website">
+	<!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+	<meta name="twitter:card" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:site_name" content="Análisis Complejo">
+    
+	
+	<!-- FONTS AND CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet' type='text/css'>
+	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" >
+	<!-- CODE PRETTIFY -->
+	<!-- via: https://github.com/google/code-prettify -->
+	<script src="../js/run_prettify.js"></script>
+
+	
+
+	<!-- JQUERY FANCY ADDITIONS -->
+	<!-- add code class, hover text, etc -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+
+		$(document).ready(function() {
+
+			// prettyprint the code, pls
+			$('pre').addClass('prettyprint lang-java');
+
+			// add word-breaks to anything with a / or - in it
+			$('h1').each(function() {
+				var t = $(this).text();
+				t = t.replace('/', '/<wbr>');
+				t = t.replace('-', '-<wbr>');
+				$(this).html(t);
+			});
+
+			// set formatting
+			resizeCommands();
+		});
+
+		// when the window gets resized, do some stuff to keep everything
+		// looking pretty
+		$(window).resize( function() {
+			resizeCommands();
+		});
+
+		// things to do when the page is loaded or window resized
+		function resizeCommands() {
+			// large-screen stuff...
+			if ($(window).width() > 600) {
+
+				// long headline on intro page
+				// $('#introHeadline').html('TABLE OF CONTENTS');
+
+				// menu hover stuff on larger screens
+				// (does weird formatting on larger screens)
+				// hover over title to show "Table of Contents"
+				$('#title a').hover(
+					function() {
+						$('#title a').text('Tabla de Contenidos');
+					},
+					function() {
+						$('#title a').text('Análisis Complejo');	// set back when moving out
+					}
+				);
+
+				// set prev/next titles
+				$('#prev a').hover(
+					function() {
+						$('#title a').text('Prev: Terminología y Notación');
+					},
+					function() {
+						$('#title a').text('Análisis Complejo');
+					}
+				);
+				$('#next a').hover(
+					function() {
+						$('#title a').text('Next: El Argumento Principal');
+					},
+					function() {
+						$('#title a').text('Análisis Complejo');
+					}
+				);
+			}
+
+			// small-screen stuff
+			else {
+				// short headline on intro page
+				// $('#introHeadline').html('INTRO');
+			}
+		}
+	</script>
+
+    
+    <!--MathJax starts-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                           TeX: { equationNumbers: { autoNumber: "AMS" } }
+                           });
+        </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-155852901-1');
+</script>
+    
+    <!--GeoGebra embeding-->
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<script>
+    var applet1 = new GGBApplet({material_id: "gut3ffpm",
+                                borderColor:"888888",
+                                playButton: "true",
+                                showFullscreenButton: "true",
+                                enableShiftDragZoom: "true",
+                                showResetIcon: "true"}, true);
+    window.addEventListener("load", function() {
+          applet1.inject('applet_container1');
+      });
+</script>
+<!--GeoGebra embeding ends-->
+    
+</head>
+
+<body>
+<div id="wrapper">
+        
+<header><p><span id="prev"><a href="terminologia_notacion.html">&larr;</a></span><span id="title"><a href="tabla_de_contenidos.html">Complex Analysis</a></span><span id="next"><a href="#">&rarr;</a></span><div class="clear"></div></p></header>
+        
+
+<div class="w3-hide-small"><h1>Interpretación Geométrica de las Operaciones Aritméticas</h1></div>
+<div class="w3-hide-large w3-hide-medium"><h1 style="font-size:42px">Interpretación Geométrica de las Operaciones Aritméticas</h1></div>
+
+<hr>
+
+<h2>Adición y Sustracción</h2>
+
+<p>Geométricamente, la adición de dos números complejos $Z_1$ y $Z_2$ se puede visualizar como
+	la adición de vectores usando la <em>ley del paralelogramo</em>. El vector suma
+	$Z_1+Z_2$ se representa con la diagonal del paralelogramo formado por los dos vectores originales.</p>
+
+<p>La forma más fácil de representar la diferencia  $Z_1-Z_2$ es al interpretarla en términos 
+	de la adición con un vector negativo, $Z_1 + \left(-Z_2\right)$. El vector negativo es el mismo 
+	que su versión positiva, solo está dirigido en dirección opuesta.</p>
+
+<p>Usa el siguiente applet para explorar esta interpretación geométrica. Avtiva las casillas de abajo para 
+	mostrar la adición y sustracción. También puedes mover los puntos $Z_1$ y $Z_2$ con el mouse. 
+</p>
+
+<iframe scrolling="no" title="Addition-Substraction of complex numbers" src="https://www.geogebra.org/material/iframe/id/rz7ujhyr/width/791/height/520/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="791px" height="520px" style="border:0px;"> </iframe>
+
+<br/><br/>
+
+<div class="w3-padding">
+	<p><strong>Ejercicio 1:</strong>  ¿Puedes proponer una interpretación geométrica de la 
+		adición de tres números complejos? En general, ¿cómo sería una interpretación geométrica de
+		la adición de $n$ números complejos?</p>
+</div>
+
+<hr>
+
+<h2>Multiplicación</h2>
+
+
+<div class="w3-resposive">
+	<p>En la sección anterior definimos la multiplicación de dos números complejos $Z_1 $ y $Z_2$ como
+		\begin{eqnarray*}
+			Z_1 Z_2 &amp;=&amp; \left( x_1 + i y_1 \right) \left( x_2 + i y_2 \right)\\
+					&amp;=&amp; (x_1x_2-y_1y_2) + i(x_1y_2+x_2y_1).
+		\end{eqnarray*}
+		En este caso, para apreciar lo que sucede geométricamente necesitamos considerar la forma polar de 
+		$Z_1 $ y $Z_2$. Es decir
+		\begin{eqnarray*}
+			Z_1 &amp;=&amp; r_1 \left( \cos \phi_1 + i \sin \phi_1 \right) \\
+			Z_2	&amp;=&amp; r_2 \left( \cos \phi_2 + i \sin \phi_2 \right)
+		\end{eqnarray*}
+	
+		Entonces el producto se puede escribor de la forma 
+		\begin{eqnarray*}
+		   Z_1 Z_2 &amp;=&amp; r_1 r_2 \big[ \left(\cos \phi_1 \cos\phi_2 - \sin \phi_1 \sin \phi_2\right) \big.\\
+				   &amp;+&amp; \big. i\left(\sin \phi_1 \cos\phi_2 + \cos \phi_1 \sin \phi_2\right)\big].
+		\end{eqnarray*}
+		Ahora, utilizando los teoremas de adición de las funciones seno y coseno, esta expresión se puede simplificar a 
+		\begin{eqnarray*}
+		   Z_1 Z_2 &amp;=&amp; r_1 r_2 \big[ \cos \left( \phi_1 +\phi_2 \right) + i \sin \left( \phi_1 +\phi_2 \right)\big].
+		\end{eqnarray*}
+		De esta forma, el producto $Z_1Z_2$ tiene como módulo $r_1r_2$ y el argumento es $\phi_1+\phi_2$.
+	</p>
+</div>
+
+<div class="w3-hide-small">
+	<p>En el siguiente applet puedes apreciar lo que sucede con el argumento del producto.
+		Mueve los puntos $Z_1$ y $Z_2$ y observa el comportamiento de los ángulos.
+		Después mueve el deslizador en la vista gráfica inferior.</p>
+	<div class="w3-center">
+		<iframe scrolling="no" title="Polar multiplication of complex numbers" src="https://www.geogebra.org/material/iframe/id/hqj7cumq/width/666/height/556/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/false/ctl/false" width="666px" height="556px" style="border:0px;" allowfullscreen> </iframe>
+	</div>
+</div>
+
+<div class="w3-hide-medium w3-hide-large">
+	<p>En la siguietne animación puedes apreciar lo que sucede con el argumento del producto.</p>
+	<figure class="w3-center">
+		<img  src="../images/mult-polar.gif" alt="Polar multiplication" title="Polar multiplication" style="width:100%;">
+			 <figcaption>
+				 
+			 </figcaption>
+	  </figure>
+</div>
+
+<br/>
+
+<div class="w3-padding">
+	<p><strong>Ejercicio 2:</strong> 
+	Considera ahora
+	\begin{eqnarray*}
+	Z_1 &amp;=&amp; r_1 \left( \cos \phi_1 + i \sin \phi_1 \right) \\
+	Z_2	&amp;=&amp; r_2 \left( \cos \phi_2 + i \sin \phi_2 \right)
+\end{eqnarray*}
+tales que $Z_2\neq 0$. Calcula la representación polar de $Z_1/Z_2$. 
+¿Cuál es la interpretación geométrica de esta expresión?
+</p>
+</div>
+
+<br>
+
+<hr>
+
+<h3>Multiplocación de números complejos como dilataciones, expansiones y rotaciones</h3>
+
+<p>En el siguiente applet se grafican un conjunto de puntos definidos aleatoriamente en el plano complejo.
+	Después cada punto es multiplicado por un número complejo $z$. 
+	En el lado derecho de la vista gráfica, mueve el punto $z$ al rededor y analiza el comportamiento
+	de los puntos (⭕) multiplicados por  $z$  y trata de responder las siguientes preguntas:
+	<ul>
+		<li>¿Qué sucede cuando $z$ está adentro, o afuera, del círculo unitario?</li>
+		<li>¿Qué sucede si $z$ se mueve solo sobre el círculo unitario?</li>
+   </ul>
+
+   <strong>Nota: </strong>También puedes estudiar el comportamiento de los puntos (⚫) multiplicados por $1/z$ al activar 
+   la casilla  <code>Multiply by 1/z</code>.
+</p>
+
+<iframe scrolling="no" title="Multiplication of complex numbers as stretching (squeezing) and rotation" src="https://www.geogebra.org/material/iframe/id/nefcpuam/width/791/height/469/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/false/ctl/true" width="100%" height="469px" style="border:0px;"> </iframe>
+
+<br/><br/>
+
+<p>
+</p>
+
+<p>Como ya habrás notado la interpretación geométrica de la multiplicación de números complejos se trata de una dilatación 
+	(o, expansión) y rotación de vectores en el plano.</p>
+	
+<p>En el applet anterior, con la opción <code>Multiply by z</code>, define <code>n = 1</code> moviendo el 
+	deslizador a la izquierda.
+	En este caso, el applet muestra los tres números complejos
+	$$z_0, z \text{ y } z_1 = z_0\cdot z,$$
+	representados como vectores.
+	Cuando $z_0$ y $z$ son diferentes de zero, entonces
+	<ul>
+		<li>el módulo de $z_1$ es igual a $|z_0 \cdot z|$, y</li>
+		<li>el argumento de  $z_1$ es igual a $\text{Arg }(z_0+z)$.</li>
+   </ul>
+	Si $|z| &gt; 1$, tenemos una expansión. Si $|z| &lt; 1$, entonces tenemos una dilatación.</p>
+
+	<div class="w3-padding">
+		<p><strong>Ejercicio 3:</strong> 
+		Usa el mismo applet, con la opción <code>Multiply by 1/z</code>, para investigar
+		qué sucede cuando multiplicamos por $1/z$. 
+		Define <code>n = 1</code> moviendo el deslizador a la izquierda para mostrar 
+		los tres números complejos
+		$$z_0, z \text{ y } z_2 = z_0\cdot \frac{1}{z}.$$
+		¿Qué sucede con el módulo y el argumento de $z_2$?
+	</p>
+	</div>
+
+    <br>
+    
+   <!-- <p><strong>Note:</strong> The applet was made with <a href="https://www.geogebra.org/material/show/id/y9pnh3hu">GeoGebra</a>.</p>-->
+
+	<!-- link to the next page -->
+	<a href="#"><p class="nextPage">NEXT: El Argumento Principal</p></a>
+	<footer>
+		<p>[ <a href="../es.html">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+
+		<p class="license">
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+				<img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+			</a>
+		<br/>
+		<strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
+		<strong style="font-size: 18px">2019</strong> 
+	    </p>
+	</footer>
+
+</div> <!-- end wrapper -->
+
+<!-- nice smart quotes, via: http://smartquotesjs.com -->
+<script src="../js/smartquotes.min.js"></script>
+
+</body>
+</html>
