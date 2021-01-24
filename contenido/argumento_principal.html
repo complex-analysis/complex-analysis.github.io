@@ -1,0 +1,270 @@
+<!doctype html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+	<title>Análisis Complejo</title>
+
+	<!-- dublin core -->
+	<meta name="dc.title" CONTENT="Análisis Complejo">
+	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+	<meta name="dc.date" CONTENT="26-01-2021">
+    <meta name="dc.isbn" CONTENT="ISBN-13: ">
+	<meta name="dc.type" CONTENT="Recurso Interactivo">
+	<meta name="dc.format" CONTENT="HTML">
+	<meta name="dc.language" CONTENT="es-MEX">
+	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+	<!-- social media cards -->
+	<meta property="og:title" content="Análisis Complejo">
+	<meta property="og:description" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:type" content="website">
+	<!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+	<meta name="twitter:card" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:site_name" content="Análisis Complejo">
+    
+	
+	<!-- FONTS AND CSS -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet' type='text/css'>
+	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="../css/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" >
+
+	<!-- CODE PRETTIFY -->
+	<!-- via: https://github.com/google/code-prettify -->
+	<script src="../js/run_prettify.js"></script>
+
+	
+
+	<!-- JQUERY FANCY ADDITIONS -->
+	<!-- add code class, hover text, etc -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+
+		$(document).ready(function() {
+
+			// prettyprint the code, pls
+			$('pre').addClass('prettyprint lang-java');
+
+			// add word-breaks to anything with a / or - in it
+			$('h1').each(function() {
+				var t = $(this).text();
+				t = t.replace('/', '/<wbr>');
+				t = t.replace('-', '-<wbr>');
+				$(this).html(t);
+			});
+
+			// set formatting
+			resizeCommands();
+		});
+
+		// when the window gets resized, do some stuff to keep everything
+		// looking pretty
+		$(window).resize( function() {
+			resizeCommands();
+		});
+
+		// things to do when the page is loaded or window resized
+		function resizeCommands() {
+			// large-screen stuff...
+			if ($(window).width() > 600) {
+
+				// long headline on intro page
+				// $('#introHeadline').html('TABLE OF CONTENTS');
+
+				// menu hover stuff on larger screens
+				// (does weird formatting on larger screens)
+				// hover over title to show "Table of Contents"
+				$('#title a').hover(
+					function() {
+						$('#title a').text('Tabla de Contenidos');
+					},
+					function() {
+						$('#title a').text('Análisis Complejo');	// set back when moving out
+					}
+				);
+
+				// set prev/next titles
+				$('#prev a').hover(
+					function() {
+						$('#title a').text('Prev: Interpretación Geométrica');
+					},
+					function() {
+						$('#title a').text('Análisis Complejo');
+					}
+				);
+				$('#next a').hover(
+					function() {
+						$('#title a').text('Next: Raíces de Números Complejos');
+					},
+					function() {
+						$('#title a').text('Análisis Complejo');
+					}
+				);
+			}
+
+			// small-screen stuff
+			else {
+				// short headline on intro page
+				// $('#introHeadline').html('INTRO');
+			}
+		}
+	</script>
+
+	<!-- ANALYTICS -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-155852901-1');
+</script>
+    <!-- ANALYTICS -->
+    
+    <!--MathJax starts-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                           TeX: { equationNumbers: { autoNumber: "AMS" } }
+                           });
+        </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+    
+    <!-- Cindy.js
+   
+    <script type="text/javascript" src="../applets/cindyjs/domcoloring/Cindy.js"></script>
+    <script type="text/javascript" src="../applets/cindyjs/domcoloring/CindyGL.js"></script>
+    <script type="text/javascript" src="../applets/cindyjs/domcoloring/symbolic.js"></script>
+     Cindy.js -->
+    
+    
+    
+    <!--GeoGebra embeding-->
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<script>
+    var applet1 = new GGBApplet({material_id: "Nn3P8sje",
+                                borderColor:"888888",
+                                playButton: "true",
+                                showFullscreenButton: "true",
+                                showResetIcon: "true"}, true);
+    window.addEventListener("load", function() {
+          applet1.inject('applet_container1');
+      });
+</script>
+<!--GeoGebra embeding ends-->
+    
+</head>
+
+<body>
+<div id="wrapper">
+        
+        <header><p><span id="prev"><a href="interpretat¡cion_geometrica_add_mult.html">&larr;</a></span><span id="title"><a href="tabla_de_contenidos.html">Análisis Complejo</a></span><span id="next"><a href="raices_numeros_complejos.html">&rarr;</a></span><div class="clear"></div></p></header>
+
+<h1>El Argumento</h1>
+
+<hr>
+
+<p>En este texto la notación $\textbf{arg} (z)$ se usa para designar un 
+argumento arbitrario de $z$, lo cual significa que  $\textbf{arg} (z)$ es un conjunto de números. En particular, 
+la relación  $$\textbf{arg} (z_1) = \textbf{arg} (z_2)$$ no es una ecuación, sino que expresa una igualdad entre dos conjuntos.</p>
+
+<p>Como consecuencia, dos números complejos $r_1 (\cos \varphi_1 + i \sin\varphi_1)$ y $r_2 (\cos \varphi_2 + i \sin\varphi_2)$ 
+	son iguales si y sólo si
+$$r_1=r_2,\quad \text{and}\quad \varphi_1 = \varphi_2+ 2 k \pi,$$
+donde $k \in \mathbb Z$.
+</p>
+
+<p>Para hacer que el argumento de $z$ sea un número bien definido, es conveniente
+restringir su valor al intervalo $(−\pi, \pi]$. Esta elección especial se denomina <em>argumento principal</em> o la
+<em>rama principal</em> del argumento y se denota como $\textbf{Arg}(z)$.</p>
+
+<p>Nota que no exixte una convención general acerca de la definitión de del valor principal, algunas veces sus valores  
+	se consideran definidos en el intervalo $[0, 2\pi)$. Esta ambigüedad es una fuente perpetua de mal entendidos y errores.</p>
+
+<hr>
+
+<h1>El Argumento Principal</h1>
+
+
+
+<p>El argumento principal $\textbf{Arg}(z)$ de un número complejo $z=x+iy$ normalmente está dado por
+	$$\Theta=\arctan\left(\frac{y}{x}\right),$$ 
+	donde $y/x$ es la pendiente, y $\arctan$ convierte la pendiente en ángulo. Pero esto es correcto solo cuando $x > 0$, 
+	cuando el cociente está definido y el ángulo está entre $-\pi/2$ and $\pi/2$. 
+	Necesitamos extender esta definición a los casos donde
+	 $x$ no es positivo, considerando el valor principal del argumento de forma separada en los cuatro cuadrantes del plano complejo.</p>
+
+
+<p>La función $\textbf{Arg}(z)$ $:\mathbb C \setminus \{0\} \rightarrow \left(-\pi,\pi\right]$ está definida como:
+<div class="w3-responsive">
+\begin{eqnarray*}
+ \textbf{Arg}(z)= \left\{\def\arraystretch{1.2}%
+  \begin{array}{@{}c@{\quad}r@{}}
+   \arctan \frac{y}{x} & \;\text{if $x>0$, $y\in \mathbb R$}\\
+   \arctan \frac{y}{x}+\pi  & \;\text{if $x &lt;0$, $y\geq 0$}\\
+   \arctan \frac{y}{x}-\pi  & \;\text{if $x &lt; 0$, $y &lt; 0$}\\
+    \frac{\pi}{2} & \;\text{if $x=0$, $y> 0$}\\
+     -\frac{\pi}{2} & \;\text{if $x=0$, $y &lt; 0$}\\
+     \text{undefined}& \;\text{if $x=0$, $y=0$}\\
+  \end{array}\right.
+\end{eqnarray*}
+De esta forma, si $z=r(\cos \Theta +i\sin \Theta)$, con $r>0$ y $-\pi &lt; \Theta \leq \pi$, entonces
+\begin{eqnarray*}
+ \textbf{arg}(z)= \textbf{Arg}(z)+2n\pi, \quad n \in \mathbb Z.
+\end{eqnarray*}
+</div>
+</p>
+
+<p>Podemos visualizar la naturaleza de los multiples valores de $\textbf{arg}(z)$ al usar <a href="http://mathworld.wolfram.com/RiemannSurface.html" target="_blank">superficies de Riemann</a>.  
+	El siguiente applet interactivo muestra algunas ramas, valores, de $\textbf{arg}(z)$. 
+	Cada rama se identifica con un color diferente.</p>
+
+<!-- ctl=play button; sfsb=fullscreen button-->
+<div class="w3-hide-small w3-hide-medium ">
+	<!--<div style="width:603px;height:366px;display:block" id="applet_container1"></div>-->
+	<iframe scrolling="no" title="Argument and Principal argument" src="https://www.geogebra.org/material/iframe/id/bp3pprjp/width/797/height/494/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="797px" height="494px" style="border:0px;" allowfullscreen> </iframe>
+</div>
+<div  class="w3-hide-large w3-khaki w3-round w3-padding w3-panel">
+	<p><i class="fas fa-sad-tear"></i> Lo siento, este applet no funciona para dispositivos con pantallas pequeñas. 
+		Rota tu dispositivo horizontalmente. O cambia el tamaño de tu ventana de tal forma que el ancho es 
+		más grande que el largo.</p>
+</div>
+<br>
+    
+    <br>
+    
+    <!--<p><strong>Note:</strong> The applet was made with <a href="https://www.geogebra.org/material/show/id/Nn3P8sje#">GeoGebra.</a></p>-->
+
+	<!-- link to the next page -->
+	<a href="raices_numeros_complejos.html"><p class="nextPage">NEXT: Raíces de Números Complejos</p></a>
+	<footer>
+		<p>[ <a href="../es.html">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+
+		<p class="license">
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+				<img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+			</a>
+		<br/>
+		<strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
+		<strong style="font-size: 18px">2019</strong> 
+	    </p>
+	</footer>
+
+</div> <!-- end wrapper -->
+
+<!-- nice smart quotes, via: http://smartquotesjs.com -->
+<script src="../js/smartquotes.min.js"></script>
+
+</body>
+</html>
