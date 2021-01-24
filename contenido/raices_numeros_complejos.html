@@ -147,15 +147,19 @@
 <script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
 
 <script>
-    var applet1 = new GGBApplet({material_id: "csrzeux8",
-                                borderColor:"888888",
-                                playButton: "false",
-                                showFullscreenButton: "true",
-                                enableShiftDragZoom: "true",
-                                showResetIcon: "true"}, true);
-    window.addEventListener("load", function() {
-          applet1.inject('applet_container1');
-      });
+	var params = { 
+				"width": 791, 
+				"height": 439,
+				"material_id": "csrzeux8",
+                "borderColor": "888888",
+                "playButton": false,
+                "showFullscreenButton": true,
+                "enableShiftDragZoom": true,
+                "showResetIcon": true };
+    var ggbApplet = new GGBApplet(params, true);
+    window.addEventListener("load", function() { 
+        ggbApplet.inject('ggb-element');
+    });
 </script>
 <!--GeoGebra embeding ends-->
     
@@ -223,7 +227,7 @@ donde $k=0, 1, 2, \ldots , n-1$.</p>
 <!-- ctl=play button; sfsb=fullscreen button-->
 <div class="w3-center w3-hide-small">
     
-    <div style="width:791px;height:439px;display:block" id="applet_container1"></div>
+    <div style="display:block" id="ggb-element"></div>
 </div>
 
 <div class="w3-hide-large w3-hide-medium w3-khaki w3-round w3-padding w3-panel">
