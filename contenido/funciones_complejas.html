@@ -1,0 +1,388 @@
+<!doctype html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+	<title>Análisis Complejo</title>
+
+	<!-- dublin core -->
+	<meta name="dc.title" CONTENT="Análisis Complejo">
+	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+	<meta name="dc.date" CONTENT="26-01-2021">
+    <meta name="dc.isbn" CONTENT="ISBN-13: ">
+	<meta name="dc.type" CONTENT="Recurso Interactivo">
+	<meta name="dc.format" CONTENT="HTML">
+	<meta name="dc.language" CONTENT="es-MEX">
+	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+	<!-- social media cards -->
+	<meta property="og:title" content="Análisis Complejo">
+	<meta property="og:description" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:type" content="website">
+	<!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+	<meta name="twitter:card" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:site_name" content="Análisis Complejo">
+        
+	
+	<!-- FONTS AND CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet' type='text/css'>
+	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" >
+	<!-- CODE PRETTIFY -->
+	<!-- via: https://github.com/google/code-prettify -->
+	<script src="../js/run_prettify.js"></script>
+
+	
+
+	<!-- JQUERY FANCY ADDITIONS -->
+	<!-- add code class, hover text, etc -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+
+		$(document).ready(function() {
+
+			// prettyprint the code, pls
+			$('pre').addClass('prettyprint lang-java');
+
+			// add word-breaks to anything with a / or - in it
+			$('h1').each(function() {
+				var t = $(this).text();
+				t = t.replace('/', '/<wbr>');
+				t = t.replace('-', '-<wbr>');
+				$(this).html(t);
+			});
+
+			// set formatting
+			resizeCommands();
+		});
+
+		// when the window gets resized, do some stuff to keep everything
+		// looking pretty
+		$(window).resize( function() {
+			resizeCommands();
+		});
+
+		// things to do when the page is loaded or window resized
+		function resizeCommands() {
+			// large-screen stuff...
+			if ($(window).width() > 600) {
+
+				// long headline on intro page
+				// $('#introHeadline').html('TABLE OF CONTENTS');
+
+				// menu hover stuff on larger screens
+				// (does weird formatting on larger screens)
+				// hover over title to show "Table of Contents"
+				$('#title a').hover(
+					function() {
+						$('#title a').text('Tabla de Contenidos');
+					},
+					function() {
+						$('#title a').text('Análisis Complejo');	// set back when moving out
+					}
+				);
+
+				// set prev/next titles
+				$('#prev a').hover(
+					function() {
+						$('#title a').text('Prev: Raíces de Números Complejos');
+					},
+					function() {
+						$('#title a').text('Análisis Complejo');
+					}
+				);
+				$('#next a').hover(
+					function() {
+						$('#title a').text('Next: La Función Logarítmica');
+					},
+					function() {
+						$('#title a').text('Análisis Complejo');
+					}
+				);
+			}
+
+			// small-screen stuff
+			else {
+				// short headline on intro page
+				// $('#introHeadline').html('INTRO');
+			}
+		}
+	</script>
+
+    
+    <!--MathJax starts-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                           TeX: { equationNumbers: { autoNumber: "AMS" } }
+                           });
+        </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-155852901-1');
+</script>
+   
+<!--GeoGebra embeding-->
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<script>
+	var params = { 
+				"width": 772, 
+				"height": 541,
+				"material_id": "jbx9qux3",
+                "borderColor": "888888",
+                "playButton": false,
+                "showFullscreenButton": true,
+                "enableShiftDragZoom": true,
+                "showResetIcon": true };
+    var ggbApplet = new GGBApplet(params, true);
+    window.addEventListener("load", function() { 
+        ggbApplet.inject('ggb-element');
+    });
+</script>
+<!--GeoGebra embeding ends-->
+
+    
+
+    
+</head>
+
+<body>
+<div id="wrapper">
+        
+<header><p><span id="prev"><a href="raices_numeros_complejos.html">&larr;</a></span><span id="title"><a href="tabla_de_contenidos.html">Análisis Complejo</a></span><span id="next"><a href="#">&rarr;</a></span><div class="clear"></div></p></header>
+
+<p><img src="../images/complex_functions.png" alt="f(z)=z^2" title="f(z)=z^2"></p>
+
+<h1>Funciones Complejas</h1>
+
+<hr>
+
+<p>Sea $S$ un conjunto de números complejos. Una <em>función</em> $f$ definida en $S$ es 
+	una regla que asigna a cada $z$ en $S$ un número complejo $w$. El número $w$ es llamado 
+	el <em>valor</em> de $f$ en  $z$ y se denota por  $f(z)$; esto es, $w = f (z)$. 
+	El conjunto  $S$ se llama el <em>domino de definición</em> de  $f$.</p>
+
+<p>Si solo un valor de  $w$ corresponde a cada valor de  $z$, decimos que  $w$ 
+	es una función <em>valor-único</em> de $z$ o que $f(z)$ tiene un único valor. 
+	Si más de un valor de $w$ corresponde a cada valor de $z$, decimos 
+	que $w$ es una función  <em>multivaluada</em> de $z$.
+</p>
+
+<p>
+Una función <em>multivaluada</em> se puede considerar como una colección de 
+funciones de valor-único, donde cada miembro es conocido como una <em>rama</em> 
+de la función. En general, consideramos un elemento particular como una  
+<em>rama principal branch</em> de la función multivaluada y el valor de
+la función correspondiente a esta rama como el <em>valor principal</em>.
+</p>
+
+<div class="w3-padding">
+<p>
+<strong>Ejemplo 1:</strong> La expresión $w=z^2$ representa una función de valor-único. 
+Por otra parte, si $w=z^{\frac{1}{2}},$ entonces para cada valor de $z$ existen 
+dos valores de $w$. Por lo tanto, la función $$w=z^{\frac{1}{2}}$$ 
+es multivaluada (en este caso con dos valores) de $z$.
+</p>
+</div>
+
+<p>Supongamos que $w=u+iv$ es el valor de una función $f$ en $z= x+iy$, de tal forma que 
+	$$u+iv=f(x+iy)$$
+Cada uno de los números reales  $u$ y $v$ dependen de las variables reales $x$, $y$.  
+En consecuencia $f(z)$ se puede expresar en términos de un de funciones con valores 
+reales $x$, $y$
+\begin{eqnarray}\label{eq1}
+f(z)= u(x,y)+iv(x,y).
+\end{eqnarray}
+Si consideramos las coordenadas polares $r$ y $\theta$, en lugar de $x$, $y$. Entonces
+$$u+iv=f\left(re^{i\theta}\right)$$
+donde $w=u+iv$ y $z=re^{i\theta}$. En este caso escribrimos
+\begin{eqnarray}\label{eq2}
+f(z)=u\left(r, \theta\right)+iv\left(r, \theta\right).
+\end{eqnarray}
+</p>
+
+<div class="w3-padding w3-responsive">
+    <p>
+    <strong>Ejemplo 2:</strong> Si $f(z)= z^2$ entonces
+    $$f(x+iy)=(x+iy)^2=x^2-y^2+i(2xy).$$
+    Por lo tanto
+    $$u(x,y)= x^2-y^2\quad \text{y}\quad v(x,y)= 2xy.$$
+    Cuando usamos coordenadas polares tenemos que
+    $$u\left(r, \theta\right)= r^2\cos 2\theta \quad \text{y}\quad v\left(r, \theta\right)= r^2\,\text{sen } 2\theta.$$
+    </p>
+</div>
+
+ <p><strong>Pregunta:</strong> ¿Qué sucede cuando en las ecuaciones definidas en (\ref{eq1}) y 
+	(\ref{eq2}) la función $v$ es zero?</p>
+
+<hr>
+
+<h2>Ejemplos de funciones complejas</h2>
+<br>
+<h4 style="text-align:left">Polinomios</h4>
+<p>Para constantes complejas $a_n, a_{n-1}, \ldots, a_0$ definimos
+$$p(z) = a_n z^n + a_{n-1} z^{n-1} +\cdots +a_{1}z + a_0$$
+donde  $a_n\neq 0$ y $n$ es un entero positivo
+conocido como el <em>grado</em> del polinomio $p(z)$.
+</p>
+
+<p><em>Funciones racionales:</em> Razones
+	$$\frac{p(z)}{q(z)}$$
+	donde $p(z)$ y $q(z)$ son polinomios y $q(z)\neq 0$.
+</p>
+
+<h4 style="text-align:left">Función exponencial</h4> 
+
+<p><em>Función exponencial:</em> Si $z=x+iy$, la función  
+	exponencial $e^z$ se define como
+	\begin{eqnarray*}
+	e^z=e^xe^{iy}.
+	\end{eqnarray*}
+	Esto es porque 
+	\begin{eqnarray*}
+	e^{iy}=\cos y +i\,\text{sen } y,
+	\end{eqnarray*}
+	entonces tenemos que
+	\begin{eqnarray*}
+	e^z=e^x\left(\cos y +i\,\text{sen } y\right).
+	\end{eqnarray*}
+</p>
+
+<h4 style="text-align:left">Función logarítmo</h4> 
+
+<p> En forma similar, el logarítmo complejo es una extensión compleja del
+	logarítmo natural con valores reales (i.e., con base $e$). 
+	En términos de coordenadas polares 
+	$z = r e^{i\theta}$, el logarítmo complejo tiene la forma 
+	$$\log z = \log\left(r e^{i\theta}\right) = \log r + \log e^{i\theta}  = \log r + i \theta.$$
+	Exploraremos en detalle esta función 
+	en la siguiente sección.
+	</p>
+
+<h4 style="text-align:left" id="trig-functions">Funciones trigonométricas</h4>
+
+<p> El seno y coseno de variable compleja se definen como:
+\begin{eqnarray*}
+\,\text{sen } z=\frac{e^{i z}-e^{-iz}}{2i}\quad \text{y}\quad  \cos z=\frac{e^{iz} +e^{-i z}}{2}.
+\end{eqnarray*}
+
+Las otras cuatro funciones trigonométricas 
+se definen a partir del seno y coseno complejos
+con base en las siguientes relaciones: with  the following  relations:
+\begin{align*}
+\tan z&=\frac{\,\text{sen } z}{\cos z}     &   \cot z&=\frac{\cos z}{\,\text{sen } z}         \\
+\sec z&=\frac{1}{\cos z}        &  \csc z&=\frac{1}{\,\text{sen } z}.
+\end{align*}
+</p>
+
+<h4 style="text-align:left">Funciones trigonométircas hiperbólicas</h4> 
+
+<p>El seno y coseno hiperbólico de variable compleja se definen de forma similar 
+a su versión de variable real; es decir,
+\begin{eqnarray*}
+\,\text{senh } z=\frac{e^{z}-e^{-z}}{2}\quad \text{y}\quad  \cosh z=\frac{e^{z} +e^{- z}}{2}.
+\end{eqnarray*}
+
+Las otras cuatro funciones hiperbólicas se definen en términos del seno y coseno hiperbólico 
+complejo con las siguientes relaciones:
+\begin{align*}
+\tanh z&=\frac{\,\text{senh } z}{\cosh z}   &   \coth z&=\frac{\cosh z}{\,\text{senh } z}     \\
+\text{sech } z&=\frac{1}{\cosh z}       &  \text{csch } z&=\frac{1}{\,\text{senh } z}.
+\end{align*}
+</p>
+
+<hr>
+
+<h2>Explora las componentes real e imaginaria</h2>
+
+<p>Usa el siguiente applet para explorar las componentes real e imaginaria de 
+	algunas funciones complejas.</p>
+
+<div class="w3-center w3-hide-small">
+    <!--<iframe scrolling="no" title="Real and Imaginary components" src="https://www.geogebra.org/material/iframe/id/vgbbnfp9/width/772/height/541/border/888888/sfsb/false/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/true" width="772px" height="541px" style="border:0px;"> </iframe>-->
+    <div style="display:block" id="ggb-element"></div>
+    
+    <!--<div class="w3-container w3-center">
+        <button onclick="var ifr=document.getElementsByName('JoukAirfoil')[0]; ifr.src=ifr.src;" class="w3-btn w3-ripple w3-grey w3-hover-text-white">Reset</button>
+         
+         <a href="../applets/p5js/joukowsky/index.html" class="w3-btn w3-ripple w3-grey w3-hover-text-white" target="_blank">Open other tab</a>
+    </div>-->
+    
+</div>
+
+<br>
+
+<div class="w3-hide-large w3-hide-medium w3-khaki w3-round w3-padding w3-panel">
+	<p><i class="fas fa-sad-tear"></i> 
+		Lo siento, este applet no funciona para dispositivos con pantallas pequeñas. 
+		Rota tu dispositivo horizontalmente. O cambia el tamaño de tu ventana de tal forma que el ancho es 
+		más grande que el largo.
+	</p>
+</div>
+
+<div class="w3-padding w3-hide-small">
+<details>
+    <summary class="w3-hover-text-blue"><strong>Código</strong></summary>
+    <br>
+	<p>Usa el siguiente script en <a href="https://www.geogebra.org/classic#3d" target="_blank">GeoGebra</a> 
+		para explorar. Abre la vista 3D. El símbolo  # indica comentarios.</p>
+
+<pre><code>#Define función compleja
+    
+f(z) := z + 1/z
+
+#Define componentes
+
+Re = Superficie(u, v, real( f(u + ί v) ), u, -5, 5, v, -5, 5)
+
+Im = Superficie(u, v, imaginary( f(u + ί v) ), u, -5, 5, v, -5, 5)
+</code></pre>
+</details>
+</div>
+
+<br>
+
+
+    
+   <!-- <p><strong>Note:</strong> The applet was made with <a href="https://www.geogebra.org/material/show/id/y9pnh3hu">GeoGebra</a>.</p>-->
+
+	<!-- link to the next page -->
+	<a href="#"><p class="nextPage">NEXT: Función logarítmo</p></a>
+	<footer>
+		<p>[ <a href="../es.html">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+
+		<p class="license">
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+				<img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+			</a>
+		<br/>
+		<strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
+		<strong style="font-size: 18px">2019</strong> 
+	    </p>
+	</footer>
+
+</div> <!-- end wrapper -->
+
+<!-- nice smart quotes, via: http://smartquotesjs.com -->
+<script src="../js/smartquotes.min.js"></script>
+
+</body>
+</html>
