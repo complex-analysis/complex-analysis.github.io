@@ -1,0 +1,389 @@
+<!doctype html>
+<html>
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+	<title>Análisis Complejo</title>
+
+	<!-- dublin core -->
+	<meta name="dc.title" CONTENT="Análisis Complejo">
+	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+	<meta name="dc.date" CONTENT="26-01-2021">
+    <meta name="dc.isbn" CONTENT="ISBN-13: ">
+	<meta name="dc.type" CONTENT="Recurso Interactivo">
+	<meta name="dc.format" CONTENT="HTML">
+	<meta name="dc.language" CONTENT="es-MEX">
+	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+	<!-- social media cards -->
+	<meta property="og:title" content="Análisis Complejo">
+	<meta property="og:description" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:type" content="website">
+	<!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+	<meta name="twitter:card" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:site_name" content="Análisis Complejo">
+
+
+	<!-- FONTS AND CSS -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet'
+		type='text/css'>
+	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="../css/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" >
+	<!-- CODE PRETTIFY -->
+	<!-- via: https://github.com/google/code-prettify -->
+	<script src="../js/run_prettify.js"></script>
+
+
+
+
+	<!-- JQUERY FANCY ADDITIONS -->
+	<!-- add code class, hover text, etc -->
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+		$(document).ready(function () {
+
+			// prettyprint the code, pls
+			$('pre').addClass('prettyprint lang-java');
+
+			// add word-breaks to anything with a / or - in it
+			$('h1').each(function () {
+				var t = $(this).text();
+				t = t.replace('/', '/<wbr>');
+				t = t.replace('-', '-<wbr>');
+				$(this).html(t);
+			});
+
+			// set formatting
+			resizeCommands();
+		});
+
+		// when the window gets resized, do some stuff to keep everything
+		// looking pretty
+		$(window).resize(function () {
+			resizeCommands();
+		});
+
+		// things to do when the page is loaded or window resized
+		function resizeCommands() {
+			// large-screen stuff...
+			if ($(window).width() > 600) {
+
+				// long headline on intro page
+				// $('#introHeadline').html('TABLE OF CONTENTS');
+
+				// menu hover stuff on larger screens
+				// (does weird formatting on larger screens)
+				// hover over title to show "Table of Contents"
+				$('#title a').hover(
+					function () {
+						$('#title a').text('Tabla de Contenidos');
+					},
+					function () {
+						$('#title a').text('Análisis Complejo'); // set back when moving out
+					}
+				);
+
+				// set prev/next titles
+				$('#prev a').hover(
+					function () {
+						$('#title a').text('Prev: La Esfera de Riemann');
+					},
+					function () {
+						$('#title a').text('Análisis Complejo');
+					}
+				);
+				$('#next a').hover(
+					function () {
+						$('#title a').text('Next: Mapeos');
+					},
+					function () {
+						$('#title a').text('Análisis Complejo');
+					}
+				);
+			}
+
+			// small-screen stuff
+			else {
+				// short headline on intro page
+				// $('#introHeadline').html('INTRO');
+			}
+		}
+	</script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-155852901-1');
+	</script>
+
+	<!--MathJax starts-->
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+                           TeX: { equationNumbers: { autoNumber: "AMS" } }
+                           });
+        </script>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+	<script type="text/javascript" async
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+	<!-- Cindy.js -->
+	<!--<link rel="stylesheet" href="../domcoloring/app.css" />
+    <link rel="stylesheet" href="../domcoloring/CindyJS.css" />-->
+	<!--<script type="text/javascript" src="https://cindyjs.org/dist/v0.7.11/Cindy.js"></script>
+    <script type="text/javascript" src="https://cindyjs.org/dist/v0.7.11/CindyGL.js"></script>
+    <script type="text/javascript" src="../applets/cindyjs/assets/v0.7.11/Cindy.js"></script>
+    <script type="text/javascript" src="../applets/cindyjs/assets/v0.7.11/CindyGL.js"></script>
+    <script type="text/javascript" src="../applets/cindyjs/assets/symbolic.js"></script>-->
+
+</head>
+
+<body>
+	<div id="wrapper">
+
+		<header>
+			<p><span id="prev"><a href="esfera_de_riemann.html">&larr;</a></span><span id="title"><a
+						href="tabla_de_contenidos.html">Análisis Complejo</a></span><span id="next"><a
+						href="mapeos.html">&rarr;</a></span>
+				<div class="clear"></div>
+			</p>
+		</header>
+
+		<div class="w3-hide-small"><h1>Diferenciación Compleja</h1></div>
+        <div class="w3-hide-large w3-hide-medium">
+			<h1 style="font-size:42px">Diferenciación Compleja</h1>
+		</div>
+
+		<hr>
+
+		<p>La notación de derivada compleja es la base de
+			la teoría de funciones complejas.
+			La diferenciación compleja se define de la misma manera que en los cursos de 
+			Cálculo usando la definición de límite de la derivada de una función.
+			Sin embargo, a pesar de su superficial similaridad, la diferenciación compleja
+			es profundamente una teoría diferente.
+		</p>
+
+
+		<p>
+			Una función compleja $f(z)$ es <em>diferenciable</em> en el punto $z_0\in \mathbb C$ 
+			si y solo si el siguiente límite del cociente de diferencias existe
+			<div class="w3-responsive">
+				\begin{eqnarray}\label{diff01}
+				f'(z_0) = \lim_{z \rightarrow z_0} \frac{f(z)-f(z_0)}{z-z_0}.
+				\end{eqnarray}
+			</div>
+		</p>
+			<p>Alternativamente, definiendo  $\Delta z = z-z_0$, podemos escribir
+			<div class="w3-responsive">
+				\begin{eqnarray}\label{diff02}
+				f'(z_0) = \lim_{\Delta z \rightarrow 0} \frac{f(z_0+\Delta z)-f(z_0)}{\Delta z}.
+				\end{eqnarray}
+			</div></p>
+			<p>Usualmente omitimos el sub-índice en $z_0$ e introducimos el número
+			\[\Delta w = f(z+\Delta z)-f(z).\]
+			el cual denota el cambio en el valor  $w=f(z)$ correspondiente al cambio $\Delta z$
+			en el punto en el cual $f$ está evaluada. Entonces podemos escribir la equación (\ref{diff02})
+			como
+			\[\frac{d w}{d z}= \lim_{\Delta z \rightarrow 0}\frac{\Delta w}{\Delta z}.\]
+		</p>
+
+
+		<p>
+			A pesar del hecho de que la fórmula (\ref{diff01}) para una derivada es identica en forma 
+			a la derivada de una función real, debemos notar que  $f'(z_0)$
+			se trata de un límite de dos dimensiones. De esta forma
+			para que $f'(z_0)$, el límite relevante deve existir independientemente de la dirección
+			en la cual $z$ se aproxima al punto límite $z_0$. Para una función de una variable real
+			sólo tenemos dos direcciones, esto es, $x\lt x_0$ y $x\gt x_0$.
+		</p>
+
+		<div class="w3-center w3-hide-medium w3-hide-small">
+			<iframe scrolling="no" title="Complex differentiation"
+				src="https://www.geogebra.org/material/iframe/id/yn5rs5wg/width/617/height/474/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false"
+				width="617px" height="474px" style="border:0px;" allowfullscreen> </iframe>
+			<!--<div style="width:776px;height:548px;display:block" id="applet_container1"></div>-->
+		</div>
+
+		<div class="w3-hide-large ">
+			<img class="w3-image w3-mobile" src="../images/derivative.gif" alt="derivative"
+				title="Geometric interpretation" style="width:703px;">
+		</div>
+
+		<figure class="w3-center">
+			<figcaption>
+				<b>Figura 1:</b> Existe una variedad infinita de direcciones para aproximarse a $z_0$.
+			</figcaption>
+		</figure>
+
+		<p>Una característica importate de la diferenciación compleja
+			es que la existencia de una derivada compleja automáticamente implica 
+			la existencia de infinitas derivadas.
+			Esto es en contraste con el caso de la función real $g(x)$, en la cual
+			$g'(x)$ puede existir sin la existencia de $g''(x)$.
+		</p>
+
+		<hr>
+
+		<h2>Ecuaciones de Cauchy-Riemann</h2>
+
+		<p>
+			Para comprendet las consecuencias de la definición (\ref{diff01}), 
+			veamos qué sucede cuando nos aproximamos a $z_0$ 
+			a lo largo de dos direcciones simples - de forma horizontal y vertical. 
+			Si definimos 
+			$$z= z_0 + h = (x_0+h)+iy_0,\quad h\in \mathbb R,$$
+			entonces $z \rightarrow z_0$ a lo largo de una línea horizontal 
+			cuando  $h\rightarrow 0.$
+			Si escribimos
+			$$f(z) = u(x,y)+iv(x,y)$$
+			en términos de sus partes real e imaginaria, entonces
+			$$f'(z_0)= \lim_{h \rightarrow 0}\frac{f(z_0+h)-f(z_0)}{h}$$
+			de lo cual se tenemos que
+			<div class="w3-responsive">
+				\begin{eqnarray*}
+				f'(z_0)&amp;= &amp; \lim_{h \rightarrow 0} \frac{f(z_0+h)-f(z_0)}{h} = \lim_{h \rightarrow 0}
+				\frac{f(x_0+h + iy_0)-f(x_0+iy_0)}{h} \\
+				&amp;= &amp; \lim_{h \rightarrow 0} \left[ \frac{u \left( x_0 +h, y_0 \right) - u \left( x_0 , y_0
+				\right)}{h}\right]+i \lim_{h \rightarrow 0} \left[ \frac{v \left( x_0 +h, y_0 \right) - v \left( x_0 ,
+				y_0 \right)}{h}\right] \\
+				&amp;= &amp; u_x(x_0, y_0)+ i v_x(x_0,y_0)
+				\end{eqnarray*}
+			</div></p>
+			<p>donde  $u_x(x_0, y_0)$ y $v_x(x_0,y_0)$ denotan las derivadas parciales
+				de primer orden con respecto a $x$ de las funciones $u$ y $v$, respectivamente,
+				en  $(x_0, y_0)$.
+			Si ahora definimos 
+			$$z = z_0+ik = x_0 + i(y_0+k), \quad k\in \mathbb R,$$
+			entonces $z\rightarrow 0$ a lo largo de la línea vertical cuando $k\rightarrow 0$. 
+			Por lo tanto, también tenemos
+			<div class="w3-responsive">
+				\begin{eqnarray*}
+				f'(z_0)&amp;= &amp; \lim_{k \rightarrow 0} \frac{f(z_0+ik)-f(z_0)}{ik} = \lim_{k \rightarrow 0} \left[
+				-i \frac{f(x_0 + i(y_0+k))-f(x_0+iy_0)}{k} \right] \\
+				&amp;= &amp; \lim_{k \rightarrow 0} \left[ \frac{v \left( x_0 , y_0 + k\right) - v \left( x_0 , y_0
+				\right)}{k}-i \frac{u \left( x_0 , y_0 +k \right) - u \left( x_0 , y_0 \right)}{k}\right] \\
+				&amp;= &amp; v_y(x_0, y_0)- i u_y(x_0,y_0)
+				\end{eqnarray*}
+			</div></p>
+			<p>donde las derivadas parciales de $u$ y $v$ son, en este caso, con respecto a $y$.
+			Cuando igualamos las partes real e imaginaria de estas dos fórmulas 
+			para la derivada compleja $f'(z_0)$, descubrimos que 
+			las componentes real e imaginaria de $f(z)$ deben satisfacer un sistema lineal 
+			homogéneo de ecuaciones diferenciales:
+			$$u_x=v_y, \quad u_y=-v_x.$$
+			Estas son las <em>ecuaciones de Cauchy-Riemann</em> cuyo nombre se debe a los famosos
+			matemáticos del siglo XIX Augustin-Louis Cauchy y Bernhard Riemann, dos de los 
+			fundadores del análisis complejo moderno.
+		</p>
+
+		<div class="w3-responsive">
+			<p class="theorem"><strong>Teorema 1:</strong> <em>
+				Una función compleja $f(z)=u(x,y)+iv(x,y)$
+					tiene una derivada compleja $f'(z)$ 
+					si y solo si su parte real e imaginaria son diferencialmente
+					continuas y además satisfacen las </em> ecuaciones de Cauchy-Riemann
+				\begin{eqnarray*}
+				u_x=v_y, \quad u_y=-v_x
+				\end{eqnarray*}
+				<em>En este caso, la derivada compleja de $f(z)$ es igual a cualquiera de las siguientes
+					espresiones:
+					$$f'(z)=u_x+iv_x = v_y - i u_y.$$
+				</em></p>
+		</div>
+		<br />
+
+		<div class="w3-padding">
+			<p><strong>Ejemplo:</strong> Considera la función $f(z)=z^2$, la cual se puede
+				escribir como
+				$$z^2 = \left(x^2-y^2\right)+ i \left(2xy\right).$$
+				Su parte real  $u = x^2-y^2$ e imaginaria  $v=2xy$ satisfacen las ecuaciones de
+				Cauchy-Riemann, dado que 
+				$$u_x=2x = v_y, \quad u_y = -2y = -v_x.$$
+				El Teorema 1 implica que $f(z)=z^2$ es diferenciable. Su derivada es
+				<div class="w3-responsive">
+					$$f'(z)=u_x+iv_x = v_y - i u_y = 2x + i 2y = 2(x+iy) = 2z.$$
+				</div>
+			</p>
+		</div>
+
+
+		<p>Afoprtunadamente, la derivada compleja obedece todas
+			las reglas que has aprendido en un curso de cálculo.
+			Por ejemplo
+			<div class="w3-responsive">
+				$$\frac{d}{dz}z^n = nz^{n-1}, \quad \frac{d}{dz} e^{cz} = ce^{cz}, \quad \frac{d}{dz} \log z =
+				\frac{1}{z},$$
+			</div></p>
+			<p>Aquí, la potencia $n$ puede ser un número real (o incluso un número complejo
+				debido a la identidad $z^n = e^n \log z$), mientras que $c$ 
+				es una constante compleja. 
+				Las <a href="complex_functions.html#trig-functions" target="_blank">formulas exponenciales</a>
+			para las funciones trigonométricas implica que también satisfacen 
+			las reglas estándar
+			<div class="w3-responsive">
+				$$\frac{d}{dz}\sin z= \cos z, \quad \frac{d}{dz} \cos z = -\sin z.$$
+			</div></p>
+			<p>La formula para la diferenciación de sumas, productos,
+				razones, inversas y la composición de funciones son identicas a 
+				sus versiones de variable real, con demostraciones similares.
+				De esta forma, afortunadamente, no necesitas aprender nuevas reglas
+				para realizar el cálculo de derivadas complejas.
+		</p>
+
+		<hr>
+
+		<h2>Funciones anaíticas</h2>
+
+		<p>Sea $f:A\rightarrow \mathbb C$ donde $A\subset \mathbb C$ es un conjunto abierto. 
+			La función se dice que es <em>analítica</em> en $A$ si $f$ es diferenciable
+			en cada  $z_0\in A$. La palabra "holomórfica", que también se acostrumbra a usar, 
+			es sinónimo de la palabra "analítica". 
+			La frase 
+			<em>"analítica en $z_0$"</em> significa que $f$ es analítica en una
+			vecindad de $z_0$
+		</p>
+
+
+		<!-- link to the next page -->
+		<a href="mapeos.html">
+			<p class="nextPage">NEXT: Mapeos</p>
+		</a>
+		<footer>
+			<p>[ <a href="../es.html">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
+					href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+
+					<p class="license">
+						<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+							<img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+						</a>
+					<br/>
+					<strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
+					<strong style="font-size: 18px">2019</strong> 
+					</p>
+		</footer>
+
+	</div> <!-- end wrapper -->
+
+	<!-- nice smart quotes, via: http://smartquotesjs.com -->
+	<script src="../js/smartquotes.min.js"></script>
+
+</body>
+
+</html>
