@@ -1,0 +1,341 @@
+<!doctype html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+	<title>Análisis Complejo</title>
+
+	<!-- dublin core -->
+	<meta name="dc.title" CONTENT="Análisis Complejo">
+	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+	<meta name="dc.date" CONTENT="26-01-2021">
+    <meta name="dc.isbn" CONTENT="ISBN-13: ">
+	<meta name="dc.type" CONTENT="Recurso Interactivo">
+	<meta name="dc.format" CONTENT="HTML">
+	<meta name="dc.language" CONTENT="es-MEX">
+	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+	<!-- social media cards -->
+	<meta property="og:title" content="Análisis Complejo">
+	<meta property="og:description" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:type" content="website">
+	<!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+	<meta name="twitter:card" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:site_name" content="Análisis Complejo">
+    
+	
+	<!-- FONTS AND CSS -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet' type='text/css'>
+	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" >
+	<!-- CODE PRETTIFY -->
+	<!-- via: https://github.com/google/code-prettify -->
+	<script src="../js/run_prettify.js"></script>
+
+	
+
+	<!-- JQUERY FANCY ADDITIONS -->
+	<!-- add code class, hover text, etc -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+
+		$(document).ready(function() {
+
+			// prettyprint the code, pls
+			$('pre').addClass('prettyprint lang-java');
+
+			// add word-breaks to anything with a / or - in it
+			$('h1').each(function() {
+				var t = $(this).text();
+				t = t.replace('/', '/<wbr>');
+				t = t.replace('-', '-<wbr>');
+				$(this).html(t);
+			});
+
+			// set formatting
+			resizeCommands();
+		});
+
+		// when the window gets resized, do some stuff to keep everything
+		// looking pretty
+		$(window).resize( function() {
+			resizeCommands();
+		});
+
+		// things to do when the page is loaded or window resized
+		function resizeCommands() {
+			// large-screen stuff...
+			if ($(window).width() > 600) {
+
+				// long headline on intro page
+				// $('#introHeadline').html('TABLE OF CONTENTS');
+
+				// menu hover stuff on larger screens
+				// (does weird formatting on larger screens)
+				// hover over title to show "Table of Contents"
+				$('#title a').hover(
+					function() {
+						$('#title a').text('Tabla de Contenidos');
+					},
+					function() {
+						$('#title a').text('Análisis Complejo');	// set back when moving out
+					}
+				);
+
+				// set prev/next titles
+				$('#prev a').hover(
+					function() {
+						$('#title a').text('Prev: Superficies de Riemann');
+					},
+					function() {
+						$('#title a').text('Análisis Complejo');
+					}
+				);
+				$('#next a').hover(
+					function() {
+						$('#title a').text('Next: Diferenciación Compleja');
+					},
+					function() {
+						$('#title a').text('Análisis Complejo');
+					}
+				);
+			}
+
+			// small-screen stuff
+			else {
+				// short headline on intro page
+				// $('#introHeadline').html('INTRO');
+			}
+		}
+	</script>
+    
+    <!--MathJax starts-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                           TeX: { equationNumbers: { autoNumber: "AMS" } }
+                           });
+        </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+    
+  
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-155852901-1');
+</script>
+    
+    <!--GeoGebra embeding-->
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<script>
+    var applet1 = new GGBApplet({material_id: "emxagaq7",
+                                borderColor:"888888",
+                                playButton: "true",
+                                showFullscreenButton: "true",
+                                showResetIcon: "true"}, true);
+    window.addEventListener("load", function() {
+          applet1.inject('applet_container1');
+      });
+</script>
+<!--GeoGebra embeding ends-->
+    
+</head>
+
+<body>
+<div id="wrapper">
+        
+		<header><p><span id="prev"><a href="superficies_de_riemann.html">&larr;</a></span>
+			<span id="title"><a href="tabla_de_contenidos.html">Análisis Complejo</a></span>
+			<span id="next"><a href="#">&rarr;</a></span><div class="clear"></div></p></header>
+        
+
+<h1>La Esfera de Riemann</h1>
+<hr>
+
+<h2>El Punto al Infinito</h2>
+<p>Para algunos propósitos es conveniente intruducir el <em>punto al infinito</em>, 
+	denotado por $\infty$, incluído con todos los puntos $z\in \mathbb C$. 
+	Debemos tener cuidado al hacer esto, porque corremos el riesgo de abusar del uso 
+	del símbolo $\infty$. Sin embargo, con las debidas precauciones, podemos utilizarlo 
+	si queremos hablar de límites cuyos valores son infinitos o límites que tienden a
+	infinito.
+</p>
+
+<p>
+	En contraste con la línea real, para la cual los símbolos $+\infty$ y $-\infty$ 
+	se puede agregar, en el caso de los números complejos $\mathbb C$
+	solo necesitamos un símbolo $\infty$. La razón es que $\mathbb C$ 
+	es un conjunto que no tienen un orden natural como $\mathbb R$. 
+	Formalmente agregamos el símbolo $\infty$ a $\mathbb C$ para obtener el
+	<em>plano complejo extendido</em>,  denotado por 
+	$\mathbb C^*=\mathbb C \cup \{\infty\}$, y definimos las operaciones
+	con $\infty$ con las siguientes reglas
+\begin{eqnarray*}
+z+\infty&amp;=&amp;\infty\\
+z\cdot \infty&amp;=&amp;\infty \quad \quad \text{siempre que } z\neq 0\\
+\infty+\infty&amp;=&amp;\infty\\
+\infty\cdot\infty&amp;=&amp; \infty\\
+\frac{z}{\infty}&amp;=&amp;0
+\end{eqnarray*}
+para $z\in \mathbb C$. Notemos que algunas operacione no están definidas:
+$$\frac{\infty}{\infty}\,,\quad 0\cdot \infty\,,\quad  \infty-\infty\,,$$
+y además no están definidas por las mismas razones que de su versión de números reales.</p>
+
+<p>Consideremos una esfera unitaria encima del plano complejo con el polo sur de la esfera
+localizado en el origen del plano $z$ (ver applet siguiente). 
+El plano complejo extendido se puede mapear biyectivamente 
+una la superficie de la esfera cuto polo sur corresponde con el origen y cuyo polo
+norte correspionn con el punto $\infty$. 
+Todos los demás puntos del plano complejo se pueden mapear
+uno-a-uno a los puntos en la superficie de la espefera usando la siguiente construcción.
+Conecta el punto $z$ en el plano con el polo norte usando una línea recta.
+Esta línea interseca a la esfera en el punto $P(z)$. De esta forma cada 
+punto $z= x+iy$ en el plano complejo corresponde únicamente a un punto $P(z)$ 
+en la superficie de la esfera. Esta construcción se conoce como
+la <em>proyección estereográfica</em> y es ilustrada en el siguiente applet.</p>
+
+
+<div class="w3-hide-small">
+<p>Mueve el punto definido en el plano complejo
+	o mueve los delizadores.</p>
+    <!-- ctl=play button; sfsb=fullscreen button-->
+<div style="width:800px;height:435px;display:block" id="applet_container1"></div>
+</div>
+<div class="w3-hide-large w3-hide-medium w3-khaki w3-round w3-padding w3-panel">
+	<p><i class="fas fa-sad-tear"></i> 
+		Lo siento, este applet no funciona para dispositivos con pantallas pequeñas. 
+		Rota tu dispositivo horizontalmente. O cambia el tamaño de tu ventana de tal forma 
+		que el ancho es mayor que el largo.	
+	</p>
+</div>
+<br>
+
+<p>El plano complejo extendido también se le conoce con el nombre de 
+	plano complejo <em>compactificado</em> (cerrado). 
+	Utilizar el plano complejo de esta forma es muy útil, y conocer
+	cómo se realiza la construcción de la proyección estereográfica 
+	puede ser también útil en otros temás de matemáticas avanzados.
+</p>
+
+<p>Ahora podemos introducir los siguiente conceptos de límites:
+<ol>
+    <li>$\displaystyle \lim_{z\rightarrow \infty}f(z)=z_0$ significa: 
+		Para cada $\epsilon>0$, existe un $R>0$ tal que $\left|f(z)-z_0\right| &lt; \epsilon$ 
+		cuando sea $|z|> R$.</li>
+    <li>$\displaystyle \lim_{z\rightarrow z_0}f(z)=\infty$ significa: 
+		Para cada $R>0$, existe un $\delta>0$ tal que $|f(z)|>R$ 
+		cuando sea $0&lt;|z-z_0|&lt; \delta$.</li>
+    <li>$\displaystyle \lim_{z\rightarrow \infty}f(z)=\infty$ significa: 
+		Para cada $M>0$, existe un $R>0$ tal que $|f(z)|>M$ 
+		cuando sea $|z|> R$.</li>
+</ol>
+</p>
+
+<div class="w3-padding">
+<p><strong>Ejemplo 1:</strong> Si $f(z)=1/z^2$, para $z\neq 0$, entonces
+$$\lim_{z\rightarrow \infty}f(z)=0.$$
+En realidad, dado $\epsilon>0$ tenemos
+$$\left|\frac{1}{z^2}-0\right|=\frac{1}{\left|z^2\right|}=\frac{1}{\left|z\right|^2} &lt;\epsilon$$
+al tomar 
+$$\left|z\right|>\frac{1}{\sqrt{\epsilon}}=R.$$
+</p>
+
+<p><strong>Ejemplo 2:</strong>
+Sea $f(z)=1/(z-3)$, para $z\neq 3$. Entonces
+$$\lim_{z\rightarrow 3}f(z)=\infty.$$
+En ralidad, para cada $R>0$ dado, la desigualdad 
+$$\frac{1}{\left|z-3\right|}>R$$
+se cumple cuando 
+$$0&lt;\left|z-3\right| &lt; \frac{1}{R}=\delta.$$
+</p>
+
+<p><strong>Ejemplo 3:</strong>
+Para $f(z)=e^z$, definida en  $D=\{z\,:\,\textbf{Re}(z)>0\}$, tenemos
+$$\lim_{z\rightarrow \infty}f(z)=\infty.$$
+En este caso, para cada $M>0$ dado obtenemos
+$$\left|f(z)\right|=\left|e^z\right|=e^x>M$$
+cuando $x>\ln M.$ Por lo tanto, 
+es suficiente tomar $R>\max\{0,\ln R\}$.
+</p>
+</div>
+
+<p>Vale la pena mencionar que para $f(z)=e^z$ definida en $D_1=\{z\,:\,\textbf{Re}
+(z)=0\}$, i.e., para $f(iy)=e^{iy}$, no existe el límite cuando 
+ $z=iy\rightarrow \infty $, debido que a lo largo del eje imaginario, 
+ $e^{iy} = \cos y+i\sin y$  es periódica y no constante.</p>
+
+<p>
+	Finalmente, para $f(z)=e^z$ definida en $D_2=\{z\,:\,\textbf{Re}(z)&lt;0\}$ 
+	tenemos que $$\lim_{z\rightarrow \infty}f(z)=0.$$
+</p>
+
+<p>
+	Existe una manera más sencilla de calcular límites como los mostrados en
+	los Ejemplos 1-3. El siguiente teorema provee un método muy útil en este caso.</p>
+
+
+<div class="w3-responsive">
+<p class="theorem"><strong>Teorema</strong> <em>
+	Si  $z_0$ y$w_0 $ son puntos en los planos $z$ y $w$, respectivamente, entonces
+    \begin{eqnarray*}
+\lim_{z\rightarrow z_0}f(z)=\infty \quad\text{si y solo si}\quad \lim_{z\rightarrow z_0}\frac{1}{f(z)}=0,\label{limiinfty01}\\
+\lim_{z\rightarrow \infty }f(z)=w_0 \quad\text{si y solo si}\quad \lim_{z\rightarrow 0}f\left(\frac{1}{z}\right)=w_0,\label{limiinfty02}\\
+\lim_{z\rightarrow \infty }f(z)=\infty \quad\text{si y solo si}\quad \lim_{z\rightarrow 0}\frac{1}{f(1/z)}=0.\label{limiinfty03}
+\end{eqnarray*}
+</em>
+</p>
+</div>
+<br>
+
+<div class="w3-responsive">
+<p>Usando este resultado podemos encontrar fácilmente que 
+$$\lim_{z\rightarrow -1}\frac{iz+3}{z+1}=\infty \quad \text{since}\quad \lim_{z\rightarrow -1}\frac{z+1}{iz+3}=0$$
+y
+$$\lim_{z\rightarrow \infty}\frac{2z+i}{z+1}=2 \quad \text{since}\quad \lim_{z\rightarrow 0}\frac{(2/z)+i}{(1/z)+1}=\frac{2+iz}{1+z}=2.$$
+Más aún,
+$$\lim_{z\rightarrow \infty}\frac{2z^3-1}{z^2+1}=\infty \quad \text{since}\quad \lim_{z\rightarrow 0}\frac{(1/z^2)+1}{(2/z^3)-1}=\frac{z+z^3}{2-z^3}=0.$$</p>
+</div>
+
+
+    
+    <br>
+    
+    <!--<p><strong>Note:</strong> The applet was made with <a href="https://www.geogebra.org/material/show/id/zsf2n5ny">GeoGebra</a>.</a></p>-->
+
+	<!-- link to the next page -->
+	<a href="#"><p class="nextPage">NEXT: Diferenciación Compleja</p></a>
+	<footer>
+		<p>[ <a href="../es.html">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+
+		<p class="license">
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+				<img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+			</a>
+		<br/>
+		<strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
+		<strong style="font-size: 18px">2019</strong> 
+	    </p>
+	</footer>
+
+</div> <!-- end wrapper -->
+
+<!-- nice smart quotes, via: http://smartquotesjs.com -->
+<script src="../js/smartquotes.min.js"></script>
+
+</body>
+</html>
