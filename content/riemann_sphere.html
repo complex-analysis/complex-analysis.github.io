@@ -138,21 +138,27 @@
 
   gtag('config', 'UA-155852901-1');
 </script>
-    
-    <!--GeoGebra embeding-->
+   
+<!--GeoGebra embeding-->
 <script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
 
 <script>
-    var applet1 = new GGBApplet({material_id: "emxagaq7",
-                                borderColor:"888888",
-                                playButton: "true",
-                                showFullscreenButton: "true",
-                                showResetIcon: "true"}, true);
-    window.addEventListener("load", function() {
-          applet1.inject('applet_container1');
-      });
+	var params = { 
+				"width": 800, 
+				"height": 435,
+				"material_id": "zsf2n5ny",
+                "borderColor": "888888",
+                "playButton": false,
+                "showFullscreenButton": true,
+                "enableShiftDragZoom": true,
+                "showResetIcon": true };
+    var ggbApplet = new GGBApplet(params, true);
+    window.addEventListener("load", function() { 
+        ggbApplet.inject('ggb-element');
+    });
 </script>
 <!--GeoGebra embeding ends-->
+
     
 </head>
 
@@ -197,7 +203,7 @@ surface of the sphere. This construction is called the <em>stereographic project
 	Drag the point defined on the $z$ plane, or the sliders,
 	to explore the behaviour of the point $P(z)$  on the sphere.</p>
     <!-- ctl=play button; sfsb=fullscreen button-->
-<div style="width:800px;height:435px;display:block" id="applet_container1"></div>
+<div style="display:block" id="ggb-element"></div>
 </div>
 <div class="w3-hide-large w3-hide-medium w3-khaki w3-round w3-padding w3-panel">
     <p><i class="fas fa-sad-tear"></i> Sorry, the applet is  not supported for small screens. Rotate your device to landscape. Or resize your window so it's more wide than tall.</p>
