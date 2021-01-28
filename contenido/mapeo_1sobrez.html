@@ -6,26 +6,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
-	<title>Complex Analysis</title>
+	<title>Análisis Complejo</title>
 
 	<!-- dublin core -->
-	<meta name="dc.title" CONTENT="Complex Analysis">
+	<meta name="dc.title" CONTENT="Análisis Complejo">
 	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
-	<meta name="dc.date" CONTENT="26-01-2019">
-    <meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
-	<meta name="dc.type" CONTENT="Interactive Resource">
+	<meta name="dc.date" CONTENT="26-01-2021">
+    <meta name="dc.isbn" CONTENT="ISBN-13: ">
+	<meta name="dc.type" CONTENT="Recurso Interactivo">
 	<meta name="dc.format" CONTENT="HTML">
-	<meta name="dc.language" CONTENT="en-US">
+	<meta name="dc.language" CONTENT="es-MEX">
 	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 
 	<!-- social media cards -->
-	<meta property="og:title" content="Complex Analysis">
-	<meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+	<meta property="og:title" content="Análisis Complejo">
+	<meta property="og:description" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
 	<meta property="og:type" content="website">
 	<!--<meta property="og:image" content="">
 	<meta property="og:url" content="">-->
-	<meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
-	<meta property="og:site_name" content="Complex Analysis">
+	<meta name="twitter:card" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:site_name" content="Análisis Complejo">
     
 	
 	<!-- FONTS AND CSS -->
@@ -81,28 +81,28 @@
 				// hover over title to show "Table of Contents"
 				$('#title a').hover(
 					function() {
-						$('#title a').text('Table of Contents');
+						$('#title a').text('Tabla de Contenidos');
 					},
 					function() {
-						$('#title a').text('Complex Analysis');	// set back when moving out
+						$('#title a').text('Análisis Complejo');	// set back when moving out
 					}
 				);
 
 				// set prev/next titles
 				$('#prev a').hover(
 					function() {
-						$('#title a').text('Prev: Mappings');
+						$('#title a').text('Prev: Mapeos');
 					},
 					function() {
-						$('#title a').text('Complex Analysis');
+						$('#title a').text('Análisis Complejo');
 					}
 				);
 				$('#next a').hover(
 					function() {
-						$('#title a').text('Next: Analytic Landscapes');
+						$('#title a').text('Next: Superficies Analíticas');
 					},
 					function() {
-						$('#title a').text('Complex Analysis');
+						$('#title a').text('Análisis Complejo');
 					}
 				);
 			}
@@ -159,25 +159,34 @@
 <body>
 <div id="wrapper">
         
-        <header><p><span id="prev"><a href="mappings.html">&larr;</a></span><span id="title"><a href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a href="analytic_landscapes.html">&rarr;</a></span><div class="clear"></div></p></header>
+		<header><p><span id="prev"><a href="mapeos.html">&larr;</a></span>
+			<span id="title"><a href="tabla_de_contenidos.html">Análisis Complejo</a></span>
+			<span id="next"><a href="#">&rarr;</a></span>
+			<div class="clear"></div></p></header>
         
 
-<div class="w3-hide-small"><h1>The Transformation $w=1/z$</h1></div>
-<div class="w3-hide-large w3-hide-medium"><h1 style="font-size:42px">The Transformation $w=1/z$</h1></div>
+<div class="w3-hide-small"><h1>La Transformación $w=1/z$</h1></div>
+<div class="w3-hide-large w3-hide-medium"><h1 style="font-size:42px">La Transformación  $w=1/z$</h1></div>
 
 <hr>
 
-<p>Consider the equation
+<p>Consideremos la ecuación
 $$w=\frac{1}{z}$$
-which establishes a one to one correspondence between the nonzero points of the $z$ and
-$w$ planes. Since $z\overline{z} = |z|^2$, the mapping can be described by means of the successive transformations
+la cual establece una correspondencia uno a uno de
+los puntos diferentes de cero entre los planos $z$  y
+$w$. Dado que $z\overline{z} = |z|^2$, el mapeo
+se puede describir por medio de transformaciones sucesivas 
 $$g(z)=\frac{z}{|z|^2},\quad f(z)=\overline{g(z)}.$$
-The first transformation $g(z)$ is an inversion with respect to the unit circle
-$|z| = 1$. That is, the image of a nonzero point $z$ is the point $g(z)$ with the properties
+La primera transformación $g(z)$ se trata de una inversión
+con respecto al círculo unitario $|z| = 1$. Es decir, la
+imagen de un punto diferente de cero $z$ es el punto $g(z)$ 
+con las propiedades 
 $$|g(z)| = \frac{1}{|z|}\quad\text{and}\quad \textbf{arg } g(z) = \textbf{arg } z.$$
-Thus the points exterior to the circle $|z| = 1$ are mapped onto the nonzero points
-interior to it, and conversely. Any point on the circle is mapped onto itself.
-The second transformation $f(z)=\overline{g(z)}$ is simply a reflection in the real axis.
+De esta manera los puntos exteriores al círuclo $|z| = 1$ 
+son mapeados a los puntos en su interior, e inversamente. 
+Cualquier punto en el círculo es mapeado a sí mismo. 
+La segunda transformación $f(z)=\overline{g(z)}$ 
+es simplemente una reflección en el eje real.
 </p>
 
 <div class="w3-center w3-hide-small">
@@ -187,31 +196,34 @@ The second transformation $f(z)=\overline{g(z)}$ is simply a reflection in the r
 <br>
 
 <div class="w3-responsive">
-<p>If we consider the function
+<p>Si consideramos la función 
 \begin{eqnarray*}
 T(z)=\frac{1}{z}, \quad z\neq 0,
 \end{eqnarray*}
-we can define $T$ at the origin and at the point at infinity so as to be continuous on
-the <em>extended</em> complex plane. In order to make $T$ continuous on the extended plane, then, we write
+podemos definir $T$ en el origen y el punto al infinito
+de tal forma que esta sea continua en el plano complejo
+<em>extendido</em>. Para hacer $T$ continua en el plano extendido, entonces
+escribimos
 \begin{eqnarray*}
-T(0)=\infty,\quad T(\infty)=0, \quad \text{and}\quad T(z)=\frac{1}{z}
+T(0)=\infty,\quad T(\infty)=0, \quad \text{y}\quad T(z)=\frac{1}{z}
 \end{eqnarray*}
-for the remaining values of $z$.
+para los demás valores $z$.
 </p>
 </div>
 
 <hr>
 
-<h2>Mappings by $1/z$</h2>
+<h2>Mapeos de $1/z$</h2>
 
-<p>An interesting property of the mapping $w = 1/z$ is that it transforms 
-	circles and lines into circles and lines.</p>
+<p>Una propiedad interesante del mapeo $w = 1/z$ es que transforma
+	círculos y líneas rectas en círculos y rectas.</p>
 
-<p>You can observe this intuitively in the following applet. Things to try:
+<p>Puedes observar esto de manera intuitiva en el siguietne applet.
 	<ul>
-		<li>Select between a <code>Line</code> or <code>Circle</code>.</li>
-		<li>Drag points around on the left-side window. You can also change the position 
-			of the line or circle by dragging the grey points.</li>
+		<li>Selecciona una <code>Línea</code> o <code>Círculo</code>.</li>
+		<li>Mueve los puntos en la vista gráfica de la izquierda. 
+			Puedes cambiar la positión de la línea o el círculo al mover los
+			puntos grises.</li>
 	</ul>
 </p>
 
@@ -225,11 +237,12 @@ for the remaining values of $z$.
 <br>
 
 <p>
-	Observe carefully what happens to the points $w_1, w_2$ (the image of $z_1$ and $z_2$, respectively) on the $uv$-plane, 
-	shown on the right-side window.
+	Observa con cudiado lo que sucede
+	a los puntos $w_1, w_2$ (la imagen de $z_1$ y $z_2$, respectivamente) 
+	en el plano $uv$, mostrado en la vista gráfica de la derecha.
 	   <ul>
-		   <li>What do you notice when the line on the $xy$-plane crosses the origin?</li>
-		   <li>What happens when the circle on the $xy$-plane crosses the origin?</li>
+		   <li>¿Qué puedes notar cuando la línea en el plano $xy$ cruza el origen?</li>
+		   <li>¿Qué sucede cuando el círculo en el plano $xy$ cruza el origen?</li>
 	   </ul>
 </p>
 
@@ -255,66 +268,75 @@ u=\frac{x}{x^2+y^2},\quad v=\frac{-y}{x^2+y^2}.
 </p>-->
 
 <div class="w3-responsive">
-<p>When $A$, $B$, $C$ and $D$ are all real numbers satisfying the condition $B^2+C^2>4AD$, the equation
+<p>Cuando $A$, $B$, $C$ y $D$ son numeros reales y sarifacen la condición
+$B^2+C^2>4AD$, la ecuación
 \begin{eqnarray}\label{circle01}
 A\left(x^2+y^2\right)+Bx+Cy+D=0
 \end{eqnarray}
-represents an arbitrary circle or line, where $A\neq 0$ for a circle and $A=0$ for a line.</p>
+representa un círculo o una línea en general. En el caso de 
+$A\neq 0$, se define un círculo. Mientras que cuando $A=0$, se define una línea.</p>
 </div>
 
 <div class="w3-responsive">
-<p>By using the method of completing the squares, we can rewrite equation (\ref{circle01}) as follows
+<p>Usando el método de completar cuadrados perfectos, 
+	podemos re-escribir la ecuación (\ref{circle01}) de la siguiente manera
 \begin{eqnarray*}\label{circle02}
 \left(x+\frac{B}{2A}\right)^2+\left(y+\frac{C}{2A}\right)^2=\left(\frac{\sqrt{B^2+C^2-4AD}}{2A}\right)^2
 \end{eqnarray*}
-This makes evident the need for condition $B^2+C^2>4AD$ when $A\neq 0$. When $A = 0$, the condition becomes $B^2 + C^2 &gt; 0$, which means that $B$ and $C$ are
-not both zero.
+Esto hace evidente la necesidad de la condición $B^2+C^2>4AD$ cuando
+$A\neq 0$. Ahora, si $A = 0$, la condición se convierte en 
+$B^2 + C^2 &gt; 0$, la cual significa que  $B$ y $C$ deben ser
+diferentes de cero.
 </p>
 </div>
 
 <div class="w3-responsive">
-<p>Now, using the relations
+<p>Ahora, usando las relaciones
 \begin{eqnarray}\label{exp01}
 x=\frac{z+\overline{z}}{2},\quad y=\frac{z-\overline{z}}{2i},
 \end{eqnarray}
-we can rewrite equation (\ref{circle01}) in the form
+podemos re-escribir la ecuación (\ref{circle01}) en la forma
 \begin{eqnarray}\label{circle03}
 2Az\overline{z}+(B-iC)z+(B+iC)\overline{z}+2D=0.
 \end{eqnarray}
-Since $w=1/z$, equation (\ref{circle03}) becomes
+Dado que $w=1/z$, la ecuación  (\ref{circle03}) se convierte en 
 \begin{eqnarray*}
 2Dw\overline{w}+(B+iC)w+(B-iC)\overline{w}+2A=0
 \end{eqnarray*}
-and using the relations
+y usando las relaciones
 \begin{eqnarray}\label{exp02}
 u=\frac{w+\overline{w}}{2},\quad v=\frac{w-\overline{w}}{2i},
 \end{eqnarray}
-we obtain
+obtenemos 
 \begin{eqnarray}\label{circle04}
 D(u^2+v^2)+Bu-Cv+A=0
 \end{eqnarray}
-which also represents a circle or line.
+la cual representa también un círculo o una línea recta.
 </p>
 </div>
 
-<p>It is now clear from equations (\ref{circle01}) and (\ref{circle04}) that
+<p>Ahora es claro, a partir de las ecuaciones (\ref{circle01}) y (\ref{circle04}) que
 <ol>
-<li>a circle ($A \neq 0$) not passing through the origin ($D \neq 0$) in the 
-	$z$ plane is transformed into a circle not passing through the origin in the $w$ plane;</li>
-<li>a circle ($A \neq 0$) through the origin ($D = 0$) in the $z$ plane is 
-	transformed into a line that does not pass through the origin in the $w$ plane;</li>
-<li>a line ($A = 0$) not passing through the origin ($D \neq 0$) in the $z$ 
-	plane is transformed into a circle through the origin in the $w$ plane;</li>
-<li>a line ($A = 0$) through the origin $(D = 0)$ in the $z$ plane is transformed into a
-line through the origin in the $w$ plane.</li>
+<li>un círculo ($A \neq 0$) que no pase por el origen
+	($D \neq 0$) en el plano $z$ se transforma en un círculo 
+	que no pasa por el origen en el plano $w$;</li>
+<li>un círculo ($A \neq 0$) que pasa por el origen ($D = 0$) 
+	en el plano  $z$ se transforma en una línea que no pasa por el origen 
+	en el plano $w$;</li>
+<li>una línea recta ($A = 0$) que no pase por el origen ($D \neq 0$) en el plano $z$ 
+	se transforma en un círculo que pasa por origen en el 
+	plano $w$;</li>
+<li>una línea recta ($A = 0$) que pasa por el origen $(D = 0)$ en el plano $z$ 
+	se transforma en una línea recta que pasa por el origen en el plano $w$.</li>
 </ol>
 </p>
 
 
 <div class="w3-padding">
-	<p><strong>Exercise:</strong>  Verify that the expression 
-		\(D(u^2+v^2)+Bu-Cv+A=0\) can be obtained from (\ref{circle01}) using the relations 
-		(\ref{exp01}) and (\ref{exp02}).
+	<p><strong>Ejercicio:</strong> Verifica que la expresión 
+		\(D(u^2+v^2)+Bu-Cv+A=0\) se puede obtener de las ecuaciones 
+		definidas en (\ref{circle01}) usando las relaciones
+		(\ref{exp01}) y (\ref{exp02}).
 	</p>
 </div>
 
@@ -325,9 +347,9 @@ line through the origin in the $w$ plane.</li>
     <!--<p><strong>Note:</strong> The applet was made with <a href="https://www.geogebra.org/material/show/id/zsf2n5ny">GeoGebra</a>.</a></p>-->
 
 	<!-- link to the next page -->
-	<a href="analytic_landscapes.html"><p class="nextPage">NEXT: Analytic Landscapes</p></a>
+	<a href="analytic_landscapes.html"><p class="nextPage">NEXT: Superficies Analíticas</p></a>
 	<footer>
-		<p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+		<p>[ <a href="../es.html">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
 
 		<p class="license">
 			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
