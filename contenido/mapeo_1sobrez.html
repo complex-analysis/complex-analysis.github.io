@@ -138,21 +138,26 @@
 
   gtag('config', 'UA-155852901-1');
 </script>
-    
-    <!--GeoGebra embeding-->
+	
+<!--GeoGebra embeding-->
 <script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
 
 <script>
-    var applet1 = new GGBApplet({material_id: "bf4p8vtm",
-                                borderColor:"888888",
-                                playButton: "true",
-                                showFullscreenButton: "true",
-                                showResetIcon: "true"}, true);
-    window.addEventListener("load", function() {
-          applet1.inject('applet_container1');
-      });
+	var params = { 
+				"width": 800, 
+				"height": 435,
+				"material_id": "vgghukzp",
+                "borderColor": "888888",
+                "playButton": false,
+                "showFullscreenButton": true,
+                "showResetIcon": true };
+    var ggbApplet = new GGBApplet(params, true);
+    window.addEventListener("load", function() { 
+        ggbApplet.inject('ggb-element');
+    });
 </script>
 <!--GeoGebra embeding ends-->
+
     
 </head>
 
@@ -222,14 +227,14 @@ para los demás valores $z$.
 	<ul>
 		<li>Selecciona una <code>Línea</code> o <code>Círculo</code>.</li>
 		<li>Mueve los puntos en la vista gráfica de la izquierda. 
-			Puedes cambiar la positión de la línea o el círculo al mover los
+			Puedes cambiar la posición de la línea o el círculo al mover los
 			puntos grises.</li>
 	</ul>
 </p>
 
 <div class="w3-hide-small">
 <!-- ctl=play button; sfsb=fullscreen button-->
-<div style="width:800px;height:435px;display:block" id="applet_container1"></div>
+<div style="display:block" id="ggb-element"></div>
 </div>
 <div class="w3-hide-large w3-hide-medium w3-khaki w3-round w3-padding w3-panel">
 	<p><i class="fas fa-sad-tear"></i> 
@@ -241,7 +246,7 @@ para los demás valores $z$.
 <br>
 
 <p>
-	Observa con cudiado lo que sucede
+	Observa con cuidado lo que sucede
 	a los puntos $w_1, w_2$ (la imagen de $z_1$ y $z_2$, respectivamente) 
 	en el plano $uv$, mostrado en la vista gráfica de la derecha.
 	   <ul>
