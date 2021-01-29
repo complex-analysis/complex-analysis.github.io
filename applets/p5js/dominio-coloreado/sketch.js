@@ -76,7 +76,7 @@ function userInt() {
     sel.position(width + 60, 210);
 
 
-    textm = createButton('Click y arrasta con el mouse para cambiar la vista');
+    textm = createButton('Clic y arrastra para cambiar vista');
     //textm.addClass('w3-large');
     textm.addClass('w3-button');
     textm.addClass('w3-hover-white');
