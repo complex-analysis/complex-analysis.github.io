@@ -1,0 +1,391 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+    <title>Análisis Complejo</title>
+
+	<!-- dublin core -->
+	<meta name="dc.title" CONTENT="Análisis Complejo">
+	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+	<meta name="dc.date" CONTENT="26-01-2021">
+    <meta name="dc.isbn" CONTENT="ISBN-13: ">
+	<meta name="dc.type" CONTENT="Recurso Interactivo">
+	<meta name="dc.format" CONTENT="HTML">
+	<meta name="dc.language" CONTENT="es-MEX">
+	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+	<!-- social media cards -->
+	<meta property="og:title" content="Análisis Complejo">
+	<meta property="og:description" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:type" content="website">
+	<!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+	<meta name="twitter:card" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:site_name" content="Análisis Complejo">
+
+
+    <!-- FONTS AND CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet'
+        type='text/css'>
+    <link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" >
+    <!-- CODE PRETTIFY -->
+    <!-- via: https://github.com/google/code-prettify -->
+    <script src="../js/run_prettify.js"></script>
+
+
+
+    <!-- JQUERY FANCY ADDITIONS -->
+    <!-- add code class, hover text, etc -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            // prettyprint the code, pls
+            $('pre').addClass('prettyprint lang-java');
+
+            // add word-breaks to anything with a / or - in it
+            $('h1').each(function () {
+                var t = $(this).text();
+                t = t.replace('/', '/<wbr>');
+                t = t.replace('-', '-<wbr>');
+                $(this).html(t);
+            });
+
+            // set formatting
+            resizeCommands();
+        });
+
+        // when the window gets resized, do some stuff to keep everything
+        // looking pretty
+        $(window).resize(function () {
+            resizeCommands();
+        });
+
+        // things to do when the page is loaded or window resized
+        function resizeCommands() {
+            // large-screen stuff...
+            if ($(window).width() > 600) {
+
+                // long headline on intro page
+                // $('#introHeadline').html('TABLE OF CONTENTS');
+
+                // menu hover stuff on larger screens
+                // (does weird formatting on larger screens)
+                // hover over title to show "Table of Contents"
+                $('#title a').hover(
+                    function () {
+                        $('#title a').text('Tabla de Contenidos');
+                    },
+                    function () {
+                        $('#title a').text('Análisis Complejo'); // set back when moving out
+                    }
+                );
+
+                // set prev/next titles
+                $('#prev a').hover(
+                    function () {
+                        $('#title a').text('Prev: Superficies');
+                    },
+                    function () {
+                        $('#title a').text('Análisis Complejo');
+                    }
+                );
+                $('#next a').hover(
+                    function () {
+                        $('#title a').text('Next: La Función Exponencial Compleja');
+                    },
+                    function () {
+                        $('#title a').text('Análisis Complejo');
+                    }
+                );
+            }
+
+            // small-screen stuff
+            else {
+                // short headline on intro page
+                // $('#introHeadline').html('INTRO');
+            }
+        }
+    </script>
+
+    <!-- ANALYTICS -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-155852901-1');
+</script>
+    <!-- ANALYTICS -->
+
+    <!--MathJax starts-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                           TeX: { equationNumbers: { autoNumber: "AMS" } }
+                           });
+        </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <header>
+            <p><span id="prev"><a href="analytic_landscapes.html">&larr;</a></span><span id="title"><a
+                        href="tabla_de_contenidos.html">Análisis Complejo</a></span><span id="next"><a
+                        href="#">&rarr;</a></span>
+                <div class="clear"></div>
+            </p>
+        </header>
+
+        <h1>Dominio colorado</h1>
+
+        <hr>
+
+        <h2>Retratos fase complejos</h2>
+        <p>
+            Una manera de visualizar funciones complejas 
+            $f:\mathbb{C}\to\mathbb{C}$ es por medio de retratos fase. 
+            A un número complejo se le puede asignar un colo dependiendo de su
+            argumento, o fase. Los números positivos, por ejemplo,
+            se puede colorear con rojo, mientras que los números negativos
+            se pueden colorear con cyan y los números con una parte imaginaria
+            se pueden colorear de amarillo como se muestra en la Figura 1, la 
+            cual muestra un retrato fase para la función $f(z)=z$.</p>
+
+        <figure class="w3-center">
+            <img class="w3-image w3-mobile" src="../applets/cindyjs/domcoloring/phaseportrait.png"
+                alt="phase portrait for z" title="phase portrait for the function f(z)=z" style="width:50%;">
+            <figcaption>
+                <b>Figura 1:</b> Retrato fase de $f(z)=z$.
+            </figcaption>
+        </figure>
+
+        <p>En su libro <a href="http://www.springer.com/de/book/9783034801799"> <em>Visual Complex Functions</em></a>,
+            Elias Wegert emplea retratos fase con curvas de nivel 
+            de la fase y del módulo (<em>retratos fase mejorados</em>) 
+            para el estudio de la teoría de funciones complejas. 
+            Observa por ejemplo las Figuras 2 y 3 para el caso de la función
+            $f(z)=z$.</p>
+
+        <div class="w3-row-padding">
+            <div id="phase" class="w3-half w3-container w3-margin-bottom">
+                <figure class="w3-center">
+                    <img class="w3-image w3-mobile" src="../applets/cindyjs/domcoloring/phase.png"
+                        alt="phase portrait for z" title="Contour lines of phase" style="width:100%;">
+                    <figcaption>
+                        <b>Figura 2:</b> Curvas de nivel de la fase.
+                    </figcaption>
+                </figure>
+            </div>
+            <div id="modulus" class="w3-half w3-container w3-margin-bottom">
+                <figure class="w3-center">
+                    <img class="w3-image w3-mobile" src="../applets/cindyjs/domcoloring/modulus.png"
+                        alt="phase portrait for z" title="Contour lines of modulus" style="width:100%;">
+                    <figcaption>
+                        <b>Figure 3:</b> Curvas de nivel del módulo.
+                    </figcaption>
+                </figure>
+            </div>
+
+        </div>
+
+        <p>
+            Con el uso de los retratos fase mejorados, las raíces y polos de
+            una función compleja $f(z)$ se pueden localizar fácilmente 
+            en los puntos donde todos los colores coinciden. Las Figuras 
+            <a href="#F4">4</a> y <a href="#F5">5</a> muestran el retrato de 
+            fase mejorado de las fuciones 
+            $$f(z)=z \quad \text{y}\quad g(z)=1/z,$$ respectivamente. 
+            Observa el contraste entre las cuvas de nivel del módulo en cada caso.</p>
+
+        <div class="w3-row-padding">
+            <div id="enhanced" class="w3-half w3-container w3-margin-bottom">
+                <figure id="F4" class="w3-center">
+                    <img class="w3-image w3-mobile" src="../applets/cindyjs/domcoloring/enhancedz.png"
+                        alt="phase portrait for z" title="Enhanced phase portrait for the function f(z)=z"
+                        style="width:100%;">
+                    <figcaption>
+                        <b>Figura 4:</b> Raíz en $z=0$.
+                    </figcaption>
+                </figure>
+            </div>
+            <div id="enhanced2" class="w3-half w3-container w3-margin-bottom">
+                <figure id="F5" class="w3-center">
+                    <img class="w3-image w3-mobile" src="../applets/cindyjs/domcoloring/enhanced1z.png"
+                        alt="phase portrait for z" title="Enhanced phase portrait for the function g(z)=1/z"
+                        style="width:100%;">
+                    <figcaption>
+                        <b>Figura 5:</b> Polo en  $z=0$.
+                    </figcaption>
+                </figure>
+            </div>
+
+        </div>
+
+        <div class="w3-responsive">
+            <p>
+                Consideremos ahora la función
+                \begin{eqnarray}\label{eq1}
+                f(z)=\frac{z-1}{z^2+z+1}
+                \end{eqnarray}
+                la cual tiene una raíz en $z_0=1$ y dos polos en
+                $$z_{1}=\frac{-1 + \sqrt{3}\,i}{2} \quad \text{y} \quad z_{2}=\frac{-1 - \sqrt{3}\,i}{2}.$$</p>
+        </div>
+        <p>La Figura 6 muestra el retrato fase mejorado de (\ref{eq1}) con 
+            las curvas de nivel del módulo. Nota el comportamiento de las curvas de
+            nivel del módulo alrededor de la raíz (en el lado derecho) 
+            y en los polos (lado izquierdo). ¿Puedes ver la diferencia?
+        </p>
+
+
+        <figure class="w3-center">
+            <img class="w3-image w3-mobile" src="../applets/cindyjs/domcoloring/plotfz.png" alt="(z-1)(z^2+z+1)"
+                style="width:85%;">
+            <figcaption>
+                <b>Figura 6:</b> Gráfica de $f(z)=(z-1)/(z^2+z+1)$ con las curvas de nivel del módulo.
+            </figcaption>
+        </figure>
+
+        <hr>
+
+        <h2 id="plotter">Explora funciones complejas</h2>
+
+        <p>Usa el siguiente applet para explorar 
+            retratos fase mejorados de funciones complejas.</p>
+
+
+        <div>
+
+            <div class="w3-hide-small w3-hide-medium">
+
+                <iframe name="Domain Coloring" src="../applets/p5js/domain-coloring/index.html" scrolling="no" style="overflow:hidden;border:1px solid black;width:800px;height:500px;" ></iframe>
+
+            </div>
+            <!--hide small-->
+            <br>
+        </div>
+        <!--end left-->
+
+        <div class="w3-hide-large  w3-khaki w3-round w3-padding w3-panel">
+            <p><i class="fas fa-sad-tear"></i> 
+                Lo siento, este applet no funciona para dispositivos con pantallas pequeñas. 
+                Rota tu dispositivo horizontalmente. O cambia el tamaño de tu ventana de tal forma 
+                que el ancho es mayor que el largo.
+            </p>
+        </div>
+
+        <br>
+        <hr>
+
+        <h2>¡Advertencia!</h2>
+
+        <p>
+            Si no imponemos restriccones adicionales, como
+            continuidad o diferenciabilidad, 
+            los conjuntos isométricos de funciones complejas
+            pueden ser arbitrarios. Pero esto no sucede para
+            funciones <em>analíticas</em>, las cuales son el objeto 
+            de mayor interes en este texto.</p>
+
+        <div class="w3-responsive">
+            <p>
+                En realidad, funciones analíticas están (casi) 
+                determinadas de forma únca por su retrato fase simple, pero
+                esto no sucede para funciones en general. 
+                Por ejemplo, las funciones $f$ (analítica) y$g$ (no analítica) 
+                definidas como
+                \begin{eqnarray}\label{example}
+                f(z)=\frac{z-1}{z^2+z+1}, \qquad g(z)=(z-1)\left(\overline{z}^2+\overline{z}+1\right)
+                \end{eqnarray}
+                tienen el mismo retrato fase simple (excepto en sus ceros y polos) 
+                cuando en realidad son completamente diferentes.
+            </p>
+        </div>
+
+        <p>
+            Dado que los retratos de fase simples no siempre muestran suficiente 
+            información para explorar funciones complejas generales, recomiendo 
+            el uso de sus versiones mejoradas con curvas de nivel de módulo y fase 
+            en tales casos. La Figura 7 muestra dos de estos retratos de las 
+            funciones $f$ (izquierda) y $g$ (derecha) definidas en (\ref{example}).</p>
+
+        <div class="w3-hide-small w3-hide-medium">
+            <iframe name="Same phase" src="../applets/p5js/samephase/index.html" width="800px" height="400px"
+                style="border:none;" style="overflow:hidden;"></iframe>
+            <br>
+            <figcaption>
+                <b>Figura 7:</b> Retratos fase mejorados de $f$ (izquierda) y$g$ (derecha). 
+                Mueve el deslizador.
+            </figcaption>
+
+        </div>
+
+        <div class="w3-hide-large w3-khaki w3-round w3-padding w3-panel">
+            <p><i class="fas fa-sad-tear"></i> 
+                Lo siento, este applet no funciona para dispositivos con pantallas pequeñas. 
+                Rota tu dispositivo horizontalmente. O cambia el tamaño de tu ventana de tal forma 
+                que el ancho es mayor que el largo.
+            </p>
+        </div>
+
+        <p>
+            Una distinción notable entre los dos retratos es la forma de los mosaicos que forman
+            una teselación del plano complejo. 
+            En la imagen de la izquierda, la mayoría de estos mosaicos son casi cuadrados y tienen 
+            esquinas en ángulo recto. En contraste, muchos mosaicos en el retrato fase de $g$ son 
+            alargados y sus ángulos difieren significativamente de $\pi/2$ - en algunos puntos,
+            las curvas de nivel del módulo y la fase son incluso mutuamente tangentes.
+        </p>
+
+        
+
+        <hr>
+
+
+        <br>
+
+        
+
+        <!-- link to the next page -->
+        <a href="#">
+            <p class="nextPage">NEXT: The Complex Power Function</p>
+        </a>
+        <footer>
+            <p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+
+            <p class="license">
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                    <img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+                </a>
+            <br/>
+            <strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
+            <strong style="font-size: 18px">2019</strong> 
+            </p>
+        </footer>
+
+    </div> <!-- end wrapper -->
+
+    <!-- nice smart quotes, via: http://smartquotesjs.com -->
+    <script src="../js/smartquotes.min.js"></script>
+    <script src="../applets/cindyjs/assets/app.js"></script>
+</body>
+
+</html>
