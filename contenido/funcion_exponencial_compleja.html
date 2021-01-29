@@ -1,0 +1,467 @@
+<!doctype html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+	<title>Análisis Complejo</title>
+
+	<!-- dublin core -->
+	<meta name="dc.title" CONTENT="Análisis Complejo">
+	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+	<meta name="dc.date" CONTENT="26-01-2021">
+    <meta name="dc.isbn" CONTENT="ISBN-13: ">
+	<meta name="dc.type" CONTENT="Recurso Interactivo">
+	<meta name="dc.format" CONTENT="HTML">
+	<meta name="dc.language" CONTENT="es-MEX">
+	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+	<!-- social media cards -->
+	<meta property="og:title" content="Análisis Complejo">
+	<meta property="og:description" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:type" content="website">
+	<!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+	<meta name="twitter:card" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:site_name" content="Análisis Complejo">
+    
+	
+	<!-- FONTS AND CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet' type='text/css'>
+	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" >
+	<!-- CODE PRETTIFY -->
+	<!-- via: https://github.com/google/code-prettify -->
+	<script src="../js/run_prettify.js"></script>
+
+
+	<!-- JQUERY FANCY ADDITIONS -->
+	<!-- add code class, hover text, etc -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+
+		$(document).ready(function() {
+
+			// prettyprint the code, pls
+			$('pre').addClass('prettyprint lang-java');
+
+			// add word-breaks to anything with a / or - in it
+			$('h1').each(function() {
+				var t = $(this).text();
+				t = t.replace('/', '/<wbr>');
+				t = t.replace('-', '-<wbr>');
+				$(this).html(t);
+			});
+
+			// set formatting
+			resizeCommands();
+		});
+
+		// when the window gets resized, do some stuff to keep everything
+		// looking pretty
+		$(window).resize( function() {
+			resizeCommands();
+		});
+
+		// things to do when the page is loaded or window resized
+		function resizeCommands() {
+			// large-screen stuff...
+			if ($(window).width() > 600) {
+
+				// long headline on intro page
+				// $('#introHeadline').html('TABLE OF CONTENTS');
+
+				// menu hover stuff on larger screens
+				// (does weird formatting on larger screens)
+				// hover over title to show "Table of Contents"
+				$('#title a').hover(
+					function() {
+						$('#title a').text('Tabla de Contenidos');
+					},
+					function() {
+						$('#title a').text('Análisis Complejo');	// set back when moving out
+					}
+				);
+
+				// set prev/next titles
+				$('#prev a').hover(
+					function() {
+						$('#title a').text('Prev: Dominio Coloreado');
+					},
+					function() {
+						$('#title a').text('Análisis Complejo');
+					}
+				);
+				$('#next a').hover(
+					function() {
+						$('#title a').text('Next: Series');
+					},
+					function() {
+						$('#title a').text('Análisis Complejo');
+					}
+				);
+			}
+
+			// small-screen stuff
+			else {
+				// short headline on intro page
+				// $('#introHeadline').html('INTRO');
+			}
+		}
+	</script>
+
+    
+    <!--MathJax starts-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                           TeX: { equationNumbers: { autoNumber: "AMS" } }
+                           });
+        </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+    
+   
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-155852901-1');
+</script>
+    
+    <!--GeoGebra embeding
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<script>
+    var applet1 = new GGBApplet({material_id: "y9pnh3hu",
+                                borderColor:"888888",
+                                playButton: "true",
+                                //showFullscreenButton: "true",
+                                enableShiftDragZoom: "true",
+                                showResetIcon: "true"}, true);
+    window.addEventListener("load", function() {
+          applet1.inject('applet_container1');
+      });
+</script>
+GeoGebra embeding ends-->
+    
+    <!-- Cindy.js
+    <link rel="stylesheet" href="../applets/cindyjs/taylorseries/app.css" />
+    <link rel="stylesheet" href="../applets/cindyjs/taylorseries/dist/v08/CindyJS.css" />-->
+    <script type="text/javascript" src="../applets/cindyjs/assets/Cindy.js"></script>
+    <script type="text/javascript" src="../applets/cindyjs/assets/CindyGL.js"></script>
+    <script type="text/javascript" src="../applets/cindyjs/assets/symbolic.js"></script>
+    <!-- Cindy.js -->
+    
+</head>
+
+<body>
+<div id="wrapper">
+        
+<header><p><span id="prev"><a href="dominio_coloreado.html">&larr;</a></span>
+	<span id="title"><a href="tabla_de_contenidos.html">Análisis Complejo</a></span>
+	<span id="next"><a href="series.html">&rarr;</a></span><div class="clear"></div></p></header>
+        
+
+<h1>La Función Exponencial Compleja</h1>
+
+<hr>
+
+<div class="w3-responsive">
+<p>La <em>funcion potencia generalizada</em> se define como:
+\begin{eqnarray}\label{gcp}
+f(z) = z^c = \exp(c\log z), \quad \text{with}\quad z\neq  0.
+\end{eqnarray}
+</p>
+
+<div class="w3-responsive">
+<p>
+	Debido a la naturaleza multivaluada de $\log z$, se sigue que la 
+	función definida en (\ref{gcp}) 
+	también es multivaluada para cualquier valor entero de 
+	$c$, con un punto de corte en $z=0$. En otras palabras
+\begin{eqnarray*}
+f(z) = z^c&amp;= &amp;\exp\left(c \log z\right) = \exp\left[c \left( \text{Log}\,z + 2n\pi i \right)\right], \text{ with } n\in \mathbb Z.
+	 %&amp;= &amp; \exp\left(c \,\text{Log}\,z\right)\cdot \exp\left(2 n \pi  c\, i\right) \\
+	 %&amp;= &amp; \exp\left[ c \left( \ln |z| +i\, \textbf{Arg} \left(z\right)\right) \right] \cdot \exp\left(2 n \pi  c\, i\right)\\
+	 %&amp;= &amp; |z|^c \cdot \exp\left[ c\left(\textbf{Arg} (z) + 2n\pi \right) i\right], \quad\text{ with } n\in \mathbb Z.
+\end{eqnarray*}
+</p>
+<p>Por otra parte, tenemos que la <em>función exponencial generalizada</em>, 
+para $c \neq 0 $, se define como:
+\begin{eqnarray}\label{gef}
+f(z)=c^z=\exp(z\log c)=\exp\left[z \left(\text{Log}\,c +2 n \pi \, i\right)\right],
+\end{eqnarray}
+con $n\in \mathbb Z$.</p>
+
+<p>
+Notemos que la expresión (\ref{gef}) no posee un punto de corte
+(or ni tampoco ningún tipo de singularidad) en el 
+plano complejo extendido $z$. De esta forma, podemos considerar
+la ecuación (\ref{gef}) como la definción de un conjunto de
+funciones de valor único independientes para cada
+valor de $n$.</p>
+</div>
+
+<p>Esta es la razón por la cual la <em>naturaleza multivaluada </em> de la función
+	$f(z)=z^c$ difiere en contraste con la función $f(z)=c^z$.</p>
+
+<div class="w3-responsive">
+    <p>Tipicamente, el caso $n=0$ es el más usado, en el cual simplemente
+		definimos:
+    $$w=c^z=\exp(z\log c)=\exp(z\,\text{Log}\,c),$$
+    con $c\neq 0$.</p>
+</div>
+
+<p>Esto concuerda con la definición de la función 
+	exponencial
+$$e^z=e^x(\cos y +i\sin y )$$
+donde $c = e$ (la constante de Euler).</p>
+
+<p>
+	Usa el siguiente applet para explorar las funciones
+	(\ref{gcp}) y (\ref{gef}) definidas en la región
+	$[-3,3]\times[-3,3]$. En este applet se muestra 
+	el retrato fase mejorado con curvas de nivel 
+	del módulo y fase. 
+	Mueve los puntos para cambiar el valor de $c$ en cada caso. 
+	También puedes desactivar las curvas de nivel, si así lo 
+	deseas.</p>
+<!--
+<div class="w3-hide-small w3-center">
+    <div class="w3-row-padding">
+        <div id="thomas" class="w3-half w3-container w3-margin-bottom">
+            <figure class="w3-center">
+                <iframe name="z^c" src="../applets/p5js/powerfunction/zpowc/index.html" width="350px" height="350px" style="border:none;" ></iframe>
+                <figcaption>
+                    $f(z)=z^c$.
+                </figcaption>
+            </figure>
+        </div>
+        <div id="aizawa" class="w3-half w3-container w3-margin-bottom">
+            <figure class="w3-center">
+                <iframe name="c^z" src="../applets/p5js/powerfunction/cpowz/index.html" width="350px" height="350px" style="border:none;" ></iframe>
+                <figcaption>
+                    $f(z)=c^z$.
+                </figcaption>
+            </figure>
+        </div>
+        
+    </div>
+</div><!--responsive ends-->
+
+<!--
+<div class="w3-hide-large w3-hide-medium">
+    <p class="callout"><strong>Oops!</strong> Sorry, the applet is not supported for small screens.</p>
+</div>
+-->
+
+<div class="w3-hide-small w3-hide-medium">
+<div id="applet">
+
+		<script id="csinit" type="text/x-cindyscript">
+        
+            grid1=true;
+            grid2=true;
+            
+		</script>
+		
+		<script id="csdraw" type="text/x-cindyscript">
+            
+            N.y = -2.5;
+            n = round(5*(N.x+4));
+            //n = min(-17)
+            n = max(-22, n);
+            N.x = n/5-4;
+            
+            hsvToRGB(h, s, v) := (
+				regional(j, p, q, t, f);
+
+				h = (h-floor(h))*6;
+
+				j = floor(h);
+				f = h - j;
+
+				p = 1 - s;
+				q = 1 - s*f;
+				t = 1 - s*(1-f);
+
+				if(j == 0, [1, t, p],
+				if(j == 1, [q, 1, p],
+				if(j == 2, [p, 1, t],
+				if(j == 3, [p, q, 1],
+				if(j == 4, [t, p, 1],
+				if(j == 5, [1, p, q]))))))*v
+			);
+            
+            color(z) := ( //what color should be given to a complex number z?
+				regional(n0, grey1, grey2);
+				n0 = 12;
+                         z = log(z)/2/pi;// + i * N.x * pi;
+
+				zfract = n0*z - floor(n0*z); //value of n*z in C mod Z[i]
+
+				//grey1 = im(zfract);
+				//grey2 = re(zfract);
+                         
+                grey1 = if(grid1, im(zfract), 1);
+                grey2 = if(grid2, re(zfract), 1);
+
+				hsvToRGB(im(z), 1.0, .6+.5*re(sqrt(grey1 * grey2)))
+			);
+		
+		t(z) := (A.x + i*A.y)^z;
+        u(z) := z^(B.x + 6 + i * B.y);
+
+		colorplot(
+			//z = zoom*complex(#);
+            z = complex(#);
+			color(t(z));
+			,
+			(-3,-3),(3,3)
+		);
+		
+		colorplot(
+			z = (complex(#)+6);
+			color(u(z));
+			,
+			(-9,-3),(-3,3)
+		);
+		
+        
+        shape1 = polygon([(-9,2.5), (-6,2.5), (-6,3), (-9,3)]);
+        fill(shape1,color->(0.9,0.9,0.9));
+        draw(shape1, color->(0.9,0.9,0.9));
+        
+        shape2 = polygon([(-3,2.5), (0,2.5), (0,3), (-3,3)]);
+        fill(shape2,color->(0.9,0.9,0.9));
+        draw(shape2, color->(0.9,0.9,0.9));
+		
+        drawtext((-2.9,2.7), "$c^z$, $c = (" + round(A.x  * 100)/100 + " , " + round(A.y * 100)/100 + ")$", color->(0,0,0));
+		drawtext((-8.9,2.7), "$z^c$, $c = (" + round((B.x + 6 ) * 100)/100 + " , " + round(B.y * 100)/100 + ")$", color->(0,0,0));
+        
+        
+        linesize(3);
+		draw((-3,-3),(-3,3), color->[0,0,0]);
+		
+        
+        drawtext((A.x+0.06,A.y+0.06),"$c$", color->(0.98,0.98,0.98));
+        drawtext((B.x+0.06,B.y+0.06),"$c$", color->(0.98,0.98,0.98));
+        
+        if(A.x < -3, A.x=-3);
+        if(A.y < -3, A.y=-3);
+        if(A.x > 3, A.x=3);
+        if(A.y > 3, A.y=3);
+        
+        if(B.x < -9, B.x=-9);
+        if(B.y < -3, B.y=-3);
+        if(B.x > -3, B.x=-3);
+        if(B.y > 3, B.y=3);
+        
+        //draw((-8.5,-2.5),(2.5,-2.5), color->[0,0,0]);
+        
+        //drawtext((N.x-0.2,N.y+0.3),"$n = " + n + "$", color->(0.98,0.98,0.98));
+		
+		</script>
+
+		<div id="CSCanvas" style="border:2px solid black"></div>
+        <br>
+        <input id="ch1" onclick="check1()" checked type="checkbox" >Fase&nbsp;&nbsp;&nbsp;
+        <input id="ch2" onclick="check2()" checked type="checkbox" >Módulo
+		
+		<script type="text/javascript">
+				var cdy = CindyJS({canvasname:"CSCanvas",
+				scripts: "cs*",
+				geometry: [
+							{name:"A", type:"Free", pos:[1.2, 0.8], color:[0,0.9,1]},
+                            {name:"B", type:"Free", pos:[-4.5, 0.6], color:[0,0.9,1]},
+                            //{name:"N", type:"Free", pos:[-4, -2], color:[0.9,0.9,1], size:8}
+                           ],
+				animation: {autoplay: true},
+				ports: [{
+                          id: "CSCanvas",
+                          width: 800,
+                          height: 400,
+                          transform: [ { visibleRect: [-9,-3, 3, 3] } ]
+						}],
+				use: ["CindyGL", "katex"]
+				});
+                
+          var check1=function(){
+       if(document.getElementById("ch1").checked){
+          cdy.evokeCS('grid1=true;');
+       } else {
+           cdy.evokeCS('grid1=false;');
+
+       }
+}
+
+var check2=function(){
+       if(document.getElementById("ch2").checked){
+          cdy.evokeCS('grid2=true;');
+       } else {
+           cdy.evokeCS('grid2=false;');
+
+       }
+}
+
+</script>
+	   
+     </div><!--ends applet-->
+
+     </div><!--end hidesmall-->
+
+<div class="w3-hide-large w3-khaki w3-round w3-padding w3-panel">
+	<p><i class="fas fa-sad-tear"></i> 
+		Lo siento, este applet no funciona para dispositivos con pantallas pequeñas. 
+        Rota tu dispositivo horizontalmente. O cambia el tamaño de tu ventana de tal forma 
+        que el ancho es mayor que el largo.
+	</p>
+</div>
+     
+     <br>
+     <hr>
+
+<p><strong>Observación final: </strong> En práctica, muchos textos tratan
+	la <em>función exponencial generalizada</em> como una función de valor único,
+	$c^z=\exp(z\,\text{Log } c )$, solo cuando $c$ es un número real positivo.
+	Para cualquier otro valor de $c$, es preferible usar la función multivaluada 
+	$c^z=\exp(z \log c )$.</p>
+</p>
+    
+    <br>
+    
+    <!--<p><strong>Note:</strong> The applet was made with <a href="https://www.geogebra.org/material/show/id/y9pnh3hu">GeoGebra</a>.</p>-->
+
+	<!-- link to the next page -->
+	<a href="series.html"><p class="nextPage">NEXT: Series</p></a>
+	<footer>
+		<p>[ <a href="../es.html">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+
+		<p class="license">
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+				<img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+			</a>
+		<br/>
+		<strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
+		<strong style="font-size: 18px">2019</strong> 
+	    </p>
+	</footer>
+
+</div> <!-- end wrapper -->
+
+<!-- nice smart quotes, via: http://smartquotesjs.com -->
+<script src="../js/smartquotes.min.js"></script>
+<script src="../applets/cindyjs/assets/app.js"></script>
+</body>
+</html>
