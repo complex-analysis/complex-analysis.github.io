@@ -331,6 +331,7 @@ img.resize {
 #tableOfContents ul li {
 	padding:			0;
 	text-indent:  		0;
+	line-height:		1.4em;
 }
 #tableOfContents ul li:before {
 	content:			none;
