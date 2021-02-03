@@ -211,20 +211,20 @@ figcaption {
 /* LISTS */
 ul, ol {
 	font-size: 			1em;
-	line-height:		1.4em;
+	line-height:		1.8em;
     padding-left:       1em;
-    padding-right:      1em;
+	padding-right:      1em;
+	margin:				0.5em 0 1.3em 0;
+	margin-top:         -1em;
 }
-ul {
-	margin:				-1.3em 0 1.3em 0;
-}
+
 ul li {
 	padding-left:		1.3em;
 	text-indent:		-1.3em;
 }
 ul li:before {
 	padding-right:		0.8em;
-	content: 			'+';
+	content: 			'•';
 }
 h3 + ul {
 	margin-top: 		0.2em;
@@ -233,9 +233,10 @@ h3 + ul {
 ol {
 	list-style-type:	decimal;
 	margin-left: 		1em;
+	
 }
 ol li {
-	padding-left:		1.3em;
+	padding-left:		0.3em;
 	margin-bottom:		0.3em;
 }
 
@@ -459,8 +460,8 @@ canvas {
 	}
 
 	ol li {
-		padding-left:	1.3em;
-		margin-bottom:	1.3em;
+		padding-left:	0.3em;
+		margin-bottom:	0.3em;
 	}
 
 	header {
