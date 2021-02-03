@@ -203,13 +203,59 @@
     
                 parent.update = function (id) {
 
-                  var ga = (x, y) => gamma(complex(x, y));
+                  /*
+                  mul( inv( mul( pow( complex(3, 0), complex(2/3, 0) ),  gamma(complex(2/3, 0) ) ) ), 
+                    add(
+                      div(
+                        inv( pow( mul( complex(1/9, 0), pow(complex(x, y), complex(3, 0) ) ), complex(0, 0))),
+                        mul( 
+                          div( gamma( add(complex(2/3, 0), complex(0, 0))) , 
+                           gamma( complex(2/3, 0) ) 
+                          ),
+                          gamma( add(complex(0, 0), complex(1, 0)) ) 
+                        )
+                      ),
+                      div(
+                        inv( pow( mul( complex(1/9, 0), pow(complex(x, y), complex(3, 0) ) ), complex(1, 0))),
+                        mul( 
+                          div( gamma( add(complex(2/3, 0), complex(1, 0))) , 
+                           gamma( complex(2/3, 0) ) 
+                          ),
+                          gamma( add(complex(1, 0), complex(1, 0)) ) 
+                        )
+                      )
+                    )
+                  )
+                  */
+
+                  var go = (x, y) => {
+                    var res = complex(1,0);
+                    for (n = 1; n <= end; ++n) {
+                      result = mul(result, add(z, {
+                      r: n - 1,
+                      i: 0
+                      }));
+                    }
+                    var res = mul( 
+                                inv( mul( pow( complex(3, 0), complex(2/3, 0) ),  gamma(complex(2/3, 0) ) ) ), 
+                                div(
+                                  inv( pow( mul( complex(1/9, 0), pow(complex(x, y), complex(3, 0) ) ), complex(0, 0))),
+                                  mul(
+                                  div( gamma( add(complex(2/3, 0), complex(0, 0))) , gamma( complex(2/3, 0) ) ),
+                                  gamma( add(complex(0, 0), complex(1, 0)) ) 
+                                  )
+                                )
+                              );
+                    return res;
+                  };
+
+                  //gamma(complex(x,y))
     
                   var p = parametric(
                     (x, y) => [
                                 x, 
                                 y, 
-                                ga(x,y)
+                                go(x,y)
                               ], [-4.999, 4.999, 201], [-4.999, 4.999, 201], {
                       complexFunction: 'abs',
                       colormap: 'complexArgument'
