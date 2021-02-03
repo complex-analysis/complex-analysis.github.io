@@ -1,0 +1,341 @@
+<!doctype html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+	<title>Complex Analysis</title>
+
+	<!-- dublin core -->
+	<meta name="dc.title" CONTENT="Complex Analysis">
+	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+	<meta name="dc.date" CONTENT="26-01-2019">
+    <meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
+	<meta name="dc.type" CONTENT="Interactive Resource">
+	<meta name="dc.format" CONTENT="HTML">
+	<meta name="dc.language" CONTENT="en-US">
+	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+	<!-- social media cards -->
+	<meta property="og:title" content="Complex Analysis">
+	<meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+	<meta property="og:type" content="website">
+	<!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+	<meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+	<meta property="og:site_name" content="Complex Analysis">
+    
+	
+	<!-- FONTS AND CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet' type='text/css'>
+	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" >
+	<!-- CODE PRETTIFY -->
+	<!-- via: https://github.com/google/code-prettify -->
+	<script src="../js/run_prettify.js"></script>
+
+	
+
+	<!-- JQUERY FANCY ADDITIONS -->
+	<!-- add code class, hover text, etc -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+
+		$(document).ready(function() {
+
+			// prettyprint the code, pls
+			$('pre').addClass('prettyprint lang-java');
+
+			// add word-breaks to anything with a / or - in it
+			$('h1').each(function() {
+				var t = $(this).text();
+				t = t.replace('/', '/<wbr>');
+				t = t.replace('-', '-<wbr>');
+				$(this).html(t);
+			});
+
+			// set formatting
+			resizeCommands();
+		});
+
+		// when the window gets resized, do some stuff to keep everything
+		// looking pretty
+		$(window).resize( function() {
+			resizeCommands();
+		});
+
+		// things to do when the page is loaded or window resized
+		function resizeCommands() {
+			// large-screen stuff...
+			if ($(window).width() > 600) {
+
+				// long headline on intro page
+				// $('#introHeadline').html('TABLE OF CONTENTS');
+
+				// menu hover stuff on larger screens
+				// (does weird formatting on larger screens)
+				// hover over title to show "Table of Contents"
+				$('#title a').hover(
+					function() {
+						$('#title a').text('Table of Contents');
+					},
+					function() {
+						$('#title a').text('Complex Analysis');	// set back when moving out
+					}
+				);
+
+				// set prev/next titles
+				$('#prev a').hover(
+					function() {
+						$('#title a').text('Prev: Comments');
+					},
+					function() {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+				$('#next a').hover(
+					function() {
+						$('#title a').text('Next: Geometric Interpretation');
+					},
+					function() {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+			}
+
+			// small-screen stuff
+			else {
+				// short headline on intro page
+				// $('#introHeadline').html('INTRO');
+			}
+		}
+	</script>
+
+    
+    <!--MathJax starts-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                           TeX: { equationNumbers: { autoNumber: "AMS" } }
+                           });
+        </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-155852901-1');
+</script>
+    
+    <!--GeoGebra embeding-->
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<script>
+    var applet1 = new GGBApplet({material_id: "gut3ffpm",
+                                borderColor:"888888",
+                                playButton: "true",
+                                showFullscreenButton: "true",
+                                enableShiftDragZoom: "true",
+                                showResetIcon: "true"}, true);
+    window.addEventListener("load", function() {
+          applet1.inject('applet_container1');
+      });
+</script>
+<!--GeoGebra embeding ends-->
+    
+</head>
+
+<body>
+<div id="wrapper">
+        
+<header><p><span id="prev"><a href="comments.html">&larr;</a></span><span id="title"><a href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a href="geometric_interpretation_add_mult.html">&rarr;</a></span><div class="clear"></div></p></header>
+        
+
+<h1>Topology of the complex plane</h1>
+
+<hr>
+
+
+An $\epsilon$ \textbf{neighbourhood},\index{neighbourhood} also called \textbf{open ball}, of  a complex number $z_0$  consists of all points $z$ lying inside but not on a circle centred at $z_0$ and with radius $\epsilon>0$ and is expressed by
+\begin{eqnarray}
+B_{\epsilon}(z_0)=\{z:|z-z_0|<\epsilon\}
+\end{eqnarray}
+The \textbf{closed} $\epsilon$ \textbf{neighbourhood}\index{neighbourhood!closed}  of $z_0$ is expressed by
+\begin{eqnarray}
+\overline{B}_{\epsilon}(z_0)=\{z:|z-z_0|\leq \epsilon\}
+\end{eqnarray}
+And finally, a \textbf{deleted} $\epsilon$ \textbf{neighbourhood}\index{neighbourhood!deleted}  of $z_0$ is expressed by
+\begin{eqnarray}
+B_{\epsilon}(z_0)\setminus \{z_0\}=\{z:0<|z-z_0|< \epsilon\}
+\end{eqnarray}
+Figure \ref{balls} shows the geometrical representation of the following examples:\vspace{-0.3cm}
+\begin{enumerate}
+\item $B_{1}(0)=\{z:|z|<1\}$
+\item  $\overline{B}_{\frac{7}{8}}\left(-1-\sqrt{2}i\right)=\left\{z:|z-(-1-\sqrt{2}i)|\leq \frac{7}{8}\right\}$
+\item $\overline{B}_{\frac{1}{2}}\left(2+\sqrt{3}i\right)\setminus \left\{2+\sqrt{3}i\right\}=\left\{z:0<|z-(2+\sqrt{3}i)|\leq\frac{1}{2}\right\}$
+\end{enumerate}
+\vspace{-0.3cm}
+\begin{figure}[h]
+  \centering
+      \includegraphics[width=0.5\textwidth]{balls}
+\caption{Geometrical representation of neighbourhoods.}\label{balls}
+\end{figure}
+\newpage
+
+\textbf{Classification of points}
+
+A point $z_0$ is said to be an \textbf{interior point}\index{point!interior} of a set $S\subset \mathbb C$ whenever there is some neighbourhood of $z_0$ that contains only points of $S$; it is called an \textbf{exterior point}\index{point!exterior} of $S$ when there exists a neighbourhood of it containing no points of $S$. If $z_0$ is neither of these, it is a \textbf{boundary point}\index{point!boundary} of $S$. A boundary point is, therefore, a point all of whose neighbourhoods contain at least one point in $S$ and at least one point not in $S$. The totality of all boundary points is called the \textbf{boundary}\index{set!boundary} of $S$.
+
+\textbf{Notation}\vspace{-0.7cm}
+\begin{enumerate}
+\item Interior of $S$ is denoted by $\text{Int } S=\{z: z \text{ is an interior point of } S \}$
+\item Exterior of $S$ is denoted by $\text{Ext } S=\{z: z \text{ is an exterior point of } S \}$
+\item Boundary of $S$ is denoted by $\partial S=\{z: z \text{ is a boundary point of } S \}$
+\end{enumerate}
+
+
+Considering the previous examples of neighbourhoods, let $S_1=B_1(0)$, $S_2=\overline{B}_{\frac{7}{8}}\left(-1-\sqrt{2}i\right)$ and $S_3=\overline{B}_{\frac{1}{2}}\left(2+\sqrt{3}i\right)\setminus \left\{2+\sqrt{3}i\right\}$. Thus, for $S_1$ we have:
+\begin{itemize}
+\item $\text{Int } S_1=B_1(0)$
+\item $\text{Ext } S_1=\{z: |z|>1 \}$
+\item $\partial S_1=\{z: |z|=1 \}$
+\end{itemize}
+For $S_2$ we have:
+\begin{itemize}
+\item $\text{Int } S_2=B_{\frac{7}{8}}\left(-1-\sqrt{2}\right)$
+\item $\text{Ext } S_2=\left\{z:|z-\left(-1-\sqrt{2}i\right)|>\frac{7}{8}\right\}$
+\item $\partial S_2=\left\{z:| z-\left(-1-\sqrt{2}i\right)| =\frac{7}{8}\right\}$
+\end{itemize}
+And finally, for $S_3$ we have:
+\begin{itemize}
+\item $\text{Int } S_3=B_{\frac{1}{2}}\left(2+\sqrt{3}\right)$
+\item $\text{Ext } S_3=\left\{z:|z-\left(2+\sqrt{3}i\right)|>\frac{1}{2}\right\}$
+\item $\partial S_3=\left\{z:|z-\left(2+\sqrt{3}i\right)|=\frac{1}{2}\right\}\cup\{0\}$
+\end{itemize}
+
+%\vspace{-0.7cm}
+%\begin{center}
+%    \begin{tabular}{ |c| c | c |c |}
+ %   \hline
+ %    & $S_1$  & $S_2$ & $S_3$ \\ \hline\hline
+ %   \textbf{Int} & $B_1(0)$ & $B_{\frac{7}{8}}\left(-1-\sqrt{2}\right)$& $B_{\frac{1}{2}}\left(2+\sqrt{3}\right)\setminus \{2+\sqrt{3}i\}$  \\ 
+%\textbf{Ext} & $\{z: |z|>1 \}$ & $\left\{z:|z-\left(-1-\sqrt{2}i\right)|>\frac{7}{8}\right\}$ & $\left\{z:|z-\left(2+\sqrt{3}i\right)|>\frac{1}{2}\right\}$ \\ 
+%    \textbf{Bdy} & $\{z: |z|=1 \}$ & $\left\{z:|z-\left(-1-\sqrt{2}i\right)|=\frac{7}{8}\right\}$  & $\left\{z:|z-\left(2+\sqrt{3}i\right)|=\frac{1}{2}\right\}\cup\{0\}$  \\ 
+%    \hline
+%    \end{tabular}
+%\end{center}
+
+A set $S$ is \textbf{open}\index{set!open} if for every $z\in S$, exits $\epsilon>0$ such that 
+$$B_{\epsilon}(z)\subset S.$$
+That is, $\text{Int }  S= S$.
+
+A set $S$ is \textbf{closed}\index{set!closed} if it contains all of its boundary points, that is
+$$\partial S\subseteq S.$$
+
+The set $\mathbb C$, together with the collection $\tau =\{S\subseteq \mathbb C: S \text{ is open} \}$ is a topological space, and this is expressed by the pair $\left(\mathbb C, \tau\right)$.
+
+The topological space $\left(\mathbb C, \tau\right)$ satisfies the following:
+\begin{enumerate}
+\item  $\emptyset$ and $\mathbb C$ are open.
+\item Whenever two or more sets are open, then  so is their union.
+\item Whenever sets $S_1$ and $S_2$ are open, then so is $S_1\bigcap S_2$.
+\end{enumerate}
+
+
+On the other hand, considering  closed sets, we have the following properties:
+\begin{enumerate}
+\item  $\emptyset$ and $\mathbb C$ are closed.
+\item Whenever two or more sets are closed, then  so is their union.
+\item Whenever sets $S_1$ and $S_2$ are closed, then so is $S_1\bigcap S_2$.
+\end{enumerate}
+
+
+The set $\mathbb C$ is both open and closed since it has no boundary points. 
+
+
+
+The \textbf{closure}\index{set!closure} of a set $S$ is the closed set consisting of all points in $S$ together with the boundary of $S$. In other words 
+$$\overline{S}=S\cup \partial S.$$
+
+
+
+An open set $S$ is \textbf{connected}\index{set!connected} if each pair of points $z_1$ and $z_2$ in it can be joined
+by a polygonal line, consisting of a finite number of line segments joined end to end,
+that lies entirely in $S$. 
+
+
+
+
+\begin{figure}[h]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.7\linewidth]{circleone}
+  \caption{The open set $|z| < 1$}
+  \label{set001}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.7\linewidth]{anulus}
+  \caption{The open set $1 < |z| < 2$}
+  \label{set002}
+\end{minipage}
+\end{figure}
+
+The open set $|z| < 1$ is connected. The annulus $1 < |z| < 2$
+is  open and it is also connected (see Figures \ref{set001} and \ref{set002}). 
+
+A nonempty open set
+that is connected is called a \textbf{domain}\index{domain}. Note that any neighbourhood is a domain. A
+domain together with some, none, or all of its boundary points is referred to as a
+\textbf{region}\index{domain!region}. In other words, a set whose interior is a domain is called a \textbf{region}.
+
+A set $S$ is bounded if there is $R>0$ such that 
+$$S\subset B_R(0)=\{z\in \mathbb C: |z|<R\}.$$
+
+A point $z\in \mathbb C$ is an \textbf{accumulation point}\index{point!accumulation} of $S\subseteq \mathbb C$ if every deleted neighbourhood of $z$ intersects $S$.  It follows that if a set $S$ is
+closed, then it contains each of its accumulation points. For if an accumulation
+point $z_0$ were not in $S$, it would be a boundary point of $S$; but this contradicts the
+fact that a closed set contains all of its boundary points. It is left as an exercise to
+show that the converse is, in fact, true. Thus a set is closed if and only if it contains
+all of its accumulation points.
+Evidently, a point $z_0$ is not an accumulation point of a set S whenever there
+exists some deleted neighbourhood of $z_0$ that does not contain at least one point of $S$.
+Note that the origin is the only accumulation point of the set $z_n = i/n$ with $n = 1, 2, 3,\ldots $
+
+    <br>
+    
+
+	<!-- link to the next page -->
+	<a href="geometric_interpretation_add_mult.html"><p class="nextPage">NEXT: Geometric Interpretation</p></a>
+	<footer>
+		<p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+
+		<p class="license">
+			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+				<img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+			</a>
+		<br/>
+		<strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
+		<strong style="font-size: 18px">2019</strong> 
+	    </p>
+	</footer>
+
+</div> <!-- end wrapper -->
+
+<!-- nice smart quotes, via: http://smartquotesjs.com -->
+<script src="../js/smartquotes.min.js"></script>
+
+</body>
+</html>
