@@ -16,7 +16,7 @@ MathCell(id, [{
   type: 'buttons',
   values: ['abs', 're', 'im'],
   default: 'abs',
-  width: '0.6in',
+  width: '0.5in',
   name: 'opt',
   label: ' - Plotting option:'
 }]);
