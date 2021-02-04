@@ -29,7 +29,7 @@ parent.update = function (id) {
     var term2 = complex(0, 0);
     var cnt = inv(mul(pow(complex(3, 0), complex(1 / 6, 0)), gamma(complex(2 / 3, 0))));
     var vcnt = div(mul(pow(complex(3, 0), complex(1 / 6, 0)), complex(x, y)), gamma(complex(1 / 3, 0)));
-    for (var n = 0; n <= 15; ++n) {
+    for (var n = 0; n <= 17; ++n) {
 
 
       nextTerm1 = div(
@@ -81,8 +81,8 @@ parent.update = function (id) {
     zcMin = 0;
     zcMax = 8;
   } else {
-    zcMin = -5;
-    zcMax = 5;
+    zcMin = -4.5;
+    zcMax = 4.5;
   }
 
   var config = {
