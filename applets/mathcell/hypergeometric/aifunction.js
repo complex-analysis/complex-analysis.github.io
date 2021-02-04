@@ -81,8 +81,8 @@ parent.update = function (id) {
     zcMin = 0;
     zcMax = 8;
   } else {
-    zcMin = -4.5;
-    zcMax = 4.5;
+    zcMin = -5;
+    zcMax = 5;
   }
 
   var config = {
