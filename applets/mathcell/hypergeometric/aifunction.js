@@ -29,7 +29,7 @@ parent.update = function (id) {
     var term2 = complex(0, 0);
     var cnt = inv(mul(pow(complex(3, 0), complex(2 / 3, 0)), gamma(complex(2 / 3, 0))));
     var vcnt = div(complex(x, y), mul(pow(complex(3, 0), complex(1 / 3, 0)), gamma(complex(1 / 3, 0))));
-    for (var n = 0; n <= 17; ++n) {
+    for (var n = 0; n <= 16; ++n) {
 
 
       nextTerm1 = div(
