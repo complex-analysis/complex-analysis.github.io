@@ -33,8 +33,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet' type='text/css'>
 	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="../css/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" >
+  <link rel="stylesheet" href="../css/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" >
 
   <!-- CODE PRETTIFY -->
   <!-- via: https://github.com/google/code-prettify -->
@@ -179,7 +179,7 @@
       ggbApplet02.inject('ggb-element-02');
     });
   </script>
-  <!--GeoGebra embeding ends-->
+  <!--GeoGebra embeding ends
 
   <script>
     var applet1 = new GGBApplet({material_id: "mkgeehkp",
@@ -200,7 +200,7 @@
           applet2.inject('applet_container2');
       });
 </script>
-<!--GeoGebra embeding ends-->
+GeoGebra embeding ends-->
 
 
 </head>
@@ -249,14 +249,14 @@
 
     <p>
       If we plot equation (\ref{quad001}) we can observe geometrically that
-      it represents the intersection of parabola $y=x^2$ with the line $y = mx+n$.
+      it represents the intersection of the parabola $y=x^2$ with the line $y = mx+n$.
       This can be appreciated in the following applet. Drag the sliders below and
       observe what happens with the intersection points $x_0$ and $x_1$.
     </p>
 
     <div class="w3-center w3-hide-small">
 
-      <div style="display:block;width:798;height:516" id="applet_container1"></div>
+      <div style="display:block;width:798;height:516" id="ggb-element-01"></div>
     </div>
 
     <div class="w3-hide-large w3-hide-medium w3-khaki w3-round w3-padding w3-panel">
@@ -270,7 +270,7 @@
       <ol>
         <li>There are two points of intersection, i. e. two solutions.</li>
         <li>There is only one intersection point, i. e. one solution.</li>
-        <li>There are not intersection points, i. e. there are no solutions.</li>
+        <li>There are no intersection points, i. e. there are no solutions.</li>
       </ol>
     </p>
 
@@ -290,14 +290,19 @@
       for the intersection has a solution; if ‘no’, it has no solution.
     </p>
 
-
-
     <p>
-      Now let's go back to the equation $x^2= mx+ n$ with solution given in (\ref{quad004}).
-      Consider the equation $x^2=-1$. Here we have the values
-      $m=0$ and $n=-1$. Notice in Figure 1 that $y = x^2$ and $y=-1$ do
-      not intersect each other. This means that there is no solution.
-      But what do we obtain when we apply our formula (\ref{quad004})?
+      Now let's go back to the equation $x^2= mx+ n$.
+      Consider the the values $m=0$ and $n=-1$. 
+      If we use formula (\ref{quad004}), we obtain that
+      $$x = \pm\sqrt{-1}.$$
+      Most of you have learned from calculus, or elementary school, that we cannot
+      take the square root of a negative number.
+      Then how do interpret this value? Geometrically speaking,
+      we can relate the solution $x = \pm\sqrt{-1}$ to the fact that
+      the parabola $y = x^2$ and the line $y=-1$ do
+      not intersect each other, see Figure 1. In other words, there is no solution.
+      In general, if $\dfrac{m^2}{4} + n \lt 0$, 
+      then equation $x^2= mx+ n$ has no solutions.
     </p>
 
     <figure class="w3-center">
@@ -308,15 +313,6 @@
       </figcaption>
     </figure>
 
-    <p>
-      If we use formula (\ref{quad004}), we obtain that
-      $$x = \pm\sqrt{-1}.$$
-      Most of you have learned from calculus, or elementary school, that we cannot
-      take the square root of a negative number.
-      Thus if $\dfrac{m^2}{4} + n \lt 0$,
-      then equation $x^2= mx+ n$ has no solutions. This is the case when there is
-      no intersection between $y= x^2$ and $y=mx+n$, geometrically speaking.
-    </p>
 
     <p>
       It is argued that this led to the invetion of a new number denoted by $i$,
@@ -327,7 +323,7 @@
 
     <p>
       It is also a common practice to point out in courses of mathematics that
-      complex numbers $a + b\sqrt{-1}$ are needed to solve certain
+      <em>complex numbers</em> $a + b\sqrt{-1}$ are needed to solve certain
       quadratic equations, such as $x^2+1=0$.
       However, complex numbers emerged, in fact, from the need to solve cubic equations.
       Furthermore, when quadratic and cubic equations first appeared,
@@ -345,7 +341,7 @@
     </p>
 
     <div class="w3-center w3-hide-small">
-      <div style="display:block;width:798;height:516;margin-left: auto;margin-right: auto;" id="applet_container2"></div>
+      <div style="display:block;width:798;height:516;margin-left: auto;margin-right: auto;" id="ggb-element-02"></div>
     </div>
 
     <div class="w3-hide-large w3-hide-medium w3-khaki w3-round w3-padding w3-panel">
@@ -356,14 +352,14 @@
 
     <p>
       As you can see no matter what line is defined by the parameters $p$ and $q$,
-      it will always intersect the cubic somewhere. Moreover, even when the line
+      it will always intersect the cubic somewhere, even when the line
       $px+q$ is perpendicular to the $x$-axis and far from the origin (i. e. when
-      $p$ and $q$ are both very large positive/negative numbers),
-      it will intersect the cubic. This is because the cubic
+      $p$ and $q$ are both very large positive/negative numbers).
+      This is because the cubic
       goes all the way from $+\infty$ to $-\infty$.
       Thus, there is no line you can draw that won't intersect this cubic.
       This example is very different from the quadratic case which was a parabola $x^2$
-      and you could define a line $mx + n$ such that it won't intersect the parabola it.
+      and you could define a line $mx + n$ such that it won't intersect the parabola.
     </p>
 
     <hr>
@@ -378,8 +374,8 @@
         followed by Girolamo Cardano (1501-1576), showed that $x^3 = px + q$
         has a solution given by
         \begin{eqnarray}\label{cubic002}
-        x = \sqrt[3]{\frac{q}{2} + \sqrt{\frac{q^2}{4} - \frac{p^3}{27}}} -
-        \sqrt[3]{- \frac{q}{2} + \sqrt{\frac{q^2}{4} - \frac{p^3}{27}}}
+        \underbrace{ x = \sqrt[3]{\frac{q}{2} + \sqrt{\frac{q^2}{4} - \frac{p^3}{27}}} -
+        \sqrt[3]{- \frac{q}{2} + \sqrt{\frac{q^2}{4} - \frac{p^3}{27}}} }_{ \text{Cardano's formula:} }
         \end{eqnarray}
       </p>
     </div>
@@ -407,25 +403,28 @@
     </div>
 
     <p>
-      Let's see an example. We will use (\ref{cubic002}) to solve the
+      To see how this works consider the
       equation $x^3 = -6 x+ 20$.
       Here $p=-6$ and $q=20$. If we plug these numbers into
-      (\ref{cubic002}), we obtain
+      (\ref{cubic002}), we obtain the solution
       $$x = \displaystyle \sqrt[3]{10 + \sqrt{108}} -
       \sqrt[3]{- 10 + \sqrt{108}}$$
-      Now we simplify to obtain $x = 2$. We can easily confirm that $x=2$ is
-      a solution since
+      Simplifying we obtain $x=2$, a solution of the given equation since
       $$8=(2)^3 = -6(2)+ 20 = -12+20=8.$$
       Thus, this formula seems to work very well, at least for this case.
     </p>
 
     <p>
-      A few years later after the discovery of the formula (\ref{cubic002}),
+      A few years later after the discovery of Cardano's formula,
       the Italian engineer-architect Rafael Bombelli (1526-1572)
       considered the equation
       \begin{eqnarray}\label{cubic003}
       x^2= 15 x+ 4.
       \end{eqnarray}
+      and, with perhaps just a little
+      pondering, you can see that $x = 4$ is a solution. This can also 
+      be seen in Figure 2. In fact there are three solutions, but 
+      Bombelli did not consider negative values.
     </p>
 
     <figure class="w3-center">
@@ -437,29 +436,21 @@
     </figure>
 
     <p>
-
-      From Figure 2 we can observe that there must be three solutions,
-      one positive and two negative.
-      In this case, we are just interested in calculating the positive
-      solution and to do this we will use Cardano's formula (\ref{cubic002}).
-    </p>
-
-
-
-    <p>
-      Thus, for $p = 15$ and $q=4$,
+      Then Bombelli used Cardano's formula to solve $x^2= 15 x+ 4$.
+      That is, for $p = 15$ and $q=4$,
       we obtain the expression
       \begin{eqnarray}\label{cubic004}
       x = \displaystyle \sqrt[3]{2 + \sqrt{-121}} + \sqrt[3]{2 - \sqrt{-121}}
       \end{eqnarray}
-      Here we encounter a difficulty since we are not allowed to calculate
-      the squared root of $-121$. Is this, in fact, the positive value
-      satisfying the equation $x^2= 15 x+ 4$? If so, how can we operate with it?
-      Is this is even a real solution?
+      Thus, this number must be equal to 4. 
+      Yet this must be nonsense, because inside the cube root we are taking 
+      the square root of a negative number, an absolute impossibility not only at that time 
+      but also nowadays. This presented a real difficulty for all mathematicians at
+      that time.
     </p>
 
     <p>
-      Bombelli encountered the same dificulty but he was able to overcome it 
+      However, Bombelli overcome this difficulty 
       by seeing that the weird expression (\ref{cubic004})
       that Cardano's formula gives for $x$ is actually real,
       but expressed in a very unfamiliar manner. This
@@ -476,25 +467,25 @@
 
       <figure class="w3-center">
         <img class="w3-image w3-mobile" src="../images/chp01/algebra-bombelli.gif" alt="x^2=-1" title="x^2=-1"
-          style="width:40%;">
+          style="width:50%;">
         <figcaption>
-          <b>Figure 4:</b> <em>L'Algebra</em> by Rafael Bombelli: frontispiece of the Bologna edition of 1579.
+          <b>Figure 4:</b> <em>L'Algebra</em> by Rafael Bombelli: frontispiece of 
+          the Bologna edition of 1579.
         </figcaption>
       </figure>
     </p>
 
     <p>
       Bombelli's great insight was simply to treat $\sqrt{-1}$ as a number and to operate with
-      it following some specific arithmetic rules (the same kind of rules that we use today).
+      it following some specific arithmetic rules (the same kind of rules that we use nowdays).
       Thus he discovered that
       $$\sqrt[3]{2+ \sqrt{-121}} = 2 + \sqrt{-1} \quad \text{and} \quad \sqrt[3]{2- \sqrt{-121}} = 2 - \sqrt{-1} $$
-      Bombelli concluded that one solution to the cubic equation $x^3=15x+4$ was
-      $$x=2 + \sqrt{-1} + 2 - \sqrt{-1}=4.$$
-      The difficulty arising from the solution of the cubic $x^3=15x+4$
-      was solved by Bombelli
-      showing that the squared roots of negative numbers cancel each other.
-      This trick works in only a few cases, however, it help to answer
-      the general question of how to understand imaginary numbers and to
+      By substituing these values Bombelli concluded that one solution to the 
+      cubic equation $x^3=15x+4$ was
+      $$x=2 + \sqrt{-1} + 2 - \sqrt{-1}=4$$
+      by showing that the squared roots of negative numbers cancel each other.
+      This trick works in only a few cases, however, it help to establish
+      the foundations to understand imaginary numbers and to
       take their cube roots or manipulate them when they appear aside real numbers.
 
       In proving the reality of the roots of the cubic $x^3=15x+4$, he demonstrated the extraordinary
