@@ -181,6 +181,27 @@
   </script>
   <!--GeoGebra embeding ends-->
 
+  <script>
+    var applet1 = new GGBApplet({material_id: "mkgeehkp",
+                                borderColor:"888888",
+                                playButton: "true",
+                                showFullscreenButton: "true",
+                                showResetIcon: "false",
+                                enableShiftDragZoom: "true"
+                                }, true);
+    var applet2 = new GGBApplet({material_id: "ntehbavr",
+                                borderColor:"888888",
+                                playButton: "true",
+                                showFullscreenButton: "true",
+                                showResetIcon: "false",
+                                enableShiftDragZoom: "true"}, true);
+    window.addEventListener("load", function() {
+          applet1.inject('applet_container1');
+          applet2.inject('applet_container2');
+      });
+</script>
+<!--GeoGebra embeding ends-->
+
 
 </head>
 
@@ -235,7 +256,7 @@
 
     <div class="w3-center w3-hide-small">
 
-      <div style="display:block" id="ggb-element-01"></div>
+      <div style="display:block;width:798;height:516" id="applet_container1"></div>
     </div>
 
     <div class="w3-hide-large w3-hide-medium w3-khaki w3-round w3-padding w3-panel">
@@ -324,7 +345,7 @@
     </p>
 
     <div class="w3-center w3-hide-small">
-      <div style="display:block;margin-left: auto;margin-right: auto;" id="ggb-element-02"></div>
+      <div style="display:block;width:798;height:516;margin-left: auto;margin-right: auto;" id="applet_container2"></div>
     </div>
 
     <div class="w3-hide-large w3-hide-medium w3-khaki w3-round w3-padding w3-panel">
