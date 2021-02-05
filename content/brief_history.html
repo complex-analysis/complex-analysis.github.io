@@ -279,7 +279,7 @@
 
     <figure class="w3-center">
       <img class="w3-image w3-mobile" src="../images/chp01/quadraticminus1.svg" alt="x^2=-1" title="x^2=-1"
-        style="width:80%;">
+        style="width:70%;">
       <figcaption>
         <b>Figure 1:</b> $x^2=-1$.
       </figcaption>
@@ -390,10 +390,10 @@
       (\ref{cubic002}), we obtain
       $$x = \displaystyle \sqrt[3]{10 + \sqrt{108}} -
       \sqrt[3]{- 10 + \sqrt{108}}$$
-      Now we simplify to obtain $x = 2$. To confirm that it is a solution
-      we notice that
+      Now we simplify to obtain $x = 2$. We can easily confirm that $x=2$ is
+      a solution since
       $$8=(2)^3 = -6(2)+ 20 = -12+20=8.$$
-      Thus, this formula seems to work very well.
+      Thus, this formula seems to work very well, at least for this case.
     </p>
 
     <p>
@@ -403,19 +403,25 @@
       \begin{eqnarray}\label{cubic003}
       x^2= 15 x+ 4.
       \end{eqnarray}
-      From Figure 2, we can observe that there must be three solutions,
-      one positive and two negative.
-      In this case, we are just interested in calculating the positive
-      solution and to di this we will use Cardano's formula (\ref{cubic002}).
     </p>
 
     <figure class="w3-center">
       <img class="w3-image w3-mobile" src="../images/chp01/cubic-line.svg" alt="x^3=15x+4" title="x^3=15x+4"
-        style="width:70%;">
+        style="width:60%;">
       <figcaption>
         <b>Figure 2:</b> $x^3=15x+4$.
       </figcaption>
     </figure>
+
+    <p>
+
+      From Figure 2 we can observe that there must be three solutions,
+      one positive and two negative.
+      In this case, we are just interested in calculating the positive
+      solution and to do this we will use Cardano's formula (\ref{cubic002}).
+    </p>
+
+
 
     <p>
       Thus, for $p = 15$ and $q=4$,
@@ -423,48 +429,50 @@
       \begin{eqnarray}\label{cubic004}
       x = \displaystyle \sqrt[3]{2 + \sqrt{-121}} + \sqrt[3]{2 - \sqrt{-121}}
       \end{eqnarray}
-      Here we encounter a difficulty since we are not allow to operate
-      with the squared root of $-121$. Thus,
-      how can we determine the solutions of $x^3=15x+4$ using Cardano's formula?
+      Here we encounter a difficulty since we are not allowed to calculate
+      the squared root of $-121$. Is this, in fact, the positive value
+      satisfying the equation $x^2= 15 x+ 4$? If so, how can we operate with it?
+      Is this is even a real solution?
     </p>
 
     <p>
-      It was Bombelli's great insight to see that the weird expression that Cardano’s
-      formula gives for $x$ is real, but expressed in a very unfamiliar manner. This
-      insight did not come easily. As Bombelli wrote in his book from 1572 <em>L'Algebra</em>:
-
+      Bombelli encounterd the same dificulty but he was able to observe
+      that the weird expression (\ref{cubic004})
+      that Cardano's formula gives for $x$ is actually real,
+      but expressed in a very unfamiliar manner. This
+      insight did not come easily. As Bombelli wrote in his book <em>L'Algebra</em>:
       <div class="w3-padding">
         <p>
           <em>It was a <strong>wild thought</strong> in the judgement of many; and I
             too for a long time was of the same
             opinion. The whole matter seemed to rest on sophistry rather than on truth.
-            Yet I sought so long, until I actually proved this to be the case.
+            Yet I sought so long, until I actually proved this to be the case. (Burton 1995, p. 325)
           </em>
         </p>
       </div>
+
+      <figure class="w3-center">
+        <img class="w3-image w3-mobile" src="../images/chp01/algebra-bombelli.gif" alt="x^2=-1" title="x^2=-1"
+          style="width:40%;">
+        <figcaption>
+          <b>Figure 4:</b> <em>L'Algebra</em> by Rafael Bombelli: frontispiece of the Bologna edition of 1579.
+        </figcaption>
+      </figure>
     </p>
 
-    <figure class="w3-center">
-      <img class="w3-image w3-mobile" src="../images/chp01/algebra-bombelli.gif" alt="x^2=-1" title="x^2=-1"
-        style="width:30%;">
-      <figcaption>
-        <b>Figure 4:</b> <em>L'Algebra</em> by Rafael Bombelli: frontispiece of the Bologna edition of 1579.
-      </figcaption>
-    </figure>
-
-
     <p>
-      Bombelli's big insight was simply to treat $\sqrt{-1}$ as a number and operate with
+      Bombelli's great insight was simply to treat $\sqrt{-1}$ as a number and to operate with
       it following some specific arithmetic rules (the same kind of rules that we use today).
       Thus he discovered that
       $$\sqrt[3]{2+ \sqrt{-121}} = 2 + \sqrt{-1} \quad \text{and} \quad \sqrt[3]{2- \sqrt{-121}} = 2 - \sqrt{-1} $$
       Bombelli concluded that one solution to the cubic equation $x^3=15x+4$ was
       $$x=2 + \sqrt{-1} + 2 - \sqrt{-1}=4.$$
-      The difficulty we encouter was solved by Bombelli
+      The difficulty arising from the solution of the cubic $x^3=15x+4$
+      was solved by Bombelli
       showing that the squared roots of negative numbers cancel each other.
       This trick works in only a few cases, however, it help to answer
       the general question of how to understand imaginary numbers and to
-      take thei cube roots or manipulate them when they appear aside real numbers.
+      take their cube roots or manipulate them when they appear aside real numbers.
 
       In proving the reality of the roots of the cubic $x^3=15x+4$, he demonstrated the extraordinary
       fact that real numbers could be engendered by imaginary numbers. From this
@@ -473,7 +481,11 @@
     </p>
 
     <p>
-
+      Whether nonsense or not, Cardano's formula forced mathematicians 
+      to confront square roots of negative numbers (or <em>imaginary numbers</em>, as they are 
+      called today). This historical incident is another example that negates the (widespread) 
+      view that mathematics is “made up” by mathematicians. As is often the case, it is 
+      the mathematics itself that speaks to us.
     </p>
 
     <hr>
@@ -487,11 +499,12 @@
       <li>Burton, D. M. (1995). The history of mathematics: An introduction (6th ed.)
         (2005). New York: McGraw-Hill.</li>
       <li>González-Velasco, A. E. (2011) Journey through Mathematics.
-          Springer Science+Business Media.</li>
+        Springer Science+Business Media.</li>
       <li>Merzbach, U. C & Boyer, C. B. (2011). A history of mathematics. 3rd ed.
         John Wiley & Sons, Inc., Hoboken, New Jersey.</li>
+      <li>Nahim, P. J. (1998). An imaginary tale: The story of $\sqrt{-1}$. USA: Princeton University Press.</li>
       <li>Stillwell, J. (2010). Mathematics and Its History. Springer Science+Business Media.</li>
-      
+
     </ol>
 
 
