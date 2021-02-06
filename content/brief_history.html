@@ -275,7 +275,9 @@ GeoGebra embeding ends-->
     </p>
 
     <p>
-      Of course, this is nothing new. We know from Babylonian clay tablets that
+      Surprisingly this has been done for more than four thousand years. 
+      Even without the use of mathematical symbols or computers.
+      We know from Babylonian clay tablets that
       this great civilization possessed
       the quadratic formula, enabling them (in verbal form) to solve quadratic equations.
       Because the concept of negative numbers had to wait until the sixteenth century
@@ -291,13 +293,14 @@ GeoGebra embeding ends-->
     </p>
 
     <p>
-      Now let's go back to the equation $x^2= mx+ n$.
-      Consider the the values $m=0$ and $n=-1$. 
+      Now let's go back to the quadratic equation $x^2= mx+ n$.
+      Consider the values $m=0$ and $n=-1$. 
       If we use formula (\ref{quad004}), we obtain that
       $$x = \pm\sqrt{-1}.$$
+      What is going on here? 
       Most of you have learned from calculus, or elementary school, that we cannot
       take the square root of a negative number.
-      Then how do interpret this value? Geometrically speaking,
+      Then, how do interpret this value? Geometrically speaking,
       we can relate the solution $x = \pm\sqrt{-1}$ to the fact that
       the parabola $y = x^2$ and the line $y=-1$ do
       not intersect each other, see Figure 1. In other words, there is no solution.
@@ -316,14 +319,14 @@ GeoGebra embeding ends-->
 
     <p>
       It is argued that this led to the invetion of a new number denoted by $i$,
-      which is equal to $\sqrt{-1}$, and it was given the name <em>imaginary</em>.
-      If we use $i$ as a number whose squared is $-1$, that is $i^2 = 1$,
-      then we can solve the equation $x^2=-1$.
+      which is equal to $\sqrt{-1}$, and it was given the name "imaginary".
+      If we use $i$ as a number such that $i^2 = 1$,
+      then this value is the solution of the equation $x^2=-1$.
     </p>
 
     <p>
       It is also a common practice to point out in courses of mathematics that
-      <em>complex numbers</em> $a + b\sqrt{-1}$ are needed to solve certain
+      <em>complex numbers</em>, denoted as $a + b\sqrt{-1}$, are needed to solve certain
       quadratic equations, such as $x^2+1=0$.
       However, complex numbers emerged, in fact, from the need to solve cubic equations.
       Furthermore, when quadratic and cubic equations first appeared,
@@ -334,9 +337,10 @@ GeoGebra embeding ends-->
       So where did complex numbers really come into importance? To answer this let's
       consider the cubic equation
       \begin{eqnarray}\label{cubic001}
-      x^3 = p x + q
+      x^3 = p x + q.
       \end{eqnarray}
-      Again, this equation represents the intersection of $y = x^3$ and $y = px + q$,
+      Geometrycally, this equation represents the intersection of teh cubic 
+      $y = x^3$ with the line $y = px + q$,
       as shown in the following applet. Drag sliders below and observe what happens.
     </p>
 
@@ -351,7 +355,7 @@ GeoGebra embeding ends-->
     <br>
 
     <p>
-      As you can see no matter what line is defined by the parameters $p$ and $q$,
+      As you can observe no matter what line is defined by the parameters $p$ and $q$,
       it will always intersect the cubic somewhere, even when the line
       $px+q$ is perpendicular to the $x$-axis and far from the origin (i. e. when
       $p$ and $q$ are both very large positive/negative numbers).
@@ -369,13 +373,13 @@ GeoGebra embeding ends-->
     <div class="w3-responsive">
       <p>
         It is well known that the solution of the cubic $x^3 = px + q$
-        was developed in the Renaissance by Italian
+        was developed in the Renaissance (15th and 16th centuries) by Italian
         mathematicians. Scipione del Ferro (1465-1526) and Niccolò Tartaglia (1500-1557),
         followed by Girolamo Cardano (1501-1576), showed that $x^3 = px + q$
         has a solution given by
         \begin{eqnarray}\label{cubic002}
         \underbrace{ x = \sqrt[3]{\frac{q}{2} + \sqrt{\frac{q^2}{4} - \frac{p^3}{27}}} -
-        \sqrt[3]{- \frac{q}{2} + \sqrt{\frac{q^2}{4} - \frac{p^3}{27}}} }_{ \text{Cardano's formula:} }
+        \sqrt[3]{- \frac{q}{2} + \sqrt{\frac{q^2}{4} - \frac{p^3}{27}}} }_{ \Large \text{Cardano's formula} }
         \end{eqnarray}
       </p>
     </div>
@@ -384,7 +388,7 @@ GeoGebra embeding ends-->
       <div id="phase" class="w3-half w3-container w3-margin-bottom">
         <figure class="w3-center">
           <img class="w3-image w3-mobile" src="../images/chp01/tartaglia.jpg" alt="Niccolò Fontana Tartaglia"
-            title="Niccolò Fontana Tartaglia" style="width:87%;">
+            title="Niccolò Fontana Tartaglia" style="width:61%;">
           <figcaption>
             <b>Figure 2:</b> Tartaglia.
           </figcaption>
@@ -393,7 +397,7 @@ GeoGebra embeding ends-->
       <div id="modulus" class="w3-half w3-container w3-margin-bottom">
         <figure class="w3-center">
           <img class="w3-image w3-mobile" src="../images/chp01/cardano.jpg" alt="Gerolamo Cardano"
-            title="Gerolamo Cardano" style="width:100%;">
+            title="Gerolamo Cardano" style="width:70%;">
           <figcaption>
             <b>Figure 3:</b> Cardano.
           </figcaption>
@@ -405,7 +409,7 @@ GeoGebra embeding ends-->
     <p>
       To see how this works consider the
       equation $x^3 = -6 x+ 20$.
-      Here $p=-6$ and $q=20$. If we plug these numbers into
+      In this case $p=-6$ and $q=20$. If we plug these numbers into
       (\ref{cubic002}), we obtain the solution
       $$x = \displaystyle \sqrt[3]{10 + \sqrt{108}} -
       \sqrt[3]{- 10 + \sqrt{108}}$$
@@ -419,12 +423,12 @@ GeoGebra embeding ends-->
       the Italian engineer-architect Rafael Bombelli (1526-1572)
       considered the equation
       \begin{eqnarray}\label{cubic003}
-      x^2= 15 x+ 4.
+      x^2= 15 x+ 4
       \end{eqnarray}
       and, with perhaps just a little
       pondering, you can see that $x = 4$ is a solution. This can also 
       be seen in Figure 2. In fact there are three solutions, but 
-      Bombelli did not consider negative values.
+      Bombelli did not consider negative values, so we won't either.
     </p>
 
     <figure class="w3-center">
@@ -437,16 +441,19 @@ GeoGebra embeding ends-->
 
     <p>
       Then Bombelli used Cardano's formula to solve $x^2= 15 x+ 4$.
-      That is, for $p = 15$ and $q=4$,
-      we obtain the expression
+      Thus, considering $p = 15$ and $q=4$,
+      we obtain the value
       \begin{eqnarray}\label{cubic004}
       x = \displaystyle \sqrt[3]{2 + \sqrt{-121}} + \sqrt[3]{2 - \sqrt{-121}}
       \end{eqnarray}
-      Thus, this number must be equal to 4. 
-      Yet this must be nonsense, because inside the cube root we are taking 
-      the square root of a negative number, an absolute impossibility not only at that time 
-      but also nowadays. This presented a real difficulty for all mathematicians at
-      that time.
+      Here we encouter a very unusual value. If Cardano's formula
+      is correct, this number must be equal to 4. 
+      Yet this must be nonsense and the value cannot be real, 
+      because inside the cube root we are taking 
+      the square root of a negative number, an absolute impossibility 
+      at that time (and also nowadays).
+      This presented a great difficulty for all 
+      contemporary mathematicians to Bombelli.
     </p>
 
     <p>
@@ -467,7 +474,7 @@ GeoGebra embeding ends-->
 
       <figure class="w3-center">
         <img class="w3-image w3-mobile" src="../images/chp01/algebra-bombelli.gif" alt="x^2=-1" title="x^2=-1"
-          style="width:50%;">
+          style="width:45%;">
         <figcaption>
           <b>Figure 4:</b> <em>L'Algebra</em> by Rafael Bombelli: frontispiece of 
           the Bologna edition of 1579.
@@ -480,10 +487,10 @@ GeoGebra embeding ends-->
       it following some specific arithmetic rules (the same kind of rules that we use nowdays).
       Thus he discovered that
       $$\sqrt[3]{2+ \sqrt{-121}} = 2 + \sqrt{-1} \quad \text{and} \quad \sqrt[3]{2- \sqrt{-121}} = 2 - \sqrt{-1} $$
-      By substituing these values Bombelli concluded that one solution to the 
-      cubic equation $x^3=15x+4$ was
-      $$x=2 + \sqrt{-1} + 2 - \sqrt{-1}=4$$
-      by showing that the squared roots of negative numbers cancel each other.
+      By substituing these values Bombelli concluded that 
+      $$x = 2 + \sqrt{-1} + 2 - \sqrt{-1}$$
+      and he showed that the squared roots of negative numbers cancel each other.
+      Therefore, he obtained the solution $x=4$ to the cubic equation $x^3=15x+4$.
       This trick works in only a few cases, however, it help to establish
       the foundations to understand imaginary numbers and to
       take their cube roots or manipulate them when they appear aside real numbers.
