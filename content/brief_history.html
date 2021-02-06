@@ -133,6 +133,17 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
   </script>
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+    MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+      cancel: ["Extension","cancel"],
+      bcancel: ["Extension","cancel"],
+      xcancel: ["Extension","cancel"],
+      cancelto: ["Extension","cancel"]
+    });
+  });
+  </script>
+
 
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -487,18 +498,20 @@ GeoGebra embeding ends-->
       it following some specific arithmetic rules (the same kind of rules that we use nowdays).
       Thus he discovered that
       $$\sqrt[3]{2+ \sqrt{-121}} = 2 + \sqrt{-1} \quad \text{and} \quad \sqrt[3]{2- \sqrt{-121}} = 2 - \sqrt{-1} $$
-      By substituing these values Bombelli concluded that 
-      $$x = 2 + \sqrt{-1} + 2 - \sqrt{-1}$$
-      and he showed that the squared roots of negative numbers cancel each other.
-      Therefore, he obtained the solution $x=4$ to the cubic equation $x^3=15x+4$.
-      This trick works in only a few cases, however, it help to establish
+      By substituing these values in (\ref{cubic004}) Bombelli obtained
+      $$x = 2 + \sqrt{-1} + 2 - \sqrt{-1}.$$
+      Then he showed that the squared roots of negative numbers cancel each other. That is
+      $$x = 2 + \cancel{\sqrt{-1}} + 2 - \cancel{\sqrt{-1}}.$$
+      And concluded that the $x = 4$ is actually the solution of $x^3=15x+4$
+      obtained from Cardano's formula.
+      This trick works in only a few cases, however, it helped to establish
       the foundations to understand imaginary numbers and to
       take their cube roots or manipulate them when they appear aside real numbers.
 
       In proving the reality of the roots of the cubic $x^3=15x+4$, he demonstrated the extraordinary
       fact that real numbers could be engendered by imaginary numbers. From this
       time on, imaginary numbers lost some of their mystical character, although their full
-      acceptance as bona de numbers came only in the 1800s.
+      acceptance as <em>bona fide</em> numbers came only in the 1800s.
     </p>
 
     <p>
