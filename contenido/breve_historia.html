@@ -84,28 +84,28 @@
         // hover over title to show "Table of Contents"
         $('#title a').hover(
           function () {
-            $('#title a').text('Table of Contents');
+            $('#title a').text('Tabla de Contenidos');
           },
           function () {
-            $('#title a').text('Complex Analysis'); // set back when moving out
+            $('#title a').text('Análisis Complejo'); // set back when moving out
           }
         );
 
         // set prev/next titles
         $('#prev a').hover(
           function () {
-            $('#title a').text('Prev: Joukowsky');
+            $('#title a').text('Prev: Comentarios');
           },
           function () {
-            $('#title a').text('Complex Analysis');
+            $('#title a').text('Análisis Complejo');
           }
         );
         $('#next a').hover(
           function () {
-            $('#title a').text('Next: Complex Analytic Landscapes');
+            $('#title a').text('Next: Notación y Terminología');
           },
           function () {
-            $('#title a').text('Complex Analysis');
+            $('#title a').text('Análisis Complejo');
           }
         );
       }
@@ -200,9 +200,9 @@
   <div id="wrapper">
 
     <header>
-      <p><span id="prev"><a href="joukowsky_airfoil.html">&larr;</a></span><span id="title"><a
-            href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a
-            href="complex_analytic_landspaces.html">&rarr;</a></span>
+      <p><span id="prev"><a href="comentarios.html">&larr;</a></span><span id="title"><a
+            href="tabla_de_contenidos.html">Análisis Complejo</a></span><span id="next"><a
+            href="notacion_teminologia.html">&rarr;</a></span>
         <div class="clear"></div>
       </p>
     </header>
@@ -477,11 +477,11 @@
       <div class="w3-padding">
         <p>
           Y aunque a muchos esto les parecerá una extravagancia,
-           porque incluso yo sostuve esta opinión hace algún tiempo, ya que apareció
-           para mí más sofista que verdad, sin embargo busqué arduamente y
-           encontré la demostración, que se indicará a continuación. ... Pero dejo
-           el lector aplique toda su fuerza mental, porque [de lo contrario]
-           incluso él se encontrará engañado.
+          porque incluso yo sostuve esta opinión hace algún tiempo, ya que apareció
+          para mí más sofista que verdad, sin embargo busqué arduamente y
+          encontré la demostración, que se indicará a continuación. ... Pero dejo
+          el lector aplique toda su fuerza mental, porque [de lo contrario]
+          incluso él se encontrará engañado.
           [<a href="bombelli">1</a>, pp. 293-294;
           <a href="#oconnor-robertson" alt="O'Connor-Robertson" title="O'Connor-Robertson">9</a>]
 
@@ -501,44 +501,45 @@
     <div class="w3-responsive">
       <p>
         La gran intuición de Bombelli fue simplemente tratar $\sqrt{-1}$ como un número
-        y operar con él siguiendo reglas artiméticas específicas 
+        y operar con él siguiendo reglas artiméticas específicas
         (el mismo tipo de reglas que usamos hoy en día).
         De esta manera descubrió que
         $$\sqrt[3]{2+ \sqrt{-121}} = 2 + \sqrt{-1} \quad \text{y} \quad \sqrt[3]{2- \sqrt{-121}} = 2 - \sqrt{-1} .$$
         Al sustituir estos valores en (\ref{cubic004}) Bombelli obtuvo
         $$x = 2 + \sqrt{-1} + 2 - \sqrt{-1}.$$
-        Luego mostró que las raíces cuadradas de los números negativos se cancelan entre síThen he showed that the squared roots of negative numbers cancel each other
+        Luego mostró que las raíces cuadradas de los números negativos se cancelan entre síThen he showed that the
+        squared roots of negative numbers cancel each other
         [<a href="#bombelli" alt="Bombelli" title="Bombelli">1</a>, p. 169;
         <a href="#gonzalez-velasco" alt="Gonzalez-velasco" title="Gonzalez-Velasco">6</a>, p. 164]. Esto es
         $$x = 2 + \cancel{\sqrt{-1}} + 2 - \cancel{\sqrt{-1}}.$$
-        Y concluyó que $x = 4$ es en realidad la solución de  $x^3=15x+4$
+        Y concluyó que $x = 4$ es en realidad la solución de $x^3=15x+4$
         obtenida a partir de la fórmula de Cardano [<a href="#bombelli" alt="Bombelli" title="Bombelli">1</a>, p. 294].
         Este truco funciona solo en unos pocos casos, sin embargo, ayudó a
-         comprender los números imaginarios y calcular sus raíces cúbicas o
-         manipularlos cuando aparezcen a un lado de números reales.
+        comprender los números imaginarios y calcular sus raíces cúbicas o
+        manipularlos cuando aparezcen a un lado de números reales.
       </p>
     </div>
 
     <p>
       Por supuesto, ni Cardano ni Bombelli tenían a su disposición el poder de la notación algebraica actual,
-       (ni computadoras) y sus cálculos se limitaron a números en "dominio real".
-       De hecho, la mayoría de los matemáticos italianos en ese momento tendían a pensar en cubos o cuadrados
-       como objetos geométricos en lugar de cantidades algebraicas. Sin embargo, se le atribuye
-       haber demostrado la realidad de las soliuciones de la cúbica $ x ^ 3 = 15x + 4 $,
-       puesto que demostró el hecho extraordinario de que los números reales podrían ser
-       generado por números imaginarios.
+      (ni computadoras) y sus cálculos se limitaron a números en "dominio real".
+      De hecho, la mayoría de los matemáticos italianos en ese momento tendían a pensar en cubos o cuadrados
+      como objetos geométricos en lugar de cantidades algebraicas. Sin embargo, se le atribuye
+      haber demostrado la realidad de las soliuciones de la cúbica $ x ^ 3 = 15x + 4 $,
+      puesto que demostró el hecho extraordinario de que los números reales podrían ser
+      generado por números imaginarios.
     </p>
 
     <p>
       Sin sentido o no, la fórmula de Cardano obligó a los matemáticos
-       a confrontar raíces cuadradas de números negativos.
+      a confrontar raíces cuadradas de números negativos.
 
-       Este incidente histórico es otro ejemplo que niega la generalizada
-       vista que las matemáticas están "hechas" por matemáticos. Como suele ser el caso, es
-       la matemática misma que nos habla.
-       A partir de este momento, los números imaginarios perdieron parte de su carácter
-       místico, aunque su total aceptación como números <em>auténticos</em>
-       llegó solo en el siglo XIX.
+      Este incidente histórico es otro ejemplo que niega la generalizada
+      vista que las matemáticas están "hechas" por matemáticos. Como suele ser el caso, es
+      la matemática misma que nos habla.
+      A partir de este momento, los números imaginarios perdieron parte de su carácter
+      místico, aunque su total aceptación como números <em>auténticos</em>
+      llegó solo en el siglo XIX.
     </p>
 
     <div class="w3-padding">
@@ -550,26 +551,26 @@
     <h2>La maduración de los números complejos</h2>
 
     <p>
-      Many mathematicians after Cardano and Bombelli made important contributions to
-      imaginary (or complex) numbers. For example René Descartes (1596-1650)
-      coined the term "imaginary" in his book in <em>La Géométrie</em> of 1637 as follows:
+      Muchos matemáticos después de Cardano y Bombelli hicieron importantes contribuciones a
+      números imaginarios (o complejos). Por ejemplo René Descartes (1596-1650)
+      acuñó el término "imaginario" en su libro en <em>La Géométrie</em> de 1637 de la siguiente manera:
 
     </p>
 
     <div class="w3-padding">
-      <p>Neither the true nor the false [negative] roots are always real; but sometimes
-        only imaginary. [<a href="#descartes" alt="Descartes" title="Descartes">3</a>, p. 380]
+      <p>Ni las raíces verdaderas ni las falsas [negativas] son siempre reales; pero a veces
+        solo imaginarias. [<a href="#descartes" alt="Descartes" title="Descartes">3</a>, p. 380]
       </p>
     </div>
 
     <p>
-      John Wallis (1616-1703) showed how to represent geometrically complex
-      roots of a quadratic equation with real coefficients
+      John Wallis (1616-1703) mostró como representar geométircamente
+      raíces de una ecuación cuadrática con coeficientes reales
       [<a href="#kline" alt="Kline" title="Kline">7</a>, p. 594].
-      Carpar Wessel (1745-1818) and
+      Carpar Wessel (1745-1818) y
       <span style="white-space: nowrap;">Jean-Robert</span>
       Argan (1768-1822)
-      provided geometric representations of complex numbers as vectors
+      proporcionaron representaciones geométricas de números complejos como vectores
       [<a href="#gonzalez-velasco" alt="Gonzalez-Velasco" title="Gonzalez-Velasco">6</a>, pp. 185-190].
     </p>
 
@@ -577,41 +578,41 @@
       <img class="w3-image w3-mobile" src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Leonhard_Euler.jpg"
         alt="Euler" title="Euler" style="width:25%;">
       <figcaption>
-        <b>Figure 6:</b> Euler.
+        <b>Figura 6:</b> Euler.
       </figcaption>
     </figure>
 
     <p>
-      Leonard Euler (1707-1783) standirezed the notation "$i=\sqrt{-1}$"
-      [<a href=#euleri>5</a>, p. 184] and used imaginary numbers to solve
-      quadratic and cubic equations, in spite of the fact that he
-      was still suspicious of these numbers.
-      In his <em>Algebra</em>, for example, he mentioned:
+      Leonard Euler (1707-1783) estandarizó la notación "$ i = \ sqrt {-1} $"
+      [<a href=#euleri> 5 </a>, pág. 184] y usó números imaginarios para resolver
+      ecuaciones cuadráticas y cúbicas, a pesar de que él
+      todavía sospechaba de estos números.
+      En su <em> Álgebra </em>, por ejemplo, mencionó:
     </p>
 
     <div class="w3-padding">
-      <p>[...] since all numbers which it is possible to conceive
-        are either greater or less than 0, or aere 0 itself, it is
-        evident that we cannot rank the square root of a negative
-        number amongst possible numbers, and we must therefore
-        say that it is an impossible quantity. In this manner we are
-        led to the idea of numbers, which from their nature are impossible;
-        and therefore they are usually called imaginary
-        quantities, because they exist merely in the imagination.
+      <p>[...] ya que todos los números que es posible concebir
+        son mayores o menores que 0, o son 0 en sí mismo, es
+        evidente que no podemos clasificar la raíz cuadrada de un negativo
+        número entre los números posibles, y por lo tanto debemos
+        decir que es una cantidad imposible. De esta manera esto nos conduce
+        a la idea de números, que por su naturaleza son imposibles;
+        y por eso se les suele llamar
+        cantidades imaginarias, porque existen meramente en la imaginación.
         [<a href="#euler-algebra" alt="Euler-Algebra" title="Euler-Algebra">4</a>, p. 43]
       </p>
     </div>
 
     <p>
-      Lest anyone takes this as a condemnation, he continued:
+      Para que nadie tome esto como una condena, continuó:
     </p>
 
     <div class="w3-padding">
-      <p>notwithstanding this, these numbers present
-        themselves to the mind; they exists in our
-        imagination, and we still have a sufficient idea of
-        them; [...] nothing prevent us from making use of these
-        imaginary numbers, and employing them in calculation.
+      <p>a pesar de esto, estos números se presentan
+        ellos mismos a la mente; existen en nuestra
+        imaginación, y todavía tenemos una idea suficiente de
+        ellos; [...] nada nos impide hacer uso de estos
+        números imaginarios y emplearlos en el cálculo.
         <span style="white-space: nowrap;">[<a href="#euler-algebra" alt="Euler" title="Euler">4</a>, p.
           43]</span>
 
@@ -619,32 +620,31 @@
     </div>
 
     <p>
-      Later Carl Friedrich Gauss (1777-1855) introduced the term "complex number"
-      refering to numbers of the form $a+ b \, i $
+      Después Carl Friedrich Gauss (1777-1855) introdujo el término "número complejo"
+      refiriendose a los números de la forma $a+ b \, i $
       [<a href="#gonzalez-velasco" alt="Gonzalez-Velasco" title="Gonzalez-Velasco">6</a>, p. 191].
-      He also gave four proofs of the <em>fundamental theorem of algebra</em> over the course of
-      his long career. This theorem telss us that
-      any $n$th-degree polynomial has $n$ roots, some or all of which
-      may be imaginary. The first proof that Gauss gave was in his doctoral
-      dissertation of 1799. The last (and perhaps the most elegant)
-      allows the use of complex numbers not only for the variable but
-      for the coefficients as well. Since this necessarily depended on the recognition
-      of complex numbers, Gauss helped to solidify the position of these
-      numbers [<a href="#kline" alt="Kline" title="Kline">7</a>, Vol. 2, p. 595].
+      También dio cuatro demostraciones del <em> teorema fundamental del álgebra </em> en el transcurso de
+      su larga carrera. Este teorema nos dice que
+      cualquier polinomio de $ n $-ésimo grado tiene $ n $ raíces, algunas o todas
+      puede ser imaginarias. La primera prueba que dio Gauss fue en su disertación de doctorado
+      de 1799. La última (y quizás la más elegante)
+      permite el uso de números complejos no solo para la variable sino
+      también para los coeficientes. Dado que esto dependía necesariamente del reconocimiento
+      de números complejos, Gauss ayudó a solidificar la posición de estos
+      números [<a href="#kline" alt="Kline" title="Kline">7</a>, Vol. 2, p. 595].
     </p>
 
 
     <p>
-      The first rigorous definition of complex numbers was given until the ninteenth
-      century by William Rowan Hamilton (1805-1865). In 1833 he proposed to the Irish Academy
-      that a complex number can be considered as a <em>couple</em> $(a, b)$,
-      with $a,b$ real numbers
+      La primera definición rigurosa de números complejos se dio hasta el
+      siglo XIX por William Rowan Hamilton (1805-1865). En 1833 propuso a la Academia Irlandesa
+      que un número complejo puede considerarse como una <em> pareja </em> $ (a, b) $,
+      con $ a, b $ números reales
       <span style="white-space: nowrap;">[<a href="#gonzalez-velasco" alt="Gonzalez-Velasco"
           title="Gonzalez-Velasco">6</a>, pp. 192-193].</span>
-      Then he defined addition and multiplication
-      of <em>couples</em> as follows:
+      Después definió la adición y multiplicación de <em>parejas</em> como sigue:
       $$(a, b)+(c, d) =(a + c, b + d)$$
-      and
+      y
       $$(a, b)(c, d) = (ac − bd, bc + ad).$$
       This is in fact an algebraic definition of complex numbers.
     </p>
@@ -659,7 +659,7 @@
             src="https://upload.wikimedia.org/wikipedia/commons/f/f6/William_Rowan_Hamilton_portrait_oval_combined.png"
             alt="William Rowan Hamilton" title="William Rowan Hamilton" style="width:55%;">
           <figcaption>
-            <b>Figure 7:</b> Hamilton.
+            <b>Figura 7:</b> Hamilton.
           </figcaption>
         </figure>
       </div>
@@ -670,7 +670,7 @@
             src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Augustin-Louis_Cauchy_1901.jpg"
             alt="Augustin-Louis Cauchy" title="Augustin-Louis Cauchy" style="width:55%;">
           <figcaption>
-            <b>Figure 8:</b> Cauchy.
+            <b>Figura 8:</b> Cauchy.
           </figcaption>
         </figure>
       </div>
@@ -679,17 +679,17 @@
     </div>
 
     <p>
-      Among the many mathematicians and scientists who contributed,
-      there are three who stand out as having influenced decisively the course of
-      development of complex analysis
-      [<a href="#kline" alt="Kline" title="Kline">7</a>, Vol.2, Ch. 27].
-      The first is Augustin-Louis Cauchy (1789-1857), who
-      developed the theory of the complex integral calculus.
-      By using imaginary numbers Cauchy was able to
-      evaluate "real integrals" that heretofore could not be evaluated,
-      obtaining stuning results such as
+      Entre los muchos matemáticos y científicos que contribuyeron,
+      hay tres que se destacan por haber influido decisivamente en el curso de
+      desarrollo de análisis complejo
+      [<a href="#kline" alt="Kline" title="Kline"> 7 </a>, Vol.2, Cap. 27].
+      El primero es Augustin-Louis Cauchy (1789-1857), quien
+      desarrolló la teoría del cálculo integral complejo.
+      Mediante el uso de números imaginarios, Cauchy pudo
+      evaluar "integrales reales" que de otro modo no se podían evaluar,
+      obteniendo resultados asombrosos como
       $$\int_0^{\infty} \frac{\sin x}{x}\,dx=\frac{\pi}{2}$$
-      and
+      y
       $$\int_0^{\pi}\log \sin x\,dx =\pi \log 2.$$</p>
 
     <div class="w3-row-padding">
@@ -698,7 +698,7 @@
           <img class="w3-image w3-mobile" src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Karl_Weierstrass.jpg"
             alt="Karl Weierstrass" title="Karl Weierstrass" style="width:55%;">
           <figcaption>
-            <b>Figure 9:</b> Weierstrass.
+            <b>Figura 9:</b> Weierstrass.
           </figcaption>
         </figure>
       </div>
@@ -708,7 +708,7 @@
             src="https://upload.wikimedia.org/wikipedia/commons/8/82/Georg_Friedrich_Bernhard_Riemann.jpeg"
             alt="Georg Friedrich Bernhard Riemann" title="Georg Friedrich Bernhard Riemann" style="width:70%;">
           <figcaption>
-            <b>Figure 10:</b> Riemann.
+            <b>Figura 10:</b> Riemann.
           </figcaption>
         </figure>
       </div>
@@ -716,26 +716,27 @@
     </div>
 
     <p>
-      The other two are Karl Weierstrass
-      (1815-1897) and Bernhard Riemann (1826-1866), who appeared on the
-      mathematical scene about the middle of the nineteenth century. Weierstrass
-      developed the theory from a starting point of convergent power series, and
-      this approach led towards more formal algebraic developments. Riemann
-      contributed a more geometric point of view. His ideas had a tremendous
-      impact not only on complex analysis but upon mathematics as a whole,
-      though his views took hold only gradually.
+      Los otros dos son Karl Weierstrass
+       (1815-1897) y Bernhard Riemann (1826-1866), quien aparecieron en el
+       escena matemática de mediados del siglo XIX. Weierstrass
+       desarrolló la teoría desde un punto de partida de series de potencia convergente, y
+       este enfoque condujo a desarrollos algebraicos más formales. Riemann, 
+       por otra parte, aportó más desde un punto de vista geométrico. Sus ideas tuvieron un tremendo
+       impacto no solo en el análisis complejo sino en las matemáticas en su conjunto,
+       aunque sus opiniones se afianzaron sólo gradualmente.
+      
     </p>
 
 
 
 
     <p>
-      To summarize, the solution of the cubic equation, the fundamental
-      theorem of algebra, and the evaluation of real integrals
-      proved how valuable it was to consider imaginary numbers $a + bi$,
-      even though they were not (at least not yet) on firm ground.
-      Do they really exist or are they simply
-      phantoms of our "imagination", and thus truly "imaginary"?
+      En resumen, la solución de la ecuación cúbica, el teorema fundamental
+       del álgebra y evaluación de integrales reales
+       demostró lo valioso que era considerar números imaginarios $ a + bi $,
+       a pesar de que no estaban (al menos todavía no) en terreno firme.
+       ¿Realmente existen o son simplemente
+       fantasmas de nuestra "imaginación" y, por tanto, verdaderamente "imaginarios"?
     </p>
 
 
@@ -743,18 +744,18 @@
 
     <hr>
 
-    <h2>References</h2>
+    <h2>Referencias</h2>
 
 
     <p>
-      The foregoing descriptions of complex numbers are not the end of the story.
-      Various developments in the nineteenth and twentieth centuries enabled us
-      to gain a deeper insight into the role of complex numbers not only in mathematics,
-      but also in engineering and physics.
-      The history of complex numbers is fascinating and I highly encourage
-      the reader to consult the primary sources cited here which
-      could serve as a starting point to delve into the historical
-      details that allowed the emergence and development of complex numbers.
+      Las descripciones anteriores de números complejos no son el final de la historia.
+       Varios desarrollos en los siglos XIX y XX nos permitieron
+       obtener una visión más profunda del papel de los números complejos no solo en matemáticas,
+       pero también en ingeniería y física.
+       La historia de los números complejos es fascinante y recomiendo encarecidamente
+       al lector consultar las fuentes primarias citadas aquí, las
+       cuales pueden servir como punto de partida para ahondar en los detalles históricos
+        que permitieron el surgimiento y desarrollo de números complejos.
     </p>
     <br>
 
@@ -832,11 +833,11 @@
 
 
     <!-- link to the next page -->
-    <a href="complex_analytic_landspaces.html">
-      <p class="nextPage">NEXT: Complex Analytic Landscapes</p>
+    <a href="notacion_terminologia.html">
+      <p class="nextPage">NEXT: Notación y Terminología</p>
     </a>
     <footer>
-      <p>[ <a href="../intro.html">intro</a>, <a href="https://github.com/jcponce/complex">source</a>, <a
+      <p>[ <a href="../es.html">intro</a>, <a href="https://github.com/jcponce/complex">source</a>, <a
           href="https://github.com/jcponce/complex/issues">issues</a> ]</p>
 
       <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
