@@ -7,26 +7,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
-  <title>Complex Analysis</title>
+  <title>Análisis Complejo</title>
 
   <!-- dublin core -->
-  <meta name="dc.title" CONTENT="Complex Analysis">
+  <meta name="dc.title" CONTENT="Análisis Complejo">
   <meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
-  <meta name="dc.date" CONTENT="26-01-2019">
-  <meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
-  <meta name="dc.type" CONTENT="Interactive Resource">
+  <meta name="dc.date" CONTENT="26-01-2021">
+  <meta name="dc.isbn" CONTENT="ISBN-13: ">
+  <meta name="dc.type" CONTENT="Recurso Interactivo">
   <meta name="dc.format" CONTENT="HTML">
-  <meta name="dc.language" CONTENT="en-US">
+  <meta name="dc.language" CONTENT="es-MEX">
   <meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 
   <!-- social media cards -->
-  <meta property="og:title" content="Complex Analysis">
-  <meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta property="og:title" content="Análisis Complejo">
+  <meta property="og:description"
+    content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
   <meta property="og:type" content="website">
   <!--<meta property="og:image" content="">
 	<meta property="og:url" content="">-->
-  <meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
-  <meta property="og:site_name" content="Complex Analysis">
+  <meta name="twitter:card" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+  <meta property="og:site_name" content="Análisis Complejo">
 
 
   <!-- FONTS AND CSS -->
@@ -207,30 +208,31 @@
     </header>
 
 
-    <h1>A Brief History</h1>
+    <h1>Una Breve Historia</h1>
 
     <hr>
 
-    <h2>Geometric interpretation of <br>quadratic and cubic equations</h2>
+    <h2>Interpretación geométrica de <br>ecuaciones cuadráticas y cúbicas</h2>
 
     <div class="w3-responsive">
-      <p>Consider a quadratic equation
+      <p>
+        Consideremos la ecuación
         \begin{eqnarray}\label{quad001}
         x^2 = mx + n.
         \end{eqnarray}
-        From elementary school we have learned how to find its solutions,
-        that is, all the values of $x$ that satisfy equation
-        (\ref{quad001}). To do so we just need to use the widely known
-        <em>quadratic formula</em>
+        En la excuela elemental hemos aprendido a encontrar sus soluciones,
+        es decir, todos los valores $x$ tales que satisfacen la ecuación
+        (\ref{quad001}). Para hacer esto solo necesitamos usar la bien conocida
+        <em>fórmula cuadrática</em>
         \begin{eqnarray}\label{quad002}
         x = \frac{-b\pm \sqrt{b^2-4ac}}{2a}
         \end{eqnarray}
-        of the <em>general quadratic equation </em>
+        de la <em>ecuación general cuadrática</em>
         \begin{eqnarray}\label{quad003}
         ax^2+ bx+c = 0 .
         \end{eqnarray}
-        By rewritting equation (\ref{quad001}) as $x^2-mx-n = 0$, we can
-        use (\ref{quad002}) to obtain
+        Al re-escribir la ecuación (\ref{quad001}) como $x^2-mx-n = 0$, podemos
+        usar (\ref{quad002}) para obtener
         \begin{eqnarray}\label{quad004}
         x = \frac{ m \pm \sqrt{m^2 + 4n } }{2} = \frac{m}{2} \pm \sqrt{\frac{m^2}{4} + n}
         \end{eqnarray}
@@ -238,136 +240,143 @@
     </div>
 
     <p>
-      If we plot equation (\ref{quad001}) we can observe geometrically that
-      it represents the intersection of the parabola $y=x^2$ with the line $y = mx+n$.
-      This can be appreciated in the following applet. Drag the sliders below and
-      observe what happens with the intersection points $x_0$ and $x_1$.
+      Si graficamos la ecuación (\ref{quad001}) podemos observar geométricamente
+      que esta representa la intersección de la parábola $y=x^2$ con la línea $y = mx+n$.
+      Esto se puede apreciar mejor en el siguiente applet. Mueve los deslizadores
+      en la vista gráfica inferior y observa qué sucede con los puntos de
+      intersección $x_0$ y $x_1$.
     </p>
 
-    <div class="w3-center">
+    <div class="w3-center w3-hide-small">
 
       <div style="display:block;margin-left: auto;margin-right: auto;" id="ggb-element-01"></div>
     </div>
 
-   
+
     <br>
 
     <p>
-      As you already noticed, we have three cases:
+      Como ya habrás notado, tenemos tres casos:
       <ol>
-        <li>There are two points of intersection, i. e. two solutions.</li>
-        <li>There is only one intersection point, i. e. one solution.</li>
-        <li>There are no intersection points, i. e. there are no solutions.</li>
+        <li>Hay dos puntos de intersección, es decir, dos soluciones.</li>
+        <li>Hay un punto de intersección, es decir, una solución.</li>
+        <li>No hay puntos de intersección, es decir, no hay soluciones.</li>
       </ol>
     </p>
 
     <p>
-      Surprisingly this has been known since ancient times,
-      even without the use of mathematical symbols or computers.
-     We know from clay tablets dated from around 2000 BCE that the Babylonian 
-civilization possessed the quadratic formula, enabling them (in verbal form) to solve quadratic equations.
-      Because the concept of negative numbers had to wait until the sixteenth century
-      to appear, the Babylonians did not consider negative
-      solutions
+      Sorprendentemente, esto se conoce desde la antigüedad,
+      incluso sin el uso de símbolos matemáticos o computadoras.
+      Sabemos por tablillas de arcilla que datan de alrededor del 2000 a. C.
+      la civilización de Babilonia poseía la fórmula cuadrática,
+      lo que les permitía (en forma verbal) resolver ecuaciones cuadráticas.
+      Porque el concepto de números negativos tuvo que esperar hasta el siglo XVI,
+      los babilonios no consideraron soluciones negativas
       <span style="white-space: nowrap;">[<a href="#merzbach-boyer" alt="Merzbach-Boyer" title="Merzbach-Boyer">8</a>,
         pp. 29-30]</span>.
-      We can also find implicitly equations
-      in the geometry developed by the
-      ancient Greeks, as we would expect when circles, parabolas, and the like
-      are being investigated, but we do not demand that every geometric problem have a solution
+      También podemos encontrar ecuaciones implícitas
+      en la geometría desarrollada por el
+      antiguos griegos, como era de esperar cuando se investigan círculos, parábolas y
+      objetos geométricos similares, pero no exigimos que cada problema
+      geométrico tenga una solución
       [<a href="#merzbach-boyer" alt="Merzbach-Boyer" title="Merzbach-Boyer">8</a>, Ch. 4].
-      If we ask whether a particular circle and a line intersect, then the answer
-      can be ‘yes’ or ‘no’. And when the answer is ‘yes’, the quadratic equation
-      for the intersection has a solution; if ‘no’, it has no solution.
+      Cuando nos preguntamos si un círculo en particular y una línea se cruzan, entonces la respuesta
+      puede ser "sí" o "no". Y cuando la respuesta es "sí", la ecuación cuadrática
+      para la intersección tiene una solución; si "no", no tiene solución.
     </p>
 
     <p>
-      Now let's go back to the quadratic equation $x^2= mx+ n$.
-      Consider the values $m=0$ and $n=-1$.
-      If we use formula (\ref{quad004}), we obtain that
+      Ahora regresemos a la ecuación cuadrática $x^2= mx+ n$.
+      Consideremos los valores $m=0$ and $n=-1$.
+      Si usamos la fórmula (\ref{quad004}), obtenemos
       $$x = \pm\sqrt{-1}.$$
-      What is going on here?
-      Most of you have learned from calculus, or elementary school, that we cannot
-      take the square root of a negative number.
-      Then, how do interpret this value? Geometrically speaking,
-      we can relate the solution $x = \pm\sqrt{-1}$ to the fact that
-      the parabola $y = x^2$ and the line $y=-1$ do
-      not intersect each other, see Figure 1. In other words, there is no solution.
-      In general, if $\dfrac{m^2}{4} + n \lt 0$,
-      then equation $x^2= mx+ n$ has no solutions.
+      ¿Qué está sucediendo aquí?
+      La mayoría de nosotros hemos aprendido de los cursos de Cálculo,
+      o en la escuela elementa, que no podemos calcular la raíz cuadrada de
+      un número negativo.
+      Entonces, ¿cómo podemos interpretar este valor?
+      Geométricamente hablando, podemos relacionar la solución
+      $x = \pm\sqrt{-1}$ con el hecho de que la parábola
+      $y = x^2$ y la$y=-1$ do
+      no se intersecan entre sí, como se aprecia en la Figura 1.
+      En otras palabras, no har solución.
+      En general, si $\dfrac{m^2}{4} + n \lt 0$,
+      la ecuación $x^2= mx+ n$ no tiene soluciones.
     </p>
 
     <figure class="w3-center">
       <img class="w3-image w3-mobile" src="../images/chp01/quadraticminus1.svg" alt="x^2=-1" title="x^2=-1"
         style="width:75%;">
       <figcaption>
-        <b>Figure 1:</b> $x^2=-1$.
+        <b>Figura 1:</b> $x^2=-1$.
       </figcaption>
     </figure>
 
 
     <p>
-      It is argued that this led to the invetion of a new number denoted by $i$,
-      which is equal to $\sqrt{-1}$, and it was given the name "imaginary".
-      If we use $i$ as a number such that $i^2 = -1$,
-      then this value is the solution of the equation $x^2=-1$.
+      Se argumenta que esto llevó a la invención de un nuevo número denotado por $i$,
+      el cual es igual a $\sqrt{-1}$, y se le dió el nombre "imaginario".
+      Si usamos $i$ como un número tal que $i^2 = -1$,
+      entonces este valor es la solución de la ecuación $x^2=-1$.
     </p>
 
     <p>
-      It is also a common practice to point out in courses of mathematics that
-      <em>complex numbers</em>, denoted as $a + b\sqrt{-1}$, are needed to solve certain
-      quadratic equations, such as $x^2+1=0$.
-      However, complex numbers emerged, in fact, from the need to solve cubic equations.
-      Furthermore, when quadratic and cubic equations first appeared,
-      at that time, there was no need to have solutions for all equations.
+      También es una práctica común enfatizar en los cursos de matemáticas
+      que los <em>números complejos</em>, denotados como $a + b\sqrt{-1}$,
+      son necesarios para resolver ciertos tipos de ecuaciones cuadráticas, tales como $x^2+1=0$.
+      Sin embargo, los números complejos surgieron, en realidad,
+      de la necesidad de resolver ecuaciones cúbicas.
+      Más aún, cuando las ecuaciones cuadráticas y cúbicas
+      aparecieron, en esa época, no había necesidad de calcular las soluciones
+      de todas las ecuaciones.
     </p>
 
     <p>
-      So where did complex numbers really come into importance? To answer this let's
-      consider the cubic equation
+      Entonces ¿cuándo tomarón en realidad relevancia los números complejos?
+      Para responder a esta pregunta, consideremos primero la ecuación cúbica
       \begin{eqnarray}\label{cubic001}
       x^3 = p x + q.
       \end{eqnarray}
-      Geometrycally, this equation represents the intersection of the cubic
-      $y = x^3$ with the line $y = px + q$,
-      as shown in the following applet. Drag sliders below and observe what happens.
+      Geométricamente, esta ecuación representa la intersección entre la cúbica
+      $y = x^3$ con la línea $y = px + q$,
+      como se muestra en el siguiente applet. Mueve los deslizadores y
+      observa lo que sucede.
     </p>
 
-    <div class="w3-center">
+    <div class="w3-center w3-hide-small">
       <div style="display:block;width:798;height:516;margin-left: auto;margin-right: auto;" id="ggb-element-02"></div>
     </div>
 
-    
+
     <br>
 
     <p>
-      As you can observe no matter what line is defined by the parameters $p$ and $q$,
-      it will always intersect the cubic somewhere, even when the line
-      $px+q$ is perpendicular to the $x$-axis and far from the origin (i. e. when
-      $p$ and $q$ are both very large positive/negative numbers).
-      This is because the cubic
-      goes all the way from $-\infty$ to $+\infty$.
-      Thus, there is no line you can draw that won't intersect this cubic.
-      This example is very different from the quadratic case which was a parabola $x^2$
-      and you could define a line $mx + n$ such that it won't intersect the parabola.
+      Como puede apreciar, no importa qué línea está definida por los parámetros $p$ y $q$,
+      siempre intersecará a la cúbica en algún lugar, incluso cuando la
+      línea $px + q$ sea perpendicular al eje $x$ y esté lejos del origen
+      (es decir, cuando $p$ y $q$ son números positivos/negativos muy grandes).
+      Esto se debe al hecho de que la cúbica va desde $-\infty$ a $+\infty$.
+      Por lo tanto, no hay una línea que se pueda dibujar tal que no cruce a la cúbica.
+      Este ejemplo es muy diferente del caso cuadrático que era una parábola $x^2$
+      en la cual podemos definir una línea $mx + n$ tal que no se cruce con la parábola.
     </p>
 
     <hr>
 
-    <h2>Solution to cubic equations</h2>
+    <h2>Solución de ecuaciones cúbicas</h2>
 
     <div class="w3-responsive">
       <p>
-        It is well known that the solution of the cubic $x^3 = px + q$
-        was developed in the Renaissance (15th and 16th centuries) by Italian
-        mathematicians. Scipione del Ferro (1465-1526) and Niccolò Tartaglia (1500-1557),
-        followed by Girolamo Cardano (1501-1576), showed that $x^3 = px + q$
-        has a solution given by
+        Es bien conocido que la solución de la cúbica $x^3 = px + q$
+        fue desarrollada en el Renacimiento (siglos XV y XVI) por matemáticos italianos.
+        Scipione del Ferro (1465-1526) y Niccolò Tartaglia (1500-1557),
+        seguidos por Girolamo Cardano (1501-1576), mostraron que $x^3 = px + q$
+        tiene una solición dada por
         \begin{eqnarray}\label{cubic002}
-         x = \sqrt[3]{\frac{q}{2} + \sqrt{\frac{q^2}{4} - \frac{p^3}{27}}} -
-        \sqrt[3]{- \frac{q}{2} + \sqrt{\frac{q^2}{4} - \frac{p^3}{27}}} 
+        x = \sqrt[3]{\frac{q}{2} + \sqrt{\frac{q^2}{4} - \frac{p^3}{27}}} -
+        \sqrt[3]{- \frac{q}{2} + \sqrt{\frac{q^2}{4} - \frac{p^3}{27}}}
         \end{eqnarray}
-	  This is known as Cardano's formula and here we are using modern notation.
+        Esto se conoce como la fórmula de Cardano y aquí estamos usando la notación moderna.
       </p>
     </div>
 
@@ -377,7 +386,7 @@ civilization possessed the quadratic formula, enabling them (in verbal form) to 
           <img class="w3-image w3-mobile" src="../images/chp01/tartaglia.jpg" alt="Niccolò Fontana Tartaglia"
             title="Niccolò Fontana Tartaglia" style="width:61%;">
           <figcaption>
-            <b>Figure 2:</b> Tartaglia.
+            <b>Figura 2:</b> Tartaglia.
           </figcaption>
         </figure>
       </div>
@@ -386,7 +395,7 @@ civilization possessed the quadratic formula, enabling them (in verbal form) to 
           <img class="w3-image w3-mobile" src="../images/chp01/cardano.jpg" alt="Gerolamo Cardano"
             title="Gerolamo Cardano" style="width:70%;">
           <figcaption>
-            <b>Figure 3:</b> Cardano.
+            <b>Figura 3:</b> Cardano.
           </figcaption>
         </figure>
       </div>
@@ -394,84 +403,87 @@ civilization possessed the quadratic formula, enabling them (in verbal form) to 
     </div>
 
     <p>
-      To see how this works consider the
-      equation $x^3 = -6 x+ 20$.
-      In this case $p=-6$ and $q=20$. If we plug these numbers into
-      (\ref{cubic002}), we obtain the solution
+      Para ver como funciona consideremos la ecuación $x^3 = -6 x+ 20$.
+      En este caso $p=-6$ and $q=20$. Si sustituimos estos valores en
+      (\ref{cubic002}), obtenemos la solución
       $$x = \displaystyle \sqrt[3]{10 + \sqrt{108}} -
       \sqrt[3]{- 10 + \sqrt{108}}$$
-      Simplifying we obtain $x=2$, a solution of the given equation since
+      Al simplificar obtenemos $x=2$, una solución a la ecuación dada ya que
       $$8=(2)^3 = -6(2)+ 20 = -12+20=8.$$
-      Thus, this formula seems to work very well, at least for this case.
+      Esto indica que la fórmula parece funcionar bastante bien, al menos en
+      este caso.
     </p>
 
     <div class="w3-padding">
-      <p><strong>Excercise:</strong> Try to solve $x^3=6x+6$ using Cardano's formula.</p>
+      <p><strong>Ejercicio:</strong> Intenta resolver la ecuación $x^3=6x+6$ usandi la fórmula de
+        Cardano.</p>
     </div>
 
     <hr>
 
-    <h2>The genesis of imaginary numbers</h2>
+    <h2>La génesis de los números imaginarios</h2>
 
     <p>
-      A few years later after the discovery of Cardano's formula,
-      the Italian engineer-architect Rafael Bombelli (1526-1572)
-      recognized that there was something strange and paradoxcal about this formula.
-      He considered the equation
+      Unos años más después del descubrimiento de la fórmula de Cardano,
+      el ingeniero y architecto italiano Rafael Bombelli (1526-1572)
+      reconoció que había algo extraño y paradójico
+      acerca de esta fórmula.
+      Él considerí la ecuación
       \begin{eqnarray}\label{cubic003}
       x^3= 15 x+ 4
       \end{eqnarray}
-      and, with perhaps just a little
-      pondering, you can see that $x = 4$ is a solution. This can also
-      be seen in Figure 2. In fact there are three solutions, but
-      Bombelli did not consider negative values, so we won't either.
+      y, con un poco de reflexión, puedes ver que $x = 4$ es una solución.
+      Esto también se puede apreciar en la Figura 2. En realidad hay tres soluciones
+      pero Bombelli no consideró valores negativos, así que tampoco lo haremos nosotros.
     </p>
 
     <figure class="w3-center">
       <img class="w3-image w3-mobile" src="../images/chp01/cubic-line.svg" alt="x^3=15x+4" title="x^3=15x+4"
         style="width:65%;">
       <figcaption>
-        <b>Figure 4:</b> $x^3=15x+4$.
+        <b>Figura 4:</b> $x^3=15x+4$.
       </figcaption>
     </figure>
 
     <div class="w3-responsive">
       <p>
-        Then Bombelli used Cardano's formula to solve $x^3= 15 x+ 4$.
-        Thus, considering $p = 15$ and $q=4$,
-        he obtained
+        Entonces Bombelli usó la fórmula de Cardano para resolver $x^3= 15 x+ 4$.
+        Así que, considerando $p = 15$ y $q=4$,
+        obtuvo
         \begin{eqnarray}\label{cubic004}
         x = \displaystyle \sqrt[3]{2 + \sqrt{-121}} + \sqrt[3]{2 - \sqrt{-121}}.
         \end{eqnarray}
-        Here he encountered a very unusual value. If Cardano's formula
-        is correct, this number must be equal to 4.
-        Yet this must be nonsense and the value cannot be real,
-        because inside the cube root we are taking
-        the square root of a negative number, an absolute impossibility
-        at that time (and also nowadays).
-	  Cardano also encountered this difficulty but he did not face it up.
-	    He did once mention imaginary numbers, but in connection 
-	      with a quadratic equation and accompanied by the comment that 
-	      these numbers were "as subtle as ther are useless" [<a href="#cardano" alt="Cardano" title="Cardano">2</a>, Ch. 37, Rule II]
+        Aquí nos encontramos con un valor inusual.
+        Si la fórmula de Cardano
+        es correcta, este número debe ser igual a 4.
+        Sin embargo, esto debe ser una tontería y el valor no puede ser real,
+        porque dentro de la raíz cúbica estamos tomando
+        la raíz cuadrada de un número negativo, una imposibilidad absoluta
+        en ese momento (y también en la actualidad).
+        Cardano también encontró esta dificultad, pero no la enfrentó.
+        Una vez mencionó números imaginarios, pero en conexión
+        con una ecuación cuadrática y acompañado del comentario de que
+        estos números eran "tan sutiles como inútiles"
+        [<a href="#cardano" alt="Cardano" title="Cardano">2</a>, Ch. 37, Rule II]
       </p>
     </div>
 
     <p>
-      However, Bombelli overcome this difficulty
-      by seeing that the weird expression (\ref{cubic004})
-      that Cardano's formula gives for $x$ is actually real,
-      but expressed in a very unfamiliar manner. This
-      insight did not come easily. As Bombelli wrote in his book <em>L'Algebra</em>:
+      Sin embargo, Bombelli superó esta dificultad
+      al ver que la expresión extraña (\ ref {cubic004})
+      que la fórmula de Cardano da para $ x $ es realmente real,
+      pero expresado de una manera muy desconocida. Esta
+      la intuición no fue fácil. Así lo describió Bombelli en su libro <em> L'Algebra </em>:
       <div class="w3-padding">
         <p>
-	 And although to many this will appear an extravagant thing, 
-		because even I held this opinion some time ago, since it appeared
-		to me more sophistic than true, nevertheless I searched hard and
-		found the demonstration, which will be noted below. ... But let
-		the reader apply all his strength of mind, for [otherwise]
-		even he will find himself deceived.
-		[<a href="bombelli">1</a>, pp. 293-294; 
-		<a href="#oconnor-robertson"  alt="O'Connor-Robertson" title="O'Connor-Robertson">9</a>]
+          Y aunque a muchos esto les parecerá una extravagancia,
+           porque incluso yo sostuve esta opinión hace algún tiempo, ya que apareció
+           para mí más sofista que verdad, sin embargo busqué arduamente y
+           encontré la demostración, que se indicará a continuación. ... Pero dejo
+           el lector aplique toda su fuerza mental, porque [de lo contrario]
+           incluso él se encontrará engañado.
+          [<a href="bombelli">1</a>, pp. 293-294;
+          <a href="#oconnor-robertson" alt="O'Connor-Robertson" title="O'Connor-Robertson">9</a>]
 
         </p>
       </div>
@@ -480,61 +492,62 @@ civilization possessed the quadratic formula, enabling them (in verbal form) to 
         <img class="w3-image w3-mobile" src="../images/chp01/algebra-bombelli.gif" alt="x^2=-1" title="x^2=-1"
           style="width:40%;">
         <figcaption>
-          <b>Figure 5:</b> <em>L'Algebra</em> by Rafael Bombelli: frontispiece of
-          the Bologna edition of 1579.
+          <b>Figura 5:</b> <em>L'Algebra</em> por Rafael Bombelli: frontispicio de
+          la edición de Bolonia de 1579.
         </figcaption>
       </figure>
     </p>
 
     <div class="w3-responsive">
       <p>
-        Bombelli's great insight was simply to treat $\sqrt{-1}$ as a number and to operate with
-        it following some specific arithmetic rules (the same kind of rules that we use nowdays).
-        Thus he discovered that
-        $$\sqrt[3]{2+ \sqrt{-121}} = 2 + \sqrt{-1} \quad \text{and} \quad \sqrt[3]{2- \sqrt{-121}} = 2 - \sqrt{-1} .$$
-        By substituing these values in (\ref{cubic004}) Bombelli obtained
+        La gran intuición de Bombelli fue simplemente tratar $\sqrt{-1}$ como un número
+        y operar con él siguiendo reglas artiméticas específicas 
+        (el mismo tipo de reglas que usamos hoy en día).
+        De esta manera descubrió que
+        $$\sqrt[3]{2+ \sqrt{-121}} = 2 + \sqrt{-1} \quad \text{y} \quad \sqrt[3]{2- \sqrt{-121}} = 2 - \sqrt{-1} .$$
+        Al sustituir estos valores en (\ref{cubic004}) Bombelli obtuvo
         $$x = 2 + \sqrt{-1} + 2 - \sqrt{-1}.$$
-        Then he showed that the squared roots of negative numbers cancel each other
+        Luego mostró que las raíces cuadradas de los números negativos se cancelan entre síThen he showed that the squared roots of negative numbers cancel each other
         [<a href="#bombelli" alt="Bombelli" title="Bombelli">1</a>, p. 169;
-        <a href="#gonzalez-velasco" alt="Gonzalez-velasco" title="Gonzalez-Velasco">6</a>, p. 164]. That is
+        <a href="#gonzalez-velasco" alt="Gonzalez-velasco" title="Gonzalez-Velasco">6</a>, p. 164]. Esto es
         $$x = 2 + \cancel{\sqrt{-1}} + 2 - \cancel{\sqrt{-1}}.$$
-        And concluded that $x = 4$ is actually the solution of $x^3=15x+4$
-        obtained from Cardano's formula [<a href="#bombelli" alt="Bombelli" title="Bombelli">1</a>, p. 294].
-        This trick works in only a few cases, however, it helped to
-        understand imaginary numbers and to take their cube roots or 
-        manipulate them when they appear aside real numbers.
+        Y concluyó que $x = 4$ es en realidad la solución de  $x^3=15x+4$
+        obtenida a partir de la fórmula de Cardano [<a href="#bombelli" alt="Bombelli" title="Bombelli">1</a>, p. 294].
+        Este truco funciona solo en unos pocos casos, sin embargo, ayudó a
+         comprender los números imaginarios y calcular sus raíces cúbicas o
+         manipularlos cuando aparezcen a un lado de números reales.
       </p>
     </div>
 
     <p>
-      Of course, neither Cardano nor Bombelli had at his disposal the power of today's algebraic notation,
-      (neither computers) and his computations were limited to numbers in "real domain".
-      In fact, most of italian mathematicians at that time tended to think of cubes or squares
-      as geometric objects rather than algebraic quantities. However, he is credited for
-      proving the reality of the roots of the cubic $x^3=15x+4$,
-      since he demonstrated the extraordinary fact that real numbers could be
-      engendered by imaginary numbers.
+      Por supuesto, ni Cardano ni Bombelli tenían a su disposición el poder de la notación algebraica actual,
+       (ni computadoras) y sus cálculos se limitaron a números en "dominio real".
+       De hecho, la mayoría de los matemáticos italianos en ese momento tendían a pensar en cubos o cuadrados
+       como objetos geométricos en lugar de cantidades algebraicas. Sin embargo, se le atribuye
+       haber demostrado la realidad de las soliuciones de la cúbica $ x ^ 3 = 15x + 4 $,
+       puesto que demostró el hecho extraordinario de que los números reales podrían ser
+       generado por números imaginarios.
     </p>
 
     <p>
-      Whether nonsense or not, Cardano's formula forced mathematicians
-      to confront square roots of negative numbers.
+      Sin sentido o no, la fórmula de Cardano obligó a los matemáticos
+       a confrontar raíces cuadradas de números negativos.
 
-      This historical incident is another example that negates the widespread
-      view that mathematics is "made up" by mathematicians. As is often the case, it is
-      the mathematics itself that speaks to us.
-      From this time on, imaginary numbers lost some of their mystical
-      character, although their full acceptance as <em>bona fide</em>
-      numbers came only in the 1800s.
+       Este incidente histórico es otro ejemplo que niega la generalizada
+       vista que las matemáticas están "hechas" por matemáticos. Como suele ser el caso, es
+       la matemática misma que nos habla.
+       A partir de este momento, los números imaginarios perdieron parte de su carácter
+       místico, aunque su total aceptación como números <em>auténticos</em>
+       llegó solo en el siglo XIX.
     </p>
 
     <div class="w3-padding">
-      <p><strong>Excercise:</strong> Check that $\sqrt[3]{2 \pm \sqrt{-121}} = 2 \pm \sqrt{-1}$.</p>
+      <p><strong>Ejercicio:</strong> Comprueba que $\sqrt[3]{2 \pm \sqrt{-121}} = 2 \pm \sqrt{-1}$.</p>
     </div>
 
     <hr>
 
-    <h2>The maturing of complex numbers</h2>
+    <h2>La maduración de los números complejos</h2>
 
     <p>
       Many mathematicians after Cardano and Bombelli made important contributions to
@@ -551,7 +564,7 @@ civilization possessed the quadratic formula, enabling them (in verbal form) to 
 
     <p>
       John Wallis (1616-1703) showed how to represent geometrically complex
-      roots of a quadratic equation with real coefficients 
+      roots of a quadratic equation with real coefficients
       [<a href="#kline" alt="Kline" title="Kline">7</a>, p. 594].
       Carpar Wessel (1745-1818) and
       <span style="white-space: nowrap;">Jean-Robert</span>
@@ -585,8 +598,7 @@ civilization possessed the quadratic formula, enabling them (in verbal form) to 
         led to the idea of numbers, which from their nature are impossible;
         and therefore they are usually called imaginary
         quantities, because they exist merely in the imagination.
-        [<a href="#euler-algebra" alt="Euler-Algebra"
-          title="Euler-Algebra">4</a>, p. 43]
+        [<a href="#euler-algebra" alt="Euler-Algebra" title="Euler-Algebra">4</a>, p. 43]
       </p>
     </div>
 
@@ -602,7 +614,7 @@ civilization possessed the quadratic formula, enabling them (in verbal form) to 
         imaginary numbers, and employing them in calculation.
         <span style="white-space: nowrap;">[<a href="#euler-algebra" alt="Euler" title="Euler">4</a>, p.
           43]</span>
-        
+
       </p>
     </div>
 
@@ -611,9 +623,9 @@ civilization possessed the quadratic formula, enabling them (in verbal form) to 
       refering to numbers of the form $a+ b \, i $
       [<a href="#gonzalez-velasco" alt="Gonzalez-Velasco" title="Gonzalez-Velasco">6</a>, p. 191].
       He also gave four proofs of the <em>fundamental theorem of algebra</em> over the course of
-      his long career. This theorem telss us that 
+      his long career. This theorem telss us that
       any $n$th-degree polynomial has $n$ roots, some or all of which
-      may be imaginary. The first proof that Gauss gave was in his doctoral 
+      may be imaginary. The first proof that Gauss gave was in his doctoral
       dissertation of 1799. The last (and perhaps the most elegant)
       allows the use of complex numbers not only for the variable but
       for the coefficients as well. Since this necessarily depended on the recognition
@@ -621,22 +633,22 @@ civilization possessed the quadratic formula, enabling them (in verbal form) to 
       numbers [<a href="#kline" alt="Kline" title="Kline">7</a>, Vol. 2, p. 595].
     </p>
 
-  
-      <p>
-        The first rigorous definition of complex numbers was given until the ninteenth
-        century by William Rowan Hamilton (1805-1865). In 1833 he proposed to the Irish Academy
-        that a complex number can be considered as a <em>couple</em> $(a, b)$,
-        with $a,b$ real numbers
-        <span style="white-space: nowrap;">[<a href="#gonzalez-velasco" alt="Gonzalez-Velasco"
-            title="Gonzalez-Velasco">6</a>, pp. 192-193].</span>
-        Then he defined addition and multiplication
-        of <em>couples</em> as follows:
-        $$(a, b)+(c, d) =(a + c, b + d)$$
-        and
-        $$(a, b)(c, d) = (ac − bd, bc + ad).$$
-        This is in fact an algebraic definition of complex numbers.
-      </p>
-   
+
+    <p>
+      The first rigorous definition of complex numbers was given until the ninteenth
+      century by William Rowan Hamilton (1805-1865). In 1833 he proposed to the Irish Academy
+      that a complex number can be considered as a <em>couple</em> $(a, b)$,
+      with $a,b$ real numbers
+      <span style="white-space: nowrap;">[<a href="#gonzalez-velasco" alt="Gonzalez-Velasco"
+          title="Gonzalez-Velasco">6</a>, pp. 192-193].</span>
+      Then he defined addition and multiplication
+      of <em>couples</em> as follows:
+      $$(a, b)+(c, d) =(a + c, b + d)$$
+      and
+      $$(a, b)(c, d) = (ac − bd, bc + ad).$$
+      This is in fact an algebraic definition of complex numbers.
+    </p>
+
 
 
     <div class="w3-row-padding">
@@ -669,8 +681,8 @@ civilization possessed the quadratic formula, enabling them (in verbal form) to 
     <p>
       Among the many mathematicians and scientists who contributed,
       there are three who stand out as having influenced decisively the course of
-      development of complex analysis 
-      [<a href="#kline" alt="Kline" title="Kline">7</a>, Vol.2, Ch. 27]. 
+      development of complex analysis
+      [<a href="#kline" alt="Kline" title="Kline">7</a>, Vol.2, Ch. 27].
       The first is Augustin-Louis Cauchy (1789-1857), who
       developed the theory of the complex integral calculus.
       By using imaginary numbers Cauchy was able to
@@ -681,7 +693,7 @@ civilization possessed the quadratic formula, enabling them (in verbal form) to 
       $$\int_0^{\pi}\log \sin x\,dx =\pi \log 2.$$</p>
 
     <div class="w3-row-padding">
-      <div  class="w3-half w3-container w3-margin-bottom">
+      <div class="w3-half w3-container w3-margin-bottom">
         <figure class="w3-center">
           <img class="w3-image w3-mobile" src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Karl_Weierstrass.jpg"
             alt="Karl Weierstrass" title="Karl Weierstrass" style="width:55%;">
@@ -690,7 +702,7 @@ civilization possessed the quadratic formula, enabling them (in verbal form) to 
           </figcaption>
         </figure>
       </div>
-      <div  class="w3-half w3-container w3-margin-bottom">
+      <div class="w3-half w3-container w3-margin-bottom">
         <figure class="w3-center">
           <img class="w3-image w3-mobile"
             src="https://upload.wikimedia.org/wikipedia/commons/8/82/Georg_Friedrich_Bernhard_Riemann.jpeg"
@@ -709,8 +721,7 @@ civilization possessed the quadratic formula, enabling them (in verbal form) to 
       mathematical scene about the middle of the nineteenth century. Weierstrass
       developed the theory from a starting point of convergent power series, and
       this approach led towards more formal algebraic developments. Riemann
-      contributed a more geometric point of view on the study of 
-      complex functions. His ideas had a tremendous
+      contributed a more geometric point of view. His ideas had a tremendous
       impact not only on complex analysis but upon mathematics as a whole,
       though his views took hold only gradually.
     </p>
@@ -721,8 +732,8 @@ civilization possessed the quadratic formula, enabling them (in verbal form) to 
     <p>
       To summarize, the solution of the cubic equation, the fundamental
       theorem of algebra, and the evaluation of real integrals
-      proved how valuable it was to consider imaginary numbers $a + bi$, 
-      even though they were not (at least not yet) on firm ground. 
+      proved how valuable it was to consider imaginary numbers $a + bi$,
+      even though they were not (at least not yet) on firm ground.
       Do they really exist or are they simply
       phantoms of our "imagination", and thus truly "imaginary"?
     </p>
@@ -750,16 +761,17 @@ civilization possessed the quadratic formula, enabling them (in verbal form) to 
     <ol style="line-height:25px">
       <li id="bombelli">Bombelli, R. (1579). <em>L'Algebra.</em> Bologna. <a href="http://mathematica.sns.it/opere/9/"
           target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
-      
-	    <li id="cardano">Cardano, H. (1545). <em>Artis magnae, sive de regulis algebraicis, liber unus.</em> (n.p.): Joh. Petreius. 
-		    <a href="https://www.google.com.au/books/edition/Artis_magnae_sive_de_regulis_algebraicis/-k5ZAAAAcAAJ?hl=en&gbpv=1&pg=PA66&printsec=frontcover&bsq=cuius%20hoc%20extremum%20ut%20dixi%2C%20adeo%20est%20subtile%2C%20ut%20sit%20inutile"
-		       target="_blank"><i
-            class="fas fa-external-link-alt"></i></a></li>
+
+      <li id="cardano">Cardano, H. (1545). <em>Artis magnae, sive de regulis algebraicis, liber unus.</em> (n.p.): Joh.
+        Petreius.
+        <a href="https://www.google.com.au/books/edition/Artis_magnae_sive_de_regulis_algebraicis/-k5ZAAAAcAAJ?hl=en&gbpv=1&pg=PA66&printsec=frontcover&bsq=cuius%20hoc%20extremum%20ut%20dixi%2C%20adeo%20est%20subtile%2C%20ut%20sit%20inutile"
+          target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
       <li id="descartes">Descartes, R. (1637). La Géométrie. Paris: A. Herman, Librairie Scientifique. <a
           href="https://archive.org/details/geometryofrene00desc/page/174/mode/2up?q=imaginary" target="_blank"><i
             class="fas fa-external-link-alt"></i></a></li>
-      <li id="euler-algebra">Euler, L. (1972). <em>Elements of Algebra.</em> Springer. <a href="https://www.springer.com/gp/book/9781461385134"
-          target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+      <li id="euler-algebra">Euler, L. (1972). <em>Elements of Algebra.</em> Springer. <a
+          href="https://www.springer.com/gp/book/9781461385134" target="_blank"><i
+            class="fas fa-external-link-alt"></i></a></li>
       <li id="euleri">Euleri, L. (1845). <em>Instituitionum Calculi Integralis.</em> Volumen Quartum.
         Petropoli. Impensis Academia Imperialis Scientarum. <a
           href="https://books.google.it/books?id=rCNRAAAAYAAJ&pg=PA184#v=onepage&q&f=false" target="_blank"><i
@@ -772,8 +784,8 @@ civilization possessed the quadratic formula, enabling them (in verbal form) to 
         Oxford University Press.</li>
       <li id="merzbach-boyer">Merzbach, U. C & Boyer, C. B. (2011). <em>A history of mathematics.</em> 3rd ed.
         John Wiley & Sons, Inc., Hoboken, New Jersey.</li>
-	<li id="oconnor-roberson">O'Connor, J. J. & Robertson, E. F. (2000). <em>Rafael Bombelli.</em> 
-	    <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Bombelli/" target="_blank"><i
+      <li id="oconnor-roberson">O'Connor, J. J. & Robertson, E. F. (2000). <em>Rafael Bombelli.</em>
+        <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Bombelli/" target="_blank"><i
             class="fas fa-external-link-alt"></i></a> </li>
     </ol>
 
@@ -784,35 +796,38 @@ civilization possessed the quadratic formula, enabling them (in verbal form) to 
     <ol style="line-height:25px">
       <li id="bagni">Bagni, J. T. (2009). Bombelli's Algebra (1572) and a New Mathematical Object.
         <em>For the Learning of Mathematics.</em> Vol. 29, No. 2, pp. 29-31.
-        <a href="https://www.jstor.org/stable/40248647" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+        <a href="https://www.jstor.org/stable/40248647" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+      </li>
       <li id="buehler">Buehler, D. (2014). Incomplete understanding of complex numbers
         Girolamo Cardano: a case study in the acquisition
         of mathematical concepts. <em>Synthese </em> 191:4231-4252.
         <a href="https://link.springer.com/article/10.1007/s11229-014-0527-x" target="_blank"><i
             class="fas fa-external-link-alt"></i></a></li>
-	<li id="burton">Burton, D. M. (1995). <em>The history of mathematics: An introduction</em> (6th ed.)
+      <li id="burton">Burton, D. M. (1995). <em>The history of mathematics: An introduction</em> (6th ed.)
         (2005). New York: McGraw-Hill.</li>
-	    <li>Gindikin, S. (2007). <em>Tales of Mathematicians and Physicists</em>. Second English edition Springer Science+ Business Media, LLC.
-	    <a href="https://link.springer.com/book/10.1007/978-0-387-48811-0" target="_blank"><i
-            class="fas fa-external-link-alt"></i></a>  </li>
+      <li>Gindikin, S. (2007). <em>Tales of Mathematicians and Physicists</em>. Second English edition Springer Science+
+        Business Media, LLC.
+        <a href="https://link.springer.com/book/10.1007/978-0-387-48811-0" target="_blank"><i
+            class="fas fa-external-link-alt"></i></a> </li>
       <li id="nahim">Nahim, P. J. (1998). <em>An imaginary tale: The story of $\sqrt{-1}$</em>. USA: Princeton
         University Press.
       </li>
       <li id="huffman">Huffman, C. J. (2019). Mathematical Treasure: Raphael Bombelli's L'algebra. <em>Convergence.</em>
-        <a href="https://www.maa.org/press/periodicals/convergence/mathematical-treasure-raphael-bombellis-lalgebra" target="_blank"><i
-            class="fas fa-external-link-alt"></i></a></li>
+        <a href="https://www.maa.org/press/periodicals/convergence/mathematical-treasure-raphael-bombellis-lalgebra"
+          target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
       <li id="marsden-tromba">Marsden, J. E. & Tromba, A. J. (2003). <em>Vector Calculus.</em> USA: W. H. Freeman and
         Company.</li>
       <li id="merino">Merino, O. (2006). <em>A Short History of Complex Numbers.</em> <a
           href="http://www.math.uri.edu/~merino/spring06/mth562/ShortHistoryComplexNumbers2006.pdf" target="_blank"><i
             class="fas fa-external-link-alt"></i></a></li>
       <li id="stillwell">Stillwell, J. (2010). <em>Mathematics and Its History.</em> Springer Science+Business Media.
-        <a href="https://www.springer.com/gp/book/9781441960528" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+        <a href="https://www.springer.com/gp/book/9781441960528" target="_blank"><i
+            class="fas fa-external-link-alt"></i></a></li>
 
     </ol>
 
     <br>
-    
+
 
 
 
