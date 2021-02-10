@@ -24,52 +24,108 @@ MathCell(id, [{
 parent.update = function (id) {
 
   var opt = getVariable(id, 'opt');
-  var go = (x, y) => {
-    var term1 = complex(0, 0);
-    var term2 = complex(0, 0);
-    var cnt = inv(mul(pow(complex(3, 0), complex(1 / 6, 0)), gamma(complex(2 / 3, 0))));
-    var vcnt = div(mul(pow(complex(3, 0), complex(1 / 6, 0)), complex(x, y)), gamma(complex(1 / 3, 0)));
-    for (var n = 0; n <= 16; ++n) {
 
 
-      nextTerm1 = div(
-        pow(mul(complex(1 / 9, 0), pow(complex(x, y), complex(3, 0))), complex(n, 0)),
-        mul(
-          div(gamma(add(complex(2 / 3, 0), complex(n, 0))),
-            gamma(complex(2 / 3, 0))
-          ),
-          gamma(add(complex(n, 0), complex(1, 0)))
-        )
+  /*
+  Confluent Hypergeometric function
+  https://mathworld.wolfram.com/ConfluentHypergeometricLimitFunction.html
+
+  Pochhammer symbol
+  https://mathworld.wolfram.com/PochhammerSymbol.html
+  */
+
+  function pochhammer(z, n) {
+    var cz = z;
+    var cn = complex(n, 0);
+    var plus = add(cz, cn);
+    var val = div(gamma(plus), gamma(cz));
+    return val;
+  }
+
+
+  function hyperGeomgetric0F1(cnt, z, max) {
+    var sum = complex(0, 0);
+    var cz = z;
+    var ccnt = complex(cnt, 0);
+    for (var n = 0; n <= max; ++n) {
+      var next = div(
+        pow(cz, complex(n, 0)),
+        mul(pochhammer(cnt, n), gamma(complex(n + 1, 0)))
       );
-
-      nextTerm2 = div(
-        pow(mul(complex(1 / 9, 0), pow(complex(x, y), complex(3, 0))), complex(n, 0)),
-        mul(
-          div(gamma(add(complex(4 / 3, 0), complex(n, 0))),
-            gamma(complex(4 / 3, 0))
-          ),
-          gamma(add(complex(n, 0), complex(1, 0)))
-        )
-      );
-
-
-      //next = pow(complex(x,y), n)
-
-      term1 = add(term1, nextTerm1);
-      term2 = add(term2, nextTerm2);
-
+      sum = add(sum, next);
     }
+    return sum;
+  }
 
-    return add(mul(cnt, term1), mul(vcnt, term2));
-  };
+  //debugging
+  //console.log(pochhammer(complex(1,0), 3));
 
-  //gamma(complex(x,y))
+  function Biry(x, y) {
+
+    var onesix = complex(1 / 6, 0);
+    var twothree = complex(2 / 3, 0);
+    var onethree = complex(1 / 3, 0);
+    var cthree = complex(3, 0);
+    var fcnt = inv(mul(pow(cthree, onesix), gamma(twothree)));
+    var scnt = div(complex(x, y), mul(pow(cthree, onesix), gamma(onethree)));
+
+    var onenine = complex(1 / 9, 0);
+    var cz = mul(onenine, pow(complex(x, y), cthree));
+    var n = 16;
+    var term1 = hyperGeomgetric0F1(2 / 3, cz, n);
+    var term2 = hyperGeomgetric0F1(4 / 3, cz, n);
+
+    return sub(mul(fcnt, term1), mul(scnt, term2));
+
+  }
+
+  /*
+    var go = (x, y) => {
+      var term1 = complex(0, 0);
+      var term2 = complex(0, 0);
+      var cnt = inv(mul(pow(complex(3, 0), complex(1 / 6, 0)), gamma(complex(2 / 3, 0))));
+      var vcnt = div(mul(pow(complex(3, 0), complex(1 / 6, 0)), complex(x, y)), gamma(complex(1 / 3, 0)));
+      for (var n = 0; n <= 16; ++n) {
+
+
+        nextTerm1 = div(
+          pow(mul(complex(1 / 9, 0), pow(complex(x, y), complex(3, 0))), complex(n, 0)),
+          mul(
+            div(gamma(add(complex(2 / 3, 0), complex(n, 0))),
+              gamma(complex(2 / 3, 0))
+            ),
+            gamma(add(complex(n, 0), complex(1, 0)))
+          )
+        );
+
+        nextTerm2 = div(
+          pow(mul(complex(1 / 9, 0), pow(complex(x, y), complex(3, 0))), complex(n, 0)),
+          mul(
+            div(gamma(add(complex(4 / 3, 0), complex(n, 0))),
+              gamma(complex(4 / 3, 0))
+            ),
+            gamma(add(complex(n, 0), complex(1, 0)))
+          )
+        );
+
+
+        //next = pow(complex(x,y), n)
+
+        term1 = add(term1, nextTerm1);
+        term2 = add(term2, nextTerm2);
+
+      }
+
+      return add(mul(cnt, term1), mul(vcnt, term2));
+    };
+
+    */
 
   var p = parametric(
     (x, y) => [
       x,
       y,
-      go(x, y)
+      Biry(x, y)
     ], [-5, 5, 201], [-5, 5, 150], {
       complexFunction: opt,
       colormap: 'complexArgument'

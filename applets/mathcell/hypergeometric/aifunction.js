@@ -24,6 +24,60 @@ MathCell(id, [{
 parent.update = function (id) {
 
   var opt = getVariable(id, 'opt');
+
+  /*
+  Confluent Hypergeometric function
+  https://mathworld.wolfram.com/ConfluentHypergeometricLimitFunction.html
+
+  Pochhammer symbol
+  https://mathworld.wolfram.com/PochhammerSymbol.html
+  */
+
+  function pochhammer(z, n) {
+    var cz = z;
+    var cn = complex(n, 0);
+    var plus = add(cz, cn);
+    var val = div(gamma(plus), gamma(cz));
+    return val;
+  }
+
+
+  function hyperGeomgetric0F1(cnt, z, max) {
+    var sum = complex(0, 0);
+    var cz = z;
+    var ccnt = complex(cnt, 0);
+    for (var n = 0; n <= max; ++n) {
+      var next = div(
+        pow(cz, complex(n, 0)),
+        mul(pochhammer(cnt, n), gamma(complex(n + 1, 0)))
+      );
+      sum = add(sum, next);
+    }
+    return sum;
+  }
+
+  //debugging
+  //console.log(pochhammer(complex(1,0), 3));
+
+  function Airy(x, y) {
+
+    var twothree = complex(2 / 3, 0);
+    var onethree = complex(1 / 3, 0);
+    var cthree = complex(3, 0);
+    var fcnt = inv(mul(pow(cthree, twothree), gamma(twothree)));
+    var scnt = div(complex(x, y), mul(pow(cthree, onethree), gamma(onethree)));
+
+    var onenine = complex(1 / 9, 0);
+    var cz = mul(onenine, pow(complex(x, y), cthree));
+    var n = 16;
+    var term1 = hyperGeomgetric0F1(2 / 3, cz, n);
+    var term2 = hyperGeomgetric0F1(4 / 3, cz, n);
+
+    return sub(mul(fcnt, term1), mul(scnt, term2));
+
+  }
+
+  /*
   var go = (x, y) => {
     var term1 = complex(0, 0);
     var term2 = complex(0, 0);
@@ -63,13 +117,14 @@ parent.update = function (id) {
     return sub(mul(cnt, term1), mul(vcnt, term2));
   };
 
-  //gamma(complex(x,y))
+  */
+
 
   var p = parametric(
     (x, y) => [
       x,
       y,
-      go(x, y)
+      Airy(x, y)
     ], [-5, 5, 201], [-5, 5, 150], {
       complexFunction: opt,
       colormap: 'complexArgument'
