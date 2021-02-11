@@ -165,52 +165,68 @@
 
     <h2>Introduction</h2>
 
-    <p>In the physical sciences, the Airy function (or Airy function of the first kind) $\text{Ai}(z)$
-      is a special function named after the British astronomer 
-      <a href="https://en.wikipedia.org/wiki/George_Biddell_Airy">George Biddell Airy</a> (1801–1892).
-      The function $\text{Ai}(z)$ and the related function $\text{Bi}(z)$, are linearly independent solutions
-      to the differential equation
-      \begin{eqnarray}\label{airy}
-			\frac{d^2y}{dz^2} - yz = 0
-      \end{eqnarray}
-      written in the form
-      $$y(z) = A \, \text{Ai}(z) + B\, \text{Bi}(z),$$
-      with
-      $$\text{Ai}(z) = \frac{1}{3^{2/3}\Gamma\left(\frac{2}{3}\right)} {}_{0}F_{1} \left(;\frac{2}{3},
-      \frac{1}{9}z^3\right) - \frac{z}{3^{1/3} \Gamma\left(\frac{1}{3}\right)} {}_{0}F_{1} \left(;\frac{4}{3},
-      \frac{1}{9}z^3\right)$$
-      and
-      $$\text{Bi}(z) = \frac{1}{3^{1/6}\Gamma\left(\frac{2}{3}\right)} {}_{0}F_{1}\left(;\frac{2}{3},
-      \frac{1}{9}z^3\right) + \frac{3^{1/6}z}{\Gamma\left(\frac{1}{3}\right)} {}_{0}F_{1} \left(;\frac{4}{3},
-      \frac{1}{9}z^3\right)$$
-      where $ _0F_1(;a;z )$ is a 
-      <a href="https://mathworld.wolfram.com/ConfluentHypergeometricLimitFunction.html"
-        target="_blank">confluent hypergeometric limit function</a>.
-      
-    </p>
+    <div class="w3-responsive">
+      <p>In the physical sciences, the Airy function (or Airy function of the first kind) $\text{Ai}(z)$
+        is a special function named after the British astronomer 
+        <a href="https://en.wikipedia.org/wiki/George_Biddell_Airy">George Biddell Airy</a> (1801–1892).
+        The function $\text{Ai}(z)$ and the related function $\text{Bi}(z)$, are linearly independent solutions
+        to the differential equation
+        \begin{eqnarray}\label{airy}
+        \frac{d^2y}{dz^2} - yz = 0
+        \end{eqnarray}
+        written in the form
+        $$y(z) = A \, \text{Ai}(z) + B\, \text{Bi}(z),$$
+        with
+        $$\text{Ai}(z) = \frac{1}{3^{2/3}\Gamma\left(\frac{2}{3}\right)} {}_{0}F_{1} \left(;\frac{2}{3},
+        \frac{1}{9}z^3\right) - \frac{z}{3^{1/3} \Gamma\left(\frac{1}{3}\right)} {}_{0}F_{1} \left(;\frac{4}{3},
+        \frac{1}{9}z^3\right)$$
+        and
+        $$\text{Bi}(z) = \frac{1}{3^{1/6}\Gamma\left(\frac{2}{3}\right)} {}_{0}F_{1}\left(;\frac{2}{3},
+        \frac{1}{9}z^3\right) + \frac{3^{1/6}z}{\Gamma\left(\frac{1}{3}\right)} {}_{0}F_{1} \left(;\frac{4}{3},
+        \frac{1}{9}z^3\right)$$
+        where $ _0F_1(;a;z )$ is a 
+        <a href="https://mathworld.wolfram.com/ConfluentHypergeometricLimitFunction.html"
+          target="_blank">confluent hypergeometric limit function</a>.
+      </p>
+    </div>
 
-    <p>The differential equation defined in (\ref{airy}) is known as the <em>Airy equation</em> or 
+    <p>
+      The differential equation defined in (\ref{airy}) is known as the <em>Airy equation</em> or 
       the <em>Stokes equation</em>. This is the simplest second-order
       linear differential equation with a turning point (a point 
       where the character of the solutions changes from oscillatory to exponential).
-      
     </p>
+
+    <hr>
+
+    <h2>Plots of $\text{Ai}(x)$ and $\text{Bi}(x)$</h2>
+
+    <figure class="w3-center">
+      <img class="w3-image w3-mobile w3-hide-medium w3-hide-large" src="../images/extras/aibireal.png"
+            alt="Colored analytic landscape" title="Colored analytic landscape" style="width:90%;">
+      <div class="mathcell w3-hide-small" style="width: 6in; height: 6in">
+        <script src="../applets/mathcell/hypergeometric/aifunction-real.js" type="text/javascript" async></script>
+      </div>
+      <figcaption>
+        <b>Figure 1:</b> $\text{Ai}(x)$ in blue. $\text{Bi}(x)$ in Red.
+      </figcaption>
+    </figure>
 
     <hr>
 
     <h2>Plots of $\text{Ai}(z)$</h2>
 
     <figure class="w3-center">
-      <!--<img class="w3-image w3-mobile w3-hide-medium w3-hide-large" src="../applets/cindyjs/dclandscape/coloredlandscape.jpg"
-            alt="Colored analytic landscape" title="Colored analytic landscape" style="width:90%;">-->
+      <img class="w3-image w3-mobile w3-hide-medium w3-hide-large" src="../images/extras/aiz.png"
+            alt="Colored analytic landscape" title="Colored analytic landscape" style="width:90%;">
       <div class="mathcell w3-hide-small" style="width: 6in; height: 6in">
         <script src="../applets/mathcell/hypergeometric/aifunction.js" type="text/javascript" async></script>
       </div>
       <figcaption>
-        <b>Figure 1:</b> Absolute value, real and imaginary components of $\text{Ai}(z)$.
+        <b>Figure 2:</b> Absolute value, real and imaginary components of $\text{Ai}(z)$.
       </figcaption>
     </figure>
-    <p style="font-size: 16px"><strong>Note:</strong> It takes a couple of seconds to render the plot, 
+    <p class="w3-hide-small" style="font-size: 16px"><strong>Note:</strong> It takes a couple of seconds to render the plot, 
       after selecting a different plotting option.</p>
 
     <hr>
@@ -221,17 +237,17 @@
 
 
     <figure class="w3-center">
-      <!--<img class="w3-image w3-mobile w3-hide-medium w3-hide-large" src="../applets/cindyjs/dclandscape/coloredlandscape.jpg"
-            alt="Colored analytic landscape" title="Colored analytic landscape" style="width:90%;">-->
+      <img class="w3-image w3-mobile w3-hide-medium w3-hide-large" src="../images/extras/biz.png"
+            alt="Colored analytic landscape" title="Colored analytic landscape" style="width:90%;">
       <div class="mathcell w3-hide-small" style="width: 6in; height: 6in">
         <script src="../applets/mathcell/hypergeometric/bifunction.js" type="text/javascript" async></script>
       </div>
       <figcaption>
-        <b>Figure 2:</b> Absolute value, real and imaginary components of $\text{Bi}(z)$. 
+        <b>Figure 3:</b> Absolute value, real and imaginary components of $\text{Bi}(z)$. 
       </figcaption>
     </figure>
 
-    <p style="font-size: 16px"><strong>Note:</strong> It takes a couple of seconds to render the plot, 
+    <p class="w3-hide-small" style="font-size: 16px"><strong>Note:</strong> It takes a couple of seconds to render the plot, 
       after selecting a different plotting option.</p>
 
     <hr>
