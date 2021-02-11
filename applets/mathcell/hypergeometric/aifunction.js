@@ -46,7 +46,6 @@ parent.update = function (id) {
   function hyperGeomgetric0F1(cnt, z, max) {
     var sum = complex(0, 0);
     var cz = z;
-    var ccnt = complex(cnt, 0);
     for (var n = 0; n <= max; ++n) {
       var next = div(
         pow(cz, complex(n, 0)),

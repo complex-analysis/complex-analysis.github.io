@@ -1,10 +1,10 @@
 /*
-  Airy function Bi(z)
+  Work in progess
   https://en.wikipedia.org/wiki/Airy_function
   Written by Juan Carlos Ponce Campuzano
   https://jcponce.github.io/
   https://mathcell.org/
-  04 Feb 2021
+  05 Feb 2021
 */
 
 var parent = document.currentScript.parentNode;
@@ -18,17 +18,17 @@ MathCell(id, [{
   default: 'abs',
   width: '0.5in',
   name: 'opt',
-  label: ' - Plotting option:'
+  label: 'Plotting option:'
 }]);
 
 parent.update = function (id) {
 
   var opt = getVariable(id, 'opt');
 
-
   /*
   Confluent Hypergeometric function
   https://mathworld.wolfram.com/ConfluentHypergeometricLimitFunction.html
+
 
   Pochhammer symbol
   https://mathworld.wolfram.com/PochhammerSymbol.html
@@ -43,13 +43,14 @@ parent.update = function (id) {
   }
 
 
-  function hyperGeomgetric0F1(cnt, z, max) {
+  function hyperGeomgetric2F1(a, b, c, z) {
     var sum = complex(0, 0);
-    var cz = z;
-    for (var n = 0; n <= max; ++n) {
+    
+    
+    for (var n = 0; n <= 35; ++n) {
       var next = div(
-        pow(cz, complex(n, 0)),
-        mul(pochhammer(cnt, n), gamma(complex(n + 1, 0)))
+        mul( pochhammer(a, n), mul( pochhammer(b, n), pow(z, complex(n, 0)) ) ),
+        mul( pochhammer(c, n), gamma(complex(n + 1, 0)) )
       );
       sum = add(sum, next);
     }
@@ -59,14 +60,13 @@ parent.update = function (id) {
   //debugging
   //console.log(pochhammer(complex(1,0), 3));
 
-  function Biry(x, y) {
+  function Airy(x, y) {
 
-    var onesix = complex(1 / 6, 0);
     var twothree = complex(2 / 3, 0);
     var onethree = complex(1 / 3, 0);
     var cthree = complex(3, 0);
-    var fcnt = inv(mul(pow(cthree, onesix), gamma(twothree)));
-    var scnt = div(complex(x, y), mul(pow(cthree, onesix), gamma(onethree)));
+    var fcnt = inv(mul(pow(cthree, twothree), gamma(twothree)));
+    var scnt = div(complex(x, y), mul(pow(cthree, onethree), gamma(onethree)));
 
     var onenine = complex(1 / 9, 0);
     var cz = mul(onenine, pow(complex(x, y), cthree));
@@ -82,8 +82,8 @@ parent.update = function (id) {
     (x, y) => [
       x,
       y,
-      Biry(x, y)
-    ], [-5, 5, 201], [-5, 5, 150], {
+      hyperGeomgetric2F1( complex(1,-1), complex(0,3/4), complex(0,1/2), pow(complex(x,y),2) ) 
+    ], [-2, 2, 201], [-2, 2, 150], {
       complexFunction: opt,
       colormap: 'complexArgument'
     }
@@ -92,7 +92,7 @@ parent.update = function (id) {
   var zcMin, zcMax;
   if (opt === 'abs') {
     zcMin = 0;
-    zcMax = 8;
+    zcMax = 2;
   } else {
     zcMin = -5;
     zcMax = 5;
