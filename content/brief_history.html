@@ -160,39 +160,6 @@
     gtag('config', 'UA-155852901-1');
   </script>
 
-  <!--GeoGebra embeding-->
-  <script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
-
-  <script>
-    var params01 = {
-      "width": 696,
-      "height": 436,
-      "material_id": "mqdbedcd",
-      "borderColor": "888888",
-      "playButton": false,
-      "showFullscreenButton": true,
-      "enableShiftDragZoom": true,
-      "showResetIcon": true
-    };
-    var params02 = {
-      "width": 670,
-      "height": 430,
-      "material_id": "ntehbavr",
-      "borderColor": "888888",
-      "playButton": false,
-      "showFullscreenButton": true,
-      "enableShiftDragZoom": true,
-      "showResetIcon": true
-    };
-    var ggbApplet01 = new GGBApplet(params01, true);
-    var ggbApplet02 = new GGBApplet(params02, true);
-    window.addEventListener("load", function () {
-      ggbApplet01.inject('ggb-element-01');
-      ggbApplet02.inject('ggb-element-02');
-    });
-  </script>
-
-
 </head>
 
 <body>
@@ -851,6 +818,38 @@
 
   <!-- nice smart quotes, via: http://smartquotesjs.com -->
   <script src="../js/smartquotes.min.js"></script>
+
+  <!--GeoGebra embeding-->
+  <script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+  <script>
+    var params01 = {
+      "width": 696,
+      "height": 436,
+      "material_id": "mqdbedcd",
+      "borderColor": "888888",
+      "playButton": false,
+      "showFullscreenButton": true,
+      "enableShiftDragZoom": true,
+      "showResetIcon": true
+    };
+    var params02 = {
+      "width": 670,
+      "height": 430,
+      "material_id": "ntehbavr",
+      "borderColor": "888888",
+      "playButton": false,
+      "showFullscreenButton": true,
+      "enableShiftDragZoom": true,
+      "showResetIcon": true
+    };
+    var ggbApplet01 = new GGBApplet(params01, true);
+    var ggbApplet02 = new GGBApplet(params02, true);
+    window.addEventListener("load", function () {
+      ggbApplet01.inject('ggb-element-01');
+      ggbApplet02.inject('ggb-element-02');
+    });
+  </script>
 
 </body>
 
