@@ -94,7 +94,7 @@
 				// set prev/next titles
 				$('#prev a').hover(
 					function () {
-						$('#title a').text('Prev: The Complex Power Function');
+						$('#title a').text('Prev: La Función Exponencial Compleja');
 					},
 					function () {
 						$('#title a').text('Análisis Complejo');
@@ -102,7 +102,7 @@
 				);
 				$('#next a').hover(
 					function () {
-						$('#title a').text('Next: Taylor Series');
+						$('#title a').text('Next: Series de Taylor');
 					},
 					function () {
 						$('#title a').text('Análisis Complejo');
@@ -169,9 +169,9 @@
 	<div id="wrapper">
 
 		<header>
-			<p><span id="prev"><a href="power_function.html">&larr;</a></span><span id="title"><a
+			<p><span id="prev"><a href="funcion_exponencial_compleja.html">&larr;</a></span><span id="title"><a
 						href="table_of_contents.html">Análisis Complejo</a></span><span id="next"><a
-						href="taylor_series.html">&rarr;</a></span>
+						href="·">&rarr;</a></span>
 				<div class="clear"></div>
 			</p>
 		</header>
@@ -189,11 +189,11 @@
 		<h1>Series</h1>
 		<hr>
 
-		<h2>Convergencia de sucesiones</h2>
+		<h2>Convergencia de Sucesiones</h2>
 
 		<div class="w3-responsive">
-			<p>Una sucesión infinita de números complejos $\left\{z_1,z_2,z_3 \ldots\right\}$ 
-				tiene un límite $z$ si, para cada número positivo $\varepsilon$, 
+			<p>Una sucesión infinita de números complejos $\left\{z_1,z_2,z_3 \ldots\right\}$
+				tiene un límite $z$ si, para cada número positivo $\varepsilon$,
 				existe un entero positivo $n_0$ tal que
 				\begin{eqnarray}\label{seq}
 				\left|z_n-z\right|&lt; \varepsilon \quad \text{siempre que}\quad n &gt; n_0.
@@ -201,12 +201,12 @@
 			</p>
 		</div>
 
-		<p>Geométricamente, esto significa que para valores suficientemente grandes de $n$, 
-			los puntos $z_n$ se encuentran dentro de una  
-			$\varepsilon$ vecindad de $z$ (Figura 1). Dado que podemor 
+		<p>Geométricamente, esto significa que para valores suficientemente grandes de $n$,
+			los puntos $z_n$ se encuentran dentro de una
+			$\varepsilon$ vecindad de $z$ (Figura 1). Dado que podemor
 			elegir $\varepsilon$ tan pequeña como deseamos, se sigue que los
-			puntos $z_n$ se acercan arbitrariamente a $z$ mientras su índices incrementan. 
-			Notemos que el valor de $n_0$ requerido, en general, 
+			puntos $z_n$ se acercan arbitrariamente a $z$ mientras su índices incrementan.
+			Notemos que el valor de $n_0$ requerido, en general,
 			depende del valor de $\varepsilon$.</p>
 
 		<figure class="w3-center">
@@ -217,10 +217,10 @@
 			</figcaption>
 		</figure>
 
-		<p>La sucesión $\left\{z_n\right\}_{n=1}^{\infty}$ puede tener a lo más un límite. 
+		<p>La sucesión $\left\{z_n\right\}_{n=1}^{\infty}$ puede tener a lo más un límite.
 			Esto es, un límite $z$ es único
-			si existe. Cuando este límite existe, se dice que la sucecsión  <em>converge</em> a $z$; 
-			y escribimos 
+			si existe. Cuando este límite existe, se dice que la sucecsión <em>converge</em> a $z$;
+			y escribimos
 			\begin{eqnarray*}
 			\lim_{n\rightarrow \infty} z_n=z
 			\end{eqnarray*}
@@ -228,7 +228,7 @@
 
 		<div class="w3-responsive">
 			<p class="theorem"><strong>Teorema 1:</strong> <em>Supongamos que $z_n=x_n+iy_n$ ($n=1,2,3,\ldots $)
-				 y
+					y
 					$z=x+iy$. Entonces
 					\begin{eqnarray}\label{teoseq01}
 					\lim_{n\rightarrow \infty} z_n=z
@@ -241,12 +241,12 @@
 
 		<div class="w3-padding w3-responsive">
 			<details>
-				<summary class="w3-hover-text-white" style="background-color:#f2f2f2"><b
+				<summary class="w3-hover-text-grey" style="background-color:#f2f2f2"><b
 						style="font-size:20px">Demostración</b></summary>
 
 				<br>
 
-				<p>Para demostrar este teorema, primero asumimos que se cumplen las condiciones (\ref{teoseq02}). 
+				<p>Para demostrar este teorema, primero asumimos que se cumplen las condiciones (\ref{teoseq02}).
 					Es decir, existe para cada $\varepsilon>0$, enteros positivos $n_1$ y $n_2$ tales que
 					\[
 					|x_n-x|&lt;\frac{\varepsilon}{2}\quad \text{siempre que} \quad n&gt;n_1
@@ -260,7 +260,7 @@
 					|x_n-x|&lt;\frac{\varepsilon}{2}\quad \text{y} \quad |y_n-y|&lt;\frac{\varepsilon}{2} \quad
 					\text{simpre que} \quad n &gt; n_0.
 					\]
-					Dado que 
+					Dado que
 					\[
 					|(x_n+iy_n)-(x+iy)|=|(x_n-x)+(y_n-y)|\leq |x_n-x|+|y_n-y|,
 					\]
@@ -271,8 +271,8 @@
 					Por lo tanto se cumple la condición (\ref{teoseq01}).</p>
 
 				<p>En cambio, si comenzamos con la condición (\ref{teoseq01}),
-					sabemos que para cada número positivo $\varepsilon$, 
-					existe un entero positivo  $n_0$ tal que
+					sabemos que para cada número positivo $\varepsilon$,
+					existe un entero positivo $n_0$ tal que
 					\[
 					|(x_n+iy_n)-(x+iy)|&lt;\varepsilon \quad \text{siempre que} \quad n&gt;n_0.
 					\]
@@ -286,7 +286,8 @@
 					\]
 					Consecuentemente
 					\[
-					|x_n-x|&lt;\varepsilon \quad \text{y} \quad |y_n-y|&lt;\varepsilon \quad \text{siempre que} \quad n &gt;
+					|x_n-x|&lt;\varepsilon \quad \text{y} \quad |y_n-y|&lt;\varepsilon \quad \text{siempre que} \quad n
+					&gt;
 					n_0.
 					\]
 					Por lo tanto, se satisfacen las condiciones (\ref{teoseq02}) $\blacksquare$
@@ -296,127 +297,138 @@
 
 		<hr>
 
-		<h2>Convergence of Series</h2>
+		<h2>Convergencia de Series</h2>
 
 		<div class="w3-responsive">
-			<p>An infinite series
+			<p>Una serie infinita
 				\begin{eqnarray}\label{series01}
 				\sum_{n=1}^{\infty}z_n=z_1+z_2+z_3+\cdots
 				\end{eqnarray}
-				of complex numbers converges to the sum $S$ if the sequence
+				de números complejos converge a la suma $S$ si la sucesión
 				\begin{eqnarray}\label{partialsum}
 				\sum_{n=1}^{N}z_n=z_1+z_2+z_3+\cdots +z_N\quad(N=1,2,3,\ldots)
 				\end{eqnarray}
-				of partial sums converges to $S$; we then write
+				de sumas parciales converge a $S$; y escribimos
 				$$\sum_{n=1}^{\infty}z_n=S.$$
-				Note that since a sequence can have at most one limit, a series can have at most
-				one sum. When a series does not converge, we say that it diverges.
+				Dado que una sucesión puede tener a lo más un límite,
+				una serie puede tener a lo más una suma.
+				Cuando una serie no converge, decimos que es <em>divergente</em>.
 			</p>
 		</div>
 
 		<div class="w3-responsive">
-			<p class="theorem"><strong>Theorem 2:</strong> <em>Suppose that $z_n=x_n+iy_n$ ($n=1,2,3,\ldots $) and
-					$S=X+iY$. Then
+			<p class="theorem"><strong>Teorema 2:</strong> <em>Supongamos que $z_n=x_n+iy_n$ ($n=1,2,3,\ldots $) y
+					$S=X+iY$. Entonces
 					\begin{eqnarray}\label{teo01}
 					\sum_{n=1}^{\infty} z_n=S
 					\end{eqnarray}
-					if and only if
+					si y sólo si
 					\begin{eqnarray}\label{teo02}
-					\sum_{n=1}^{\infty} x_n=X\quad \text{and}\quad \sum_{n=1}^{\infty} y_n=Y.
+					\sum_{n=1}^{\infty} x_n=X\quad \text{y}\quad \sum_{n=1}^{\infty} y_n=Y.
 					\end{eqnarray}</em></p>
 		</div>
 
 
 		<div class="w3-padding w3-responsive">
 			<details>
-				<summary class:"w3-hover-text-white" style="background-color:#f2f2f2"><b
-						style="font-size:20px">Proof</b></summary>
+				<summary class="w3-hover-text-grey" style="background-color:#f2f2f2"><b
+						style="font-size:20px">Demostración</b></summary>
 
 				<br>
 
-				<p>To prove this theorem, we first write the partial sums (\ref{partialsum}) as
+				<p>Para demostrar este teorema, primero escribimos las sumas parciales (\ref{partialsum}) como
 					\begin{eqnarray}\label{teo03}
 					S_N = X_N+iY_N,
 					\end{eqnarray}
-					where
+					donde
 					\[
-					X_N = \sum_{n=1}^{N}x_n \quad \text{and}\quad Y_N = \sum_{n=1}^{N}y_n.
+					X_N = \sum_{n=1}^{N}x_n \quad \text{y}\quad Y_N = \sum_{n=1}^{N}y_n.
 					\]
-					Now statement (\ref{teo01}) is true if and only if
+					Ahora el enunciado (\ref{teo01}) es verdadero si y sólo si
 					\begin{eqnarray}\label{teo04}
 					\lim_{N\rightarrow \infty} S_N = S;
 					\end{eqnarray}
-					and, in view of relation (\ref{teo03}) and Theorem 1 on sequences, limit (\ref{teo04}) holds if and
-					only if
+					y, en vista de la relación (\ref{teo03}) y el Teorema 1, el límite (\ref{teo04})
+					existe si y sólo si
 					\begin{eqnarray}\label{teo05}
-					\lim_{N\rightarrow \infty} X_N=X\quad \text{and}\quad \lim_{N\rightarrow \infty} Y_N=Y.
+					\lim_{N\rightarrow \infty} X_N=X\quad \text{y}\quad \lim_{N\rightarrow \infty} Y_N=Y.
 					\end{eqnarray}
-					Limits (\ref{teo05}) therefore imply statement (\ref{teo01}), and conversely. Since and $X_N=X$ and
-					$Y_N=Y$ are partial sums of the series (\ref{teo02}), the theorem is proved. $\blacksquare$</p>
+					Por lo tanto, los límites (\ref{teo05}) implican (\ref{teo01}), y viceversa.
+					Dado que $X_N=X$ y $Y_N=Y$ son sumas parciales de las series (\ref{teo02}),
+					el teorema queda demostrado. $\blacksquare$</p>
 			</details>
 		</div>
 
 
 		<br>
 
-		<p>This theorem can be useful in showing that a number of familiar properties
-			of series in calculus carry over to series whose terms are complex numbers.</p>
+		<p>Este teorema es de bastante utilidad para demostrar
+			un número de propiedades familiares de cursos de cálculo que
+			también se cumplen con números complejos.</p>
 
-		<p><strong>Property 1:</strong> If a series of complex numbers converges, the $n$-th term converges to zero as
-			$n$ tends to infinity.</p>
+		<p><strong>Propiedad 1:</strong> Si una serie de números complejos converge,
+			el $n$-ésimo término converge a zero cuando
+			$n$ tiende a infinito.</p>
 
-		It follows from <strong>Property 1</strong> that the terms of convergent series are bounded.
-		That is, when series (\ref{series01}) converges, there exists a positive constant $M$ such that
-		$$|z_n| \leq M \; \text{ for each positive integer } n.$$
+		De la <strong>Propiedad 1</strong> se sigue que los términos de
+		una serie convergente están acotados.
+		Esto es, cuando la serie (\ref{series01}) converge, existe una constante positiva
+		$M$ tal que
+		$$|z_n| \leq M \; \text{ para cada entero positivo } n.$$
 
-		<p>Another important property of series of complex numbers that follows from a corresponding property in
-			calculus is the following.</p>
+		<p>
+			Otra propiedad importante de series de números complejos
+			que proviene de los cursos de cálculo es la siguiente.</p>
 
-		<p><strong>Property 2:</strong> The absolute convergence of a series of complex numbers implies the convergence
-			of that series.
+		<p><strong>Propiedad 2:</strong> La convergencia absoluta de una serie
+			de números complejos implica la convergencia de esa serie.
 		</p>
 
 		<div class="w3-responsive">
-			<p>Recall that series (\ref{series01}) is said to be <em>absolutely convergent</em> if the series
+			<p>Recordemos que la serie (\ref{series01}) es <em>absolutamente convergente</em>
+				si la serie
 				\begin{eqnarray*}\label{series02}
-				\sum_{n=1}^{\infty}|z_n|=\sum_{n=1}^{\infty}\sqrt{x^2_n+y^2_n}\quad \quad(z_n=x_n+y_n)
+				\sum_{n=1}^{\infty}|z_n|=\sum_{n=1}^{\infty}\sqrt{x^2_n+y^2_n}\quad \quad(z_n=x_n+iy_n)
 				\end{eqnarray*}
-				of real numbers $\sqrt{x^2_n+y^2_n}$ converges.
+				de números reales $\sqrt{x^2_n+y^2_n}$ converge.
 			</p>
 		</div>
 
-		<p>To establish the fact that the sum of a series is a given number $S$, it is often convenient to define the
-			<em>remainder</em> $\rho_N$ after $N$ terms, using the partial sums:
+		<p>Para establecer el hecho de que la suma de una serie es un número $S$,
+			es conveniente definir el
+			<em>residuo</em> $\rho_N$ después de $N$ términos, usando las sumas parciales:
 			\begin{eqnarray*}\label{series03}
 			\rho_N=S-S_N
 			\end{eqnarray*}
-			Thus $S=S_N+\rho_N$. Now, since $|S_N-S|=|\rho_N-0|$, then <em>a series converges to a number $S$ if and
-				only if the sequence of remainders tends to zero</em>.
+			De esta forma $S=S_N+\rho_N$. Ahora, dado que $|S_N-S|=|\rho_N-0|$,
+			entonces <em>una serie converge a un número $S$ si y sólo si
+				la sucesión de residuos tiende a cero</em>.
 			<!-- We will make  use of this observation later in our treatment of <em>power series</em>, which are of the form
 $$\sum_{n=1}^{\infty}a_n(z-z_0)^n$$
 where $z_0$ and the coefficients $a_n$ are complex constants and $z$ is any point in a stated region containing $z_0$. In such series, involving a variable $z$, we denote <em>sums</em>, <em>partial sums</em>, and <em>remainders</em> by $S(z)$, $S_N(z)$ and $\rho_N(z)$, respectively. -->
 		</p>
 
 		<div class="w3-padding w3-responsive">
-			<p><strong>Example:</strong> With the aid of remainders, it is easy to verify that
+			<p><strong>Ejemplo:</strong> Con la ayuda de los residuos, es fácil verificar que
 				\begin{eqnarray*}
 				\sum_{n=0}^{\infty}z^n=\frac{1}{1-z}\quad\text{whenever}\quad |z|&lt; 1
 				\end{eqnarray*}
-				We need only recall the identity
+				Para esto necesitamos recordad la identidad
 				$$1+z+z^2+\cdots+z^n=\frac{1-z^{n+1}}{1-z}$$
-				to write the partial sums
+				para escribir las sumas parciales
 				\begin{eqnarray}
 				S_N(z)=\sum_{n=0}^{\infty}z^n=1+z+z^2+\cdots+z^{N-1}\quad\quad(z\neq 1)
 				\end{eqnarray}
-				as
-				$$S_N(z)=\frac{1-z^N}{1-z}$$
-				If
+				como
+				$$S_N(z)=\frac{1-z^N}{1-z}.$$
+				Si
 				$$S(z)=\frac{1}{1-z}$$
-				then
+				entonces
 				$$\rho_N(z)=S(z)-S_N(z)=\frac{z^N}{1-z}\quad\quad(z\neq 1).$$
-				Thus
-				$$\left|\rho_N\right|=\frac{|z|^N}{|1-z|}\rightarrow 0\quad\text{only when}\quad |z|&lt;1.$$
-				In this case, it is clear that the remainders $\rho_N$ tend to zero when $|z|&lt;1$ but not when
+				De esta forma
+				$$\left|\rho_N\right|=\frac{|z|^N}{|1-z|}\rightarrow 0\quad\text{solo cuando}\quad |z|&lt;1.$$
+				En este caso, es claro que los residuos
+				$\rho_N$ tienden a cero cuando $|z|&lt;1$ pero no cuando
 				$|z|\geq 1$.
 			</p>
 		</div>
@@ -424,17 +436,21 @@ where $z_0$ and the coefficients $a_n$ are complex constants and $z$ is any poin
 
 		<hr>
 
-		<h2>Geometric series exploration</h2>
+		<h2>Exploración geométrica de la serie geométrica</h2>
 
-		<p>The series introduced in the previous example
+		<p>La serie introducida en el ejemplo anterior
 			\begin{eqnarray*}
-			\sum_{n=0}^{\infty}z^n=\frac{1}{1-z}\quad\text{whenever}\quad |z|&lt; 1
+			\sum_{n=0}^{\infty}z^n=\frac{1}{1-z}\quad\text{siempre que\quad |z|&lt; 1
 			\end{eqnarray*}
-			is known as the <em>geometric series</em>.
+			es conocida como la <em>serie geométrica</em>.
 		</p>
 
-		<p>Use the following applet to explore this series. Drag the point $z$ around. Observe what happens when it is
-			inside, outside or on the border of the unit circle. Drag the slider to show the partial sum.</p>
+		<p>
+			Usa el siguiente applet para explorar esta serie. Arrastra
+			el punto $ z $ alrededor. Observa lo que pasa cuando esta
+			adentro, afuera o en la frontera del círculo unitario.
+			Arrastra el control deslizante para mostrar la suma parcial.
+		</p>
 
 		</br>
 
@@ -446,42 +462,44 @@ where $z_0$ and the coefficients $a_n$ are complex constants and $z$ is any poin
 		</div>
 
 		<div class="w3-hide-large w3-khaki w3-round w3-padding w3-panel">
-			<p><i class="fas fa-sad-tear"></i> Sorry, the applet is not supported for small screens. Rotate your device
-				to landscape. Or resize your window so it's more wide than tall.</p>
+			<p><i class="fas fa-sad-tear"></i>
+				Lo siento, este applet no funciona para dispositivos con pantallas pequeñas.
+				Rota tu dispositivo horizontalmente. O cambia el tamaño de tu ventana de tal forma que el ancho es
+				más grande que el largo.</p>
 		</div>
 
 		<br />
 
 		<div class="w3-padding w3-hide-small">
 			<details>
-				<summary class="w3-hover-text-blue"><strong>Code</strong></summary>
+				<summary class="w3-hover-text-blue"><strong>Código</strong></summary>
 				<br>
-				<p>Enter the following script in <a href="https://www.geogebra.org/classic" target="_blank">GeoGebra</a>
-					to explore it yourself and make your own version. The symbol # indicates comments.</p>
+				<p>Puedes usar el siguiente script en <a href="https://www.geogebra.org/classic" target="_blank">GeoGebra</a>
+					para explorar tú mismo y hacer tu propia versión. El símbolo # indica comentarios.</p>
 
-				<pre><code>#Complex number
+				<pre><code>#Número complejo
         
 Z = 0.72 + ί * 0.61
 
-#Circle of radius 1
+#Círculo de radio 1
 
 c = Circle((0,0), 1)
 
-#Number of terms of the partial series
+#Número de términos de la serie parcial 
 
 n = Slider(0, 250, 1, 1, 150, false, true, false, false)
 
 SetValue(n, 250)
 
-#Define the sequence z^n
+#Define la sucesión z^n
 
 S = Join({0 + ί * 0, 1 + ί * 0}, Sequence(Z^j, j, 1, n))
 
-#Define partial sum
+#Define la suma paracial
 
 SP = Sequence(Sum(S, j), j, 1, n + 2)
 
-#Finally join the points of the partial sum
+#Finalmente une los puntos de la suma parcial con segmentos
 
 L = Sequence(Segment(Element(SP, j), Element(SP, j + 1)), j, 1, n + 1)
 </code></pre>
@@ -519,11 +537,11 @@ L = Sequence(Segment(Element(SP, j), Element(SP, j + 1)), j, 1, n + 1)
 		<!--<p><strong>Note:</strong> The applet was made with <a href="https://www.geogebra.org/material/show/id/zsf2n5ny">GeoGebra</a>.</a></p>-->
 
 		<!-- link to the next page -->
-		<a href="taylor_series.html">
-			<p class="nextPage">NEXT: Taylor series</p>
+		<a href="·">
+			<p class="nextPage">NEXT: Series de Taylor</p>
 		</a>
 		<footer>
-			<p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
+			<p>[ <a href="../es.html">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
 					href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
 
 			<p class="license">
