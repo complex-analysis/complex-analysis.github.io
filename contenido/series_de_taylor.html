@@ -1,11 +1,12 @@
 <!doctype html>
 <html>
+
 <head>
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
 	<title>Análisis Complejo</title>
 
 	<!-- dublin core -->
@@ -28,32 +29,32 @@
 	<meta name="twitter:card"
 		content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
 	<meta property="og:site_name" content="Análisis Complejo">
-       
-	
+
+
 	<!-- FONTS AND CSS -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
-	<link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet'
+		type='text/css'>
 	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="../css/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" >
+	<link rel="stylesheet" href="../css/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 	<!-- CODE PRETTIFY -->
 	<!-- via: https://github.com/google/code-prettify -->
 	<script src="../js/run_prettify.js"></script>
 
-	
+
 
 	<!-- JQUERY FANCY ADDITIONS -->
 	<!-- add code class, hover text, etc -->
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script>
-
-		$(document).ready(function() {
+		$(document).ready(function () {
 
 			// prettyprint the code, pls
 			$('pre').addClass('prettyprint lang-java');
 
 			// add word-breaks to anything with a / or - in it
-			$('h1').each(function() {
+			$('h1').each(function () {
 				var t = $(this).text();
 				t = t.replace('/', '/<wbr>');
 				t = t.replace('-', '-<wbr>');
@@ -66,7 +67,7 @@
 
 		// when the window gets resized, do some stuff to keep everything
 		// looking pretty
-		$(window).resize( function() {
+		$(window).resize(function () {
 			resizeCommands();
 		});
 
@@ -82,29 +83,29 @@
 				// (does weird formatting on larger screens)
 				// hover over title to show "Table of Contents"
 				$('#title a').hover(
-					function() {
-						$('#title a').text('Table of Contents');
+					function () {
+						$('#title a').text('Tabla de Contenidos');
 					},
-					function() {
-						$('#title a').text('Complex Analysis');	// set back when moving out
+					function () {
+						$('#title a').text('Análisis Complejo'); // set back when moving out
 					}
 				);
 
 				// set prev/next titles
 				$('#prev a').hover(
-					function() {
+					function () {
 						$('#title a').text('Prev: Series');
 					},
-					function() {
-						$('#title a').text('Complex Analysis');
+					function () {
+						$('#title a').text('Análisis Complejo');
 					}
 				);
 				$('#next a').hover(
-					function() {
-						$('#title a').text('Next: The Mandelbrot Set');
+					function () {
+						$('#title a').text('Next: El Conjunto de Mandelbrot');
 					},
-					function() {
-						$('#title a').text('Complex Analysis');
+					function () {
+						$('#title a').text('Análisis Complejo');
 					}
 				);
 			}
@@ -116,140 +117,173 @@
 			}
 		}
 	</script>
-    
-    <!--MathJax starts-->
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
+
+	<!--MathJax starts-->
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
                            TeX: { equationNumbers: { autoNumber: "AMS" } }
                            });
         </script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
         </script>
-    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-        </script>
-	
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	<script type="text/javascript" async
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
 
-  gtag('config', 'UA-155852901-1');
-</script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
 
-    <!--GeoGebra embeding-->
-<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
 
-<script>
-    var applet1 = new GGBApplet({material_id: "weaav49b",
-                                borderColor:"888888",
-                                playButton: "true",
-                                showFullscreenButton: "true",
-                                enableShiftDragZoom: "true",
-                                showResetIcon: "true"}, true);
-    window.addEventListener("load", function() {
-          applet1.inject('applet_container1');
-      });
-</script>
-<!--GeoGebra embeding ends-->
-    
-    <!-- Cindy.js
+		gtag('config', 'UA-155852901-1');
+	</script>
+
+	<!--GeoGebra embeding-->
+	<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+	<script>
+		var applet1 = new GGBApplet({
+			material_id: "weaav49b",
+			borderColor: "888888",
+			playButton: "true",
+			showFullscreenButton: "true",
+			enableShiftDragZoom: "true",
+			showResetIcon: "true"
+		}, true);
+		window.addEventListener("load", function () {
+			applet1.inject('applet_container1');
+		});
+	</script>
+	<!--GeoGebra embeding ends-->
+
+	<!-- Cindy.js
     <link rel="stylesheet" href="../applets/cindyjs/taylorseries/app.css" />
     <link rel="stylesheet" href="../applets/cindyjs/taylorseries/dist/v08/CindyJS.css" />-->
-    <script type="text/javascript" src="../applets/cindyjs/assets/Cindy.js"></script>
-    <script type="text/javascript" src="../applets/cindyjs/assets/CindyGL.js"></script>
-    <script type="text/javascript" src="../applets/cindyjs/assets/symbolic.js"></script>
-    <!-- Cindy.js -->
-    
+	<script type="text/javascript" src="../applets/cindyjs/assets/Cindy.js"></script>
+	<script type="text/javascript" src="../applets/cindyjs/assets/CindyGL.js"></script>
+	<script type="text/javascript" src="../applets/cindyjs/assets/symbolic.js"></script>
+	<!-- Cindy.js -->
+
 
 </head>
 
 <body>
-<div id="wrapper">
-        
-        <header><p><span id="prev"><a href="series.html">&larr;</a></span><span id="title"><a href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a href="mandelbrot_set.html">&rarr;</a></span><div class="clear"></div></p></header>
-        
+	<div id="wrapper">
 
-<h1>Taylor Series</h1>
-
-<hr>
-
-<h2>For Real Functions</h2>
-
-<p>Let $a\in \mathbb R$ and $f(x)$ be and infinitely differentiable function on an interval $I$ containing $a$. Then the one-dimensional Taylor series of $f$ around $a$ is given by
- <div class="w3-responsive">
-     \[
-     f(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^2+\frac{f^{(3)}(a)}{3!}(x-a)^3+\cdots
-     \]
- </div>
- which can be written in the most compact form:
- <div class="w3-responsive">
-     \[
-     f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^n.
-     \]
- </div>
- </p>
- 
- <p>
- Recall that, in real analysis, Taylor's theorem gives an approximation of a $k$-times differentiable function around a given point by a $k$-th order Taylor polynomial.</p>
- 
- 
- <p>For example, the best linear approximation for $f(x)$ is
- $$f(x)\approx f(a)+f′(a)(x−a).$$
- This linear approximation fits $f(x)$  with a line  through $x=a$ that matches the slope of $f$ at $a$.
-</p>
-
- <div class="w3-responsive">
- <p>For a better approximation we can add other terms in the expansion. For instance, the best quadratic approximation is
- $$f(x)\approx f(a)+f'(a)(x−a)+\frac12 f''(a)(x−a)^2.$$ </p>
- </div>
-
- 
- <p>The following applet shows the partial sums of the Taylor series for a given function. Drag the slider to show more terms of the series. Drag the point <strong>a</strong> or change the function.
- </p>
- 
- <!-- ctl=play button; sfsb=fullscreen button-->
- <div class="w3-hide-small">
-     <div style="width:790px;height:487px;display:block" id="applet_container1"></div>
- </div>
- <div class="w3-hide-large w3-hide-medium w3-khaki w3-round w3-padding w3-panel">
-     <p><i class="fas fa-sad-tear"></i> Sorry, the applet is  not supported for small screens. Rotate your device to landscape. Or resize your window so it's more wide than tall.</p>
- </div>
- 
+		<header>
+			<p><span id="prev"><a href="series.html">&larr;</a></span><span id="title"><a
+						href="table_of_contents.html">Análisis Complejo/a></span><span id="next"><a
+						href="#">&rarr;</a></span>
+				<div class="clear"></div>
+			</p>
+		</header>
 
 
-<hr>
+		<h1>Series de Taylor</h1>
 
-<h2>For Complex Functions</h2>
-<div class="w3-responsive">
-<p>
-Suppose that a function $f$ is analytic throughout a disk $|z -z_0|&lt; R_0$,
-    centred at $z_0$ and with radius $R_0$. Then $f (z)$ has the power series representation
-    \begin{eqnarray}\label{seriefunction}
-    f(z)=\sum_{n=0}^{\infty} a_n(z-z_0)^n\quad (|z-z_0|&lt;R_0),
-    \end{eqnarray}
-    where
-    \begin{eqnarray}
-    a_n=\frac{f^{(n)}(z_0)}{n!}\quad (n=0,1,2,\ldots)
-    \end{eqnarray}
-    That is, series (\ref{seriefunction}) converges to $f (z)$ when $z$ lies in the stated open disk.
-</p>
-     </div>
+		<hr>
 
-<hr>
+		<h2>Versión para funciones reales</h2>
 
-<h2>Dynamic Exploration</h2>
+		<p>Sea $a\in \mathbb R$ y $f(x)$ una función función infinitamente 
+			diferenciableen un intervalo $I$ que contengaal número $a$.
+			Entonces la serie de Taylor unidimensional de $f$ alrededor de $a$ está dada por
+			<div class="w3-responsive">
+				\[
+				f(x)=f(a)+f'(a)(x-a)+\frac{f''(a)}{2!}(x-a)^2+\frac{f^{(3)}(a)}{3!}(x-a)^3+\cdots
+				\]
+			</div>
+			la cual se puede re-escribir  en su forma compacta:
+			<div class="w3-responsive">
+				\[
+				f(x)=\sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!}(x-a)^n.
+				\]
+			</div>
+		</p>
 
-<p>On the left side of the applet below, a phase portrait of a complex function is displayed. On the right side, you can see the approximation of the function through it&#39;s Taylor polynomials at the blue base point $z_0$.</p>
-<p>The complex function, the base point $z_0$, the order of the polynomial and the zoom can be modified.</p>
+		<p>
+			Recordemos que, en análisis real, el la serie de Taylor nos da una aproximación
+			de una función $k$-veces differenciable
+			al rededor de un punto dado por un polinomio de Taylor de orden $k$.</p>
 
-<div class="w3-hide-small w3-hide-medium">
-<div id="applet">
 
-		<script id="csinit" type="text/x-cindyscript">
-            f(z):=(z-1)/(z^2+z+1);
+		<p>Por ejemplo, la mejor aproximación lineal de  $f(x)$ es
+			$$f(x)\approx f(a)+f′(a)(x−a).$$
+			Esta aproximación se acerca a $f(x)$ con una línea que pasa por $x=a$ 
+			la cual concuerda con la pendiente de $f$ en $a$.
+		</p>
+
+		<div class="w3-responsive">
+			<p>Para obtener una mejor aproximación podemos agregar 
+				otros términos en la expansión. Por ejemplo, la mejor aproximación
+				cuadrática es 
+				$$f(x)\approx f(a)+f'(a)(x−a)+\frac12 f''(a)(x−a)^2.$$ </p>
+		</div>
+
+
+		<p>
+			El siguiente applet muestra las sumas parciales de la serie de Taylor 
+			para una función dada. Arrastra el control deslizante para mostrar más 
+			términos de la serie. Arrastra el punto <strong>a</strong> o cambia la función.
+		</p>
+
+		<!-- ctl=play button; sfsb=fullscreen button-->
+		<div class="w3-hide-small">
+			<div style="width:790px;height:487px;display:block" id="applet_container1"></div>
+		</div>
+		<div class="w3-hide-large w3-hide-medium w3-khaki w3-round w3-padding w3-panel">
+			<p><i class="fas fa-sad-tear"></i> Lo siento, este applet no funciona para dispositivos con pantallas pequeñas.
+				Rota tu dispositivo horizontalmente. O cambia el tamaño de tu ventana de tal forma que el ancho es
+				más grande que el largo.</p>
+		</div>
+
+
+
+		<hr>
+
+		<h2>Versión para funciones complejas</h2>
+		<div class="w3-responsive">
+			<p>
+				Supongamos que una función $f$ es analítica en un disco $|z -z_0|&lt; R_0$,
+				con centro en $z_0$ y radio $R_0$. Entonces $f (z)$ tiene una
+				representación en series de potencias 
+				\begin{eqnarray}\label{seriefunction}
+				f(z)=\sum_{n=0}^{\infty} a_n(z-z_0)^n\quad (|z-z_0|&lt;R_0),
+				\end{eqnarray}
+				donde
+				\begin{eqnarray}
+				a_n=\frac{f^{(n)}(z_0)}{n!}\quad (n=0,1,2,\ldots)
+				\end{eqnarray}
+				Esto es, la serie (\ref{seriefunction}) converge a $f (z)$ 
+				cuando $z$ se encuentra dentro del disco $|z -z_0|&lt; R_0$.
+			</p>
+		</div>
+
+		<hr>
+
+		<h2>Exploración Dinámica</h2>
+
+		<p>
+			En el lado izquierdo del applet a continuación, 
+			se muestra un retrato de fase de una función compleja. En el 
+			lado derecho, puedes ver la aproximación de la función a través 
+			de sus polinomios de Taylor en el punto base azul $z_0$.
+
+			Se pueden modificar la función compleja, el punto base $z_0$,
+			el orden del polinomio y el zoom.</p>
+		
+
+		<div class="w3-hide-small w3-hide-medium">
+			<div id="applet">
+
+				<script id="csinit" type="text/x-cindyscript">
+					f(z):=(z-1)/(z^2+z+1);
 			hsvToRGB(h, s, v) := (
 				regional(j, p, q, t, f);
 
@@ -291,9 +325,9 @@ Suppose that a function $f$ is analytic throughout a disk $|z -z_0|&lt; R_0$,
 			lzoom = zoom;
 
 		</script>
-		
-		<script id="csdraw" type="text/x-cindyscript">
-		//if(Input.text!=lastf & Input.text!="",
+
+				<script id="csdraw" type="text/x-cindyscript">
+					//if(Input.text!=lastf & Input.text!="",
 		//	parse("f(z) :=" + Input.text);
 		//	lastf = Input.text;
 		//);
@@ -359,95 +393,132 @@ Suppose that a function $f$ is analytic throughout a disk $|z -z_0|&lt; R_0$,
 		
 		</script>
 
-		<div id="CSCanvas" style="border:2px solid black"></div>
-        <br>
-        
-        <div style="display: flex; justify-content: space-between; width: 800px;">
-             <div><span style="font-size:18px">f(z) = </span><input type="text" id="inp" value="(z-1)/(z^2+z+1)"  onkeypress="typ(event, this)" size="43" style="font-size:18px"></div>
-            <div><a href="../applets/cindyjs/taylorseries/" target="_blank" title="Open Tab"><i class="fas fa-expand"></i></a></div>
-        </div>
-		
-		<script type="text/javascript">
-				var cdy = CindyJS({canvasname:"CSCanvas",
-				scripts: "cs*",
-				geometry: [
-							{name:"A", type:"Free", pos:[1.1, 0.1],color:[0,0.9,1]},
-							{name:"N", type:"Free", pos:[1, -1.8],color:[1,1,1], size:8},
-							{name:"Zoom", type:"Free", pos:[-2, -.3],color:[1,1,1], size:8},
+				<div id="CSCanvas" style="border:2px solid black"></div>
+				<br>
+
+				<div style="display: flex; justify-content: space-between; width: 800px;">
+					<div><span style="font-size:18px">f(z) = </span><input type="text" id="inp" value="(z-1)/(z^2+z+1)"
+							onkeypress="typ(event, this)" size="43" style="font-size:18px"></div>
+					<div><a href="../applets/cindyjs/taylorseries/" target="_blank" title="Open Tab"><i
+								class="fas fa-expand"></i></a></div>
+				</div>
+
+				<script type="text/javascript">
+					var cdy = CindyJS({
+						canvasname: "CSCanvas",
+						scripts: "cs*",
+						geometry: [{
+								name: "A",
+								type: "Free",
+								pos: [1.1, 0.1],
+								color: [0, 0.9, 1]
+							},
+							{
+								name: "N",
+								type: "Free",
+								pos: [1, -1.8],
+								color: [1, 1, 1],
+								size: 8
+							},
+							{
+								name: "Zoom",
+								type: "Free",
+								pos: [-2, -.3],
+								color: [1, 1, 1],
+								size: 8
+							},
 							//{name: "Input", type: "EditableText", pos: [-5.9,1.7], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 0.784, 0.0], fillalpha: 0.5, minwidth: 100, text: "1/(z^2+1)"}
-                           ],
-				animation: {autoplay: true},
-				ports: [{
-                          id: "CSCanvas",
-                          width: 800,
-                          height: 400,
-                          transform: [ { visibleRect: [-6,-2, 2, 2] } ]
+						],
+						animation: {
+							autoplay: true
+						},
+						ports: [{
+							id: "CSCanvas",
+							width: 800,
+							height: 400,
+							transform: [{
+								visibleRect: [-6, -2, 2, 2]
+							}]
 						}],
-				use: ["CindyGL", "katex"]
-				});
-var typ=function(e, b){
-  var chCode=e.which ? e.which:e.keyCode;
-  if(chCode==13){
-    console.log("*************");
-    console.log(b.value);
-    cdy.evokeCS('f(z) := (' + b.value + '); forcerecompile();');
-  }
-}
-        
-var sel=function(e, b){
-  document.getElementById("inp").value = b.value;
-  cdy.evokeCS('f(z) := (' + b.value + '); forcerecompile();');
-}
-		</script>
-        
-     <div>
-        <p>You can also select one function of the following list:<br>
-        <select id="sel" onchange="sel(event, this)" style="width:12em;">
-            <option value="(z-1)/(z^2+z+1)">(z-1)/(z^2+z+1)</option>
-            <option value="1/z">1/z</option>
-            <option value="z^(1/2)">Square root</option>
-            <option value="log(z)">Logarithm</option>
-            <option value="sin(z)">Sine</option>
-            <option value="0-i*log(i*z+(1-z^2)^(1/2))">Arcsine</option>
-            <option value="sin(z)/cos(z)">Tangent</option>
-            <option value="i/2*log((i+z)/(i-z))">Arctangent</option>
-            <option value="exp(z)">Exponential</option>
-            <option value="(exp(z)-exp(0-z))/2">Hyperbolic sine</option>
-            <option value="((exp(z)-exp(0-z))/2)/((exp(z)+exp(0-z))/2)">Hyperbolic tangent</option>
-        </select></p>
-    </div>
-     
-     </div><!--end applet-->
+						use: ["CindyGL", "katex"]
+					});
+					var typ = function (e, b) {
+						var chCode = e.which ? e.which : e.keyCode;
+						if (chCode == 13) {
+							console.log("*************");
+							console.log(b.value);
+							cdy.evokeCS('f(z) := (' + b.value + '); forcerecompile();');
+						}
+					}
 
-     </div><!--end hidesmall-->
-     
-     <div class="w3-hide-large w3-khaki w3-round w3-padding w3-panel">
-         <p><i class="fas fa-sad-tear"></i> Sorry, the applet is  not supported for small screens. Rotate your device to landscape. Or resize your window so it's more wide than tall.</p>
-     </div>
-    
-    <br><hr>
-    
-    <p style="font-size: 16px"><strong>Note:</strong> The applet was originally written by <a href="https://geo.ma.tum.de/en/people/aaron-montag.html">Aaron Montag</a> using <a href="https://cindyjs.org/">CindyJS</a>. The source can be found at <a href="https://github.com/complex-analysis/complex-analysis.github.io/tree/master/applets/cindyjs/taylorseries">GitHub.</a></p>
+					var sel = function (e, b) {
+						document.getElementById("inp").value = b.value;
+						cdy.evokeCS('f(z) := (' + b.value + '); forcerecompile();');
+					}
+				</script>
 
-	<!-- link to the next page -->
-	<a href="mandelbrot_set.html"><p class="nextPage">NEXT: The Mandelbrot Set</p></a>
-	<footer>
-		<p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+				<div>
+					<p>También puedes seleccionar una función de la siguiente lista:<br>
+						<select id="sel" onchange="sel(event, this)" style="width:12em;">
+							<option value="(z-1)/(z^2+z+1)">(z-1)/(z^2+z+1)</option>
+							<option value="1/z">1/z</option>
+							<option value="z^(1/2)">Raíz cuadrada</option>
+							<option value="log(z)">Logarítmo</option>
+							<option value="sin(z)">Seno</option>
+							<option value="0-i*log(i*z+(1-z^2)^(1/2))">Arcoseno</option>
+							<option value="sin(z)/cos(z)">Tangente</option>
+							<option value="i/2*log((i+z)/(i-z))">Arcotangente</option>
+							<option value="exp(z)">Exponencial</option>
+							<option value="(exp(z)-exp(0-z))/2">Seno hiperbólico</option>
+							<option value="((exp(z)-exp(0-z))/2)/((exp(z)+exp(0-z))/2)">Tangente hiperbólica</option>
+						</select></p>
+				</div>
 
-		<p class="license">
-			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-				<img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
-			</a>
-		<br/>
-		<strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
-		<strong style="font-size: 18px">2019</strong> 
-	    </p>
-	</footer>
+			</div>
+			<!--end applet-->
 
-</div> <!-- end wrapper -->
+		</div>
+		<!--end hidesmall-->
 
-<!-- nice smart quotes, via: http://smartquotesjs.com -->
-<script src="../js/smartquotes.min.js"></script>
-<script src="../applets/cindyjs/assets/app.js"></script>
+		<div class="w3-hide-large w3-khaki w3-round w3-padding w3-panel">
+			<p><i class="fas fa-sad-tear"></i> Lo siento, este applet no funciona para dispositivos con pantallas pequeñas.
+				Rota tu dispositivo horizontalmente. O cambia el tamaño de tu ventana de tal forma que el ancho es
+				más grande que el largo.</p>
+		</div>
+
+		<br>
+		<hr>
+
+		<p style="font-size: 16px"><strong>Nota:</strong> Este applet fue scrito originalmente por <a
+				href="https://geo.ma.tum.de/en/people/aaron-montag.html">Aaron Montag</a> usando<a
+				href="https://cindyjs.org/">CindyJS</a>. El código fuente se encuentra en <a
+				href="https://github.com/complex-analysis/complex-analysis.github.io/tree/master/applets/cindyjs/taylorseries">GitHub.</a>
+		</p>
+
+		<!-- link to the next page -->
+		<a href="#">
+			<p class="nextPage">NEXT: The Mandelbrot Set</p>
+		</a>
+		<footer>
+			<p>[ <a href="../es.html">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
+					href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+
+			<p class="license">
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+					<img id="license" alt="Creative Commons License" style="border-width:0"
+						src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+				</a>
+				<br />
+				<strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
+				<strong style="font-size: 18px">2019</strong>
+			</p>
+		</footer>
+
+	</div> <!-- end wrapper -->
+
+	<!-- nice smart quotes, via: http://smartquotesjs.com -->
+	<script src="../js/smartquotes.min.js"></script>
+	<script src="../applets/cindyjs/assets/app.js"></script>
 </body>
+
 </html>
