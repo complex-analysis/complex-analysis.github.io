@@ -176,14 +176,14 @@
 <h2>Convergence of Sequences</h2>
 
 <div class="w3-responsive">
-<p>An infinite sequence  $\left\{z_1,z_2,z_3 \ldots\right\}$ of complex numbers has a limit $z$ if, for each positive  number $\epsilon$, there exists a positive integer $n_0$ such that
+<p>An infinite sequence  $\left\{z_1,z_2,z_3 \ldots\right\}$ of complex numbers has a limit $z$ if, for each positive  number $\varepsilon$, there exists a positive integer $n_0$ such that
 \begin{eqnarray}\label{seq}
-\left|z_n-z\right|&lt; \epsilon \quad \text{whenever}\quad n &gt; n_0.
+\left|z_n-z\right|&lt; \varepsilon \quad \text{whenever}\quad n &gt; n_0.
 \end{eqnarray}
 </p>
 </div>
 
-<p>Geometrically, this means that for sufficiently large values of $n$, the points $z_n$ lie in any given $\varepsilon$ neighborhood of $z$ (Figure 1). Since we can choose $\epsilon$ as small as we please, it follows that the points $z_n$ become arbitrarily close to $z$ as their subscripts increase. Note that the value of $n_0$ that is needed will, in general, depend on the value of $\epsilon$.</p>
+<p>Geometrically, this means that for sufficiently large values of $n$, the points $z_n$ lie in any given $\varepsilon$ neighborhood of $z$ (Figure 1). Since we can choose $\varepsilon$ as small as we please, it follows that the points $z_n$ become arbitrarily close to $z$ as their subscripts increase. Note that the value of $n_0$ that is needed will, in general, depend on the value of $\varepsilon$.</p>
 
 <figure class="w3-center">
     <img class="w3-image w3-mobile" src="../images/sequence.gif" alt="Geometric interpretation" title="Geometric interpretation" style="width:503px;">
@@ -211,21 +211,21 @@ If the sequence has no limit, it <em>diverges</em>.</p>
 
 <div class="w3-padding w3-responsive">
 <details>
-<summary class:"w3-hover-text-white" style="background-color:#f2f2f2" ><b style="font-size:20px" >Proof</b></summary>
+<summary class="w3-hover-text-white" style="background-color:#f2f2f2" ><b style="font-size:20px" >Proof</b></summary>
 
 <br>
 
-<p>To prove this theorem, we first assume that conditions (\ref{teoseq02}) hold. That is, there exist, for each $\epsilon>0$, positive integers $n_1$ and $n_2$ such that
+<p>To prove this theorem, we first assume that conditions (\ref{teoseq02}) hold. That is, there exist, for each $\varepsilon>0$, positive integers $n_1$ and $n_2$ such that
 \[
-|x_n-x|&lt;\frac{\epsilon}{2}\quad \text{whenever} \quad n&gt;n_1
+|x_n-x|&lt;\frac{\varepsilon}{2}\quad \text{whenever} \quad n&gt;n_1
 \]
 and
 \[
-|y_n-y|&lt;\frac{\epsilon}{2}\quad \text{whenever} \quad n&gt;n_2.
+|y_n-y|&lt;\frac{\varepsilon}{2}\quad \text{whenever} \quad n&gt;n_2.
 \]
 Hence if $n_0$ is the larger of the two integers $n_1$ and $n_2$,
 \[
-|x_n-x|&lt;\frac{\epsilon}{2}\quad \text{and} \quad |y_n-y|&lt;\frac{\epsilon}{2} \quad \text{whenever} \quad n &gt; n_0.
+|x_n-x|&lt;\frac{\varepsilon}{2}\quad \text{and} \quad |y_n-y|&lt;\frac{\varepsilon}{2} \quad \text{whenever} \quad n &gt; n_0.
 \]
 Since
 \[
@@ -233,14 +233,14 @@ Since
 \]
 then
 \[
-|z_n-z|&lt; \frac{\epsilon}{2}+\frac{\epsilon}{2} \quad \text{whenever} \quad n &gt; n_0.
+|z_n-z|&lt; \frac{\varepsilon}{2}+\frac{\varepsilon}{2} \quad \text{whenever} \quad n &gt; n_0.
 \]
 Therefore condition (\ref{teoseq01}) holds.</p>
 
 <p>Conversely, if we start with condition (\ref{teoseq01}), we know that for each positive
-number $\epsilon$, there exists a positive integer $n_0$ such that
+number $\varepsilon$, there exists a positive integer $n_0$ such that
 \[
-|(x_n+iy_n)-(x+iy)|&lt;\epsilon \quad \text{whenever} \quad n&gt;n_0.
+|(x_n+iy_n)-(x+iy)|&lt;\varepsilon \quad \text{whenever} \quad n&gt;n_0.
 \]
 However
 \[
@@ -252,7 +252,7 @@ and
 \]
 Consequently
 \[
-|x_n-x|&lt;\epsilon \quad \text{and} \quad |y_n-y|&lt;\epsilon \quad \text{whenever} \quad n &gt; n_0.
+|x_n-x|&lt;\varepsilon \quad \text{and} \quad |y_n-y|&lt;\varepsilon \quad \text{whenever} \quad n &gt; n_0.
 \]
 Therefore, conditions (\ref{teoseq02}) are satisfied. $\blacksquare$
 </p>
