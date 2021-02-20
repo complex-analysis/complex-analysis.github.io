@@ -458,7 +458,7 @@ where $z_0$ and the coefficients $a_n$ are complex constants and $z$ is any poin
 			<div style="display:block" id="ggb-element"></div>
 		</div>
 
-		
+
 
 		<br />
 
@@ -473,29 +473,29 @@ where $z_0$ and the coefficients $a_n$ are complex constants and $z$ is any poin
 				<pre><code>#Número complejo
         
 Z = 0.72 + ί * 0.61
-
+					
 #Círculo de radio 1
-
-c = Circle((0,0), 1)
-
+					
+c = Circunferencia((0,0), 1)
+					
 #Número de términos de la serie parcial 
-
-n = Slider(0, 250, 1, 1, 150, false, true, false, false)
-
-SetValue(n, 250)
-
+					
+n = Deslizador(0, 250, 1, 1, 150, false, true, false, false)
+					
+Valor(n, 250)
+					
 #Define la sucesión z^n
-
-S = Join({0 + ί * 0, 1 + ί * 0}, Sequence(Z^j, j, 1, n))
-
+					
+S = Encadena({0 + ί * 0, 1 + ί * 0}, Secuencia(Z^j, j, 1, n))
+					
 #Define la suma paracial
-
-SP = Sequence(Sum(S, j), j, 1, n + 2)
-
+					
+SP = Secuencia(Suma(S, j), j, 1, n + 2)
+					
 #Finalmente une los puntos de la suma parcial con segmentos
-
-L = Sequence(Segment(Element(SP, j), Element(SP, j + 1)), j, 1, n + 1)
-</code></pre>
+					
+L = Secuencia(Segmento(Elemento(SP, j), Elemento(SP, j + 1)), j, 1, n + 1)</code>
+				</pre>
 			</details>
 		</div>
 
