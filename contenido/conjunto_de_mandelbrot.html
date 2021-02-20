@@ -285,18 +285,13 @@
             o mueve el deslizador.
         </p>
 
-        <div class="w3-center w3-hide-small">
-            <p><iframe scrolling="no" title="Mandelbrot iteration orbits"
-                    src="https://www.geogebra.org/material/iframe/id/hvuaudu6/width/800/height/594/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/true"
-                    width="800px" height="594px" style="border:0px;" allowfullscreen> </iframe></p>
-        </div>
+        <div class="w3-center">
+			<div style="display:block" id="ggb-element"></div>
+		</div>
 
-        <div class="w3-hide-large w3-hide-medium w3-khaki w3-round w3-padding w3-panel">
-            <p><i class="fas fa-sad-tear"></i> Lo siento, este applet no funciona para
-                dispositivos con pantallas pequeñas. Rota tu dispositivo horizontalmente.
-                O cambia el tamaño de tu ventana de tal forma que el ancho es
-                más grande que el largo.</p>
-        </div>
+        
+
+        
 
         <br />
 
@@ -347,7 +342,7 @@
             <p class="w3-text-grey w3-hide-large">Hola, si estás usando una tableta,
                 te recomiendo usar una computadora de escritorio para
                 tener una mejor interacción con el applet.</p>
-            <iframe name="Mandelbrot" src="../applets/p5js/mandelbrot-content/index.html" width="770px" height="590px"
+            <iframe name="Mandelbrot" src="../applets/p5js/mandelbrot-content/es.html" width="770px" height="590px"
                 style="border:none;" style="overflow:hidden;" scrolling="no"></iframe>
 
             <div class="w3-text-grey " style="display: flex; justify-content: space-between; width: 800px;">
@@ -356,7 +351,7 @@
                 <div><strong>R</strong>=Reset vista </div>
                 <div><strong>O</strong>=Órbita </div>
                 <div><strong>I</strong>=Información &amp; Frame</div>
-                <div><a href="../applets/p5js/mandelbrot/" target="_blank" title="Pantalla completa"><i
+                <div><a href="../applets/p5js/mandelbrot/es.html" target="_blank" title="Pantalla completa"><i
                             class="fas fa-expand "></i></a></div>
             </div> <br />
             <!--
@@ -526,6 +521,27 @@
             </footer>
 
     </div> <!-- end wrapper -->
+
+    <!--GeoGebra embeding-->
+	<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+	<script>
+		var params = {
+			"width": 800,
+			"height": 594,
+			"material_id": "mbnspd3n",
+			"borderColor": "888888",
+			"playButton": false,
+			"showFullscreenButton": true,
+			"enableShiftDragZoom": true,
+			"showResetIcon": true
+		};
+		var ggbApplet = new GGBApplet(params, true);
+		window.addEventListener("load", function () {
+			ggbApplet.inject('ggb-element');
+		});
+	</script>
+	<!--GeoGebra embeding ends-->
 
     <!-- nice smart quotes, via: http://smartquotesjs.com -->
     <script src="../js/smartquotes.min.js"></script>
