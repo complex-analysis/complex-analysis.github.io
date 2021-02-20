@@ -1,0 +1,88 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Mandelbrot-Julia Sets explorer">
+<meta name="author" content="Juan Carlos Ponce Campuzano">
+<meta name="language" content="en"/>
+<title>Mandelbrot-Julia Sets Relationship explorer</title>
+<!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+<script language="javascript" type="text/javascript" src="../libraries/p5.min.js"></script>
+<script language="javascript" type="text/javascript" src="libraries/dat.gui.min.js"></script>
+
+
+<!--MathJax starts-->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+                       TeX: { equationNumbers: { autoNumber: "AMS" } }
+                       });
+    </script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+<!---<script type="text/x-mathjax-config">//left-side eq
+ MathJax.Hub.Config({
+ displayAlign: "left",
+ displayIndent: "5em"
+ });
+ </script>--->
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML">
+    </script>
+<!--MathJax Ends-->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-155852901-1');
+</script>
+
+
+<!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+<link rel="icon" type="image/png" href="https://jcponce.github.io/assets/img/png/icon/infinity32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://jcponce.github.io/assets/img/png/icon/infinity16.png" sizes="16x16">
+<link rel="stylesheet" href="libraries/dat-gui-light-theme.css">
+<link rel="stylesheet" href="https://jcponce.github.io/assets/style/w3.css">
+<link rel="stylesheet" href="https://jcponce.github.io/domain-coloring/styledc.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    
+<style>
+ div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+ body {
+    padding: 0;
+    margin: 0;
+}
+
+canvas {
+    position: absolute;
+    z-index: -10;
+    width: 800px;
+    height: 400px;
+    background-color: #ff0000;
+    left: 0px;
+    top: 0px;
+}
+ 
+</style>
+
+
+</head>
+<body style="background-color:#333333;">
+
+<div id="my-gui-container"></div>
+
+<script language="javascript" type="text/javascript" src="auxiliar.js"></script>
+<script language="javascript" type="text/javascript" src="julia.js"></script>
+<script language="javascript" type="text/javascript" src="mandelbrot.js"></script>
+<script language="javascript" type="text/javascript" src="sketch-es.js"></script>
+</body>
+
+
+
+</html>
