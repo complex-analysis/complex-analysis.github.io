@@ -94,8 +94,8 @@ function draw() {
     stroke(0);
     strokeWeight(0.2);
     textSize(22);
-    text("Control keys", 30, 70);
-    text("Iterations", 35, 500);
+    text("Controles", 30, 70);
+    text("Iteraciones", 35, 500);
     }
 
     
@@ -296,7 +296,7 @@ class Mandelbrot {
             text("x: " + str( round( this.pos.x * 100 )/100 )
                  + "\ny: " + str( round( this.pos.y * 100 )/100 )
                  + "\nzoom: " + str( round(  (1 / this.zoom) * 100 )/100 )
-                 + "\niterations: " + str( round(  (this.maxIter) * 100 )/100 )
+                 + "\niteraciones: " + str( round(  (this.maxIter) * 100 )/100 )
                  , ctlsBack + 10, 18
                  );
         }
@@ -404,7 +404,7 @@ function controlsUI(){
     buttonINFO.addClass('button');
     buttonINFO.mousePressed(userINFO);
 
-    sliderIter = createSlider(0, 250, 100, 1);
+    sliderIter = createSlider(0, 200, 100, 1);
     sliderIter.style('width', '140px')
     sliderIter.position(buttonUP.x-50, buttonUP.y+420)
 }
