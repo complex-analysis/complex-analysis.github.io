@@ -143,25 +143,7 @@
   gtag('config', 'UA-155852901-1');
 </script>
     
-<!--GeoGebra embeding-->
-<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
 
-<script>
-	var params = { 
-				"width": 791, 
-				"height": 439,
-				"material_id": "csrzeux8",
-                "borderColor": "888888",
-                "playButton": false,
-                "showFullscreenButton": true,
-                "enableShiftDragZoom": true,
-                "showResetIcon": true };
-    var ggbApplet = new GGBApplet(params, true);
-    window.addEventListener("load", function() { 
-        ggbApplet.inject('ggb-element');
-    });
-</script>
-<!--GeoGebra embeding ends-->
     
 </head>
 
@@ -298,6 +280,26 @@ comenzando con el argumento $\theta/n$.</p>
 	</footer>
 
 </div> <!-- end wrapper -->
+
+<!--GeoGebra embeding-->
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+<script>
+	var params = { 
+				"width": 791, 
+				"height": 439,
+				"material_id": "csrzeux8",
+                "borderColor": "888888",
+                "playButton": false,
+                "showFullscreenButton": true,
+                "enableShiftDragZoom": true,
+                "showResetIcon": true };
+    var ggbApplet = new GGBApplet(params, true);
+    window.addEventListener("load", function() { 
+        ggbApplet.inject('ggb-element');
+    });
+</script>
+<!--GeoGebra embeding ends-->
 
 <!-- nice smart quotes, via: http://smartquotesjs.com -->
 <script src="../js/smartquotes.min.js"></script>

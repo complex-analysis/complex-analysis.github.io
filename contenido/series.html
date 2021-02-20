@@ -454,19 +454,11 @@ where $z_0$ and the coefficients $a_n$ are complex constants and $z$ is any poin
 
 		</br>
 
-		<div class="w3-center w3-hide-medium w3-hide-small">
-			<iframe scrolling="no" title="Geometric series complex numbers"
-				src="https://www.geogebra.org/material/iframe/id/e9zzzqnu/width/776/height/548/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/true/ctl/true"
-				width="776px" height="548px" style="border:0px;" allowfullscreen> </iframe>
-			<!--<div style="width:776px;height:548px;display:block" id="applet_container1"></div>-->
+		<div class="w3-center">
+			<div style="display:block" id="ggb-element"></div>
 		</div>
 
-		<div class="w3-hide-large w3-khaki w3-round w3-padding w3-panel">
-			<p><i class="fas fa-sad-tear"></i>
-				Lo siento, este applet no funciona para dispositivos con pantallas pequeñas.
-				Rota tu dispositivo horizontalmente. O cambia el tamaño de tu ventana de tal forma que el ancho es
-				más grande que el largo.</p>
-		</div>
+		
 
 		<br />
 
@@ -474,7 +466,8 @@ where $z_0$ and the coefficients $a_n$ are complex constants and $z$ is any poin
 			<details>
 				<summary class="w3-hover-text-blue"><strong>Código</strong></summary>
 				<br>
-				<p>Puedes usar el siguiente script en <a href="https://www.geogebra.org/classic" target="_blank">GeoGebra</a>
+				<p>Puedes usar el siguiente script en <a href="https://www.geogebra.org/classic"
+						target="_blank">GeoGebra</a>
 					para explorar tú mismo y hacer tu propia versión. El símbolo # indica comentarios.</p>
 
 				<pre><code>#Número complejo
@@ -507,34 +500,7 @@ L = Sequence(Segment(Element(SP, j), Element(SP, j + 1)), j, 1, n + 1)
 		</div>
 
 
-
-
-
-		<!--<div class="w3-container w3-center">
-    <button onclick="var ifr=document.getElementsByName('JoukAirfoil')[0]; ifr.src=ifr.src;" class="w3-btn w3-ripple w3-grey w3-hover-text-white">Reset</button>
-    
-    <a href="../applets/p5js/joukowsky/index.html" class="w3-btn w3-ripple w3-grey w3-hover-text-white" target="_blank">Open other tab</a>
-     
-     <a href="https://www.geogebra.org/material/show/id/ycvkuhwq" class="w3-btn w3-ripple w3-grey w3-hover-text-white" target="_blank"> Download <i class="fa fa-download w3-hover-text-blue" aria-hidden="true"></i> </a>
-</div>-->
-
-		<!--
-<hr>
-
-<p><strong>Exercises</strong></p>
-
-<p>
-1. Prove properties 1 and 2.
-</p>-->
-
-		<!--<div class="w3-responsive">
-
-</div>-->
-
-
 		<br />
-
-		<!--<p><strong>Note:</strong> The applet was made with <a href="https://www.geogebra.org/material/show/id/zsf2n5ny">GeoGebra</a>.</a></p>-->
 
 		<!-- link to the next page -->
 		<a href="series_de_taylor.html">
@@ -556,6 +522,27 @@ L = Sequence(Segment(Element(SP, j), Element(SP, j + 1)), j, 1, n + 1)
 		</footer>
 
 	</div> <!-- end wrapper -->
+
+	<!--GeoGebra embeding-->
+	<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+	<script>
+		var params = {
+			"width": 776,
+			"height": 548,
+			"material_id": "wcvnn3dm",
+			"borderColor": "888888",
+			"playButton": false,
+			"showFullscreenButton": true,
+			"enableShiftDragZoom": true,
+			"showResetIcon": true
+		};
+		var ggbApplet = new GGBApplet(params, true);
+		window.addEventListener("load", function () {
+			ggbApplet.inject('ggb-element');
+		});
+	</script>
+	<!--GeoGebra embeding ends-->
 
 	<!-- nice smart quotes, via: http://smartquotesjs.com -->
 	<script src="../js/smartquotes.min.js"></script>
