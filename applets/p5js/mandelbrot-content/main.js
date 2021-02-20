@@ -404,7 +404,7 @@ function controlsUI(){
     buttonINFO.addClass('button');
     buttonINFO.mousePressed(userINFO);
 
-    sliderIter = createSlider(0, 400, 100, 1);
+    sliderIter = createSlider(0, 250, 100, 1);
     sliderIter.style('width', '140px')
     sliderIter.position(buttonUP.x-50, buttonUP.y+420)
 }
