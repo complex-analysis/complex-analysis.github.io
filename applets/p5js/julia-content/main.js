@@ -5,7 +5,7 @@
  * Original code by Kato https://www.openprocessing.org/user/114431
  */
 
-// Last update 18-Oct-2018
+// Last update 18-Oct-2020
 
 let julia = new Julia();
 let c;
@@ -354,7 +354,7 @@ function controlsUI(){
     buttonINFO.addClass('button');
     buttonINFO.mousePressed(userINFO);
 
-    sliderIter = createSlider(0, 400, 100, 1);
+    sliderIter = createSlider(0, 200, 100, 1);
     sliderIter.style('width', '140px')
     sliderIter.position(buttonUP.x-50, buttonUP.y+420)
 }

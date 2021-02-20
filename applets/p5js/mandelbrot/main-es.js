@@ -1,10 +1,10 @@
 /* Written in p5.js (https://p5js.org/)
  * Under Creative Commons License
  * https://creativecommons.org/licenses/by-sa/4.0/
- * Written by Juan Carlos Ponce Campuzano, 28-Nov-2018
+ * Written by Juan Carlos Ponce Campuzano, 20-Feb-2021
  */
 
-// Last update 14-Nov-2019
+// Last update 
 
 let mandelbrot;
 
