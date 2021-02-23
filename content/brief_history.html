@@ -466,15 +466,51 @@
         <a href="#gonzalez-velasco" alt="González-velasco" title="González-Velasco">7</a>, p. 164]. That is
         $$x = 2 + \cancel{\sqrt{-1}} + 2 - \cancel{\sqrt{-1}}.$$
         And concluded that $x = 4$ is actually the solution of $x^3=15x+4$
-        obtained from Cardano's formula [<a href="#bombelli" alt="Bombelli" title="Bombelli">1</a>, p. 294].
+        obtained from Cardano's formula [<a href="#bombelli" alt="Bombelli" title="Bombelli">1</a>, p. 294],
+        see Figure 6.
         This trick works in only a few cases, however, it helped to
         understand imaginary numbers and to take their cube roots or
         manipulate them when they appear aside real numbers.
       </p>
     </div>
 
+    <div class="w3-row-padding">
+      <div id="phase" class="w3-third w3-container w3-margin-bottom w3-center">
+        
+        <p style="font-size:15px">
+          \begin{eqnarray*}
+          x^3 &=& 15x + 4\\
+          [x^3 &=& px + p]
+          \end{eqnarray*}
+          <br/>
+          \begin{eqnarray*}
+          (4/2)^2-(15/3)^3 &=& -121\\
+          [\left(q/2\right)^2 -\left(p/2\right)^3]&=&-121
+          \end{eqnarray*}
+          <br/>
+          \begin{eqnarray*}
+          x &=& \sqrt[3]{2+ \sqrt{-121}} + \sqrt[3]{2- \sqrt{-121}}\\
+          x &=& \sqrt[3]{2+ \sqrt{-11}} + \sqrt[3]{2- \sqrt{-11}} \\
+          x &=&  2 + \sqrt{-1} +  2 - \sqrt{-1} = 4
+          \end{eqnarray*}
+        
+        </p>
+      </div>
+      <div id="modulus" class="w3-twothird w3-container w3-margin-bottom">
+        <figure class="w3-center">
+          <img class="w3-image w3-mobile" src="../images/chp01/bombelli-solution.png" alt="Bombelli's solution"
+            title="Bombelli's solution" style="width:92%;">
+          <figcaption>
+            <b>Figure 6:</b> Bombelli's original solution.
+          </figcaption>
+        </figure>
+      </div>
+
+    </div>
+
     <p>
-      Of course, Bombelli did not have at his disposal the power of today's algebraic notation,
+      Of course, as you can see in Figure 6, 
+      Bombelli did not have at his disposal the power of today's algebraic notation
       (neither computers) and his computations were limited to numbers in "real domain".
       In fact, most of italian mathematicians at that time tended to think of cubes or squares
       as geometric objects rather than algebraic quantities. However, he is credited for
@@ -533,7 +569,7 @@
       <img class="w3-image w3-mobile" src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Leonhard_Euler.jpg"
         alt="Euler" title="Euler" style="width:25%;">
       <figcaption>
-        <b>Figure 6:</b> Euler.
+        <b>Figure 7:</b> Euler.
       </figcaption>
     </figure>
 
@@ -622,7 +658,7 @@
             src="https://upload.wikimedia.org/wikipedia/commons/f/f6/William_Rowan_Hamilton_portrait_oval_combined.png"
             alt="William Rowan Hamilton" title="William Rowan Hamilton" style="width:55%;">
           <figcaption>
-            <b>Figure 7:</b> Hamilton.
+            <b>Figure 8:</b> Hamilton.
           </figcaption>
         </figure>
       </div>
@@ -633,7 +669,7 @@
             src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Augustin-Louis_Cauchy_1901.jpg"
             alt="Augustin-Louis Cauchy" title="Augustin-Louis Cauchy" style="width:55%;">
           <figcaption>
-            <b>Figure 8:</b> Cauchy.
+            <b>Figure 9:</b> Cauchy.
           </figcaption>
         </figure>
       </div>
@@ -654,8 +690,8 @@
       $$\int_0^{\infty} \frac{\sin x}{x}\,dx=\frac{\pi}{2}$$
       and
       $$\int_0^{\pi}\log \sin x\,dx =-\pi \log 2.$$
-      The evaluation of real integrals, in addition to solution of 
-      the cubic equation and the fundamental theorem of algebra, 
+      The evaluation of real integrals, in addition to solution of
+      the cubic equation and the fundamental theorem of algebra,
       proved how valuable it was to consider imaginary numbers.
     </p>
 
@@ -665,7 +701,7 @@
           <img class="w3-image w3-mobile" src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Karl_Weierstrass.jpg"
             alt="Karl Weierstrass" title="Karl Weierstrass" style="width:55%;">
           <figcaption>
-            <b>Figure 9:</b> Weierstrass.
+            <b>Figure 10:</b> Weierstrass.
           </figcaption>
         </figure>
       </div>
@@ -675,7 +711,7 @@
             src="https://upload.wikimedia.org/wikipedia/commons/8/82/Georg_Friedrich_Bernhard_Riemann.jpeg"
             alt="Georg Friedrich Bernhard Riemann" title="Georg Friedrich Bernhard Riemann" style="width:70%;">
           <figcaption>
-            <b>Figure 10:</b> Riemann.
+            <b>Figure 11:</b> Riemann.
           </figcaption>
         </figure>
       </div>
@@ -716,7 +752,7 @@
       phantoms of our "imagination", and thus truly "imaginary"?
     </p>
     -->
-    
+
 
     <hr>
 
@@ -737,8 +773,9 @@
       <li id="descartes">Descartes, R. (1637). <em>La Géométrie.</em> Paris: A. Herman, Librairie Scientifique. <a
           href="https://archive.org/details/geometryofrene00desc/page/174/mode/2up?q=imaginary" target="_blank"><i
             class="fas fa-external-link-alt"></i></a></li>
-      <li id="euler-algebra">Euler, L. (1972). <em>Elements of Algebra.</em> (Rev. John Hewlett, B.D. F.A.S. &c, Trans.). Springer-Verlag.
-         (Original work published 1770). <a href="https://www.springer.com/gp/book/9781461385134" target="_blank"><i
+      <li id="euler-algebra">Euler, L. (1972). <em>Elements of Algebra.</em> (Rev. John Hewlett, B.D. F.A.S. &c,
+        Trans.). Springer-Verlag.
+        (Original work published 1770). <a href="https://www.springer.com/gp/book/9781461385134" target="_blank"><i
             class="fas fa-external-link-alt"></i></a></li>
       <li id="euleri">Euleri, L. (1845). <em>Instituitionum Calculi Integralis.</em> Volumen Quartum.
         Petropoli. Impensis Academia Imperialis Scientarum. <a
