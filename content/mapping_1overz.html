@@ -139,13 +139,16 @@
   gtag('config', 'UA-155852901-1');
 </script>
 
+<!--GeoGebra embeding-->
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
 <script>
 	var params = { 
 				"width": 800, 
 				"height": 435,
 				"material_id": "bf4p8vtm",
                 "borderColor": "888888",
-                "playButton": false,
+                "playButton": true,
                 "showFullscreenButton": true,
                 "showResetIcon": true };
     var ggbApplet = new GGBApplet(params, true);
@@ -155,20 +158,6 @@
 </script>
 <!--GeoGebra embeding ends-->
     
-    <!--GeoGebra embeding-->
-<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
-
-<script>
-    var applet1 = new GGBApplet({material_id: "bf4p8vtm",
-                                borderColor:"888888",
-                                playButton: "true",
-                                showFullscreenButton: "true",
-                                showResetIcon: "true"}, true);
-    window.addEventListener("load", function() {
-          applet1.inject('applet_container1');
-      });
-</script>
-<!--GeoGebra embeding ends-->
     
 </head>
 
