@@ -6,26 +6,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
-	<title>Complex Analysis</title>
+	<title>Análisis Complejo</title>
 
 	<!-- dublin core -->
-	<meta name="dc.title" CONTENT="Complex Analysis">
+	<meta name="dc.title" CONTENT="Análisis Complejo">
 	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
-	<meta name="dc.date" CONTENT="26-01-2019">
-        <meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
-	<meta name="dc.type" CONTENT="Interactive Resource">
+	<meta name="dc.date" CONTENT="26-01-2021">
+    <meta name="dc.isbn" CONTENT="ISBN-13: ">
+	<meta name="dc.type" CONTENT="Recurso Interactivo">
 	<meta name="dc.format" CONTENT="HTML">
-	<meta name="dc.language" CONTENT="en-US">
+	<meta name="dc.language" CONTENT="es-MEX">
 	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 
 	<!-- social media cards -->
-	<meta property="og:title" content="Complex Analysis">
-	<meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+	<meta property="og:title" content="Análisis Complejo">
+	<meta property="og:description" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
 	<meta property="og:type" content="website">
 	<!--<meta property="og:image" content="">
 	<meta property="og:url" content="">-->
-	<meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
-	<meta property="og:site_name" content="Complex Analysis">
+	<meta name="twitter:card" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:site_name" content="Análisis Complejo">
     
 	
 	<!-- FONTS AND CSS -->
@@ -84,7 +84,7 @@
 						$('#title a').text('Table of Contents');
 					},
 					function() {
-						$('#title a').text('Complex Analysis');	// set back when moving out
+						$('#title a').text('Análisis Complejo');	// set back when moving out
 					}
 				);
 
@@ -94,7 +94,7 @@
 						$('#title a').text('Prev: Complex Potential');
 					},
 					function() {
-						$('#title a').text('Complex Analysis');
+						$('#title a').text('Análisis Complejo');
 					}
 				);
 				$('#next a').hover(
@@ -102,7 +102,7 @@
 						$('#title a').text('Next: Joukowsky Airfoil');
 					},
 					function() {
-						$('#title a').text('Complex Analysis');
+						$('#title a').text('Análisis Complejo');
 					}
 				);
 			}
@@ -152,16 +152,21 @@
 <body>
 <div id="wrapper">
         
-        <header><p><span id="prev"><a href="complex_potential_basic_examples.html">&larr;</a></span><span id="title"><a href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a href="joukowsky_airfoil.html">&rarr;</a></span><div class="clear"></div></p></header>
+        <header><p><span id="prev"><a href="potencial_complejo_ejemplos_basicos.html">&larr;</a></span>
+			<span id="title"><a href="tabla_de_contenidos.html">Análisis Complejo</a></span>
+			<span id="next"><a href="aleron_joukowsky.html">&rarr;</a></span><div class="clear"></div></p></header>
         
 
-<h1>Uniform Flow Around a Circle</h1>
+<h1>Flujo Uniforme Alrededor </h1>
+<h4 style="font-size:45px"><strong>de un Círculo</strong></h4>
 <hr>
 
-<p>Consider a uniform flow at speed $U$ in the $x$-direction, with complex
-	potential $F(z)=Uz$. If we insert an impermeable circular obstacle, at $|z|=a$ say, 
-	then the flow will be disturbed as illustrated in the image below. 
-	The challenge here is to calculate the disturbed flow. 
+<p>Consideremos un flujo uniforme con velocidad $U$, dirección con respecto al eje $x$, 
+	con potencial complejo $F(z)=Uz$. Si agregamos un obstáculo
+	circular impermeable, definido como $|z|=a$ por ejemplo, 
+	entonces el flujo se verá afectado como se muestra 
+	en la imagen de abajo.
+	El desafío aquí es calcular el flujo perturbado.
 </p>
 
 <div class="w3-hide-small w3-center">
@@ -183,132 +188,143 @@
 
 <br/>
 
- <p>Here we can use a well known result in fluid 
-	dynamics established by the English mathematician 
+ <p>Aquí podemos usal el resultado bien conocido en 
+	 dinámica de fluidos establecido por el matemático
+	 Inglés  
 	<a href="http://mathshistory.st-andrews.ac.uk/Biographies/Milne-Thomson.html" target="_blank">L. M. Milne-Thompson</a>:
 </p>
 
  <div class="w3-responsive">
-	<p class="theorem"><strong>Circle Theorem:</strong> <em>Suppose a complex potential 
-		$F(z)$ is given such that any singularities in $F(z)$ occur in $|z|\gt a$.
-		Then the potential
+	<p class="theorem"><strong>Teorema del Círculo</strong> <em>
+		Supongamos que tenemos un potencial complejo 
+		$F(z)$ tal sus singularidades se encuentran en $|z|\gt a$.
+		Entonces el potencial 
 	\begin{eqnarray}\label{circle-theorem}
 	w = F(z) + \overline{F\left(\frac{a^2}{\overline{z}}\right)}
 	\end{eqnarray}
-	(where the bar denotes complex conjugate) has the same singularities as $F(z)$ in $|z|\gt a$
-	and the circle $|z|=a$ is a streamline.</em></p>
+	(donde la barra denota el conjugado complejo) tiene las mismas singularidades 
+	que $F(z)$ en $|z|\gt a$
+	y el círculo  $|z|=a$ es una línea de flujo.</em></p>
 	</div>
 
 <br>
 
- <p><em>Proof:</em> Let $F(z)$ be a complex potential such that any singularities occur only in the region
-	 $|z|\gt a$ (with $a>0$) and define
+ <p><em>Demostración:</em> Sea $F(z)$ un potencial complejo
+	tal que todas sus singularidades ocurren solo en la región
+	 $|z|\gt a$ (con $a>0$) y define 
 	 \begin{eqnarray}\label{circle-01}
 	 w = F(z) + \overline{F\left(\frac{a^2}{\overline{z}}\right)}.
 	 \end{eqnarray}
-	Notice that if $|z|\gt a$, then $\big|a^2/\,\overline{z}\big|\lt a$. Thus, 
-	since $F(z)$ has no singularities in $|z|\leq a$, it follows that 
-	the second term in (\ref{circle-01}) has no singularites 
-	in $|z|\gt a$. This means that $F$ and $w$ have the same singularities in $|z|\gt a$.
+	Notemos que si $|z|\gt a$, entonces $\big|a^2/\,\overline{z}\big|\lt a$. De esta forma,
+	dado que $F(z)$ no tiene singularidades en $|z|\leq a$, 
+	se sigue que el segundo término de (\ref{circle-01}) tampoco tiene singularidades en
+	$|z|\gt a$. Esto significa que $F$ y $w$ tienen singularidades en $|z|\gt a$.
  </p>
 
- <p>Now we are interested to know what happens on the circular boundary $|z|=a$. 
-	 In this case we have that $\overline{z} \cdot z = a^2$. That is
+ <p>Ahora estamos interesados en conocer 
+	 lo que sucede en la frontera circular $|z|=a$. 
+	 En este caso tenemos que  $\overline{z} \cdot z = a^2$.
+	 Es decir
 	 $$z= \frac{a^2}{\overline{z} }.$$
-	 Thus
+	 De esta manera,
 	 $$\big. w \big|_{|z|=a}= F(z)+ \overline{F\left(\frac{a^2}{\overline{z}}\right)} = F(z) + \overline{F\left(z\right)} = 2 \text{Re}\left(f(z)\right),$$
-	which is entirely real. Therefore on the boundary $|z|=a$
+	la cual es completamente real. Por lo tanto en la frontera $|z|=a$
 	$$\psi  = \text{Im}\, w = 0.$$ 
-	This shows that the circle $|z|=a$ is a streamline. $\blacksquare$
+	Esto demuestra que el círuclo $|z|=a$ es una línea de flujo. $\blacksquare$
 </p>
 
 
-<p>
-	Notice that the complex potential $F(z)=Uz$ satisfies the hypothesis of the Circle Theorem. We
-	can therefore obtain the complex potential of the uniform flow around a circle
-	by substituting $F(z)=Uz$ into equation (\ref{circle-theorem}):
+<p>Notemos que el potencial complejo $F(z)=Uz$ satisface la hipótesis 
+	del Teorema del Círculo. Entonces podemos obtener el potencial complejo
+	del flujo unforme alrededor del círculo al sustituir
+	$F(z)=Uz$ en la ecuación (\ref{circle-theorem}):
 	\begin{eqnarray}\label{potential}
 	 w = Uz + \overline{\frac{Ua^2}{\overline{z}}} = Uz + \frac{Ua^2}{z}.
 	\end{eqnarray}
 </p>
 
-<p>Consequently, the streamfunction is just the imaginary part of (\ref{potential}), namely
+<p>Consecuentemente, la función de flujo es justamente la componente
+	imaginaria de (\ref{potential}), es decir
 	\begin{eqnarray*}
 	\psi = Uy\left(1- \frac{a^2}{x^2+y^2} \right).
 	\end{eqnarray*}
-	and we can see that the circle $x^2+y^2=a^2$ is indeed a streamline, with $\psi=0$. The resulting
-	flow is shown in Figure 2 with $a=1$.
+	y podemos obervar que el círculo $x^2+y^2=a^2$ es de hecho una línea de flujo, 
+	con $\psi=0$. El flujo resultante se muestra en la Figura 2 con $a=1$.
 </p>
 
 <figure class="w3-center">
 	<img class="w3-image w3-mobile" src="../images/flow-c.png" alt="Uniform flow" title="Uniform flow around circle" style="width:60%;">
 		<figcaption>
-			<b>Figure 1:</b> Uniform flow around a circle (right).
+			<b>Figura 1:</b> Flujo uniforme alrededor de un círculo.
 		</figcaption>
  </figure>
 
-<p>You probably have noticed that (\ref{potential}) has a singularity at $z=0$. This
-	kind of singularity is known as a <em>doublet</em> and corresponds to the 
-	function $Ua^2/z$. The singularity at the origin is inside the obstacle and 
-	thus does not affect the external flow. The full streamline pattern, including
-	the doublet inside the circle, is shown in Figure 3.
+<p>Es probable que hayas notado que (\ref{potential}) tiene una singularidad en $z=0$. 
+	Este tipo de singularidad se conoce como un <em>doblete</em> y corresponde a la función
+	$Ua^2/z$. La singularidad en el origen está en el interior del 
+	obstáculo y de esta manera no afecta el flujo externo. 
+	El patrón de las líneas de flujo, incluyendo el doblete dentro del círculo, 
+	se muestr en la Figura 3.
 </p>
 
 <figure class="w3-center">
 	<img class="w3-image w3-mobile" src="../images/doublet_Fotor.png" alt="Doublet" title="Doublet" style="width:60%;">
 		<figcaption>
-			<b>Figure 3:</b> Streamlines caused by a doublet in a uniform flow.
+			<b>Figura 3:</b> Líneas de flujo causadas por un doblete en un flujo uniforme.
 		</figcaption>
  </figure>
 
  <div class="w3-padding w3-responsive">
-	<p><strong>Exercise:</strong>  Show that the components of velocity field 
-		$\mathbf V = (u, v)$ for the uniform flow around a circle are given by
+	<p><strong>Ejercicio:</strong>  Demuestra que las componentes del vector velocidad
+		$\mathbf V = (u, v)$ para el flujo uniforme alrededor del círculo 
+		están definidas como
 		\begin{eqnarray*}
 		u = U\left(1 - a^2\frac{x^2-y^2}{\left(x^2+y^2\right)^2}\right),\quad v= -2  U^{2}  a^{2}  \frac{ x y}{ \left(x^{2} + y^{2} \right)^{2}}
 		\end{eqnarray*}
-		where $U$ is the speed and $a$ is the radius.
+		donde $U$ es la velocidad y $a$ es el radio.
 	</p>
 </div>
 
 
 <hr>
 
-<h2>Uniform flow around circle with circulation</h2>
+<h2>Flujo uniforme alrededor el círculo <br/>con circulación</h2>
 
-<p>If we add a vortex to the complex potential defined in (\ref{potential}), we obtain
-   a uniform flow around a circle with circulation:
+<p>Si agregamos un vótice al potencial complejo defindo en (\ref{potential}), 
+	obtenemos un flujo uniforme alrededor un círuclo con circulación:
 	\begin{eqnarray}\label{circulation}
 	 w = Uz + \frac{Ua^2}{z} - \frac{iC}{2\pi}\log z,
 	\end{eqnarray}
-   where $C\in \mathbb R$ represents the <em>circulation</em>  about the circle.
+   donde $C\in \mathbb R$ representa la <em>circulación</em> alrededor del círculo.
 </p>
 
 <div class="w3-responsive">
-<p>In this case, the streamfunction is 
+<p>En este caso, la función de flujo es 
 	\begin{eqnarray*}
 	 \psi = U y \left( 1 - \frac{a^2}{x^2+y^2} \right) - \frac{C}{4\pi} \log\left(x^2+y^2\right).
 	\end{eqnarray*}
-	Notice that the circle $x^2+y^2=a^2$ is still a streamline, with $\psi = - (C/2\pi)\log a$.
-	Any stagnation point in the flow satisfies the equation
+	Notemos que el círculo $x^2+y^2=a^2$ todavía sigue siendo una línea de flujo, con $\psi = - (C/2\pi)\log a$.
+	Cualquier punto de estancamiento en el flujo satisface la ecuación
 	$$0 = U - \frac{Ua^2}{z^2} - \frac{iC}{2\pi z},$$
-	which can be rearranged to the quadratic equation
+	la cual se puede re-escribir como la ecuación cuadrática
 	$$z^2-2i\gamma a z - a^2 = 0, \quad \text{with}\quad \gamma =\frac{C}{4\pi Ua}.$$
-	The roots of this equation are
+	Las raíces de esta ecuación son 
 	$$\frac{z}{a} = i\gamma \pm \sqrt{1-\gamma^2}.$$
 	</p>
 </div>
 
 <p>
-	Thus when $\gamma = 0$, there is no circulation with
-    stagnation points at $z =\pm a$. As $\gamma$ increases, the anticlockwise 
-	circulation causes the stagnation points to move upwards around the circle. 
-	When it reaches the value 1, the two stagnation points coalesce at the top of the 
-	cylinder $z = ia$. If  $\gamma > 1$, then one stagnation point moves into the 
-	flow; the other one is inside the circle. </p>
+	De esta manera cuando $\gamma = 0$, no hay circulación y los puntos de 
+	estancamiento son  $z =\pm a$. Cuando $\gamma$ incrementa, 
+	la ciruclación será anti horaria causa que los puntos de estancamiento
+	se mueven hacia arriba alrededor del círculo. 
+	Cuando toma el valor de 1, los dos puntos de estancamiento 
+	coinciden en la parte superior del cilindro $z = ia$. 
+	Si  $\gamma > 1$, entonces un punto de estancamiento 
+	se mueve hacia el flujo; mientras que el otro punto se encuentra dentro del círculo. </p>
 
-<p>Explore all the cases in the applet below which shows the flow and a circle of
-	radius 1. Drag the sliders $U$ and $C$ to change speed and circulation, respectively.
+<p>Explora todos los casos en el applet a continuación, el cual muestra el flujo y un círculo de
+	radio 1. Arrastra los controles deslizantes $ U $ y $ C $ para cambiar la velocidad y la circulación, respectivamente.
 </p>
 
 <div class="w3-hide-small w3-center">
@@ -330,21 +346,21 @@
 	<br/>
 
 	<div class="w3-padding w3-responsive">
-		<p><strong>Exercise:</strong>  Show that the components of  velocity field 
-			$\mathbf V = (u, v)$ for the uniform flow around a circle with circulation 
-			are given by
+		<p><strong>Ejercicio:</strong>  Demuestra que las componentes del vector velocidad 
+			$\mathbf V = (u, v)$ para el flujo uniforme alrededor de un círculo 
+			con circulación están dadas por
 			\begin{eqnarray*}
 			u &=& U\left(1 - a^2\frac{x^2-y^2}{\left(x^2+y^2\right)^2}\right) - \frac{C}{2\pi}\frac{y}{x^2+y^2},\\
 			 v &=& -2  U^{2}  a^{2}  \frac{ x y}{ \left(x^{2} + y^{2} \right)^{2}} + \frac{C}{2\pi}\frac{x}{x^2+y^2}
 			\end{eqnarray*}
-			where $U$ is the speed, $a$ is the radius and $C$ is the circulation.
+			donde  $U$ es la velocidad, $a$ es el radio y  $C$ es la circulación.
 		</p>
 	</div>
 
 	<!-- link to the next page -->
-	<a href="joukowsky_airfoil.html"><p class="nextPage">NEXT: Joukowsky Airfoil</p></a>
+	<a href="aleron_joukowsky.html"><p class="nextPage">NEXT: Alerón de Joukowsky</p></a>
 	<footer>
-		<p>[ <a href="../">intro</a>, <a href="https://github.com/jcponce/cabook">source</a>, <a href="https://github.com/jcponce/cabook/issues">issues</a> ]</p>
+		<p>[ <a href="../es.html">intro</a>, <a href="https://github.com/jcponce/cabook">source</a>, <a href="https://github.com/jcponce/cabook/issues">issues</a> ]</p>
 
 		<p class="license">
 			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">

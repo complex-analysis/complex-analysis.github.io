@@ -6,26 +6,26 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
-	<title>Complex Analysis</title>
+	<title>Análisis Complejo</title>
 
 	<!-- dublin core -->
-	<meta name="dc.title" CONTENT="Complex Analysis">
+	<meta name="dc.title" CONTENT="Análisis Complejo">
 	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
-	<meta name="dc.date" CONTENT="26-01-2019">
-    <meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
-	<meta name="dc.type" CONTENT="Interactive Resource">
+	<meta name="dc.date" CONTENT="26-01-2021">
+    <meta name="dc.isbn" CONTENT="ISBN-13: ">
+	<meta name="dc.type" CONTENT="Recurso Interactivo">
 	<meta name="dc.format" CONTENT="HTML">
-	<meta name="dc.language" CONTENT="en-US">
+	<meta name="dc.language" CONTENT="es-MEX">
 	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 
 	<!-- social media cards -->
-	<meta property="og:title" content="Complex Analysis">
-	<meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+	<meta property="og:title" content="Análisis Complejo">
+	<meta property="og:description" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
 	<meta property="og:type" content="website">
 	<!--<meta property="og:image" content="">
 	<meta property="og:url" content="">-->
-	<meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
-	<meta property="og:site_name" content="Complex Analysis">
+	<meta name="twitter:card" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:site_name" content="Análisis Complejo">
     
 	
 	<!-- FONTS AND CSS -->
@@ -81,28 +81,28 @@
 				// hover over title to show "Table of Contents"
 				$('#title a').hover(
 					function() {
-						$('#title a').text('Table of Contents');
+						$('#title a').text('Tabla de Contenidos');
 					},
 					function() {
-						$('#title a').text('Complex Analysis');	// set back when moving out
+						$('#title a').text('Análisis Complejo');	// set back when moving out
 					}
 				);
 
 				// set prev/next titles
 				$('#prev a').hover(
 					function() {
-						$('#title a').text('Prev: Flow around circle');
+						$('#title a').text('Prev: Flujo alrededor del círculo');
 					},
 					function() {
-						$('#title a').text('Complex Analysis');
+						$('#title a').text('Análisis Complejo');
 					}
 				);
 				$('#next a').hover(
 					function() {
-						$('#title a').text('Next: Bibliography');
+						$('#title a').text('Next: Bibliografía');
 					},
 					function() {
-						$('#title a').text('Complex Analysis');
+						$('#title a').text('Análisis Complejo');
 					}
 				);
 			}
@@ -150,82 +150,85 @@
 <body>
 <div id="wrapper">
         
-        <header><p><span id="prev"><a href="flow_around_circle.html">&larr;</a></span><span id="title"><a href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a href="bibliography.html">&rarr;</a></span><div class="clear"></div></p></header>
+        <header><p><span id="prev"><a href="flujo_alrededor_circulo.html">&larr;</a></span>
+			<span id="title"><a href="tabla_de_contenidos.html">Complex Analysis</a></span>
+			<span id="next"><a href="bibliografia.html">&rarr;</a></span><div class="clear"></div></p></header>
         
 
-<h1>Joukowsky Airfoil</h1>
+<h1>Alerón de Joukowsky</h1>
 <hr>
 
-<h2>The Joukowsky map</h2>
+<h2>El mapeo de Joukowsky</h2>
 
-	<p>A well known example of a conformal function is the <em>Joukowsky map</em>
+	<p>Un ejemplo bien conocido de función conforme es el <em>mapeo de Joukowsky</em>
 		\begin{eqnarray}\label{jouk}
 		w= z+ 1/z.
 	\end{eqnarray}
-		It was first used in the study of flow around airplane wings by the pioneering
-		Russian aero and hydrodynamics researcher 
+	Fue utilizado por primera vez en el estudio del flujo alrededor de las alas de 
+	los aviones por el pionero investigador ruso de aero e hidrodinámica 
 		<a href="http://mathshistory.st-andrews.ac.uk/Biographies/Zhukovsky.html" target="_blank">Nikolai Zhukovskii</a> (Joukowsky). 
 	</p>
 
 	<div class="w3-responsive">
-		<p>Since 
-			$$\frac{d}{dz}w=1-\frac{1}{z^2}=0\quad \text{if and only if}\quad z=\pm 1,$$ 
-			the function (\ref{jouk}) is conformal except at the critical 
-			points $z = \pm 1$ as well as the singularity $z = 0$, where it is 
-			not defined.
+		<p>Dado que 
+			$$\frac{d}{dz}w=1-\frac{1}{z^2}=0\quad \text{si y solo si}\quad z=\pm 1,$$ 
+			la función (\ref{jouk}) es conforme excepto en sus puntos críticos 
+			$z = \pm 1$ y en su singularidad  $z = 0$, donde la función no está definida.
 		</p>
 	</div>
 		
-	<p>If $z = e^{i\theta}$
-		lies on the unit circle, then
+	<p>Si $z = e^{i\theta}$
+		pertenece al círculo unitario, entonces
 		$$w =e^{i\theta}+e^{-i\theta}=2\cos \theta,$$
-		lies on the real axis, with $-2\leq w\leq  2$. Thus, 
-		the Joukowsky map squashes the unit circle
-		down to the real line segment $[-2, 2]$. The images of 
-		points outside the unit circle fill the
-		rest of the $w$ plane, as do the images of the (nonzero) points 
-		inside the unit circle. Indeed,
-		if we solve (\ref{jouk}) for $z$, we have
+		pertenece al eje real, con $-2\leq w\leq  2$. De esta forma, 
+		el mapeo de Joukowsky comprime el círculo unitario 
+		al segmento $[-2, 2]$. Las imágenes de los puntos fuera del
+		círculo unitario llenan el reso del plano $w$, 
+		así como las imágenes de los puntos (diferentes de cero) 
+		dentro del círuclo unitario. En realidad,
+		si resolvemos (\ref{jouk}) para $z$, tenemos
 		$$z=\frac{1}{2}\left(w\pm \sqrt{w^2-4}\right).$$
-		We see that every $w$ except $\pm 2$ comes from two different 
-		points $z$; for $w$ not on the critical
-		line segment $[-2, 2]$, one point (with the minus sign) lies 
-		inside and one (with the plus
-		sign) lies outside the unit circle, whereas if $-2 \lt w \lt 2$, 
-		both points lie on the unit circle
-		and a common vertical line.</p>
+		Podemos observar que cada $w$ excepto $\pm 2$ proviene de dos puntos diferentes
+	    $z$; para $w$ que no está en el segmento $[-2, 2]$, 
+		un punto (con el signo menos) se encuentra dentro y el otro
+		(con el signo más) se encuentra fuera del círuclo unitario, 
+		mientras que si $-2 \lt w \lt 2$, 
+		ambos puntos pertenecen al círculo unitario y a una línea vertical en común.
+	</p>
 		
-	<p>Therefore,  the Joukowski map 
-		defines a one-to-one conformal mapping from $| z | > 1$, the exterior of the 
-		unit circle, onto the exterior of the  line segment $[-2, 2]$, i. e. 
+	<p>Por lo tanto, el mapeo de Joukowski 
+		define un mapeo conforme uno-a-uno de conjunto $| z | > 1$, al exterior
+		del círculo unitario, al exterior del segmento $[-2, 2]$, i. e. 
 		$\mathbb C \setminus [-2, 2]$.
 	</p>
 
-	<p>In Figure 4 we can observe that the concentric circles $|z|= r > 1$ 
-		are mapped to ellipses with foci at $\pm 2$ in the $w$-plane. 
+	<p>En la Figura 4 podemos observar que los círuclo concentricos
+		$|z|= r > 1$ 
+		son mapeados a elipses con focos en $\pm 2$ en el plano $w$. 
 	</p>
 
 	<figure class="w3-center">
 		<img class="w3-image w3-mobile" src="../images/map-circle.png" alt="MapJ" title="JMap" style="width:100%;">
 			<figcaption>
-				<b>Figure 4:</b> The Joukowsky map applied to $|z|=r \geq 1$.
+				<b>Figura 4:</b> El mapeo de Joukowsky aplicado a $|z|=r \geq 1$.
 			</figcaption>
 	 </figure>
 
-	<p>The effect on circles not centered at the origin is more interesting.
-		The image curves take in a wide variety of shapes.
-		When the circle passes through the singular point $z=1$,
-		then its image is no longer smooth, but has a cusp at $w=2$ and when
-		the circle passes through $z=-1$ the 
-		cusp is at $w=-2$. 
-		Some of the image curves assume the shape of the famous 
-		cross-section through an idealized 
-		airplane wing or <em>airfoil</em>, also known as the <em>Joukowsky airfoil</em>.</p>
+	<p>
+		El efecto sobre los círculos que no están centrados en el origen es más interesante. 
+		Las curvas de la imagen adoptan una amplia variedad de formas. 
+		Cuando el círculo pasa por el punto singular $z = 1$, entonces su imagen ya no 
+		es suave, sino que tiene una cúspide en $w = 2$ y cuando el círculo pasa 
+		por $z = −1$, la cúspide está en $w = −2.$ Algunas de las curvas de la imagen 
+		asumen la forma de la famosa sección transversal a través de un ala o <em>alerón</em>
+		 aerodinámico idealizado de un avión, también conocido como el <em>alerón de Joukowsky</em>.
+	</p>
 		
 	<p>
-		You can explore the Joukowsky map in the applet below. Drag around the center of 
-		the circle. Drag sliders to apply the mapping or change the radius. Click button 
-		to see predefined values.
+		Puedes explorar el mapa de Joukowsky en el applet a continuación. 
+		Arrastra el centro del círculo. 
+		Usa los controles deslizantes para aplicar el mapeo o cambiar el radio. Haz clic en el botón
+para ver valores predefinidos.
 	</p>
 
 	<div class="w3-hide-small w3-center">
@@ -240,37 +243,38 @@
 
 		<br/><br/><hr>
 
-		<h2>Flow around the Joukowsky airfoil</h2>
+		<h2>Flujo alrededor del aleón de Joukowsky</h2>
 
-		<p>Consider now the uniform flow around the unit circle  with
-			circulation $C$ and speed $U>0$ given by the complex potential
+		<p>Consideremos ahora el flujo alrededor de un círculo unitario con
+			circulación $C$ y velocidad $U>0$ dado por el potencial complejo
 			\begin{eqnarray}\label{eq1}
 			F(z)=Uz+\frac{U}{z}-\frac{i C}{2\pi}\log z.
 			\end{eqnarray}
 		</p>
 
 
-		<p>We can use the linear transformation 
+		<p>Podemos usar la transformación lineal 
 			$$T(z)=-0.15+0.23i + 0.23\sqrt{13\cdot 2} z$$
-			to map this flow around $|z|=1$ onto the 
-			flow around the circle $c_1$ with center $z_1=-0.15+0.23i$ and 
-			radius $r=0.23\sqrt{13\cdot 2}$. </p>
+			para mapear este fllujo alrededor de $|z|=1$ a un flujo alrededor
+			del círculo $c_1$ con centro $z_1=-0.15+0.23i$ y
+			radrio $r=0.23\sqrt{13\cdot 2}$. </p>
 			
-			<p>Finally, by applying the Joukowsky map 
-			(\ref{jouk}), we can obtain a uniform flow with circulation 
-			around the <em>Joukowsky airfoil</em>.
+			<p>Finalmente, al aplicar el maeo de Joukowsky
+			(\ref{jouk}), podemos obtener un flujo uniforme con circulación
+			alrededor el <em>alerón de Joukowsky</em>.
 			</p>
 			
-			<p>The following simulation shows the uniform flow past the circular cylinder 
-				$c_1$ and its transformation to the <em>Joukowsky airfoil</em>. 
-				Drag the sliders to explore:</p>
+			<p>La siguiente simulación muestra el 
+				flujo que pasa alrededor de un círculo
+				$c_1$ y su transformaciá en el <em>alerón de Joukowsky</em>. 
+				Mueve los controles deslizantes para explorar:</p>
 			<ul>
-				<li>Slider U = speed.</li>
-				<li>Slider C = circulation.</li>
-				<li>Slider T = apply transformation.</li>
+				<li>Deslizador U = velocidad.</li>
+				<li>Deslizador C = circulación.</li>
+				<li>Deslizador T = aplica transformación.</li>
 			</ul>
 			
-			<p>Press the <code>Trace</code> button to show <em>streamlines</em>.</p>
+			<p>Presiona el botón <code>Trace</code> para mostrar las <em>líneas de flujo</em>.</p>
 			
 			<div class="w3-hide-small w3-hide-medium">
 				<iframe name="JoukAirfoil" src="../applets/p5js/joukowsky/index.html" width="800px" height="500px" style="border:none;" style="overflow:hidden;"></iframe>
@@ -295,9 +299,9 @@
     
 
 	<!-- link to the next page -->
-	<a href="bibliography.html"><p class="nextPage">NEXT: Bibliography</p></a>
+	<a href="bibliografia.html"><p class="nextPage">NEXT: Bibliografía</p></a>
 	<footer>
-		<p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+		<p>[ <a href="../es.html">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
 
 		<p class="license">
 			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">

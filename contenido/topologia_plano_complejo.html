@@ -1,0 +1,516 @@
+<!doctype html>
+<html>
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+	<title>Análisis Complejo</title>
+
+	<!-- dublin core -->
+	<meta name="dc.title" CONTENT="Análisis Complejo">
+	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+	<meta name="dc.date" CONTENT="26-01-2021">
+    <meta name="dc.isbn" CONTENT="ISBN-13: ">
+	<meta name="dc.type" CONTENT="Recurso Interactivo">
+	<meta name="dc.format" CONTENT="HTML">
+	<meta name="dc.language" CONTENT="es-MEX">
+	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+	<!-- social media cards -->
+	<meta property="og:title" content="Análisis Complejo">
+	<meta property="og:description" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:type" content="website">
+	<!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+	<meta name="twitter:card" content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:site_name" content="Análisis Complejo">
+
+
+	<!-- FONTS AND CSS -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet'
+		type='text/css'>
+	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="../css/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+	<!-- CODE PRETTIFY -->
+	<!-- via: https://github.com/google/code-prettify -->
+	<script src="../js/run_prettify.js"></script>
+
+
+
+	<!-- JQUERY FANCY ADDITIONS -->
+	<!-- add code class, hover text, etc -->
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+		$(document).ready(function () {
+
+			// prettyprint the code, pls
+			$('pre').addClass('prettyprint lang-java');
+
+			// add word-breaks to anything with a / or - in it
+			$('h1').each(function () {
+				var t = $(this).text();
+				t = t.replace('/', '/<wbr>');
+				t = t.replace('-', '-<wbr>');
+				$(this).html(t);
+			});
+
+			// set formatting
+			resizeCommands();
+		});
+
+		// when the window gets resized, do some stuff to keep everything
+		// looking pretty
+		$(window).resize(function () {
+			resizeCommands();
+		});
+
+		// things to do when the page is loaded or window resized
+		function resizeCommands() {
+			// large-screen stuff...
+			if ($(window).width() > 600) {
+
+				// long headline on intro page
+				// $('#introHeadline').html('TABLE OF CONTENTS');
+
+				// menu hover stuff on larger screens
+				// (does weird formatting on larger screens)
+				// hover over title to show "Table of Contents"
+				$('#title a').hover(
+					function () {
+						$('#title a').text('Tabla de Contenidos');
+					},
+					function () {
+						$('#title a').text('Análisis Complejo'); // set back when moving out
+					}
+				);
+
+				// set prev/next titles
+				$('#prev a').hover(
+					function () {
+						$('#title a').text('Prev: Raíces de Números Complejos');
+					},
+					function () {
+						$('#title a').text('Análisis Complejo');
+					}
+				);
+				$('#next a').hover(
+					function () {
+						$('#title a').text('Next: Funciones Complejas');
+					},
+					function () {
+						$('#title a').text('Análisis Complejo');
+					}
+				);
+			}
+
+			// small-screen stuff
+			else {
+				// short headline on intro page
+				// $('#introHeadline').html('INTRO');
+			}
+		}
+	</script>
+
+
+	<!--MathJax starts-->
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+                           TeX: { equationNumbers: { autoNumber: "AMS" } }
+                           });
+        </script>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+	<script type="text/javascript" async
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-155852901-1');
+	</script>
+
+	<!--GeoGebra embeding-->
+	<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+	<script>
+		var applet1 = new GGBApplet({
+			material_id: "gut3ffpm",
+			borderColor: "888888",
+			playButton: "true",
+			showFullscreenButton: "true",
+			enableShiftDragZoom: "true",
+			showResetIcon: "true"
+		}, true);
+		window.addEventListener("load", function () {
+			applet1.inject('applet_container1');
+		});
+	</script>
+	<!--GeoGebra embeding ends-->
+
+</head>
+
+<body>
+	<div id="wrapper">
+
+		<header>
+			<p><span id="prev"><a href="raices_numeros_complejos.html">&larr;</a></span><span id="title"><a
+						href="tabla_de_contenidos.html">Análisis Complejo</a></span><span id="next"><a
+						href="funciones_complejas.html">&rarr;</a></span>
+				<div class="clear"></div>
+			</p>
+		</header>
+
+
+		<h1>Topología del Plano Complejo</h1>
+
+		<hr>
+
+		<h2>Vecindades</h2>
+
+		<div class="w3-responsive">
+			<p>
+				Una $\varepsilon$ <em id="neighbourhood">vecindad</em>, también llamada
+				<em>bola abierta</em> o <em>disco abierto</em>, de un número complejo
+				$z_0$ consiste en todos los puntos 
+				$z$ que se encuentran dentro pero no en el círculo con centro en 
+				 $z_0$ y con radio 
+				$\varepsilon>0$, la cual se denota como
+				\begin{eqnarray}
+				B_{\varepsilon}(z_0)=\{z:|z-z_0| \lt \varepsilon\}
+				\end{eqnarray}
+				La $\varepsilon$ <em id="closed-neighbourhood">vecindad cerrada</em>
+				de $z_0$ se denota por
+				\begin{eqnarray}
+				\overline{B}_{\varepsilon}(z_0)=\{z:|z-z_0|\leq \varepsilon\}
+				\end{eqnarray}
+				Finalmente, una $\varepsilon$ <em>vecindad borrada</em>
+				de $z_0$, también llamada <em>bola perforada disco perforado</em>, se expreda como
+				\begin{eqnarray}
+				B_{\varepsilon}(z_0)\setminus \{z_0\}=\{z:0 \lt |z-z_0| \lt \varepsilon\}
+				\end{eqnarray}
+				La Figura 1 muestra la representación geométrica de los 
+				siguientes ejemplo:
+
+				<ol>
+					<li>$B_{1}(0)=\{z:|z|\lt 1\}$</li>
+					<li> $\overline{B}_{\frac{7}{8}}\left(-1-\sqrt{2}i\right)=\left\{z:|z-\left(-1-\sqrt{2}i\right)|\leq
+						\frac{7}{8}\right\}$</li>
+					<li>$\overline{B}_{\frac{1}{2}}\left(2+\sqrt{3}i\right)\setminus
+						\left\{2+\sqrt{3}i\right\}=\left\{z:0
+						\lt |z-\left(2+\sqrt{3}i\right)|\leq\frac{1}{2}\right\}$</li>
+				</ol>
+
+				<figure class="w3-center">
+					<img class="w3-image w3-mobile" src="../images/chp01/balls.svg" alt="Neighbourhoods"
+						title="Neighbourhoods" style="width:70%;">
+					<figcaption>
+						<b>Figura 1:</b> Representación geométrica de vecindades.
+					</figcaption>
+				</figure>
+
+			</p>
+		</div>
+
+		<hr>
+
+		<h2>Clasificación de puntos</h2>
+
+		<p>
+			Un punto $z_0$ se dice ser <em id="interior-point">interior</em>
+			de un conjunto  $S\subset \mathbb C$ cuando existe una vecindad de
+			$z_0$ que contiene solo puntos de $S$; un punto se dice ser
+			<em id="exterior-point">exterior</em> de $S$ cuando 
+			existe una vecindad de este que no contiene puntos de $S$. 
+			Si $z_0$ no es ninguno de estos puntos, se dice que es un
+			<em id="boundary-point">punto frontera</em> de $S$. Un punto 
+			frontera es, por lo tanto, un punto en el cual todas 
+			las vecindades contienen al menos un punto en $S$ y al menos un punto que no está
+			en $S$. A la totalidad de todos los puntos frontera se denomina 
+			<em id="boundary">frontera</em> de $S$.
+		</p>
+
+		<div class="w3-responsive">
+			<p>
+				En este texto usaremos la notación:
+				<ol>
+					<li>$\text{Int } S=\left\{z: z \text{ es un punto interior de } S \right\}$</li>
+					<li>$\text{Ext } S=\left\{z: z \text{ es un punto exterior de } S \right\}$</li>
+					<li>$\partial S=\left\{z: z \text{ es un punto frontera de } S \right\}$</li>
+				</ol>
+			</p>
+		</div>
+		<figure class="w3-center">
+			<img class="w3-image w3-mobile" src="../images/chp01/classification.svg"
+				alt="Interior, boundary, and exterior S" title="Interior, boundary, and exterior S" style="width:60%;">
+			<figcaption>
+				<b>Figura 2:</b> Interior, frontera y extrerior del conjunto $S$.
+			</figcaption>
+		</figure>
+
+		<div class="w3-responsive">
+			<p>
+				Considerando los ejemplos peevios de vecindades, sea
+				$$
+				S_1=B_1(0),\;
+				S_2=\overline{B}_{\frac{7}{8}}\left(-1-\sqrt{2}i\right) \text{ and }
+				S_3=\overline{B}_{\frac{1}{2}}\left(2+\sqrt{3}i\right)\setminus \left\{2+\sqrt{3}i\right\}.
+				$$
+				De esta manera, para  $S_1$ tenemos:
+				<ul>
+					<li>$\text{Int } S_1=B_1(0)$</li>
+					<li>$\text{Ext } S_1=\{z: |z|>1 \}$</li>
+					<li>$\partial S_1=\{z: |z|=1 \}$</li>
+				</ul>
+			</p>
+		</div>
+
+		<div class="w3-responsive">
+			<p>
+				Para $S_2$ tenemos:
+				<ul>
+					<li>$\text{Int } S_2=B_{\frac{7}{8}}\left(-1-\sqrt{2}\right)$</li>
+					<li>$\text{Ext } S_2=\left\{z:|z-\left(-1-\sqrt{2}i\right)|>\frac{7}{8}\right\}$</li>
+					<li>$\partial S_2=\left\{z:| z-\left(-1-\sqrt{2}i\right)| =\frac{7}{8}\right\}$</li>
+				</ul>
+			</p>
+		</div>
+
+		<div class="w3-responsive">
+			<p>
+				Finalmente, para $S_3$ tenemos:
+				<ul>
+					<li>$\text{Int } S_3=B_{\frac{1}{2}}\left(2+\sqrt{3}\right)$</li>
+					<li>$\text{Ext } S_3=\left\{z:|z-\left(2+\sqrt{3}i\right)|>\frac{1}{2}\right\}$</li>
+					<li>$\partial S_3=\left\{z:|z-\left(2+\sqrt{3}i\right)|=\frac{1}{2}\right\}\cup\{0\}$</li>
+				</ul>
+			</p>
+		</div>
+
+
+
+		<hr>
+
+		<h2>Espacio topológico</h2>
+
+		<p>
+			<!--
+			Topology is, in essence, the study of the properties that 
+			are preserved through continuous deformations of "objects",
+			such as twisting, stretching or bending, but not tearing or 
+			gluing.
+
+The "objects" of study in topology are formally defined as topological spaces,
+which are sets endowed with a structure, called a topology. 
+This topology allows to define continuous deformations of 
+subspaces, and, more generally, all kinds of continuity.
+
+In particulartopology In the case of the set of complex numbers $\mathbb C$
+The "" In topology the main objects of study are called topological spaces.  
+We can think of topological spaces as sets of points together with some 
+notion of continuity. This notion of continuity, in this case, comes in the form
+of a mathematical gadget called topology that determines which funtions mapping out
+
+The technical definition of topology is a bit unintuitive.
+
+https://www.youtube.com/watch?v=pSjahcOnJvU
+                        -->
+
+			Un conjunto $S$ es <em id="open-set">abierto</em> si para cada $z\in S$, existe
+			$\varepsilon>0$ tal que
+			$$B_{\varepsilon}(z)\subset S.$$
+			Esto es, $\text{Int } S= S$.
+
+			Un conjunto $S$ es <em id="closed-set">cerrado</em> si contiene todos sus
+			puntos frontera, esto es
+			$$\partial S\subseteq S.$$
+			El conjunto $\mathbb C$ es abierto y cerrado al mismo tiempo dado que no tiene puntos frontera.
+		</p>
+
+		<p>
+
+			El conjunto  $\mathbb C$, junto con la colección 
+			$\tau =\{S\subseteq \mathbb C: S \text{ es abierto} \}$ es un
+			<a href="https://encyclopediaofmath.org/index.php?title=Topological_space" target="_blank">espacio 
+				topológico</a>, y esto se expresa con la pareja $\left(\mathbb C, \tau\right)$.
+
+			El espacio topológico $\left(\mathbb C, \tau\right)$ satisface lo siguiente:
+			<ol>
+				<li>$\emptyset$ y $\mathbb C$ son abiertos.</li>
+				<li>La unión arbitraria de conjuntos abiertos es también un conjunto abierto.</li>
+				<li>Si $S_1$ y $S_2$ son abiertos, entonces $S_1\bigcap S_2$ es abierto.</li>
+			</ol>
+
+		</p>
+
+		<p><strong>Obervación:</strong> La definición técnica de espacio topológico
+			es un poco intuitiva , particularmente para aquelos que no han estudiado
+			topología. En esencia, esta nos dice que las propiedades geométricas
+			de subconjuntos de $\mathbb C$ se preservarán cuando se aplican transformaciones 
+			continuas (funciones o mapeos).</p>
+
+		<!--
+		<p>
+			On the other hand, considering closed sets, we have the following properties:
+			<ol>
+				<li>$\emptyset$ and $\mathbb C$ are closed.</li>
+				<li>Whenever two or more sets are closed, then so is their union.</li>
+				<li>Whenever sets $S_1$ and $S_2$ are closed, then so is $S_1\bigcap S_2$.</li>
+			</ol>
+
+
+			
+
+		</p>
+	-->
+
+		<p>
+			La <em id="closure">cerradura</em> de un conjunto $S$ es el conjunto 
+			cerrado que consiste de todos los puntos en $S$ junto con su frontera. 
+			En otras palabras
+			$$\overline{S}=S\cup \partial S.$$
+		</p>
+
+		<p>
+			Un conjunto abierto  $S$ es <em id="connected-set">conexo</em> 
+			si cada par de puntos $z_1$ y $z_2$ en él se pueden unir con 
+			una línea políginal, la cual consiste de un número finito de 
+			segmentos de línea unidos de un extremo a otro, en el interior de $S$.
+		</p>
+
+		<figure class="w3-center">
+			<img class="w3-image w3-mobile" src="../images/chp01/connected-set.gif" alt="Connected set"
+				title="Connected set" style="width:60%;">
+			<figcaption>
+				<b>Figura 3:</b> Conjunto conexo.
+			</figcaption>
+		</figure>
+
+		<p>
+			Notemos por ejemplo que el conjunto abierto $|z| \lt 1$ es conexo.
+			El <em id="annulus">anulus</em> $1 \lt |z| \lt 2$ es abierto y también conexo, 
+			ver Figuras 3 y 4.
+		</p>
+
+		<div class="w3-row-padding">
+			<div id="enhanced" class="w3-half w3-container w3-margin-bottom">
+				<figure id="open-connected" class="w3-center">
+					<img class="w3-image w3-mobile" src="../images/chp01/unit-ball.svg" alt="Open connected set"
+						title="Open connected set" style="width:100%;">
+					<figcaption>
+						<b>Figura 4:</b> $|z| \lt 1$.
+					</figcaption>
+				</figure>
+			</div>
+			<div id="enhanced2" class="w3-half w3-container w3-margin-bottom">
+				<figure id="annulus" class="w3-center">
+					<img class="w3-image w3-mobile" src="../images/chp01/annulus.svg" alt="Annulus" title="Annulus"
+						style="width:100%;">
+					<figcaption>
+						<b>Figura 5:</b> $1 \lt |z| \lt 2$.
+					</figcaption>
+				</figure>
+			</div>
+
+		</div>
+
+		<p>
+			Un conjunto no vació y abierto que es conexo es llamado 
+			<em id="domain">dominio</em>. En este contexto, 
+			cualquier vecindad es un dominio. Un dominio junto con algunos,
+			ninguno, o todos sus puntos frontera se le conoce como una 
+			<em id="region">región</em>. En otras palabras, 
+			un conjunto cuyo interior es un dominio es llamado <em>región</em>.
+			Un conjunto  $S$ es acotado si existe 
+			$R>0$ talque 
+			$$S\subset B_R(0)=\{z\in \mathbb C: |z|\lt R\}.$$
+		</p>
+
+		<figure class="w3-center">
+			<img class="w3-image w3-mobile" src="../images/chp01/bounded.svg" alt="Bounded set" title="Bounded set"
+				style="width:50%;">
+			<figcaption>
+				<b>Figura 5:</b> Conjunto acotado.
+			</figcaption>
+		</figure>
+
+		<!--
+			<p>
+			A point $z\in \mathbb C$ is an <em id="accumulation
+			point">accumulation point</em> of $S\subseteq \mathbb C$ if every 
+			deleted neighbourhood of $z$
+			intersects $S$. It follows that if a set $S$ is closed, then it contains 
+			each of its accumulation
+			points. For if an accumulation point $z_0$ were not in $S$, it would 
+			be a boundary point of $S$; but
+			this contradicts the fact that a closed set contains all of its 
+			boundary points. It is left as an
+			exercise to show that the converse is, in fact, true. Thus a set 
+			is closed if and only if it
+			contains all of its accumulation points. Evidently, a point $z_0$ 
+			is not an accumulation point of a
+			set S whenever there exists some deleted neighbourhood of $z_0$ 
+			that does not contain at least one
+			point of $S$. Note that the origin is the only accumulation point 
+			of the set $z_n=i/n$ with $n=1, 2,
+			3,\ldots $ </p>
+		-->
+
+		<div class="w3-padding">
+			<p><strong>Ejercicio:</strong> Realiza el esbozo del conjuto de puntos $S$ el el plano complejo 
+				que satisface la desigualdad dada. Determina si el conjunto es (<em>a</em>) abierto, 
+				(<em>b</em>) cerrado,
+				(<em>c</em>) un dominio, (<em>d</em>) acotado, o (<em>e</em>) conexo.</p>
+			<ul>
+				<li>$\text{Im}(z)\lt 0$</li>
+				<li>$-1\lt \text{Re(z)} \lt 1$</li>
+				<li>$|z|>1$</li>
+				<li>$2\le |z - 3+4i |\le 5$</li>
+			</ul>
+		</div>
+
+		<br>
+
+
+		<!-- link to the next page -->
+		<a href="funciones_complejas.html">
+			<p class="nextPage">NEXT: Funciones Complejas</p>
+		</a>
+		<footer>
+			<p>[ <a href="../es.html">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
+					href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a>
+				]
+			</p>
+
+			<p class="license">
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+					<img id="license" alt="Creative Commons License" style="border-width:0"
+						src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+				</a>
+				<br />
+				<strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
+				<strong style="font-size: 18px">2019</strong>
+			</p>
+		</footer>
+
+	</div> <!-- end wrapper -->
+
+	<!-- nice smart quotes, via: http://smartquotesjs.com -->
+	<script src="../js/smartquotes.min.js"></script>
+
+</body>
+
+</html>
