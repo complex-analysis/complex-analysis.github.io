@@ -1,166 +1,179 @@
 <!doctype html>
 <html>
+
 <head>
 
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
-	<title>Complex Analysis</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+  <title>Complex Analysis</title>
 
-	<!-- dublin core -->
-	<meta name="dc.title" CONTENT="Complex Analysis">
-	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
-	<meta name="dc.date" CONTENT="26-01-2019">
-    <meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
-	<meta name="dc.type" CONTENT="Interactive Resource">
-	<meta name="dc.format" CONTENT="HTML">
-	<meta name="dc.language" CONTENT="en-US">
-	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+  <!-- dublin core -->
+  <meta name="dc.title" CONTENT="Complex Analysis">
+  <meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+  <meta name="dc.date" CONTENT="26-01-2019">
+  <meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
+  <meta name="dc.type" CONTENT="Interactive Resource">
+  <meta name="dc.format" CONTENT="HTML">
+  <meta name="dc.language" CONTENT="en-US">
+  <meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 
-	<!-- social media cards -->
-	<meta property="og:title" content="Complex Analysis">
-	<meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
-	<meta property="og:type" content="website">
-	<!--<meta property="og:image" content="">
+  <!-- social media cards -->
+  <meta property="og:title" content="Complex Analysis">
+  <meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta property="og:type" content="website">
+  <!--<meta property="og:image" content="">
 	<meta property="og:url" content="">-->
-	<meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
-	<meta property="og:site_name" content="Complex Analysis">
-    
-	
-	<!-- FONTS AND CSS -->
-	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
-	<link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet' type='text/css'>
-	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="../css/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" >
-	<!-- CODE PRETTIFY -->
-	<!-- via: https://github.com/google/code-prettify -->
-	<script src="../js/run_prettify.js"></script>
+  <meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+  <meta property="og:site_name" content="Complex Analysis">
 
-	
 
-	<!-- JQUERY FANCY ADDITIONS -->
-	<!-- add code class, hover text, etc -->
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script>
+  <!-- FONTS AND CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet'
+    type='text/css'>
+  <link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="../css/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <!-- CODE PRETTIFY -->
+  <!-- via: https://github.com/google/code-prettify -->
+  <script src="../js/run_prettify.js"></script>
 
-		$(document).ready(function() {
 
-			// prettyprint the code, pls
-			$('pre').addClass('prettyprint lang-java');
 
-			// add word-breaks to anything with a / or - in it
-			$('h1').each(function() {
-				var t = $(this).text();
-				t = t.replace('/', '/<wbr>');
-				t = t.replace('-', '-<wbr>');
-				$(this).html(t);
-			});
+  <!-- JQUERY FANCY ADDITIONS -->
+  <!-- add code class, hover text, etc -->
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script>
+    $(document).ready(function () {
 
-			// set formatting
-			resizeCommands();
-		});
+      // prettyprint the code, pls
+      $('pre').addClass('prettyprint lang-java');
 
-		// when the window gets resized, do some stuff to keep everything
-		// looking pretty
-		$(window).resize( function() {
-			resizeCommands();
-		});
+      // add word-breaks to anything with a / or - in it
+      $('h1').each(function () {
+        var t = $(this).text();
+        t = t.replace('/', '/<wbr>');
+        t = t.replace('-', '-<wbr>');
+        $(this).html(t);
+      });
 
-		// things to do when the page is loaded or window resized
-		function resizeCommands() {
-			// large-screen stuff...
-			if ($(window).width() > 600) {
+      // set formatting
+      resizeCommands();
+    });
 
-				// long headline on intro page
-				// $('#introHeadline').html('TABLE OF CONTENTS');
+    // when the window gets resized, do some stuff to keep everything
+    // looking pretty
+    $(window).resize(function () {
+      resizeCommands();
+    });
 
-				// menu hover stuff on larger screens
-				// (does weird formatting on larger screens)
-				// hover over title to show "Table of Contents"
-				$('#title a').hover(
-					function() {
-						$('#title a').text('Table of Contents');
-					},
-					function() {
-						$('#title a').text('Complex Analysis');	// set back when moving out
-					}
-				);
+    // things to do when the page is loaded or window resized
+    function resizeCommands() {
+      // large-screen stuff...
+      if ($(window).width() > 600) {
 
-				// set prev/next titles
-				$('#prev a').hover(
-					function() {
-						$('#title a').text('Prev: The Logarithmic Function');
-					},
-					function() {
-						$('#title a').text('Complex Analysis');
-					}
-				);
-				$('#next a').hover(
-					function() {
-						$('#title a').text('Next: Mappings');
-					},
-					function() {
-						$('#title a').text('Complex Analysis');
-					}
-				);
-			}
+        // long headline on intro page
+        // $('#introHeadline').html('TABLE OF CONTENTS');
 
-			// small-screen stuff
-			else {
-				// short headline on intro page
-				// $('#introHeadline').html('INTRO');
-			}
-		}
-	</script>
-    
-    <!--MathJax starts-->
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
+        // menu hover stuff on larger screens
+        // (does weird formatting on larger screens)
+        // hover over title to show "Table of Contents"
+        $('#title a').hover(
+          function () {
+            $('#title a').text('Table of Contents');
+          },
+          function () {
+            $('#title a').text('Complex Analysis'); // set back when moving out
+          }
+        );
+
+        // set prev/next titles
+        $('#prev a').hover(
+          function () {
+            $('#title a').text('Prev: The Logarithmic Function');
+          },
+          function () {
+            $('#title a').text('Complex Analysis');
+          }
+        );
+        $('#next a').hover(
+          function () {
+            $('#title a').text('Next: Mappings');
+          },
+          function () {
+            $('#title a').text('Complex Analysis');
+          }
+        );
+      }
+
+      // small-screen stuff
+      else {
+        // short headline on intro page
+        // $('#introHeadline').html('INTRO');
+      }
+    }
+  </script>
+
+  <!--MathJax starts-->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
                            TeX: { equationNumbers: { autoNumber: "AMS" } }
                            });
         </script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
         </script>
-    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-        </script>
-    
-  
-    
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 
-  gtag('config', 'UA-155852901-1');
-</script>
-    
-    <script src="../applets/mathcell/math.js"></script>
-    <script src="../applets/mathcell/mathcell.js"></script>
-    
-    
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-155852901-1');
+  </script>
+
+  <script src="../applets/mathcell/math.js"></script>
+  <script src="../applets/mathcell/mathcell.js"></script>
+
+
 </head>
 
 <body>
-<div id="wrapper">
-        
-        <header><p><span id="prev"><a href="logarithmic_function.html">&larr;</a></span>
-          <span id="title"><a href="table_of_contents.html">Complex Analysis</a></span>
-          <span id="next"><a href="mappings.html">&rarr;</a></span><div class="clear"></div></p></header>
-        
+  <div id="wrapper">
 
-<h1 id="menu">Riemann Surfaces</h1>
-<h2>Examples</h2>
-<hr>
+    <header>
+      <p><span id="prev"><a href="logarithmic_function.html">&larr;</a></span>
+        <span id="title"><a href="table_of_contents.html">Complex Analysis</a></span>
+        <span id="next"><a href="mappings.html">&rarr;</a></span>
+        <div class="clear"></div>
+      </p>
+    </header>
 
-<p >The following are some examples of multiple-valued functions. In each case, the branch is identified with a diferent color. Click on the following functions or scroll down to explore.</p>
 
-<p style="text-align:center;"><a href="#ex1">\(f(z) = z^{1/2}\)</a> &nbsp;&nbsp;&nbsp; <a href="#ex2">\(f(z) = z^{1/3}\)</a> &nbsp;&nbsp;&nbsp;  <a href="#ex3">\(f(z) = \sqrt{1-z^2}\)</a> &nbsp;&nbsp;&nbsp;   <a href="#ex4">\(f(z) = \dfrac{1}{\sqrt{1-z^2}}\)</a> &nbsp;&nbsp;&nbsp;   <a href="#ex5">\(f(z) = \arctan(z)\)</a></p>
-<!--
+    <h1 id="menu">Riemann Surfaces</h1>
+    <h2>Examples</h2>
+    <hr>
+
+    <p>The following are some examples of multiple-valued functions. In each case, the branch is identified with a
+      diferent color. Click on the following functions or scroll down to explore.</p>
+
+    <p style="text-align:center;"><a href="#ex1">\(f(z) = z^{1/2}\)</a> &nbsp;&nbsp;&nbsp; <a href="#ex2">\(f(z) =
+        z^{1/3}\)</a> &nbsp;&nbsp;&nbsp; <a href="#ex3">\(f(z) = \sqrt{1-z^2}\)</a> &nbsp;&nbsp;&nbsp; <a
+        href="#ex4">\(f(z) = \dfrac{1}{\sqrt{1-z^2}}\)</a> &nbsp;&nbsp;&nbsp; <a href="#ex5">\(f(z) = \arctan(z)\)</a>
+    </p>
+    <!--
 <p><ul>
   <li><a href="#ex1">\(f(z) = z^{1/2}\)</a></li>
   <li><a href="#ex2">\(f(z) = z^{1/3}\)</a></li>
@@ -170,935 +183,925 @@
 </ul> </p>-->
 
 
-<hr style="border: 2px solid #BEBEBE;">
+    <hr style="border: 2px solid #BEBEBE;">
 
-<!--<p>Complex functions that are multiple-valued can be extended by analytic continuation to  A Riemann surface of an analytic function $f(z)$ is a surface $R$ such that the complete analytic function $f(z)$, which is, in general, multiple-valued, can be considered as a single-valued analytic function $w=F(p)$ of a point $p$ on $R$.</p>-->
+    <!--<p>Complex functions that are multiple-valued can be extended by analytic continuation to  A Riemann surface of an analytic function $f(z)$ is a surface $R$ such that the complete analytic function $f(z)$, which is, in general, multiple-valued, can be considered as a single-valued analytic function $w=F(p)$ of a point $p$ on $R$.</p>-->
 
-<br />
+    <br />
 
-<h4>Real component of \(f(z)=z^{1/2}\)</h3>
+    <h4>Real component of \(f(z)=z^{1/2}\)</h3>
 
-<div id="ex1" class="w3-center w3-hide-small w3-hide-medium">
+      <div id="ex1" class="w3-center w3-hide-small w3-hide-medium">
 
-<div class="mathcell" style="width: 550px; height: 550px">
-<script>
+        <div class="mathcell" style="width: 550px; height: 550px">
+          <script>
+            var parent = document.currentScript.parentNode;
 
-    var parent = document.currentScript.parentNode;
+            var id = generateId();
+            parent.id = id;
 
-    var id = generateId();
-    parent.id = id;
+            MathCell(id, []);
 
-    MathCell(id, []);
+            parent.update = function (id) {
 
-    parent.update = function(id) {
+              //(x x + y y)^(1 / 4) cos(1 / 2 atan2(y,x))
+              //u cos(v), u sin(v),
 
-      //(x x + y y)^(1 / 4) cos(1 / 2 atan2(y,x))
-      //u cos(v), u sin(v),
+              var pi = Math.PI;
 
-      var pi = Math.PI;
+              var Re1 = (x, y) => Math.pow(x * x + y * y, 1 / 4) * Math.cos(1 / 2 * Math.atan2(y, x));
 
-      var Re1 = (x, y) => Math.pow(x * x + y * y, 1 / 4) * Math.cos(1 / 2 * Math.atan2(y, x));
+              var Re2 = (x, y) => Math.pow(x * x + y * y, 1 / 4) * Math.cos(1 / 2 * (Math.atan2(y, x) + 2 * pi));
 
-      var Re2 = (x, y) => Math.pow(x * x + y * y, 1 / 4) * Math.cos(1 / 2 * (Math.atan2(y, x) + 2 * pi));
+              var data = [];
 
-      var data = [];
+              var s = parametric((u, v) => [u * Math.cos(v),
+                  u * Math.sin(v),
+                  Re1(u * Math.cos(v), u * Math.sin(v))
+                ],
+                [0, 2], [-pi, pi], {
+                  color: '#80aaff',
+                  opacity: 0.9
+                }
+              );
+              var t = parametric((u, v) => [u * Math.cos(v),
+                  u * Math.sin(v),
+                  Re2(u * Math.cos(v), u * Math.sin(v))
+                ],
+                [0, 2], [-pi, pi], {
+                  color: '#cc99ff',
+                  opacity: 0.9
+                }
+              );
 
-      var s = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Re1(u * Math.cos(v), u * Math.sin(v))
-            ],
-            [0, 2], [-pi, pi],
-            {
-              color: '#80aaff',
-              opacity: 0.9
+              data.push(s);
+              data.push(t);
+
+              var config = {
+                type: 'threejs',
+                frame: true,
+                viewpoint: [1, -1, 0.5]
+              };
+
+              evaluate(id, data, config);
+
             }
-          );
-       var t = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Re2(u * Math.cos(v), u * Math.sin(v))
-            ],
-            [0, 2], [-pi, pi],
-            {
-              color: '#cc99ff',
-              opacity: 0.9
-            }
-          );
-          
-      data.push(s);
-      data.push(t);
 
-      var config = {
-        type: 'threejs',
-        frame: true,
-        viewpoint: [1,-1,0.5]
-      };
+            parent.update(id);
+          </script>
+        </div>
+        <!--Ends mathcell-->
 
-      evaluate(id, data, config);
+        <br />
+        <br />
+        <br />
+        <h4>Imaginary component of \(f(z)=z^{1/2}\)</h3>
 
-    }
+          <div class="mathcell" style="width: 550px; height: 550px">
+            <script>
+              var parent = document.currentScript.parentNode;
 
-    parent.update(id);
+              var id = generateId();
+              parent.id = id;
 
-</script>
-</div><!--Ends mathcell-->
+              MathCell(id, []);
 
-<br/>
-<br/>
-<br/>
-<h4>Imaginary component of \(f(z)=z^{1/2}\)</h3>
+              parent.update = function (id) {
 
-<div class="mathcell" style="width: 550px; height: 550px">
-<script>
+                //(x x + y y)^(1 / 4) cos(1 / 2 atan2(y,x))
+                //u cos(v), u sin(v),
 
-    var parent = document.currentScript.parentNode;
+                var pi = Math.PI;
 
-    var id = generateId();
-    parent.id = id;
+                var Im1 = (x, y) => Math.pow(x * x + y * y, 1 / 4) * Math.sin(1 / 2 * Math.atan2(y, x));
 
-    MathCell(id, []);
+                var Im2 = (x, y) => Math.pow(x * x + y * y, 1 / 4) * Math.sin(1 / 2 * (Math.atan2(y, x) + 2 * pi));
 
-    parent.update = function(id) {
+                var data = [];
 
-      //(x x + y y)^(1 / 4) cos(1 / 2 atan2(y,x))
-      //u cos(v), u sin(v),
+                var s = parametric((u, v) => [u * Math.cos(v),
+                    u * Math.sin(v),
+                    Im1(u * Math.cos(v), u * Math.sin(v))
+                  ],
+                  [0, 2], [-pi, pi - pi / 100000], {
+                    color: '#ff1a1a'
+                  }
+                );
+                var t = parametric((u, v) => [u * Math.cos(v),
+                    u * Math.sin(v),
+                    Im2(u * Math.cos(v), u * Math.sin(v))
+                  ],
+                  [0, 2], [-pi, pi - pi / 100000], {
+                    color: '#339933',
+                    opacity: 0.9
+                  }
+                );
 
-      var pi = Math.PI;
+                data.push(s);
+                data.push(t);
 
-      var Im1 = (x, y) => Math.pow(x * x + y * y, 1 / 4) * Math.sin(1 / 2 * Math.atan2(y, x));
+                var config = {
+                  type: 'threejs',
+                  frame: true,
+                  viewpoint: [1, -1, 0.5]
+                };
 
-      var Im2 = (x, y) => Math.pow(x * x + y * y, 1 / 4) * Math.sin(1 / 2 * (Math.atan2(y, x) + 2 * pi));
+                evaluate(id, data, config);
 
-      var data = [];
+              }
 
-      var s = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Im1(u * Math.cos(v), u * Math.sin(v))
-            ],
-            [0, 2], [-pi, pi - pi / 100000],
-            {
-              color: '#ff1a1a'
-            }
-          );
-       var t = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Im2(u * Math.cos(v), u * Math.sin(v))
-            ],
-            [0, 2], [-pi, pi - pi / 100000],
-            {
-              color: '#339933',
-              opacity: 0.9
-            }
-          );
-          
-      data.push(s);
-      data.push(t);
-
-      var config = {
-        type: 'threejs',
-        frame: true,
-        viewpoint: [1,-1,0.5]
-      };
-
-      evaluate(id, data, config);
+              parent.update(id);
+            </script>
 
-    }
-
-    parent.update(id);
+          </div>
+          <!--Ends mathcell-->
 
-</script>
+      </div>
+      <!--Ends hide medium-->
 
-</div><!--Ends mathcell-->
+      <div class="w3-hide-large w3-khaki w3-round w3-padding w3-panel">
+        <p><i class="fas fa-sad-tear"></i> Sorry, the applet is not supported for small screens. Rotate your device to
+          landscape. Or resize your window so it's more wide than tall.</p>
+      </div>
 
-</div><!--Ends hide medium-->
+      <br />
+      <p style="text-align:center"><a href="#menu">Top</a></p>
+      <br />
 
-<div class="w3-hide-large w3-khaki w3-round w3-padding w3-panel">
-    <p><i class="fas fa-sad-tear"></i> Sorry, the applet is  not supported for small screens. Rotate your device to landscape. Or resize your window so it's more wide than tall.</p>
-</div>
+      <hr style="border: 2px solid #BEBEBE;">
 
-<br />
-<p style="text-align:center"><a href="#menu">Top</a></p>
-<br />
+      <br />
 
-<hr style="border: 2px solid #BEBEBE;">
+      <h4 id="ex2">Real component of $f(z)=z^{1/3}$</h3>
 
-<br />
+        <div class="w3-center w3-hide-small w3-hide-medium">
 
-<h4 id="ex2">Real component of $f(z)=z^{1/3}$</h3>
+          <div class="mathcell" style="width: 550px; height: 550px">
+            <script>
+              var parent = document.currentScript.parentNode;
 
-<div  class="w3-center w3-hide-small w3-hide-medium">
+              var id = generateId();
+              parent.id = id;
 
-<div class="mathcell" style="width: 550px; height: 550px">
-<script>
+              MathCell(id, []);
 
-    var parent = document.currentScript.parentNode;
+              parent.update = function (id) {
 
-    var id = generateId();
-    parent.id = id;
+                //(x² + y²)^(1 / (2n)) cos(1 / n atan2(y,x) + 1 / n 2 π k)
+                //u cos(v), u sin(v),
+
+                var pi = Math.PI;
+
+                var Re = (x, y, n, k) => Math.pow(x * x + y * y, 1 / (2 * n)) * Math.cos(1 / n * Math.atan2(y, x) +
+                  1 / n * 2 * pi * k);
+
+
+                var data = [];
+
+                var s = parametric((u, v) => [u * Math.cos(v),
+                    u * Math.sin(v),
+                    Re(u * Math.cos(v), u * Math.sin(v), 3, 0)
+                  ],
+                  [0, 2], [-pi, pi - pi / 100000], {
+                    color: '#80aaff',
+                    opacity: 0.9
+                  }
+                );
+                var t = parametric((u, v) => [u * Math.cos(v),
+                    u * Math.sin(v),
+                    Re(u * Math.cos(v), u * Math.sin(v), 3, 1)
+                  ],
+                  [0, 2], [-pi, pi - pi / 100000], {
+                    color: '#ff99cc',
+                    opacity: 0.9
+                  }
+                );
+                var w = parametric((u, v) => [u * Math.cos(v),
+                    u * Math.sin(v),
+                    Re(u * Math.cos(v), u * Math.sin(v), 3, 2)
+                  ],
+                  [0, 2], [-pi, pi - pi / 100000], {
+                    color: '#339933',
+                    opacity: 0.9
+                  }
+                );
+
+                data.push(s);
+                data.push(t);
+                data.push(w);
+
+                var config = {
+                  type: 'threejs',
+                  frame: true,
+                  viewpoint: [1, -1, 0.5]
+                };
+
+                evaluate(id, data, config);
+
+              }
+
+              parent.update(id);
+            </script>
+          </div>
+          <!--Ends mathcell-->
+
+          <br />
+          <br />
+          <br />
+
+          <h4>Imaginary component of $f(z)=z^{1/3}$</h3>
+
+            <div class="mathcell" style="width: 550px; height: 550px">
+              <script>
+                var parent = document.currentScript.parentNode;
+
+                var id = generateId();
+                parent.id = id;
 
-    MathCell(id, []);
+                MathCell(id, []);
+
+                parent.update = function (id) {
 
-    parent.update = function(id) {
+                  //(x² + y²)^(1 / (2n)) cos(1 / n atan2(y,x) + 1 / n 2 π k)
+                  //u cos(v), u sin(v),
 
-      //(x² + y²)^(1 / (2n)) cos(1 / n atan2(y,x) + 1 / n 2 π k)
-      //u cos(v), u sin(v),
+                  var pi = Math.PI;
 
-      var pi = Math.PI;
+                  var Im = (x, y, n, k) => Math.pow(x * x + y * y, 1 / (2 * n)) * Math.sin(1 / n * Math.atan2(y, x) +
+                    1 / n * 2 * pi * k);
 
-      var Re = (x, y, n, k) => Math.pow( x*x + y*y , 1 / (2 * n) ) * Math.cos(1 / n * Math.atan2(y,x) + 1 / n * 2 * pi * k);
 
 
-      var data = [];
+                  var data = [];
 
-      var s = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Re(u * Math.cos(v), u * Math.sin(v), 3, 0)
-            ],
-            [0, 2], [-pi, pi - pi/100000],
-            {
-              color: '#80aaff',
-              opacity: 0.9
-            }
-          );
-       var t = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Re(u * Math.cos(v), u * Math.sin(v), 3, 1)
-            ],
-            [0, 2], [-pi, pi - pi/100000],
-            {
-              color: '#ff99cc',
-              opacity: 0.9
-            }
-          );
-       var w = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Re(u * Math.cos(v), u * Math.sin(v), 3, 2)
-            ],
-            [0, 2], [-pi, pi - pi/100000],
-            {
-              color: '#339933',
-              opacity: 0.9
-            }
-          );
-          
-      data.push(s);
-      data.push(t);
-      data.push(w);
-
-      var config = {
-        type: 'threejs',
-        frame: true,
-        viewpoint: [1,-1,0.5]
-      };
-
-      evaluate(id, data, config);
-
-    }
-
-    parent.update(id);
+                  var s = parametric((u, v) => [u * Math.cos(v),
+                      u * Math.sin(v),
+                      Im(u * Math.cos(v), u * Math.sin(v), 3, 0)
+                    ],
+                    [0, 2], [-pi, pi - pi / 100000], {
+                      color: '#4d79ff',
+                      opacity: 0.9
+                    }
+                  );
+                  var t = parametric((u, v) => [u * Math.cos(v),
+                      u * Math.sin(v),
+                      Im(u * Math.cos(v), u * Math.sin(v), 3, 1)
+                    ],
+                    [0, 2], [-pi, pi - pi / 100000], {
+                      color: '#ac00e6',
+                      opacity: 0.9
+                    }
+                  );
+                  var w = parametric((u, v) => [u * Math.cos(v),
+                      u * Math.sin(v),
+                      Im(u * Math.cos(v), u * Math.sin(v), 3, 2)
+                    ],
+                    [0, 2], [-pi, pi - pi / 100000], {
+                      color: '#ff6600',
+                      opacity: 0.9
+                    }
+                  );
+
+                  data.push(s);
+                  data.push(t);
+                  data.push(w);
+
+                  var config = {
+                    type: 'threejs',
+                    frame: true,
+                    viewpoint: [1, -1, 0.5]
+                  };
+
+                  evaluate(id, data, config);
 
-</script>
-</div> <!--Ends mathcell-->
+                }
+
+                parent.update(id);
+              </script>
 
-<br/>
-<br/>
-<br/>
+            </div>
+            <!--Ends mathcell-->
 
-<h4>Imaginary component of $f(z)=z^{1/3}$</h3>
+        </div>
+        <!--Ends hide medium-->
 
-<div class="mathcell" style="width: 550px; height: 550px">
-<script>
+        <div class="w3-hide-large w3-khaki w3-round w3-padding w3-panel">
+          <p><i class="fas fa-sad-tear"></i> Sorry, the applet is not supported for small screens. Rotate your device to
+            landscape. Or resize your window so it's more wide than tall.</p>
+        </div>
+        <br />
+        <p style="text-align:center"><a href="#menu">Top</a></p>
+        <br />
 
-    var parent = document.currentScript.parentNode;
+        <hr style="border: 2px solid #BEBEBE;">
 
-    var id = generateId();
-    parent.id = id;
+        <br />
 
-    MathCell(id, []);
+        <h4 id="ex3">Real component of \(f(z)=\sqrt{1-z^2}\)</h3>
 
-    parent.update = function(id) {
+          <div class="w3-center w3-hide-small w3-hide-medium">
 
-      //(x² + y²)^(1 / (2n)) cos(1 / n atan2(y,x) + 1 / n 2 π k)
-      //u cos(v), u sin(v),
+            <div class="mathcell" style="width: 550px; height: 550px">
+              <script>
+                var parent = document.currentScript.parentNode;
+
+                var id = generateId();
+                parent.id = id;
+
+                MathCell(id, []);
+
+                parent.update = function (id) {
+
+                  //((1 - x² + y²)² + (-2x y)²)^(1 / (2n)) cos(1 / n atan2(-2x y,1 - x² + y²) + 1 / n 2 π k)
+                  //u cos(v), u sin(v),
+
+                  var pi = Math.PI;
+
+                  var Re = (x, y, n, k) => Math.pow((1 - x * x + y * y) * (1 - x * x + y * y) + (-2 * x * y) * (-2 *
+                    x * y), 1 / (2 * n)) * Math.cos(1 / n * Math.atan2(-2 * x * y, 1 - x * x + y * y) + 1 / n * 2 *
+                    pi * k);
+
+
+
+                  var data = [];
+
+                  var s = parametric((u, v) => [u * Math.cos(v),
+                      u * Math.sin(v),
+                      Re(u * Math.cos(v), u * Math.sin(v), 2, 0)
+                    ],
+                    [0, 2], [-pi, pi - pi / 100000], {
+                      color: '#53c653',
+                      opacity: 0.9
+                    }
+                  );
+                  var t = parametric((u, v) => [u * Math.cos(v),
+                      u * Math.sin(v),
+                      Re(u * Math.cos(v), u * Math.sin(v), 2, 1)
+                    ],
+                    [0, 2], [-pi, pi - pi / 100000], {
+                      color: '#cc6699',
+                      opacity: 0.9
+                    }
+                  );
+
+
+                  data.push(s);
+                  data.push(t);
+
+                  var config = {
+                    type: 'threejs',
+                    frame: true,
+                    viewpoint: [1, -1, 0.5]
+                  };
+
+                  evaluate(id, data, config);
+
+                }
+
+                parent.update(id);
+              </script>
+            </div>
+            <!--Ends mathcell-->
+
+            <br />
+            <br />
+            <br />
+
+            <h4>Imaginary component of \(f(z)=\sqrt{1-z^2}\)</h3>
+
+              <div class="mathcell" style="width: 550px; height: 550px">
+                <script>
+                  var parent = document.currentScript.parentNode;
+
+                  var id = generateId();
+                  parent.id = id;
+
+                  MathCell(id, []);
+
+                  parent.update = function (id) {
+
+                    //u cos(v), u sin(v),
+
+                    var pi = Math.PI;
+
+                    var Im = (x, y, n, k) => Math.pow((1 - x * x + y * y) * (1 - x * x + y * y) + (-2 * x * y) * (-2 *
+                      x * y), 1 / (2 * n)) * Math.sin(1 / n * Math.atan2(-2 * x * y, 1 - x * x + y * y) + 1 / n *
+                      2 * pi * k);
+
+                    var data = [];
 
-      var pi = Math.PI;
+                    var s = parametric((u, v) => [u * Math.cos(v),
+                        u * Math.sin(v),
+                        Im(u * Math.cos(v), u * Math.sin(v), 2, 0)
+                      ],
+                      [0, 2], [0 + pi / 10000, pi - pi / 10000], {
+                        color: '#cc0000',
+                        opacity: 0.9
+                      }
+                    );
+                    var t = parametric((u, v) => [u * Math.cos(v),
+                        u * Math.sin(v),
+                        Im(u * Math.cos(v), u * Math.sin(v), 2, 1)
+                      ],
+                      [0, 2], [0 + pi / 10000, pi - pi / 10000], {
+                        color: '#6699ff',
+                        opacity: 0.9
+                      }
+                    );
 
-      var Im = (x, y, n, k) => Math.pow( x*x + y*y , 1 / (2 * n) ) * Math.sin(1 / n * Math.atan2(y,x) + 1 / n * 2 * pi * k);
+                    var s1 = parametric((u, v) => [u * Math.cos(v),
+                        u * Math.sin(v),
+                        Im(u * Math.cos(v), u * Math.sin(v), 2, 0)
+                      ],
+                      [0, 2], [-pi + pi / 10000, -pi / 10000], {
+                        color: '#cc0000',
+                        opacity: 0.9
+                      }
+                    );
+                    var t1 = parametric((u, v) => [u * Math.cos(v),
+                        u * Math.sin(v),
+                        Im(u * Math.cos(v), u * Math.sin(v), 2, 1)
+                      ],
+                      [0, 2], [-pi + pi / 10000, -pi / 10000], {
+                        color: '#6699ff',
+                        opacity: 0.9
+                      }
+                    );
 
-      
+                    data.push(s);
+                    data.push(t);
+                    data.push(s1);
+                    data.push(t1);
 
-      var data = [];
+                    var config = {
+                      type: 'threejs',
+                      frame: true,
+                      viewpoint: [1, -1, 0.5]
+                    };
 
-      var s = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Im(u * Math.cos(v), u * Math.sin(v), 3, 0)
-            ],
-            [0, 2], [-pi, pi - pi/100000],
-            {
-              color: '#4d79ff',
-              opacity: 0.9
-            }
-          );
-       var t = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Im(u * Math.cos(v), u * Math.sin(v), 3, 1)
-            ],
-            [0, 2], [-pi, pi - pi/100000],
-            {
-              color: '#ac00e6',
-              opacity: 0.9
-            }
-          );
-       var w = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Im(u * Math.cos(v), u * Math.sin(v), 3, 2)
-            ],
-            [0, 2], [-pi, pi - pi/100000],
-            {
-              color: '#ff6600',
-              opacity: 0.9
-            }
-          );
-          
-      data.push(s);
-      data.push(t);
-      data.push(w);
+                    evaluate(id, data, config);
 
-      var config = {
-        type: 'threejs',
-        frame: true,
-        viewpoint: [1,-1,0.5]
-      };
+                  }
 
-      evaluate(id, data, config);
+                  parent.update(id);
+                </script>
 
-    }
+              </div>
+              <!--Ends mathcell-->
 
-    parent.update(id);
+          </div>
+          <!--Ends hide medium-->
 
-</script>
+          <div class="w3-hide-large w3-khaki w3-round w3-padding w3-panel">
+            <p><i class="fas fa-sad-tear"></i> Sorry, the applet is not supported for small screens. Rotate your device
+              to landscape. Or resize your window so it's more wide than tall.</p>
+          </div>
+          <br />
+          <p style="text-align:center"><a href="#menu">Top</a></p>
+          <br />
+          <hr style="border: 2px solid #BEBEBE;">
 
-</div><!--Ends mathcell-->
+          <br />
 
-</div><!--Ends hide medium-->
 
-<div class="w3-hide-large w3-khaki w3-round w3-padding w3-panel">
-    <p><i class="fas fa-sad-tear"></i> Sorry, the applet is  not supported for small screens. Rotate your device to landscape. Or resize your window so it's more wide than tall.</p>
-</div>
-<br />
-<p style="text-align:center"><a href="#menu">Top</a></p>
-<br />
+          <h4 id="ex4">Real component of \(f(z)=\frac{1}{\sqrt{1-z^2}}\)</h3>
 
-<hr style="border: 2px solid #BEBEBE;">
+            <div class="w3-center w3-hide-small w3-hide-medium">
 
-<br />
+              <div class="mathcell" style="width: 550px; height: 550px">
+                <script>
+                  var parent = document.currentScript.parentNode;
 
-<h4 id="ex3">Real component of \(f(z)=\sqrt{1-z^2}\)</h3>
+                  var id = generateId();
+                  parent.id = id;
 
-<div  class="w3-center w3-hide-small w3-hide-medium">
+                  MathCell(id, []);
 
-<div class="mathcell" style="width: 550px; height: 550px">
-<script>
+                  parent.update = function (id) {
 
-    var parent = document.currentScript.parentNode;
+                    /*
+                     C1(x,y)=y² - x² + 1
+                     C2(x,y)=-2 x y
 
-    var id = generateId();
-    parent.id = id;
+                     D(x,y) = C1(x, y)² + C2(x, y)²
 
-    MathCell(id, []);
-
-    parent.update = function(id) {
-
-      //((1 - x² + y²)² + (-2x y)²)^(1 / (2n)) cos(1 / n atan2(-2x y,1 - x² + y²) + 1 / n 2 π k)
-      //u cos(v), u sin(v),
-
-      var pi = Math.PI;
-
-      var Re = (x, y, n, k) => Math.pow( (1 - x*x + y*y)*(1 - x*x + y*y) +  (-2*x*y)*(-2*x*y) , 1 / (2 * n) ) * Math.cos(1 / n * Math.atan2(-2*x*y,1 - x*x + y*y) + 1 / n * 2 * pi * k);
-
-      
-
-      var data = [];
-
-      var s = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Re(u * Math.cos(v), u * Math.sin(v), 2, 0)
-            ],
-            [0, 2], [-pi, pi - pi/100000],
-            {
-              color: '#53c653',
-              opacity: 0.9
-            }
-          );
-       var t = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Re(u * Math.cos(v), u * Math.sin(v), 2, 1)
-            ],
-            [0, 2], [-pi, pi - pi/100000],
-            {
-              color: '#cc6699',
-              opacity: 0.9
-            }
-          );
-       
-          
-      data.push(s);
-      data.push(t);
-
-      var config = {
-        type: 'threejs',
-        frame: true,
-        viewpoint: [1,-1,0.5]
-      };
-
-      evaluate(id, data, config);
-
-    }
-
-    parent.update(id);
-
-</script>
-</div> <!--Ends mathcell-->
-
-<br/>
-<br/>
-<br/>
-
-<h4>Imaginary component of \(f(z)=\sqrt{1-z^2}\)</h3>
-
-<div class="mathcell" style="width: 550px; height: 550px">
-<script>
-
-    var parent = document.currentScript.parentNode;
-
-    var id = generateId();
-    parent.id = id;
-
-    MathCell(id, []);
-
-    parent.update = function(id) {
-        
-      //u cos(v), u sin(v),
-
-      var pi = Math.PI;
-
-      var Im = (x, y, n, k) => Math.pow( (1 - x*x + y*y)*(1 - x*x + y*y) +  (-2*x*y)*(-2*x*y) , 1 / (2 * n) ) * Math.sin(1 / n * Math.atan2(-2*x*y,1 - x*x + y*y) + 1 / n * 2 * pi * k);
-
-      var data = [];
+                     R(x,y) = sqrt(C1(x, y)² + C2(x, y)²)
 
-      var s = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Im(u * Math.cos(v), u * Math.sin(v), 2, 0)
-            ],
-            [0, 2], [0 + pi/10000, pi - pi/10000],
-            {
-              color: '#cc0000',
-              opacity: 0.9
-            }
-          );
-       var t = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Im(u * Math.cos(v), u * Math.sin(v), 2, 1)
-            ],
-            [0, 2], [0 + pi/10000, pi - pi/10000],
-            {
-              color: '#6699ff',
-              opacity: 0.9
-            }
-          );
-                     
-    var s1 = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Im(u * Math.cos(v), u * Math.sin(v), 2, 0)
-            ],
-            [0, 2], [-pi + pi/10000, - pi/10000],
-            {
-              color: '#cc0000',
-              opacity: 0.9
-            }
-          );
-     var t1 = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Im(u * Math.cos(v), u * Math.sin(v), 2, 1)
-            ],
-            [0, 2], [-pi + pi/10000, - pi/10000],
-            {
-              color: '#6699ff',
-              opacity: 0.9
-            }
-          );
-          
-      data.push(s);
-      data.push(t);
-      data.push(s1);
-      data.push(t1);
-
-      var config = {
-        type: 'threejs',
-        frame: true,
-        viewpoint: [1,-1,0.5]
-      };
-
-      evaluate(id, data, config);
-
-    }
-
-    parent.update(id);
-
-</script>
-
-</div><!--Ends mathcell-->
-
-</div><!--Ends hide medium-->
-
-<div class="w3-hide-large w3-khaki w3-round w3-padding w3-panel">
-    <p><i class="fas fa-sad-tear"></i> Sorry, the applet is  not supported for small screens. Rotate your device to landscape. Or resize your window so it's more wide than tall.</p>
-</div>
-<br/>
-<p style="text-align:center"><a href="#menu">Top</a></p>
-<br />
-<hr style="border: 2px solid #BEBEBE;">
-
-<br />
+                     T(x,y) = atan2(C2(x, y),C1(x, y))
 
 
-<h4 id="ex4">Real component of \(f(z)=\frac{1}{\sqrt{1-z^2}}\)</h3>
+                     M(x,y)=(C1(x, y) sqrt(R(x, y)) cos(T(x, y) / 2) + sqrt(R(x, y)) sin(T(x, y) / 2) C2(x, y)) / D(x, y)
 
-<div  class="w3-center w3-hide-small w3-hide-medium">
+                     N(x,y)=(C1(x, y) sqrt(R(x, y)) cos(T(x, y) / 2 + pi ) + sqrt(R(x, y)) sin(T(x, y) / 2 + pi ) C2(x, y)) / D(x, y)
 
-<div class="mathcell" style="width: 550px; height: 550px">
-<script>
+                     */
+                    //u cos(v), u sin(v),
 
-    var parent = document.currentScript.parentNode;
+                    var pi = Math.PI;
 
-    var id = generateId();
-    parent.id = id;
+                    var C1 = (x, y) => y * y - x * x + 1;
+                    var C2 = (x, y) => -2 * x * y;
 
-    MathCell(id, []);
+                    var D = (x, y) => Math.pow(C1(x, y), 2) + Math.pow(C2(x, y), 2);
 
-    parent.update = function(id) {
+                    var R = (x, y) => Math.sqrt(Math.pow(C1(x, y), 2) + Math.pow(C2(x, y), 2));
 
-      /*
-       C1(x,y)=y² - x² + 1
-       C2(x,y)=-2 x y
+                    var T = (x, y) => Math.atan2(C2(x, y), C1(x, y));
 
-       D(x,y) = C1(x, y)² + C2(x, y)²
+                    var M = (x, y) => (C1(x, y) * Math.sqrt(R(x, y)) * cos(T(x, y) / 2) + Math.sqrt(R(x, y)) * sin(T(
+                      x, y) / 2) * C2(x, y)) / D(x, y);
 
-       R(x,y) = sqrt(C1(x, y)² + C2(x, y)²)
 
-       T(x,y) = atan2(C2(x, y),C1(x, y))
+                    var N = (x, y) => (C1(x, y) * Math.sqrt(R(x, y)) * cos(T(x, y) / 2 + pi) + Math.sqrt(R(x, y)) *
+                      sin(T(x, y) / 2 + pi) * C2(x, y)) / D(x, y);
 
+                    var data = [];
 
-       M(x,y)=(C1(x, y) sqrt(R(x, y)) cos(T(x, y) / 2) + sqrt(R(x, y)) sin(T(x, y) / 2) C2(x, y)) / D(x, y)
+                    var s = parametric((u, v) => [u * Math.cos(v),
+                        u * Math.sin(v),
+                        M(u * Math.cos(v), u * Math.sin(v))
+                      ],
+                      [0.0001, 2], [-pi, pi], {
+                        color: '#cc0066',
+                        opacity: 0.9
+                      }
+                    );
+                    var t = parametric((u, v) => [u * Math.cos(v),
+                        u * Math.sin(v),
+                        N(u * Math.cos(v), u * Math.sin(v))
+                      ],
+                      [0.0001, 2], [-pi, pi], {
+                        color: '#6666ff',
+                        opacity: 0.9
+                      }
+                    );
 
-       N(x,y)=(C1(x, y) sqrt(R(x, y)) cos(T(x, y) / 2 + pi ) + sqrt(R(x, y)) sin(T(x, y) / 2 + pi ) C2(x, y)) / D(x, y)
+                    data.push(s);
+                    data.push(t);
 
-       */
-      //u cos(v), u sin(v),
+                    var config = {
+                      type: 'threejs',
+                      frame: true,
+                      viewpoint: [1, -1, 0.5]
+                    };
 
-      var pi = Math.PI;
-      
-      var C1 = (x,y) => y * y - x*x + 1;
-      var C2 = (x,y) => -2*x*y;
-      
-      var D = (x,y) => Math.pow(C1(x, y),2) + Math.pow(C2(x, y),2);
+                    evaluate(id, data, config);
 
-      var R = (x,y) => Math.sqrt( Math.pow(C1(x, y),2) + Math.pow(C2(x, y),2) );
+                  }
 
-      var T = (x,y) => Math.atan2(C2(x, y), C1(x, y));
-      
-      var M = (x,y) => (C1(x, y) * Math.sqrt(R(x, y)) * cos(T(x, y) / 2) + Math.sqrt(R(x, y)) * sin(T(x, y) / 2) * C2(x, y)) / D(x, y);
-      
-      
-      var N = (x,y) => (C1(x, y) * Math.sqrt(R(x, y)) * cos(T(x, y) / 2 + pi ) + Math.sqrt(R(x, y)) * sin(T(x, y) / 2 + pi) * C2(x, y)) / D(x, y);
+                  parent.update(id);
+                </script>
+              </div>
+              <!--Ends mathcell-->
 
-      var data = [];
+              <br />
+              <br />
+              <br />
 
-      var s = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              M(u * Math.cos(v), u * Math.sin(v))
-            ],
-            [0.0001, 2], [-pi, pi],
-            {
-              color: '#cc0066',
-              opacity: 0.9
-            }
-          );
-       var t = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              N(u * Math.cos(v), u * Math.sin(v))
-            ],
-            [0.0001, 2], [-pi, pi ],
-            {
-              color: '#6666ff',
-              opacity: 0.9
-            }
-          );
-
-      data.push(s);
-      data.push(t);
-
-      var config = {
-        type: 'threejs',
-        frame: true,
-        viewpoint: [1,-1,0.5]
-      };
-
-      evaluate(id, data, config);
-
-    }
-
-    parent.update(id);
-
-</script>
-</div><!--Ends mathcell-->
-
-<br/>
-<br/>
-<br/>
-
-<h4>Imaginary component of \(f(z)=\frac{1}{\sqrt{1-z^2}}\)</h3>
-
-<div class="mathcell" style="width: 550px; height: 550px">
-<script>
-
-    var parent = document.currentScript.parentNode;
-
-    var id = generateId();
-    parent.id = id;
-
-    MathCell(id, []);
-
-    parent.update = function(id) {
-
-      /*
-       C1(x,y)=y² - x² + 1
-       C2(x,y)=-2 x y
-
-       D(x,y) = C1(x, y)² + C2(x, y)²
-
-       R(x,y) = sqrt(C1(x, y)² + C2(x, y)²)
-
-       T(x,y) = atan2(C2(x, y),C1(x, y))
-
-
-       M(x,y)=(C1(x, y) sqrt(R(x, y)) cos(T(x, y) / 2) + sqrt(R(x, y)) sin(T(x, y) / 2) C2(x, y)) / D(x, y)
-
-       N(x,y)=(C1(x, y) sqrt(R(x, y)) cos(T(x, y) / 2 + pi ) + sqrt(R(x, y)) sin(T(x, y) / 2 + pi ) C2(x, y)) / D(x, y)
-
-       */
-      //u cos(v), u sin(v),
-
-      var pi = Math.PI;
-      
-      var C1 = (x,y) => y * y - x*x + 1;
-      var C2 = (x,y) => -2*x*y;
-      
-      var D = (x,y) => Math.pow(C1(x, y),2) + Math.pow(C2(x, y),2);
-
-      var R = (x,y) => Math.sqrt( Math.pow(C1(x, y),2) + Math.pow(C2(x, y),2) );
-
-      var T = (x,y) => Math.atan2(C2(x, y), C1(x, y));
-      
-      var M = (x,y) => (C1(x, y) * Math.sqrt(R(x, y)) * sin(T(x, y) / 2) - Math.sqrt(R(x, y)) * cos(T(x, y) / 2) * C2(x, y)) / D(x, y);
-      
-      var N = (x,y) => (C1(x, y) * Math.sqrt(R(x, y)) * sin(T(x, y) / 2 + pi ) - Math.sqrt(R(x, y)) * cos(T(x, y) / 2 + pi) * C2(x, y)) / D(x, y);
-
-      var data = [];
+              <h4>Imaginary component of \(f(z)=\frac{1}{\sqrt{1-z^2}}\)</h3>
 
-      var s = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              M(u * Math.cos(v), u * Math.sin(v))
-            ],
-            [0.0001, 2], [-pi + pi/500, -pi/500],
-            {
-              color: '#b3b3b3',
-              opacity: 0.9
-            }
-          );
-       var t = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              N(u * Math.cos(v), u * Math.sin(v))
-            ],
-            [0.0001, 2], [-pi + pi/500, -pi/500],
-            {
-              color: '#408000',
-              opacity: 0.9
-            }
-          );
-          
-      var s1 = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              M(u * Math.cos(v), u * Math.sin(v))
-            ],
-                          [0.0001, 2], [pi/500, pi - pi/500],
-            {
-              color: '#b3b3b3',
-              opacity: 0.9
-            }
-          );
-       var t1 = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              N(u * Math.cos(v), u * Math.sin(v))
-            ],
-                           [0.0001, 2], [pi/500,  pi - pi/500 ],
-            {
-              color: '#408000',
-              opacity: 0.9
-            }
-          );
-      
-          
-      data.push(s);
-      data.push(t);
-      data.push(s1);
-      data.push(t1);
-
-      var config = {
-        type: 'threejs',
-        frame: true,
-        viewpoint: [1,-1,0.5]
-      };
-
-      evaluate(id, data, config);
-
-    }
-
-    parent.update(id);
-
-</script>
-
-</div><!--Ends mathcell-->
-
-</div><!--Ends hide medium-->
-
-<div class="w3-hide-large w3-khaki w3-round w3-padding w3-panel">
-    <p><i class="fas fa-sad-tear"></i> Sorry, the applet is  not supported for small screens. Rotate your device to landscape. Or resize your window so it's more wide than tall.</p>
-</div>
-<br />
-<p style="text-align:center"><a href="#menu">Top</a></p>
-<br />
-<hr style="border: 2px solid #BEBEBE;">
-
-<br />
-
-<h4 id="ex5">Real component of \(f(z)=\arctan(z)\)</h3>
-
-<div  class="w3-center w3-hide-small w3-hide-medium">
-
-<div class="mathcell" style="width: 550px; height: 550px">
-<script>
-
-    var parent = document.currentScript.parentNode;
-
-    var id = generateId();
-    parent.id = id;
-
-    MathCell(id, []);
-
-    parent.update = function(id) {
-
-      /*
-       F(x,y)= (1 - y² - x²) / (x² + (1 - y)²)
-       G(x,y)= (-2x) / (x² + (1 - y)²)
-
-       Re(x,y) = -1 / 2 atan2(G(x, y),F(x, y))
-
-       */
-      //u cos(v), u sin(v),
-
-      var pi = Math.PI;
-      
-      var F = (x,y) => (1 - y*y -x*x )/ ( x*x +(1-y)*(1-y) );
-      var G = (x,y) => (-2*x)/( x*x +(1-y)*(1-y) );
-      
-      var Re = (x,y, n) => -1/2 * Math.atan2(G(x,y), F(x,y)) + n;
-
-
-      var data = [];
-
-      var s = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Re(u * Math.cos(v), u * Math.sin(v), 0)
-            ],
-            [0.0001, 2], [ (-pi) / 2, pi / 2 - pi / 10000],
-            {
-              color: '#cc0066',
-              opacity: 0.9
-            }
-          );
-       var t = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Re(u * Math.cos(v), u * Math.sin(v), 0)
-            ],
-            [0.0001, 2], [pi / 2 + pi / 10000, 3*pi / 2 - pi / 10000],
-            {
-              color: '#cc0066',
-              opacity: 0.9
-            }
-          );
-      var s1 = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Re(u * Math.cos(v), u * Math.sin(v), pi)
-            ],
-            [0.0001, 2], [ (-pi) / 2, pi / 2 - pi / 10000],
-            {
-              color: '#6666ff',
-              opacity: 0.9
-            }
-          );
-       var t1 = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Re(u * Math.cos(v), u * Math.sin(v), pi)
-            ],
-            [0.0001, 2], [pi / 2 + pi / 10000, 3*pi / 2 - pi / 10000],
-            {
-              color: '#6666ff',
-              opacity: 0.9
-            }
-          );
-      var s2 = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Re(u * Math.cos(v), u * Math.sin(v), -pi)
-            ],
-            [0.0001, 2], [ (-pi) / 2, pi / 2 - pi / 10000],
-            {
-              color: '#00b3b3',
-              opacity: 0.9
-            }
-          );
-       var t2 = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Re(u * Math.cos(v), u * Math.sin(v), -pi)
-            ],
-            [0.0001, 2], [pi / 2 + pi / 10000, 3*pi / 2 - pi / 10000],
-            {
-              color: '#00b3b3',
-              opacity: 0.9
-            }
-          );
-      
-      data.push(s);
-      data.push(t);
-      data.push(s1);
-      data.push(t1);
-      data.push(s2);
-      data.push(t2);
-
-      var config = {
-        type: 'threejs',
-        frame: true,
-        viewpoint: [1,-1,0.5]
-      };
-
-      evaluate(id, data, config);
-
-    }
-
-    parent.update(id);
-
-</script>
-</div><!--Ends mathcell-->
-
-<br/>
-<br/>
-<br/>
-
-<h4>Imaginary component of \(f(z)=\arctan(z)\)</h3>
-
-<div class="mathcell" style="width: 550px; height: 550px">
-<script>
-
-    var parent = document.currentScript.parentNode;
-
-    var id = generateId();
-    parent.id = id;
-
-    MathCell(id, []);
-
-    parent.update = function(id) {
-
-      //u cos(v), u sin(v),
-
-      var pi = Math.PI;
-      
-      var F = (x,y) => (1 - y*y -x*x )/ ( x*x +(1-y)*(1-y) );
-      var G = (x,y) => (-2*x)/( x*x +(1-y)*(1-y) );
-      
-      var Im = (x,y) => Math.log( Math.sqrt( F(x, y)*F(x,y) + G(x, y)*G(x,y) ) );
-
-
-      var data = [];
-
-      var s = parametric((u, v) => [u * Math.cos(v),
-              u * Math.sin(v),
-              Im(u * Math.cos(v), u * Math.sin(v))
-            ],
-            [0.0001, 2], [-pi, pi - pi / 10000],
-            {
-              color: '#0099cc',
-              opacity: 0.9
-            }
-          );
-
-      data.push(s);
-      
-
-      var config = {
-        type: 'threejs',
-        frame: true,
-        viewpoint: [1,-1,0.5]
-      };
-
-      evaluate(id, data, config);
-
-    }
-
-    parent.update(id);
-
-</script>
-
-</div><!--Ends mathcell-->
-
-</div><!--Ends hide medium-->
-
-<div class="w3-hide-large w3-khaki w3-round w3-padding w3-panel">
-    <p><i class="fas fa-sad-tear"></i> Sorry, the applet is  not supported for small screens. Rotate your device to landscape. Or resize your window so it's more wide than tall.</p>
-</div>
-<br>
-<p style="text-align:center"><a href="#menu">Top</a></p>
-
-
-
-<hr>
-
-<p style="font-size: 16px"><strong>Note:</strong> All applets made with <a href="https://paulmasson.github.io/mathcell/docs/">MathCell</a> created by  <a href="http://analyticphysics.com/">Paul Masson</a>. 
-  The source code  is available <a href="../applets/mathcell/riemann-surfaces.html" target="_blank">here.</a></p>
-
-
-    
-    <br>
-    
-    <!--<p><strong>Note:</strong> The applet was made with <a href="https://www.geogebra.org/material/show/id/zsf2n5ny">GeoGebra</a>.</a></p>-->
-
-	<!-- link to the next page -->
-	<a href="mappings.html"><p class="nextPage">NEXT: Mappings</p></a>
-	<footer>
-		<p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
-
-		<p class="license">
-			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-				<img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
-			</a>
-		<br/>
-		<strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
-		<strong style="font-size: 18px">2019</strong> 
-	    </p>
-	</footer>
-
-</div> <!-- end wrapper -->
-
-<!-- nice smart quotes, via: http://smartquotesjs.com -->
-<script src="../js/smartquotes.min.js"></script>
+                <div class="mathcell" style="width: 550px; height: 550px">
+                  <script>
+                    var parent = document.currentScript.parentNode;
+
+                    var id = generateId();
+                    parent.id = id;
+
+                    MathCell(id, []);
+
+                    parent.update = function (id) {
+
+                      /*
+                       C1(x,y)=y² - x² + 1
+                       C2(x,y)=-2 x y
+
+                       D(x,y) = C1(x, y)² + C2(x, y)²
+
+                       R(x,y) = sqrt(C1(x, y)² + C2(x, y)²)
+
+                       T(x,y) = atan2(C2(x, y),C1(x, y))
+
+
+                       M(x,y)=(C1(x, y) sqrt(R(x, y)) cos(T(x, y) / 2) + sqrt(R(x, y)) sin(T(x, y) / 2) C2(x, y)) / D(x, y)
+
+                       N(x,y)=(C1(x, y) sqrt(R(x, y)) cos(T(x, y) / 2 + pi ) + sqrt(R(x, y)) sin(T(x, y) / 2 + pi ) C2(x, y)) / D(x, y)
+
+                       */
+                      //u cos(v), u sin(v),
+
+                      var pi = Math.PI;
+
+                      var C1 = (x, y) => y * y - x * x + 1;
+                      var C2 = (x, y) => -2 * x * y;
+
+                      var D = (x, y) => Math.pow(C1(x, y), 2) + Math.pow(C2(x, y), 2);
+
+                      var R = (x, y) => Math.sqrt(Math.pow(C1(x, y), 2) + Math.pow(C2(x, y), 2));
+
+                      var T = (x, y) => Math.atan2(C2(x, y), C1(x, y));
+
+                      var M = (x, y) => (C1(x, y) * Math.sqrt(R(x, y)) * sin(T(x, y) / 2) - Math.sqrt(R(x, y)) * cos(
+                        T(x, y) / 2) * C2(x, y)) / D(x, y);
+
+                      var N = (x, y) => (C1(x, y) * Math.sqrt(R(x, y)) * sin(T(x, y) / 2 + pi) - Math.sqrt(R(x, y)) *
+                        cos(T(x, y) / 2 + pi) * C2(x, y)) / D(x, y);
+
+                      var data = [];
+
+                      var den = 1200;
+
+                      var s = parametric((u, v) => [u * Math.cos(v),
+                          u * Math.sin(v),
+                          M(u * Math.cos(v), u * Math.sin(v))
+                        ],
+                        [0.0001, 2], [-pi + pi / den, -pi / den], {
+                          color: '#b3b3b3',
+                          opacity: 0.9
+                        }
+                      );
+                      var t = parametric((u, v) => [u * Math.cos(v),
+                          u * Math.sin(v),
+                          N(u * Math.cos(v), u * Math.sin(v))
+                        ],
+                        [0.0001, 2], [-pi + pi / den, -pi / den], {
+                          color: '#408000',
+                          opacity: 0.9
+                        }
+                      );
+
+                      var s1 = parametric((u, v) => [u * Math.cos(v),
+                          u * Math.sin(v),
+                          M(u * Math.cos(v), u * Math.sin(v))
+                        ],
+                        [0.0001, 2], [pi / den, pi - pi / den], {
+                          color: '#b3b3b3',
+                          opacity: 0.9
+                        }
+                      );
+                      var t1 = parametric((u, v) => [u * Math.cos(v),
+                          u * Math.sin(v),
+                          N(u * Math.cos(v), u * Math.sin(v))
+                        ],
+                        [0.0001, 2], [pi / den, pi - pi / den], {
+                          color: '#408000',
+                          opacity: 0.9
+                        }
+                      );
+
+
+                      data.push(s);
+                      data.push(t);
+                      data.push(s1);
+                      data.push(t1);
+
+                      var config = {
+                        type: 'threejs',
+                        frame: true,
+                        viewpoint: [1, -1, 0.5]
+                      };
+
+                      evaluate(id, data, config);
+
+                    }
+
+                    parent.update(id);
+                  </script>
+
+                </div>
+                <!--Ends mathcell-->
+
+            </div>
+            <!--Ends hide medium-->
+
+            <div class="w3-hide-large w3-khaki w3-round w3-padding w3-panel">
+              <p><i class="fas fa-sad-tear"></i> Sorry, the applet is not supported for small screens. Rotate your
+                device to landscape. Or resize your window so it's more wide than tall.</p>
+            </div>
+            <br />
+            <p style="text-align:center"><a href="#menu">Top</a></p>
+            <br />
+            <hr style="border: 2px solid #BEBEBE;">
+
+            <br />
+
+            <h4 id="ex5">Real component of \(f(z)=\arctan(z)\)</h3>
+
+              <div class="w3-center w3-hide-small w3-hide-medium">
+
+                <div class="mathcell" style="width: 550px; height: 550px">
+                  <script>
+                    var parent = document.currentScript.parentNode;
+
+                    var id = generateId();
+                    parent.id = id;
+
+                    MathCell(id, []);
+
+                    parent.update = function (id) {
+
+                      /*
+                       F(x,y)= (1 - y² - x²) / (x² + (1 - y)²)
+                       G(x,y)= (-2x) / (x² + (1 - y)²)
+
+                       Re(x,y) = -1 / 2 atan2(G(x, y),F(x, y))
+
+                       */
+                      //u cos(v), u sin(v),
+
+                      var pi = Math.PI;
+
+                      var F = (x, y) => (1 - y * y - x * x) / (x * x + (1 - y) * (1 - y));
+                      var G = (x, y) => (-2 * x) / (x * x + (1 - y) * (1 - y));
+
+                      var Re = (x, y, n) => -1 / 2 * Math.atan2(G(x, y), F(x, y)) + n;
+
+
+                      var data = [];
+
+                      var s = parametric((u, v) => [u * Math.cos(v),
+                          u * Math.sin(v),
+                          Re(u * Math.cos(v), u * Math.sin(v), 0)
+                        ],
+                        [0.0001, 2], [(-pi) / 2, pi / 2 - pi / 10000], {
+                          color: '#cc0066',
+                          opacity: 0.9
+                        }
+                      );
+                      var t = parametric((u, v) => [u * Math.cos(v),
+                          u * Math.sin(v),
+                          Re(u * Math.cos(v), u * Math.sin(v), 0)
+                        ],
+                        [0.0001, 2], [pi / 2 + pi / 10000, 3 * pi / 2 - pi / 10000], {
+                          color: '#cc0066',
+                          opacity: 0.9
+                        }
+                      );
+                      var s1 = parametric((u, v) => [u * Math.cos(v),
+                          u * Math.sin(v),
+                          Re(u * Math.cos(v), u * Math.sin(v), pi)
+                        ],
+                        [0.0001, 2], [(-pi) / 2, pi / 2 - pi / 10000], {
+                          color: '#6666ff',
+                          opacity: 0.9
+                        }
+                      );
+                      var t1 = parametric((u, v) => [u * Math.cos(v),
+                          u * Math.sin(v),
+                          Re(u * Math.cos(v), u * Math.sin(v), pi)
+                        ],
+                        [0.0001, 2], [pi / 2 + pi / 10000, 3 * pi / 2 - pi / 10000], {
+                          color: '#6666ff',
+                          opacity: 0.9
+                        }
+                      );
+                      var s2 = parametric((u, v) => [u * Math.cos(v),
+                          u * Math.sin(v),
+                          Re(u * Math.cos(v), u * Math.sin(v), -pi)
+                        ],
+                        [0.0001, 2], [(-pi) / 2, pi / 2 - pi / 10000], {
+                          color: '#00b3b3',
+                          opacity: 0.9
+                        }
+                      );
+                      var t2 = parametric((u, v) => [u * Math.cos(v),
+                          u * Math.sin(v),
+                          Re(u * Math.cos(v), u * Math.sin(v), -pi)
+                        ],
+                        [0.0001, 2], [pi / 2 + pi / 10000, 3 * pi / 2 - pi / 10000], {
+                          color: '#00b3b3',
+                          opacity: 0.9
+                        }
+                      );
+
+                      data.push(s);
+                      data.push(t);
+                      data.push(s1);
+                      data.push(t1);
+                      data.push(s2);
+                      data.push(t2);
+
+                      var config = {
+                        type: 'threejs',
+                        frame: true,
+                        viewpoint: [1, -1, 0.5]
+                      };
+
+                      evaluate(id, data, config);
+
+                    }
+
+                    parent.update(id);
+                  </script>
+                </div>
+                <!--Ends mathcell-->
+
+                <br />
+                <br />
+                <br />
+
+                <h4>Imaginary component of \(f(z)=\arctan(z)\)</h3>
+
+                  <div class="mathcell" style="width: 550px; height: 550px">
+                    <script>
+                      var parent = document.currentScript.parentNode;
+
+                      var id = generateId();
+                      parent.id = id;
+
+                      MathCell(id, []);
+
+                      parent.update = function (id) {
+
+                        //u cos(v), u sin(v),
+
+                        var pi = Math.PI;
+
+                        var F = (x, y) => (1 - y * y - x * x) / (x * x + (1 - y) * (1 - y));
+                        var G = (x, y) => (-2 * x) / (x * x + (1 - y) * (1 - y));
+
+                        var Im = (x, y) => Math.log(Math.sqrt(F(x, y) * F(x, y) + G(x, y) * G(x, y)));
+
+
+                        var data = [];
+
+                        var s = parametric((u, v) => [u * Math.cos(v),
+                            u * Math.sin(v),
+                            Im(u * Math.cos(v), u * Math.sin(v))
+                          ],
+                          [0.0001, 2], [-pi, pi - pi / 10000], {
+                            color: '#0099cc',
+                            opacity: 0.9
+                          }
+                        );
+
+                        data.push(s);
+
+
+                        var config = {
+                          type: 'threejs',
+                          frame: true,
+                          viewpoint: [1, -1, 0.5]
+                        };
+
+                        evaluate(id, data, config);
+
+                      }
+
+                      parent.update(id);
+                    </script>
+
+                  </div>
+                  <!--Ends mathcell-->
+
+              </div>
+              <!--Ends hide medium-->
+
+              <div class="w3-hide-large w3-khaki w3-round w3-padding w3-panel">
+                <p><i class="fas fa-sad-tear"></i> Sorry, the applet is not supported for small screens. Rotate your
+                  device to landscape. Or resize your window so it's more wide than tall.</p>
+              </div>
+              <br>
+              <p style="text-align:center"><a href="#menu">Top</a></p>
+
+
+              <hr>
+
+              <p style="font-size: 16px"><strong>Note:</strong> All applets made with <a
+                  href="https://paulmasson.github.io/mathcell/docs/">MathCell</a> created by <a
+                  href="http://analyticphysics.com/">Paul Masson</a>.
+                The source code is available <a href="../applets/mathcell/riemann-surfaces.html"
+                  target="_blank">here.</a></p>
+
+
+
+              <br>
+
+              <!--<p><strong>Note:</strong> The applet was made with <a href="https://www.geogebra.org/material/show/id/zsf2n5ny">GeoGebra</a>.</a></p>-->
+
+              <!-- link to the next page -->
+              <a href="mappings.html">
+                <p class="nextPage">NEXT: Mappings</p>
+              </a>
+              <footer>
+                <p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
+                    href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+
+                <p class="license">
+                  <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                    <img id="license" alt="Creative Commons License" style="border-width:0"
+                      src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+                  </a>
+                  <br />
+                  <strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
+                  <strong style="font-size: 18px">2019</strong>
+                </p>
+              </footer>
+
+  </div> <!-- end wrapper -->
+
+  <!-- nice smart quotes, via: http://smartquotesjs.com -->
+  <script src="../js/smartquotes.min.js"></script>
 
 </body>
+
 </html>
