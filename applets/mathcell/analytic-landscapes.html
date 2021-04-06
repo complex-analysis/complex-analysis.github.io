@@ -142,7 +142,7 @@
     gtag('config', 'UA-121691678-1');
   </script>
 
-  <script src="mathcell.js"></script>
+  <script src="https://paulmasson.github.io/mathcell/build/mathcell.js"></script>
   <script src="math.js"></script>
 
 </head>
@@ -242,7 +242,7 @@
 
         parent.update = function (id) {
 
-          var p = parametric((x, y) => [x, y, pow(complex(x, y), 1/2)], [-5, 5, 151], [-5, 5, 151], {
+          var p = parametric((x, y) => [x, y, pow(complex(x, y), 1 / 2)], [-5, 5, 151], [-5, 5, 151], {
             complexFunction: 'im',
             colormap: 'complexArgument'
           });
@@ -252,6 +252,69 @@
           };
 
           evaluate(id, [p], config);
+
+        }
+
+        parent.update(id);
+      </script>
+
+    </div>
+    <!--Ends mathcell-->
+
+    <p>Imaginary component of \(f(z)=z^{1/2} \)</p>
+
+    <div class="mathcell" style="width: 550px; height: 550px">
+      <script>
+        var parent = document.currentScript.parentNode;
+
+        var id = generateId();
+        parent.id = id;
+
+        MathCell(id, [{
+            type: 'buttons',
+            values: ['cool', 'hot', 'spring', 'summer', 'autumn', 'winter'],
+            default: 'hot',
+            width: '.6in',
+            name: 'map',
+            label: 'Colormap: '
+          },
+          {
+            type: 'checkbox',
+            name: 'reversed',
+            label: 'Reversed: '
+          }
+        ]);
+
+        parent.update = function (id) {
+
+          var map = getVariable(id, 'map');
+          var reversed = getVariable(id, 'reversed');
+
+          function noD(x, y) {
+
+            var n = Math.sqrt(x * x + y * y);
+
+            if (n === 0) return 0;
+
+            return x*y/(x*x+y*y);
+
+          }
+
+          var s = parametric((x, y) => [x, y, noD(x,y)], [-10, 10, 150], [-10, 10, 150], {
+            colormap: 'cool',
+            reverseColormap: reversed
+          });
+
+          var data = [s];
+
+          var config = {
+            type: 'threejs',
+            frame: true,
+            aspectRatio: [1, 1, 10],
+            viewpoint: [1, 1, .2]
+          };
+
+          evaluate(id, data, config);
 
         }
 
