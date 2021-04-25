@@ -1,0 +1,396 @@
+<!doctype html>
+<html>
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+	<title>Complex Analysis</title>
+
+	<!-- dublin core -->
+	<meta name="dc.title" CONTENT="Complex Analysis">
+	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+	<meta name="dc.date" CONTENT="26-01-2019">
+	<meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
+	<meta name="dc.type" CONTENT="Interactive Resource">
+	<meta name="dc.format" CONTENT="HTML">
+	<meta name="dc.language" CONTENT="en-US">
+	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+	<!-- social media cards -->
+	<meta property="og:title" content="Complex Analysis">
+	<meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+	<meta property="og:type" content="website">
+	<!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+	<meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+	<meta property="og:site_name" content="Complex Analysis">
+
+
+	<!-- FONTS AND CSS -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet'
+		type='text/css'>
+	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="../css/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+	<!-- CODE PRETTIFY -->
+	<!-- via: https://github.com/google/code-prettify -->
+	<script src="../js/run_prettify.js"></script>
+
+
+
+	<!-- JQUERY FANCY ADDITIONS -->
+	<!-- add code class, hover text, etc -->
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+		$(document).ready(function () {
+
+			// prettyprint the code, pls
+			$('pre').addClass('prettyprint lang-java');
+
+			// add word-breaks to anything with a / or - in it
+			$('h1').each(function () {
+				var t = $(this).text();
+				t = t.replace('/', '/<wbr>');
+				t = t.replace('-', '-<wbr>');
+				$(this).html(t);
+			});
+
+			// set formatting
+			resizeCommands();
+		});
+
+		// when the window gets resized, do some stuff to keep everything
+		// looking pretty
+		$(window).resize(function () {
+			resizeCommands();
+		});
+
+		// things to do when the page is loaded or window resized
+		function resizeCommands() {
+			// large-screen stuff...
+			if ($(window).width() > 600) {
+
+				// long headline on intro page
+				// $('#introHeadline').html('TABLE OF CONTENTS');
+
+				// menu hover stuff on larger screens
+				// (does weird formatting on larger screens)
+				// hover over title to show "Table of Contents"
+				$('#title a').hover(
+					function () {
+						$('#title a').text('Table of Contents');
+					},
+					function () {
+						$('#title a').text('Complex Analysis'); // set back when moving out
+					}
+				);
+
+				// set prev/next titles
+				$('#prev a').hover(
+					function () {
+						$('#title a').text('Prev: Roots of Complex Numbers');
+					},
+					function () {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+				$('#next a').hover(
+					function () {
+						$('#title a').text('Next: The Logarithmic Function');
+					},
+					function () {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+			}
+
+			// small-screen stuff
+			else {
+				// short headline on intro page
+				// $('#introHeadline').html('INTRO');
+			}
+		}
+	</script>
+
+
+	<!--MathJax starts-->
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+                           TeX: { equationNumbers: { autoNumber: "AMS" } }
+                           });
+        </script>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+	<script type="text/javascript" async
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-155852901-1');
+	</script>
+
+	<!--GeoGebra embeding-->
+	<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+	<script>
+		var applet1 = new GGBApplet({
+			material_id: "q8cagcc5",
+			borderColor: "888888",
+			playButton: "true",
+			showFullscreenButton: "true",
+			enableShiftDragZoom: "true",
+			showResetIcon: "true"
+		}, true);
+		window.addEventListener("load", function () {
+			applet1.inject('applet_container1');
+		});
+	</script>
+	<!--GeoGebra embeding ends-->
+
+
+
+</head>
+
+<body>
+	<div id="wrapper">
+
+		<header>
+			<p><span id="prev"><a href="roots_complex_numbers.html">&larr;</a></span><span id="title"><a
+						href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a
+						href="logarithmic_function.html">&rarr;</a></span>
+				<div class="clear"></div>
+			</p>
+		</header>
+
+		<!--<p><img src="../images/complex_functions.jpg" alt="f(z)=z^2" title="f(z)=z^2"></p>-->
+
+		<h1>Curves in the complex plane</h1>
+
+		<hr>
+
+		<p>
+			Suppose the continuous real-valued functions $x = x(t), y = y(t), a \leq t \leq b,$ are parametric
+			equations of a curve $C$ in the complex plane. If we use these equations as the real and
+			imaginary parts in $z = x+iy$, we can describe
+			the points $z$ on $C$ by means of a complex-valued function of a real variable $t$
+			called a <em>parametrization</em> of $C$:
+			\begin{equation}\label{parcurve}
+			z(t) = x(t) + i y(t), \quad a\leq t\leq b.
+			\end{equation}
+		</p>
+
+		<p>
+			The point $z(a) = x(a) + i y(a)$ or $z_0 = (x(a), y(a))$ is called the <em>initial point</em> of
+			$C$ and $z(b) = x(b) + iy(b)$
+			or $z_1 = (x(b), y(b))$ is its <em>terminal point</em>.
+			Also $z(t) = x(t) + iy(t)$ could also be
+			interpreted as a two-dimensional vector function.
+			Consequently, $z(a)$ and $z(b)$ can be interpreted as position
+			vectors. As $t$ varies from $t = a$ to $t = b$ we can envision the curve $C$
+			being traced out by the moving arrowhead of $z(t)$.
+			This can be appreciated in the following applet with $0 \leq t\leq 1$.
+		</p>
+
+		<div class="w3-hide-small">
+			<div class="w3-center">
+				<iframe scrolling="no" title="Parametrization of curves in the complex plane"
+					src="https://www.geogebra.org/material/iframe/id/tncpryrm/width/576/height/419/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false"
+					width="576px" height="419px" style="border:0px;" allowfullscreen=""> </iframe>
+				<p><em>Drag the slider slowly. You can also move the points.</em></p>
+			</div>
+		</div>
+
+		<p>
+			For example, the parametric equations $x = \cos t,$ $y = \sin t,$ $0 \leq t \leq 2\pi,$
+			describe a unit circle centered at the origin. A parametrization of this circle is
+			$z(t) = \cos t + i \sin t,$ or
+			$z(t) = e^{it},$ $0 \leq t \leq 2\pi$.
+		</p>
+
+		<div class="w3-hide-small">
+			<div class="w3-center">
+				<iframe scrolling="no" title="Circle in the complex plane"
+					src="https://www.geogebra.org/material/iframe/id/nc34pddp/width/450/height/419/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false"
+					width="450px" height="419px" style="border:0px;" allowfullscreen=""> </iframe>
+				<p><em>Drag the slider.</em></p>
+			</div>
+		</div>
+
+
+		<hr>
+
+		<h2>Contours</h2>
+
+		<p>
+			The notions of curves in the complex plane that are smooth, piecewise smooth, simple, closed, and simple
+			closed are easily formulated in terms of the vector function (\ref{parcurve}).
+			Suppose the derivative of (\ref{parcurve}) is
+			$z'(t) = x'(t) + iy'(t).$ We say a curve $C$ in the complex plane is <em>smooth</em> if $z'(t)$
+			is continuous and never zero in the
+			interval $a \leq t \leq b.$ As shown in Figure 2, since the vector $z'(t)$ is not zero at any point $P$ on
+			$C$, the vector
+			$z'(t)$ is tangent to $C$ at $P$. Thus, a smooth curve has a continuously turning tangent; or in other
+			words, a smooth curve can have no sharp corners or cusps. See Figure 2.
+		</p>
+
+		<div class="w3-row-padding">
+			<div id="phase" class="w3-half w3-container w3-margin-bottom">
+				<figure class="w3-center">
+					<img class="w3-image w3-mobile" src="../images/chp03-int/smooth.svg"
+						alt="Smooth curve and Tangent vector" title="Smooth curve and Tangent vector"
+						style="width:100%;">
+					<figcaption>
+						Figure 1: $z'(t)=x'(t) + iy(t)$ as a tangent vector.
+					</figcaption>
+				</figure>
+			</div>
+			<div id="modulus" class="w3-half w3-container w3-margin-bottom">
+				<figure class="w3-center">
+					<img class="w3-image w3-mobile" src="../images/chp03-int/not-smooth.svg" alt="Non smooth"
+						title="Non smooth" style="width:100%;">
+					<figcaption>
+						Figure 2: Curve $C$ is not smooth since it has a cusp.
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+
+		<p>
+			A <em>piecewise smooth curve</em> $C$
+			has a continuously turning tangent, except possibly at the points where the component smooth curves
+			$C_1, C_2, \ldots, C_n$ are joined together.
+
+		</p>
+
+		<figure class="w3-center">
+			<img class="w3-image w3-mobile" src="../images/chp03-int/piecewise-smooth.svg" alt="Piecewise smooth curve"
+				title="Piecewise smooth curve" style="width:65%;">
+			<figcaption>
+				<b>Figure 3:</b> A piecewise smooth curve.
+			</figcaption>
+		</figure>
+
+		<p>
+			A curve $C$ in the complex plane is said to be a <em>simple</em> if $z(t_1) \neq z(t_2)$ for
+			$t_1 \neq t_2,$ except possibly for $t = a$ and $t = b.$ $C$ is a <em>closed curve</em> if $z(a) = z(b).$
+		</p>
+
+		<div class="w3-row-padding">
+			<div id="phase" class="w3-half w3-container w3-margin-bottom">
+				<figure class="w3-center">
+					<img class="w3-image w3-mobile" src="../images/chp03-int/simple-curve.svg" alt="Simple curve"
+						title="Simple curve" style="width:100%;">
+					<figcaption>
+						Figure 4: Simple curve.
+					</figcaption>
+				</figure>
+			</div>
+			<div id="modulus" class="w3-half w3-container w3-margin-bottom">
+				<figure class="w3-center">
+					<img class="w3-image w3-mobile" src="../images/chp03-int/non-simple-curve.svg"
+						alt="Non simple curve" title="Non simple curve" style="width:100%;">
+					<figcaption>
+						Figure 5: Non simple curve.
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+
+		<p>
+			$C$ is a <em>simple closed curve</em> if $z(t_1)\neq z(t_2)$ for $t_1\neq t_2$ and $z(a) = z(b).$
+			In complex analysis, a piecewise smooth curve $C$ is called a <em>contour</em> or <em>path</em>.
+		</p>
+
+		<div class="w3-row-padding">
+			<div id="phase" class="w3-half w3-container w3-margin-bottom">
+				<figure class="w3-center">
+					<img class="w3-image w3-mobile" src="../images/chp03-int/simple-closed-curve.svg" alt="Simple curve"
+						title="Simple closed curve" style="width:100%;">
+					<figcaption>
+						Figure 4: Simple closed curve.
+					</figcaption>
+				</figure>
+			</div>
+			<div id="modulus" class="w3-half w3-container w3-margin-bottom">
+				<figure class="w3-center">
+					<img class="w3-image w3-mobile" src="../images/chp03-int/non-simple-closed-curve.svg"
+						alt="Non simple curve" title="Non simple closed curve" style="width:100%;">
+					<figcaption>
+						Figure 5: Non simple closed curve.
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+
+		<p>
+			We define the <em>positive direction</em> on a contour $C$
+			to be the direction on the curve corresponding to increasing values of the
+			parameter $t$. It is also said that the curve $C$ has <em>positive orientation</em>.
+			In the case of a simple closed curve $C$, the positive direction roughly corresponds
+			to the counterclockwise direction or the direction that a person must walk
+			on $C$ in order to keep the interior
+			of C to the left. For example, the circle $z(t) = e^{it}$, $0 \leq t \leq 2\pi$,
+			has positive orientation. The <em>negative direction</em> on a contour $C$ is
+			the direction opposite the positive direction. If $C$ has an orientation,
+			the <em>opposite curve</em>, that is, a curve with opposite orientation, is denoted by $−C$. On a simple
+			closed curve, the negative direction corresponds to the clockwise direction.
+		</p>
+
+		<div class="w3-hide-small">
+			<div class="w3-center">
+				<iframe scrolling="no" title="Circle orientation"
+					src="https://www.geogebra.org/material/iframe/id/whjrn67s/width/449/height/419/border/888888/sfsb/false/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false"
+					width="449px" height="419px" style="border:0px;" allowfullscreen=""> </iframe>
+				<p><em>You can change the direction of $C$.</em></p>
+			</div>
+		</div>
+
+
+		<br>
+
+
+
+		<!-- <p><strong>Note:</strong> The applet was made with <a href="https://www.geogebra.org/material/show/id/y9pnh3hu">GeoGebra</a>.</p>-->
+
+		<!-- link to the next page -->
+		<a href="logarithmic_function.html">
+			<p class="nextPage">NEXT: The Logarithmic Function</p>
+		</a>
+		<footer>
+			<p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
+					href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+
+			<p class="license">
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+					<img id="license" alt="Creative Commons License" style="border-width:0"
+						src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+				</a>
+				<br />
+				<strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
+				<strong style="font-size: 18px">2019</strong>
+			</p>
+		</footer>
+
+	</div> <!-- end wrapper -->
+
+	<!-- nice smart quotes, via: http://smartquotesjs.com -->
+	<script src="../js/smartquotes.min.js"></script>
+
+</body>
+
+</html>
