@@ -175,13 +175,12 @@
 			</p>
 		</header>
 
-		<!--<p><img src="../images/complex_functions.jpg" alt="f(z)=z^2" title="f(z)=z^2"></p>-->
 
 		<h1>Complex Integration</h1>
 
 		<hr>
 
-		<div class="w3-container" style="margin-right:0px;margin-left:100px">
+		<div class="w3-container w3-hide-small" style="margin-right:0px;margin-left:100px">
 			<div class="w3-left-align">
 				<p style="font-size:16px;color:#666666;font-weight:normal;">
 					The magic and power of calculus ultimately rests on the amazing fact that differentiation and
@@ -231,6 +230,40 @@
 			\int_C\left(v\,dx+u\,dy\right)
 			\end{eqnarray}
 		</p>
+
+		<div class="w3-padding">
+			<p><strong>Example 1:</strong> Let's evaluate $\int_C \overline{z}\, dz$, where $C$ is given by $x=3t, y=t^2$,
+				with $-1\leq t\leq 4.$
+			</p>
+			<p>
+				Here we have that $C$ is $z(t)=3t+ it^2 .$ Therefore, with the identification $f(z)=\overline{z}$
+				we have
+				$$f\left(z(t)\right)=\overline{3t+it^2}= 3t-it^2 .$$
+				Also, $z'(t) = 3 + 2it$, and so the integral is
+				\begin{eqnarray*}
+				\int_C \overline{z}\, dz&=& \int_{-1}^4 \left(3t-it^2\right)\left(3+ 2it\right)dt\\
+				&=& \int_{-1}^4 \left(2t^3+9t + 3t^2i\right)dt\\
+				&=& \int_{-1}^4 \left(2t^3+9t \right)dt + i\int_{-1}^4 3t^2dt\\
+				&=& \Bigg. \left(\frac{1}{2}t^4 + \frac{9}{2} t^2\right)\Bigg|_{-1}^4 + i\Bigg. t^3\Bigg|_{-1}^4\\
+				&=& 195+ 65 i.
+				\end{eqnarray*}
+			</p>
+		</div>
+
+		<div class="w3-padding">
+			<p><strong>Example 2:</strong> Now let's evaluate $\displaystyle \int_C \dfrac{1}{z}\, dz$, where $C$ is the circle  $x=\cos t, y=\sin t$,
+				with $0\leq t\leq 2\pi .$
+			</p>
+			<p>
+				In this case $C$ is $z(t)=\cos t + i \sin t = e^{it}$,  
+				$$f\left(z(t)\right)=\frac{1}{e^{it}}$$
+				and, $z'(t) = ie^{it}$. Thus 
+				\begin{eqnarray*}
+				\int_C \dfrac{1}{z}\, dz&=& \int_{0}^{2\pi} \left(e^{-it}\right)ie^{it}dt = i  \int_{0}^{2\pi} dt= 2\pi \,i\\
+				
+				\end{eqnarray*}
+			</p>
+		</div>
 
 		<br>
 
