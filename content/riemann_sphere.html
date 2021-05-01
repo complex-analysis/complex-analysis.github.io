@@ -1,18 +1,19 @@
 <!doctype html>
 <html>
+
 <head>
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+	<link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
 	<title>Complex Analysis</title>
 
 	<!-- dublin core -->
 	<meta name="dc.title" CONTENT="Complex Analysis">
 	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
 	<meta name="dc.date" CONTENT="26-01-2019">
-    <meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
+	<meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
 	<meta name="dc.type" CONTENT="Interactive Resource">
 	<meta name="dc.format" CONTENT="HTML">
 	<meta name="dc.language" CONTENT="en-US">
@@ -26,32 +27,32 @@
 	<meta property="og:url" content="">-->
 	<meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
 	<meta property="og:site_name" content="Complex Analysis">
-    
-	
+
+
 	<!-- FONTS AND CSS -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
-	<link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet'
+		type='text/css'>
 	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="../css/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" >
+	<link rel="stylesheet" href="../css/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 	<!-- CODE PRETTIFY -->
 	<!-- via: https://github.com/google/code-prettify -->
 	<script src="../js/run_prettify.js"></script>
 
-	
+
 
 	<!-- JQUERY FANCY ADDITIONS -->
 	<!-- add code class, hover text, etc -->
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script>
-
-		$(document).ready(function() {
+		$(document).ready(function () {
 
 			// prettyprint the code, pls
 			$('pre').addClass('prettyprint lang-java');
 
 			// add word-breaks to anything with a / or - in it
-			$('h1').each(function() {
+			$('h1').each(function () {
 				var t = $(this).text();
 				t = t.replace('/', '/<wbr>');
 				t = t.replace('-', '-<wbr>');
@@ -64,7 +65,7 @@
 
 		// when the window gets resized, do some stuff to keep everything
 		// looking pretty
-		$(window).resize( function() {
+		$(window).resize(function () {
 			resizeCommands();
 		});
 
@@ -80,28 +81,28 @@
 				// (does weird formatting on larger screens)
 				// hover over title to show "Table of Contents"
 				$('#title a').hover(
-					function() {
+					function () {
 						$('#title a').text('Table of Contents');
 					},
-					function() {
-						$('#title a').text('Complex Analysis');	// set back when moving out
+					function () {
+						$('#title a').text('Complex Analysis'); // set back when moving out
 					}
 				);
 
 				// set prev/next titles
 				$('#prev a').hover(
-					function() {
+					function () {
 						$('#title a').text('Prev: Complex Functions');
 					},
-					function() {
+					function () {
 						$('#title a').text('Complex Analysis');
 					}
 				);
 				$('#next a').hover(
-					function() {
+					function () {
 						$('#title a').text('Next: Complex Differentiation');
 					},
-					function() {
+					function () {
 						$('#title a').text('Complex Analysis');
 					}
 				);
@@ -114,196 +115,233 @@
 			}
 		}
 	</script>
-    
-    <!--MathJax starts-->
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
+
+	<!--MathJax starts-->
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
                            TeX: { equationNumbers: { autoNumber: "AMS" } }
                            });
         </script>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
         </script>
-    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-        </script>
-    
-  
-    
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	<script type="text/javascript" async
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
 
-  gtag('config', 'UA-155852901-1');
-</script>
-   
-<!--GeoGebra embeding-->
-<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
 
-<script>
-	var params = { 
-				"width": 800, 
-				"height": 435,
-				"material_id": "zsf2n5ny",
-                "borderColor": "888888",
-                "playButton": false,
-                "showFullscreenButton": true,
-                "enableShiftDragZoom": true,
-                "showResetIcon": true };
-    var ggbApplet = new GGBApplet(params, true);
-    window.addEventListener("load", function() { 
-        ggbApplet.inject('ggb-element');
-    });
-</script>
-<!--GeoGebra embeding ends-->
 
-    
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-155852901-1');
+	</script>
+
+	<!--GeoGebra embeding-->
+	<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+	<script>
+		var params = {
+			"width": 800,
+			"height": 435,
+			"material_id": "zsf2n5ny",
+			"borderColor": "888888",
+			"playButton": false,
+			"showFullscreenButton": true,
+			"enableShiftDragZoom": true,
+			"showResetIcon": true
+		};
+		var ggbApplet = new GGBApplet(params, true);
+		window.addEventListener("load", function () {
+			ggbApplet.inject('ggb-element');
+		});
+	</script>
+	<!--GeoGebra embeding ends-->
+
+
 </head>
 
 <body>
-<div id="wrapper">
-        
-        <header><p><span id="prev"><a href="complex_functions.html">&larr;</a></span>
-			<span id="title"><a href="table_of_contents.html">Complex Analysis</a></span>
-			<span id="next"><a href="complex_differentiation.html">&rarr;</a></span><div class="clear"></div></p></header>
-        
+	<div id="wrapper">
 
-<h1>Riemann Sphere</h1>
-<hr>
-
-<h2>The Point to Infinity</h2>
-<p>For some purposes it is convenient to introduce the <em>point to infinity</em>, denoted by $\infty$, in addition to the points $z\in \mathbb C$. We must be careful in doing so, because it can lead to confusion an abuse of the symbol $\infty$. However, with care it can be useful, if we  want to be able to talk  about infinite limits and limits at infinity.</p>
-
-<p>In contrast  to the real line, to which $+\infty$ and $-\infty$ can be added, we have only one $\infty$ for $\mathbb C$. The reason is that $\mathbb C$ has no natural ordering as $\mathbb R$ does. Formally we add a symbol $\infty$ to $\mathbb C$ to obtain the <em>extended complex plane</em>,  denoted by  $\mathbb C^*=\mathbb C \cup \{\infty\}$, and define operations with $\infty$ by the rules
-\begin{eqnarray*}
-z+\infty&amp;=&amp;\infty\\
-z\cdot \infty&amp;=&amp;\infty \quad \quad \text{provided } z\neq 0\\
-\infty+\infty&amp;=&amp;\infty\\
-\infty\cdot\infty&amp;=&amp; \infty\\
-\frac{z}{\infty}&amp;=&amp;0
-\end{eqnarray*}
-for $z\in \mathbb C$. Notice that some operations are not defined:
-$$\frac{\infty}{\infty}\,,\quad 0\cdot \infty\,,\quad  \infty-\infty\,,$$
-and so forth are  for  the same reasons that they are in the calculus of real numbers.</p>
-
-<p>The extended complex plane can be mapped onto the
-surface of a sphere whose south pole corresponds to the origin and whose north
-pole to the point $\infty$. All other points of the complex plane can be mapped in
-a one-to-one fashion to points on the surface of the sphere by using the following
-construction. Connect the point $z$ in the plane with the north pole using a
-straight line. This line intersects the sphere at the point $P(z)$. In this way each
-point $z= x+iy$ on the complex plane corresponds uniquely to a point $P(z)$ on the
-surface of the sphere. This construction is called the <em>stereographic projection</em> and is  illustrated in the following applet.</p>
+		<header>
+			<p><span id="prev"><a href="complex_functions.html">&larr;</a></span>
+				<span id="title"><a href="table_of_contents.html">Complex Analysis</a></span>
+				<span id="next"><a href="complex_differentiation.html">&rarr;</a></span>
+				<div class="clear"></div>
+			</p>
+		</header>
 
 
-<div class="w3-hide-small">
-<p>
-	In the following applet we can observe the unit sphere whose south pole
-	corresponds to the origin of the $z$ plane.
-	Drag the point defined on the $z$ plane, or the sliders,
-	to explore the behaviour of the point $P(z)$  on the sphere.</p>
-    <!-- ctl=play button; sfsb=fullscreen button-->
-<div style="display:block" id="ggb-element"></div>
-</div>
-<div class="w3-hide-large w3-hide-medium w3-khaki w3-round w3-padding w3-panel">
-    <p><i class="fas fa-sad-tear"></i> Sorry, the applet is  not supported for small screens. Rotate your device to landscape. Or resize your window so it's more wide than tall.</p>
-</div>
-<br>
+		<h1>Riemann Sphere</h1>
+		<hr>
 
-<p>The extended complex plane is sometimes referred to as the <em>compactified</em> (closed) complex plane. It is often useful to view the complex plane in this way, and knowledge of the construction of the stereographic projection is valuable in certain advanced treatments.</p>
+		<h2>The Point to Infinity</h2>
+		<p>For some purposes it is convenient to introduce the <em>point to infinity</em>, denoted by $\infty$, in
+			addition to the points $z\in \mathbb C$. We must be careful in doing so, because it can lead to confusion an
+			abuse of the symbol $\infty$. However, with care it can be useful, if we want to be able to talk about
+			infinite limits and limits at infinity.</p>
 
-<p>Now we can introduce the following limit concepts:
-<ol>
-    <li>$\displaystyle \lim_{z\rightarrow \infty}f(z)=z_0$ means: For any $\varepsilon>0$, there is an $R>0$ such that $\left|f(z)-z_0\right| &lt; \varepsilon$ whenever $|z|> R$.</li>
-    <li>$\displaystyle \lim_{z\rightarrow z_0}f(z)=\infty$ means: For any $R>0$, there is an $\delta>0$ such that $|f(z)|>R$ whenever $0&lt;|z-z_0|&lt; \delta$.</li>
-    <li>$\displaystyle \lim_{z\rightarrow \infty}f(z)=\infty$ means: For any $M>0$, there is an $R>0$ such that $|f(z)|>M$ whenever $|z|> R$.</li>
-</ol>
-</p>
+		<p>In contrast to the real line, to which $+\infty$ and $-\infty$ can be added, we have only one $\infty$ for
+			$\mathbb C$. The reason is that $\mathbb C$ has no natural ordering as $\mathbb R$ does. Formally we add a
+			symbol $\infty$ to $\mathbb C$ to obtain the <em>extended complex plane</em>, denoted by $\mathbb
+			C^*=\mathbb C \cup \{\infty\}$, and define operations with $\infty$ by the rules
+			\begin{eqnarray*}
+			z+\infty&amp;=&amp;\infty\\
+			z\cdot \infty&amp;=&amp;\infty \quad \quad \text{provided } z\neq 0\\
+			\infty+\infty&amp;=&amp;\infty\\
+			\infty\cdot\infty&amp;=&amp; \infty\\
+			\frac{z}{\infty}&amp;=&amp;0
+			\end{eqnarray*}
+			for $z\in \mathbb C$. Notice that some operations are not defined:
+			$$\frac{\infty}{\infty}\,,\quad 0\cdot \infty\,,\quad \infty-\infty\,,$$
+			and so forth are for the same reasons that they are in the calculus of real numbers.</p>
 
-<div class="w3-padding">
-<p><strong>Example 1:</strong> If $f(z)=1/z^2$, for $z\neq 0$, then
-$$\lim_{z\rightarrow \infty}f(z)=0.$$
-In fact, given $\varepsilon>0$ we have
-$$\left|\frac{1}{z^2}-0\right|=\frac{1}{\left|z^2\right|}=\frac{1}{\left|z\right|^2} &lt;\varepsilon$$
-by taking $$\left|z\right|>\frac{1}{\sqrt{\varepsilon}}=R.$$
-</p>
-
-<p><strong>Example 2:</strong>
-Let $f(z)=1/(z-3)$, for $z\neq 3$. Then
-$$\lim_{z\rightarrow 3}f(z)=\infty.$$
-In fact, for any given $R>0$ the inequality
-$$\frac{1}{\left|z-3\right|}>R$$
-holds whenever
-$$0&lt;\left|z-3\right| &lt; \frac{1}{R}=\delta.$$
-</p>
-
-<p><strong>Example 3:</strong>
-For $f(z)=e^z$, defined on  $D=\{z\,:\,\textbf{Re}(z)>0\}$, we have
-$$\lim_{z\rightarrow \infty}f(z)=\infty.$$
-In fact, for any given $M>0$ we have
-$$\left|f(z)\right|=\left|e^z\right|=e^x>M$$
-whenever
-$x>\ln M.$ Hence, it suffices to take $R>\max\{0,\ln R\}$.
-</p>
-</div>
-
-<p>It is worth to mention that for $f(z)=e^z$ defined on $D_1=\{z\,:\,\textbf{Re}
-(z)=0\}$, i.e., for $f(iy)=e^{iy}$, there is no limit as $z=iy\rightarrow \infty $, because along the imaginary axis, $e^{iy} = \cos y+i\sin y$ is periodic and not constant.</p>
-
-<p>Finally, for $f(z)=e^z$ defined on $D_2=\{z\,:\,\textbf{Re}(z)&lt;0\}$ we have that $$\lim_{z\rightarrow \infty}f(z)=0.$$
-</p>
-
-<p>There is an easier way to calculate the limits from Examples 1-3. The following theorem provides a very useful method.</p>
+		<p>The extended complex plane can be mapped onto the
+			surface of a sphere whose south pole corresponds to the origin and whose north
+			pole to the point $\infty$. All other points of the complex plane can be mapped in
+			a one-to-one fashion to points on the surface of the sphere by using the following
+			construction. Connect the point $z$ in the plane with the north pole using a
+			straight line. This line intersects the sphere at the point $P(z)$. In this way each
+			point $z= x+iy$ on the complex plane corresponds uniquely to a point $P(z)$ on the
+			surface of the sphere. This construction is called the <em>stereographic projection</em> and is illustrated
+			in the following applet.</p>
 
 
-<div class="w3-responsive">
-<p class="theorem"><strong>Theorem:</strong> <em>If $z_0$ and $w_0 $ are points in the $z$ and $w$ planes, respectively, then
-    \begin{eqnarray*}
-\lim_{z\rightarrow z_0}f(z)=\infty \quad\text{if and only if}\quad \lim_{z\rightarrow z_0}\frac{1}{f(z)}=0,\label{limiinfty01}\\
-\lim_{z\rightarrow \infty }f(z)=w_0 \quad\text{if and only if}\quad \lim_{z\rightarrow 0}f\left(\frac{1}{z}\right)=w_0,\label{limiinfty02}\\
-\lim_{z\rightarrow \infty }f(z)=\infty \quad\text{if and only if}\quad \lim_{z\rightarrow 0}\frac{1}{f(1/z)}=0.\label{limiinfty03}
-\end{eqnarray*}
-</em>
-</p>
-</div>
-<br>
+		<div class="w3-hide-small">
+			<p>
+				In the following applet we can observe the unit sphere whose south pole
+				corresponds to the origin of the $z$ plane.
+				Drag the point defined on the $z$ plane, or the sliders,
+				to explore the behaviour of the point $P(z)$ on the sphere.</p>
+			<!-- ctl=play button; sfsb=fullscreen button-->
+			<div style="display:block" id="ggb-element"></div>
+		</div>
+		<div class="w3-hide-large w3-hide-medium w3-khaki w3-round w3-padding w3-panel">
+			<p><i class="fas fa-sad-tear"></i> Sorry, the applet is not supported for small screens. Rotate your device
+				to landscape. Or resize your window so it's more wide than tall.</p>
+		</div>
+		<br>
 
-<div class="w3-responsive">
-<p>Using this result, we can easily find that
-$$\lim_{z\rightarrow -1}\frac{iz+3}{z+1}=\infty \quad \text{since}\quad \lim_{z\rightarrow -1}\frac{z+1}{iz+3}=0$$
-and
-$$\lim_{z\rightarrow \infty}\frac{2z+i}{z+1}=2 \quad \text{since}\quad \lim_{z\rightarrow 0}\frac{(2/z)+i}{(1/z)+1}=\frac{2+iz}{1+z}=2.$$
-Furthermore,
-$$\lim_{z\rightarrow \infty}\frac{2z^3-1}{z^2+1}=\infty \quad \text{since}\quad \lim_{z\rightarrow 0}\frac{(1/z^2)+1}{(2/z^3)-1}=\frac{z+z^3}{2-z^3}=0.$$</p>
-</div>
+		<p>The extended complex plane is sometimes referred to as the <em>compactified</em> (closed) complex plane. It
+			is often useful to view the complex plane in this way, and knowledge of the construction of the
+			stereographic projection is valuable in certain advanced treatments.</p>
+
+		<p>Now we can introduce the following limit concepts:
+			<ol>
+				<li>$\displaystyle \lim_{z\rightarrow \infty}f(z)=z_0$ means: For any $\varepsilon>0$, there is an $R>0$
+					such that $\left|f(z)-z_0\right| &lt; \varepsilon$ whenever $|z|> R$.</li>
+				<li>$\displaystyle \lim_{z\rightarrow z_0}f(z)=\infty$ means: For any $R>0$, there is an $\delta>0$ such
+					that $|f(z)|>R$ whenever $0&lt;|z-z_0|&lt; \delta$.</li>
+				<li>$\displaystyle \lim_{z\rightarrow \infty}f(z)=\infty$ means: For any $M>0$, there is an $R>0$ such
+					that $|f(z)|>M$ whenever $|z|> R$.</li>
+			</ol>
+		</p>
+
+		<div class="w3-padding">
+			<p><strong>Example 1:</strong> If $f(z)=1/z^2$, for $z\neq 0$, then
+				$$\lim_{z\rightarrow \infty}f(z)=0.$$
+				In fact, given $\varepsilon>0$ we have
+				$$\left|\frac{1}{z^2}-0\right|=\frac{1}{\left|z^2\right|}=\frac{1}{\left|z\right|^2} &lt;\varepsilon$$
+				by taking $$\left|z\right|>\frac{1}{\sqrt{\varepsilon}}=R.$$
+			</p>
+
+			<p><strong>Example 2:</strong>
+				Let $f(z)=1/(z-3)$, for $z\neq 3$. Then
+				$$\lim_{z\rightarrow 3}f(z)=\infty.$$
+				In fact, for any given $R>0$ the inequality
+				$$\frac{1}{\left|z-3\right|}>R$$
+				holds whenever
+				$$0&lt;\left|z-3\right| &lt; \frac{1}{R}=\delta.$$
+			</p>
+
+			<p><strong>Example 3:</strong>
+				For $f(z)=e^z$, defined on $D=\{z\,:\,\textbf{Re}(z)>0\}$, we have
+				$$\lim_{z\rightarrow \infty}f(z)=\infty.$$
+				In fact, for any given $M>0$ we have
+				$$\left|f(z)\right|=\left|e^z\right|=e^x>M$$
+				whenever
+				$x>\ln M.$ Hence, it suffices to take $R>\max\{0,\ln R\}$.
+			</p>
+		</div>
+
+		<p>It is worth to mention that for $f(z)=e^z$ defined on $D_1=\{z\,:\,\textbf{Re}
+			(z)=0\}$, i.e., for $f(iy)=e^{iy}$, there is no limit as $z=iy\rightarrow \infty $, because along the
+			imaginary axis, $e^{iy} = \cos y+i\sin y$ is periodic and not constant.</p>
+
+		<p>Finally, for $f(z)=e^z$ defined on $D_2=\{z\,:\,\textbf{Re}(z)&lt;0\}$ we have that $$\lim_{z\rightarrow
+			\infty}f(z)=0.$$
+		</p>
+
+		<p>There is an easier way to calculate the limits from Examples 1-3. The following theorem provides a very
+			useful method.</p>
 
 
-    
-    <br>
-    
-    <!--<p><strong>Note:</strong> The applet was made with <a href="https://www.geogebra.org/material/show/id/zsf2n5ny">GeoGebra</a>.</a></p>-->
+		<div class="w3-responsive">
+			<p class="theorem"><strong>Theorem:</strong> <em>If $z_0$ and $w_0 $ are points in the $z$ and $w$ planes,
+					respectively, then
+					\begin{eqnarray*}
+					\lim_{z\rightarrow z_0}f(z)=\infty \quad\text{if and only if}\quad \lim_{z\rightarrow
+					z_0}\frac{1}{f(z)}=0,\label{limiinfty01}\\
+					\lim_{z\rightarrow \infty }f(z)=w_0 \quad\text{if and only if}\quad \lim_{z\rightarrow
+					0}f\left(\frac{1}{z}\right)=w_0,\label{limiinfty02}\\
+					\lim_{z\rightarrow \infty }f(z)=\infty \quad\text{if and only if}\quad \lim_{z\rightarrow
+					0}\frac{1}{f(1/z)}=0.\label{limiinfty03}
+					\end{eqnarray*}
+				</em>
+			</p>
+		</div>
+		<br>
 
-	<!-- link to the next page -->
-	<a href="complex_differentiation.html"><p class="nextPage">NEXT: Complex Differentiation</p></a>
-	<footer>
-		<p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+		<div class="w3-responsive">
+			<p>Using this result, we can easily find that
+				$$\lim_{z\rightarrow -1}\frac{iz+3}{z+1}=\infty \quad \text{since}\quad \lim_{z\rightarrow
+				-1}\frac{z+1}{iz+3}=0$$
+				and
+				$$\lim_{z\rightarrow \infty}\frac{2z+i}{z+1}=2 \quad \text{since}\quad \lim_{z\rightarrow
+				0}\frac{(2/z)+i}{(1/z)+1}=\frac{2+iz}{1+z}=2.$$
+				Furthermore,
+				$$\lim_{z\rightarrow \infty}\frac{2z^3-1}{z^2+1}=\infty \quad \text{since}\quad \lim_{z\rightarrow
+				0}\frac{(1/z^2)+1}{(2/z^3)-1}=\frac{z+z^3}{2-z^3}=0.$$</p>
+		</div>
 
-		<p class="license">
-			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-				<img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
-			</a>
-		<br/>
-		<strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
-		<strong style="font-size: 18px">2019</strong> 
-	    </p>
-	</footer>
 
-</div> <!-- end wrapper -->
 
-<!-- nice smart quotes, via: http://smartquotesjs.com -->
-<script src="../js/smartquotes.min.js"></script>
+		<br>
+
+		<!--<p><strong>Note:</strong> The applet was made with <a href="https://www.geogebra.org/material/show/id/zsf2n5ny">GeoGebra</a>.</a></p>-->
+
+		<!-- link to the next page -->
+		<a href="complex_differentiation.html">
+			<p class="nextPage">NEXT: Complex Differentiation</p>
+		</a>
+		<footer>
+			<p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
+					href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+
+			<p class="license">
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+					<img id="license" alt="Creative Commons License" style="border-width:0"
+						src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+				</a>
+				<br />
+				<strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
+				<strong style="font-size: 18px">2019</strong>
+			</p>
+		</footer>
+
+	</div> <!-- end wrapper -->
+
+	<!-- nice smart quotes, via: http://smartquotesjs.com -->
+	<script src="../js/smartquotes.min.js"></script>
 
 </body>
+
 </html>

@@ -232,19 +232,21 @@
 		</p>
 
 		<div class="w3-padding">
-			<p><strong>Example 1:</strong> Let's evaluate $\int_C \overline{z}\, dz$, where $C$ is given by $x=3t, y=t^2$,
+			<p><strong>Example 1:</strong> Let's evaluate $\int_C \overline{z}\, dz$, where $C$ is given by $x=3t,
+				y=t^2$,
 				with $-1\leq t\leq 4.$
 			</p>
 
 			<figure class="w3-center">
-				<img class="w3-image w3-mobile" src="../images/chp03-int/integral-example-1.gif" alt="Piecewise smooth curve"
-					title="Piecewise smooth curve" style="width:50%;">
+				<img class="w3-image w3-mobile" src="../images/chp03-int/integral-example-1.gif"
+					alt="Piecewise smooth curve" title="Piecewise smooth curve" style="width:50%;">
 				<figcaption>
 					<b>Figure 1:</b> $C$: $z(t)=3t+ it^2$, with $-1\leq t\leq 4.$
 				</figcaption>
 			</figure>
 
-			<p>
+
+			<p class="w3-responsive">
 				Here we have that $C$ is $z(t)=3t+ it^2 .$ Therefore, with the identification $f(z)=\overline{z}$
 				we have
 				$$f\left(z(t)\right)=\overline{3t+it^2}= 3t-it^2 .$$
@@ -258,34 +260,186 @@
 				\end{eqnarray*}
 			</p>
 
-			
+
 		</div>
 
 
 
 		<div class="w3-padding">
-			<p><strong>Example 2:</strong> Now let's evaluate $\displaystyle \int_C \dfrac{1}{z}\, dz$, where $C$ is the circle  $x=\cos t, y=\sin t$,
+			<p><strong>Example 2:</strong> Now let's evaluate $\displaystyle \int_C \dfrac{1}{z}\, dz$, where $C$ is the
+				circle $x=\cos t, y=\sin t$,
 				with $0\leq t\leq 2\pi .$
 			</p>
 
 			<figure class="w3-center">
-				<img class="w3-image w3-mobile" src="../images/chp03-int/integral-example-2.gif" alt="Piecewise smooth curve"
-					title="Piecewise smooth curve" style="width:50%;">
+				<img class="w3-image w3-mobile" src="../images/chp03-int/integral-example-2.gif"
+					alt="Piecewise smooth curve" title="Piecewise smooth curve" style="width:50%;">
 				<figcaption>
 					<b>Figure 2:</b> $C$: $z(t)=\cos t + i \sin t = e^{it}$, with $0\leq t\leq 2\pi .$
 				</figcaption>
 			</figure>
 
 			<p>
-				In this case $C$ is $z(t)=\cos t + i \sin t = e^{it}$,  
+				In this case $C$ is $z(t)=\cos t + i \sin t = e^{it}$,
 				$$f\left(z(t)\right)=\frac{1}{e^{it}}$$
-				and, $z'(t) = ie^{it}$. Thus 
+				and, $z'(t) = ie^{it}$. Thus
 				\begin{eqnarray*}
-				\int_C \dfrac{1}{z}\, dz&=& \int_{0}^{2\pi} \left(e^{-it}\right)ie^{it}dt = i  \int_{0}^{2\pi} dt= 2\pi \,i\\
-				
+				\int_C \dfrac{1}{z}\, dz&=& \int_{0}^{2\pi} \left(e^{-it}\right)ie^{it}dt = i \int_{0}^{2\pi} dt= 2\pi
+				\,i\\
+
 				\end{eqnarray*}
 			</p>
 		</div>
+
+		<hr>
+
+		<h2>Numerical evaluation of complex integrals</h2>
+
+		<h3>Exploration 1</h3>
+
+		<p>
+			Use the following applet to explore numerically the integral
+			$$\int_C \overline{z}\, dz$$
+			with different contours $C$:
+		</p>
+		<ul>
+			<li>Line segments.</li>
+			<li>Semicircles.</li>
+			<li>Circles, positively and negatively oriented.</li>
+		</ul>
+		<p>
+			You can also change the <a href="domain_coloring.html" target="_blank">domain coloring</a> plotting option.
+			Drag the points around and observe carefully what happens. Then
+			solve Exercise 1 below.
+		</p>
+
+		<div class="w3-hide-small">
+			<div class="w3-center">
+				<iframe scrolling="no" title="Complex integration: conj(z)"
+					src="https://www.geogebra.org/material/iframe/id/uye8xbbj/width/721/height/451/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false"
+					width="721px" height="451px" style="border:0px;" allowfullscree=""> </iframe>
+				<p><em>The arrows on the contours indicate direction.</em></p>
+			</div>
+		</div>
+
+		<div class="w3-padding">
+			<p><strong>Exercise 1:</strong> Use definition (\ref{contour-integral}) to
+				evaluate $\displaystyle \int_C \overline{z}\, dz,$ for the following
+				contours $C$ from $z_0=-2i$ to $z_1=2i$:
+
+			</p>
+			<ol>
+				<li>Line segment. That is, $z\left(t\right) = -2i(1-t)+ 2it$, with $0\leq t\leq 1$.</li>
+				<li>Right-hand semicircle. That is,
+					$z\left(\theta\right) = 2e^{i \theta}$ with $-\frac{\pi}{2}\leq \theta \leq \frac{\pi}{2}.$</li>
+				<li>Left-hand semicircle. That is,
+					$z\left(\theta\right) = 2e^{-i \theta}$ with $\frac{\pi}{2}\leq \theta \leq \frac{3\pi}{2}.$</li>
+			</ol>
+
+			<p>Use the applet to confirm your results.</p>
+
+			<p>What conclusions (if any) can you draw about the function $\overline{z}$ from this?</p>
+
+
+		</div>
+
+		<h3>Exploration 2</h3>
+
+		<p>
+			Now use the applet below to explore numerically the integrals
+			$$\int_C \left(z^2+z\right) dz;\qquad \int_C \frac{1}{z^2}\, dz$$
+			with different contours $C$ (line segments, semicircles, and circles).
+			Drag the points around and observe carefully what happens.
+			You can select the functions <code>z^2+z</code> or <code>1/z^2</code>
+			from the list at the left-top corner.
+			Then solve Exercises 2 and 3.
+		</p>
+
+		<div class="w3-hide-small">
+			<div class="w3-center">
+				<iframe scrolling="no" title="Complex integration: Antiderivatives"
+					src="https://www.geogebra.org/material/iframe/id/am4gsavs/width/719/height/449/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/true"
+					width="719px" height="449px" style="border:0px;" allowfullscreen=""> </iframe>
+				<p></p>
+			</div>
+		</div>
+
+		<div class="w3-padding">
+			<p><strong>Exercise 2:</strong> Consider the integral
+				$$I_1 =\int_C \left(z^2+z\right) dz.$$
+				Use the applet to answer
+				the following questions:</p>
+			<ol>
+				<li>What is the value of $I_1$ for any contour from $z_0=-1-i$ to $z_1 = 1+i$?</li>
+				<li>What is the value of $I_1$ for the countour $z(t) = R e^{it}$, with $R>0$ and $0\leq t \leq 2\pi$?
+				</li>
+			</ol>
+
+			<p>What conclusions (if any) can you draw about the value of $I_1$ and the function $z^2+z$ from this?</p>
+
+
+		</div>
+
+		<div class="w3-padding">
+			<p><strong>Exercise 3:</strong> Now considering integral
+				$$I_2 =\int_C \dfrac{1}{z^2}dz.$$ First, in the applet select the function <code>f(z)=1/z^2</code>.
+				Then analize the values of $I_2$ in the following cases:
+			</p>
+			<ol>
+				<li>Every contour $C$ from $z_0=-i$ to $z_1 = i$.
+					What happens when you select <code>Line Segment</code> in the applet? What happens
+					when you select <code>Semicircles</code>?</li>
+				<li>Every countour $C:|z-z_0|=r$. That is, $z(t) = r e^{it} + z_0$, with $r>0$ and $-\pi\leq t \leq\pi$.
+					Select <code>Circles ↺</code> or <code>Circles ↻</code>, to explore the value of $I_2$.
+					What happens if $z = 0$ is inside or outside the circle?
+					What happens $z=0$ lies on the contour, i.e. when $z_0=1$ and $r=1$?
+				</li>
+			</ol>
+
+			<p>What conclusions (if any) can you draw about the value of $I_2$ and the function $\dfrac{1}{z^2}$ from
+				this?</p>
+
+
+		</div>
+
+		<hr>
+
+		<h2>Antiderivatives</h2>
+
+		<p>
+			Although the value of a contour integral of a function $f (z)$ from a fixed point $z_0$ to
+			a fixed point $z_1$ depends, in general, on the path that is taken, there are certain
+			functions whose integrals from $z_0$ to $z_1$ have values that are independent of path.
+			The examples studied in Exercises 2 and 3 also illustrate the
+			fact that the values of integrals around closed paths are sometimes, but not always,
+			zero. The next theorem is useful in determining when integration is independent
+			of path and, moreover, when an integral around a closed path has value zero.
+			This known as the complex version of the Fundamental Theorem of Calculus.
+		</p>
+
+		<div class="w3-responsive">
+			<p class="theorem"><strong>Theorem:</strong> <em>Let $f(z)=F'(z)$ be the derivative of a
+					single-valued complex function $F(z)$ defined on a domain $\Omega \subset \mathbb C.$
+					Let $C$ be any countour lying entirely in $\Omega$ with initial point $z_0$ and final point $z_1$.
+					Then
+					\begin{eqnarray*}
+					\int_C f(z) dz = \bigg. F(z) \bigg|_{z_0}^{z_1} =F(z_1)- F(z_0)
+					\end{eqnarray*}
+				</em>
+			</p>
+		</div>
+
+		<br>
+
+		<p class="w3-responsive"><em>Proof:</em> This follows from definition \ref{contour-integral} and hte chain rule. That is
+			\begin{eqnarray*}
+			\int_C f(z) dz &=& \int_C F'\left(z(t)\right) \frac{dz}{dt}dt  \int_{a}^{b} \frac{d}{dt} =F \left(z(t)\right) dt F\left(z(b)\right) - F\left(z(a)\right)=F\left(z_1\right) - F\left(z_0\right)
+			\end{eqnarray*}
+		    where $z_0= z(a)$ and $z_1= z(b)$ are the endpoints of the curve $C$.
+		</p>
+
+
+		<br>
 
 		<br>
 
