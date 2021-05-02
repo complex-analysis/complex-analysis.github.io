@@ -159,11 +159,11 @@
 			"showResetIcon": true
 		};
 		var params2 = {
-			"width": 719,
-			"height": 449,
-			"material_id": "am4gsavs",
+			"width": 721,
+			"height": 451,
+			"material_id": "kzrkqta7",
 			"borderColor": "888888",
-			"playButton": false,
+			"playButton": true,
 			"showFullscreenButton": true,
 			"enableShiftDragZoom": true,
 			"showResetIcon": true
@@ -196,7 +196,7 @@
 		<br />
 
 		<p>
-			When we consider multiple-valued functions, the path in a contour integral 
+			When we consider multiple-valued functions, the path in a contour integral
 			can contain a point on a branch cut of
 			the integrand involved. The next two examples illustrate this.
 		</p>
@@ -229,9 +229,9 @@
 		</p>
 
 		<p>
-			Use the following applet to explore the value of $I$ for the given contour $C$. 
+			Use the following applet to explore the value of $I$ for the given contour $C$.
 			Just drag the points $z_0$ and $z_1$ to the corresponding values.
-			You can also select other contours and explore what happens when they 
+			You can also select other contours and explore what happens when they
 			cross the branch cut $\{z\,:\, x =0 \text{ and } y \leq 0\}$.
 		</p>
 
@@ -240,8 +240,8 @@
 		<p><em></em></p>
 
 		<p class="w3-responsive">
-			As you already have figured it out, the integral (\ref{ex-01}) exists 
-			because the integrand is <a href="curves_in_the_complex_plane.html" target="_blank">piecewise continuous</a> 
+			As you already have figured it out, the integral (\ref{ex-01}) exists
+			because the integrand is <a href="curves_in_the_complex_plane.html" target="_blank">piecewise continuous</a>
 			on $C$. To confirm this, observe that when $z(\theta)= 3e^{i\theta}$, then
 			$$f\left(z(\theta)\right)= \exp\left(\frac{1}{2} \ln 3 + i \theta\right) = \sqrt{3}e^{i\theta/2}.$$
 		</p>
@@ -250,19 +250,20 @@
 			The left-hand limits of the real and imaginary components of the function
 			\begin{eqnarray*}
 			f\left(z(\theta)\right)z'(\theta) &=& \sqrt{3} e^{i\theta/2} \cdot 3ie^{i\theta } \\
-			&=& 3 \sqrt{3} i \,e^{i3\theta/2}  \\
-			&=& -3\sqrt{3} \sin \frac{3\theta }{2} + i\, 3\sqrt{3} \cos \frac{3\theta }{2} \quad (0\leq \theta \lt \pi)\\
+			&=& 3 \sqrt{3} i \,e^{i3\theta/2} \\
+			&=& -3\sqrt{3} \sin \frac{3\theta }{2} + i\, 3\sqrt{3} \cos \frac{3\theta }{2} \quad (0\leq \theta \lt
+			\pi)\\
 			\end{eqnarray*}
 			at $\theta = \pi $ exist. That is
 			\begin{eqnarray*}
-			\lim_{\theta \rightarrow \pi+}-3\sqrt{3} \sin \frac{3\theta }{2}= 3\sqrt{3}  
+			\lim_{\theta \rightarrow \pi+}-3\sqrt{3} \sin \frac{3\theta }{2}= 3\sqrt{3}
 			\quad \text{ and } \quad \lim_{\theta \rightarrow \pi+} 3\sqrt{3} \cos \frac{3\theta }{2} = 0.\\
 			\end{eqnarray*}
-			This means that $f\left(z(\theta)\right)z'(\theta)$ is continuous on the closed interval 
+			This means that $f\left(z(\theta)\right)z'(\theta)$ is continuous on the closed interval
 			$0 \leq \theta \leq \pi$ when its value at $\theta = \pi $ is defined as $3\sqrt{3}$.
 			Therefore
 			\begin{eqnarray*}
-			I &=& \int_C f\left(z(\theta)\right)z'(\theta)\, d\theta=  3\sqrt{3} i \int_0^{\pi} e^{i\theta /2} d\theta 
+			I &=& \int_C f\left(z(\theta)\right)z'(\theta)\, d\theta= 3\sqrt{3} i \int_0^{\pi} e^{i\theta /2} d\theta
 			= 3\sqrt{3} i\Bigg[ \bigg.\frac{2}{3i}e^{i3\theta /2}\bigg|_{0}^{\pi} \Bigg] \\
 			&=& 3\sqrt{3} i\Bigg[ -\frac{2}{3i}\left( 1+i\right)\Bigg]= -2\sqrt{3}(1+i).
 			\end{eqnarray*}
@@ -271,7 +272,7 @@
 		<div class="w3-padding">
 			<p><strong>Exercise 1:</strong> Evaluate $\displaystyle \int_C z^{1/2}\, dz$ for the
 				contour $C: z(\theta)= e^{i\theta}$, with $-\pi\leq \theta \leq \pi$.
-				You can use the applet to confirm your results. 
+				You can use the applet to confirm your results.
 			</p>
 
 			<p><em>Remark:</em>
@@ -284,7 +285,52 @@
 
 		<h2>Example 2</h2>
 
-		<br>
+		<p class="w3-responsive">
+			Consider the principal branch
+			\begin{eqnarray}\label{br}
+			f(z)=z^{i} = \exp \left[ i \,\text{Log } z \right]\; \text{ with }\; |z|>0,\, -\pi\lt \text{Arg } z \lt \pi 
+			\end{eqnarray}
+			and $C$ the upper half circle from $z=-1$ to $z=1$, that is,  $z=e^{-i\theta}$ with $-\pi \leq \theta \leq 0$.
+			It is not difficult to verify that
+			\begin{eqnarray}\label{ex-02}
+			I=\int_C z^{i}\,dz &=& \frac{1+e^{-\pi}}{2}\,(1-i).
+			\end{eqnarray}
+		</p>
+
+		<p>
+			Use the following applet to confirm this value. 
+			You can also analize the value of $\int_C z^idz$
+			for other contours.
+		</p>
+
+		<div class="ggbElement" id="ggb-element-2"></div>
+		<p><em></em></p>
+
+		<p class="w3-responsive">
+			In general, we can calculate  $\int_C z^i dz$ for 
+		    any contour $C$ from $z=-1$ to $z=1$ lying above the real axis. We just need to use 
+			an appropiate branch.  
+			For example, we <em>can not</em> use the principal branch, defined in (\ref{br}),
+			to find an antiderivative of $z^i$, since 
+			this branch is not even defined at 
+			$z=-1$. But the integrand can be replaced by the branch 
+			$$z^{i} = \exp \left[ i \,\text{log } z \right]\; \text{ with }\;  |z|>0,\, -\frac{\pi}{2}\lt \text{arg } z \lt \frac{3\pi}{2}.$$
+			since it agrees with the integrand along $C$. 
+        </p>
+
+		<p class="w3-responsive">
+			Using an antiderivative of this new branch, we obtain
+			\begin{eqnarray}\label{value}
+			\int_{-1}^{1} z^i dz&=& \Bigg.\frac{z^{i+1}}{i+1}\Bigg|_{-1}^{1} =  \frac{1+e^{-\pi}}{2}\,(1-i),
+			\end{eqnarray}
+			which is the same value as (\ref{ex-02}).
+		</p>
+
+		<div class="w3-padding">
+			<p><strong>Exercise 2:</strong> Evaluate $\bigg.\frac{z^{i+1}}{i+1}\bigg|_{-1}^{1} $ to confirm
+				the value of (\ref{value}).
+			</p>
+		</div>
 
 		<br>
 
@@ -295,7 +341,8 @@
 		</a>
 		<footer>
 			<p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
-					href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+					href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]
+			</p>
 
 			<p class="license">
 				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
