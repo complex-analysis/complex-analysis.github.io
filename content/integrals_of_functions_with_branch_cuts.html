@@ -148,16 +148,31 @@
 	<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
 
 	<script>
-		var applet1 = new GGBApplet({
-			material_id: "q8cagcc5",
-			borderColor: "888888",
-			playButton: "true",
-			showFullscreenButton: "true",
-			enableShiftDragZoom: "true",
-			showResetIcon: "true"
-		}, true);
+		var params1 = {
+			"width": 721,
+			"height": 451,
+			"material_id": "jbs86spr",
+			"borderColor": "888888",
+			"playButton": true,
+			"showFullscreenButton": true,
+			"enableShiftDragZoom": true,
+			"showResetIcon": true
+		};
+		var params2 = {
+			"width": 719,
+			"height": 449,
+			"material_id": "am4gsavs",
+			"borderColor": "888888",
+			"playButton": false,
+			"showFullscreenButton": true,
+			"enableShiftDragZoom": true,
+			"showResetIcon": true
+		};
+		var ggbApplet1 = new GGBApplet(params1, true);
+		var ggbApplet2 = new GGBApplet(params2, true);
 		window.addEventListener("load", function () {
-			applet1.inject('applet_container1');
+			ggbApplet1.inject('ggb-element-1');
+			ggbApplet2.inject('ggb-element-2');
 		});
 	</script>
 	<!--GeoGebra embeding ends-->
@@ -176,18 +191,86 @@
 		</header>
 
 
-		<h1>Complex Integration</h1>
+		<h1>Integrals of Functions with Branch Cuts</h1>
+
+		<br />
+
+		<p>
+			The path in a contour integral can contain a point on a branch cut of
+			the integrand involved. The next two examples illustrate this.
+		</p>
 
 		<hr>
 
 
-		<h2>Integrals with Branch Cuts</h2>
+
+		<h2>Example 1</h2>
 
 		<p>
-			The path in a contour integral can contain a point on a branch cut of 
-			the integrand involved. The next two examples illustrate this.
+			Let $C$ be the semicircular path from $z_0=3$ to $z_1=-3$. That is
+			$z(\theta) = 3 e^{i\theta}$, with $0\leq \theta \leq \pi$.
+			Here we would like to evaluate the integral
+			\begin{eqnarray}\label{ex-01}
+			I = \int_C z^{1/2} dz.
+			\end{eqnarray}
+			To do so, we need to choose a particular branch of the multiple-valued function
+			$z^{1/2}$. For example, we will use the principal branch
+			\begin{eqnarray}
+			|z|> 0, \; -\pi \lt \textbf{Arg}\,(z)\lt \pi.
+			\end{eqnarray}
 		</p>
 
+		<p class="w3-responsive">
+			In this case, notice that although the principal branch of
+			$z^{1/2}= \exp\left(\frac{1}{2}\text{Log}\, z\right)$
+			is not defined at the end point $z_1=-3$ of the contour $C$, the integral $I$
+			nevertheless exists.
+		</p>
+
+		<p>
+			Use the following applet to explore the value of $I$ for the given contour $C$. 
+			Just drag the points $z_0$ and $z_1$ to the corresponding values.
+			You can also select other contours and explore what happens when they 
+			cross the branch cut $\{z\,:\, x =0 \text{ and } y \leq 0\}$.
+		</p>
+
+
+		<div class="ggbElement" id="ggb-element-1"></div>
+		<p><em></em></p>
+
+		<p class="w3-responsive">
+			As you already have figured it out, the integral (\ref{ex-01}) exists 
+			because the integrand is piecewise continuous on $C$. To see that this is so,
+			we first observe that when $z(\theta)= 3e^{i\theta}$, then
+			$$f\left(z(\theta)\right)= \exp\left(\frac{1}{2} \ln 3 + i \Theta\right) = \sqrt{3}e^{i\theta/2}.$$
+		</p>
+
+		<p class="w3-responsive">
+			The left-hand limits of the real and imaginary components of the function
+			\begin{eqnarray*}
+			f\left(z(\theta)\right)z'(\theta) &=& \sqrt{3} e^{i\theta/2} \cdot 3ie^{i\theta } \\
+			&=& 3 \sqrt{3} i \,e^{i3\theta/2}  \\
+			&=& -3\sqrt{3} \sin \frac{3\theta }{2} + i\, 3\sqrt{3} \cos \frac{3\theta }{2} \quad (0\leq \theta \lt \pi)\\
+			\end{eqnarray*}
+			at $\theta = \pi $ exist. That is
+			\begin{eqnarray*}
+			\lim_{\theta \rightarrow \pi+}-3\sqrt{3} \sin \frac{3\theta }{2}= 3\sqrt{3}  
+			\quad \text{ and } \quad \lim_{\theta \rightarrow \pi+} 3\sqrt{3} \cos \frac{3\theta }{2} = 0.\\
+			\end{eqnarray*}
+			This means that $f\left(z(\theta)\right)z'(\theta)$ is continuous on the closed interval 
+			$0 \leq \theta \leq \pi$ when its value at $\theta = \pi $ is defined as $3\sqrt{3}$.
+			Therefore
+			\begin{eqnarray*}
+			I &=& 3\sqrt{3} i \int_0^{\pi} e^{i\theta /2} d\theta \\
+			&=& 3\sqrt{3} i\Bigg[ \bigg.\frac{2}{3i}e^{i3\theta /2}\bigg|_{0}^{\pi} \Bigg]\\
+			&=& 3\sqrt{3} i\Bigg[ -\frac{2}{3i}\left( 1+i\right)\Bigg]\\
+			&=& -2\sqrt{3}(1+i).
+			\end{eqnarray*}
+		</p>
+
+		<hr>
+
+		<h2>Example 2</h2>
 
 		<br>
 
