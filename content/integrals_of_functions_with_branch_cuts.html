@@ -240,9 +240,9 @@
 
 		<p class="w3-responsive">
 			As you already have figured it out, the integral (\ref{ex-01}) exists 
-			because the integrand is piecewise continuous on $C$. To see that this is so,
-			we first observe that when $z(\theta)= 3e^{i\theta}$, then
-			$$f\left(z(\theta)\right)= \exp\left(\frac{1}{2} \ln 3 + i \Theta\right) = \sqrt{3}e^{i\theta/2}.$$
+			because the integrand is <a href="curves_in_the_complex_plane.html" target="_blank">piecewise continuous</a> 
+			on $C$. To confirm this, observe that when $z(\theta)= 3e^{i\theta}$, then
+			$$f\left(z(\theta)\right)= \exp\left(\frac{1}{2} \ln 3 + i \theta\right) = \sqrt{3}e^{i\theta/2}.$$
 		</p>
 
 		<p class="w3-responsive">
@@ -261,12 +261,23 @@
 			$0 \leq \theta \leq \pi$ when its value at $\theta = \pi $ is defined as $3\sqrt{3}$.
 			Therefore
 			\begin{eqnarray*}
-			I &=& 3\sqrt{3} i \int_0^{\pi} e^{i\theta /2} d\theta \\
-			&=& 3\sqrt{3} i\Bigg[ \bigg.\frac{2}{3i}e^{i3\theta /2}\bigg|_{0}^{\pi} \Bigg]\\
-			&=& 3\sqrt{3} i\Bigg[ -\frac{2}{3i}\left( 1+i\right)\Bigg]\\
-			&=& -2\sqrt{3}(1+i).
+			I &=& \int_C f\left(z(\theta)\right)z'(\theta)\, d\theta=  3\sqrt{3} i \int_0^{\pi} e^{i\theta /2} d\theta 
+			= 3\sqrt{3} i\Bigg[ \bigg.\frac{2}{3i}e^{i3\theta /2}\bigg|_{0}^{\pi} \Bigg] \\
+			&=& 3\sqrt{3} i\Bigg[ -\frac{2}{3i}\left( 1+i\right)\Bigg]= -2\sqrt{3}(1+i).
 			\end{eqnarray*}
 		</p>
+
+		<div class="w3-padding">
+			<p><strong>Exercise 1:</strong> Evaluate $\displaystyle \int_C z^{1/2}\, dz$ for the
+				contour $C: z(\theta)= e^{i\theta}$, with $-\pi\leq \theta \leq \pi$.
+				You can use the applet to confirm your results. 
+			</p>
+
+			<p><em>Remark:</em>
+				You can not evaluate the integral
+				for the contour $C: z(t)= e^{it}$, with $0 \leq t \leq 2\pi$. Why?
+			</p>
+		</div>
 
 		<hr>
 
