@@ -100,7 +100,7 @@
 				);
 				$('#next a').hover(
 					function () {
-						$('#title a').text('Next: Integrals with Branch Cuts');
+						$('#title a').text('Next: Integrals of Functions with Branch Cuts');
 					},
 					function () {
 						$('#title a').text('Complex Analysis');
@@ -148,16 +148,31 @@
 	<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
 
 	<script>
-		var applet1 = new GGBApplet({
-			material_id: "q8cagcc5",
-			borderColor: "888888",
-			playButton: "true",
-			showFullscreenButton: "true",
-			enableShiftDragZoom: "true",
-			showResetIcon: "true"
-		}, true);
+		var params1 = {
+			"width": 721,
+			"height": 451,
+			"material_id": "uye8xbbj",
+			"borderColor": "888888",
+			"playButton": false,
+			"showFullscreenButton": true,
+			"enableShiftDragZoom": true,
+			"showResetIcon": true
+		};
+		var params2 = {
+			"width": 719,
+			"height": 449,
+			"material_id": "am4gsavs",
+			"borderColor": "888888",
+			"playButton": true,
+			"showFullscreenButton": true,
+			"enableShiftDragZoom": true,
+			"showResetIcon": true
+		};
+		var ggbApplet1 = new GGBApplet(params1, true);
+		var ggbApplet2 = new GGBApplet(params2, true);
 		window.addEventListener("load", function () {
-			applet1.inject('applet_container1');
+			ggbApplet1.inject('ggb-element-1');
+			ggbApplet2.inject('ggb-element-2');
 		});
 	</script>
 	<!--GeoGebra embeding ends-->
@@ -170,7 +185,7 @@
 		<header>
 			<p><span id="prev"><a href="curves_in_the_complex_plane.html">&larr;</a></span><span id="title"><a
 						href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a
-						href="integrals_with_branch_cuts.html">&rarr;</a></span>
+						href="integrals_of_functions_with_branch_cuts.html">&rarr;</a></span>
 				<div class="clear"></div>
 			</p>
 		</header>
@@ -315,12 +330,15 @@
 
 		<div class="w3-hide-small">
 			<div class="w3-center">
-				<iframe scrolling="no" title="Complex integration: conj(z)"
-					src="https://www.geogebra.org/material/iframe/id/uye8xbbj/width/721/height/451/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false"
-					width="721px" height="451px" style="border:0px;" allowfullscree=""> </iframe>
+				<div style="display:block" id="ggb-element-1"></div>
 				<p><em>The arrows on the contours indicate direction.</em></p>
 			</div>
+			<!--<iframe scrolling="no" title="Complex integration: conj(z)"
+					src="https://www.geogebra.org/material/iframe/id/uye8xbbj/width/721/height/451/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false"
+					width="721px" height="451px" style="border:0px;" allowfullscree=""> </iframe>-->
+			
 		</div>
+
 
 		<div class="w3-padding">
 			<p><strong>Exercise 1:</strong> Use definition (\ref{contour-integral}) to
@@ -357,9 +375,10 @@
 
 		<div class="w3-hide-small">
 			<div class="w3-center">
-				<iframe scrolling="no" title="Complex integration: Antiderivatives"
+				<div style="display:block" id="ggb-element-2"></div>
+				<!--<iframe scrolling="no" title="Complex integration: Antiderivatives"
 					src="https://www.geogebra.org/material/iframe/id/am4gsavs/width/719/height/449/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/true"
-					width="719px" height="449px" style="border:0px;" allowfullscreen=""> </iframe>
+					width="719px" height="449px" style="border:0px;" allowfullscreen=""> </iframe>-->
 				<p></p>
 			</div>
 		</div>
@@ -410,7 +429,7 @@
 			Although the value of a contour integral of a function $f (z)$ from a fixed point $z_0$ to
 			a fixed point $z_1$ depends, in general, on the path that is taken, there are certain
 			functions whose integrals from $z_0$ to $z_1$ have values that are independent of path,
-			as you have seen in Exercises 2 and 3. 
+			as you have seen in Exercises 2 and 3.
 			These examples also illustrate the
 			fact that the values of integrals around closed paths are sometimes, but not always,
 			zero. The next theorem is useful in determining when integration is independent
@@ -432,13 +451,13 @@
 
 		<br>
 
-		<p class="w3-responsive"><em>Proof:</em> This follows from definition (\ref{contour-integral}) and 
+		<p class="w3-responsive"><em>Proof:</em> This follows from definition (\ref{contour-integral}) and
 			the chain rule. That is
 			\begin{eqnarray*}
-			\int_C f(z) dz &=& \int_C F'\left(z(t)\right) \frac{dz}{dt}dt  \int_{a}^{b} \frac{d}{dt} =
+			\int_C f(z) dz &=& \int_C F'\left(z(t)\right) \frac{dz}{dt}dt \int_{a}^{b} \frac{d}{dt} =
 			F \left(z(t)\right) dt F\left(z(b)\right) - F\left(z(a)\right)=F\left(z_1\right) - F\left(z_0\right)
 			\end{eqnarray*}
-		    where $z_0= z(a)$ and $z_1= z(b)$ are the endpoints of the contour $C$.
+			where $z_0= z(a)$ and $z_1= z(b)$ are the endpoints of the contour $C$.
 		</p>
 
 
