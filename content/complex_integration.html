@@ -155,7 +155,7 @@
 			"borderColor": "888888",
 			"playButton": false,
 			"showFullscreenButton": true,
-			"enableShiftDragZoom": true,
+			"enableShiftDragZoom": false,
 			"showResetIcon": true
 		};
 		var params2 = {
@@ -163,9 +163,9 @@
 			"height": 449,
 			"material_id": "am4gsavs",
 			"borderColor": "888888",
-			"playButton": true,
+			"playButton": false,
 			"showFullscreenButton": true,
-			"enableShiftDragZoom": true,
+			"enableShiftDragZoom": false,
 			"showResetIcon": true
 		};
 		var ggbApplet1 = new GGBApplet(params1, true);
@@ -330,15 +330,12 @@
 
 		
 		<div class="ggbElement" id="ggb-element-1"></div>
-				<p><em>The arrows on the contours indicate direction.</em></p>
+				<p class="w3-center"><em>The arrows on the contours indicate direction.</em></p>
 			
 			<!--<iframe scrolling="no" title="Complex integration: conj(z)"
 					src="https://www.geogebra.org/material/iframe/id/uye8xbbj/width/721/height/451/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false"
 					width="721px" height="451px" style="border:0px;" allowfullscree=""> </iframe>-->
 			
-		
-
-
 		<div class="w3-padding">
 			<p><strong>Exercise 1:</strong> Use definition (\ref{contour-integral}) to
 				evaluate $\displaystyle \int_C \overline{z}\, dz,$ for the following
@@ -350,7 +347,7 @@
 				<li>Right-hand semicircle. That is,
 					$z\left(\theta\right) = 2e^{i \theta}$ with $-\frac{\pi}{2}\leq \theta \leq \frac{\pi}{2}.$</li>
 				<li>Left-hand semicircle. That is,
-					$z\left(\theta\right) = 2e^{-i \theta}$ with $\frac{\pi}{2}\leq \theta \leq \frac{3\pi}{2}.$</li>
+					$z\left(\theta\right) = -2ie^{-i \theta}$ with $0 \leq \theta \leq \pi.$</li>
 			</ol>
 
 			<p>Use the applet to confirm your results.</p>
@@ -375,13 +372,11 @@
 		
 		
 		<div class="ggbElement" id="ggb-element-2"></div>
+		<p></p>
 		<!--<iframe scrolling="no" title="Complex integration: Antiderivatives"
 				src="https://www.geogebra.org/material/iframe/id/am4gsavs/width/719/height/449/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/true"
 				idth="719px" height="449px" style="border:0px;" allowfullscreen=""> </iframe>-->
 		
-		
-		
-
 		<div class="w3-padding">
 			<p><strong>Exercise 2:</strong> Consider the integral
 				$$I_1 =\int_C \left(z^2+z\right) dz.$$
@@ -390,7 +385,7 @@
 				<li>$C$ is any contour from $z_0=-1-i$ to $z_1 = 1+i$.</li>
 				<li>$C$ is the circle with center $z_0$ and radius $r\gt 0$,
 					 $|z-z_0|= r$; positively or negatively oriented.
-					 In this case select <code>Circle ↺</code> or <code>Circle ↻</code>.
+					 In this cases select <code>Circle ↺</code> or <code>Circle ↻</code>.
 				</li>
 			</ol>
 
@@ -412,7 +407,7 @@
 					$|z-z_0|= r$; positively or negatively oriented.
 					In this case select <code>Circle ↺</code> or <code>Circle ↻</code>.
 					What happens if $z = 0$ is inside or outside the circle?
-					What happens $z=0$ lies on the contour, e.g. when $z_0=1$ and $r=1$?
+					What happens if $z=0$ lies on the contour, e.g. when $z_0=1$ and $r=1$?
 				</li>
 			</ol>
 
@@ -435,10 +430,10 @@
 			fact that the values of integrals around closed paths are sometimes, but not always,
 			zero. The next theorem is useful in determining when integration is independent
 			of path and, moreover, when an integral around a closed path has value zero.
-			This known as the complex version of the <em>Fundamental Theorem of Calculus</em>.
+			This is known as the complex version of the <em>Fundamental Theorem of Calculus</em>.
 		</p>
 
-		<div class="w3-responsive">
+		<div class="w3-responsive" id="FTC">
 			<p class="theorem"><strong>Theorem:</strong> <em>Let $f(z)=F'(z)$ be the derivative of a
 					single-valued complex function $F(z)$ defined on a domain $\Omega \subset \mathbb C.$
 					Let $C$ be any countour lying entirely in $\Omega$ with initial point $z_0$ and final point $z_1$.
@@ -455,10 +450,12 @@
 		<p class="w3-responsive"><em>Proof:</em> This follows from definition (\ref{contour-integral}) and
 			the chain rule. That is
 			\begin{eqnarray*}
-			\int_C f(z) dz &=& \int_C F'\left(z(t)\right) \frac{dz}{dt}dt \int_{a}^{b} \frac{d}{dt} =
-			F \left(z(t)\right) dt F\left(z(b)\right) - F\left(z(a)\right)=F\left(z_1\right) - F\left(z_0\right)
+			\int_C f(z) dz &=& \int_C F'\left(z(t)\right) \frac{dz}{dt}dt \\
+			&=& \int_{a}^{b} \frac{d}{dt} F \left(z(t)\right) dt \\
+			&=& F\left(z(b)\right) - F\left(z(a)\right) \\
+			&=& F\left(z_1\right) - F\left(z_0\right)
 			\end{eqnarray*}
-			where $z_0= z(a)$ and $z_1= z(b)$ are the endpoints of the contour $C$.
+			where $z_0= z(a)$ and $z_1= z(b)$ are the endpoints of the contour $C$. $\blacksquare$
 		</p>
 
 
