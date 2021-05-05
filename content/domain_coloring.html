@@ -35,12 +35,25 @@
         type='text/css'>
     <link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="../css/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <!-- CODE PRETTIFY -->
     <!-- via: https://github.com/google/code-prettify -->
     <script src="../js/run_prettify.js"></script>
 
 
+    <style>
+        .divHideScroll::-webkit-scrollbar {
+            width: 0 !important
+        }
+
+        .divHideScroll {
+            overflow: -moz-scrollbars-none;
+        }
+
+        .divHideScroll {
+            -ms-overflow-style: none;
+        }
+    </style>
 
     <!-- JQUERY FANCY ADDITIONS -->
     <!-- add code class, hover text, etc -->
@@ -117,15 +130,18 @@
     </script>
 
     <!-- ANALYTICS -->
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-155852901-1');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-155852901-1');
+    </script>
     <!-- ANALYTICS -->
 
     <!--MathJax starts-->
@@ -141,7 +157,7 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
-    
+
 </head>
 
 <body>
@@ -204,11 +220,11 @@
             We say that a complex funcion $f$ has a root (or a zero) at
             $z_0$, if $f(z_0)=0$. We say that $z_0$ is a pole when
             $f(z_0)$ is undefined.
-            With the use of enhanced phase portraits, roots and poles of 
+            With the use of enhanced phase portraits, roots and poles of
             a complex function $f(z)$ can be easily spotted
-            at the points where all colors meet. Figures <a href="#F4">4</a> 
+            at the points where all colors meet. Figures <a href="#F4">4</a>
             and <a href="#F5">5</a> show the enhanced
-            phase portrait of the functions $$f(z)=z \quad \text{and}\quad g(z)=1/z,$$ 
+            phase portrait of the functions $$f(z)=z \quad \text{and}\quad g(z)=1/z,$$
             respectively. Observe the
             contrast between the level curves of modulus in each case.</p>
 
@@ -266,9 +282,10 @@
 
         <div>
 
-            <div class="w3-hide-small w3-hide-medium">
+            <div class="w3-hide-small w3-hide-medium divHideScroll">
 
-                <iframe name="Domain Coloring" src="../applets/p5js/domain-coloring/index.html" scrolling="no" style="overflow:hidden;border:1px solid black;width:800px;height:500px;" ></iframe>
+                <iframe name="Domain Coloring" src="../applets/p5js/domain-coloring/index.html" scrolling="no"
+                    style="overflow:hidden;border:1px solid black;width:800px;height:500px;"></iframe>
 
             </div>
             <!--hide small-->
@@ -328,29 +345,31 @@
             and their angles differ significantly from $\pi/2$ - at some points the contour lines of modulus and phase
             are even mutually tangent.</p>
 
-        
+
 
         <hr>
 
 
         <br>
 
-        
+
 
         <!-- link to the next page -->
         <a href="power_function.html">
             <p class="nextPage">NEXT: The Complex Power Function</p>
         </a>
         <footer>
-            <p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+            <p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
+                    href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
 
             <p class="license">
                 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-                    <img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+                    <img id="license" alt="Creative Commons License" style="border-width:0"
+                        src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
                 </a>
-            <br/>
-            <strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
-            <strong style="font-size: 18px">2019</strong> 
+                <br />
+                <strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
+                <strong style="font-size: 18px">2019</strong>
             </p>
         </footer>
 
