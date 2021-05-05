@@ -234,14 +234,15 @@
 
 		<h2>Cauchy-Riemann equations</h2>
 
-		<p>To understand the consequences of this definition (\ref{diff01}), let us first see what happens when
+		<p>Now let's see a remarkable consequence of definition (\ref{diff01}). 
+			First we will see what happens when
 			we approach $z_0$ along the two simplest directions - horizontal and vertical. If
 			we set
 			$$z= z_0 + h = (x_0+h)+iy_0,\quad h\in \mathbb R,$$
 			then $z \rightarrow z_0$ along a horizontal line as $h\rightarrow 0.$
-			If we write out
-			$$f(z) = u(x,y)+iv(x,y)$$
-			in terms of its real and imaginary parts, then
+			If we write $f$ in terms of its real and imaginary components, that is
+			$$f(z) = u(x,y)+iv(x,y),$$
+			then
 			$$f'(z_0)= \lim_{h \rightarrow 0}\frac{f(z_0+h)-f(z_0)}{h}$$
 			then
 			<div class="w3-responsive">
@@ -269,8 +270,8 @@
 				\end{eqnarray*}
 			</div></p>
 			<p>where the partial derivatives of $u$ and $v$ are, this time, with respect to $y$.
-			When we equate the real and imaginary parts of these two formulae for the complex derivative
-			$f'(z_0)$, we discover that the real and components of $f(z)$ must satisfy a
+			By equating the real and imaginary parts of these two formulae for the complex derivative
+			$f'(z_0)$, we notice that the real and imaginary components of $f(z)$ must satisfy a
 			homogeneous linear system of partial differential equations:
 			$$u_x=v_y, \quad u_y=-v_x.$$
 			These are the <em>Cauchy-Riemann equations</em> named after the famous nineteenth
@@ -306,21 +307,24 @@
 		</div>
 
 
-		<p>Fortunately, the complex derivative obeys all of the usual rules that you learned in
+		<p>Fortunately, the complex derivative has all of the usual rules that we have learned in
 			real-variable calculus. For example,
 			<div class="w3-responsive">
 				$$\frac{d}{dz}z^n = nz^{n-1}, \quad \frac{d}{dz} e^{cz} = ce^{cz}, \quad \frac{d}{dz} \log z =
 				\frac{1}{z},$$
 			</div></p>
-			<p>and so on. Here, the power $n$ can be a real number (or even complex in view of the identity
+			<p>and so on. In this case, the power $n$ can be a real number (or even complex in view of the identity
 			$z^n = e^n \log z$), while $c$ is any complex constant. The <a href="complex_functions.html#trig-functions" target="_blank">exponential formulae</a>
-			for the complex trigonometric functions implies that they also satisfy the standard rules
+			for the complex trigonometric and hyperboic functions implies that they also satisfy the standard rules
 			<div class="w3-responsive">
-				$$\frac{d}{dz}\sin z= \cos z, \quad \frac{d}{dz} \cos z = -\sin z.$$
+				\begin{eqnarray*}
+				\frac{d}{dz}\sin z= \cos z, & \frac{d}{dz} \cos z = -\sin z.\\
+				\frac{d}{dz}\sinh z= \cosh z, & \frac{d}{dz} \cosh z = \sinh z.
+				\end{eqnarray*}
 			</div></p>
 			<p>The formulae for differentiating sums, products, ratios, inverses, and compositions of complex
-			functions are all identical to their real counterparts, with similar proofs. Thus, fortunately,
-			you don’t need to learn any new rules for performing complex differentiation!
+			functions are all identical to their real counterparts, with similar proofs. This means
+			that you don't need to learn any new rules for performing complex differentiation!
 		</p>
 
 		<hr>
