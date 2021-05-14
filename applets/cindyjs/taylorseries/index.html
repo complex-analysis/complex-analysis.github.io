@@ -121,39 +121,52 @@
 			(-6,-2),(-2,2)
 		);
 		
-        shape1 = polygon([(-2,1.65), (-0.25,1.65), (-0.25,2), (-2,2)]);
+		//Draw background for z_0
+        shape1 = polygon([(-2,1.7), (-0.25,1.7), (-0.25,2), (-2,2)]);
         fill(shape1,color->(0.8,0.8,0.8));
         draw(shape1, color->(0.8,0.8,0.8));
+
+		// Draw info of z_0
+		drawtext((-1.95,1.8), "$z_0=(" + round((A.x  ) * 100)/100 + " , " + round(A.y * 100)/100 + ")$", color->(0,0,0));
+        
+
+		//Draw  background for n
+		shape2 = polygon([(1.35,2), (2,2), (2,1.75), (1.35,1.75)]);
+        fill(shape2,color->(0.8,0.8,0.8));
+        draw(shape2, color->(0.8,0.8,0.8));
+
+		// Slider n
+        linesize(1.2);
+		draw((1.8,-1.5),(1.8,1.65), color->[0,0,0]);
+		N.x = 1.8;
+		n = round(7*(N.y+1.65));
+		n = max(1, n);
+		N.y = n/7-1.65;
+
+		drawtext((1.4,1.82),"$n = " + n + "$", color->(0,0,0));
         
         //drawtext((-5.9,1.7), "$f(z) =$", color->(0.98,0.98,0.98));
         //\textcolor{<color>}{<text>}
         //drawtext((-1.98,1.75), "$\sum_{k=0}^{"+n+"} a_k (z-z_0)^k$", color->(0,0,0));
         
-        linesize(1.2);
-		draw((1.8,-1.5),(1.8,1.8), color->[0,0,0]);
-		N.x = 1.8;
-		n = round(5*(N.y+1.8));
-		n = max(1, n);
-		N.y = n/5-1.8;
 		
-		draw((-5,-1.8),(1,-1.8), color->[0,0,0]);
-
-		// Line to dive Graphic views
-		linesize(3);
+		
+		
+		// Line to divide Graphic views
+		linesize(1.2);
 		draw((-2,-3),(-2,3), color->[0,0,0]);
-		// Draw info of z_0
-		drawtext((-1.95,1.76), "$z_0=(" + round((A.x  ) * 100)/100 + " , " + round(A.y * 100)/100 + ")$", color->(0,0,0));
-        
+		
 
-        drawtext((1.15,N.y),"$n = " + n + "$", color->(0,0,0));
+        
         drawtext((A.x+0.06,A.y+0.06),"$z_0$", color->(0.98,0.98,0.98));
 		drawtext((-5.5,-1.85), "Zoom$", color->(0,0,0));
         
+		// Slider Zoom
+		draw((-5,-1.8),(1,-1.8), color->[0,0,0]);
 		Zoom.y = -1.8;
-		
 		Zoom.x = max(Zoom.x, -5);
 		Zoom.x = min(Zoom.x, 1);
-		
+
 		zoom = exp(.5*(Zoom.x+3));
 		
 		if(lzoom!=zoom,
@@ -236,7 +249,7 @@ var sel=function(e, b){
 <p>On the left Graphics view, a <a href="https://jcponce.github.io/domain-coloring/" target="_blank">enhanced 
 	phase portrait</a> of a complex function is displayed.
     On the right Graphics view, one can see the approximation of the function through 
-	it&#39;s Taylor polynomials at the blue base point $z_0$.</p>
+	it&#39;s Taylor polynomials $\sum_{k=0}^{n} a_k (z-z_0)^k$ at the blue base point $z_0$.</p>
 <p>The complex function, the base point $z_0$, the order of the polynomial and the zoom can be modified.</p>
 </div>
 
