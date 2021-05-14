@@ -127,7 +127,7 @@
         
         //drawtext((-5.9,1.7), "$f(z) =$", color->(0.98,0.98,0.98));
         //\textcolor{<color>}{<text>}
-        drawtext((-1.98,1.75), "$\sum_{k=0}^{"+n+"} \frac{f^{(k)}(z_0)}{k!} (z-z_0)^k$", color->(0,0,0));
+        //drawtext((-1.98,1.75), "$\sum_{k=0}^{"+n+"} a_k (z-z_0)^k$", color->(0,0,0));
         
         linesize(1.2);
 		draw((1.8,-1.5),(1.8,1.8), color->[0,0,0]);
@@ -137,6 +137,14 @@
 		N.y = n/5-1.8;
 		
 		draw((-5,-1.8),(1,-1.8), color->[0,0,0]);
+
+		// Line to dive Graphic views
+		linesize(3);
+		draw((-2,-3),(-2,3), color->[0,0,0]);
+		// Draw info of z_0
+		drawtext((-1.95,1.75), "$z_0$, $=(" + round((A.x  ) * 100)/100 + " , " + round(A.y * 100)/100 + ")$", color->(0,0,0));
+        
+
         drawtext((1.15,N.y),"$n = " + n + "$", color->(0.98,0.98,0.98));
         drawtext((A.x+0.06,A.y+0.06),"$z_0$", color->(0.98,0.98,0.98));
         
