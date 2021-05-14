@@ -1,0 +1,493 @@
+<!doctype html>
+<html>
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+	<title>Complex Analysis</title>
+
+	<!-- dublin core -->
+	<meta name="dc.title" CONTENT="Complex Analysis">
+	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+	<meta name="dc.date" CONTENT="26-01-2019">
+	<meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
+	<meta name="dc.type" CONTENT="Interactive Resource">
+	<meta name="dc.format" CONTENT="HTML">
+	<meta name="dc.language" CONTENT="en-US">
+	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+	<!-- social media cards -->
+	<meta property="og:title" content="Complex Analysis">
+	<meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+	<meta property="og:type" content="website">
+	<!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+	<meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+	<meta property="og:site_name" content="Complex Analysis">
+
+
+	<!-- FONTS AND CSS -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet'
+		type='text/css'>
+	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="../css/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+	<!-- CODE PRETTIFY -->
+	<!-- via: https://github.com/google/code-prettify -->
+	<script src="../js/run_prettify.js"></script>
+
+
+
+	<!-- JQUERY FANCY ADDITIONS -->
+	<!-- add code class, hover text, etc -->
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+		$(document).ready(function () {
+
+			// prettyprint the code, pls
+			$('pre').addClass('prettyprint lang-java');
+
+			// add word-breaks to anything with a / or - in it
+			$('h1').each(function () {
+				var t = $(this).text();
+				t = t.replace('/', '/<wbr>');
+				t = t.replace('-', '-<wbr>');
+				$(this).html(t);
+			});
+
+			// set formatting
+			resizeCommands();
+		});
+
+		// when the window gets resized, do some stuff to keep everything
+		// looking pretty
+		$(window).resize(function () {
+			resizeCommands();
+		});
+
+		// things to do when the page is loaded or window resized
+		function resizeCommands() {
+			// large-screen stuff...
+			if ($(window).width() > 600) {
+
+				// long headline on intro page
+				// $('#introHeadline').html('TABLE OF CONTENTS');
+
+				// menu hover stuff on larger screens
+				// (does weird formatting on larger screens)
+				// hover over title to show "Table of Contents"
+				$('#title a').hover(
+					function () {
+						$('#title a').text('Table of Contents');
+					},
+					function () {
+						$('#title a').text('Complex Analysis'); // set back when moving out
+					}
+				);
+
+				// set prev/next titles
+				$('#prev a').hover(
+					function () {
+						$('#title a').text('Prev: Curves in the Complex Plance');
+					},
+					function () {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+				$('#next a').hover(
+					function () {
+						$('#title a').text('Next: Integrals of Functions with Branch Cuts');
+					},
+					function () {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+			}
+
+			// small-screen stuff
+			else {
+				// short headline on intro page
+				// $('#introHeadline').html('INTRO');
+			}
+		}
+	</script>
+
+
+	<!--MathJax starts-->
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+                           TeX: { equationNumbers: { autoNumber: "AMS" } }
+                           });
+        </script>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+	<script type="text/javascript" async
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-155852901-1');
+	</script>
+
+	<!--GeoGebra embeding-->
+	<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+	<script>
+		var params1 = {
+			"width": 721,
+			"height": 451,
+			"material_id": "uye8xbbj",
+			"borderColor": "888888",
+			"playButton": false,
+			"showFullscreenButton": true,
+			"enableShiftDragZoom": false,
+			"showResetIcon": true
+		};
+		var params2 = {
+			"width": 719,
+			"height": 449,
+			"material_id": "am4gsavs",
+			"borderColor": "888888",
+			"playButton": false,
+			"showFullscreenButton": true,
+			"enableShiftDragZoom": false,
+			"showResetIcon": true
+		};
+		var ggbApplet1 = new GGBApplet(params1, true);
+		var ggbApplet2 = new GGBApplet(params2, true);
+		window.addEventListener("load", function () {
+			ggbApplet1.inject('ggb-element-1');
+			ggbApplet2.inject('ggb-element-2');
+		});
+	</script>
+	<!--GeoGebra embeding ends-->
+
+</head>
+
+<body>
+	<div id="wrapper">
+
+		<header>
+			<p><span id="prev"><a href="curves_in_the_complex_plane.html">&larr;</a></span><span id="title"><a
+						href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a
+						href="integrals_of_functions_with_branch_cuts.html">&rarr;</a></span>
+				<div class="clear"></div>
+			</p>
+		</header>
+
+
+		<h1>Complex Integration</h1>
+
+		<hr>
+
+		<div class="w3-container w3-hide-small" style="margin-right:0px;margin-left:100px">
+			<div class="w3-left-align">
+				<p style="font-size:16px;color:#666666;font-weight:normal;">
+					The magic and power of calculus ultimately rests on the amazing fact that differentiation and
+					integration
+					are mutually inverse operations. And, just as complex functions enjoy remarkable differentiability
+					properties not shared by their real counterparts, so the sublime beauty of complex integration goes
+					far
+					beyond its real progenitor.
+				</p>
+			</div>
+			<div class="w3-right-align" style="font-size:16px;font-weight:normal;"><strong>Peter J. Oliver</strong>
+			</div>
+		</div>
+
+		<h2>Contour integral</h2>
+
+		<p class="w3-responsive">
+			Consider a contour $C$ parametrized by $z(t) = x(t) + i y(t)$ for $a\leq t\leq b$. We define the
+			<em>integral</em>
+			of the complex function along $C$ to be the complex number
+			\begin{eqnarray}\label{contour-integral}
+			\int_C f(z)\,dz = \int_a^bf\left(z(t)\right)z'(t)\,dt.
+			\end{eqnarray}
+			Here we assume that $f\left(z(t)\right)$ is piecewise continuous on the interval
+			$a \leq t \leq b$ and refer to the function $f (z)$ as being piecewise continuous on $C$.
+			Since $C$ is a contour, $z'(t)$ is also piecewise continuous on $a \leq t \leq b$;
+			and so the existence of integral (\ref{contour-integral}) is ensured.
+		</p>
+
+		<p class="w3-responsive">
+			The right hand side of (\ref{contour-integral}) is an ordinary real integral of a complex-valued
+			function; that is, if $w(t) = u(t) + i v(t)$, then
+			\begin{eqnarray}\label{integral-real-cv}
+			\int_a^b w(t)\,dt = \int_a^b u(t)\,dt + i \int_a^b v(t)\,dt
+			\end{eqnarray}
+		</p>
+
+
+		<p class="w3-responsive">
+			Now let us write the integrand
+			$$f(z)= u(x,y)+ iv(x,y)$$
+			in terms of its real and imaginary parts, as well as the differential
+			$$dz=\frac{dz}{dt}dt = \left(\frac{dx}{dt}+ i \frac{dy}{dt}\right)dt = dx+ i dy$$
+			Then the complex integral (\ref{contour-integral}) splits up into a pair of real line integrals:
+			\begin{eqnarray}\label{real-integrals}
+			\int_C f(z)\,dz = \int_C\left(u+iv\right)\left(dx+idy\right) = \int_C\left(u\,dx-v\,dy\right) + i
+			\int_C\left(v\,dx+u\,dy\right)
+			\end{eqnarray}
+		</p>
+
+		<div class="w3-padding">
+			<p><strong>Example 1:</strong> Let's evaluate $\int_C \overline{z}\, dz$, where $C$ is given by $x=3t,
+				y=t^2$,
+				with $-1\leq t\leq 4.$
+			</p>
+
+			<figure class="w3-center">
+				<img class="w3-image w3-mobile" src="../images/chp04/integral-example-1.gif"
+					alt="Piecewise smooth curve" title="Piecewise smooth curve" style="width:50%;">
+				<figcaption>
+					<b>Figure 1:</b> $C$: $z(t)=3t+ it^2$, with $-1\leq t\leq 4.$
+				</figcaption>
+			</figure>
+
+
+			<p class="w3-responsive">
+				Here we have that $C$ is $z(t)=3t+ it^2 .$ Therefore, with the identification $f(z)=\overline{z}$
+				we have
+				$$f\left(z(t)\right)=\overline{3t+it^2}= 3t-it^2 .$$
+				Also, $z'(t) = 3 + 2it$, and so the integral is
+				\begin{eqnarray*}
+				\int_C \overline{z}\, dz&=& \int_{-1}^4 \left(3t-it^2\right)\left(3+ 2it\right)dt\\
+				&=& \int_{-1}^4 \left(2t^3+9t + 3t^2i\right)dt\\
+				&=& \int_{-1}^4 \left(2t^3+9t \right)dt + i\int_{-1}^4 3t^2dt\\
+				&=& \Bigg. \left(\frac{1}{2}t^4 + \frac{9}{2} t^2\right)\Bigg|_{-1}^4 + i\Bigg. t^3\Bigg|_{-1}^4\\
+				&=& 195+ 65 i.
+				\end{eqnarray*}
+			</p>
+
+
+		</div>
+
+
+
+		<div class="w3-padding">
+			<p><strong>Example 2:</strong> Now let's evaluate $\displaystyle \int_C \dfrac{1}{z}\, dz$, where $C$ is the
+				circle $x=\cos t, y=\sin t$,
+				with $0\leq t\leq 2\pi .$
+			</p>
+
+			<figure class="w3-center">
+				<img class="w3-image w3-mobile" src="../images/chp04/integral-example-2.gif"
+					alt="Piecewise smooth curve" title="Piecewise smooth curve" style="width:50%;">
+				<figcaption>
+					<b>Figure 2:</b> $C$: $z(t)=\cos t + i \sin t = e^{it}$, with $0\leq t\leq 2\pi .$
+				</figcaption>
+			</figure>
+
+			<p>
+				In this case $C$ is $z(t)=\cos t + i \sin t = e^{it}$,
+				$$f\left(z(t)\right)=\frac{1}{e^{it}}$$
+				and, $z'(t) = ie^{it}$. Thus
+				\begin{eqnarray*}
+				\int_C \dfrac{1}{z}\, dz&=& \int_{0}^{2\pi} \left(e^{-it}\right)ie^{it}dt = i \int_{0}^{2\pi} dt= 2\pi
+				\,i\\
+
+				\end{eqnarray*}
+			</p>
+		</div>
+
+		<hr>
+
+		<h2>Numerical evaluation of complex integrals</h2>
+
+		<h3>Exploration 1</h3>
+
+		<p>
+			Use the following applet to explore numerically the integral
+			$$\int_C \overline{z}\, dz$$
+			with different contours $C$:
+		</p>
+		<ul>
+			<li>Line segments.</li>
+			<li>Semicircles.</li>
+			<li>Circles, positively and negatively oriented.</li>
+		</ul>
+		<p>
+			You can also change the <a href="domain_coloring.html" target="_blank">domain coloring</a> plotting option.
+			Drag the points around and observe carefully what happens. Then
+			solve Exercise 1 below.
+		</p>
+
+		
+		<div class="ggbElement" id="ggb-element-1"></div>
+				<p class="w3-center"><em>The arrows on the contours indicate direction.</em></p>
+			
+			<!--<iframe scrolling="no" title="Complex integration: conj(z)"
+					src="https://www.geogebra.org/material/iframe/id/uye8xbbj/width/721/height/451/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false"
+					width="721px" height="451px" style="border:0px;" allowfullscree=""> </iframe>-->
+			
+		<div class="w3-padding">
+			<p><strong>Exercise 1:</strong> Use definition (\ref{contour-integral}) to
+				evaluate $\displaystyle \int_C \overline{z}\, dz,$ for the following
+				contours $C$ from $z_0=-2i$ to $z_1=2i$:
+
+			</p>
+			<ol>
+				<li>Line segment. That is, $z\left(t\right) = -2i(1-t)+ 2it$, with $0\leq t\leq 1$.</li>
+				<li>Right-hand semicircle. That is,
+					$z\left(\theta\right) = 2e^{i \theta}$ with $-\frac{\pi}{2}\leq \theta \leq \frac{\pi}{2}.$</li>
+				<li>Left-hand semicircle. That is,
+					$z\left(\theta\right) = -2ie^{-i \theta}$ with $0 \leq \theta \leq \pi.$</li>
+			</ol>
+
+			<p>Use the applet to confirm your results.</p>
+
+			<p>What conclusions (if any) can you draw about the function $\overline{z}$ from this?</p>
+
+
+		</div>
+
+		<h3>Exploration 2</h3>
+
+		<p>
+			Now use the applet below to explore numerically the integrals
+			$$\int_C \left(z^2+z\right) dz;\qquad \int_C \frac{1}{z^2}\, dz$$
+			with different contours $C$ (line segments, semicircles, and circles).
+			Drag the points around and observe carefully what happens.
+			You can select the functions <code>z^2+z</code> or <code>1/z^2</code>
+			from the list at the left-top corner.
+			Then solve Exercises 2 and 3.
+		</p>
+
+		
+		
+		<div class="ggbElement" id="ggb-element-2"></div>
+		<p></p>
+		<!--<iframe scrolling="no" title="Complex integration: Antiderivatives"
+				src="https://www.geogebra.org/material/iframe/id/am4gsavs/width/719/height/449/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/true"
+				idth="719px" height="449px" style="border:0px;" allowfullscreen=""> </iframe>-->
+		
+		<div class="w3-padding">
+			<p><strong>Exercise 2:</strong> Consider the integral
+				$$I_1 =\int_C \left(z^2+z\right) dz.$$
+				Use the applet to analize the value of $I_1$ in the following cases:</p>
+			<ol>
+				<li>$C$ is any contour from $z_0=-1-i$ to $z_1 = 1+i$.</li>
+				<li>$C$ is the circle with center $z_0$ and radius $r\gt 0$,
+					 $|z-z_0|= r$; positively or negatively oriented.
+					 In this cases select <code>Circle ↺</code> or <code>Circle ↻</code>.
+				</li>
+			</ol>
+
+			<p>What conclusions (if any) can you draw about the value of $I_1$ and the function $z^2+z$ from this?</p>
+
+
+		</div>
+
+		<div class="w3-padding">
+			<p><strong>Exercise 3:</strong> Now considering integral
+				$$I_2 =\int_C \dfrac{1}{z^2}dz.$$ First, in the applet select the function <code>f(z)=1/z^2</code>.
+				Then analize the values of $I_2$ in the following cases:
+			</p>
+			<ol>
+				<li>$C$ is any contour from $z_0=-i$ to $z_1 = i$.
+					What happens when you select <code>Line Segment</code> in the applet? What happens
+					when you select <code>Semicircles</code>?</li>
+				<li>$C$ is the circle with center $z_0$ and radius $r\gt 0$,
+					$|z-z_0|= r$; positively or negatively oriented.
+					In this case select <code>Circle ↺</code> or <code>Circle ↻</code>.
+					What happens if $z = 0$ is inside or outside the circle?
+					What happens if $z=0$ lies on the contour, e.g. when $z_0=1$ and $r=1$?
+				</li>
+			</ol>
+
+			<p>What conclusions (if any) can you draw about the value of $I_2$ and the function $\dfrac{1}{z^2}$ from
+				this?</p>
+
+
+		</div>
+
+		<hr>
+
+		<h2>Antiderivatives</h2>
+
+		<p>
+			Although the value of a contour integral of a function $f (z)$ from a fixed point $z_0$ to
+			a fixed point $z_1$ depends, in general, on the path that is taken, there are certain
+			functions whose integrals from $z_0$ to $z_1$ have values that are independent of path,
+			as you have seen in Exercises 2 and 3.
+			These examples also illustrate the
+			fact that the values of integrals around closed paths are sometimes, but not always,
+			zero. The next theorem is useful in determining when integration is independent
+			of path and, moreover, when an integral around a closed path has value zero.
+			This is known as the complex version of the <em>Fundamental Theorem of Calculus</em>.
+		</p>
+
+		<div class="w3-responsive" id="FTC">
+			<p class="theorem"><strong>Theorem:</strong> <em>Let $f(z)=F'(z)$ be the derivative of a
+					single-valued complex function $F(z)$ defined on a domain $\Omega \subset \mathbb C.$
+					Let $C$ be any countour lying entirely in $\Omega$ with initial point $z_0$ and final point $z_1$.
+					Then
+					\begin{eqnarray*}
+					\int_C f(z) dz = \bigg. F(z) \bigg|_{z_0}^{z_1} =F(z_1)- F(z_0)
+					\end{eqnarray*}
+				</em>
+			</p>
+		</div>
+
+		<br>
+
+		<p class="w3-responsive"><em>Proof:</em> This follows from definition (\ref{contour-integral}) and
+			the chain rule. That is
+			\begin{eqnarray*}
+			\int_C f(z) dz &=& \int_C F'\left(z(t)\right) \frac{dz}{dt}dt \\
+			&=& \int_{a}^{b} \frac{d}{dt} F \left(z(t)\right) dt \\
+			&=& F\left(z(b)\right) - F\left(z(a)\right) \\
+			&=& F\left(z_1\right) - F\left(z_0\right)
+			\end{eqnarray*}
+			where $z_0= z(a)$ and $z_1= z(b)$ are the endpoints of the contour $C$. $\blacksquare$
+		</p>
+
+
+		<br>
+
+		<br>
+
+
+		<!-- link to the next page -->
+		<a href="integrals_of_functions_with_branch_cuts.html">
+			<p class="nextPage">NEXT: Integrals of Functions with Branch Cuts</p>
+		</a>
+		<footer>
+			<p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
+					href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+
+			<p class="license">
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+					<img id="license" alt="Creative Commons License" style="border-width:0"
+						src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+				</a>
+				<br />
+				<strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
+				<strong style="font-size: 18px">2019</strong>
+			</p>
+		</footer>
+
+	</div> <!-- end wrapper -->
+
+	<!-- nice smart quotes, via: http://smartquotesjs.com -->
+	<script src="../js/smartquotes.min.js"></script>
+
+</body>
+
+</html>
