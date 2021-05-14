@@ -148,20 +148,16 @@
         //drawtext((-5.9,1.7), "$f(z) =$", color->(0.98,0.98,0.98));
         //\textcolor{<color>}{<text>}
         //drawtext((-1.98,1.75), "$\sum_{k=0}^{"+n+"} a_k (z-z_0)^k$", color->(0,0,0));
-        
-		
-		
 		
 		// Line to divide Graphic views
 		linesize(1.2);
 		draw((-2,-3),(-2,3), color->[0,0,0]);
 		
-
-        
+		// Draw text for Zoom
         drawtext((A.x+0.06,A.y+0.06),"$z_0$", color->(0.98,0.98,0.98));
 		drawtext((-5.5,-1.85), "Zoom$", color->(0,0,0));
         
-		// Slider Zoom
+		// Draw Slider for Zoom 
 		draw((-5,-1.8),(1,-1.8), color->[0,0,0]);
 		Zoom.y = -1.8;
 		Zoom.x = max(Zoom.x, -5);
