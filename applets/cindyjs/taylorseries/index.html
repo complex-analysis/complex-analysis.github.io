@@ -142,11 +142,12 @@
 		linesize(3);
 		draw((-2,-3),(-2,3), color->[0,0,0]);
 		// Draw info of z_0
-		drawtext((-1.95,1.75), "$z_0$, $=(" + round((A.x  ) * 100)/100 + " , " + round(A.y * 100)/100 + ")$", color->(0,0,0));
+		drawtext((-1.95,1.76), "$z_0=(" + round((A.x  ) * 100)/100 + " , " + round(A.y * 100)/100 + ")$", color->(0,0,0));
         
 
-        drawtext((1.15,N.y),"$n = " + n + "$", color->(0.98,0.98,0.98));
+        drawtext((1.15,N.y),"$n = " + n + "$", color->(0,0,0));
         drawtext((A.x+0.06,A.y+0.06),"$z_0$", color->(0.98,0.98,0.98));
+		drawtext((-5.5,-1.85), "Zoom$", color->(0,0,0));
         
 		Zoom.y = -1.8;
 		
