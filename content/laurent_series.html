@@ -199,40 +199,59 @@
 			Recall that a function $f$ of the complex variable $z$ is <em>analytic</em> at
 			a point $z_0$ if it has a derivative at each point in some neighbourhood of $z_0$.
 			An <em>entire</em> function is a function that is analytic at each point in the
-			entire finite plane. If a function $f$ fails to be analytic at a point $z_0$ but is analytic at some point
-			in every neighbourhood of $z_0$, then $z_0$ is called a \textit{singular point}, or \textit{singularity}, of
-			$f$.
-			Suppose that $f(z)$ (or any single valued branch of $f(z)$, if $f(z)$ is multivalued) is analytic in the
-			region
-			$0\lt|z-z_0|\lt R$ (i.e., in a neighbourhood of $z_0$),
-			and not at the point $z_0$. Then the point $z_0$ is
-			called an \textit{isolated singular point} of $f(z)$.
+			entire finite plane. 
+			If a function $f$ fails to be analytic at a point $z_0$ but is analytic at some point
+			in every neighbourhood of $z_0$, then $z_0$ is called a 
+			<em>singular point</em>, or <em>singularity</em>, of $f$.
+			
+		</p>
 
+		<p>
+			Suppose that $f(z)$, or any single valued branch 
+			of $f(z)$, if $f(z)$ is multivalued, is analytic in the
+			region
+			$0\lt|z-z_0|\lt R$
+			and not at the point $z_0$. Then the point $z_0$ is
+			called an <em>isolated singular point</em> of $f(z)$.
+
+		</p>
+			
+		<p>
 			Now, recall also that any function which is analytic throughout a disk
 			$|z -z_0|\lt R_0$ must have a Taylor series about $z_0$. If the function
 			fails to be analytic at a point $z_0$, it is often possible to find a series
 			representation for $f(z)$ involving both positive and negative powers of $z - z_0.$
-			Formally speaking we have the following result \cite[pp. 127-137]{Ablo03}:
+			Formally speaking we have the following result:
 
-			<div class="theorem">
-				Suppose that a function $f$ is analytic throughout an annular domain
+			<div class="theorem" id="laurent-series-theorem">
+				<strong>Theorem:</strong> Suppose that a function $f$ is analytic throughout an annular domain
 				$R_1 \lt |z - z_0| \lt R_2$, centred at $z_0$, and let $C$ denote any positively oriented simple
 				closed contour around $z_0$ and lying in that domain. Then, at each point in
 				the domain, $f (z)$ has the series representation
 				\begin{eqnarray}\label{laurentfunction}
-				f(z)=\sum_{n=0}^{\infty} a_n(z-z_0)^n+\sum_{n=1}^{\infty}\frac{b_n}{(z-z_0)^n}\quad (R_1\lt|z-z_0|\lt R_2),
+				f(z)=\sum_{n=0}^{\infty} a_n(z-z_0)^n+\sum_{n=1}^{\infty}\frac{b_n}{(z-z_0)^n},
 				\end{eqnarray}
 				where
 				\begin{eqnarray*}
-				a_n=\frac{1}{2\pi i}\oint_C \frac{f(z)dz}{(z-z_0)^{n+1}}\quad (n=0,1,2,\ldots)
+				a_n=\frac{1}{2\pi i}\oint_C \frac{f(z)dz}{(z-z_0)^{n+1}},\quad n=0,1,2,\ldots
 				\end{eqnarray*}
 				and
 				\begin{eqnarray*}\label{principalpart}
-				b_n=\frac{1}{2\pi i}\oint_C \frac{f(z)dz}{(z-z_0)^{-n+1}}\quad (n=1,2,\ldots)
+				b_n=\frac{1}{2\pi i}\oint_C \frac{f(z)dz}{(z-z_0)^{-n+1}},\quad n=1,2,\ldots
 				\end{eqnarray*}
 			</div>
 			
 
+		</p>
+
+		<p>
+			In practice, the above integral formulae may not offer the most practical 
+			method for computing the coefficients $a_n$ and $b_n$ for a given function 
+			$f(z)$; instead, one often pieces together the Laurent series by combining 
+			known Taylor expansions. Because the Laurent expansion of a function is 
+			unique whenever it exists, any expression of this form that actually 
+			equals the given function $f(z)$ in some annulus must actually be the 
+			Laurent expansion of $f(z)$.
 		</p>
 
 

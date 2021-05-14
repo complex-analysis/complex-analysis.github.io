@@ -191,275 +191,233 @@
 		</header>
 
 
-		<h1>Complex Integration</h1>
+		<h1>Classification of Singularities</h1>
 
 		<hr>
 
-		<div class="w3-container w3-hide-small" style="margin-right:0px;margin-left:100px">
-			<div class="w3-left-align">
-				<p style="font-size:16px;color:#666666;font-weight:normal;">
-					The magic and power of calculus ultimately rests on the amazing fact that differentiation and
-					integration
-					are mutually inverse operations. And, just as complex functions enjoy remarkable differentiability
-					properties not shared by their real counterparts, so the sublime beauty of complex integration goes
-					far
-					beyond its real progenitor.
-				</p>
-			</div>
-			<div class="w3-right-align" style="font-size:16px;font-weight:normal;"><strong>Peter J. Oliver</strong>
-			</div>
-		</div>
-
-		<h2>Contour integral</h2>
-
-		<p class="w3-responsive">
-			Consider a contour $C$ parametrized by $z(t) = x(t) + i y(t)$ for $a\leq t\leq b$. We define the
-			<em>integral</em>
-			of the complex function along $C$ to be the complex number
-			\begin{eqnarray}\label{contour-integral}
-			\int_C f(z)\,dz = \int_a^bf\left(z(t)\right)z'(t)\,dt.
+		<p>
+			The portion
+			\begin{eqnarray}\label{principal}
+			\frac{b_1}{z-z_0}+\frac{b_2}{(z-z_0)^2}+\frac{b_3}{(z-z_0)^3}+\cdots
 			\end{eqnarray}
-			Here we assume that $f\left(z(t)\right)$ is piecewise continuous on the interval
-			$a \leq t \leq b$ and refer to the function $f (z)$ as being piecewise continuous on $C$.
-			Since $C$ is a contour, $z'(t)$ is also piecewise continuous on $a \leq t \leq b$;
-			and so the existence of integral (\ref{contour-integral}) is ensured.
+			of the <a href="laurent-series-theorem">Laurent series</a>,
+			involving negative powers of $z - z_0$, is called the
+			<em>principal part</em> of $f$
+			at $z_0$. The coefficient $b_1$ in equation
+			(\ref{principal}), turns out to play a very
+			special role in complex analysis.
+			It is given a special name: the residue of the function $f(z)$.
+			In this section we will focus on the principal part to identify the isolated
+			singular point $z_0$ as one of three special types.
 		</p>
-
-		<p class="w3-responsive">
-			The right hand side of (\ref{contour-integral}) is an ordinary real integral of a complex-valued
-			function; that is, if $w(t) = u(t) + i v(t)$, then
-			\begin{eqnarray}\label{integral-real-cv}
-			\int_a^b w(t)\,dt = \int_a^b u(t)\,dt + i \int_a^b v(t)\,dt
-			\end{eqnarray}
-		</p>
-
-
-		<p class="w3-responsive">
-			Now let us write the integrand
-			$$f(z)= u(x,y)+ iv(x,y)$$
-			in terms of its real and imaginary parts, as well as the differential
-			$$dz=\frac{dz}{dt}dt = \left(\frac{dx}{dt}+ i \frac{dy}{dt}\right)dt = dx+ i dy$$
-			Then the complex integral (\ref{contour-integral}) splits up into a pair of real line integrals:
-			\begin{eqnarray}\label{real-integrals}
-			\int_C f(z)\,dz = \int_C\left(u+iv\right)\left(dx+idy\right) = \int_C\left(u\,dx-v\,dy\right) + i
-			\int_C\left(v\,dx+u\,dy\right)
-			\end{eqnarray}
-		</p>
-
-		<div class="w3-padding">
-			<p><strong>Example 1:</strong> Let's evaluate $\int_C \overline{z}\, dz$, where $C$ is given by $x=3t,
-				y=t^2$,
-				with $-1\leq t\leq 4.$
-			</p>
-
-			<figure class="w3-center">
-				<img class="w3-image w3-mobile" src="../images/chp04/integral-example-1.gif"
-					alt="Piecewise smooth curve" title="Piecewise smooth curve" style="width:50%;">
-				<figcaption>
-					<b>Figure 1:</b> $C$: $z(t)=3t+ it^2$, with $-1\leq t\leq 4.$
-				</figcaption>
-			</figure>
-
-
-			<p class="w3-responsive">
-				Here we have that $C$ is $z(t)=3t+ it^2 .$ Therefore, with the identification $f(z)=\overline{z}$
-				we have
-				$$f\left(z(t)\right)=\overline{3t+it^2}= 3t-it^2 .$$
-				Also, $z'(t) = 3 + 2it$, and so the integral is
-				\begin{eqnarray*}
-				\int_C \overline{z}\, dz&=& \int_{-1}^4 \left(3t-it^2\right)\left(3+ 2it\right)dt\\
-				&=& \int_{-1}^4 \left(2t^3+9t + 3t^2i\right)dt\\
-				&=& \int_{-1}^4 \left(2t^3+9t \right)dt + i\int_{-1}^4 3t^2dt\\
-				&=& \Bigg. \left(\frac{1}{2}t^4 + \frac{9}{2} t^2\right)\Bigg|_{-1}^4 + i\Bigg. t^3\Bigg|_{-1}^4\\
-				&=& 195+ 65 i.
-				\end{eqnarray*}
-			</p>
-
-
-		</div>
-
-
-
-		<div class="w3-padding">
-			<p><strong>Example 2:</strong> Now let's evaluate $\displaystyle \int_C \dfrac{1}{z}\, dz$, where $C$ is the
-				circle $x=\cos t, y=\sin t$,
-				with $0\leq t\leq 2\pi .$
-			</p>
-
-			<figure class="w3-center">
-				<img class="w3-image w3-mobile" src="../images/chp04/integral-example-2.gif"
-					alt="Piecewise smooth curve" title="Piecewise smooth curve" style="width:50%;">
-				<figcaption>
-					<b>Figure 2:</b> $C$: $z(t)=\cos t + i \sin t = e^{it}$, with $0\leq t\leq 2\pi .$
-				</figcaption>
-			</figure>
-
-			<p>
-				In this case $C$ is $z(t)=\cos t + i \sin t = e^{it}$,
-				$$f\left(z(t)\right)=\frac{1}{e^{it}}$$
-				and, $z'(t) = ie^{it}$. Thus
-				\begin{eqnarray*}
-				\int_C \dfrac{1}{z}\, dz&=& \int_{0}^{2\pi} \left(e^{-it}\right)ie^{it}dt = i \int_{0}^{2\pi} dt= 2\pi
-				\,i\\
-
-				\end{eqnarray*}
-			</p>
-		</div>
 
 		<hr>
 
-		<h2>Numerical evaluation of complex integrals</h2>
-
-		<h3>Exploration 1</h3>
+		<h2>Poles</h2>
 
 		<p>
-			Use the following applet to explore numerically the integral
-			$$\int_C \overline{z}\, dz$$
-			with different contours $C$:
-		</p>
-		<ul>
-			<li>Line segments.</li>
-			<li>Semicircles.</li>
-			<li>Circles, positively and negatively oriented.</li>
-		</ul>
-		<p>
-			You can also change the <a href="domain_coloring.html" target="_blank">domain coloring</a> plotting option.
-			Drag the points around and observe carefully what happens. Then
-			solve Exercise 1 below.
+			If the principal part of $f$ at $z_0$ contains at least one nonzero term but the number
+			of such terms is only finite, then there exists a integer $m \geq 1$ such that
+			$$b_m\neq 0 \quad\text{and} \quad b_{k}=0\quad \text{for}\quad k\gt m.$$
+			In this case, the isolated singular point $z_0$ is called a <em>pole of order</em>
+			$m$. A pole of order $m = 1$ is usually referred to as a <em>simple pole</em>.
 		</p>
 
-		
-		<div class="ggbElement" id="ggb-element-1"></div>
-				<p class="w3-center"><em>The arrows on the contours indicate direction.</em></p>
+
+
+		<h3>Examples</h3>
+
+		<p>
+			Consider the functions
+			$$f(z)=\dfrac{e^z-1}{z^2},\qquad g(z)=\frac{\cos z}{z^2}\qquad\text{and}\qquad h(z)=\frac{\sinh z}{z^4}.$$
+			Figures 1, 2 and 3 show the enhanced phase portraits of these functions defined
+			in the square $|\text{Re }z|\lt 3$ and $|\text{Im }z|\lt 3$.
+		</p>
+
+		<figure class="w3-center">
+			<img class="w3-image w3-mobile" src="../images/chp05/pole01.png" alt="Pole order 1"
+				title="Pole order 1" style="width:65%;">
+			<figcaption>
+				<b>Figure 1:</b> $f(z)=\dfrac{e^z-1}{z^2}$.
+			</figcaption>
+		</figure>
+
+		<figure class="w3-center">
+			<img class="w3-image w3-mobile" src="../images/chp05/pole02.png" alt="Pole order 2"
+				title="Pole order 2" style="width:65%;">
+			<figcaption>
+				<b>Figure 2:</b> $g(z)=\frac{\cos z}{z^2}$.
+			</figcaption>
+		</figure>
+
+		<figure class="w3-center">
+			<img class="w3-image w3-mobile" src="../images/chp05/pole03.png" alt="Pole order 3"
+				title="Pole order 3" style="width:65%;">
+			<figcaption>
+				<b>Figure 3:</b> $h(z)=\frac{\sinh z}{z^4}$.
+			</figcaption>
+		</figure>
+
+		<p>
+			Notice that $f,$ $g$ and $h$ have an isolated singularity at $z=0$.
+			Moreover, from the phase portraits, we can guess that $f$ has a pole of
+			order 1, $g$ has a pole of order 2 and $h$ has a pole of order 3. To
+			confirm this we can calculate the Laurent series representation centred
+			at $0$. First observe that
+			$$f(z)=\frac{1}{z^2}\left[ \left( 1 + z + \frac{z^2}{2!}+\cdots \right) - 1 \right]=\frac{1}{z}
+			+\frac{1}{2!}+\frac{z}{3!}+\frac{z^2}{4!}+\cdots, \quad (0\lt|z|\lt\infty).$$
+			Thus we can see that $f$ has a simple pole. On the other hand
+			$$g(z)=\frac{1}{z^2}\left(1-\frac{z^2}{2!}+\frac{z^4}{4!}-\cdots
+			\right)=\frac{1}{z^2}-\frac{1}{2!}+\frac{z^2}{4!}-\cdots, \quad (0\lt|z|\lt\infty)$$
+			then $g$ has a pole of order 2.
+			Finally, $h$ has a pole of order 3 since
+			\begin{multline*}
+			h(z)=\frac{1}{z^4}\left(z+\frac{z^3}{3!}+\frac{z^5}{5!}+\cdots \right)=\frac{1}{z^3}+\frac{1}{3!}\cdot
+			\frac{1}{z}+\frac{z}{5!}+\frac{z^3}{7!}+\cdots, \quad(0\lt|z|\lt\infty).
+			\end{multline*}
+		</p>
+
+
+		<hr>
+
+		<h2>Removable singularity</h2>
+
+		<p>
+			When every $b_n$ is zero, so that
+			\begin{eqnarray}\label{residue003}
+			f(z)=\sum_{n=0}^{\infty} a_n(z-z_0)^n,\quad (0\lt |z-z_0| \lt R_2).
+			\end{eqnarray}
+			In this case, $z_0$ is known as a <em>removable singular point</em>. Note that the residue at a removable
+			singular point is always zero. If we define, or possibly redefine, $f$ at $z_0$ so that
+			$f(z_0) = a_0$, expansion (\ref{residue003}) becomes valid throughout the entire disk $|z - z_0| \lt R_2$.
+			Since a power series always represents an analytic function interior to its circle of
+			convergence, it follows that $f$ is analytic at $z_0$ when it is assigned the
+			value $a_0$ there. The singularity $z_0$ is, therefore, removed.
+		</p>
+
+
+
+		<h3>Examples</h3>
+
+		<p>
+			Consider the functions
+			$$f(z)=\frac{1-\cos z}{z^2},\qquad g(z)=\frac{\sin z}{z}\qquad\text{and}\qquad h(z)=\frac{z}{e^z-1}.$$
+			Figure shows the enhanced phase portraits of these functions defined
+			in the square $|\text{Re }z|\lt 8$ and $|\text{Im }z|\lt 8$. 
 			
-			<!--<iframe scrolling="no" title="Complex integration: conj(z)"
-					src="https://www.geogebra.org/material/iframe/id/uye8xbbj/width/721/height/451/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false"
-					width="721px" height="451px" style="border:0px;" allowfullscree=""> </iframe>-->
 			
-		<div class="w3-padding">
-			<p><strong>Exercise 1:</strong> Use definition (\ref{contour-integral}) to
-				evaluate $\displaystyle \int_C \overline{z}\, dz,$ for the following
-				contours $C$ from $z_0=-2i$ to $z_1=2i$:
 
-			</p>
-			<ol>
-				<li>Line segment. That is, $z\left(t\right) = -2i(1-t)+ 2it$, with $0\leq t\leq 1$.</li>
-				<li>Right-hand semicircle. That is,
-					$z\left(\theta\right) = 2e^{i \theta}$ with $-\frac{\pi}{2}\leq \theta \leq \frac{\pi}{2}.$</li>
-				<li>Left-hand semicircle. That is,
-					$z\left(\theta\right) = -2ie^{-i \theta}$ with $0 \leq \theta \leq \pi.$</li>
-			</ol>
-
-			<p>Use the applet to confirm your results.</p>
-
-			<p>What conclusions (if any) can you draw about the function $\overline{z}$ from this?</p>
+			
 
 
-		</div>
-
-		<h3>Exploration 2</h3>
-
-		<p>
-			Now use the applet below to explore numerically the integrals
-			$$\int_C \left(z^2+z\right) dz;\qquad \int_C \frac{1}{z^2}\, dz$$
-			with different contours $C$ (line segments, semicircles, and circles).
-			Drag the points around and observe carefully what happens.
-			You can select the functions <code>z^2+z</code> or <code>1/z^2</code>
-			from the list at the left-top corner.
-			Then solve Exercises 2 and 3.
 		</p>
 
-		
-		
-		<div class="ggbElement" id="ggb-element-2"></div>
-		<p></p>
-		<!--<iframe scrolling="no" title="Complex integration: Antiderivatives"
-				src="https://www.geogebra.org/material/iframe/id/am4gsavs/width/719/height/449/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/true"
-				idth="719px" height="449px" style="border:0px;" allowfullscreen=""> </iframe>-->
-		
-		<div class="w3-padding">
-			<p><strong>Exercise 2:</strong> Consider the integral
-				$$I_1 =\int_C \left(z^2+z\right) dz.$$
-				Use the applet to analize the value of $I_1$ in the following cases:</p>
-			<ol>
-				<li>$C$ is any contour from $z_0=-1-i$ to $z_1 = 1+i$.</li>
-				<li>$C$ is the circle with center $z_0$ and radius $r\gt 0$,
-					 $|z-z_0|= r$; positively or negatively oriented.
-					 In this cases select <code>Circle ↺</code> or <code>Circle ↻</code>.
-				</li>
-			</ol>
+		<figure class="w3-center">
+			<img class="w3-image w3-mobile" src="../images/chp05/rmv-sing-01.png" alt="Removable singularity"
+				title="Removable singularity" style="width:65%;">
+			<figcaption>
+				<b>Figure 4:</b> $f(z)=\frac{1-\cos z}{z^2}$.
+			</figcaption>
+		</figure>
 
-			<p>What conclusions (if any) can you draw about the value of $I_1$ and the function $z^2+z$ from this?</p>
+		<figure class="w3-center">
+			<img class="w3-image w3-mobile" src="../images/chp05/rmv-sing-02.png" alt="Removable singularity"
+				title="Removable singularity" style="width:65%;">
+			<figcaption>
+				<b>Figure 5:</b> $g(z)=\frac{\sin z}{z}$.
+			</figcaption>
+		</figure>
 
+		<figure class="w3-center">
+			<img class="w3-image w3-mobile" src="../images/chp05/rmv-sing-03.png" alt="Removable singularity"
+				title="Removable singularity" style="width:65%;">
+			<figcaption>
+				<b>Figure 6:</b> $h(z)=\frac{z}{e^z-1}$.
+			</figcaption>
+		</figure>
 
-		</div>
+		<p>
 
-		<div class="w3-padding">
-			<p><strong>Exercise 3:</strong> Now considering integral
-				$$I_2 =\int_C \dfrac{1}{z^2}dz.$$ First, in the applet select the function <code>f(z)=1/z^2</code>.
-				Then analize the values of $I_2$ in the following cases:
-			</p>
-			<ol>
-				<li>$C$ is any contour from $z_0=-i$ to $z_1 = i$.
-					What happens when you select <code>Line Segment</code> in the applet? What happens
-					when you select <code>Semicircles</code>?</li>
-				<li>$C$ is the circle with center $z_0$ and radius $r\gt 0$,
-					$|z-z_0|= r$; positively or negatively oriented.
-					In this case select <code>Circle ↺</code> or <code>Circle ↻</code>.
-					What happens if $z = 0$ is inside or outside the circle?
-					What happens if $z=0$ lies on the contour, e.g. when $z_0=1$ and $r=1$?
-				</li>
-			</ol>
+			We notice
+			that $f$ has a singularity at $z=0$ but in this case the plot does not show
+			isochromatic lines meeting at that point. This indicates that the singularity
+			might be removable.
+		</p>
 
-			<p>What conclusions (if any) can you draw about the value of $I_2$ and the function $\dfrac{1}{z^2}$ from
-				this?</p>
+		<p>
 
+			We can confirm this claim easily from the Laurent series representation:
+			$$f(z)=\frac{1}{z^2}\left[1-\left(1-\frac{z^2}{2!}+\frac{z^4}{4!}-\frac{z^6}{6!}+\cdots
+			\right)\right]=\frac{1}{2!}-\frac{z^2}{4!}+\frac{z^4}{6!}-\cdots, \quad (0\lt |z|\lt \infty).$$
+			In this case, when the value $f(0)=1/2$ is assigned, $f$ becomes entire. Furthermore, we can intuitively
+			observe that since $z=0$ is a removable singular point of $f$,
+			then $f$ must be analytic and bounded in some deleted neighbourhood $0\lt |z|\lt \epsilon$.
 
-		</div>
+		</p>
 
 		<hr>
 
-		<h2>Antiderivatives</h2>
+
+		<h2>Essential singularity</h2>
+
+		<p id="essential-singularity">
+			If an infinite number of the coefficients $b_n$ in the principal part (\ref{principal}) are nonzero, then
+			$z_0$ is said to be an <em>essential singular</em> point of $f$.
+		</p>
+
+
+
+		<h3>Example</h3>
 
 		<p>
-			Although the value of a contour integral of a function $f (z)$ from a fixed point $z_0$ to
-			a fixed point $z_1$ depends, in general, on the path that is taken, there are certain
-			functions whose integrals from $z_0$ to $z_1$ have values that are independent of path,
-			as you have seen in Exercises 2 and 3.
-			These examples also illustrate the
-			fact that the values of integrals around closed paths are sometimes, but not always,
-			zero. The next theorem is useful in determining when integration is independent
-			of path and, moreover, when an integral around a closed path has value zero.
-			This is known as the complex version of the <em>Fundamental Theorem of Calculus</em>.
-		</p>
+			The function $f(z)=\exp(1/z)$ has an essential singularity at $z=0$ since
+			$$f(z)=1+\frac{1}{1!}\cdot\frac{1}{z}+\frac{1}{2!}\cdot
+			\frac{1}{z^2}+\cdots=\sum_{n=0}^{\infty}\frac{1}{n!}\cdot \frac{1}{z^n}, \quad (0\lt |z|\lt \infty).$$
 
-		<div class="w3-responsive" id="FTC">
-			<p class="theorem"><strong>Theorem:</strong> <em>Let $f(z)=F'(z)$ be the derivative of a
-					single-valued complex function $F(z)$ defined on a domain $\Omega \subset \mathbb C.$
-					Let $C$ be any countour lying entirely in $\Omega$ with initial point $z_0$ and final point $z_1$.
-					Then
-					\begin{eqnarray*}
-					\int_C f(z) dz = \bigg. F(z) \bigg|_{z_0}^{z_1} =F(z_1)- F(z_0)
-					\end{eqnarray*}
-				</em>
-			</p>
-		</div>
 
-		<br>
 
-		<p class="w3-responsive"><em>Proof:</em> This follows from definition (\ref{contour-integral}) and
-			the chain rule. That is
-			\begin{eqnarray*}
-			\int_C f(z) dz &=& \int_C F'\left(z(t)\right) \frac{dz}{dt}dt \\
-			&=& \int_{a}^{b} \frac{d}{dt} F \left(z(t)\right) dt \\
-			&=& F\left(z(b)\right) - F\left(z(a)\right) \\
-			&=& F\left(z_1\right) - F\left(z_0\right)
-			\end{eqnarray*}
-			where $z_0= z(a)$ and $z_1= z(b)$ are the endpoints of the contour $C$. $\blacksquare$
 		</p>
 
 
-		<br>
+		<p>
+			Figure \ref{ex05}a shows the enhanced portrait of $f$ in the square
+			${|\text{Re }z|\lt 0.5}$ and ${|\text{Im }z|\lt 0.5}$. The first thing
+			we notice is that the behaviour of $f$ near the essential singular
+			point is quite irregular. Observe how the isochromatic lines, near
+			$z=0$, form infinite self-contained figure-eight shapes. In fact,
+			a neighbourhood of $z=0$ intersects infinitely many isochromatic
+			lines of the phase portrait of one and the same colour, see \cite[p. 181]{Weg12}.
+			This fact can be seen intuitively by plotting a simple phase portrait of the
+			function in the square ${|\text{Re }z|\lt 0.1}$ and ${|\text{Im }z|\lt 0.1}$
+			depicted in Figure \ref{ex05}b.
+		</p>
+
+		<figure class="w3-center">
+			<img class="w3-image w3-mobile" src="../images/chp05/essential-01.png" alt="Essential singularity"
+				title="Essential singularity" style="width:65%;">
+			<figcaption>
+				<b>Figure 7:</b> $g(z)=\frac{\sin z}{z}$.
+			</figcaption>
+		</figure>
+
+		<figure class="w3-center">
+			<img class="w3-image w3-mobile" src="../images/chp05/essential-02.png" alt="Essential singularity"
+				title="Essential singularity" style="width:65%;">
+			<figcaption>
+				<b>Figure 8:</b> $h(z)=\frac{z}{e^z-1}$.
+			</figcaption>
+		</figure>
+
+		<p>
+			The advantage of visualizing essential singularities is not
+			only that students can observe the behaviour of the function near
+			this kind of singularity, but also it might help them to explore and
+			comprehend more abstract mathematical results such as the <em>Great Picard Theorem</em>,
+			which tells us that any analytic function with an essential singularity at $z_0$
+			takes on all possible complex values (with at most a single exception) infinitely
+			often in any neighbourhood of $z_0$ \cite[pp. 28-30]{Kra04}.
+		</p>
+
 
 		<br>
 
