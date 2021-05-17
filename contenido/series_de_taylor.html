@@ -265,6 +265,37 @@
 			</p>
 		</div>
 
+		<p>
+			Every complex power series (\ref{seriefunction}) has a radius of convergence.
+			Analogous to the concept of an interval of convergence for real
+			power series, a complex power series (\ref{seriefunction}) has a circle of convergence,
+			which is the circle centered at $z_0$ of largest radius $R \gt 0$
+			for which (\ref{seriefunction}) converges at every point within the circle $|z−z_0|=R$.
+			Apowerseries converges absolutely at all points z within its circle of convergence,
+			that is, for all z satisfying $|z − z_0| \lt R$, and diverges at all points $z$ exterior to the
+			circle, that is, for all z satisfying $|z−z_0| \gt R$.
+			The radius of convergence can be:
+		</p>
+
+		<ol>
+			<li>$R = 0$ (in which case (\ref{seriefunction}) converges only at its center $z = z_0$),</li>
+			<li>$R$ a finite positive number (in which case (\ref{seriefunction}) converges at all interior
+				points of the circle $|z − z_0| = R)$, or</li>
+			<li>$R = \infty$ (in which case (\ref{seriefunction}) converges for all $z$).</li>
+		</ol>
+
+		<p>
+			The radius of convergence can be calculated using the ratio test of convergece. For example,
+			if:
+		</p>
+
+		<ol>
+			<li>$\displaystyle \lim_{n\rightarrow \infty} = \left| \frac{a_{n+1}}{a_n}\right| = L\neq 0$, the radius of
+				convergence is $R=\frac{1}{L}$;</li>
+			<li>$\displaystyle \lim_{n\rightarrow \infty} = 0$, the radius of convergence is $R=\infty$;</li>
+			<li>$\displaystyle \lim_{n\rightarrow \infty} = \infty$, the radius of convergence is $R=0$.</li>
+		</ol>
+
 		<hr>
 
 		<h2>Exploración Dinámica</h2>
@@ -500,6 +531,39 @@
 			<p><i class="fas fa-sad-tear"></i> Lo siento, este applet no funciona para dispositivos con pantallas pequeñas.
 				Rota tu dispositivo horizontalmente. O cambia el tamaño de tu ventana de tal forma que el ancho es
 				más grande que el largo.</p>
+		</div>
+
+		<hr>
+
+		<h2>Maclaurin series</h2>
+
+		<p>A Taylor series with centre $z_0=0$
+			\[
+			f(z) = \sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!}z^n
+			\]
+			is referred to as <em>Maclaurin series</em>.
+		</p>
+
+		<p>
+			Some important Maclaurin series are:
+			\begin{eqnarray*}
+			\displaystyle \frac{1}{1-z}&=& \sum_{n=0}^{\infty} z^n, \quad |z|\lt 1; \\
+			\displaystyle e^z &=& \sum_{n=0}^{\infty} \frac{z^n}{n!} \quad |z|\lt \infty;\\
+			\displaystyle \sin z &=& \sum_{n=0}^{\infty} (-1)^n\frac{z^{2n+1}}{n!} \quad |z|\lt \infty;\\
+			\displaystyle \cos z &=& \sum_{n=0}^{\infty} (-1)^n \frac{z^{2n}}{n!} \quad |z|\lt \infty;\\
+			\displaystyle \sinh z &=& \sum_{n=0}^{\infty} \frac{z^{2n+1}}{n!} \quad |z|\lt \infty;\\
+			\displaystyle \cosh z &=& \sum_{n=0}^{\infty} \frac{z^{2n}}{n!} \quad |z|\lt \infty;
+			\end{eqnarray*}
+		</p>
+
+
+		<div class="w3-padding">
+			<p><strong>Exercise:</strong> Find the Maclaurin series expansion of the function
+				\[
+				f(z)=\frac{z}{z^4+9}
+				\]
+				and calculate the radius of convergence.
+			</p>
 		</div>
 
 		<br>
