@@ -74,9 +74,9 @@
 			color(z) := ( //what color should be given to a complex number z?
 				regional(n, grey1, grey2);
 				n = 12;
-				z = log(z)/2/pi;
+				z = log(z) / (2 * pi);
 
-				zfract = n*z - floor(n*z); //value of n*z in C mod Z[i]
+				zfract = n * z - floor(n * z); //value of n*z in C mod Z[i]
 
 				grey1 = im(zfract);
 				grey2 = re(zfract);
@@ -99,32 +99,32 @@
 		//	lastf = Input.text;
 		//);
 	
-		factorial(n) := if(n==0, 1, n*factorial(n-1));
+		factorial(n) := if(n == 0, 1, n * factorial(n - 1));
 		
 		coeff = autodiff(f(z), [complex(A*zoom)], n)_1;
-		forall(0..n, k, coeff_(k+1)=coeff_(k+1)/factorial(k));
+		forall(0..n, k, coeff_(k+1) = coeff_(k+1)/factorial(k));
 		
-		t(z) := coeff*apply(0..n, k, (z-complex(A*zoom))^k);
+		t(z) := coeff*apply(0..n, k, (z-complex(A * zoom))^k);
 		
 
 		colorplot(
-			z = zoom*complex(#);
+			z = zoom * complex(#);
 			color(t(z));
 			,
-			(-2,-2),(2,2)
+			(-2, -2),(2, 2)
 		);
 		
 		colorplot(
-			z = zoom*(complex(#)+4);
+			z = zoom*(complex(#) + 4);
 			color(f(z));
 			,
-			(-6,-2),(-2,2)
+			(-6, -2),(-2, 2)
 		);
 		
 		//Draw background for z_0
         shape1 = polygon([(-2,1.7), (-0.25,1.7), (-0.25,2), (-2,2)]);
-        fill(shape1,color->(0.8,0.8,0.8));
-        draw(shape1, color->(0.8,0.8,0.8));
+        fill(shape1,color->(0.8, 0.8, 0.8));
+        draw(shape1, color->(0.8, 0.8, 0.8));
 
 		// Draw info of z_0
 		drawtext((-1.95,1.8), "$z_0=(" + round(( zoom * A.x  ) * 100)/100 + " , " + round((zoom * A.y ) * 100)/100 + ")$", color->(0,0,0));
