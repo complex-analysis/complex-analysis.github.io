@@ -199,15 +199,15 @@
 			Recall that a function $f$ of the complex variable $z$ is <em>analytic</em> at
 			a point $z_0$ if it has a derivative at each point in some neighbourhood of $z_0$.
 			An <em>entire</em> function is a function that is analytic at each point in the
-			entire finite plane. 
+			entire finite plane.
 			If a function $f$ fails to be analytic at a point $z_0$ but is analytic at some point
-			in every neighbourhood of $z_0$, then $z_0$ is called a 
+			in every neighbourhood of $z_0$, then $z_0$ is called a
 			<em>singular point</em>, or <em>singularity</em>, of $f$.
-			
+
 		</p>
 
 		<p>
-			Suppose that $f(z)$, or any single valued branch 
+			Suppose that $f(z)$, or any single valued branch
 			of $f(z)$, if $f(z)$ is multivalued, is analytic in the
 			region
 			$0\lt|z-z_0|\lt R$
@@ -215,7 +215,7 @@
 			called an <em>isolated singular point</em> of $f(z)$.
 
 		</p>
-			
+
 		<p>
 			Now, recall also that any function which is analytic throughout a disk
 			$|z -z_0|\lt R_0$ must have a Taylor series about $z_0$. If the function
@@ -240,20 +240,54 @@
 				b_n=\frac{1}{2\pi i}\oint_C \frac{f(z)dz}{(z-z_0)^{-n+1}},\quad n=1,2,\ldots
 				\end{eqnarray*}
 			</div>
-			
+
 
 		</p>
 
 		<p>
-			In practice, the above integral formulae may not offer the most practical 
-			method for computing the coefficients $a_n$ and $b_n$ for a given function 
-			$f(z)$; instead, one often pieces together the Laurent series by combining 
-			known Taylor expansions. Because the Laurent expansion of a function is 
-			unique whenever it exists, any expression of this form that actually 
-			equals the given function $f(z)$ in some annulus must actually be the 
+			In practice, the above integral formulae may not offer the most practical
+			method for computing the coefficients $a_n$ and $b_n$ for a given function
+			$f(z)$; instead, one often pieces together the Laurent series by combining
+			known Taylor expansions. Because the Laurent expansion of a function is
+			unique whenever it exists, any expression of this form that actually
+			equals the given function $f(z)$ in some annulus must actually be the
 			Laurent expansion of $f(z)$.
 		</p>
 
+		<p>
+
+			For example the function 
+			$$f(z)=\frac{1}{z(1+z^2)}$$
+			has isolated singularities at $z=0$
+			and $z=\pm i$.
+			In this case, there is a Laurent series representation for the
+			domain $0\lt |z|\lt 1$ and also one for the domain $1\lt |z|\lt \infty$,
+			which is exterior to the circle $|z|=1$.
+			To find each of these Laurent series, we recall the Maclaurin series representation
+			$$\frac{1}{1-z}=\sum_{n=0}^{\infty}z^n,\quad |z|\lt 1.$$
+			For the domain $0\lt |z|\lt 1$, we have
+			\begin{eqnarray*}
+			f(z)&=&\frac{1}{z}\frac{1}{1+z^2}=\frac{1}{z}\sum_{n=0}^{\infty}\left(-z^2\right)^n \\
+			&=&\sum_{n=0}^{\infty}(-1)^nz^{2n-1}\\
+			&=&\frac{1}{z}+\sum_{n=1}^{\infty}(-1)^nz^{2n-1} \\
+			&=& \sum_{n=0}^{\infty}(-1)^{n+1}z^{2n+1}+\frac{1}{z}.
+			\end{eqnarray*}
+			On the other hand, when $1\lt |z|\lt \infty$,
+			\begin{eqnarray*}
+			f(z)&=&\frac{1}{z^3}\frac{1}{1+\frac{1}{z^2}}=\frac{1}{z^3}\sum_{n=0}^{\infty} \left(-\frac{1}{z^2}
+			\right)^n\\
+			& =&\sum_{n=0}^{\infty}\frac{(-1)^n}{z^{2n+3}}\\
+			&=&\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{z^{2n+1}}
+			\end{eqnarray*}
+			In this last part we use the fact that $(-1)^{n-1}=(-1)^{n-1}(-1)^2=(-1)^{n+1}$.
+
+		</p>
+
+		<div class="w3-padding">
+			<p><strong>Exercise:</strong> Expand $f(z)=e^{3/z}$ in a Laurent series valid for
+				$0\lt |z| \lt \infty$.
+			</p>
+		</div>
 
 
 		<br>
