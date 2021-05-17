@@ -366,7 +366,7 @@ Suppose that a function $f$ is analytic throughout a disk $|z -z_0|&lt; R_0$,
 		Zoom.x = max(Zoom.x, -5);
 		Zoom.x = min(Zoom.x, 1);
 		
-		zoom = exp(.5*(Zoom.x+3));
+		zoom = exp(.5/100*(Zoom.x+3));
 		
 		if(lzoom!=zoom,
 			A.xy = A.xy*lzoom/zoom;
