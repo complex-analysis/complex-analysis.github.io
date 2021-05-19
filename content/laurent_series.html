@@ -201,13 +201,13 @@
 				f(z)=\sum_{n=0}^{\infty} a_n(z-z_0)^n+\sum_{n=1}^{\infty}\frac{b_n}{(z-z_0)^n},
 				\end{eqnarray}
 				where
-				\begin{eqnarray*}
+				\begin{eqnarray}\label{non-principalpart}
 				a_n=\frac{1}{2\pi i}\oint_C \frac{f(z)dz}{(z-z_0)^{n+1}},\quad n=0,1,2,\ldots
-				\end{eqnarray*}
+				\end{eqnarray}
 				and
-				\begin{eqnarray*}\label{principalpart}
+				\begin{eqnarray}\label{principalpart}
 				b_n=\frac{1}{2\pi i}\oint_C \frac{f(z)dz}{(z-z_0)^{-n+1}},\quad n=1,2,\ldots
-				\end{eqnarray*}
+				\end{eqnarray}
 			</div>
 
 
@@ -223,7 +223,8 @@
 		</figure>
 
 		<p>
-			In practice, the above integral formulae may not offer the most practical
+			In practice, the above integral formulae (\ref{non-principalpart}) and 
+			(\ref{principalpart}) may not offer the most practical
 			method for computing the coefficients $a_n$ and $b_n$ for a given function
 			$f(z)$; instead, one often pieces together the Laurent series by combining
 			known Taylor expansions. Because the Laurent expansion of a function is
