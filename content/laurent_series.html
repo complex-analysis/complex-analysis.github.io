@@ -92,7 +92,7 @@
 				// set prev/next titles
 				$('#prev a').hover(
 					function () {
-						$('#title a').text('Prev: Curves in the Complex Plance');
+						$('#title a').text('Prev: Taylor Series');
 					},
 					function () {
 						$('#title a').text('Complex Analysis');
@@ -100,7 +100,7 @@
 				);
 				$('#next a').hover(
 					function () {
-						$('#title a').text('Next: Integrals of Functions with Branch Cuts');
+						$('#title a').text('Next: Classification of Singularities');
 					},
 					function () {
 						$('#title a').text('Complex Analysis');
@@ -144,38 +144,7 @@
 		gtag('config', 'UA-155852901-1');
 	</script>
 
-	<!--GeoGebra embeding-->
-	<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
-
-	<script>
-		var params1 = {
-			"width": 721,
-			"height": 451,
-			"material_id": "uye8xbbj",
-			"borderColor": "888888",
-			"playButton": false,
-			"showFullscreenButton": true,
-			"enableShiftDragZoom": false,
-			"showResetIcon": true
-		};
-		var params2 = {
-			"width": 719,
-			"height": 449,
-			"material_id": "am4gsavs",
-			"borderColor": "888888",
-			"playButton": false,
-			"showFullscreenButton": true,
-			"enableShiftDragZoom": false,
-			"showResetIcon": true
-		};
-		var ggbApplet1 = new GGBApplet(params1, true);
-		var ggbApplet2 = new GGBApplet(params2, true);
-		window.addEventListener("load", function () {
-			ggbApplet1.inject('ggb-element-1');
-			ggbApplet2.inject('ggb-element-2');
-		});
-	</script>
-	<!--GeoGebra embeding ends-->
+	
 
 </head>
 
@@ -183,9 +152,9 @@
 	<div id="wrapper">
 
 		<header>
-			<p><span id="prev"><a href="curves_in_the_complex_plane.html">&larr;</a></span><span id="title"><a
+			<p><span id="prev"><a href="taylor_series.html">&larr;</a></span><span id="title"><a
 						href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a
-						href="integrals_of_functions_with_branch_cuts.html">&rarr;</a></span>
+						href="classification_of_singularities.html">&rarr;</a></span>
 				<div class="clear"></div>
 			</p>
 		</header>
@@ -223,7 +192,7 @@
 			representation for $f(z)$ involving both positive and negative powers of $z - z_0.$
 			Formally speaking we have the following result:
 
-			<div class="theorem" id="laurent-series-theorem">
+			<div class="theorem w3-responsive" id="laurent-series-theorem">
 				<strong>Theorem:</strong> Suppose that a function $f$ is analytic throughout an annular domain
 				$R_1 \lt |z - z_0| \lt R_2$, centred at $z_0$, and let $C$ denote any positively oriented simple
 				closed contour around $z_0$ and lying in that domain. Then, at each point in
@@ -244,6 +213,15 @@
 
 		</p>
 
+		<figure class="w3-center">
+			<img class="w3-image w3-mobile" src="https://s3.amazonaws.com/media-p.slid.es/uploads/1304482/images/7253947/diagram-laurent.svg" alt="Annulus"
+				title="Annulus" style="width:65%;">
+			<figcaption>
+				<b>Figure 1:</b> $f(z)$ is analytic throughout an annular domain
+				$R_1 \lt |z - z_0| \lt R_2$.
+			</figcaption>
+		</figure>
+
 		<p>
 			In practice, the above integral formulae may not offer the most practical
 			method for computing the coefficients $a_n$ and $b_n$ for a given function
@@ -254,11 +232,10 @@
 			Laurent expansion of $f(z)$.
 		</p>
 
-		<p>
-
-			For example the function 
+		<p class="w3-responsive">
+			For example, consider the function 
 			$$f(z)=\frac{1}{z(1+z^2)}$$
-			has isolated singularities at $z=0$
+			which has isolated singularities at $z=0$
 			and $z=\pm i$.
 			In this case, there is a Laurent series representation for the
 			domain $0\lt |z|\lt 1$ and also one for the domain $1\lt |z|\lt \infty$,
@@ -280,7 +257,6 @@
 			&=&\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{z^{2n+1}}
 			\end{eqnarray*}
 			In this last part we use the fact that $(-1)^{n-1}=(-1)^{n-1}(-1)^2=(-1)^{n+1}$.
-
 		</p>
 
 		<div class="w3-padding">
@@ -296,8 +272,8 @@
 
 
 		<!-- link to the next page -->
-		<a href="integrals_of_functions_with_branch_cuts.html">
-			<p class="nextPage">NEXT: Integrals of Functions with Branch Cuts</p>
+		<a href="classification_of_singularities.html">
+			<p class="nextPage">NEXT: Classification of Singularities</p>
 		</a>
 		<footer>
 			<p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
