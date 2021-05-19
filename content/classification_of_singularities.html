@@ -198,7 +198,7 @@
 		<p class="w3-responsive">
 			Consider the functions
 			$$f(z)=\dfrac{e^z-1}{z^2},\qquad g(z)=\frac{\cos z}{z^2}\qquad\text{and}\qquad h(z)=\frac{\sinh z}{z^4},$$
-			with an isolated singularity at $z=0$.
+			with an isolated singularity at $z_0=0$.
 			Figures 1, 2 and 3 show the <a href="domain_coloring.html#enhanced-phase-portraits">enhanced phase portraits</a> of these functions defined
 			in the square $|\text{Re }z|\lt 3$ and $|\text{Im }z|\lt 3$.
 		</p>
@@ -231,7 +231,7 @@
 
 		<p class="w3-responsive">
 			Now from the <a href="domain_coloring.html#enhanced-phase-portraits">enhanced phase portraits</a> 
-			we can observe that $z=0$ is in fact a pole which order can also be easily seen, 
+			we can observe that $z_0=0$ is in fact a pole which order can also be easily seen, 
 			it is just the number of isochromatic rays of one (arbitrarily chosen) 
 			color which meet at that point.
 			Thus we can claim that $f$, $g$ and $h$ have poles of order 1, 2 and 3; respectively.
@@ -308,7 +308,7 @@
 
 		<p>
 			We notice
-			that $f$ has a singularity at $z=0$ but in this case the plot does not show
+			that $f$ has a singularity at $z_0=0$ but in this case the plot does not show
 			isochromatic lines meeting at that point. This indicates that the singularity
 			might be removable.
 		</p>
@@ -319,13 +319,13 @@
 			\right)\right]=\frac{1}{2!}-\frac{z^2}{4!}+\frac{z^4}{6!}-\cdots, \quad (0\lt |z|\lt \infty).$$
 			In this case, when the value $f(0)=1/2$ is assigned, $f$ becomes entire. Furthermore, we can intuitively
 			observe that since $z=0$ is a removable singular point of $f$,
-			then $f$ must be analytic and bounded in some deleted neighbourhood $0\lt |z|\lt \epsilon$.
+			then $f$ must be analytic and bounded in some deleted neighbourhood $0\lt |z|\lt \varepsilon$.
 
 		</p>
 
 		<div class="w3-padding">
 			<p><strong>Exercise 1:</strong> Find the Laurent series expansion for $g$ and $h$ to confirm that
-				they have removable singularities at $z=0$. 
+				they have removable singularities at $z_0=0$. 
 			</p>
 		</div>
 
@@ -354,7 +354,7 @@
 			${|\text{Re }z|\lt 0.5}$ and ${|\text{Im }z|\lt 0.5}$. The first thing
 			we notice is that the behaviour of $f$ near the essential singular
 			point is quite irregular. Observe how the isochromatic lines, near
-			$z=0$, form infinite self-contained figure-eight shapes. 
+			$z_0=0$, form infinite self-contained figure-eight shapes. 
 		</p>
 
 		<figure class="w3-center">
@@ -398,17 +398,21 @@
 
 		<div class="w3-padding">
 			<p><strong>Exercise 2:</strong> Find the Laurent series expansion for $(z − 1) \cos(1/z)$ to confirm that
-				it has an essential singularity at $z=0$. 
+				it has an essential singularity at $z_0=0$. 
 			</p>
 		</div>
 
+		<hr>
+
+		<h2>Final remark</h2>
+
 
 		<p>
-			<strong>Final remark:</strong> 
+			
 			Phase portraits are quite useful to understand
 			the behaviour of functions near isolated singularities.  
 			Figures 7 and 9 indicate a rather wild behavior of these functions in 
-			a neighborhood of essential singularities, in comparison with poles and
+			a neighbourhood of essential singularities, in comparison with poles and
 			removable singular points.
 			In addition, they can be used to explore and comprehend, 
 			from a geometric point of view, 
