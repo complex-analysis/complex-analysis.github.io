@@ -198,7 +198,7 @@
 		<p class="w3-responsive">
 			Consider the functions
 			$$f(z)=\dfrac{e^z-1}{z^2},\qquad g(z)=\frac{\cos z}{z^2}\qquad\text{and}\qquad h(z)=\frac{\sinh z}{z^4},$$
-			with an isolated singularity at $z=0$.
+			with an isolated singularity at $z_0=0$.
 			Figures 1, 2 and 3 show the <a href="domain_coloring.html#enhanced-phase-portraits">enhanced phase portraits</a> of these functions defined
 			in the square $|\text{Re }z|\lt 3$ and $|\text{Im }z|\lt 3$.
 		</p>
@@ -231,23 +231,27 @@
 
 		<p class="w3-responsive">
 			Now from the <a href="domain_coloring.html#enhanced-phase-portraits">enhanced phase portraits</a> 
-			we can observe that $z=0$ is in fact a pole which order can also be easily seen, 
+			we can observe that $z_0=0$ is in fact a pole which order can also be easily seen, 
 			it is just the number of isochromatic rays of one (arbitrarily chosen) 
 			color which meet at that point.
 			Thus we can claim that $f$, $g$ and $h$ have poles of order 1, 2 and 3; respectively.
 			To confirm this let's calculate the Laurent series representation centred
 			at $0$. First observe that
-			$$f(z)=\frac{1}{z^2}\left[ \left( 1 + z + \frac{z^2}{2!}+\cdots \right) - 1 \right]=\frac{1}{z}
-			+\frac{1}{2!}+\frac{z}{3!}+\frac{z^2}{4!}+\cdots, \quad (0\lt|z|\lt\infty).$$
+			\begin{eqnarray*}
+			f(z)&=&\frac{1}{z^2}\left[ \left( 1 + z + \frac{z^2}{2!}+\cdots \right) - 1 \right]\\
+			&=&\frac{1}{z} +\frac{1}{2!}+\frac{z}{3!}+\frac{z^2}{4!}+\cdots, \quad (0\lt|z|\lt\infty).
+			\end{eqnarray*}
 			Thus we can see that $f$ has a simple pole. On the other hand
-			$$g(z)=\frac{1}{z^2}\left(1-\frac{z^2}{2!}+\frac{z^4}{4!}-\cdots
-			\right)=\frac{1}{z^2}-\frac{1}{2!}+\frac{z^2}{4!}-\cdots, \quad (0\lt|z|\lt\infty)$$
+			\begin{eqnarray*}
+			g(z)&=&\frac{1}{z^2}\left(1-\frac{z^2}{2!}+\frac{z^4}{4!}-\cdots \right)\\
+			&=&\frac{1}{z^2}-\frac{1}{2!}+\frac{z^2}{4!}-\cdots, \quad (0\lt|z|\lt\infty)
+			\end{eqnarray*}
 			then $g$ has a pole of order 2.
 			Finally, $h$ has a pole of order 3 since
-			\begin{multline*}
-			h(z)=\frac{1}{z^4}\left(z+\frac{z^3}{3!}+\frac{z^5}{5!}+\cdots \right)=\frac{1}{z^3}+\frac{1}{3!}\cdot
-			\frac{1}{z}+\frac{z}{5!}+\frac{z^3}{7!}+\cdots, \quad(0\lt|z|\lt\infty).
-			\end{multline*}
+			\begin{eqnarray*}
+			h(z)&=&\frac{1}{z^4}\left(z+\frac{z^3}{3!}+\frac{z^5}{5!}+\cdots \right)\\
+			&=&\frac{1}{z^3}+\frac{1}{3!}\cdot\frac{1}{z}+\frac{z}{5!}+\frac{z^3}{7!}+\cdots, \quad(0\lt|z|\lt\infty).
+			\end{eqnarray*}
 		</p>
 
 
@@ -308,15 +312,18 @@
 
 		<p>
 			We notice
-			that $f$ has a singularity at $z=0$ but in this case the plot does not show
+			that $f$ has a singularity at $z_0=0$ but in this case the plot does not show
 			isochromatic lines meeting at that point. This indicates that the singularity
 			might be removable.
 		</p>
 
 		<p class="w3-responsive">
 			We can confirm this claim easily from the Laurent series representation:
-			$$f(z)=\frac{1}{z^2}\left[1-\left(1-\frac{z^2}{2!}+\frac{z^4}{4!}-\frac{z^6}{6!}+\cdots
-			\right)\right]=\frac{1}{2!}-\frac{z^2}{4!}+\frac{z^4}{6!}-\cdots, \quad (0\lt |z|\lt \infty).$$
+			\begin{eqnarray*}
+			f(z)&=&\frac{1}{z^2}\left[1-\left(1-\frac{z^2}{2!}+\frac{z^4}{4!}-\frac{z^6}{6!}+\cdots
+			\right)\right]\\
+			&=&\frac{1}{2!}-\frac{z^2}{4!}+\frac{z^4}{6!}-\cdots, \quad (0\lt |z|\lt \infty).
+			\end{eqnarray*}
 			In this case, when the value $f(0)=1/2$ is assigned, $f$ becomes entire. Furthermore, we can intuitively
 			observe that since $z=0$ is a removable singular point of $f$,
 			then $f$ must be analytic and bounded in some deleted neighbourhood $0\lt |z|\lt \epsilon$.
@@ -325,7 +332,7 @@
 
 		<div class="w3-padding">
 			<p><strong>Exercise 1:</strong> Find the Laurent series expansion for $g$ and $h$ to confirm that
-				they have removable singularities at $z=0$. 
+				they have removable singularities at $z_0=0$. 
 			</p>
 		</div>
 
@@ -345,8 +352,11 @@
 
 		<p class="w3-responsive">
 			The function $$f(z)=\exp\left(\frac{1}{z}\right)$$ has an essential singularity at $z=0$ since
-			$$f(z)=1+\frac{1}{1!}\cdot\frac{1}{z}+\frac{1}{2!}\cdot
-			\frac{1}{z^2}+\cdots=\sum_{n=0}^{\infty}\frac{1}{n!}\cdot \frac{1}{z^n}, \quad (0\lt |z|\lt \infty).$$
+			\begin{eqnarray*}
+			f(z)&=&1+\frac{1}{1!}\cdot\frac{1}{z}+\frac{1}{2!}\cdot
+			\frac{1}{z^2}+\cdots\\
+			&=&\sum_{n=0}^{\infty}\frac{1}{n!}\cdot \frac{1}{z^n}, \quad (0\lt |z|\lt \infty).
+			\end{eqnarray*}
 		</p>
 
 		<p>
@@ -354,7 +364,7 @@
 			${|\text{Re }z|\lt 0.5}$ and ${|\text{Im }z|\lt 0.5}$. The first thing
 			we notice is that the behaviour of $f$ near the essential singular
 			point is quite irregular. Observe how the isochromatic lines, near
-			$z=0$, form infinite self-contained figure-eight shapes. 
+			$z_0=0$, form infinite self-contained figure-eight shapes. 
 		</p>
 
 		<figure class="w3-center">
@@ -367,7 +377,7 @@
 
 		<p>
 			In fact,
-			a neighbourhood of $z=0$ intersects infinitely many isochromatic
+			a neighbourhood of $z_=0$ intersects infinitely many isochromatic
 			lines of the phase portrait of one and the same colour [<a href="bibliography.html" target="_blank">Wegert, 2012, p. 181</a>].
 			This fact can be seen intuitively by plotting a simple phase portrait of the
 			function in the square ${|\text{Re }z|\lt 0.05}$ and ${|\text{Im }z|\lt 0.05}$
