@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
 	<link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
-	<title>Complex Analysis</title>
+	<title>Análisis Complejo</title>
 
 	<!-- dublin core -->
 	<meta name="dc.title" CONTENT="Análisis Complejo">
@@ -84,20 +84,20 @@
 				// hover over title to show "Table of Contents"
 				$('#title a').hover(
 					function () {
-						$('#title a').text('Table of Contents');
+						$('#title a').text('Tabla de Contenidos');
 					},
 					function () {
-						$('#title a').text('Complex Analysis'); // set back when moving out
+						$('#title a').text('Análisis Complejo'); // set back when moving out
 					}
 				);
 
 				// set prev/next titles
 				$('#prev a').hover(
 					function () {
-						$('#title a').text('Prev: Complex Integration');
+						$('#title a').text('Prev: Integración Compleja');
 					},
 					function () {
-						$('#title a').text('Complex Analysis');
+						$('#title a').text('Análisis Complejo');
 					}
 				);
 				$('#next a').hover(
@@ -105,7 +105,7 @@
 						$('#title a').text('Next: Series');
 					},
 					function () {
-						$('#title a').text('Complex Analysis');
+						$('#title a').text('Análisis Complejo');
 					}
 				);
 			}
@@ -155,7 +155,7 @@
 			"height": 451,
 			"material_id": "jbs86spr",
 			"borderColor": "888888",
-			"playButton": false,
+			"playButton": true,
 			"showFullscreenButton": true,
 			"enableShiftDragZoom": false,
 			"showResetIcon": true
@@ -165,7 +165,7 @@
 			"height": 451,
 			"material_id": "kzrkqta7",
 			"borderColor": "888888",
-			"playButton": false,
+			"playButton": true,
 			"showFullscreenButton": true,
 			"enableShiftDragZoom": false,
 			"showResetIcon": true
@@ -185,56 +185,59 @@
 	<div id="wrapper">
 
 		<header>
-			<p><span id="prev"><a href="complex_integration.html">&larr;</a></span><span id="title"><a
-						href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a
+			<p><span id="prev"><a href="integracion_compleja.html">&larr;</a></span><span id="title"><a
+						href="tabla_de_contenidos.html">Análisis Complejo</a></span><span id="next"><a
 						href="series.html">&rarr;</a></span>
 				<div class="clear"></div>
 			</p>
 		</header>
 
 
-		<h1>Integrals of Functions with Branch Cuts</h1>
+		<h1>Integrales de Funciones con Cortes de Ramas</h1>
 
 		<br />
 
 		<p>
-			When we consider multiple-valued functions, the path in a contour integral
-			can contain a point on a branch cut of
-			the integrand involved. The next two examples illustrate this.
+			Cuando consideramos funciones de multiples valores,
+			el camino en la integral de contorno 
+			puede contener un punto en una rama de corte de integrando 
+			involucrado. Los siguientes ejemplos ilustran esto.
 		</p>
 
 		<hr>
 
 
 
-		<h2>Example 1</h2>
+		<h2>Ejemplo 1</h2>
 
 		<p>
-			Let $C$ be the semicircular path from $z_0=3$ to $z_1=-3$. That is
-			$z(\theta) = 3 e^{i\theta}$, with $0\leq \theta \leq \pi$.
-			Here we would like to evaluate the integral
+			Sea $C$ el camino semicírcular desde $z_0=3$ a $z_1=-3$. Esto es
+			$z\left(\theta\right) = 3 e^{i\theta}$, with $0\leq \theta \leq \pi$.
+			Aquí nos gustaría evaluar la integral
 			\begin{eqnarray}\label{ex-01}
 			I = \int_C z^{1/2} dz.
 			\end{eqnarray}
-			To do so, we need to choose a particular branch of the multiple-valued function
-			$z^{1/2}$. For example, we will use the principal branch
+			Para hacer esto, necesitamos elegir una rama en particular
+			de la función multi-valuada 
+			$z^{1/2}$. Por ejemplo, usaremos la rama princial
 			\begin{eqnarray}
 			|z|> 0, \; -\pi \lt \textbf{Arg}\,(z)\lt \pi.
 			\end{eqnarray}
 		</p>
 
 		<p class="w3-responsive">
-			In this case, notice that although the principal branch of
+			En este caso, notemos que a pesar de que la rama principal de
 			$z^{1/2}= \exp\left(\frac{1}{2}\text{Log}\, z\right)$
-			is not defined at the end point $z_1=-3$ of the contour $C$, the integral $I$
-			nevertheless exists.
+			no está definida al final del punto $z_1=-3$ del contorno $C$, la integral $I$
+			todavía existe.
 		</p>
 
 		<p>
-			Use the following applet to explore the value of $I$ for the given contour $C$.
-			Just drag the points $z_0$ and $z_1$ to the corresponding values.
-			You can also select other contours and explore what happens when they
-			cross the branch cut $\{z\,:\, x =0 \text{ and } y \leq 0\}$.
+			Usa el siguiente applet para explorar el valor de $I$ para el contor dado $C$.
+			Mueve los puntos $z_0$ y $z_1$ a los valores correspondientes.
+			También puedes selecciona otros contornos y 
+			explorar lo que sucede cuando cruzan el corte de rama
+			$\{z\,:\, x =0 \text{ and } y \leq 0\}$.
 		</p>
 
 
@@ -242,28 +245,29 @@
 		<p><em></em></p>
 
 		<p class="w3-responsive">
-			As you already have figured it out, the integral (\ref{ex-01}) exists
-			because the integrand is <a href="curves_in_the_complex_plane.html" target="_blank">piecewise continuous</a>
-			on $C$. To confirm this, observe that when $z(\theta)= 3e^{i\theta}$, then
+			Como ya habrás notado, la integral (\ref{ex-01}) existe
+			porque el integrando es <a href="curvas_en_el_plano_complejo.html" target="_blank">continuo por piezas</a>
+			en $C$. Para cofirmar esto, observa que cuando $z(\theta)= 3e^{i\theta}$, entonces
 			$$f\left(z(\theta)\right)= \exp\left(\frac{1}{2} \ln 3 + i \theta\right) = \sqrt{3}e^{i\theta/2}.$$
 		</p>
 
 		<p class="w3-responsive">
-			The left-hand limits of the real and imaginary components of the function
+			Los límites del lado izquierdo de las componente real e imaginaria
+			de la función 
 			\begin{eqnarray*}
 			f\left(z(\theta)\right)z'(\theta) &=& \sqrt{3} e^{i\theta/2} \cdot 3ie^{i\theta } \\
 			&=& 3 \sqrt{3} i \,e^{i3\theta/2} \\
 			&=& -3\sqrt{3} \sin \frac{3\theta }{2} + i\, 3\sqrt{3} \cos \frac{3\theta }{2} \quad (0\leq \theta \lt
 			\pi)\\
 			\end{eqnarray*}
-			at $\theta = \pi $ exist. That is
+			en $\theta = \pi $ existen. Esto es
 			\begin{eqnarray*}
 			\lim_{\theta \rightarrow \pi+}-3\sqrt{3} \sin \frac{3\theta }{2}= 3\sqrt{3}
 			\quad \text{ and } \quad \lim_{\theta \rightarrow \pi+} 3\sqrt{3} \cos \frac{3\theta }{2} = 0.\\
 			\end{eqnarray*}
-			This means that $f\left(z(\theta)\right)z'(\theta)$ is continuous on the closed interval
+			Lo cual significa que $f\left(z(\theta)\right)z'(\theta)$ es continua en el intervalo cerrado
 			$0 \leq \theta \leq \pi$ when its value at $\theta = \pi $ is defined as $3\sqrt{3}$.
-			Therefore
+			Por lo tanto
 			\begin{eqnarray*}
 			I &=& \int_C f\left(z(\theta)\right)z'(\theta)\, d\theta= 3\sqrt{3} i \int_0^{\pi} e^{i\theta /2} d\theta
 			= 3\sqrt{3} i\Bigg[ \bigg.\frac{2}{3i}e^{i3\theta /2}\bigg|_{0}^{\pi} \Bigg] \\
@@ -272,34 +276,34 @@
 		</p>
 
 		<div class="w3-padding">
-			<p><strong>Exercise 1:</strong> Evaluate $\int_C z^{1/2}\, dz$ for the
-				contour $C: z(\theta)= e^{i\theta}$, with $-\pi\leq \theta \leq \pi$.
-				You can use the applet to confirm your results.
+			<p><strong>Ejercicio 1:</strong> Evalua la integral $\int_C z^{1/2}\, dz$ para el 
+				contorno $C: z(\theta)= e^{i\theta}$, with $-\pi\leq \theta \leq \pi$.
+				Puedes usar el applet para confirma tus resultados.
 			</p>
 		</div>
 
-		<p><strong>Remark 1:</strong>
-			You can not evaluate the integral
-			for the contour $C: z(t)= e^{it}$, with $0 \leq t \leq 2\pi$. Why?
+		<p><strong>Observación 1:</strong>
+			No es posible evaluar la integral para el contorno
+			$C: z(t)= e^{it}$, with $0 \leq t \leq 2\pi$. Why?
 		</p>
 
-		<p><strong>Remark 2:</strong>
-			Notice that $\int_C z^{1/2}\, dz=0$ for any
-			circle not intersecting the branch cut $\{z\,:\, x =0 \text{ and } y \leq 0\}$. Why?
+		<p><strong>Observación 2:</strong>
+			Nota que $\int_C z^{1/2}\, dz=0$ para cada
+			círculo que no intersecte a la rama de corte $\{z\,:\, x =0 \text{ and } y \leq 0\}$. ¿Por qué?
 		</p>
 
 		
 
 		<hr>
 
-		<h2>Example 2</h2>
+		<h2>Ejemplo 2</h2>
 
 		<p class="w3-responsive">
-			Consider the principal branch
+			Considera la rama principal
 			\begin{eqnarray}\label{br}
 			f(z)=z^{i} = \exp \left[ i \,\text{Log } z \right]\; \text{ with }\; |z|>0,\, -\pi\lt \text{Arg } z \lt \pi 
 			\end{eqnarray}
-			and $C$ the upper half circle from $z=-1$ to $z=1$; that is,  $z(t)=-e^{-i \pi t}$ with 
+			y $C$ el círculo superior desde  $z=-1$ a $z=1$; es decir,  $z(t)=-e^{-i \pi t}$ con
 			$0 \leq t \leq 1$.
 		</p>
 
@@ -307,39 +311,39 @@
 			<img class="w3-image w3-mobile" src="../images/chp04/p-branch-semicircle.svg" alt="Upper half circle"
 				title="Upper half circle" style="width:45%;">
 			<figcaption>
-				<b>Figure 1:</b> $C: z(t)=-e^{-i \pi t}$, with 
+				<b>Figura 1:</b> $C: z(t)=-e^{-i \pi t}$ para 
 				$0 \leq t \leq 1$.
 			</figcaption>
 		</figure>
 
 		<p class="w3-responsive">
-			It is not difficult to verify that
+			No es difícil verificar que 
 			\begin{eqnarray}\label{ex-02}
 			I=\int_C z^{i}\,dz &=& \frac{1+e^{-\pi}}{2}\,(1-i).
 			\end{eqnarray}
-			Use the following applet to confirm this.  
-			You can also analize  $\int_C z^idz$
-			for other contours.
+			Usa el siguiente applet para confirmar esto.
+			También puedes analizar $\int_C z^idz$
+			para otros contornos.
 		</p>
 
 		<div class="ggbElement" id="ggb-element-2"></div>
 		<p><em></em></p>
 
 		<p>
-			<strong>Remark 3:</strong>
-			Notice that  $\int_C z^{i}\, dz=0$ for any
-			circle not intersecting the branch cut $\{z\,:\, x =0, y \leq 0\}$. Why?
+			<strong>Observación 3:</strong>
+			Nota que $\int_C z^{i}\, dz=0$ para cada
+			círculo que no intersecte al corte de rama $\{z\,:\, x =0, y \leq 0\}$. ¿Por qué?
 		</p>
 
 		<p class="w3-responsive">
-			In general, we can calculate  $\int_C z^i dz$ for 
-		    any contour $C$ from $z=-1$ to $z=1$ lying above the real axis. 
-			We just need to find an antiderivative of $z^i$. 
-			Unfortunately, we <em>can not</em> use the principal branch, defined in (\ref{br}), since 
-			this branch is not even defined at 
-			$z=-1$. But the integrand can be replaced by the branch 
+			En general, podemos calcular $\int_C z^i dz$ para
+		    cualquier contorno $C$ desde $z=-1$ a $z=1$ que se encuentra arriba del eje real.
+			En este caso solo necesitamos encontrar una antiderivada de $z^i$. 
+			Desafortunadamente, <em>no podemos</em> usar la rama principal, definida en (\ref{br}), dado
+			que en esta rama no está definida la función en 
+			$z=-1$. Pero el integrando se puede reemplazar con la rama
 			$$z^{i} = \exp \left[ i \,\text{log } z \right]\; \text{ with }\;  |z|>0,\, -\frac{\pi}{2}\lt \text{arg } z \lt \frac{3\pi}{2}.$$
-			since it agrees with the integrand along $C$. 
+			dado que esta corresponde con el integrando a lo largo de $C$. 
         </p>
 
 		<div class="w3-row-padding">
@@ -349,7 +353,7 @@
 						alt="Smooth curve and Tangent vector" title="Smooth curve and Tangent vector"
 						style="width:100%;">
 					<figcaption>
-						Figure 2: Principal branch.
+						Figura 2: Rama principal.
 					</figcaption>
 				</figure>
 			</div>
@@ -358,23 +362,23 @@
 					<img class="w3-image w3-mobile" src="../images/chp04/s-branch-everycontour.svg" alt="Non smooth"
 						title="Non smooth" style="width:100%;">
 					<figcaption>
-						Figure 3: An appropiate branch.
+						Figura 3: Una rama apropiada.
 					</figcaption>
 				</figure>
 			</div>
 		</div>
 
 		<p class="w3-responsive">
-			Using an antiderivative of this new branch, we obtain
+			Usando una antiderivada de esta nueva rama, obtenemos
 			\begin{eqnarray}\label{value}
 			\int_{-1}^{1} z^i dz&=& \Bigg.\frac{z^{i+1}}{i+1}\Bigg|_{-1}^{1} =  \frac{1+e^{-\pi}}{2}\,(1-i),
 			\end{eqnarray}
-			which is the same value as (\ref{ex-02}).
+			cuyo valor es el mismo que encontramos en (\ref{ex-02}).
 		</p>
 
 		<div class="w3-padding">
-			<p><strong>Exercise 2:</strong> Evaluate $\bigg.\frac{z^{i+1}}{i+1}\bigg|_{-1}^{1} $ to confirm
-				the value of (\ref{value}).
+			<p><strong>Ejercicio 2:</strong> Evalua $\bigg.\frac{z^{i+1}}{i+1}\bigg|_{-1}^{1} $ para confirmar
+				el valor dado en la expresión (\ref{value}).
 			</p>
 		</div>
 
@@ -388,7 +392,7 @@
 			<p class="nextPage">NEXT: Series</p>
 		</a>
 		<footer>
-			<p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
+			<p>[ <a href="../es.html">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
 					href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]
 			</p>
 
@@ -399,7 +403,7 @@
 				</a>
 				<br />
 				<strong style="font-size: 18px">ISBN: 978-0-6485736-2-3</strong> <br>
-				<strong style="font-size: 18px">2019</strong>
+				<strong style="font-size: 18px">2021</strong>
 			</p>
 		</footer>
 
