@@ -1,0 +1,303 @@
+<!doctype html>
+<html>
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+	<title>Complex Analysis</title>
+
+	<!-- dublin core -->
+	<meta name="dc.title" CONTENT="Análisis Complejo">
+	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+	<meta name="dc.date" CONTENT="26-01-2021">
+	<meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-2-3">
+	<meta name="dc.type" CONTENT="Recurso Interactivo">
+	<meta name="dc.format" CONTENT="HTML">
+	<meta name="dc.language" CONTENT="es-MEX">
+	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+	<!-- social media cards -->
+	<meta property="og:title" content="Análisis Complejo">
+	<meta property="og:description"
+		content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:type" content="website">
+	<!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+	<meta name="twitter:card"
+		content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:site_name" content="Análisis Complejo">
+
+
+	<!-- FONTS AND CSS -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet'
+		type='text/css'>
+	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="../css/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+	<!-- CODE PRETTIFY -->
+	<!-- via: https://github.com/google/code-prettify -->
+	<script src="../js/run_prettify.js"></script>
+
+
+
+	<!-- JQUERY FANCY ADDITIONS -->
+	<!-- add code class, hover text, etc -->
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+		$(document).ready(function () {
+
+			// prettyprint the code, pls
+			$('pre').addClass('prettyprint lang-java');
+
+			// add word-breaks to anything with a / or - in it
+			$('h1').each(function () {
+				var t = $(this).text();
+				t = t.replace('/', '/<wbr>');
+				t = t.replace('-', '-<wbr>');
+				$(this).html(t);
+			});
+
+			// set formatting
+			resizeCommands();
+		});
+
+		// when the window gets resized, do some stuff to keep everything
+		// looking pretty
+		$(window).resize(function () {
+			resizeCommands();
+		});
+
+		// things to do when the page is loaded or window resized
+		function resizeCommands() {
+			// large-screen stuff...
+			if ($(window).width() > 600) {
+
+				// long headline on intro page
+				// $('#introHeadline').html('TABLE OF CONTENTS');
+
+				// menu hover stuff on larger screens
+				// (does weird formatting on larger screens)
+				// hover over title to show "Table of Contents"
+				$('#title a').hover(
+					function () {
+						$('#title a').text('Table of Contents');
+					},
+					function () {
+						$('#title a').text('Complex Analysis'); // set back when moving out
+					}
+				);
+
+				// set prev/next titles
+				$('#prev a').hover(
+					function () {
+						$('#title a').text('Prev: Taylor Series');
+					},
+					function () {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+				$('#next a').hover(
+					function () {
+						$('#title a').text('Next: Classification of Singularities');
+					},
+					function () {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+			}
+
+			// small-screen stuff
+			else {
+				// short headline on intro page
+				// $('#introHeadline').html('INTRO');
+			}
+		}
+	</script>
+
+
+	<!--MathJax starts-->
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+                           TeX: { equationNumbers: { autoNumber: "AMS" } }
+                           });
+        </script>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+	<script type="text/javascript" async
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-155852901-1');
+	</script>
+
+	
+
+</head>
+
+<body>
+	<div id="wrapper">
+
+		<header>
+			<p><span id="prev"><a href="taylor_series.html">&larr;</a></span><span id="title"><a
+						href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a
+						href="classification_of_singularities.html">&rarr;</a></span>
+				<div class="clear"></div>
+			</p>
+		</header>
+
+
+		<h1>Laurent Series</h1>
+
+		<hr>
+
+		<p>
+			Recall that a function $f$ of the complex variable $z$ is <em>analytic</em> at
+			a point $z_0$ if it has a derivative at each point in some neighbourhood of $z_0$.
+			An <em>entire</em> function is a function that is analytic at each point in the
+			entire finite plane.
+			If a function $f$ fails to be analytic at a point $z_0$ but is analytic at some point
+			in every neighbourhood of $z_0$, then $z_0$ is called a
+			<em>singular point</em>, or <em>singularity</em>, of $f$.
+
+		</p>
+
+		<p>
+			Suppose that $f(z)$, or any single valued branch
+			of $f(z)$, if $f(z)$ is multivalued, is analytic in the
+			region
+			$0\lt|z-z_0|\lt R$
+			and not at the point $z_0$. Then the point $z_0$ is
+			called an <em>isolated singular point</em> of $f(z)$.
+
+		</p>
+
+		<p>
+			Now, recall also that any function which is analytic throughout a disk
+			$|z -z_0|\lt R_0$ must have a Taylor series about $z_0$. If the function
+			fails to be analytic at a point $z_0$, it is often possible to find a series
+			representation for $f(z)$ involving both positive and negative powers of $z - z_0.$
+			Formally speaking we have the following result:
+
+			<div class="theorem w3-responsive" id="laurent-series-theorem">
+				<strong>Theorem:</strong> Suppose that a function $f$ is analytic throughout an annular domain
+				$R_1 \lt |z - z_0| \lt R_2$, centred at $z_0$, and let $C$ denote any positively oriented simple
+				closed contour around $z_0$ and lying in that domain. Then, at each point in
+				the domain, $f (z)$ has the series representation
+				\begin{eqnarray}\label{laurentfunction}
+				f(z)=\sum_{n=0}^{\infty} a_n(z-z_0)^n+\sum_{n=1}^{\infty}\frac{b_n}{(z-z_0)^n},
+				\end{eqnarray}
+				where
+				\begin{eqnarray}\label{non-principalpart}
+				a_n=\frac{1}{2\pi i}\oint_C \frac{f(z)dz}{(z-z_0)^{n+1}},\quad n=0,1,2,\ldots
+				\end{eqnarray}
+				and
+				\begin{eqnarray}\label{principalpart}
+				b_n=\frac{1}{2\pi i}\oint_C \frac{f(z)dz}{(z-z_0)^{-n+1}},\quad n=1,2,\ldots
+				\end{eqnarray}
+			</div>
+
+
+		</p>
+
+		<figure class="w3-center">
+			<img class="w3-image w3-mobile" src="https://s3.amazonaws.com/media-p.slid.es/uploads/1304482/images/7253947/diagram-laurent.svg" alt="Annulus"
+				title="Annulus" style="width:65%;">
+			<figcaption>
+				<b>Figure 1:</b> $f(z)$ is analytic throughout an annular domain
+				$R_1 \lt |z - z_0| \lt R_2$.
+			</figcaption>
+		</figure>
+
+		<p>
+			In practice, the above integral formulae (\ref{non-principalpart}) and 
+			(\ref{principalpart}) may not offer the most practical
+			method for computing the coefficients $a_n$ and $b_n$ for a given function
+			$f(z)$; instead, one often pieces together the Laurent series by combining
+			known Taylor expansions. Because the Laurent expansion of a function is
+			unique whenever it exists, any expression of this form that actually
+			equals the given function $f(z)$ in some annulus must actually be the
+			Laurent expansion of $f(z)$.
+		</p>
+
+		<p class="w3-responsive">
+			For example, consider the function 
+			$$f(z)=\frac{1}{z(1+z^2)}$$
+			which has isolated singularities at $z=0$
+			and $z=\pm i$.
+			In this case, there is a Laurent series representation for the
+			domain $0\lt |z|\lt 1$ and also one for the domain $1\lt |z|\lt \infty$,
+			which is exterior to the circle $|z|=1$.
+			To find each of these Laurent series, we recall the Maclaurin series representation
+			$$\frac{1}{1-z}=\sum_{n=0}^{\infty}z^n,\quad |z|\lt 1.$$
+			For the domain $0\lt |z|\lt 1$, we have
+			\begin{eqnarray*}
+			f(z)&=&\frac{1}{z}\frac{1}{1+z^2}=\frac{1}{z}\sum_{n=0}^{\infty}\left(-z^2\right)^n \\
+			&=&\sum_{n=0}^{\infty}(-1)^nz^{2n-1}\\
+			&=&\frac{1}{z}+\sum_{n=1}^{\infty}(-1)^nz^{2n-1} \\
+			&=& \sum_{n=0}^{\infty}(-1)^{n+1}z^{2n+1}+\frac{1}{z}.
+			\end{eqnarray*}
+			On the other hand, when $1\lt |z|\lt \infty$,
+			\begin{eqnarray*}
+			f(z)&=&\frac{1}{z^3}\frac{1}{1+\frac{1}{z^2}}=\frac{1}{z^3}\sum_{n=0}^{\infty} \left(-\frac{1}{z^2}
+			\right)^n\\
+			& =&\sum_{n=0}^{\infty}\frac{(-1)^n}{z^{2n+3}}\\
+			&=&\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{z^{2n+1}}
+			\end{eqnarray*}
+			In this last part we use the fact that $(-1)^{n-1}=(-1)^{n-1}(-1)^2=(-1)^{n+1}$.
+		</p>
+
+		<div class="w3-padding">
+			<p><strong>Exercise:</strong> Expand $f(z)=e^{3/z}$ in a Laurent series valid for
+				$0\lt |z| \lt \infty$.
+			</p>
+		</div>
+
+
+		<br>
+
+		<br>
+
+
+		<!-- link to the next page -->
+		<a href="classification_of_singularities.html">
+			<p class="nextPage">NEXT: Classification of Singularities</p>
+		</a>
+		<footer>
+			<p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
+					href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+
+			<p class="license">
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+					<img id="license" alt="Creative Commons License" style="border-width:0"
+						src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+				</a>
+				<br />
+				<strong style="font-size: 18px">ISBN: 978-0-6485736-2-3</strong> <br>
+				<strong style="font-size: 18px">2019</strong>
+			</p>
+		</footer>
+
+	</div> <!-- end wrapper -->
+
+	<!-- nice smart quotes, via: http://smartquotesjs.com -->
+	<script src="../js/smartquotes.min.js"></script>
+
+</body>
+
+</html>

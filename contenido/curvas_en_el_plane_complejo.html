@@ -10,23 +10,25 @@
 	<title>Complex Analysis</title>
 
 	<!-- dublin core -->
-	<meta name="dc.title" CONTENT="Complex Analysis">
+	<meta name="dc.title" CONTENT="Análisis Complejo">
 	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
-	<meta name="dc.date" CONTENT="26-01-2019">
-	<meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
-	<meta name="dc.type" CONTENT="Interactive Resource">
+	<meta name="dc.date" CONTENT="26-01-2021">
+	<meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-2-3">
+	<meta name="dc.type" CONTENT="Recurso Interactivo">
 	<meta name="dc.format" CONTENT="HTML">
-	<meta name="dc.language" CONTENT="en-US">
+	<meta name="dc.language" CONTENT="es-MEX">
 	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 
 	<!-- social media cards -->
-	<meta property="og:title" content="Complex Analysis">
-	<meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+	<meta property="og:title" content="Análisis Complejo">
+	<meta property="og:description"
+		content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
 	<meta property="og:type" content="website">
 	<!--<meta property="og:image" content="">
 	<meta property="og:url" content="">-->
-	<meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
-	<meta property="og:site_name" content="Complex Analysis">
+	<meta name="twitter:card"
+		content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:site_name" content="Análisis Complejo">
 
 
 	<!-- FONTS AND CSS -->
@@ -85,25 +87,25 @@
 						$('#title a').text('Table of Contents');
 					},
 					function () {
-						$('#title a').text('Complex Analysis'); // set back when moving out
+						$('#title a').text('Análisis Complejo'); // set back when moving out
 					}
 				);
 
 				// set prev/next titles
 				$('#prev a').hover(
 					function () {
-						$('#title a').text('Prev: The Complex Power Function');
+						$('#title a').text('Prev: Función Exponencial Compleja');
 					},
 					function () {
-						$('#title a').text('Complex Analysis');
+						$('#title a').text('Análisis Complejo');
 					}
 				);
 				$('#next a').hover(
 					function () {
-						$('#title a').text('Next: Complex Integration');
+						$('#title a').text('Next: Integración Compleja');
 					},
 					function () {
-						$('#title a').text('Complex Analysis');
+						$('#title a').text('Análisis Complejo');
 					}
 				);
 			}
@@ -151,38 +153,40 @@
 	<div id="wrapper">
 
 		<header>
-			<p><span id="prev"><a href="power_function.html">&larr;</a></span><span id="title"><a
-						href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a
-						href="complex_integration.html">&rarr;</a></span>
+			<p><span id="prev"><a href="funcion_exponencial_compleja.html">&larr;</a></span><span id="title"><a
+						href="table_of_contents.html">Análisis Complejo</a></span><span id="next"><a
+						href="integracion_compleja.html">&rarr;</a></span>
 				<div class="clear"></div>
 			</p>
 		</header>
 
-		<h1>Curves in the Complex Plane</h1>
+		<h1>Curvas en el Plano Complejo</h1>
 
 		<hr>
 
 		<p>
-			Suppose the continuous real-valued functions $x = x(t),$ $y = y(t),$ $a \leq t \leq b,$ are parametric
-			equations of a curve $C$ in the complex plane. If we use these equations as the real and
-			imaginary parts in $z = x+iy$, we can describe
-			the points $z$ on $C$ by means of a complex-valued function of a real variable $t$
-			called a <em>parametrization</em> of $C$:
+			Supongamos que las funciones de valor real $x = x(t),$ $y = y(t),$ $a \leq t \leq b,$ 
+			son ecuacione paramétricas de una curva $C$ en el 
+			plano complejo. Si usamos estas ecuaciones como las partes
+			reales e imaginarias en $z = x+iy$, podemos describir los puntos 
+			$z$ en $C$ por medio de la función de valor complejo de una variable 
+			real $t$. Esto determina una <em>parametrizaciónn</em> de $C$:
 			\begin{equation}\label{parcurve}
 			z(t) = x(t) + i y(t), \quad a\leq t\leq b.
 			\end{equation}
 		</p>
 
 		<p>
-			The point $z(a) = x(a) + i y(a)$ or $z_0 = (x(a), y(a))$ is called the <em>initial point</em> of
-			$C$ and $z(b) = x(b) + iy(b)$
-			or $z_1 = (x(b), y(b))$ is its <em>terminal point</em>.
-			The expression $z(t) = x(t) + iy(t)$ could also be
-			interpreted as a two-dimensional vector function.
-			Consequently, $z(a)$ and $z(b)$ can be interpreted as position
-			vectors. As $t$ varies from $t = a$ to $t = b$ we can envision the curve $C$
-			being traced out by the moving arrowhead of $z(t)$.
-			This can be appreciated in the following applet with $0 \leq t\leq 1$.
+			El punto $z(a) = x(a) + i y(a)$ or $z_0 = (x(a), y(a))$ se denomina como <em>punto inicial</em> de
+			$C$ y $z(b) = x(b) + iy(b)$
+			o $z_1 = (x(b), y(b))$ es el <em>punto final</em>.
+			La expresión $z(t) = x(t) + iy(t)$ se puede interpretar como
+			una función vectorial de dos dimensiones.
+			Conseceuntemente, $z(a)$ y $z(b)$ se pueden interpretar como
+			los vectores posición. Así que cuando $t$ varía desde $t = a$ a
+			$t = b$ podemos observar la curva $C$
+			trazada por el moviento de la punta del vector $z(t)$.
+			Esto se puede apreciar en el siguiente appletcon $0 \leq t\leq 1$.
 		</p>
 
 		<div class="w3-hide-small">
@@ -190,15 +194,17 @@
 				<iframe scrolling="no" title="Parametrization of curves in the complex plane"
 					src="https://www.geogebra.org/material/iframe/id/tncpryrm/width/576/height/419/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false"
 					width="576px" height="419px" style="border:0px;" allowfullscreen=""> </iframe>
-				<p><em>Press</em> <code>Start</code> <em>to animate. You can move the points to change the curve.</em>
+				<p><em>Clic</em> <code>Start</code> <em>para animar. También puedes mover los puntos 
+					para cambiar la curva.</em>
 				</p>
 			</div>
 		</div>
 
 		<p>
-			For example, the parametric equations $x = \cos t,$ $y = \sin t,$ $0 \leq t \leq 2\pi,$
-			describe a unit circle centered at the origin. A parametrization of this circle is
-			$z(t) = \cos t + i \sin t,$ or
+			Por ejemplo, las ecuaciones paramétricas $x = \cos t,$ $y = \sin t,$ $0 \leq t \leq 2\pi,$
+			describen un círuclo de radio unitario con centro en el origen. 
+			Una parametrización de este círculo es 
+			$z(t) = \cos t + i \sin t,$ o
 			$z(t) = e^{it},$ $0 \leq t \leq 2\pi$.
 		</p>
 
@@ -207,25 +213,29 @@
 				<iframe scrolling="no" title="Circle in the complex plane"
 					src="https://www.geogebra.org/material/iframe/id/nc34pddp/width/450/height/419/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false"
 					width="450px" height="419px" style="border:0px;" allowfullscreen=""> </iframe>
-				<p><em>Press</em> <code>Start</code> <em>to animate.</em></p>
+				<p><em>Clic</em> <code>Start</code>  <em>para animar.</em></p>
 			</div>
 		</div>
 
 
 		<hr>
 
-		<h2>Contours</h2>
+		<h2>Contornos</h2>
 
 		<p>
-			The notions of curves in the complex plane that are smooth, piecewise smooth, simple, closed, and simple
-			closed are easily formulated in terms of the vector function (\ref{parcurve}).
-			Suppose the derivative of (\ref{parcurve}) is
-			$z'(t) = x'(t) + iy'(t).$ We say a curve $C$ in the complex plane is <em>smooth</em> if $z'(t)$
-			is continuous and never zero in the
-			interval $a \leq t \leq b.$ As shown in Figure 2, since the vector $z'(t)$ is not zero at any point $P$ on
-			$C$, the vector
-			$z'(t)$ is tangent to $C$ at $P$. Thus, a smooth curve has a continuously turning tangent; or in other
-			words, a smooth curve can have no sharp corners or cusps. See Figure 2.
+			Las nociones de curvas en el plano complejo que son suaves, suaves por piezas, simple,
+			cerradas, y simplemente cerradas, se pueden formular fácilmente en términos de la 
+			función vectoria (\ref{parcurve}).
+			Supongamos que la derivada de (\ref{parcurve}) es
+			$z'(t) = x'(t) + iy'(t).$ Decimos que una curva $C$ 
+			en el plano complejo es <em>suave</em> si $z'(t)$
+			es continua y differente de zero en el intervalo 
+			$a \leq t \leq b.$ Como se ,uestra en la Figura 2, 
+			dado que el vector $z'(t)$ no es cero en ningún punto $P$ de
+			$C$, el vector 
+			$z'(t)$ es tangente a $C$ en $P$. De esta forma, una curva suave
+			tiene una tangente que gira contínuamente; o en otras palabras,
+			una curva suave no puede tener esquinas ni cúspides afiladas. Ver Figura 2.
 		</p>
 
 		<div class="w3-row-padding">
@@ -235,7 +245,7 @@
 						alt="Smooth curve and Tangent vector" title="Smooth curve and Tangent vector"
 						style="width:100%;">
 					<figcaption>
-						Figure 1: $z'(t)=x'(t) + iy(t)$ as a tangent vector.
+						Figura 1: $z'(t)=x'(t) + iy(t)$ como un vector tangente.
 					</figcaption>
 				</figure>
 			</div>
@@ -244,16 +254,18 @@
 					<img class="w3-image w3-mobile" src="../images/chp04/not-smooth.svg" alt="Non smooth"
 						title="Non smooth" style="width:100%;">
 					<figcaption>
-						Figure 2: Curve $C$ is not smooth since it has a cusp.
+						Figura 2: La curva $C$  no es suave dado que tiene una cúspide.
 					</figcaption>
 				</figure>
 			</div>
 		</div>
 
 		<p>
-			A <em>piecewise smooth curve</em> $C$
-			has a continuously turning tangent, except possibly at the points where the component smooth curves
-			$C_1, C_2, \ldots, C_n$ are joined together.
+			Una <em>curva suave por piezas</em> $C$
+			tiene una tangente que gira contínuamente, excepto posiblemente en 
+			los puntos donde las componentes 
+			de las curvas suaves 
+			$C_1, C_2, \ldots, C_n$ se conectan.
 
 		</p>
 
@@ -261,13 +273,13 @@
 			<img class="w3-image w3-mobile" src="../images/chp04/piecewise-smooth.svg" alt="Piecewise smooth curve"
 				title="Piecewise smooth curve" style="width:65%;">
 			<figcaption>
-				<b>Figure 3:</b> A piecewise smooth curve.
+				<b>Figura 3:</b> Una curva suave por piezas.
 			</figcaption>
 		</figure>
 
 		<p>
-			A curve $C$ in the complex plane is said to be a <em>simple</em> if $z(t_1) \neq z(t_2)$ for
-			$t_1 \neq t_2,$ except possibly for $t = a$ and $t = b.$ $C$ is a <em>closed curve</em> if $z(a) = z(b).$
+			Una curva $C$ en el plano complejo se dice ser <em>simple</em> si $z(t_1) \neq z(t_2)$ para 
+			$t_1 \neq t_2,$ excepto posiblemente para $t = a$ y $t = b.$ $C$ es una <em>curva cerrada</em> si $z(a) = z(b).$
 		</p>
 
 		<div class="w3-row-padding">
@@ -276,7 +288,7 @@
 					<img class="w3-image w3-mobile" src="../images/chp04/simple-curve.svg" alt="Simple curve"
 						title="Simple curve" style="width:100%;">
 					<figcaption>
-						Figure 4: Simple curve.
+						Figura 4: Curva simple.
 					</figcaption>
 				</figure>
 			</div>
@@ -285,14 +297,14 @@
 					<img class="w3-image w3-mobile" src="../images/chp04/non-simple-curve.svg"
 						alt="Non simple curve" title="Non simple curve" style="width:100%;">
 					<figcaption>
-						Figure 5: Non simple curve.
+						Figura 5: Curva no simple.
 					</figcaption>
 				</figure>
 			</div>
 		</div>
 
 		<p>
-			$C$ is a <em>simple closed curve</em> if $z(t_1)\neq z(t_2)$ for $t_1\neq t_2$ and $z(a) = z(b).$
+			$C$ es una <em>curva cerrada simple</em> si $z(t_1)\neq z(t_2)$ para $t_1\neq t_2$ y $z(a) = z(b).$
 
 		</p>
 
@@ -302,7 +314,7 @@
 					<img class="w3-image w3-mobile" src="../images/chp04/simple-closed-curve.svg" alt="Simple curve"
 						title="Simple closed curve" style="width:100%;">
 					<figcaption>
-						Figure 4: Simple closed curve.
+						Figura 4: Curva cerrada simple.
 					</figcaption>
 				</figure>
 			</div>
@@ -311,28 +323,28 @@
 					<img class="w3-image w3-mobile" src="../images/chp04/non-simple-closed-curve.svg"
 						alt="Non simple curve" title="Non simple closed curve" style="width:100%;">
 					<figcaption>
-						Figure 5: Non simple closed curve.
+						Figura 5: Curva cerrada no simple.
 					</figcaption>
 				</figure>
 			</div>
 		</div>
 
 		<p>
-			In complex analysis, a piecewise smooth curve $C$ is called a <em>contour</em> or <em>path</em>.
-			We define the <em>positive direction</em> on a contour $C$
-			to be the direction on the curve corresponding to increasing values of the
-			parameter $t$. It is also said that the curve $C$ has <em>positive orientation</em>.
-			In the case of a simple closed countour $C$, 
-			the <em>positive</em> direction corresponds
-			to the <em>counter-clockwise</em> direction.
-			For example, the circle $z(t) = e^{it}$, $0 \leq t \leq 2\pi$,
-			has positive orientation. 
-			The <em>negative direction</em> on a contour $C$ is
-			the direction opposite the positive direction. If $C$ has an orientation,
-			the <em>opposite curve</em>, that is, a curve with opposite orientation, is denoted by $−C$. On a simple
-			closed curve, the negative direction corresponds to the clockwise direction.
-			For instance, the circle $z(t) = e^{-it}$, $0 \leq t \leq 2\pi$,
-			has negative orientation. 
+			En Análisis Complejo, una curva suave por piezas $C$ se denomina <em>contorno</em> o <em>camino</em>.
+			Definimos la <em>dirección positiva</em> en un contorno $C$
+			como la dirección en la curva correspondiente 
+			a los valores incrementados del parámetro $t$. 
+			También decimos que la curva $C$ tiene una <em>orientación positiva</em>.
+			En el caso de un contorno cerrado simple $C$, 
+			la dirección <em>positiva</em> corresponde a la dirección del
+			moviento <em>opuesto a las manecillas del reloj</em>.
+			Por ejemplo, el círculo  $z(t) = e^{it}$, $0 \leq t \leq 2\pi$,
+			tiene una orientación positiva. La <em>dirección negativa</em> de un contorno
+			$C$ es la dirección opuesta a la dirección positiva. Si $C$ tiene una orientación,
+			la <em>curva opuesta</em>, es decir, una curva con orientación opuesta, se denota como $−C$. 
+			En una curva cerrada simple, la dirección opuesta corresponde al <em>movimiento de las 
+			manecillas del reloj</em>. Por ejemplo, el círculo  $z(t) = e^{-it}$, $0 \leq t \leq 2\pi$,
+			tiene una orientación negativa.
 		</p>
 
 		<div class="w3-row-padding">
@@ -341,7 +353,7 @@
 					<img class="w3-image w3-mobile" src="../images/chp04/simple-closed-curve-pos.gif" alt="Simple curve"
 						title="Simple curve" style="width:100%;">
 					<figcaption>
-						Figure 6: Positively oriented.
+						Figura 6: Orientación positiva.
 					</figcaption>
 				</figure>
 			</div>
@@ -350,7 +362,7 @@
 					<img class="w3-image w3-mobile" src="../images/chp04/simple-closed-curve-neg.gif"
 						alt="Non simple curve" title="Non simple curve" style="width:100%;">
 					<figcaption>
-						Figure 7: Negatively oriented.
+						Figura 7: Orientación negativa.
 					</figcaption>
 				</figure>
 			</div>
@@ -363,21 +375,22 @@
 				<iframe scrolling="no" title="Circle orientation"
 					src="https://www.geogebra.org/material/iframe/id/whjrn67s/width/449/height/419/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false"
 					width="449px" height="419px" style="border:0px;" allowfullscreen=""> </iframe>
-				<p><em>Press</em> <code>Start</code> <em>to animate.</em> <em>You can change the direction of $C$.</em>
+				<p><em>Clic</em> <code>Start</code> <em>para animar.</em> <em>También puedes cambiar la dirección de $C$.</em>
 				</p>
 			</div>
 		</div>
 
 		<div class="w3-padding">
-			<p><strong>Exercise:</strong> There is no unique parametrization for a contour $C$.
-				You should verify that
+			<p><strong>Ejercicio:</strong> No existe una únca parametrización para 
+				un contorno dado $C$.
+				Deberías verificar que las siguientes expresiones 
 				\begin{eqnarray*}
 				z(t)&=&e^{it} =\cos t+i\sin t,\; 0\leq t\leq 2\pi \\
 				z(t)&=& e^{2\pi it} =\cos \left(2 \pi t\right) +i \sin \left(2 \pi t\right),\; 0\leq t\leq 1\\
 				z(t)&=&e^{\pi/2 it} =\cos \left( \frac{\pi}{2} t\right)+i \sin \left( \frac{\pi}{2} t\right),\; 0\leq t
 				\leq 4
 				\end{eqnarray*}
-				are all parametrizations, oriented in the positive direction, for the unit circle $|z| = 1$.
+				son parametrizaciones, orientadas positivamente, para el círuclo unitario $|z| = 1$.
 
 			</p>
 		</div>
@@ -385,11 +398,11 @@
 		<br>
 
 		<!-- link to the next page -->
-		<a href="complex_integration.html">
-			<p class="nextPage">NEXT: Complex Integration</p>
+		<a href="integration_compleja.html">
+			<p class="nextPage">NEXT: Integración Compleja</p>
 		</a>
 		<footer>
-			<p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
+			<p>[ <a href="../es.html">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
 					href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
 
 			<p class="license">
@@ -398,7 +411,7 @@
 						src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
 				</a>
 				<br />
-				<strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
+				<strong style="font-size: 18px">ISBN: 978-0-6485736-2-3</strong> <br>
 				<strong style="font-size: 18px">2019</strong>
 			</p>
 		</footer>

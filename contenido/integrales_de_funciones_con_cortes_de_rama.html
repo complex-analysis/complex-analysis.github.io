@@ -1,0 +1,413 @@
+<!doctype html>
+<html>
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+	<title>Complex Analysis</title>
+
+	<!-- dublin core -->
+	<meta name="dc.title" CONTENT="Análisis Complejo">
+	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+	<meta name="dc.date" CONTENT="26-01-2021">
+	<meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-2-3">
+	<meta name="dc.type" CONTENT="Recurso Interactivo">
+	<meta name="dc.format" CONTENT="HTML">
+	<meta name="dc.language" CONTENT="es-MEX">
+	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+	<!-- social media cards -->
+	<meta property="og:title" content="Análisis Complejo">
+	<meta property="og:description"
+		content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:type" content="website">
+	<!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+	<meta name="twitter:card"
+		content="Una introducción visual e interactiva en línea al estudio del análisis complejo.">
+	<meta property="og:site_name" content="Análisis Complejo">
+
+
+	<!-- FONTS AND CSS -->
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet'
+		type='text/css'>
+	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="../css/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+	<!-- CODE PRETTIFY -->
+	<!-- via: https://github.com/google/code-prettify -->
+	<script src="../js/run_prettify.js"></script>
+
+
+
+	<!-- JQUERY FANCY ADDITIONS -->
+	<!-- add code class, hover text, etc -->
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script>
+		$(document).ready(function () {
+
+			// prettyprint the code, pls
+			$('pre').addClass('prettyprint lang-java');
+
+			// add word-breaks to anything with a / or - in it
+			$('h1').each(function () {
+				var t = $(this).text();
+				t = t.replace('/', '/<wbr>');
+				t = t.replace('-', '-<wbr>');
+				$(this).html(t);
+			});
+
+			// set formatting
+			resizeCommands();
+		});
+
+		// when the window gets resized, do some stuff to keep everything
+		// looking pretty
+		$(window).resize(function () {
+			resizeCommands();
+		});
+
+		// things to do when the page is loaded or window resized
+		function resizeCommands() {
+			// large-screen stuff...
+			if ($(window).width() > 600) {
+
+				// long headline on intro page
+				// $('#introHeadline').html('TABLE OF CONTENTS');
+
+				// menu hover stuff on larger screens
+				// (does weird formatting on larger screens)
+				// hover over title to show "Table of Contents"
+				$('#title a').hover(
+					function () {
+						$('#title a').text('Table of Contents');
+					},
+					function () {
+						$('#title a').text('Complex Analysis'); // set back when moving out
+					}
+				);
+
+				// set prev/next titles
+				$('#prev a').hover(
+					function () {
+						$('#title a').text('Prev: Complex Integration');
+					},
+					function () {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+				$('#next a').hover(
+					function () {
+						$('#title a').text('Next: Series');
+					},
+					function () {
+						$('#title a').text('Complex Analysis');
+					}
+				);
+			}
+
+			// small-screen stuff
+			else {
+				// short headline on intro page
+				// $('#introHeadline').html('INTRO');
+			}
+		}
+	</script>
+
+
+	<!--MathJax starts-->
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+                           TeX: { equationNumbers: { autoNumber: "AMS" } }
+                           });
+        </script>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+	<script type="text/javascript" async
+		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-155852901-1');
+	</script>
+
+	<!--GeoGebra embeding-->
+	<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+	<script>
+		var params1 = {
+			"width": 721,
+			"height": 451,
+			"material_id": "jbs86spr",
+			"borderColor": "888888",
+			"playButton": false,
+			"showFullscreenButton": true,
+			"enableShiftDragZoom": false,
+			"showResetIcon": true
+		};
+		var params2 = {
+			"width": 721,
+			"height": 451,
+			"material_id": "kzrkqta7",
+			"borderColor": "888888",
+			"playButton": false,
+			"showFullscreenButton": true,
+			"enableShiftDragZoom": false,
+			"showResetIcon": true
+		};
+		var ggbApplet1 = new GGBApplet(params1, true);
+		var ggbApplet2 = new GGBApplet(params2, true);
+		window.addEventListener("load", function () {
+			ggbApplet1.inject('ggb-element-1');
+			ggbApplet2.inject('ggb-element-2');
+		});
+	</script>
+	<!--GeoGebra embeding ends-->
+
+</head>
+
+<body>
+	<div id="wrapper">
+
+		<header>
+			<p><span id="prev"><a href="complex_integration.html">&larr;</a></span><span id="title"><a
+						href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a
+						href="series.html">&rarr;</a></span>
+				<div class="clear"></div>
+			</p>
+		</header>
+
+
+		<h1>Integrals of Functions with Branch Cuts</h1>
+
+		<br />
+
+		<p>
+			When we consider multiple-valued functions, the path in a contour integral
+			can contain a point on a branch cut of
+			the integrand involved. The next two examples illustrate this.
+		</p>
+
+		<hr>
+
+
+
+		<h2>Example 1</h2>
+
+		<p>
+			Let $C$ be the semicircular path from $z_0=3$ to $z_1=-3$. That is
+			$z(\theta) = 3 e^{i\theta}$, with $0\leq \theta \leq \pi$.
+			Here we would like to evaluate the integral
+			\begin{eqnarray}\label{ex-01}
+			I = \int_C z^{1/2} dz.
+			\end{eqnarray}
+			To do so, we need to choose a particular branch of the multiple-valued function
+			$z^{1/2}$. For example, we will use the principal branch
+			\begin{eqnarray}
+			|z|> 0, \; -\pi \lt \textbf{Arg}\,(z)\lt \pi.
+			\end{eqnarray}
+		</p>
+
+		<p class="w3-responsive">
+			In this case, notice that although the principal branch of
+			$z^{1/2}= \exp\left(\frac{1}{2}\text{Log}\, z\right)$
+			is not defined at the end point $z_1=-3$ of the contour $C$, the integral $I$
+			nevertheless exists.
+		</p>
+
+		<p>
+			Use the following applet to explore the value of $I$ for the given contour $C$.
+			Just drag the points $z_0$ and $z_1$ to the corresponding values.
+			You can also select other contours and explore what happens when they
+			cross the branch cut $\{z\,:\, x =0 \text{ and } y \leq 0\}$.
+		</p>
+
+
+		<div class="ggbElement" id="ggb-element-1"></div>
+		<p><em></em></p>
+
+		<p class="w3-responsive">
+			As you already have figured it out, the integral (\ref{ex-01}) exists
+			because the integrand is <a href="curves_in_the_complex_plane.html" target="_blank">piecewise continuous</a>
+			on $C$. To confirm this, observe that when $z(\theta)= 3e^{i\theta}$, then
+			$$f\left(z(\theta)\right)= \exp\left(\frac{1}{2} \ln 3 + i \theta\right) = \sqrt{3}e^{i\theta/2}.$$
+		</p>
+
+		<p class="w3-responsive">
+			The left-hand limits of the real and imaginary components of the function
+			\begin{eqnarray*}
+			f\left(z(\theta)\right)z'(\theta) &=& \sqrt{3} e^{i\theta/2} \cdot 3ie^{i\theta } \\
+			&=& 3 \sqrt{3} i \,e^{i3\theta/2} \\
+			&=& -3\sqrt{3} \sin \frac{3\theta }{2} + i\, 3\sqrt{3} \cos \frac{3\theta }{2} \quad (0\leq \theta \lt
+			\pi)\\
+			\end{eqnarray*}
+			at $\theta = \pi $ exist. That is
+			\begin{eqnarray*}
+			\lim_{\theta \rightarrow \pi+}-3\sqrt{3} \sin \frac{3\theta }{2}= 3\sqrt{3}
+			\quad \text{ and } \quad \lim_{\theta \rightarrow \pi+} 3\sqrt{3} \cos \frac{3\theta }{2} = 0.\\
+			\end{eqnarray*}
+			This means that $f\left(z(\theta)\right)z'(\theta)$ is continuous on the closed interval
+			$0 \leq \theta \leq \pi$ when its value at $\theta = \pi $ is defined as $3\sqrt{3}$.
+			Therefore
+			\begin{eqnarray*}
+			I &=& \int_C f\left(z(\theta)\right)z'(\theta)\, d\theta= 3\sqrt{3} i \int_0^{\pi} e^{i\theta /2} d\theta
+			= 3\sqrt{3} i\Bigg[ \bigg.\frac{2}{3i}e^{i3\theta /2}\bigg|_{0}^{\pi} \Bigg] \\
+			&=& 3\sqrt{3} i\Bigg[ -\frac{2}{3i}\left( 1+i\right)\Bigg]= -2\sqrt{3}(1+i).
+			\end{eqnarray*}
+		</p>
+
+		<div class="w3-padding">
+			<p><strong>Exercise 1:</strong> Evaluate $\int_C z^{1/2}\, dz$ for the
+				contour $C: z(\theta)= e^{i\theta}$, with $-\pi\leq \theta \leq \pi$.
+				You can use the applet to confirm your results.
+			</p>
+		</div>
+
+		<p><strong>Remark 1:</strong>
+			You can not evaluate the integral
+			for the contour $C: z(t)= e^{it}$, with $0 \leq t \leq 2\pi$. Why?
+		</p>
+
+		<p><strong>Remark 2:</strong>
+			Notice that $\int_C z^{1/2}\, dz=0$ for any
+			circle not intersecting the branch cut $\{z\,:\, x =0 \text{ and } y \leq 0\}$. Why?
+		</p>
+
+		
+
+		<hr>
+
+		<h2>Example 2</h2>
+
+		<p class="w3-responsive">
+			Consider the principal branch
+			\begin{eqnarray}\label{br}
+			f(z)=z^{i} = \exp \left[ i \,\text{Log } z \right]\; \text{ with }\; |z|>0,\, -\pi\lt \text{Arg } z \lt \pi 
+			\end{eqnarray}
+			and $C$ the upper half circle from $z=-1$ to $z=1$; that is,  $z(t)=-e^{-i \pi t}$ with 
+			$0 \leq t \leq 1$.
+		</p>
+
+		<figure class="w3-center">
+			<img class="w3-image w3-mobile" src="../images/chp04/p-branch-semicircle.svg" alt="Upper half circle"
+				title="Upper half circle" style="width:45%;">
+			<figcaption>
+				<b>Figure 1:</b> $C: z(t)=-e^{-i \pi t}$, with 
+				$0 \leq t \leq 1$.
+			</figcaption>
+		</figure>
+
+		<p class="w3-responsive">
+			It is not difficult to verify that
+			\begin{eqnarray}\label{ex-02}
+			I=\int_C z^{i}\,dz &=& \frac{1+e^{-\pi}}{2}\,(1-i).
+			\end{eqnarray}
+			Use the following applet to confirm this.  
+			You can also analize  $\int_C z^idz$
+			for other contours.
+		</p>
+
+		<div class="ggbElement" id="ggb-element-2"></div>
+		<p><em></em></p>
+
+		<p>
+			<strong>Remark 3:</strong>
+			Notice that  $\int_C z^{i}\, dz=0$ for any
+			circle not intersecting the branch cut $\{z\,:\, x =0, y \leq 0\}$. Why?
+		</p>
+
+		<p class="w3-responsive">
+			In general, we can calculate  $\int_C z^i dz$ for 
+		    any contour $C$ from $z=-1$ to $z=1$ lying above the real axis. 
+			We just need to find an antiderivative of $z^i$. 
+			Unfortunately, we <em>can not</em> use the principal branch, defined in (\ref{br}), since 
+			this branch is not even defined at 
+			$z=-1$. But the integrand can be replaced by the branch 
+			$$z^{i} = \exp \left[ i \,\text{log } z \right]\; \text{ with }\;  |z|>0,\, -\frac{\pi}{2}\lt \text{arg } z \lt \frac{3\pi}{2}.$$
+			since it agrees with the integrand along $C$. 
+        </p>
+
+		<div class="w3-row-padding">
+			<div id="p-branch" class="w3-half w3-container w3-margin-bottom">
+				<figure class="w3-center">
+					<img class="w3-image w3-mobile" src="../images/chp04/p-branch-everycontour.svg"
+						alt="Smooth curve and Tangent vector" title="Smooth curve and Tangent vector"
+						style="width:100%;">
+					<figcaption>
+						Figure 2: Principal branch.
+					</figcaption>
+				</figure>
+			</div>
+			<div id="s-branch" class="w3-half w3-container w3-margin-bottom">
+				<figure class="w3-center">
+					<img class="w3-image w3-mobile" src="../images/chp04/s-branch-everycontour.svg" alt="Non smooth"
+						title="Non smooth" style="width:100%;">
+					<figcaption>
+						Figure 3: An appropiate branch.
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+
+		<p class="w3-responsive">
+			Using an antiderivative of this new branch, we obtain
+			\begin{eqnarray}\label{value}
+			\int_{-1}^{1} z^i dz&=& \Bigg.\frac{z^{i+1}}{i+1}\Bigg|_{-1}^{1} =  \frac{1+e^{-\pi}}{2}\,(1-i),
+			\end{eqnarray}
+			which is the same value as (\ref{ex-02}).
+		</p>
+
+		<div class="w3-padding">
+			<p><strong>Exercise 2:</strong> Evaluate $\bigg.\frac{z^{i+1}}{i+1}\bigg|_{-1}^{1} $ to confirm
+				the value of (\ref{value}).
+			</p>
+		</div>
+
+		
+
+		<br>
+
+
+		<!-- link to the next page -->
+		<a href="series.html">
+			<p class="nextPage">NEXT: Series</p>
+		</a>
+		<footer>
+			<p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
+					href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]
+			</p>
+
+			<p class="license">
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+					<img id="license" alt="Creative Commons License" style="border-width:0"
+						src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+				</a>
+				<br />
+				<strong style="font-size: 18px">ISBN: 978-0-6485736-2-3</strong> <br>
+				<strong style="font-size: 18px">2019</strong>
+			</p>
+		</footer>
+
+	</div> <!-- end wrapper -->
+
+	<!-- nice smart quotes, via: http://smartquotesjs.com -->
+	<script src="../js/smartquotes.min.js"></script>
+
+</body>
+
+</html>
