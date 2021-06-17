@@ -84,28 +84,28 @@
 				// hover over title to show "Table of Contents"
 				$('#title a').hover(
 					function () {
-						$('#title a').text('Table of Contents');
+						$('#title a').text('Tabla de Contenidos');
 					},
 					function () {
-						$('#title a').text('Complex Analysis'); // set back when moving out
+						$('#title a').text('Análisis Complejo'); // set back when moving out
 					}
 				);
 
 				// set prev/next titles
 				$('#prev a').hover(
 					function () {
-						$('#title a').text('Prev: Laurent Series');
+						$('#title a').text('Prev: Series de Laurent');
 					},
 					function () {
-						$('#title a').text('Complex Analysis');
+						$('#title a').text('Análisis Complejo');
 					}
 				);
 				$('#next a').hover(
 					function () {
-						$('#title a').text('Next: The Mandelbrot Set');
+						$('#title a').text('Next: El Conjunto de Mandelbrot');
 					},
 					function () {
-						$('#title a').text('Complex Analysis');
+						$('#title a').text('Análisis Complejo');
 					}
 				);
 			}
@@ -153,56 +153,57 @@
 	<div id="wrapper">
 
 		<header>
-			<p><span id="prev"><a href="laurent_series.html">&larr;</a></span><span id="title"><a
-						href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a
-						href="mandelbrot_set.html">&rarr;</a></span>
+			<p><span id="prev"><a href="series_de_laurent.html">&larr;</a></span><span id="title"><a
+						href="tabla_de_contenidos.html">Complex Analysis</a></span><span id="next"><a
+						href="conjunto_de_mandelbrot.html">&rarr;</a></span>
 				<div class="clear"></div>
 			</p>
 		</header>
 
 
-		<h1>Classification of Singularities</h1>
+		<h1>Clasificación de Singularidades</h1>
 
 		<hr>
 
 		<p class="w3-responsive">
-			The portion
+			La expresión
 			\begin{eqnarray}\label{principal}
 			\frac{b_1}{z-z_0}+\frac{b_2}{(z-z_0)^2}+\frac{b_3}{(z-z_0)^3}+\cdots
 			\end{eqnarray}
-			of the <a href="laurent-series-theorem">Laurent series</a>,
-			involving negative powers of $z - z_0$, is called the
-			<em>principal part</em> of $f$
-			at $z_0$. The coefficient $b_1$ in equation
-			(\ref{principal}), turns out to play a very
-			special role in complex analysis.
-			It is given a special name: the <em>residue</em> of the function $f(z)$.
-			In this section we will focus on the principal part to identify the isolated
-			singular point $z_0$ as one of three special types.
+			definida en las <a href="laurent-series-theorem">series de Laurent</a>,
+			la cual involucra las potencias negativas de $z - z_0$, se denomina
+			<em>parte prinicipal</em> de $f$
+			en el punto $z_0$. El coeficiente $b_1$ en la equación 
+			(\ref{principal}), juega un papel muy importante
+			en el análisi complejo.
+			Se le da un nombre especial: el <em>residuo</em> de $f(z)$.
+			En esta sección nos enfocaremos en la parte principal
+			para identificar singulares aisladas $z_0$ en tres tipos especiales.
 		</p>
 
 		<hr>
 
-		<h2>Poles</h2>
+		<h2>Polos</h2>
 
 		<p class="w3-responsive">
-			If the principal part of $f$ at $z_0$ contains at least one nonzero term but the number
-			of such terms is only finite, then there exists a integer $m \geq 1$ such that
+			Si la parte principal de $f$ en $z_0$ contiene al menos un término diferente de zero
+			pero el número de estos términos es finito, entonces existe un número entero
+			$m \geq 1$ tal que
 			$$b_m\neq 0 \quad\text{and} \quad b_{k}=0\quad \text{for}\quad k\gt m.$$
-			In this case, the isolated singular point $z_0$ is called a <em>pole of order</em>
-			$m$. A pole of order $m = 1$ is usually referred to as a <em>simple pole</em>.
+			En este caso, la singularidad aislada $z_0$ se denomina <em>polo de orden</em>
+			$m$. Un polo de orden $m = 1$ es conocido como <em>pole simple</em>.
 		</p>
 
 
 
-		<h3>Examples</h3>
+		<h3>Ejemplos</h3>
 
 		<p class="w3-responsive">
-			Consider the functions
-			$$f(z)=\dfrac{e^z-1}{z^2},\qquad g(z)=\frac{\cos z}{z^2}\qquad\text{and}\qquad h(z)=\frac{\sinh z}{z^4},$$
-			with an isolated singularity at $z_0=0$.
-			Figures 1, 2 and 3 show the <a href="domain_coloring.html#enhanced-phase-portraits">enhanced phase portraits</a> of these functions defined
-			in the square $|\text{Re }z|\lt 3$ and $|\text{Im }z|\lt 3$.
+			Consideremos las funciones
+			$$f(z)=\dfrac{e^z-1}{z^2},\qquad g(z)=\frac{\cos z}{z^2}\qquad\text{y}\qquad h(z)=\frac{\sinh z}{z^4},$$
+			con una singularidad aislada en $z_0=0$.
+			Las Figuras 1, 2 y 3 muestran los <a href="domain_coloring.html#enhanced-phase-portraits">retratos fase mejorados</a> 
+			de estas funciones definidos en el cuadrado $|\text{Re }z|\lt 3$ and $|\text{Im }z|\lt 3$.
 		</p>
 
 		<!--https://editor.p5js.org/jcponce/sketches/sfoT8EUys
@@ -211,7 +212,7 @@
 			<img class="w3-image w3-mobile" src="../images/chp05/pole01.png" alt="Pole order 1"
 				title="Pole order 1" style="width:65%;">
 			<figcaption>
-				<b>Figure 1:</b> $f(z)=\dfrac{e^z-1}{z^2}$.
+				<b>Figura 1:</b> $f(z)=\dfrac{e^z-1}{z^2}$.
 			</figcaption>
 		</figure>
 
@@ -219,7 +220,7 @@
 			<img class="w3-image w3-mobile" src="../images/chp05/pole02.png" alt="Pole order 2"
 				title="Pole order 2" style="width:65%;">
 			<figcaption>
-				<b>Figure 2:</b> $g(z)=\dfrac{\cos z}{z^2}$.
+				<b>Figura 2:</b> $g(z)=\dfrac{\cos z}{z^2}$.
 			</figcaption>
 		</figure>
 
@@ -227,31 +228,32 @@
 			<img class="w3-image w3-mobile" src="../images/chp05/pole03.png" alt="Pole order 3"
 				title="Pole order 3" style="width:65%;">
 			<figcaption>
-				<b>Figure 3:</b> $h(z)=\dfrac{\sinh z}{z^4}$.
+				<b>Figura 3:</b> $h(z)=\dfrac{\text{senh } z}{z^4}$.
 			</figcaption>
 		</figure>
 
 		<p class="w3-responsive">
-			Now from the <a href="domain_coloring.html#enhanced-phase-portraits">enhanced phase portraits</a> 
-			we can observe that $z_0=0$ is in fact a pole which order can also be easily seen, 
-			it is just the number of isochromatic rays of one (arbitrarily chosen) 
-			color which meet at that point.
-			Thus we can claim that $f$, $g$ and $h$ have poles of order 1, 2 and 3; respectively.
-			To confirm this let's calculate the Laurent series representation centred
-			at $0$. First observe that
+			De los  <a href="domain_coloring.html#enhanced-phase-portraits">retratos fase mejorados</a> 
+			podemos observar que $z_0=0$ es en realidad un polo cuyo orden 
+			se puede deducir fácilmente, 
+			este es solo el número de rayos isocromáticos de 
+			un color (arbitrariamente elegidos) 
+			los cuales se intersectan en este punto.
+			De esta manera podemos afirmar que $f$, $g$ y $h$ tienen polo de orden 1, 2 and 3; respectivamente.
+			Para confirmar esto calculemos las series de Laurentcon centro en $0$. Primero observemos que
 			\begin{eqnarray*}
 			f(z)&=&\frac{1}{z^2}\left[ \left( 1 + z + \frac{z^2}{2!}+\cdots \right) - 1 \right]\\
 			&=&\frac{1}{z}
 			+\frac{1}{2!}+\frac{z}{3!}+\frac{z^2}{4!}+\cdots, \quad (0\lt|z|\lt\infty).
 			\end{eqnarray*}
-			Thus we can see that $f$ has a simple pole. On the other hand
+			De esta manera podemos ver que $f$ tiene un polo simple. Por otra parte
 			\begin{eqnarray*}
 			g(z)&=&\frac{1}{z^2}\left(1-\frac{z^2}{2!}+\frac{z^4}{4!}-\cdots
 			\right)\\
 			&=&\frac{1}{z^2}-\frac{1}{2!}+\frac{z^2}{4!}-\cdots, \quad (0\lt|z|\lt\infty)
 			\end{eqnarray*}
-			then $g$ has a pole of order 2.
-			Finally, $h$ has a pole of order 3 since
+			entonces $g$ tiene un polo de orden 2.
+			Finalmente, $h$ tiene un polo de orden 3 dado que
 			\begin{eqnarray*}
 			h(z)&=&\frac{1}{z^4}\left(z+\frac{z^3}{3!}+\frac{z^5}{5!}+\cdots \right)\\
 			&=&\frac{1}{z^3}+\frac{1}{3!}\cdot
@@ -262,28 +264,33 @@
 
 		<hr>
 
-		<h2>Removable singularity</h2>
+		<h2>Singularidad removible</h2>
 
 		<p class="w3-responsive">
-			When every $b_n$ is zero, so that
+			Cuando cada  $b_n$ es zero, tal que
 			\begin{eqnarray}\label{residue003}
 			f(z)=\sum_{n=0}^{\infty} a_n(z-z_0)^n,\quad (0\lt |z-z_0| \lt R_2).
 			\end{eqnarray}
-			In this case, $z_0$ is known as a <em>removable singular point</em>. Note that the residue at a removable
-			singular point is always zero. If we define, or possibly redefine, $f$ at $z_0$ so that
-			$f(z_0) = a_0$, expansion (\ref{residue003}) becomes valid throughout the entire disk $|z - z_0| \lt R_2$.
-			Since a power series always represents an analytic function interior to its circle of
-			convergence, it follows that $f$ is analytic at $z_0$ when it is assigned the
-			value $a_0$ there. The singularity $z_0$ is, therefore, removed.
+			En teste caso, $z_0$ se conoce como <em>singularidad removible</em>. 
+			Notemos que el residue en una singularidad removible es siempre cero.
+			Si definimos, po posiblemente redefinimos, 
+			$f$ en $z_0$ como
+			$f(z_0) = a_0$, la expansión (\ref{residue003}) 
+			se vuelve válidad en todo el disco $|z - z_0| \lt R_2$.
+			Dado que una serie de potencias
+			siempre representa una función analítica 
+			interior a este disco de convergencia, se sigue que
+			$f$ es analítica en $z_0$ cuando se le asigna el valor de $a_0$. 
+			La singularidad $z_0$ es, por lo tanto, removida.
 		</p>
 
 
 
-		<h3>Examples</h3>
+		<h3>Ejemplos</h3>
 
 		<p>
-			Consider the functions
-			$$f(z)=\frac{1-\cos z}{z^2},\qquad g(z)=\frac{\sin z}{z}\qquad\text{and}\qquad h(z)=\frac{z}{e^z-1}.$$
+			Consideremos las funciones
+			$$f(z)=\frac{1-\cos z}{z^2},\qquad g(z)=\frac{\sin z}{z}\qquad\text{y}\qquad h(z)=\frac{z}{e^z-1}.$$
 			Figure shows the enhanced phase portraits of these functions defined
 			in the square $|\text{Re }z|\lt 8$ and $|\text{Im }z|\lt 8$. 
 			
@@ -295,7 +302,7 @@
 			<img class="w3-image w3-mobile" src="../images/chp05/rmv-sing-01.png" alt="Removable singularity"
 				title="Removable singularity" style="width:65%;">
 			<figcaption>
-				<b>Figure 4:</b> $f(z)=\dfrac{1-\cos z}{z^2}$.
+				<b>Figura 4:</b> $f(z)=\dfrac{1-\cos z}{z^2}$.
 			</figcaption>
 		</figure>
 
@@ -303,7 +310,7 @@
 			<img class="w3-image w3-mobile" src="../images/chp05/rmv-sing-02.png" alt="Removable singularity"
 				title="Removable singularity" style="width:65%;">
 			<figcaption>
-				<b>Figure 5:</b> $g(z)=\dfrac{\sin z}{z}$.
+				<b>Figura 5:</b> $g(z)=\dfrac{\text{sen } z}{z}$.
 			</figcaption>
 		</figure>
 
@@ -311,52 +318,55 @@
 			<img class="w3-image w3-mobile" src="../images/chp05/rmv-sing-03.png" alt="Removable singularity"
 				title="Removable singularity" style="width:65%;">
 			<figcaption>
-				<b>Figure 6:</b> $h(z)=\dfrac{z}{e^z-1}$.
+				<b>Figura 6:</b> $h(z)=\dfrac{z}{e^z-1}$.
 			</figcaption>
 		</figure>
 
 		<p>
-			We notice
-			that $f$ has a singularity at $z_0=0$ but in this case the plot does not show
-			isochromatic lines meeting at that point. This indicates that the singularity
-			might be removable.
+			Notemos que $f$ tiene una singularidad en $z_0=0$ pero en este caso 
+			la gráfica no muestra líneas isocromáticas intersectándose en un punto.
+			Esto indica que la singularidad es removible.
 		</p>
 
 		<p class="w3-responsive">
-			We can confirm this claim easily from the Laurent series representation:
+			Podemos confirmar esto fácilmente de la representación en series de Laurent:
 			\begin{eqnarray*}
 			f(z)&=&\frac{1}{z^2}\left[1-\left(1-\frac{z^2}{2!}+\frac{z^4}{4!}-\frac{z^6}{6!}+\cdots
 			\right)\right]\\
 			&=&\frac{1}{2!}-\frac{z^2}{4!}+\frac{z^4}{6!}-\cdots, \quad (0\lt |z|\lt \infty).
 			\end{eqnarray*}
-			In this case, when the value $f(0)=1/2$ is assigned, $f$ becomes entire. Furthermore, we can intuitively
-			observe that since $z=0$ is a removable singular point of $f$,
-			then $f$ must be analytic and bounded in some deleted neighbourhood $0\lt |z|\lt \varepsilon$.
+			En este caso, cuando se asigna el valor $f(0)=1/2$, $f$ se vuele entera. 
+			Más aún, podemos observar intuitivamente dado que $z=0$ 
+			es una singularidad removible de $f$, entonces $f$ 
+			debe ser analítica y acotada en 
+			alguna vecindad borrada (perforada) $0\lt |z|\lt \varepsilon$.
 
 		</p>
 
 		<div class="w3-padding">
-			<p><strong>Exercise 1:</strong> Find the Laurent series expansion for $g$ and $h$ to confirm that
-				they have removable singularities at $z_0=0$. 
+			<p><strong>Ejercicio 1:</strong> Calcula las series de Laurent de las funciones $g$ y $h$ 
+				para confirmar que tienen singularidades removibles en $z_0=0$. 
 			</p>
 		</div>
 
 		<hr>
 
 
-		<h2>Essential singularity</h2>
+		<h2>Singularidad esencial</h2>
 
 		<p id="essential-singularity">
-			If an infinite number of the coefficients $b_n$ in the principal part (\ref{principal}) are nonzero, then
-			$z_0$ is said to be an <em>essential singular</em> point of $f$.
+			Si un número infinito de coeficientes $b_n$ en la parte principal (\ref{principal}) son diferentes
+			de cero, entonces $z_0$ se conoce como una <em>singularidad esencial</em> de $f$.
 		</p>
 
 
 
-		<h3>Examples</h3>
+		<h3>Ejemplos</h3>
 
 		<p class="w3-responsive">
-			The function $$f(z)=\exp\left(\frac{1}{z}\right)$$ has an essential singularity at $z_0=0$ since
+			La función 
+			$$f(z)=\exp\left(\frac{1}{z}\right)$$ 
+			tiene una singularidad esencial en $z_0=0$ dado que
 			\begin{eqnarray*}
 			f(z)&=&1+\frac{1}{1!}\cdot\frac{1}{z}+\frac{1}{2!}\cdot
 			\frac{1}{z^2}+\cdots\\
@@ -365,55 +375,55 @@
 		</p>
 
 		<p>
-			Figure 7 shows the enhanced portrait of $f$ in the square
-			${|\text{Re }z|\lt 0.5}$ and ${|\text{Im }z|\lt 0.5}$. The first thing
-			we notice is that the behaviour of $f$ near the essential singular
-			point is quite irregular. Observe how the isochromatic lines, near
-			$z_0=0$, form infinite self-contained figure-eight shapes. 
+			La Figura 7 muestra el retrato mejorad de $f$ en el cuadrado
+			${|\text{Re }z|\lt 0.5}$ and ${|\text{Im }z|\lt 0.5}$. Lo primero que notamos 
+			de este gráfico es el comportamiento de $f$ cerca de la singularidad esencial el cual 
+			es bastante irregular. Observemos como las líneas isocromáticas,
+			cerca de $z_0=0$, forman figuras con forma de ocho auto contenidas. 
 		</p>
 
 		<figure class="w3-center">
 			<img class="w3-image w3-mobile" src="../images/chp05/essential-01.png" alt="Essential singularity"
 				title="Essential singularity" style="width:65%;">
 			<figcaption>
-				<b>Figure 7:</b> $\exp(1/z)$ defined on $[-0.5, 0.5]\times[-0.5, 0.5]$.
+				<b>Figura 7:</b> $\exp(1/z)$ definida en $[-0.5, 0.5]\times[-0.5, 0.5]$.
 			</figcaption>
 		</figure>
 
 		<p>
-			In fact, a neighbourhood of $z_0=0$ intersects infinitely many isochromatic
-			lines of the phase portrait of one and the same colour 
+			En realidad, una vecindad de $z_0=0$ intersecta infinitamente muchas 
+			líneas isocromáticas del retrato fase de un y del mismo color
 			[<a href="bibliography.html" target="_blank">Wegert, 2012, p. 181</a>].
-			This fact can be appreciated intuitively by plotting the simple
-			phase portrait of $\exp(1/z)$ on a smaller region, as shown in 
-			Figure 8. 
+			Este hecho se puede apreciar mejor con el retrato fase simple de
+			$\exp(1/z)$ en una región cercana al origne, como se muestra en la 
+			Figura 8. 
 		</p>
 
 		<figure class="w3-center">
 			<img class="w3-image w3-mobile" src="../images/chp05/zoom-essential.gif" alt="Essential singularity"
 				title="Essential singularity" style="width:65%;">
 			<figcaption>
-				<b>Figure 8:</b> Simple phase portrait: A closer view to the essential singularity.
+				<b>Figure 8:</b> Retrato fase simple: Un acercamiento a la singularidad esencial.
 			</figcaption>
 		</figure>
 
 		<p>
-			Another example with an essential singularity at the origin is the function 
+			Otro ejemplo con una singularidad esencial  en el origen es la función
 			$$g(z) = (z − 1) \cos\left(\frac{1}{z}\right)$$ 
-			Figure 9 shows the enhanced phase portrait of $g$ in the square $|\text{Re } z| \lt 0.3$ and $|\text{Im } z| \lt 0.3$.
+			La Figura 9 muestra el retrato fase de $g$ en el cuadrado $|\text{Re } z| \lt 0.3$ y $|\text{Im } z| \lt 0.3$.
 		</p>
 
 		<figure class="w3-center">
 			<img class="w3-image w3-mobile" src="../images/chp05/essential-03.png" alt="Essential singularity"
 				title="Essential singularity" style="width:65%;">
 			<figcaption>
-				<b>Figure 9:</b> $(z − 1) \cos(1/z)$.
+				<b>Figura 9:</b> $(z − 1) \cos(1/z)$.
 			</figcaption>
 		</figure>
 
 		<div class="w3-padding">
-			<p><strong>Exercise 2:</strong> Find the Laurent series expansion for $(z − 1) \cos(1/z)$ to confirm that
-				it has an essential singularity at $z_0=0$. 
+			<p><strong>Ejercicio 2:</strong> Calcula la serie de Laurente de $(z − 1) \cos(1/z)$ para confirmar que
+			 $z_0=0$ es una singilaridad esencial. 
 			</p>
 		</div>
 
@@ -423,26 +433,24 @@
 
 
 		<p>
-			
-			Phase portraits are quite useful to understand
-			the behaviour of functions near isolated singularities.  
-			Figures 7 and 9 indicate a rather wild behavior of these functions in 
-			a neighbourhood of essential singularities, in comparison with poles and
-			removable singular points.
-			In addition, they can be used to explore and comprehend, 
-			from a geometric point of view, 
-			more abstract mathematical results such as the 
-			<a href="https://umu.diva-portal.org/smash/get/diva2:1251778/FULLTEXT01.pdf" target="_blank">Great Picard Theorem</a>,
-			which tells us that any analytic function with an essential singularity at $z_0$
-			takes on all possible complex values (with at most a single exception) infinitely
-			often in any neighbourhood of $z_0$.
+			Los retratos de fase son bastante útiles para comprender el comportamiento 
+			de funciones complejas cerca de singularidades aisladas. Las Figuras 7 y 9 indican un 
+			comportamiento bastante radical de estas funciones en una vecindad con singularidades 
+			esenciales, en comparación con polos y singulares removibles. 
+			Además, se pueden utilizar para explorar y comprender, desde un punto 
+			de vista geométrico, resultados matemáticos más abstractos como el Gran 
+			<a href="https://umu.diva-portal.org/smash/get/diva2:1251778/FULLTEXT01.pdf" target="_blank">Teorema de Picard</a>, 
+			el cual  nos dice que cualquier función analítica con una 
+			singularidad esencial en $z_0$ toma todos los posibles valores complejos 
+			(con una sola excepción como máximo) 
+			infinitamente a menudo en cualquier vecindad de $z_0.
 		</p>
 
 		<figure class="w3-center">
 			<img class="w3-image w3-mobile" src="../images/chp05/jacobi-series.png" alt="Essential singularity"
 				title="Essential singularity" style="width:70%;">
 			<figcaption>
-				<b>Figure 10:</b> $\displaystyle\sum_{k=-\infty}^{\infty}q^{k^2}z^k$, with $q=0.97e^{i\pi/6}$.
+				<b>Figura 10:</b> $\displaystyle\sum_{k=-\infty}^{\infty}q^{k^2}z^k$, with $q=0.97e^{i\pi/6}$.
 			</figcaption>
 		</figure>
 
@@ -451,11 +459,11 @@
 
 
 		<!-- link to the next page -->
-		<a href="mandelbrot_set.html">
-			<p class="nextPage">NEXT: The Mandelbrot Set</p>
+		<a href="conjunto_de_mandelbrot.html">
+			<p class="nextPage">NEXT: </p>
 		</a>
 		<footer>
-			<p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
+			<p>[ <a href="../es.html">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
 					href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
 
 			<p class="license">
@@ -465,7 +473,7 @@
 				</a>
 				<br />
 				<strong style="font-size: 18px">ISBN: 978-0-6485736-2-3</strong> <br>
-				<strong style="font-size: 18px">2019</strong>
+				<strong style="font-size: 18px">2021</strong>
 			</p>
 		</footer>
 
