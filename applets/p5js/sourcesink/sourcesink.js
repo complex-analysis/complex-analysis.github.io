@@ -6,8 +6,8 @@
  */
 
 /*
- Last update 08-Oct-2018
- */
+ Last update 20-Jul-2021
+*/
 
 let numMax = 700;
 let t = 0;
@@ -40,6 +40,7 @@ let sliderk;
 
 function setup() {
     createCanvas(WIDTH, HEIGHT);
+    cursor(HAND);
     controls();
     resetSketch();
 }
