@@ -3,7 +3,7 @@
 	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
 	z-index: 1; /* Sit on top */
-	padding-top: 100px; /* Location of the box */
+	padding-top: 70px; /* Location of the box */
 	left: 0;
 	top: 0;
 	width: 100%; /* Full width */
@@ -60,14 +60,14 @@
   
   .modal-header {
 	padding: 2px 16px;
-	background-color: #61abfa;
+	background-color: #80aaff;
 	color: #000;
   }
   
   .modal-body {padding: 2px 16px;}
   
   .modal-footer {
-	padding: 2px 16px;
-	background-color: #61abfa;
+	padding: 2px 5px;
+	background-color: #80aaff;
 	color: #000
   }
