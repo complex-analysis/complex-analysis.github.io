@@ -357,30 +357,8 @@ Im = Surface(u, v, imaginary( f(u + ί v) ), u, -5, 5, v, -5, 5)
 		<h3>Hello! 👋</h3>
 	  </div>
 	  <div class="modal-body">
-		<br/>
-		<p>If this interactive resource adds value to your life, consider 
-		  joining the contribuiting members in: 
-		  </p>
-  
-		  <div class="w3-center">
-			  <a class="w3-center w3-button w3-round w3-light-grey w3-hover-text-indigo" href="https://www.patreon.com/jcponce"><img src="https://image.flaticon.com/icons/png/512/2111/2111548.png" style="width:20px;"> Patreon</a>
-		  </div>
-  
-	  <br/>
-
-	  <p>Your support will help me to keep this site updated, add 
-		new sections with applets and, most importantly, <strong>free</strong> 
-		for everybody interested in learning this beautiful branch of mathematics. </p>
-  
-	  <p>If you prefer to donate just once, not monthly, 
-		I have also a 
-		<a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=WTMTR7D8RYZ26&item_name=Your+support+will+help+me+to+improve+and+keep+up+to+date+the+applets+of+this+book.+Sincerely+appreciate+it%21&currency_code=AUD&source=url">❤️ PayPal Me</a>.
-	  </p>
-	  <p>You can also support this project by just filling out a quick survey:</p>
-		  <div class="w3-center"><a class="w3-button w3-light-grey w3-round w3-hover-text-blue"
-				  href="https://forms.gle/eYMGDeygzBwx6WKW7">Fill out survey!</a></div>
-		  <br />
-		  <br/>
+		
+		<div w3-include-html="message.html"></div>
 	   
 	  </div>
 	  <div class="modal-footer">
@@ -415,6 +393,7 @@ Im = Surface(u, v, imaginary( f(u + ί v) ), u, -5, 5, v, -5, 5)
 <!-- nice smart quotes, via: http://smartquotesjs.com -->
 <script src="../js/smartquotes.min.js"></script>
 <script src="../js/message.js"></script>
+<script> includeHTML(); // Import html info file</script>
 
 </body>
 </html>
