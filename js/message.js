@@ -34,7 +34,7 @@ window.onclick = function(event) {
 
 let myInterval = setInterval(function () {
     showMessage ();
-}, 8000);
+}, 100000);
 
 function includeHTML() {
   let z, i, elmnt, file, xhttp;
