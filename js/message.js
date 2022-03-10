@@ -34,7 +34,7 @@ window.onclick = function(event) {
 
 let myInterval = setInterval(function () {
     showMessage ();
-}, 1200000);// 20 mins
+}, 1200000);// 1200000 20 mins
 //8000);//8 seconds
 
 function includeHTML() {
