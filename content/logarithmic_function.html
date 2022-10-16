@@ -291,7 +291,7 @@ is a <em>single-value</em> and continuous function in the stated domain.
 <p>A <em>branch</em> of a multiple-valued function $f$ is any single-valued function $F$ that is analytic in some domain at each point $z$ of which the value $F(z)$ is one of the values of $f$. The requirement of analyticity, of course, prevents $F$ from taking on a random selection of the values of $f$.
 
 <div class="w3-responsive">
-Observe that for each fixed α, the single-valued function (\ref{log3}) is a branch of the multiple-valued function (\ref{log30}). The function
+Observe that for each fixed $\alpha$, the single-valued function (\ref{log3}) is a branch of the multiple-valued function (\ref{log30}). The function
 \begin{eqnarray}\label{log4}
 \text{Log } z=\ln r +i\Theta \quad (r&gt; 0, -\pi &lt; \theta &lt; \pi ),
 \end{eqnarray}
@@ -301,7 +301,10 @@ is called the principal branch.
 
 <p> A <em>branch cut</em> is a portion of a line or curve that is introduced in order to define a branch $F$ of a multiple-valued function $f$. Points on the branch cut for $F$ are <em>singular points</em> of $F$, and any point that is common to all branch cuts of $f$ is called a <em>branch point</em>. The origin and the ray $\theta = \alpha$ make up the branch cut for the branch (\ref{log3}) of the logarithmic function. The branch cut for the principal branch (\ref{log4}) consists of the origin and the ray $= \pi$. The origin is evidently a branch point for branches of the multiple-valued logarithmic function.</p>
 
-<p>We can visualize the multiple-valued nature of $\log z$ by using <a href="http://mathworld.wolfram.com/RiemannSurface.html" target="_blank">Riemann surfaces</a>.  The following interactive images show the real and imaginary components of $\log(z)$. Each branch of the imaginary part is identified with a different color.</p>
+<p>We can visualize the multiple-valued nature of $\log z$ by 
+using <a href="http://mathworld.wolfram.com/RiemannSurface.html" target="_blank">Riemann surfaces</a>.  
+The following interactive images show the real and imaginary 
+components of $\log(z)$. </p>
 
 <div class="w3-hide-small w3-hide-medium w3-center">
 <table class="w3-table w3-centered">
@@ -332,7 +335,7 @@ is called the principal branch.
 						  u * Math.sin(v),
 						  Re(u * Math.cos(v), u * Math.sin(v))
 						],
-						[0.0001, 2], [-pi, pi],
+						[0.0001, 3], [-pi, pi],
 						{
 						  color: '#80aaff',
 						  opacity: 0.9
@@ -347,7 +350,7 @@ is called the principal branch.
 					frame: true,
 					viewpoint: [1,-1,1],
 					zMin: -3, 
-					zMax: 2
+					zMax: 3
 				  };
 				
 				  evaluate(id, data, config);
@@ -469,7 +472,8 @@ is called the principal branch.
 				
 				</script>
 				</div>
-				<p><em>Imaginary component of $\log z$</em></p>
+				<p><em>Imaginary component of $\log z$:</em> Each branch is 
+					identified with a different color.</p>
 		</td>
 	</tr>
 </table>
