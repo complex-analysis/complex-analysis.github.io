@@ -126,6 +126,8 @@
         </script>
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
         </script>
+
+<script src="../applets/mathcell/mathcell.js"></script>
     
    
     
@@ -304,9 +306,172 @@ is called the principal branch.
 <div class="w3-hide-small w3-hide-medium w3-center">
 <table class="w3-table w3-centered">
     <tr>
-        <td><div style="width:395px;height:380px;display:block" id="applet_container1"></div></td>
-        <td><div style="width:395px;height:380px;display:block" id="applet_container2"></div></td>
+        <td>
+
+
+			<div class="mathcell" style="width: 500px; height: 500px">
+				<script>
+				
+				var parent = document.currentScript.parentNode;
+				
+				var id = generateId();
+				parent.id = id;
+				
+				MathCell(id, []);
+				
+				parent.update = function(id) {
+					
+				  var pi = Math.PI;
+				
+				  //Real component ln(sqrt(x x + y y))
+				  var Re = (x, y) => Math.log(Math.sqrt(x * x + y * y));
+				
+				  var data = [];
+				
+				  var s = parametric((u, v) => [u * Math.cos(v),
+						  u * Math.sin(v),
+						  Re(u * Math.cos(v), u * Math.sin(v))
+						],
+						[0.0001, 2], [-pi, pi],
+						{
+						  color: '#80aaff',
+						  opacity: 0.9
+						}
+					  );
+				   
+					  
+				  data.push(s);
+				
+				  var config = {
+					type: 'threejs',
+					frame: true,
+					viewpoint: [1,-1,1],
+					zMin: -3, 
+					zMax: 2
+				  };
+				
+				  evaluate(id, data, config);
+				
+				}
+				
+				parent.update(id);
+				
+				</script>
+				</div>
+			<p><em>Real component  of $\log z$</em></p>
+		</td>
+        
     </tr>
+	<tr>
+		<td>
+
+
+			<div class="mathcell" style="width: 500px; height: 500px">
+				<script>
+				
+				var parent = document.currentScript.parentNode;
+				
+				var id = generateId();
+				parent.id = id;
+				
+				MathCell(id, []);
+				
+				parent.update = function(id) {
+					
+				  var pi = Math.PI;
+				  
+				  //Imaginary component arctan()
+				  var ImB = (x, y) => Math.atan2(y, x)+ 2 * pi * 2;
+				  var ImA = (x, y) => Math.atan2(y, x) + 2 * pi;
+				  var Im0 = (x, y) => Math.atan2(y, x);
+				  var Ima = (x, y) => Math.atan2(y, x) - 2 * pi;
+				  var Imb = (x, y) => Math.atan2(y, x) - 2 * pi * 2;
+				
+				  
+				
+				  var data = [];
+
+				  var den = 1000;
+
+				    var sB = parametric((u, v) => [u * Math.cos(v),
+						  u * Math.sin(v),
+						  ImB(u * Math.cos(v), u * Math.sin(v)) 
+						],
+						[0, 2], [-pi, pi-pi/den],
+						{
+							color: '#cc0066',
+						  opacity: 0.9
+						}
+					  );
+				
+				    var sA = parametric((u, v) => [u * Math.cos(v),
+						  u * Math.sin(v),
+						  ImA(u * Math.cos(v), u * Math.sin(v)) 
+						],
+						[0, 2], [-pi, pi-pi/den],
+						{
+						  color: '#80aaff',
+						  opacity: 0.9
+						}
+					  );
+					  var s0 = parametric((u, v) => [u * Math.cos(v),
+						  u * Math.sin(v),
+						  Im0(u * Math.cos(v), u * Math.sin(v))
+						],
+						[0, 2], [-pi, pi-pi/den],
+						{
+						  color: '#6666ff',
+						  opacity: 0.9
+						}
+					  );
+
+					  var sa = parametric((u, v) => [u * Math.cos(v),
+						  u * Math.sin(v),
+						  Ima(u * Math.cos(v), u * Math.sin(v))
+						],
+						[0, 2], [-pi, pi-pi/den],
+						{
+							color: '#00b3b3',
+						  opacity: 0.9
+						}
+					  );
+
+					  var sb = parametric((u, v) => [u * Math.cos(v),
+						  u * Math.sin(v),
+						  Imb(u * Math.cos(v), u * Math.sin(v))
+						],
+						[0, 2], [-pi, pi-pi/den],
+						{
+							color: '#b3b3b3',
+						  opacity: 0.9
+						}
+					  );
+				   
+				  data.push(sB);  
+				  data.push(sA);
+				  data.push(s0);
+				  data.push(sa);
+				  data.push(sb);
+				
+				  var config = {
+					type: 'threejs',
+					frame: true,
+					viewpoint: [1,-1,0.5],
+					zMin: -16, 
+					zMax: 16
+				  };
+				
+				  evaluate(id, data, config);
+				
+				}
+				
+				parent.update(id);
+				
+				</script>
+				</div>
+				<p><em>Imaginary component of $\log z$</em></p>
+		</td>
+	</tr>
 </table>
 </div><!--responsive ends-->
 
