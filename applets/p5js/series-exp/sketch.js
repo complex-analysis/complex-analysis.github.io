@@ -71,7 +71,7 @@ function mousePressed() {
 class complexCurve {
   constructor() {
     this.ran = int(random(0,6));
-    console.log(this.ran);
+    //console.log(this.ran);
   }
 
   sumS() {
