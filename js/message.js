@@ -34,7 +34,8 @@ window.onclick = function(event) {
 
 let myInterval = setInterval(function () {
     showMessage ();
-}, 2400000);
+}, 600000);
+// 600000 10 mins
 // 1200000 20 mins
 //8000);//8 seconds
 
