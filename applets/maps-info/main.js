@@ -120,31 +120,31 @@ bubbleSeries.data.setAll([
   {
     id: "AR",
     name: "Argentina",
-    value: 2003,
+    value: 3906,
     circleTemplate: { fill: colors.getIndex(3) }
   },
   {
     id: "AM",
     name: "Armenia",
-    value: 69,
+    value: 75,
     circleTemplate: { fill: colors.getIndex(8) }
   },
   {
     id: "AU",
     name: "Australia",
-    value: 5056,
+    value: 6579,
     circleTemplate: { fill: colors.getIndex(8) }
   },
   {
     id: "AT",
     name: "Austria",
-    value: 391,
+    value: 394,
     circleTemplate: { fill: colors.getIndex(8) }
   },
   {
     id: "AZ",
     name: "Azerbaijan",
-    value: 101,
+    value: 102,
     circleTemplate: { fill: colors.getIndex(8) }
   },
   {
@@ -156,7 +156,7 @@ bubbleSeries.data.setAll([
   {
     id: "BD",
     name: "Bangladesh",
-    value: 1525,
+    value: 1530,
     circleTemplate: { fill: colors.getIndex(0) }
   },
   {
@@ -210,7 +210,7 @@ bubbleSeries.data.setAll([
   {
     id: "BR",
     name: "Brazil",
-    value: 1463,
+    value: 1863,
     circleTemplate: { fill: colors.getIndex(3) }
   },
   {
@@ -252,7 +252,7 @@ bubbleSeries.data.setAll([
   {
     id: "CA",
     name: "Canada",
-    value: 61,
+    value: 6040,
     circleTemplate: { fill: colors.getIndex(4) }
   },
   {
@@ -276,13 +276,13 @@ bubbleSeries.data.setAll([
   {
     id: "CN",
     name: "China",
-    value: 2773,
+    value: 3804,
     circleTemplate: { fill: colors.getIndex(0) }
   },
   {
     id: "CO",
     name: "Colombia",
-    value: 2002,
+    value: 3413,
     circleTemplate: { fill: colors.getIndex(3) }
   },
   {
@@ -342,7 +342,7 @@ bubbleSeries.data.setAll([
   {
     id: "EC",
     name: "Ecuador",
-    value: 692,
+    value: 1192,
     circleTemplate: { fill: colors.getIndex(3) }
   },
   {
@@ -390,7 +390,7 @@ bubbleSeries.data.setAll([
   {
     id: "FR",
     name: "France",
-    value: 1293,
+    value: 1693,
     circleTemplate: { fill: colors.getIndex(8) }
   },
   {
@@ -414,7 +414,7 @@ bubbleSeries.data.setAll([
   {
     id: "DE",
     name: "Germany",
-    value: 261,
+    value: 3240,
     circleTemplate: { fill: colors.getIndex(8) }
   },
   {
@@ -480,7 +480,7 @@ bubbleSeries.data.setAll([
   {
     id: "IN",
     name: "India",
-    value: 56311,
+    value: 62344,
     circleTemplate: { fill: colors.getIndex(0) }
   },
   {
@@ -516,7 +516,7 @@ bubbleSeries.data.setAll([
   {
     id: "IT",
     name: "Italy",
-    value: 1486,
+    value: 2196,
     circleTemplate: { fill: colors.getIndex(8) }
   },
   {
@@ -648,7 +648,7 @@ bubbleSeries.data.setAll([
   {
     id: "MX",
     name: "Mexico",
-    value: 6001,
+    value: 11617,
     circleTemplate: { fill: colors.getIndex(4) }
   },
   {
@@ -702,13 +702,13 @@ bubbleSeries.data.setAll([
   {
     id: "NL",
     name: "Netherlands",
-    value: 1332,
+    value: 1632,
     circleTemplate: { fill: colors.getIndex(8) }
   },
   {
     id: "NZ",
     name: "New Zealand",
-    value: 31,
+    value: 332,
     circleTemplate: { fill: colors.getIndex(8) }
   },
   {
@@ -744,7 +744,7 @@ bubbleSeries.data.setAll([
   {
     id: "PK",
     name: "Pakistan",
-    value: 4141,
+    value: 4643,
     circleTemplate: { fill: colors.getIndex(0) }
   },
   {
@@ -768,13 +768,13 @@ bubbleSeries.data.setAll([
   {
     id: "PE",
     name: "Peru",
-    value: 1269,
+    value: 1969,
     circleTemplate: { fill: colors.getIndex(3) }
   },
   {
     id: "PH",
     name: "Philippines",
-    value: 23424,
+    value: 2337,
     circleTemplate: { fill: colors.getIndex(0) }
   },
   {
@@ -810,7 +810,7 @@ bubbleSeries.data.setAll([
   {
     id: "RU",
     name: "Russia",
-    value: 1056,
+    value: 1256,
     circleTemplate: { fill: colors.getIndex(8) }
   },
   {
@@ -882,7 +882,7 @@ bubbleSeries.data.setAll([
   {
     id: "ES",
     name: "Spain",
-    value: 5466,
+    value: 8721,
     circleTemplate: { fill: colors.getIndex(8) }
   },
   {
@@ -906,7 +906,7 @@ bubbleSeries.data.setAll([
   {
     id: "CH",
     name: "Switzerland",
-    value: 946,
+    value: 1346,
     circleTemplate: { fill: colors.getIndex(8) }
   },
   {
@@ -954,7 +954,7 @@ bubbleSeries.data.setAll([
   {
     id: "TR",
     name: "Turkey",
-    value: 2087,
+    value: 2497,
     circleTemplate: { fill: colors.getIndex(8) }
   },
   {
@@ -984,13 +984,13 @@ bubbleSeries.data.setAll([
   {
     id: "GB",
     name: "United Kingdom",
-    value: 8583,
+    value: 10130,
     circleTemplate: { fill: colors.getIndex(8) }
   },
   {
     id: "US",
     name: "United States",
-    value: 25315,
+    value: 32491,
     circleTemplate: { fill: colors.getIndex(4) }
   },
   {
