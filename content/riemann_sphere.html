@@ -229,16 +229,19 @@
 		<p>Now we can introduce the following limit concepts:
 			<ol>
 				<li>$\displaystyle \lim_{z\rightarrow \infty}f(z)=z_0$ means: For any $\varepsilon>0$, there is an $R>0$
-					such that $\left|f(z)-z_0\right| &lt; \varepsilon$ whenever $|z|> R$.</li>
+					such that 
+					$$|z|> R \quad  \Rightarrow \quad \left|\,f(z)-z_0\right| &lt; \varepsilon.$$</li>
 				<li>$\displaystyle \lim_{z\rightarrow z_0}f(z)=\infty$ means: For any $R>0$, there is a $\delta>0$ such
-					that $|f(z)|>R$ whenever $0&lt;|z-z_0|&lt; \delta$.</li>
+					that 
+					$$0 \lt |z-z_0|&lt; \delta \quad \Rightarrow \quad  |\,f(z)|>R.$$</li>
 				<li>$\displaystyle \lim_{z\rightarrow \infty}f(z)=\infty$ means: For any $M>0$, there is an $R>0$ such
-					that $|f(z)|>M$ whenever $|z|> R$.</li>
+					that 
+					$$|z|> R \quad \Rightarrow \quad |\,f(z)|>M .$$</li>
 			</ol>
 		</p>
 
 		<div class="w3-padding">
-			<p><strong>Example 1:</strong> If $f(z)=1/z^2$, for $z\neq 0$, then
+			<p><strong>Example 1:</strong> If $f(z)=\dfrac{1}{z^2}$, for $z\neq 0$, then
 				$$\lim_{z\rightarrow \infty}f(z)=0.$$
 				In fact, given $\varepsilon>0$ we have
 				$$\left|\frac{1}{z^2}-0\right|=\frac{1}{\left|z^2\right|}=\frac{1}{\left|z\right|^2} &lt;\varepsilon$$
@@ -246,7 +249,7 @@
 			</p>
 
 			<p><strong>Example 2:</strong>
-				Let $f(z)=1/(z-3)$, for $z\neq 3$. Then
+				Let $f(z)=\dfrac{1}{z-3}$, for $z\neq 3$. Then
 				$$\lim_{z\rightarrow 3}f(z)=\infty.$$
 				In fact, for any given $R>0$ the inequality
 				$$\frac{1}{\left|z-3\right|}>R$$
@@ -255,22 +258,22 @@
 			</p>
 
 			<p><strong>Example 3:</strong>
-				For $f(z)=e^z$, defined on $D=\{z\,:\,\textbf{Re}(z)>0\}$, we have
-				$$\lim_{z\rightarrow \infty}f(z)=\infty.$$
-				In fact, for any given $M>0$ we have
-				$$\left|f(z)\right|=\left|e^z\right|=e^x>M$$
-				whenever
-				$x>\ln M.$ Hence, it suffices to take $R>\max\{0,\ln M\}$.
+				Now let $f(z) = \dfrac{2z^3-1}{z^2+1}$, for $z\neq -1.$ Then 
+				\[
+				\lim_{z\to \infty} f(x) = \infty.
+				\]
+				Assuming that $|z|\gt 1$, then
+				\[
+				\left|\dfrac{2z^3-1}{z^2+1}\right|\geq \frac{2\left|z\right|^3-1}{\left|z\right|^2+1}\geq \frac{\left|z\right|^3}{\left|z\right|^2+ \left|z\right|^2}= \frac{|z|}{2}.
+				\]
+				So for any $M>0$ we can choose $R = 1+ 2M$ to conclude that
+				\[
+				\left|\dfrac{2z^3-1}{z^2+1}\right| > M \;\text{ whenever } \;|z|>R.
+				\]
 			</p>
 		</div>
 
-		<p>It is worth to mention that for $f(z)=e^z$ defined on $D_1=\{z\,:\,\textbf{Re}
-			(z)=0\}$, i.e., for $f(iy)=e^{iy}$, there is no limit as $z=iy\rightarrow \infty $, because along the
-			imaginary axis, $e^{iy} = \cos y+i\sin y$ is periodic and not constant.</p>
-
-		<p>Finally, for $f(z)=e^z$ defined on $D_2=\{z\,:\,\textbf{Re}(z)&lt;0\}$ we have that $$\lim_{z\rightarrow
-			\infty}f(z)=0.$$
-		</p>
+		
 
 		<p>There is an easier way to calculate the limits from Examples 1-3. The following theorem provides a very
 			useful method.</p>
@@ -303,6 +306,13 @@
 				$$\lim_{z\rightarrow \infty}\frac{2z^3-1}{z^2+1}=\infty \quad \text{since}\quad \lim_{z\rightarrow
 				0}\frac{(1/z^2)+1}{(2/z^3)-1}=\frac{z+z^3}{2-z^3}=0.$$</p>
 		</div>
+
+		<p>
+			Although we have successfully used techniques from calculus to compute 
+			complex-valued limits, real-variable intuition may not always apply.
+			For example, $\lim_{z\to \infty} e^{-z}$ is not 0; 
+			in fact, this limit does not exist.
+		</p>
 
 
 
