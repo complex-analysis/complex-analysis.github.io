@@ -273,24 +273,20 @@ $$0&lt;\left|z-3\right| &lt; \frac{1}{R}=\delta.$$
 </p>
 
 <p><strong>Ejemplo 3:</strong>
-Para $f(z)=e^z$, definida en  $D=\{z\,:\,\textbf{Re}(z)>0\}$, tenemos
-$$\lim_{z\rightarrow \infty}f(z)=\infty.$$
-En este caso, para cada $M>0$ dado obtenemos
-$$\left|f(z)\right|=\left|e^z\right|=e^x>M$$
-cuando $x>\ln M.$ Por lo tanto, 
-es suficiente tomar $R>\max\{0,\ln M\}$.
+	Ahora consideremos $f(z) = \dfrac{2z^3-1}{z^2+1}$, para $z\neq -1.$ Entonces 
+	\[
+	\lim_{z\to \infty} f(x) = \infty.
+	\]
+	Suponiendo que $|z|\gt 1$, entonces
+	\[
+	\left|\dfrac{2z^3-1}{z^2+1}\right|\geq \frac{2\left|z\right|^3-1}{\left|z\right|^2+1}\geq \frac{\left|z\right|^3}{\left|z\right|^2+ \left|z\right|^2}= \frac{|z|}{2}.
+	\]
+	Así que para cualquier $M>0$ podemos elegir $R = 1+ 2M$ para concluir
+	\[
+	\left|\dfrac{2z^3-1}{z^2+1}\right| > M \;\text{ siempre que } \;|z|>R.
+	\]
 </p>
 </div>
-
-<p>Vale la pena mencionar que para $f(z)=e^z$ definida en $D_1=\{z\,:\,\textbf{Re}
-(z)=0\}$, i.e., para $f(iy)=e^{iy}$, no existe el límite cuando 
- $z=iy\rightarrow \infty $, debido que a lo largo del eje imaginario, 
- $e^{iy} = \cos y+i\sin y$  es periódica y no constante.</p>
-
-<p>
-	Finalmente, para $f(z)=e^z$ definida en $D_2=\{z\,:\,\textbf{Re}(z)&lt;0\}$ 
-	tenemos que $$\lim_{z\rightarrow \infty}f(z)=0.$$
-</p>
 
 <p>
 	Existe una manera más sencilla de calcular límites como los mostrados en
@@ -318,6 +314,13 @@ $$\lim_{z\rightarrow \infty}\frac{2z+i}{z+1}=2 \quad \text{since}\quad \lim_{z\r
 Más aún,
 $$\lim_{z\rightarrow \infty}\frac{2z^3-1}{z^2+1}=\infty \quad \text{since}\quad \lim_{z\rightarrow 0}\frac{(1/z^2)+1}{(2/z^3)-1}=\frac{z+z^3}{2-z^3}=0.$$</p>
 </div>
+
+<p>
+	Aunque hemos utilizado con éxito técnicas de Cálculo para determinar
+límites de valor complejo, la intuición de variable real no siempre puede aplicarse.
+Por ejemplo, $\lim_{z\to \infty} e^{-z}$ no es $0$;
+de hecho, este límite no existe.
+</p>
 
 
     
