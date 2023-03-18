@@ -33,6 +33,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet' type='text/css'>
 	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="../css/w3.css">
+	<link rel="stylesheet" href="../css/support.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" >
 	<!-- CODE PRETTIFY -->
 	<!-- via: https://github.com/google/code-prettify -->
@@ -364,6 +365,29 @@ Im = Superficie(u, v, imaginary( f(u + ί v) ), u, -5, 5, v, -5, 5)
     
    <!-- <p><strong>Note:</strong> The applet was made with <a href="https://www.geogebra.org/material/show/id/y9pnh3hu">GeoGebra</a>.</p>-->
 
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+	<!-- Modal content -->
+	<div class="modal-content">
+	  <div class="modal-header">
+		<span class="close">&times;</span>
+		<h3>¡Hola! 👋</h3>
+	  </div>
+	  <div class="modal-body">
+		
+		<div w3-include-html="mensaje.html"></div>
+	   
+	  </div>
+	  <div class="modal-footer">
+		<br/>
+		<p style="text-align:center;font-weight:bold">¡Muchas gracias! 🙏 ¡Aprecio mucho tu apoyo! 🤗</p>
+	  </div>
+	</div>
+  
+</div>
+
+
 	<!-- link to the next page -->
 	<a href="esfera_de_riemann.html"><p class="nextPage">NEXT: La Esfera de Riemann</p></a>
 	<footer>
@@ -383,6 +407,8 @@ Im = Superficie(u, v, imaginary( f(u + ί v) ), u, -5, 5, v, -5, 5)
 
 <!-- nice smart quotes, via: http://smartquotesjs.com -->
 <script src="../js/smartquotes.min.js"></script>
+<script src="../js/message.js"></script>
+<script> includeHTML(); // Import html info file</script>
 
 </body>
 </html>

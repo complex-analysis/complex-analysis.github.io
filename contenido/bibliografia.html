@@ -37,6 +37,7 @@
 		type='text/css'>
 	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="../css/w3.css">
+	<link rel="stylesheet" href="../css/support.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 	<!-- CODE PRETTIFY -->
 	<!-- via: https://github.com/google/code-prettify -->
@@ -221,7 +222,7 @@
 						class="w3-text-indigo w3-hover-text-blue"><i class="fas fa-external-link-alt"></i></a></li>
 				<li>Wegert, E. (2016). Visual exploration of complex functions. In T. Qian and L. R. Rodino (eds.),
 					<em>Mathematical analysis, probability and applications – Plenary Lectures SPMS</em> (Vol. 177. pp.
-					253–279). Switzerland: Springer International Publishing.</li>
+					253-279). Switzerland: Springer International Publishing.</li>
 				<li>Wegert, E. &amp; Semmler, G. (2011). Phase plots of complex functions: a journey in illustration.
 					<em>Notices Amer. Math. Soc.</em> 58, 768-780. <a
 						href="https://www.ams.org/notices/201106/rtx110600768p.pdf" target="_blank" title="Open link"
@@ -247,6 +248,28 @@
 
 		<br>
 
+		<!-- The Modal -->
+<div id="myModal" class="modal">
+
+	<!-- Modal content -->
+	<div class="modal-content">
+	  <div class="modal-header">
+		<span class="close">&times;</span>
+		<h3>¡Hola! 👋</h3>
+	  </div>
+	  <div class="modal-body">
+		
+		<div w3-include-html="mensaje.html"></div>
+	   
+	  </div>
+	  <div class="modal-footer">
+		<br/>
+		<p style="text-align:center;font-weight:bold">¡Muchas gracias! 🙏 ¡Aprecio mucho tu apoyo! 🤗</p>
+	  </div>
+	</div>
+  
+</div>
+
 		<footer>
 			<p>[ <a href="../es.html">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
 					href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
@@ -266,6 +289,8 @@
 
 	<!-- nice smart quotes, via: http://smartquotesjs.com -->
 	<script src="../js/smartquotes.min.js"></script>
+	<script src="../js/message.js"></script>
+	<script> includeHTML(); // Import html info file</script>
 
 </body>
 

@@ -33,6 +33,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet' type='text/css'>
 	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="../css/w3.css">
+	<link rel="stylesheet" href="../css/support.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" >
 	<!-- CODE PRETTIFY -->
 	<!-- via: https://github.com/google/code-prettify -->
@@ -308,7 +309,28 @@ La siguiente expresión se conoce como la <em>desigualdad generalizada del triá
 </div>
 
     <br>
-    
+ 
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+	<!-- Modal content -->
+	<div class="modal-content">
+	  <div class="modal-header">
+		<span class="close">&times;</span>
+		<h3>¡Hola! 👋</h3>
+	  </div>
+	  <div class="modal-body">
+		
+		<div w3-include-html="mensaje.html"></div>
+	   
+	  </div>
+	  <div class="modal-footer">
+		<br/>
+		<p style="text-align:center;font-weight:bold">¡Muchas gracias! 🙏 ¡Aprecio mucho tu apoyo! 🤗</p>
+	  </div>
+	</div>
+  
+</div>
 
 	<!-- link to the next page -->
 	<a href="interpretacion_geometrica_add_mult.html"><p class="nextPage">NEXT: Interpretación Geométrica</p></a>
@@ -329,6 +351,8 @@ La siguiente expresión se conoce como la <em>desigualdad generalizada del triá
 
 <!-- nice smart quotes, via: http://smartquotesjs.com -->
 <script src="../js/smartquotes.min.js"></script>
+<script src="../js/message.js"></script>
+<script> includeHTML(); // Import html info file</script>
 
 </body>
 </html>

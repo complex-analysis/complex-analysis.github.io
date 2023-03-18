@@ -33,6 +33,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet' type='text/css'>
 	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="../css/w3.css">
+	<link rel="stylesheet" href="../css/support.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" >
 	<!-- CODE PRETTIFY -->
 	<!-- via: https://github.com/google/code-prettify -->
@@ -311,6 +312,29 @@ tales que $Z_2\neq 0$. Calcula la representación polar de $Z_1/Z_2$.
     
    <!-- <p><strong>Note:</strong> The applet was made with <a href="https://www.geogebra.org/material/show/id/y9pnh3hu">GeoGebra</a>.</p>-->
 
+
+   <!-- The Modal -->
+<div id="myModal" class="modal">
+
+	<!-- Modal content -->
+	<div class="modal-content">
+	  <div class="modal-header">
+		<span class="close">&times;</span>
+		<h3>¡Hola! 👋</h3>
+	  </div>
+	  <div class="modal-body">
+		
+		<div w3-include-html="mensaje.html"></div>
+	   
+	  </div>
+	  <div class="modal-footer">
+		<br/>
+		<p style="text-align:center;font-weight:bold">¡Muchas gracias! 🙏 ¡Aprecio mucho tu apoyo! 🤗</p>
+	  </div>
+	</div>
+  
+</div>
+
 	<!-- link to the next page -->
 	<a href="argumento_principal.html"><p class="nextPage">NEXT: El Argumento Principal</p></a>
 	<footer>
@@ -330,6 +354,8 @@ tales que $Z_2\neq 0$. Calcula la representación polar de $Z_1/Z_2$.
 
 <!-- nice smart quotes, via: http://smartquotesjs.com -->
 <script src="../js/smartquotes.min.js"></script>
+<script src="../js/message.js"></script>
+<script> includeHTML(); // Import html info file</script>
 
 </body>
 </html>
