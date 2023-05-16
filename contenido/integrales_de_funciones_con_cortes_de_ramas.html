@@ -247,9 +247,12 @@
 
 		<p class="w3-responsive">
 			Como ya habrás notado, la integral (\ref{ex-01}) existe
-			porque el integrando es <a href="curvas_en_el_plano_complejo.html" target="_blank">continuo por piezas</a>
+			porque el integrando es 
+			<a href="curvas_en_el_plano_complejo.html" target="_blank">continuo por piezas</a>
 			en $C$. Para cofirmar esto, observa que cuando $z(\theta)= 3e^{i\theta}$, entonces
-			$$f\left(z(\theta)\right)= \exp\left(\frac{1}{2} \ln 3 + i \theta\right) = \sqrt{3}e^{i\theta/2}.$$
+			$$
+			f\left(z(\theta)\right)= \exp\left[\frac{1}{2}\left( \ln 3 + i \theta\right)\right] = \sqrt{3}e^{i\theta/2}.
+			$$
 		</p>
 
 		<p class="w3-responsive">
@@ -263,8 +266,8 @@
 			\end{eqnarray*}
 			en $\theta = \pi $ existen. Esto es
 			\begin{eqnarray*}
-			\lim_{\theta \rightarrow \pi+}-3\sqrt{3} \sin \frac{3\theta }{2}= 3\sqrt{3}
-			\quad \text{ and } \quad \lim_{\theta \rightarrow \pi+} 3\sqrt{3} \cos \frac{3\theta }{2} = 0.\\
+			\lim_{\theta \rightarrow \pi-}-3\sqrt{3} \sin \frac{3\theta }{2}= 3\sqrt{3}
+			\quad \text{ and } \quad \lim_{\theta \rightarrow \pi-} 3\sqrt{3} \cos \frac{3\theta }{2} = 0.\\
 			\end{eqnarray*}
 			Lo cual significa que $f\left(z(\theta)\right)z'(\theta)$ es continua en el intervalo cerrado
 			$0 \leq \theta \leq \pi$ when its value at $\theta = \pi $ is defined as $3\sqrt{3}$.
