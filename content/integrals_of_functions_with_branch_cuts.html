@@ -232,9 +232,13 @@
 
 		<p class="w3-responsive">
 			As you already have figured it out, the integral (\ref{ex-01}) exists
-			because the integrand is <a href="curves_in_the_complex_plane.html" target="_blank">piecewise continuous</a>
-			on $C$. To confirm this, observe that when $z(\theta)= 3e^{i\theta}$, then
-			$$f\left(z(\theta)\right)= \exp\left(\frac{1}{2} \ln 3 + i \theta\right) = \sqrt{3}e^{i\theta/2}.$$
+			because the integrand is 
+			<a href="curves_in_the_complex_plane.html" target="_blank">piecewise continuous</a>
+			on $C$. To confirm this, observe that when $z(\theta)= 3e^{i\theta}$, 
+			then
+			$$
+			f\left(z(\theta)\right)= \exp\left[\frac{1}{2} \left(\ln 3 + i \theta\right)\right] = \sqrt{3}e^{i\theta/2}.
+			$$
 		</p>
 
 		<p class="w3-responsive">
@@ -247,8 +251,8 @@
 			\end{eqnarray*}
 			at $\theta = \pi $ exist. That is
 			\begin{eqnarray*}
-			\lim_{\theta \rightarrow \pi+}-3\sqrt{3} \sin \frac{3\theta }{2}= 3\sqrt{3}
-			\quad \text{ and } \quad \lim_{\theta \rightarrow \pi+} 3\sqrt{3} \cos \frac{3\theta }{2} = 0.\\
+			\lim_{\theta \rightarrow \pi-}-3\sqrt{3} \sin \frac{3\theta }{2}= 3\sqrt{3}
+			\quad \text{ and } \quad \lim_{\theta \rightarrow \pi-} 3\sqrt{3} \cos \frac{3\theta }{2} = 0.\\
 			\end{eqnarray*}
 			This means that $f\left(z(\theta)\right)z'(\theta)$ is continuous on the closed interval
 			$0 \leq \theta \leq \pi$ when its value at $\theta = \pi $ is defined as $3\sqrt{3}$.
