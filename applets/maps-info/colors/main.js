@@ -22,7 +22,7 @@ root.setThemes([
 var chart = root.container.children.push(am5map.MapChart.new(root, {
   panX: "rotateX",
   panY: "rotateY",
-  projection: am5map.geoMercator(),
+  projection: am5map.geoNaturalEarth1(),
   layout: root.horizontalLayout,
 }));
 
