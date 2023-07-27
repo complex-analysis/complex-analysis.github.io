@@ -289,17 +289,17 @@ var heatLegend = chart.children.push(am5.HeatLegend.new(root, {
   startColor: am5.color("#9cc7e7"),
   endColor: am5.color("#0f1317"),
   startText: "0",
-  endText: "65000",
+  endText: "65K",
   //stepCount: 6
 }));
 
 heatLegend.startLabel.setAll({
-  fontSize: 10,
+  fontSize: 12,
   fill: heatLegend.get("startColor")
 });
 
 heatLegend.endLabel.setAll({
-  fontSize: 10,
+  fontSize: 12,
   fill: heatLegend.get("endColor")
 });
 
