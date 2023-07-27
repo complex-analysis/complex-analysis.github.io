@@ -23,7 +23,7 @@ var chart = root.container.children.push(am5map.MapChart.new(root, {
   panX: "rotateX",
   panY: "rotateY",
   projection: am5map.geoMercator(),
-  //layout: root.horizontalLayout
+  layout: root.horizontalLayout
 }));
 
 // Create polygon series
@@ -240,6 +240,19 @@ polygonSeries.data.setAll([
   {	id:	"SR"	, value:	5	},
   {	id:	"TO"	, value:	1	},
   {	id:	"WS"	, value:	3	},
+  {	id:	"AQ"	, value:	0	},
+  {	id:	"ML"	, value:	0	},
+  {	id:	"TD"	, value:	0	},
+  {	id:	"CD"	, value:	0	},
+  {	id:	"CG"	, value:	0	},
+  {	id:	"CF"	, value:	0	},
+  {	id:	"IS"	, value:	0	},
+  {	id:	"SJ"	, value:	0	},
+  {	id:	"TJ"	, value:	0	},
+  {	id:	"GF"	, value:	0	},
+  {	id:	"ER"	, value:	0	},
+  {	id:	"KP"	, value:	0	},
+  {	id:	"LA"	, value:	0	},
 ]);
 
 var heatLegend = chart.children.push(am5.HeatLegend.new(root, {
@@ -248,7 +261,7 @@ var heatLegend = chart.children.push(am5.HeatLegend.new(root, {
   endColor: am5.color("#0f1317"),
   startText: "0",
   endText: "65000",
-  stepCount: 8
+  stepCount: 100
 }));
 
 heatLegend.startLabel.setAll({
