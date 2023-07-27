@@ -23,7 +23,7 @@ var chart = root.container.children.push(am5map.MapChart.new(root, {
   panX: "rotateX",
   panY: "rotateY",
   projection: am5map.geoMercator(),
-  layout: root.horizontalLayout
+  layout: root.horizontalLayout,
 }));
 
 // Create series for background fill
