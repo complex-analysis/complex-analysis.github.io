@@ -289,7 +289,7 @@ var heatLegend = chart.children.push(am5.HeatLegend.new(root, {
   startColor: am5.color("#9cc7e7"),
   endColor: am5.color("#0f1317"),
   startText: "0",
-  endText: "65K",
+  endText: "75K",
   //stepCount: 6
 }));
 
