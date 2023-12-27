@@ -269,6 +269,7 @@ polygonSeries.data.setAll([
   {	id:	"SR"	, value:	1	},
   {	id:	"TO"	, value:	1	},
   {	id:	"WS"	, value:	1	},
+
   {	id:	"AQ"	, value:	0	},
   {	id:	"ML"	, value:	0	},
   {	id:	"TD"	, value:	0	},
@@ -282,6 +283,14 @@ polygonSeries.data.setAll([
   {	id:	"ER"	, value:	0	},
   {	id:	"KP"	, value:	0	},
   {	id:	"LA"	, value:	0	},
+  {	id:	"GW"	, value:	0	},
+  {	id:	"XK"	, value:	0	},
+  {	id:	"TL"	, value:	0	},
+  {	id:	"AX"	, value:	0	},
+  {	id:	"SB"	, value:	0	},
+  {	id:	"DJ"	, value:	0	},
+  {	id:	"MQ"	, value:	0	},
+  {	id:	"FK"	, value:	0	},
 ]);
 
 var heatLegend = chart.children.push(am5.HeatLegend.new(root, {
