@@ -17,8 +17,8 @@ let zI, zO;
 function setup() {
     // It looks better when the canvas is a square, min 400x400, 
     // but you can use a rectangle as well :)
-    cnv = createCanvas(500, 500);
-    cnv.parent('sketch-Holder');
+    createCanvas(500, 500);
+    
     pixelDensity(1);
 
     pg = createGraphics(500, 500);
