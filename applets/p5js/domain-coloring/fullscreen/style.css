@@ -4,8 +4,23 @@ body {
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden
 }
 
+/* LAYOUT ELEMENTS */
+#wrapper {
+	width: 100%;
+	padding: 1em;
+	margin-top: -1em;
+}
 
+/* SMALL SCREENS */
+@media only screen and (min-width: 820px) {
+	#wrapper {
+		width: 800px;
+		font-size: 19px;
+		margin: 4em auto 60px auto;
+		padding: 0;
+	}
 
+	
+}
