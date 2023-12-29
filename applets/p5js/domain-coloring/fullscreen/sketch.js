@@ -8,14 +8,20 @@ https://jcponce/github/io
 Notes: To be refactored. :)
 */
 
+let cv1, cv2;
 function setup(){
     
-    let canvas = createCanvas(500, 500);
-      canvas.parent('cvn');
+    createCanvas(800, 500);
+
+    cv1 = createGraphics(500, 500);
+    cv2 = createGraphics(300, 500);
 }
 
 function draw(){
-    background(100);
+    cv1.background(10);
+    image(cv1, 0, 0, 500, 500);
+    cv2.background(200);
+    image(cv2, 500, 0, 300, 500);
 }
 
 function windowResize(){
