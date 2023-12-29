@@ -11,7 +11,7 @@ Notes: To be refactored. :)
 function setup(){
     
     let canvas = createCanvas(500, 500);
-      canvas.parent('canvasContainer');
+      canvas.parent('cvn');
 }
 
 function draw(){
