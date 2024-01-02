@@ -71,6 +71,8 @@ direct donation using the link below. Thank you for your support!
 
 * [PayPal](https://paypal.me/jcarlosponce/3)
 
+* [T-shirts](https://jcponcemath.secure-decoration.com/shop/category/complex?c=4336971)
+
 
 ---
 

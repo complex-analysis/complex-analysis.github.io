@@ -17,8 +17,8 @@ let zI, zO;
 function setup() {
     // It looks better when the canvas is a square, min 400x400, 
     // but you can use a rectangle as well :)
-    cnv = createCanvas(500, 500);
-    cnv.parent('sketch-Holder');
+    createCanvas(500, 500);
+    
     pixelDensity(1);
 
     pg = createGraphics(500, 500);
@@ -105,6 +105,7 @@ function resetPlot() {
 function mouseWheel() {
     if (domC.x <= mouseX && mouseX <= domC.w && domC.y <= mouseY && mouseY <= domC.h)
         domC.zoomAt(mouseX, mouseY, 0.9, event.delta < 0);
+    
 }
 
 function zoomIn() {
