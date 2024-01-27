@@ -1,124 +1,126 @@
 <!doctype html>
 <html>
+
 <head>
 
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
-	<title>Complex Analysis</title>
+    <title>Complex Analysis</title>
 
-	<!-- dublin core -->
-	<meta name="dc.title" CONTENT="Complex Analysis">
-	<meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
-	<meta name="dc.date" CONTENT="26-01-2019">
-        <meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
-	<meta name="dc.type" CONTENT="Interactive Resource">
-	<meta name="dc.format" CONTENT="HTML">
-	<meta name="dc.language" CONTENT="en-US">
-	<meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+    <!-- dublin core -->
+    <meta name="dc.title" CONTENT="Complex Analysis">
+    <meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+    <meta name="dc.date" CONTENT="26-01-2019">
+    <meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
+    <meta name="dc.type" CONTENT="Interactive Resource">
+    <meta name="dc.format" CONTENT="HTML">
+    <meta name="dc.language" CONTENT="en-US">
+    <meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
 
-	<!-- social media cards -->
-	<meta property="og:title" content="Complex Analysis">
-	<meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
-	<meta property="og:type" content="website">
-	<!--<meta property="og:image" content="">
+    <!-- social media cards -->
+    <meta property="og:title" content="Complex Analysis">
+    <meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+    <meta property="og:type" content="website">
+    <!--<meta property="og:image" content="">
 	<meta property="og:url" content="">-->
-	<meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
-	<meta property="og:site_name" content="Complex Analysis">
-    
-	
-	<!-- FONTS AND CSS -->
-	<link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
-	<link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet' type='text/css'>
-	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+    <meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+    <meta property="og:site_name" content="Complex Analysis">
+
+
+    <!-- FONTS AND CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet'
+        type='text/css'>
+    <link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="../css/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" >
-	<!-- CODE PRETTIFY -->
-	<!-- via: https://github.com/google/code-prettify -->
-	<script src="../js/run_prettify.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- CODE PRETTIFY -->
+    <!-- via: https://github.com/google/code-prettify -->
+    <script src="../js/run_prettify.js"></script>
 
-	
 
-	<!-- JQUERY FANCY ADDITIONS -->
-	<!-- add code class, hover text, etc -->
+
+    <!-- JQUERY FANCY ADDITIONS -->
+    <!-- add code class, hover text, etc -->
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script>
+    <script>
 
-		$(document).ready(function() {
+        $(document).ready(function () {
 
-			// prettyprint the code, pls
-			$('pre').addClass('prettyprint lang-java');
+            // prettyprint the code, pls
+            $('pre').addClass('prettyprint lang-java');
 
-			// add word-breaks to anything with a / or - in it
-			$('h1').each(function() {
-				var t = $(this).text();
-				t = t.replace('/', '/<wbr>');
-				t = t.replace('-', '-<wbr>');
-				$(this).html(t);
-			});
+            // add word-breaks to anything with a / or - in it
+            $('h1').each(function () {
+                var t = $(this).text();
+                t = t.replace('/', '/<wbr>');
+                t = t.replace('-', '-<wbr>');
+                $(this).html(t);
+            });
 
-			// set formatting
-			resizeCommands();
-		});
+            // set formatting
+            resizeCommands();
+        });
 
-		// when the window gets resized, do some stuff to keep everything
-		// looking pretty
-		$(window).resize( function() {
-			resizeCommands();
-		});
+        // when the window gets resized, do some stuff to keep everything
+        // looking pretty
+        $(window).resize(function () {
+            resizeCommands();
+        });
 
-		// things to do when the page is loaded or window resized
-		function resizeCommands() {
-			// large-screen stuff...
-			if ($(window).width() > 600) {
+        // things to do when the page is loaded or window resized
+        function resizeCommands() {
+            // large-screen stuff...
+            if ($(window).width() > 600) {
 
-				// long headline on intro page
-				// $('#introHeadline').html('TABLE OF CONTENTS');
+                // long headline on intro page
+                // $('#introHeadline').html('TABLE OF CONTENTS');
 
-				// menu hover stuff on larger screens
-				// (does weird formatting on larger screens)
-				// hover over title to show "Table of Contents"
-				$('#title a').hover(
-					function() {
-						$('#title a').text('Table of Contents');
-					},
-					function() {
-						$('#title a').text('Complex Analysis');	// set back when moving out
-					}
-				);
+                // menu hover stuff on larger screens
+                // (does weird formatting on larger screens)
+                // hover over title to show "Table of Contents"
+                $('#title a').hover(
+                    function () {
+                        $('#title a').text('Table of Contents');
+                    },
+                    function () {
+                        $('#title a').text('Complex Analysis');	// set back when moving out
+                    }
+                );
 
-				// set prev/next titles
-				$('#prev a').hover(
-					function() {
-						$('#title a').text('Prev: Mandelbrot Set');
-					},
-					function() {
-						$('#title a').text('Complex Analysis');
-					}
-				);
-				$('#next a').hover(
-					function() {
-						$('#title a').text('Next: Applications of Conformal Mapping');
-					},
-					function() {
-						$('#title a').text('Complex Analysis');
-					}
-				);
-			}
+                // set prev/next titles
+                $('#prev a').hover(
+                    function () {
+                        $('#title a').text('Prev: Mandelbrot Set');
+                    },
+                    function () {
+                        $('#title a').text('Complex Analysis');
+                    }
+                );
+                $('#next a').hover(
+                    function () {
+                        $('#title a').text('Next: Applications of Conformal Mapping');
+                    },
+                    function () {
+                        $('#title a').text('Complex Analysis');
+                    }
+                );
+            }
 
-			// small-screen stuff
-			else {
-				// short headline on intro page
-				// $('#introHeadline').html('INTRO');
-			}
-		}
-	</script>
+            // small-screen stuff
+            else {
+                // short headline on intro page
+                // $('#introHeadline').html('INTRO');
+            }
+        }
+    </script>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
-<script src="../js/google-analytics-ga4.js"></script>
-    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+    <script src="../js/google-analytics-ga4.js"></script>
+
     <!--MathJax starts-->
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
@@ -128,9 +130,10 @@
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
         </script>
-    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML">
         </script>
-    
+
     <!-- Cindy.js
     <link rel="stylesheet" href="dclandscape/app.css" />
     <link rel="stylesheet" href="dclandscape/CindyJS.css" />
@@ -138,14 +141,20 @@
     <script type="text/javascript" src="dclandscape/CindyGL.js"></script>
     <script type="text/javascript" src="dclandscape/symbolic.js"></script>
      Cindy.js -->
-	
+
 </head>
 
 <body>
-<div id="wrapper">
-        
-        <header><p><span id="prev"><a href="mandelbrot_set.html">&larr;</a></span><span id="title"><a href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a href="applications_conformal.html">&rarr;</a></span><div class="clear"></div></p></header>
-        
+    <div id="wrapper">
+
+        <header>
+            <p><span id="prev"><a href="mandelbrot_set.html">&larr;</a></span><span id="title"><a
+                        href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a
+                        href="applications_conformal.html">&rarr;</a></span>
+            <div class="clear"></div>
+            </p>
+        </header>
+
         <!--
         <div class="w3-hide-small">
             <p><iframe src="../applets/p5js/flowfield/index.html"  width="800px" height="400px" style="border:none;" style="overflow:hidden;"></iframe></p>
@@ -153,169 +162,204 @@
         <div class="w3-hide-large w3-hide-medium">
             <p><img src="../images/applications.png" alt="f(z)=z+1/z" title="f(z)=z+1/z"></p>
                 </div>-->
-        
-        
 
-<h1>The Julia Set</h1>
-<hr>
 
-<p>In the previous section we showed how the Mandelbrot set can be generated using the expression
-\[z_{n+1}=z_{n}^2+z_0.\]
-This is a particular case of the quadratic recurrence equation
-\begin{eqnarray}\label{julia}
-z_{n+1}=z_{n}^2+c
-\end{eqnarray}
-with $c$ a fixed complex number. The set we obtain with this equation is known as the Julia set. 
-In fact, there is a different Julia set for almost every $c$.</p>
 
-<p>Similarly as we did for the Mandelbrot set, we obtain a sequence of complex numbers 
-    $z_n$ with $n=0,1,2,\ldots$. Again, the points $z_n$ are said to form the orbit of $z_0$, 
-    and the Julia set is defined as follows:</p>
+        <h1>The Julia Set</h1>
+        <hr>
 
-<div class="w3-padding">
-    <p>If the orbit $z_n$ fails to escape to infinity, the initial $z_0$ is said to belong to 
-        the <em>filled-in Julia Set</em>.</p>
-</div>
+        <p>In the previous section we showed how the Mandelbrot set can be generated using the expression
+            \[z_{n+1}=z_{n}^2+z_0.\]
+            This is a particular case of the quadratic recurrence equation
+            \begin{eqnarray}\label{julia}
+            z_{n+1}=z_{n}^2+c
+            \end{eqnarray}
+            with $c$ a fixed complex number. The set we obtain with this equation is known as the Julia set.
+            In fact, there is a different Julia set for almost every $c$.</p>
 
-<p>The Julia set is named after the French mathematician <a href="https://en.wikipedia.org/wiki/Gaston_Julia" target="_blank">Gaston Julia</a> 
-    who investigated their properties in 1915 and culminated in his famous paper in 1918:
-    <a href="http://sites.mathdoc.fr/JMPA/PDF/JMPA_1918_8_1_A2_0.pdf" target="_blank"><em>Mémoire sur l’itération des fonctions rationnelles</em></a>. 
-    While the Julia set is now associated with the quadratic polynomial in (\ref{julia}), 
-    Julia was interested in the iterative properties of a more general expression, namely
-\[z^4 + \frac{z^3}{z-1} + \frac{z^2}{z^3 + 4 z^2 + 5} + c.\]
-The Julia sets, defined by the equation (\ref{julia}), can take all kinds of
-shapes, and a small change in $c$ can change the Julia
-set very greatly. In 1979, with the help of computer, B. B. Mandelbrot studied the Julia sets 
-and tried to classify all the possible shapes and came up with a new shape: the Mandelbrot Set.
-</p>
+        <p>Similarly as we did for the Mandelbrot set, we obtain a sequence of complex numbers
+            $z_n$ with $n=0,1,2,\ldots$. Again, the points $z_n$ are said to form the orbit of $z_0$,
+            and the Julia set is defined as follows:</p>
 
-<p>Explore the Julia sets in the applet below. Zoom in or out in different regions. Change the number of iterations 
-    and observe what happens to the plot. Move the mouse around and observe the different Julia sets depending of the value of $c$.
-</p>
-    
-<div class="w3-center w3-hide-small">
-    <p class="w3-text-grey w3-hide-large">Pssst! If you are using a tablet, try this applet in your desktop for better interaction.</p>
-        <iframe  name="Julia" src="../applets/p5js/julia-content/index.html"  width="770px" height="590px" style="border:none;" style="overflow:hidden;" scrolling="no"></iframe>
-        <div class="w3-text-grey " style="display: flex; justify-content: space-between; width: 800px;">
-          <div><strong>+:</strong> Zoom In</div>
-          <div><strong>-:</strong> Zoom Out</div>
-          <div><strong>R</strong>=Reset view </div>
-          <div><strong>I</strong>=Information &amp; Frame</div>
-          <div><a href="../applets/p5js/julia/" target="_blank" title="Open full screen"><i class="fas fa-expand "></i></a></div>
-        </div> <br/>
-        <!--
+        <div class="w3-padding">
+            <p>If the orbit $z_n$ fails to escape to infinity, the initial $z_0$ is said to belong to
+                the <em>filled-in Julia Set</em>.</p>
+        </div>
+
+        <p>The Julia set is named after the French mathematician <a href="https://en.wikipedia.org/wiki/Gaston_Julia"
+                target="_blank">Gaston Julia</a>
+            who investigated their properties in 1915 and culminated in his famous paper in 1918:
+            <a href="http://sites.mathdoc.fr/JMPA/PDF/JMPA_1918_8_1_A2_0.pdf" target="_blank"><em>Mémoire sur
+                    l’itération des fonctions rationnelles</em></a>.
+            While the Julia set is now associated with the quadratic polynomial in (\ref{julia}),
+            Julia was interested in the iterative properties of a more general expression, namely
+            \[z^4 + \frac{z^3}{z-1} + \frac{z^2}{z^3 + 4 z^2 + 5} + c.\]
+            The Julia sets, defined by the equation (\ref{julia}), can take all kinds of
+            shapes, and a small change in $c$ can change the Julia
+            set very greatly. In 1979, with the help of computer, B. B. Mandelbrot studied the Julia sets
+            and tried to classify all the possible shapes and came up with a new shape: the Mandelbrot Set.
+        </p>
+
+        <p>Explore the Julia sets in the applet below. Zoom in or out in different regions. Change the number of
+            iterations
+            and observe what happens to the plot. Move the mouse around and observe the different Julia sets depending
+            of the value of $c$.
+        </p>
+
+        <div class="w3-center w3-hide-small">
+            <p class="w3-text-grey w3-hide-large">Pssst! If you are using a tablet, try this applet in your desktop for
+                better interaction.</p>
+            <iframe name="Julia" src="../applets/p5js/julia-content/index.html" width="770px" height="590px"
+                style="border:none;" style="overflow:hidden;" scrolling="no"></iframe>
+            <div class="w3-text-grey " style="display: flex; justify-content: space-between; width: 800px;">
+                <div><strong>+:</strong> Zoom In</div>
+                <div><strong>-:</strong> Zoom Out</div>
+                <div><strong>R</strong>=Reset view </div>
+                <div><strong>I</strong>=Information &amp; Frame</div>
+                <div><a href="../applets/p5js/julia/" target="_blank" title="Open full screen"><i
+                            class="fas fa-expand "></i></a></div>
+            </div> <br />
+            <!--
         <p class="w3-text-grey w3-medium"><strong>+:</strong> Zoom In &nbsp; &nbsp; &nbsp; <strong>-:</strong> Zoom Out &nbsp; &nbsp; &nbsp; <strong>R</strong>=Reset view &nbsp; &nbsp; &nbsp;  <strong>I</strong>=Information &amp; Frame</p>-->
 
-   <div class="w3-container w3-center">
-       <button onclick="var ifr=document.getElementsByName('Julia')[0]; ifr.src=ifr.src;" class="w3-btn w3-ripple w3-light-grey"><strong>Reset</strong></button>
-       &nbsp;&nbsp;
-       <a href="../applets/p5js/julia/" target="_blank" 
-       class="w3-btn w3-ripple w3-light-grey">Open in a separate tab</a>
-    </div>
-    </div>
-    
-    
-   <div class="w3-hide-large w3-hide-medium w3-khaki w3-round w3-padding w3-panel">
-        <p><i class="fas fa-sad-tear"></i> Sorry, the applet is  not supported for small screens. 
-            Rotate your device to landscape. Or resize your window so it's more wide than tall.</p>
-    </div>
-    
-    <hr>
-    
-    <h2>The Mandelbrot and Julia Sets Connection</h2>
-    
-    <p>Due to the definition of the Mandelbrot set, there is a close correspondence between the geometry 
-        of the Mandelbrot set at a given point and the structure of the corresponding Julia set. In other 
-        words, the Mandelbrot set forms a kind of index into the Julia set. 
-        A Julia set is either connected or disconnected, values of $c$ chosen from within the 
-        Mandelbrot set are connected while those from the outside of the Mandelbrot 
-        set are disconnected. The disconnected sets are often called <em>dust</em>,
-        they consist of individual points no matter what resolution they are viewed at.</p>
-    
-    <p>Explore the relationship between the Mandelbrot and Julia sets in the following  applet. Move the 
-        mouse over to the Mandelbrot set to observe different Julia sets. Zoom in or out in different regions. 
-        Open the Controls menu to change the number of iterations or choose an specific value of $c$. </p>
-    
-    <div class="w3-center w3-hide-small">
-        <p class="w3-text-grey w3-hide-large">Pssst! If you are using a tablet, try this applet in your desktop for better interaction.</p>
-        <iframe  name="Julia-Mandelbrot" src="../applets/p5js/julia-mandelbrot-content/index.html"  width="800px" height="400px" style="border:none;" style="overflow:hidden;" scrolling="no"></iframe>
-        
-        <div class="w3-text-grey " style="display: flex; justify-content: space-between; width: 800px;">
-          <div><strong>+:</strong> Zoom In</div>
-          <div><strong>-:</strong> Zoom Out</div>
-          <div><strong>R</strong>=Reset view </div>
-          <div><strong>I</strong>=Information &amp; Frame</div>
-          <div><a href="../applets/p5js/julia-mandelbrot/" target="_blank" title="Open full screen"><i class="fas fa-expand "></i></a></div>
-        </div> <br/>
-        <!--
-        <p class="w3-text-grey w3-medium"><strong>+:</strong> Zoom In &nbsp; &nbsp;  <strong>-:</strong> Zoom Out &nbsp; &nbsp; <strong>R</strong>=Reset view &nbsp;  &nbsp;  <strong>I</strong>=Information &amp; Frame &nbsp;  &nbsp; Double click=fix c</p>-->
+            <div class="w3-container w3-center">
+                <button onclick="var ifr=document.getElementsByName('Julia')[0]; ifr.src=ifr.src;"
+                    class="w3-btn w3-ripple w3-light-grey"><strong>Reset</strong></button>
+                &nbsp;&nbsp;
+                <a href="../applets/p5js/julia/" target="_blank" class="w3-btn w3-ripple w3-light-grey">Open in a
+                    separate tab</a>
+            </div>
+        </div>
 
-   
-   <div class="w3-container w3-center">
-       <button onclick="var ifr=document.getElementsByName('Julia-Mandelbrot')[0]; ifr.src=ifr.src;" class="w3-btn w3-ripple w3-light-grey"><strong>Reset</strong></button>
-       &nbsp;&nbsp;
-       <a href="../applets/p5js/julia-mandelbrot/" target="_blank" 
-       class="w3-btn w3-ripple w3-light-grey">Open in a separate tab</a>
-    </div>
 
-    </div>
-    
-    
-    <div class="w3-hide-large w3-hide-medium w3-khaki w3-round w3-padding w3-panel">
-        <p><i class="fas fa-sad-tear"></i> Sorry, the applet is  not supported for small screens. Rotate your device to landscape. Or resize your window so it's more wide than tall.</p>
-    </div>
-    
-    <hr>
-    
-    <h2>Further reading</h2>
-        
+        <div class="w3-hide-large w3-hide-medium w3-khaki w3-round w3-padding w3-panel">
+            <p><i class="fas fa-sad-tear"></i> Sorry, the applet is not supported for small screens.
+                Rotate your device to landscape. Or resize your window so it's more wide than tall.</p>
+        </div>
+
+        <hr>
+
+        <h2>The Mandelbrot and Julia Sets Connection</h2>
+
+        <p>Due to the definition of the Mandelbrot set, there is a close correspondence between the geometry
+            of the Mandelbrot set at a given point and the structure of the corresponding Julia set. In other
+            words, the Mandelbrot set forms a kind of index into the Julia set.
+            A Julia set is either connected or disconnected, values of $c$ chosen from within the
+            Mandelbrot set are connected while those from the outside of the Mandelbrot
+            set are disconnected. The disconnected sets are often called <em>dust</em>,
+            they consist of individual points no matter what resolution they are viewed at.</p>
+
+        <p>Explore the relationship between the Mandelbrot and Julia sets in the following applet. Move the
+            mouse over to the Mandelbrot set to observe different Julia sets. Zoom in or out in different regions.
+            Open the Controls menu to change the number of iterations or choose an specific value of $c$. </p>
+
+        <div class="w3-center w3-hide-small">
+            <p class="w3-text-grey w3-hide-large">Pssst! If you are using a tablet, try this applet in your desktop for
+                better interaction.</p>
+            <iframe name="Julia-Mandelbrot" src="../applets/p5js/julia-mandelbrot-content/index.html" width="800px"
+                height="400px" style="border:none;" style="overflow:hidden;" scrolling="no"></iframe>
+
+            <div class="w3-text-grey " style="display: flex; justify-content: space-between; width: 800px;">
+                <div><strong>+:</strong> Zoom In</div>
+                <div><strong>-:</strong> Zoom Out</div>
+                <div><strong>R</strong>=Reset view </div>
+                <div><strong>I</strong>=Information &amp; Frame</div>
+                <div><a href="../applets/p5js/julia-mandelbrot/" target="_blank" title="Open full screen"><i
+                            class="fas fa-expand "></i></a></div>
+            </div> <br />
+            <!--
+            <p class="w3-text-grey w3-medium"><strong>+:</strong> Zoom In &nbsp; &nbsp;  <strong>-:</strong> Zoom Out &nbsp; &nbsp; <strong>R</strong>=Reset view &nbsp;  &nbsp;  <strong>I</strong>=Information &amp; Frame &nbsp;  &nbsp; Double click=fix c</p>-->
+
+
+            <div class="w3-container w3-center">
+                <button onclick="var ifr=document.getElementsByName('Julia-Mandelbrot')[0]; ifr.src=ifr.src;"
+                    class="w3-btn w3-ripple w3-light-grey"><strong>Reset</strong></button>
+                &nbsp;&nbsp;
+                <a href="../applets/p5js/julia-mandelbrot/" target="_blank" class="w3-btn w3-ripple w3-light-grey">Open
+                    in a separate tab</a>
+            </div>
+
+        </div>
+
+        <br/>
+        <p>This applet was recently included in some of the animations for the following video
+            from <a href="https://www.quantamagazine.org/" target="_blank">Quanta Magazine</a>:
+          </p>
+      
+          <div style="text-align: center;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/u9GAnW8xFJY?si=Bl5y5qsAaNBD4qr3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p><strong>Article:</strong> <a href="https://www.quantamagazine.org/the-quest-to-decode-the-mandelbrot-set-maths-famed-fractal-20240126/" target="_blank">The Quest to Decode the Mandelbrot Set, Math’s Famed Fractal</a></p>
+          </div>
+
+
+        <div class="w3-hide-large w3-hide-medium w3-khaki w3-round w3-padding w3-panel">
+            <p><i class="fas fa-sad-tear"></i> Sorry, the applet is not supported for small screens. Rotate your device
+                to landscape. Or resize your window so it's more wide than tall.</p>
+        </div>
+
+        <hr>
+
+        <h2>Further reading</h2>
+
         <p>The applets were made with <a href="https://p5js.org">p5.js</a> and the source code can be found:</p>
         <ul>
-            <li><a href="https://github.com/complex-analysis/complex-analysis.github.io/tree/master/applets/p5js/julia" target="_blank">Julia set</a></li>
-            <li><a href="https://github.com/complex-analysis/complex-analysis.github.io/tree/master/applets/p5js/julia-mandelbrot" target="_blank">Julia-Mandelbrot relationship</a></li>
+            <li><a href="https://github.com/complex-analysis/complex-analysis.github.io/tree/master/applets/p5js/julia"
+                    target="_blank">Julia set</a></li>
+            <li><a href="https://github.com/complex-analysis/complex-analysis.github.io/tree/master/applets/p5js/julia-mandelbrot"
+                    target="_blank">Julia-Mandelbrot relationship</a></li>
         </ul>
-        
+
         <p>If you want to learn how to program it yourself, I recommend you this tutorial:</p>
         <ul>
-            <li><a href="https://thecodingtrain.com/CodingChallenges/022-juliaset.html" target="_blank">Coding Challenge: Julia set</a>
+            <li><a href="https://thecodingtrain.com/CodingChallenges/022-juliaset.html" target="_blank">Coding
+                    Challenge: Julia set</a>
             </li>
         </ul>
-    
-    <p>Finally, I recommend you two of the most widely read basic introductions to the Mandelbrot and Julia sets:
-    <ul>
-    <li>
-        <a href="https://www.springer.com/gp/book/9783540158516" target="_blank">The Beauty of Fractals</a> by Heinz-Otto Peitgen &amp; Peter H. Richter,  Munich: Springer-Verlang, 1986.
-    </li>
-    <li>
-        <a href="https://link.springer.com/book/10.1007/978-1-84996-486-9" target="_blank">The Colours of Infinity,</a> by Nigel Lesmoir-Gordon (ed), London: Springer-Verlang, 2010.
-    </li>
-    </ul>
-    They both cover other fascinating fractals and contain many spectacular pictures.
-   </p>
-    
+
+        <p>Finally, I recommend you two of the most widely read basic introductions to the Mandelbrot and Julia sets:
+        <ul>
+            <li>
+                <a href="https://www.springer.com/gp/book/9783540158516" target="_blank">The Beauty of Fractals</a> by
+                Heinz-Otto Peitgen &amp; Peter H. Richter, Munich: Springer-Verlang, 1986.
+            </li>
+            <li>
+                <a href="https://link.springer.com/book/10.1007/978-1-84996-486-9" target="_blank">The Colours of
+                    Infinity,</a> by Nigel Lesmoir-Gordon (ed), London: Springer-Verlang, 2010.
+            </li>
+        </ul>
+        They both cover other fascinating fractals and contain many spectacular pictures.
+        </p>
 
 
-	<!-- link to the next page -->
-	<a href="applications_conformal.html"><p class="nextPage">NEXT: Applications of Conformal Mapping</p></a>
-	<footer>
-		<p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
 
-		<p class="license">
-			<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-				<img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
-			</a>
-		<br/>
-		<strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
-		<strong style="font-size: 18px">
-            <span>&copy; Juan Carlos Ponce Campuzano 2019-<script>document.write(new Date().getFullYear());</script></span>
-        </strong>
-	    </p>
-	</footer>
+        <!-- link to the next page -->
+        <a href="applications_conformal.html">
+            <p class="nextPage">NEXT: Applications of Conformal Mapping</p>
+        </a>
+        <footer>
+            <p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
+                    href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
 
-</div> <!-- end wrapper -->
+            <p class="license">
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                    <img id="license" alt="Creative Commons License" style="border-width:0"
+                        src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+                </a>
+                <br />
+                <strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
+                <strong style="font-size: 18px">
+                    <span>&copy; Juan Carlos Ponce Campuzano 2019-
+                        <script>document.write(new Date().getFullYear());</script>
+                    </span>
+                </strong>
+            </p>
+        </footer>
 
-<!-- nice smart quotes, via: http://smartquotesjs.com -->
-<script src="../js/smartquotes.min.js"></script>
+    </div> <!-- end wrapper -->
+
+    <!-- nice smart quotes, via: http://smartquotesjs.com -->
+    <script src="../js/smartquotes.min.js"></script>
 
 </body>
+
 </html>
