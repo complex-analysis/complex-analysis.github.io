@@ -28,7 +28,7 @@ function draw() {
   push();
   for (let i = 0; i < n - 1; i++) {
     stroke( r, i / s.length, b);
-    strokeWeight(1.5);
+    strokeWeight(2.5);
     let x0 = s[i].re;
     let y0 = s[i].im;
     let x1 = s[i + 1].re;

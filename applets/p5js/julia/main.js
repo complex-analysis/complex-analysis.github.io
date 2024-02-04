@@ -12,7 +12,7 @@ let changeC;//Boolean to fix 'c'
 let c;
 let WIDTH = 490;
 let HEIGHT = 490;
-let ctlsBack = 00;//This is just need it when controls are inside canvas
+let ctlsBack = 0;//This is just needed it when controls are inside canvas
 
 let up = 1;
 let down = 2;
@@ -34,6 +34,7 @@ let pmy = 0;
 function setup() {
     createCanvas(WIDTH, HEIGHT);
     cursor(HAND);
+    //noCursor();
     pixelDensity(1);//I need this for small devices
     
     julia = new JuliaSet();
