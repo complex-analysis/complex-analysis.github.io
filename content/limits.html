@@ -310,7 +310,7 @@
 
                 <p>
                     Now, we assume that limits (\ref{limitpart02}) hold in order to obtain limit (\ref{limitpart01}).
-                    Limits (\ref{limitpart02}) tell us that for each positive number $\epsilon$, there exist positive
+                    Limits (\ref{limitpart02}) tell us that for each positive number $\varepsilon$, there exist positive
                     numbers $\delta_1$
                     and $\delta_2$ such that
                     \begin{eqnarray}\label{limpart03}
@@ -318,7 +318,8 @@
                     \end{eqnarray}
                     and
                     \begin{eqnarray}\label{limpart04}
-                    |v - v_0| \lt \frac{\varepsilon}{2}\quad\text{whenever}\quad 0\lt\sqrt{(x-x_0)^2+(y-y_0)^2}\lt\delta_2
+                    |v - v_0| \lt \frac{\varepsilon}{2}\quad\text{whenever}\quad
+                    0\lt\sqrt{(x-x_0)^2+(y-y_0)^2}\lt\delta_2
                     \end{eqnarray}
                     Let $\delta$ be any positive number smaller than $\delta_1$ and $\delta_2$. Since
                     $$|(u + iv) - (u_0 + iv_0)| = |(u - u_0) + i(v - v_0)| \leq |u - u_0| + |v - v_0|$$
@@ -328,7 +329,8 @@
                     $$|(u + iv) -(u_0 + iv_0)| \lt\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$$
                     whenever
                     $$0 \lt |(x + iy) - (x_0 + iy_0)| \lt \delta.$$
-                    That is, limit (\ref{limitpart01}) holds, and this completes the proof of the theorem. $\blacksquare$
+                    That is, limit (\ref{limitpart01}) holds, and this completes the proof of the theorem.
+                    $\blacksquare$
                 </p>
 
 
@@ -365,9 +367,9 @@
         <p class="theorem" id="limits-properties">
             <strong>Theorem 3:</strong>
             Suppose that
-            \begin{eqnarray*}
+            \begin{eqnarray}
             \lim_{z\rightarrow z_0}f(z)=w_1\quad \text{and}\quad \lim_{z\rightarrow z_0}g(z)=w_2\label{limithypo}
-            \end{eqnarray*}
+            \end{eqnarray}
             Then
             \begin{eqnarray}
             \lim_{z\rightarrow z_0}\big[f(z)+g(z)\big]=w_1+w_2,\label{limitsum}\\
@@ -387,8 +389,53 @@
                 <br>
 
                 <p>
-                    Coming soon!
+                    For proving property (\ref{limitsum}), we must show that for any $\varepsilon >0$ we can find
+                    $\delta >0$ such that
+                    \begin{eqnarray*}
+                    \left| \left(f(z)+g(z)\right)-\left(w_1+w_2\right)\right|\lt\varepsilon \quad \text{when}\quad
+                    0\lt\left| z-z_0\right|\lt\delta
+                    \end{eqnarray*}
+                    By hypothesis, given $\varepsilon >0$ we can find $\delta_1 >0$ and $\delta_2>0$ such that
+                    \begin{eqnarray*}
+                    \left| f(z)-w_1\right|\lt\varepsilon/2 \quad \text{when}\quad 0\lt\left| z-z_0\right|\lt\delta_1 \\
+                    \left| g(z)-w_2\right|\lt\varepsilon/2 \quad \text{when}\quad 0\lt\left| z-z_0\right|\lt\delta_2
+                    \end{eqnarray*}
+                    Then we have
+                    \begin{eqnarray*}
+                    \left| \left(f(z)+g(z)\right)-\left(w_1+w_2\right)\right| &=&\left|
+                    \left(f(z)-w_1\right)+\left(g(z)+w_2\right)\right| \\ &\leq &\left| f(z)-w_1\right|+\left|
+                    g(z)-w_2\right|\\
+                    &\leq & \varepsilon/2+\varepsilon/2=\varepsilon
+                    \end{eqnarray*}
+                    Thefore,
+                    \begin{eqnarray*}
+                    \left| \left(f(z)+g(z)\right)-\left(w_1+w_2\right)\right|\lt\varepsilon \quad \text{when}\quad
+                    0\lt\left| z-z_0\right|\lt\delta
+                    \end{eqnarray*}
+                    where $\delta$ is chosen as the smaller of $\delta_1$ and $\delta_2$.
                 </p>
+
+                <p>
+                    Now we will prove property (\ref{limitmult}) with the aid of <strong>Theorem 2</strong>.
+                    Considering the following
+                    \begin{eqnarray*}
+                    f (z) = u(x, y) + iv(x, y), \quad g(z) = U(x, y) + iV (x, y),\\
+                    z_0 = x_0 + iy_0,\quad w_1 = u_1 + iv_1, \quad w_2 = u_2 + iv_2.
+                    \end{eqnarray*}
+                    Then, according to hypotheses (\ref{limithypo}) and <strong>Theorem 2</strong>, the limits as
+                    $(x, y)$ approaches
+                    $(x_0, y_0)$ of the functions $u, \,v, \,U$ and $V$ exist and have the values $u_1, \,v_1,\, u_2$
+                    and
+                    $v_2$, respectively. So the real and imaginary components of the product
+                    $$f (z)g(z) = (uU - vV ) + i(vU + uV )$$
+                    have the limits $u_1u_2 - v_1v_2$ and $v_1u_2 + u_1v_2,$ respectively, as $(x, y)$ approaches
+                    $(x_0, y_0).$ Hence, by <strong>Theorem 2</strong> again, $f (z)g(z)$ has the limit
+                    $$(u_1u_2 - v_1v_2) + i(v_1u_2 + u_1v_2)$$
+                    as $z$ approaches $z_0;$ and this is equal to $w_1w_2.$ Property (\ref{limitmult}) is thus
+                    established.
+                </p>
+
+                
 
 
             </details>
