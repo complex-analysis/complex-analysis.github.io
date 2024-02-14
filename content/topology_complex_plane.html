@@ -372,23 +372,27 @@ https://www.youtube.com/watch?v=pSjahcOnJvU
 		<p>
 			The <em id="closure">closure</em> of a set $S$ is the closed set
 			consisting of all points in $S$ together
-			with the boundary of $S$. In other words
+			with the boundary of $S.$ In other words
 			$$\overline{S}=S\cup \partial S.$$
 		</p>
 
 		<p>
-			An open set $S$ is <em id="connected-set">connected</em> if each pair of
+			In general, an set is connected if it cannot be expressed as the union of 
+			two disjoint nonempty open sets.
+			An open set $S$ is <em id="connected-set">pollygonally connected</em> if each pair of
 			points $z_1$ and $z_2$ in it can be
 			joined by a polygonal line, consisting of a finite number of
 			line segments joined end to end,
-			that lies entirely in $S$.
+			that lies entirely in $S.$
+			A open set $S$ is connected if and only if
+			$S$ is pollygonally connected.
 		</p>
 
 		<figure class="w3-center">
 			<img class="w3-image w3-mobile" src="../images/chp01/connected-set.gif" alt="Connected set"
 				title="Connected set" style="width:60%;">
 			<figcaption>
-				<b>Figure 3:</b> Connected set.
+				<b>Figure 3:</b> Pollygonally connected open set.
 			</figcaption>
 		</figure>
 
@@ -435,7 +439,7 @@ https://www.youtube.com/watch?v=pSjahcOnJvU
 
 		<figure class="w3-center">
 			<img class="w3-image w3-mobile" src="../images/chp01/bounded.svg" alt="Bounded set" title="Bounded set"
-				style="width:50%;">
+				style="width:55%;">
 			<figcaption>
 				<b>Figure 6:</b> Bounded set.
 			</figcaption>
