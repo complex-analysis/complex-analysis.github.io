@@ -383,7 +383,7 @@
 
         <div class="w3-padding w3-responsive">
             <details>
-                <summary class="w3-hover-text-blue" style="background-color:#f2f2f2"><b style="font-size:20px">Proof</b>
+                <summary class="w3-hover-text-blue" style="background-color:#f2f2f2;cursor: pointer;"><b style="font-size:20px">Proof</b>
                 </summary>
 
                 <br>
@@ -416,7 +416,33 @@
                 </p>
 
                 <p>
-                    Now we will prove property (\ref{limitmult}) with the aid of <strong>Theorem 2</strong>.
+                    Now we will prove property (\ref{limitmult}). First, using the triangle inequality, we write
+                    \begin{eqnarray*}
+                    \left|f(z)g(z) - w_1w_2\right|& \leq & \left|f(z)g(z) - f(z)w_2\right| + \left|f(z)w_2 - w_1w_2\right|\\
+                    &=& \left|f(z)\right|\left|g(z) - w_2\right|+ \left|f(z) - w_1\right|\left|w_2\right|
+                    \end{eqnarray*}
+                    To estimate each term, we choose $\delta_1\gt 0$
+                    so that $0\lt \left|z-z_0\right|\lt \delta_1$ implies 
+                    $\left|f(z)- w_1\right|\lt 1,$ and thus 
+                    $\left|f(z)\right|\lt \left|w_1\right|+1,$ since
+                    $$\left|f(z) - w_1\right|\geq \left|f(z)\right|- \left| w_1\right|.$$
+                    Given $\varepsilon\gt 0,$ set $\delta_2$ and $\delta_3$ such that
+                    $0\lt \left|z-z_0\right|\lt \delta_2$ implies 
+                    $$\left|f(z)-w_1\right|\lt \frac{\varepsilon}{2\left(|w_2|+1\right)}$$
+                    and
+                    $0\lt \left|z-z_0\right|\lt \delta_3$ implies 
+                    $$\left|g(z)-w_2\right|\lt \frac{\varepsilon}{2\left(|w_1|+1\right)}.$$
+                    Thus we can choose $\delta = \min\left\{\delta_1,\delta_2,\delta_3\right\}.$
+                    If $0\lt \left|z-z_0\right|\lt \delta,$ then
+                    \begin{eqnarray*}
+                    \left|f(z)g(z) - w_1w_2\right|& \leq & \left|f(z)\right|\left|g(z) - w_2\right|+ \left|f(z) - w_1\right|\left|w_2\right|\\
+                    &\lt & \frac{\varepsilon}{2\left(|w_1|+1\right)}\left|f(z)\right| + \frac{\varepsilon}{2\left(|w_2|+1\right)}\left|w_2\right|\\
+                    &\lt &  \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+                    \end{eqnarray*}
+                    Therefore, $\lim_{z\rightarrow z_0}\big[f(z)g(z)\big]=w_1w_2$ is proved.
+
+                    <!--
+                         with the aid of <strong>Theorem 2</strong>.
                     Considering the following
                     \begin{eqnarray*}
                     f (z) = u(x, y) + iv(x, y), \quad g(z) = U(x, y) + iV (x, y),\\
@@ -433,6 +459,11 @@
                     $$(u_1u_2 - v_1v_2) + i(v_1u_2 + u_1v_2)$$
                     as $z$ approaches $z_0;$ and this is equal to $w_1w_2.$ Property (\ref{limitmult}) is thus
                     established.
+                    -->
+                </p>
+
+                <p>
+                    The last property is left as an excersie. $\blacksquare$
                 </p>
 
                 
