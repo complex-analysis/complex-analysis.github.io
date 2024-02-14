@@ -250,12 +250,12 @@
         <hr>
 
         <p>
-        There is a connection between 
-        the limits of complex functions $f(z)$ and the limits of 
-        real-valued functions of two real values $g(x,y)$. 
-        The latter type are studied in calculus and we can use their
-        definition and properties, like the following:
-        </p> 
+            There is a connection between
+            the limits of complex functions $f(z)$ and the limits of
+            real-valued functions of two real values $g(x,y)$.
+            The latter type are studied in calculus and we can use their
+            definition and properties, like the following:
+        </p>
 
         <p class="theorem w3-responsive">
             <strong>Theorem 2:</strong>
@@ -276,13 +276,59 @@
 
         <div class="w3-padding w3-responsive">
             <details>
-                <summary class="w3-hover-text-blue" style="background-color:#f2f2f2"><b style="font-size:20px">Proof</b>
+                <summary class="w3-hover-text-blue" style="background-color:#f2f2f2;cursor:pointer"><b
+                        style="font-size:20px">Proof</b>
                 </summary>
 
                 <br>
 
                 <p>
-                    Coming soon!
+                    First, let us assume that limit (\ref{limitpart01}) holds.
+                    Thus, for each positive number $\varepsilon$, there is a positive number
+                    $\delta$ such
+                    that
+                    \begin{eqnarray}\label{limpart05}
+                    |(u + iv) -(u_0 + iv_0)| \lt \varepsilon
+                    \end{eqnarray}
+                    whenever
+                    \begin{eqnarray}\label{limpart06}
+                    0 \lt |(x + iy) - (x_0 + iy_0)| \lt \delta
+                    \end{eqnarray}
+                    But
+                    \begin{eqnarray*}
+                    |u-u_0|&=&|(u-u_0) + i(v -v_0)|\;=\;|(u + iv) - (u_0 + iv_0)|,\\
+                    |v-v_0|&=&|(u-u_0) + i(v -v_0)|\;=\;|(u + iv) - (u_0 + iv_0)|
+                    \end{eqnarray*}
+                    and
+                    $$|(x+iy)-(x_0+iy_0)|=|(x-x_0)+i(y-y_0)|=\sqrt{(x-x_0)^2+(y-y_0)^2}$$
+                    Hence it follows from inequalities (\ref{limpart05}) and (\ref{limpart06}) that
+                    $$|u-u_0|\lt\varepsilon\quad \text{and}\quad |v-v_0|\lt\varepsilon$$
+                    whenever
+                    $$0\lt\sqrt{(x-x_0)^2+(y-y_0)^2}\lt\delta$$
+                    which proves that limits (\ref{limitpart02}) hold.
+                </p>
+
+                <p>
+                    Now, we assume that limits (\ref{limitpart02}) hold in order to obtain limit (\ref{limitpart01}).
+                    Limits (\ref{limitpart02}) tell us that for each positive number $\epsilon$, there exist positive
+                    numbers $\delta_1$
+                    and $\delta_2$ such that
+                    \begin{eqnarray}\label{limpart03}
+                    |u-u_0|\lt \frac{\varepsilon}{2}\quad\text{whenever}\quad 0\lt\sqrt{(x-x_0)^2+(y-y_0)^2}\lt\delta_1
+                    \end{eqnarray}
+                    and
+                    \begin{eqnarray}\label{limpart04}
+                    |v - v_0| \lt \frac{\varepsilon}{2}\quad\text{whenever}\quad 0\lt\sqrt{(x-x_0)^2+(y-y_0)^2}\lt\delta_2
+                    \end{eqnarray}
+                    Let $\delta$ be any positive number smaller than $\delta_1$ and $\delta_2$. Since
+                    $$|(u + iv) - (u_0 + iv_0)| = |(u - u_0) + i(v - v_0)| \leq |u - u_0| + |v - v_0|$$
+                    and
+                    $$\sqrt{(x-x_0)^2+(y-y_0)^2}=|(x-x_0)+i(y-y_0)|\leq |(x+iy)-(x_0+iy_0)|$$
+                    it follows from statements (\ref{limpart03}) and (\ref{limpart04}) that
+                    $$|(u + iv) -(u_0 + iv_0)| \lt\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$$
+                    whenever
+                    $$0 \lt |(x + iy) - (x_0 + iy_0)| \lt \delta.$$
+                    That is, limit (\ref{limitpart01}) holds, and this completes the proof of the theorem. $\blacksquare$
                 </p>
 
 
