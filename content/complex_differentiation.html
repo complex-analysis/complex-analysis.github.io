@@ -36,12 +36,12 @@
 	<link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="../css/w3.css">
 	<link rel="stylesheet" href="../css/support.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" >
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 	<!-- CODE PRETTIFY -->
 	<!-- via: https://github.com/google/code-prettify -->
 	<script src="../js/run_prettify.js"></script>
 
-	
+
 
 
 	<!-- JQUERY FANCY ADDITIONS -->
@@ -133,7 +133,7 @@
         </script>
 	<script type="text/javascript" async
 		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML">
-	</script>
+		</script>
 
 	<!-- Cindy.js -->
 	<!--<link rel="stylesheet" href="../domcoloring/app.css" />
@@ -153,37 +153,43 @@
 			<p><span id="prev"><a href="riemann_sphere.html">&larr;</a></span><span id="title"><a
 						href="table_of_contents.html">Complex Analysis</a></span><span id="next"><a
 						href="logarithmic_function.html">&rarr;</a></span>
-				<div class="clear"></div>
+			<div class="clear"></div>
 			</p>
 		</header>
 
-		<div class="w3-hide-small"><h1>Complex Differentiation</h1></div>
-        <div class="w3-hide-large w3-hide-medium"><h1 style="font-size:42px">Complex Differentiation</h1></div>
+		<div class="w3-hide-small">
+			<h1>Complex Differentiation</h1>
+		</div>
+		<div class="w3-hide-large w3-hide-medium">
+			<h1 style="font-size:42px">Complex Differentiation</h1>
+		</div>
 
 		<hr>
 
-		<p>The notion of the complex derivative is the basis of complex function theory. 
-			The definition of complex derivative is similar to 
-			the derivative of a real function. 
-			However, despite a superficial similarity, complex differentiation 
+		<p>The notion of the complex derivative is the basis of complex function theory.
+			The definition of complex derivative is similar to
+			the derivative of a real function.
+			However, despite a superficial similarity, complex differentiation
 			is a deeply different theory.
 		</p>
 
 
 		<p>A complex function $f(z)$ is <em>differentiable</em> at a point $z_0\in \mathbb C$ if and only
 			if the following limit difference quotient exists
-			<div class="w3-responsive">
-				\begin{eqnarray}\label{diff01}
-				f'(z_0) = \lim_{z \rightarrow z_0} \frac{f(z)-f(z_0)}{z-z_0}.
-				\end{eqnarray}
-			</div></p>
-			<p>Alternatively, letting $\Delta z = z-z_0$, we can write
-			<div class="w3-responsive">
-				\begin{eqnarray}\label{diff02}
-				f'(z_0) = \lim_{\Delta z \rightarrow 0} \frac{f(z_0+\Delta z)-f(z_0)}{\Delta z}.
-				\end{eqnarray}
-			</div></p>
-			<p>We often drop the subscript on $z_0$ and introduce the number
+		<div class="w3-responsive">
+			\begin{eqnarray}\label{diff01}
+			f'(z_0) = \lim_{z \rightarrow z_0} \frac{f(z)-f(z_0)}{z-z_0}.
+			\end{eqnarray}
+		</div>
+		</p>
+		<p>Alternatively, letting $\Delta z = z-z_0$, we can write
+		<div class="w3-responsive">
+			\begin{eqnarray}\label{diff02}
+			f'(z_0) = \lim_{\Delta z \rightarrow 0} \frac{f(z_0+\Delta z)-f(z_0)}{\Delta z}.
+			\end{eqnarray}
+		</div>
+		</p>
+		<p>We often drop the subscript on $z_0$ and introduce the number
 			\[\Delta w = f(z+\Delta z)-f(z).\]
 			which denotes the change in the value $w=f(z)$ corresponding to a change $\Delta z$
 			in the point at which $f$ is evaluated. Then we can write equation (\ref{diff02}) as
@@ -227,7 +233,7 @@
 
 		<h2>Cauchy-Riemann equations</h2>
 
-		<p>Now let's see a remarkable consequence of definition (\ref{diff01}). 
+		<p>Now let's see a remarkable consequence of definition (\ref{diff01}).
 			First we will see what happens when
 			we approach $z_0$ along the two simplest directions - horizontal and vertical. If
 			we set
@@ -238,31 +244,33 @@
 			then
 			$$f'(z_0)= \lim_{h \rightarrow 0}\frac{f(z_0+h)-f(z_0)}{h}$$
 			then
-			<div class="w3-responsive">
-				\begin{eqnarray*}
-				f'(z_0)&amp;= &amp; \lim_{h \rightarrow 0} \frac{f(z_0+h)-f(z_0)}{h} = \lim_{h \rightarrow 0}
-				\frac{f(x_0+h + iy_0)-f(x_0+iy_0)}{h} \\
-				&amp;= &amp; \lim_{h \rightarrow 0} \left[ \frac{u \left( x_0 +h, y_0 \right) - u \left( x_0 , y_0
-				\right)}{h}\right]+i \lim_{h \rightarrow 0} \left[ \frac{v \left( x_0 +h, y_0 \right) - v \left( x_0 ,
-				y_0 \right)}{h}\right] \\
-				&amp;= &amp; u_x(x_0, y_0)+ i v_x(x_0,y_0)
-				\end{eqnarray*}
-			</div></p>
-			<p>where $u_x(x_0, y_0)$ and $v_x(x_0,y_0)$ denote the first-order partial derivatives with respect
+		<div class="w3-responsive">
+			\begin{eqnarray*}
+			f'(z_0)&amp;= &amp; \lim_{h \rightarrow 0} \frac{f(z_0+h)-f(z_0)}{h} = \lim_{h \rightarrow 0}
+			\frac{f(x_0+h + iy_0)-f(x_0+iy_0)}{h} \\
+			&amp;= &amp; \lim_{h \rightarrow 0} \left[ \frac{u \left( x_0 +h, y_0 \right) - u \left( x_0 , y_0
+			\right)}{h}\right]+i \lim_{h \rightarrow 0} \left[ \frac{v \left( x_0 +h, y_0 \right) - v \left( x_0 ,
+			y_0 \right)}{h}\right] \\
+			&amp;= &amp; u_x(x_0, y_0)+ i v_x(x_0,y_0)
+			\end{eqnarray*}
+		</div>
+		</p>
+		<p>where $u_x(x_0, y_0)$ and $v_x(x_0,y_0)$ denote the first-order partial derivatives with respect
 			to $x$ of the function $u$ and $v$, respectively, at $(x_0, y_0)$.
 			If now we set
 			$$z = z_0+ik = x_0 + i(y_0+k), \quad k\in \mathbb R,$$
 			then $z\rightarrow 0$ along a vertical line as $k\rightarrow 0$. Therefore, we also have
-			<div class="w3-responsive">
-				\begin{eqnarray*}
-				f'(z_0)&amp;= &amp; \lim_{k \rightarrow 0} \frac{f(z_0+ik)-f(z_0)}{ik} = \lim_{k \rightarrow 0} \left[
-				-i \frac{f(x_0 + i(y_0+k))-f(x_0+iy_0)}{k} \right] \\
-				&amp;= &amp; \lim_{k \rightarrow 0} \left[ \frac{v \left( x_0 , y_0 + k\right) - v \left( x_0 , y_0
-				\right)}{k}-i \frac{u \left( x_0 , y_0 +k \right) - u \left( x_0 , y_0 \right)}{k}\right] \\
-				&amp;= &amp; v_y(x_0, y_0)- i u_y(x_0,y_0)
-				\end{eqnarray*}
-			</div></p>
-			<p>where the partial derivatives of $u$ and $v$ are, this time, with respect to $y$.
+		<div class="w3-responsive">
+			\begin{eqnarray*}
+			f'(z_0)&amp;= &amp; \lim_{k \rightarrow 0} \frac{f(z_0+ik)-f(z_0)}{ik} = \lim_{k \rightarrow 0} \left[
+			-i \frac{f(x_0 + i(y_0+k))-f(x_0+iy_0)}{k} \right] \\
+			&amp;= &amp; \lim_{k \rightarrow 0} \left[ \frac{v \left( x_0 , y_0 + k\right) - v \left( x_0 , y_0
+			\right)}{k}-i \frac{u \left( x_0 , y_0 +k \right) - u \left( x_0 , y_0 \right)}{k}\right] \\
+			&amp;= &amp; v_y(x_0, y_0)- i u_y(x_0,y_0)
+			\end{eqnarray*}
+		</div>
+		</p>
+		<p>where the partial derivatives of $u$ and $v$ are, this time, with respect to $y$.
 			By equating the real and imaginary parts of these two formulae for the complex derivative
 			$f'(z_0)$, we notice that the real and imaginary components of $f(z)$ must satisfy a
 			homogeneous linear system of partial differential equations:
@@ -282,7 +290,8 @@
 				<em>In this case, the complex derivative of $f(z)$ is equal to any of the following
 					expressions:
 					$$f'(z)=u_x+iv_x = v_y - i u_y.$$
-				</em></p>
+				</em>
+			</p>
 		</div>
 		<br />
 
@@ -293,31 +302,54 @@
 				since
 				$$u_x=2x = v_y, \quad u_y = -2y = -v_x.$$
 				Theorem 1 implies that $f(z)=z^2$ is differentiable. Its derivative turns out to be
-				<div class="w3-responsive">
-					$$f'(z)=u_x+iv_x = v_y - i u_y = 2x + i 2y = 2(x+iy) = 2z.$$
-				</div>
+			<div class="w3-responsive">
+				$$f'(z)=u_x+iv_x = v_y - i u_y = 2x + i 2y = 2(x+iy) = 2z.$$
+			</div>
 			</p>
 		</div>
 
 
 		<p>Fortunately, the complex derivative has all of the usual rules that we have learned in
 			real-variable calculus. For example,
-			<div class="w3-responsive">
-				$$\frac{d}{dz}z^n = nz^{n-1}, \quad \frac{d}{dz} e^{cz} = ce^{cz}, \quad \frac{d}{dz} \log z =
-				\frac{1}{z},$$
-			</div></p>
-			<p>and so on. In this case, the power $n$ can be a real number (or even complex in view of the identity
-			$z^n = e^{n \log z}$), while $c$ is any complex constant. The <a href="complex_functions.html#trig-functions" target="_blank">exponential formulae</a>
+		<div class="w3-responsive">
+			$$\frac{d}{dz}z^n = nz^{n-1}, \quad \frac{d}{dz} e^{cz} = ce^{cz}, \quad \frac{d}{dz} \log z =
+			\frac{1}{z},$$
+		</div>
+		</p>
+		<p>and so on. In this case, the power $n$ can be a real number (or even complex in view of the identity
+			$z^n = e^{n \log z}$), while $c$ is any complex constant. The <a
+				href="complex_functions.html#trig-functions" target="_blank">exponential formulae</a>
 			for the complex trigonometric and hyperbolic functions implies that they also satisfy the standard rules
-			<div class="w3-responsive">
-				\begin{eqnarray*}
-				\frac{d}{dz}\sin z &=& \cos z, \quad \frac{d}{dz} \cos z = -\sin z.\\
-				\frac{d}{dz}\sinh z &=& \cosh z, \quad \frac{d}{dz} \cosh z = \sinh z.
-				\end{eqnarray*}
-			</div></p>
-			<p>The formulae for differentiating sums, products, ratios, inverses, and compositions of complex
-			functions are all identical to their real counterparts, with similar proofs. This means
-			that you don't need to learn any new rules for performing complex differentiation!
+		<div class="w3-responsive">
+			\begin{eqnarray*}
+			\frac{d}{dz}\sin z &=& \cos z, \quad \frac{d}{dz} \cos z = -\sin z.\\
+			\frac{d}{dz}\sinh z &=& \cosh z, \quad \frac{d}{dz} \cosh z = \sinh z.
+			\end{eqnarray*}
+		</div>
+		</p>
+		<p>
+			If the derivatives of $f$ and $g$ exist at a point $z$, then
+			\begin{eqnarray*}
+			\frac{d}{dz}\left[f(z)+g(z) \right]=f^{\prime}(z)+g^{\prime}(z)\\
+			\frac{d}{dz}\left[f(z)g(z) \right]=f(z)g^{\prime}(z)+f^{\prime}(z)g(z)
+			\end{eqnarray*}
+			and, when $g(z)\neq 0$,
+			\begin{eqnarray*}
+			\frac{d}{dz}\left[\frac{f(z)}{g(z)} \right]=\frac{g(z)f^{\prime}(z)-f(z)g^{\prime}(z)}{\left[g(z)\right]^2}
+			\end{eqnarray*}
+			Finally, suppose that
+			$f$ has a derivative at $z_0$ and that $g$ has a derivative at the point $f (z_0)$. Then the
+			function $F(z) = g\left(f (z)\right)$ has a derivative at $z_0$, and
+			\begin{eqnarray*}
+			F^{\prime}(z)=g^{\prime}\left(f(z_0)\right)f^{\prime}(z_0)
+			\end{eqnarray*}
+			Note that the formulae for differentiating sums, products, ratios, inverses, and 
+			compositions of complex functions are all identical to their 
+			real counterparts, with similar proofs.
+			This means that you don't need to learn any new rules for 
+			performing complex differentiation!
+			
+			
 		</p>
 
 		<hr>
@@ -330,27 +362,27 @@
 			<em>"analytic at $z_0$"</em> means $f$ is analytic on a neighborhood of $z_0$
 		</p>
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
 
-	<!-- Modal content -->
-	<div class="modal-content">
-	  <div class="modal-header">
-		<span class="close">&times;</span>
-		<h3>Hello! 👋</h3>
-	  </div>
-	  <div class="modal-body">
-		
-		<div w3-include-html="message.html"></div>
-	   
-	  </div>
-	  <div class="modal-footer">
-		<br/>
-		<p style="text-align:center;font-weight:bold">Thank you! 🙏 I highly appreciate your support! 🤗</p>
-	  </div>
-	</div>
-  
-</div>
+			<!-- Modal content -->
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="close">&times;</span>
+					<h3>Hello! 👋</h3>
+				</div>
+				<div class="modal-body">
+
+					<div w3-include-html="message.html"></div>
+
+				</div>
+				<div class="modal-footer">
+					<br />
+					<p style="text-align:center;font-weight:bold">Thank you! 🙏 I highly appreciate your support! 🤗</p>
+				</div>
+			</div>
+
+		</div>
 
 
 		<!-- link to the next page -->
@@ -361,16 +393,19 @@
 			<p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
 					href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
 
-					<p class="license">
-						<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
-							<img id="license" alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
-						</a>
-					<br/>
-					<strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
-					<strong style="font-size: 18px">
-						<span>&copy; Juan Carlos Ponce Campuzano 2019-<script>document.write(new Date().getFullYear());</script></span>
-					</strong>
-					</p>
+			<p class="license">
+				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+					<img id="license" alt="Creative Commons License" style="border-width:0"
+						src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+				</a>
+				<br />
+				<strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
+				<strong style="font-size: 18px">
+					<span>&copy; Juan Carlos Ponce Campuzano 2019-
+						<script>document.write(new Date().getFullYear());</script>
+					</span>
+				</strong>
+			</p>
 		</footer>
 
 	</div> <!-- end wrapper -->
@@ -378,7 +413,7 @@
 	<!-- nice smart quotes, via: http://smartquotesjs.com -->
 	<script src="../js/smartquotes.min.js"></script>
 	<script src="../js/message.js"></script>
-    <script> includeHTML(); // Import html info file</script>
+	<script> includeHTML(); // Import html info file</script>
 
 </body>
 
