@@ -1,0 +1,388 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+    <title>Complex Analysis</title>
+
+    <!-- dublin core -->
+    <meta name="dc.title" CONTENT="Complex Analysis">
+    <meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+    <meta name="dc.date" CONTENT="26-01-2019">
+    <meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
+    <meta name="dc.type" CONTENT="Interactive Resource">
+    <meta name="dc.format" CONTENT="HTML">
+    <meta name="dc.language" CONTENT="en-US">
+    <meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+    <!-- social media cards -->
+    <meta property="og:title" content="Complex Analysis">
+    <meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+    <meta property="og:type" content="website">
+    <!--<meta property="og:image" content="">
+	<meta property="og:url" content="">-->
+    <meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+    <meta property="og:site_name" content="Complex Analysis">
+
+
+    <!-- FONTS AND CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet'
+        type='text/css'>
+    <link href="../css/stylesheet.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/w3.css">
+    <link rel="stylesheet" href="../css/support.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- CODE PRETTIFY -->
+    <!-- via: https://github.com/google/code-prettify -->
+    <script src="../js/run_prettify.js"></script>
+
+
+
+    <!-- JQUERY FANCY ADDITIONS -->
+    <!-- add code class, hover text, etc -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            // prettyprint the code, pls
+            $('pre').addClass('prettyprint lang-java');
+
+            // add word-breaks to anything with a / or - in it
+            $('h1').each(function () {
+                var t = $(this).text();
+                t = t.replace('/', '/<wbr>');
+                t = t.replace('-', '-<wbr>');
+                $(this).html(t);
+            });
+
+            // set formatting
+            resizeCommands();
+        });
+
+        // when the window gets resized, do some stuff to keep everything
+        // looking pretty
+        $(window).resize(function () {
+            resizeCommands();
+        });
+
+        // things to do when the page is loaded or window resized
+        function resizeCommands() {
+            // large-screen stuff...
+            if ($(window).width() > 600) {
+
+                // long headline on intro page
+                // $('#introHeadline').html('TABLE OF CONTENTS');
+
+                // menu hover stuff on larger screens
+                // (does weird formatting on larger screens)
+                // hover over title to show "Table of Contents"
+                $('#title a').hover(
+                    function () {
+                        $('#title a').text('Table of Contents');
+                    },
+                    function () {
+                        $('#title a').text('Complex Analysis');	// set back when moving out
+                    }
+                );
+
+                // set prev/next titles
+                $('#prev a').hover(
+                    function () {
+                        $('#title a').text('Prev: Complex functions');
+                    },
+                    function () {
+                        $('#title a').text('Complex Analysis');
+                    }
+                );
+                $('#next a').hover(
+                    function () {
+                        $('#title a').text('Next: Riemann Sphere');
+                    },
+                    function () {
+                        $('#title a').text('Complex Analysis');
+                    }
+                );
+            }
+
+            // small-screen stuff
+            else {
+                // short headline on intro page
+                // $('#introHeadline').html('INTRO');
+            }
+        }
+    </script>
+
+
+    <!--MathJax starts-->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+                           TeX: { equationNumbers: { autoNumber: "AMS" } }
+                           });
+        </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML">
+        </script>
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+    <script src="../js/google-analytics-ga4.js"></script>
+
+
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <header>
+            <p><span id="prev"><a href="complex_functions.html">&larr;</a></span>
+                <span id="title"><a href="table_of_contents.html">Complex Analysis</a></span>
+                <span id="next"><a href="riemann_sphere.html">&rarr;</a></span>
+            <div class="clear"></div>
+            </p>
+        </header>
+
+        <p><img src="../images/chp02/complex_functions.png" alt="f(z)=z^2" title="f(z)=z^2"></p>
+
+        <h1>Limits</h1>
+
+        <hr>
+
+        <p>
+            Let a function $f$ be defined at all points $z$ in some deleted neighbourhood
+            of $z_0$. The statement that the limit of $f (z)$ as $z$ approaches $z_0$ is a number $w_0,$ or
+            that
+            \begin{eqnarray}\label{limit001}
+            \lim_{z\rightarrow z_0}f(z)=w_0
+            \end{eqnarray}
+            means that the point $w = f (z)$ can be made arbitrarily close to $w_0$ if we choose
+            the point $z$ close enough to $z_0$ but distinct from it.
+        </p>
+
+        <p>
+            Formally, the expression (\ref{limit001}) means that for every (sufficiently small)
+            $\varepsilon>0,$ there is a
+            $\delta>0$ such that
+            \begin{eqnarray}\label{limitcondition}
+            \left|f (z) - w_0\right| \lt \varepsilon \quad \text{whenever}\quad 0 \lt \left|z - z_0\right| \lt \delta
+            \end{eqnarray}
+        </p>
+
+        <p>
+            Under the mapping $w = f (z)$, all points
+            interior to the circle $|z - z_0| = \delta$ with $z_0$ deleted are mapped to points interior to
+            the circle $|w - w_0| = \varepsilon.$ The limit will exist only in the case when $z$ approaches
+            $z_0$ (that is, $z \rightarrow z_0$) in an <strong>arbitrary direction</strong>; then this implies that $w
+            \rightarrow w_0$.
+        </p>
+
+        <p class="theorem">
+            <strong>Theorem 1:</strong> Limits are unique if they exist.
+        </p>
+
+        <br />
+        <p>
+            <em>Proof:</em>
+            Suppose that $\lim_{z\rightarrow z_0}f(z)=w_0$ and $\lim_{z\rightarrow z_0}f(z)=w_1$ with
+            $w_0\neq w_1.$ Let $2\varepsilon =|w_0-w_1|,$ so that $\varepsilon >0.$
+            There is a $\delta>0$ such that $0\lt|z-z_0|\lt\delta$ implies that
+            $|f(z)-w_0|\lt\varepsilon$ and $|f(z)-w_1|\lt\varepsilon.$ Choose a point
+            $z$ different to $z_0$ (because $f$ is defined in a deleted
+            neighbourhood of $z_0$). Then, using the triangle inequality,
+            $$|w_0-w_1|\leq |w_0-f(z)|+|f(z)-w_1|\lt2\varepsilon.$$
+            But this is a contradiction. Thus $w_0=w_1.$ $\quad \blacksquare$
+        </p>
+
+        <div class="w3-padding">
+            <p><strong>Example 1:</strong> Show that
+                $$\lim_{z\rightarrow z_0}z^2=z_0^2.$$
+            </p>
+            <p>
+                <strong>Discussion:</strong>
+                Let's take $\delta = 1$. So $0\lt\left| z-z_0\right|\lt\delta=1$ implies that
+                \begin{eqnarray*}
+                \left| z^2-z_0^2\right|&\lt&\left| z-z_0\right|\left| z+z_0\right|\\&\lt&\left|
+                z-z_0+2z_0\right|\\&\lt& \left(\left| z-z_0\right|+2\left|z_0\right|\right)\\
+                &\lt&\left(1+2\left|z_0\right|\right).
+                \end{eqnarray*}
+                Now, if $\delta=\dfrac{\varepsilon}{1+2\left|z_0\right|}$, then $0\lt\left| z-z_0\right|\lt\delta$
+                implies that
+                $$\left| z^2-z_0^2\right|\lt \left(1+2\left|z_0\right|\right)\lt\varepsilon.$$
+                This means that
+                $$\left| z^2-z_0^2\right|\lt\varepsilon \quad\text{whenever}\quad 0\lt\left| z-z_0\right|\lt\delta$$
+                where $\delta=\min\left\{1,\dfrac{\varepsilon}{1+2\left|z_0\right|}\right\}.$
+            </p>
+            <p>
+                Now we can proceed to write our formal proof.
+            </p>
+            <p>
+                <strong>Proof:</strong>
+                Let $\varepsilon>0.$ Choose
+                $\delta=\min\left\{1,\dfrac{\varepsilon}{1+2\left|z_0\right|}\right\}$ such that
+                $0\lt\left| z-z_0\right|\lt\delta.$ Therefore
+                $$
+                \left| z^2-z_0^2\right|\lt\varepsilon. \quad \blacksquare
+                $$
+            </p>
+        </div>
+
+        <p class="theorem w3-responsive">
+            <strong>Theorem 2:</strong>
+            Suppose that
+            $$f(z)=u(x,y)+iv(x,y)$$
+            and
+            $$z_0=x_0+iy_0,\quad w_0=u_0+iv_0.$$
+            Then
+            \begin{eqnarray}\label{limitpart01}
+            \lim_{z\rightarrow z_0}f(z)=w_0
+            \end{eqnarray}
+            if and only if
+            \begin{eqnarray}\label{limitpart02}
+            \lim_{\left(x,y\right) \rightarrow \left(x_0,y_0\right)}u\left(x,y\right)=u_0\quad \text{and}\quad
+            \lim_{\left(x,y\right) \rightarrow \left(x_0,y_0\right)}v\left(x,y\right)=v_0
+            \end{eqnarray}
+        </p>
+
+        <div class="w3-padding w3-responsive">
+			<details>
+				<summary class="w3-hover-text-blue" style="background-color:#f2f2f2"><b style="font-size:20px">Proof</b>
+				</summary>
+
+				<br>
+
+				<p>
+                    Coming soon!
+                </p>
+
+				
+			</details>
+		</div>
+
+        <br />
+
+        <div class="w3-padding">
+            <p><strong>Example 2:</strong> Show that
+                $$\lim_{z\rightarrow 0}\dfrac{z}{\overline{z}}$$
+                does not exist.
+            </p>
+            <p>
+                <strong>Solution:</strong>
+                Suppose that the limit exists. Thus we can calculate it by letting the point $z = x+iy$
+                approach the origin in any manner. However, when $z = x+i0$ is a nonzero point on the
+                real axis
+                $$f(z)=\frac{x+i0}{x-i0}=1;$$
+                and when $z=0+iy$ is a nonzero point on the imaginary axis,
+                $$f(z)=\frac{0+iy}{0-iy}=-1.$$
+            </p>
+            <p>
+                Thus, by letting $z$ approach the origin along the real axis, we would find that the
+                desired limit is $1.$ On the other hand, an approach along the imaginary axis would yield the limit
+                $-1,$ which is a contradiction because a limit is unique. Therefore we must conclude that limit
+                $$\lim_{z\rightarrow 0}\dfrac{z}{\overline{z}}$$
+                does not exist.
+            </p>
+
+        </div>
+
+        <p class="theorem" id="limits-properties">
+            <strong>Theorem 3:</strong> 
+            Suppose that
+            \begin{eqnarray}
+            \lim_{z\rightarrow z_0}f(z)=w_1\quad \text{and}\quad \lim_{z\rightarrow z_0}g(z)=w_2\label{limithypo}
+            \end{eqnarray}
+            Then
+            \begin{eqnarray}
+            \lim_{z\rightarrow z_0}\left[f(z)+g(z)\right]=w_1+w_2,\label{limitsum}\\
+            \lim_{z\rightarrow z_0}\left[f(z)g(z)\right]=w_1w_2;\label{limitmult}
+            \end{eqnarray}
+            and, if $w_2\neq 0$,
+            \begin{eqnarray}
+            \lim_{z\rightarrow z_0}\frac{f(z)}{g(z)}=\frac{w_1}{w_2}.
+            \end{eqnarray}
+        </p>
+
+        <div class="w3-padding w3-responsive">
+			<details>
+				<summary class="w3-hover-text-blue" style="background-color:#f2f2f2"><b style="font-size:20px">Proof</b>
+				</summary>
+
+				<br>
+
+				<p>
+                    Coming soon!
+                </p>
+
+				
+			</details>
+		</div>
+
+
+        <br>
+
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h3>Hello! 👋</h3>
+                </div>
+                <div class="modal-body">
+
+                    <div w3-include-html="message.html"></div>
+
+                </div>
+                <div class="modal-footer">
+                    <br />
+                    <p style="text-align:center;font-weight:bold">Thank you! 🙏 I highly appreciate your support! 🤗</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- <p><strong>Note:</strong> The applet was made with <a href="https://www.geogebra.org/material/show/id/y9pnh3hu">GeoGebra</a>.</p>-->
+
+        <!-- link to the next page -->
+        <a href="riemann_sphere.html">
+            <p class="nextPage">NEXT: Riemann Sphere</p>
+        </a>
+        <footer>
+            <p>[ <a href="../">intro</a>, <a href="https://github.com/complex-analysis">source</a>, <a
+                    href="https://github.com/complex-analysis/complex-analysis.github.io/issues">issues</a> ]</p>
+
+            <p class="license">
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                    <img id="license" alt="Creative Commons License" style="border-width:0"
+                        src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
+                </a>
+                <br />
+                <strong style="font-size: 18px">ISBN: 978-0-6485736-0-9</strong> <br>
+                <strong style="font-size: 18px">
+                    <span>&copy; Juan Carlos Ponce Campuzano 2019-
+                        <script>document.write(new Date().getFullYear());</script>
+                    </span>
+                </strong>
+            </p>
+        </footer>
+
+    </div> <!-- end wrapper -->
+
+    <!-- nice smart quotes, via: http://smartquotesjs.com -->
+    <script src="../js/smartquotes.min.js"></script>
+    <script src="../js/message.js"></script>
+    <script> includeHTML(); // Import html info file</script>
+
+</body>
+
+</html>
