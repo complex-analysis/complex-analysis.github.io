@@ -470,11 +470,13 @@
 		<p>
 			son diferente de cero. 
 			Sabemos del calculo vectorial que el gradiente es ortogonal 
-			a sus curvas de nivel 
-			We know from vector calculus that the gradient id orthogonal to its level curve (i. e.,
-			$du=\nabla u\cdot \mathbf{ds}=0,$ where $\mathbf{ds}$ point in the direction of the tangent to the level
-			curve), and from the Cauchy-Riemann condition (<strong>Theorem 2</strong>) we see that the
-			gradients $\nabla u$ and $\nabla v$ are orthogonal because their vector dot product vanishes:
+			a sus curvas de nivel (i. e.,
+			$du=\nabla u\cdot \mathbf{ds}=0,$  donde $\mathbf{ds}$ 
+			apunta en la dirección de la tangente en la curva de nivel), 
+			y de la condición de  Cauchy-Riemann del (<strong>Theorem 2</strong>) 
+			podemos obervar que los gradientes  $\nabla u$ 
+			y $\nabla v$ son ortogonales debido que
+			el producto punto es cero:
 		<div class="w3-responsive">
 			\begin{eqnarray*}
 			\nabla u\cdot \nabla v&=& \frac{\partial u}{\partial x}\frac{\partial v}{\partial x}+\frac{\partial
@@ -486,22 +488,27 @@
 
 		</p>
 		<p>
-			Consequently, the two-dimensional level curves $u(x,y)=c_1$ and $v(x,y)=c_2$ are orthogonal.
+			Consequentemente, 
+			las curvas de nivel en dos dimensiones
+			$u(x,y)=c_1$ and $v(x,y)=c_2$ son ortogonales.
 		</p>
 
 		<div class="w3-padding">
 			<p>
-				<strong>Example:</strong> The function $f(z) = z^2,$ the level curves $u(x, y) = c_1$ and $v(x, y) =
-				c_2$ of the
-				component functions are the hyperbolas indicated in Figure 2. Note the orthogonality
-				of the two families. Observe also that the curves $u(x, y) = 0$ and
-				$v(x, y) = 0$ intersect at the origin but are not, however, orthogonal to each other.
+				<strong>Examplo:</strong> 
+				Para la función $f(z) = z^2,$ las curvas de nivel $u(x, y) = c_1$ y $v(x, y) =
+				c_2$ son hiperbolas, como se muestra en la Figura 2. 
+				Nota la ortogonalidad de las dos familias de curvas.
+				Observa también que las curvas $u(x, y) = 0$ y
+				$v(x, y) = 0$ se intersectan en el origen pero no
+				son ortogonales la una a la otra.
 			</p>
 			<figure class="w3-center">
 				<img class="w3-image w3-mobile" src="../images/chp02/ortho-curves.png" alt="Orthogonal level curves"
 					title="Piecewise smooth curve" style="width:65%;">
 				<figcaption>
-					<b>Figure 2:</b> Orthogonal level curves of the real and imaginary components of $f(z) = z^2.$
+					<b>Figura 2:</b> Curvas de nivel ortogonales de las components real e imaginaria de 
+					$f(z) = z^2.$
 				</figcaption>
 			</figure>
 		</div>
@@ -509,27 +516,34 @@
 
 		<hr>
 
-		<h2>Analytic functions</h2>
+		<h2>Funciones analíticas</h2>
 
-		<p>Let $f:A\rightarrow \mathbb C$ where $A\subset \mathbb C$ is an open set. The function is
-			said to be <em>analytic</em> on $A$ if $f$ is differentiable at each $z_0\in A$. The
-			word "holomorphic", which is sometimes used, is synonymous with the word "analytic". The phrase
-			<em>"analytic at $z_0$"</em> means $f$ is analytic on a neighborhood of $z_0$
+		<p>
+			Sea 
+			$f:A\rightarrow \mathbb C$ donde $A\subset \mathbb C$ es un conjunto abierto. 
+			Decimos que la función es <em>analítica</em> en $A$ si
+			$f$ es diferenciable en cada punto $z_0\in A$. 
+			En algunas ocasiones se usa también la palabra 
+			"holomórfica", la cual es sinónimo con la  "analílica". 
+			La frase <em>"analítica en $z_0$"</em> 
+			significa que $f$ es analítica en una vecindad de $z_0.$
 		</p>
 
 		<p>
-			An <strong>entire function</strong> is a function that is analytic at each point in the
-			entire finite
-			plane.
-			Since the derivative of a polynomial exists everywhere,
-			it follows that <strong>every polynomial is an entire function</strong>.
+			Una <strong>función entera</strong> 
+			es una función que es analítica en cada 
+			punto en todo el plano finito.
+			Dado que la derivada de un polinomio
+			existe en todas partes, se sigue que 
+			<strong>todo polinomio es una función entera</strong>.
 		</p>
 
 		<p>
-			If a function $f$ fails to be analytic at a point $z_0$ but is analytic at some point
-			in every neighbourhood of $z_0$, then $z_0$ is called a
-			<strong>singular point</strong> or
-			<strong>singularity</strong>, of $f.$
+			Si una función $f$ falla en ser analítica
+			en un punto $z_0$ pero es analítica en alguna
+			vecidndad de $z_0$, entonces $z_0$ se denomina
+			<strong>punto singular</strong> o
+			<strong>singularidad</strong>, de $f.$
 
 		</p>
 
