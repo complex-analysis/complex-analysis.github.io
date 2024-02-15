@@ -324,22 +324,172 @@
 			<div class="w3-responsive">
 				$$\frac{d}{dz}z^n = nz^{n-1}, \quad \frac{d}{dz} e^{cz} = ce^{cz}, \quad \frac{d}{dz} \log z =
 				\frac{1}{z},$$
-			</div></p>
-			<p>Aquí, la potencia $n$ puede ser un número real (o incluso un número complejo
+			</div>
+		</p>
+			
+		<p>Aquí, la potencia $n$ puede ser un número real (o incluso un número complejo
 				debido a la identidad $z^n = e^{n \log z}$), mientras que $c$ 
 				es una constante compleja. 
 				Las <a href="complex_functions.html#trig-functions" target="_blank">fórmulas exponenciales</a>
 			para las funciones trigonométricas implica que también satisfacen 
 			las reglas estándares
 			<div class="w3-responsive">
-				$$\frac{d}{dz}\sin z= \cos z, \quad \frac{d}{dz} \cos z = -\sin z.$$
-			</div></p>
-			<p>Las fórmulas para la diferenciación de sumas, productos,
-				razones, inversas y la composición de funciones son identicas a 
-				sus versiones de variable real, con demostraciones similares.
-				De esta forma, afortunadamente, no necesitas aprender nuevas reglas
-				para realizar el cálculo de derivadas complejas.
+				\begin{eqnarray*}
+			\frac{d}{dz}\sin z &=& \cos z, \quad \frac{d}{dz} \cos z = -\sin z.\\
+			\frac{d}{dz}\sinh z &=& \cosh z, \quad \frac{d}{dz} \cosh z = \sinh z.
+			\end{eqnarray*}
+			</div>
 		</p>
+
+		<p>
+			Si las derivadas de  $f$ y $g$ existen en el punto $z$, entonces
+			\begin{eqnarray*}
+			\frac{d}{dz}\left[f(z)+g(z) \right]=f^{\prime}(z)+g^{\prime}(z)\\
+			\frac{d}{dz}\left[f(z)g(z) \right]=f(z)g^{\prime}(z)+f^{\prime}(z)g(z)
+			\end{eqnarray*}
+			y, cuando $g(z)\neq 0$,
+			\begin{eqnarray*}
+			\frac{d}{dz}\left[\frac{f(z)}{g(z)} \right]=\frac{g(z)f^{\prime}(z)-f(z)g^{\prime}(z)}{\left[g(z)\right]^2}
+			\end{eqnarray*}
+			Finalmente, supongamos que 
+			$f$ tiene derivada en $z_0$ 
+			y que $g$ tiene derivada en $f (z_0)$. Entonces la función 
+			 $F(z) = g\left(f (z)\right)$ tiene derivada en $z_0$, y
+			\begin{eqnarray*}
+			F^{\prime}(z)=g^{\prime}\left(f(z_0)\right)f^{\prime}(z_0)
+			\end{eqnarray*}
+
+			Nota que las fórmulas para la diferenciación de sumas, productos, razones, 
+			inversas y la composición de funciones son identicas a sus versiones 
+			de variable real, con demostraciones similares. De esta forma, 
+			afortunadamente, no necesitarás aprender nuevas reglas para realizar 
+			el cálculo de derivadas complejas.
+		</p>
+
+		<hr />
+
+		<h3>Sufficient conditions for differentiability</h3>
+
+		<p>
+			Satisfaction of the Cauchy-Riemann equations at a point $z_0 = (x_0, y_0)$ is not sufficient
+			to ensure the existence of the derivative of a function $f(z)$ at that point.
+			However, by adding continuity conditions to the partial derivatives,
+			we have the following useful theorem.
+		</p>
+
+		<div class="w3-responsive">
+			<p class="theorem"><strong>Theorem 2:</strong>
+				<em>
+					Let the function
+					$$f(z) = u(x, y) + iv(x, y)$$
+					be defined throughout some $\epsilon$ neighbourhood of a
+					point $z_0 = x_0 + iy_0,$ and suppose that
+					(1) the first-order partial derivatives of the functions
+					$u$ and $v$ with respect to $x$ and
+					$y$ exist everywhere in the neighbourhood; (2)
+					those partial derivatives are continuous at $(x_0, y_0)$
+					and satisfy the Cauchy-
+					Riemann equations
+					$$u_x = v_y,\quad u_y =-v_x$$
+					at $(x_0, y_0)$.</em>
+
+
+
+				<em>
+					Then $f^{\prime}(z_0)$ exists, its value being
+					$$f^{\prime}(z_0) = u_x + iv_x$$
+					where the right-hand side is to be evaluated at $(x_0, y_0).$
+				</em>
+
+			</p>
+		</div>
+
+		<div class="w3-padding">
+			<p>
+				<strong>Example:</strong> Consider the exponential function
+				$$f (z) = e^z = e^xe^{iy} \quad \quad (z = x + iy),$$
+				In view of Euler's
+				formula, this function can be written
+				$$f(z) = e^x \cos y + ie^x \sin y,$$
+				where $y$ is to be taken in radians when $\cos y$ and $\sin y$ are evaluated. Then
+			<div class="w3-responsive">
+				$$u(x, y) = e^x \cos y\quad \text{and} \quad v(x, y) = e^x \sin y.$$
+			</div>
+			</p>
+			<p>
+				Since $u_x = v_y$ and $u_y = -v_x$ everywhere and since these derivatives are everywhere
+				continuous, the conditions in the above theorem are satisfied at all points in the
+				complex plane. Thus $f^{\prime}(z)$ exists everywhere, and
+			<div class="=w3-responsive">
+				$$f^{\prime}(z) = u_x + iv_x = e^x \cos y + ie^x \sin y.$$
+			</div>
+
+			</p>
+			<p>
+				Note that $f^{\prime}(z) = f (z)$ for all $z$.
+			</p>
+		</div>
+
+		<p>
+			A consequence of the Cauchy-Riemann conditions is that the <strong>level curves</strong> of $u,$ that is,
+			the curves
+			$u(x,y)=c_1$ for a real constant $c_1,$ are orthogonal to the level curves of $v$, where $v(x,y)=c_2,$ at
+			all points where $f^{\prime}$ exists and is nonzero. From <strong>Theorem 2</strong> we have
+		</p>
+		<div class="w3-responsive">
+			$$\left|f^{\prime}(z)\right|^2=
+			\left(\frac{\partial u}{\partial x}\right)^2+\left(\frac{\partial v}{\partial
+			x}\right)^2=\left(\frac{\partial u}{\partial x}\right)^2+\left(\frac{\partial u}{\partial
+			y}\right)^2=\left(\frac{\partial v}{\partial x}\right)^2+\left(\frac{\partial v}{\partial y}\right)^2$$
+		</div>
+		<p>
+			hence the two-dimensional gradients
+		</p>
+		<p>
+
+		<div class="w3-responsive">
+			\begin{align*}
+			\nabla u &= \left(\frac{\partial u}{\partial x},\frac{\partial u}{\partial y}\right) \quad \text{and}\quad
+			\nabla v = \left(\frac{\partial v}{\partial x},\frac{\partial v}{\partial y}\right)
+			\end{align*}
+		</div>
+		</p>
+		<p>
+			are nonzero. We know from vector calculus that the gradient id orthogonal to its level curve (i. e.,
+			$du=\nabla u\cdot \mathbf{ds}=0,$ where $\mathbf{ds}$ point in the direction of the tangent to the level
+			curve), and from the Cauchy-Riemann condition (<strong>Theorem 2</strong>) we see that the
+			gradients $\nabla u$ and $\nabla v$ are orthogonal because their vector dot product vanishes:
+		<div class="w3-responsive">
+			\begin{eqnarray*}
+			\nabla u\cdot \nabla v&=& \frac{\partial u}{\partial x}\frac{\partial v}{\partial x}+\frac{\partial
+			u}{\partial y}\frac{\partial v}{\partial y}\\
+			&=&-\frac{\partial u}{\partial x}\frac{\partial u}{\partial y}+\frac{\partial u}{\partial x}\frac{\partial
+			u}{\partial x}=0
+			\end{eqnarray*}
+		</div>
+
+		</p>
+		<p>
+			Consequently, the two-dimensional level curves $u(x,y)=c_1$ and $v(x,y)=c_2$ are orthogonal.
+		</p>
+
+		<div class="w3-padding">
+			<p>
+				<strong>Example:</strong> The function $f(z) = z^2,$ the level curves $u(x, y) = c_1$ and $v(x, y) =
+				c_2$ of the
+				component functions are the hyperbolas indicated in Figure 2. Note the orthogonality
+				of the two families. Observe also that the curves $u(x, y) = 0$ and
+				$v(x, y) = 0$ intersect at the origin but are not, however, orthogonal to each other.
+			</p>
+			<figure class="w3-center">
+				<img class="w3-image w3-mobile" src="../images/chp02/ortho-curves.png" alt="Orthogonal level curves"
+					title="Piecewise smooth curve" style="width:65%;">
+				<figcaption>
+					<b>Figure 2:</b> Orthogonal level curves of the real and imaginary components of $f(z) = z^2.$
+				</figcaption>
+			</figure>
+		</div>
+			
 
 		<hr>
 
