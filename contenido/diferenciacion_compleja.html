@@ -502,16 +502,119 @@
 
 		<hr>
 
-		<h2>Funciones analíticas</h2>
+		<h2>Analytic functions</h2>
 
-		<p>Sea $f:A\rightarrow \mathbb C$ donde $A\subset \mathbb C$ es un conjunto abierto. 
-			La función se dice que es <em>analítica</em> en $A$ si $f$ es diferenciable
-			en cada  $z_0\in A$. La palabra "holomórfica", que también se acostrumbra a usar, 
-			es sinónimo de la palabra "analítica". 
-			La frase 
-			<em>"analítica en $z_0$"</em> significa que $f$ es analítica en una
-			vecindad de $z_0$
+		<p>Let $f:A\rightarrow \mathbb C$ where $A\subset \mathbb C$ is an open set. The function is
+			said to be <em>analytic</em> on $A$ if $f$ is differentiable at each $z_0\in A$. The
+			word "holomorphic", which is sometimes used, is synonymous with the word "analytic". The phrase
+			<em>"analytic at $z_0$"</em> means $f$ is analytic on a neighborhood of $z_0$
 		</p>
+
+		<p>
+			An <strong>entire function</strong> is a function that is analytic at each point in the
+			entire finite
+			plane.
+			Since the derivative of a polynomial exists everywhere,
+			it follows that <strong>every polynomial is an entire function</strong>.
+		</p>
+
+		<p>
+			If a function $f$ fails to be analytic at a point $z_0$ but is analytic at some point
+			in every neighbourhood of $z_0$, then $z_0$ is called a
+			<strong>singular point</strong> or
+			<strong>singularity</strong>, of $f.$
+
+		</p>
+
+		<div class="w3-padding">
+
+			<p>
+				<strong>Example:</strong>
+				The function $$f(z) = \frac{1}{z}$$ is analytic at each nonzero point in the finite
+				plane. On the other hand, the function $$f(z) = |z|^2$$
+				is not analytic at any point since its derivative
+				exists only at $z = 0$ and not throughout any neighbourhood.
+			</p>
+			<p>
+
+				The point $z = 0$ is evidently a singular point of the function $f(z) = 1/z.$ The
+				function $f(z) = |z|^2$, on the other hand, has no singular points since it is nowhere
+				analytic.
+			</p>
+		</div>
+
+		<p>
+			If two functions are analytic in
+			a domain $D$, their sum and their product are both analytic in $D.$
+			Similarly, their quotient is analytic in $D$ provided the
+			function in the denominator does not vanish at
+			any point in $D$. In particular, the quotient
+			$$\frac{P(z)}{Q(z)}$$ of two polynomials is analytic
+			in any domain throughout which $Q(z)\neq 0.$
+		</p>
+
+		<p>
+			Furthermore, from the chain rule for the derivative
+			of a composite function, it implies that
+			a composition of two analytic functions is analytic.
+		</p>
+
+		<div class="w3-padding">
+			<p>
+				<strong>Example:</strong>
+				The function
+				$$f(z) = \frac{4z+1}{z^3-z},$$
+				is analytic throughout the $z$ plane except for the singular points $z=0$ and $z=1,-1$. The analyticity
+				is due to the existence of familiar differentiation
+				formulas, which need to be applied only if the expression for $f^{\prime}(z)$ is
+				wanted. In this case, we have
+				$$f^{\prime}(z)=\frac{-8z^3-3z^2+1}{z^2(z^2-1)^2}$$
+			</p>
+		</div>
+
+		<p>
+			When a function is given in terms of its component functions $$u(x, y)\quad \text{and}\quad
+			v(x, y),$$ its analyticity can be demonstrated by direct application of the Cauchy-Riemann equations.
+		</p>
+
+		<div class="w3-padding">
+			<p>
+				<strong>Example:</strong>
+				The function
+				$$f(z)=e^ye^{ix}=e^y\cos x +ie^y\sin x$$
+				is nowhere analytic. The component functions are
+				$$u(x,y)=e^y\cos x\quad\text{and}\quad v(x,y)=e^y\sin x.$$
+				If $f(z)$ were analytic, then (using Cauchy-Riemann equations)
+			</p>
+			<p class="w3-responsive">
+				
+				$$u_x=v_y \Rightarrow -e^y\sin x=e^y\sin x \Rightarrow 2e^y\sin x=0 \Rightarrow \sin x=0$$
+				
+			</p>
+			<p>
+				and
+			</p>
+			<p class="w3-responsive">
+				
+				$$u_y=-v_x \Rightarrow e^y\cos x=-e^y\cos x \Rightarrow 2e^y\cos x=0 \Rightarrow \cos x=0.$$
+			</p>
+
+			<p>
+				
+				On the one hand, we have that the roots of $\sin x$ are $n\pi$ (with $n\in \mathbb Z$) but $\cos
+				(n\pi)=(-1)^n\neq0.$ On the other hand, the roots of $\cos x$ are $(2n-1)\pi/2$ 
+				but 
+			</p>
+			<p class="w3-responsive">
+				$$\sin
+				((2n-1)\pi/2)=-\cos(n\pi)=-(-1)^n\neq 0.$$
+				
+			</p>
+			<p>
+				Consequently, the Cauchy-Riemann equations are not satisfied <em>anywhere</em>.
+			</p>
+			
+		</div>
 
 
 		<!-- The Modal -->
