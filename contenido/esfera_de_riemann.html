@@ -272,14 +272,59 @@ $$0&lt;\left|z-3\right| &lt; \frac{1}{R}=\delta.$$
 	\[
 	\lim_{z\to \infty} f(x) = \infty.
 	\]
-	Suponiendo que $|z|\gt 1$, entonces
-	\[
-	\left|\dfrac{2z^3-1}{z^2+1}\right|\geq \frac{2\left|z\right|^3-1}{\left|z\right|^2+1}\geq \frac{\left|z\right|^3}{\left|z\right|^2+ \left|z\right|^2}= \frac{|z|}{2}.
-	\]
-	Así que para cualquier $M>0$ podemos elegir $R = 1+ 2M$ para concluir
-	\[
-	\left|\dfrac{2z^3-1}{z^2+1}\right| > M \;\text{ siempre que } \;|z|>R.
-	\]
+	<p><strong>Example 3:</strong>
+		Now let $f(z) = \dfrac{2z^3-1}{z^2+1}$, for $z\neq -1.$ Then 
+		\[
+		\lim_{z\to \infty} f(x) = \infty.
+		\]
+		Existen varias formas de probar este límite.
+		Un primer inteno es encontrar la desigualdad adecuada. 
+		Primero, supongamos que $|z|\gt 1$. 
+		Esto implica las siguientes desigualdades:
+		\begin{eqnarray}
+		\left|2z^3+1\right|&\geq & 2\left|z^3\right|-1\gt 0\label{property}\\
+		\left|z^2\right|+\left|z^2\right|&\geq& \left|z^2\right|+1.\label{property2}
+		\end{eqnarray}
+		Nota también que
+		$$
+		\left|z^2+1\right|\leq \left|z\right|^2+1\;\; \implies\;\; \frac{1}{\left|z\right|^2+1}\leq \frac{1}{\left|z^2+1\right|}.
+		$$
+		Usando la desigualdad (\ref{property}) tenemos
+		$$
+		\frac{2\left|z^3\right|-1}{\left|z^2+1\right|} \geq \frac{2\left|z^3\right|-1}{\left|z\right|^2+1}.
+		$$
+		Y usando la desigualdad (\ref{property2}) obtenemos
+		\[
+		\left|\dfrac{2z^3-1}{z^2+1}\right|\geq \frac{2\left|z\right|^3-1}{\left|z\right|^2+1}\geq \frac{\left|z\right|^3}{\left|z\right|^2+ \left|z\right|^2}= \frac{|z|}{2}.
+		\]
+		Por lo tanto, para cada $M>0$, podemos elegir $R = 1+ 2M$ para conclulir que
+		\[
+		\left|\dfrac{2z^3-1}{z^2+1}\right| > M \;\text{ siempre que } \;|z|>R.
+		\]
+	</p>
+	<p>
+		Ahora podemos escribir la pruba en breve.
+	</p>
+	<p>
+		<em>Demostración: </em> Para cada  $M\gt0$,
+		eligimos  $R = 1+ 2M$ tal que $|z|\gt R.$ Entonces
+		\begin{eqnarray*}
+		\left|\dfrac{2z^3-1}{z^2+1}\right|&\geq& \frac{2\left|z\right|^3-1}{\left|z\right|^2+1}
+		&=& \frac{|z|}{2}\gt \frac{1+2M}{2}\gt M. \quad \blacksquare
+		\end{eqnarray*}
+	</p>
+
+	<p>
+		<strong>Observación:</strong> 
+		Por cierto la elección de  $R=1+2M$
+		no es única. Sólo necesitamos  $R\geq 1$
+		para asegurar la segunda desigualdad en la prueba anterior, y 
+		$R\geq 2M$
+		para asegurar la última desigualdad. 
+		Incluso si obtenemos $|f(z)|>M/2$
+		al final, esto es una definición equivalente 
+		dado que tenemos un cuantificador universal “para cada $M\gt 0$”.
+	</p>
 </p>
 </div>
 
