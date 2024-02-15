@@ -356,72 +356,65 @@
 
 		<hr />
 
-		<h3>Condiciones suficientes para diferenciabilidad</h3>
+		<h3>Sufficient conditions for differentiability</h3>
 
 		<p>
-			Si se satisfacen las ecuaciones de Cauchy-Riemann equations en un punto 
-			$z_0 = (x_0, y_0)$, esto no es suficiente para asegurar la 
-			existencia de la derivada de una función $f(z)$ en ese punto.
-			Sin embargo, al agregar condiciones de continuidad 
-			a las derivadas parciales, 
-			tenemos el siquiente teorema.
+			Satisfaction of the Cauchy-Riemann equations at a point $z_0 = (x_0, y_0)$ is not sufficient
+			to ensure the existence of the derivative of a function $f(z)$ at that point.
+			However, by adding continuity conditions to the partial derivatives,
+			we have the following useful theorem.
 		</p>
 
 		<div class="w3-responsive">
-			<p class="theorem"><strong>Theorema 2:</strong>
+			<p class="theorem"><strong>Theorem 2:</strong>
 				<em>
-					Sea 
-					$f(z) = u(x, y) + iv(x, y)$
-					la función definida en una  $\epsilon$ vecindad de
-					un punto $z_0 = x_0 + iy_0,$ y sugpongamos que 
-					(1) las derivadas parciales de primer orden
-					de las funciones 
-					$u$ y $v$ con respecto a $x$ y 
-					$y$ existen en toda la vecindad; (2)
-					estas derivadas parciales son continuas
-					en $(x_0, y_0)$
-					y satisfacen las ecuaciones de Cauchy-
-					Riemann 
+					Let the function
+					$$f(z) = u(x, y) + iv(x, y)$$
+					be defined throughout some $\epsilon$ neighbourhood of a
+					point $z_0 = x_0 + iy_0,$ and suppose that
+					(1) the first-order partial derivatives of the functions
+					$u$ and $v$ with respect to $x$ and
+					$y$ exist everywhere in the neighbourhood; (2)
+					those partial derivatives are continuous at $(x_0, y_0)$
+					and satisfy the Cauchy-
+					Riemann equations
 					$$u_x = v_y,\quad u_y =-v_x$$
 					at $(x_0, y_0)$.</em>
 
 
 
 				<em>
-					Entonces $f^{\prime}(z_0)$ existe
-					y su valor es
+					Then $f^{\prime}(z_0)$ exists, its value being
 					$$f^{\prime}(z_0) = u_x + iv_x$$
-					donde el lado derego 
-					está evaluado en  $(x_0, y_0).$
+					where the right-hand side is to be evaluated at $(x_0, y_0).$
 				</em>
 
 			</p>
 		</div>
-		<br>
 
 		<div class="w3-padding">
 			<p>
-				<strong>Ejemplo:</strong> Consideremos la función exponencial
+				<strong>Example:</strong> Consider the exponential function
 				$$f (z) = e^z = e^xe^{iy} \quad \quad (z = x + iy),$$
-				Usando la fórmula de Euler, la podemos re-escribir como
-				$$f(z) = e^x \cos y + ie^x \,\text{sen}\, y,$$
-				donde $y$ se considera en radianes cuando se evalúan
-				$\cos y$ y $\text{sen}\, y.$ Entonces
+				In view of Euler's
+				formula, this function can be written
+				$$f(z) = e^x \cos y + ie^x \sin y,$$
+				where $y$ is to be taken in radians when $\cos y$ and $\sin y$ are evaluated. Then
 			<div class="w3-responsive">
-				$$u(x, y) = e^x \cos y\quad \text{y} \quad v(x, y) = e^x \,\text{sen}\, y.$$
+				$$u(x, y) = e^x \cos y\quad \text{and} \quad v(x, y) = e^x \sin y.$$
 			</div>
 			</p>
 			<p>
-				Dado que  $u_x = v_y$ y $u_y = -v_x$ se satisfacen y estas derivadas son continuas, 
-				las condiciones del teorema se satisface en todos los puntos del plano complejo.
-				De esta manera, $f^{\prime}(z)$ existe, y además
+				Since $u_x = v_y$ and $u_y = -v_x$ everywhere and since these derivatives are everywhere
+				continuous, the conditions in the above theorem are satisfied at all points in the
+				complex plane. Thus $f^{\prime}(z)$ exists everywhere, and
 			<div class="=w3-responsive">
-				$$f^{\prime}(z) = u_x + iv_x = e^x \cos y + ie^x\, \text{sen}\, y.$$
+				$$f^{\prime}(z) = u_x + iv_x = e^x \cos y + ie^x \sin y.$$
 			</div>
 
 			</p>
 			<p>
-				Nota que $f^{\prime}(z) = f (z)$ para todo $z$.
+				Note that $f^{\prime}(z) = f (z)$ for all $z$.
 			</p>
 		</div>
 
