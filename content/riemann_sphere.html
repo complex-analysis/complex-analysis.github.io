@@ -262,11 +262,27 @@
 				\[
 				\lim_{z\to \infty} f(x) = \infty.
 				\]
-				Assuming that $|z|\gt 1$, then
+				There are different ways to prove this limit. 
+				A first attempt is to find the right inequality.
+				First, let's begin assuming that $|z|\gt 1$. 
+				This implies the following inequalities: 
+				\begin{eqnarray}
+				\left|2z^3+1\right|&\geq & 2\left|z^3\right|-1\gt 0\label{property}\\
+				\left|z^2\right|+\left|z^2\right|&\geq& \left|z^2\right|+1.\label{property2}
+				\end{eqnarray}
+				Notice that
+				$$
+				\left|z^2+1\right|\leq \left|z\right|^2+1\;\; \implies\;\; \frac{1}{\left|z\right|^2+1}\leq \frac{1}{\left|z^2+1\right|}.
+				$$
+				Using inequality (\ref{property}) we have
+				$$
+				\frac{2\left|z^3\right|-1}{\left|z^2+1\right|} \geq \frac{2\left|z^3\right|-1}{\left|z\right|^2+1}.
+				$$
+				And from inequality (\ref{property2}) we obtain
 				\[
 				\left|\dfrac{2z^3-1}{z^2+1}\right|\geq \frac{2\left|z\right|^3-1}{\left|z\right|^2+1}\geq \frac{\left|z\right|^3}{\left|z\right|^2+ \left|z\right|^2}= \frac{|z|}{2}.
 				\]
-				So for any $M>0$ we can choose $R = 1+ 2M$ to conclude that
+				Hence, for any $M>0$, we can choose $R = 1+ 2M$ to conclude that
 				\[
 				\left|\dfrac{2z^3-1}{z^2+1}\right| > M \;\text{ whenever } \;|z|>R.
 				\]
