@@ -94,8 +94,8 @@ function mouseWheel() {
   // To make it work, we need to trim the expression
   // Maybe later I will figure out
   function showLink() {
-    //let expression_base64 = btoa($('#equation-input').val());
-    let expression_base64 = $('#equation-input').val();
+    let expression_base64 = btoa($('#equation-input').val());
+    //let expression_base64 = $('#equation-input').val();
     let url = [location.protocol, '//', location.host, location.pathname].join('');
     url = url + "?expression=" + expression_base64;
     //url = url + "?expression=" + expression;
@@ -113,8 +113,8 @@ function mouseWheel() {
     //let expression = getQueryVariable('expression');
     //console.log(expression_base64);
     if (expression_base64) {
-      //$('#equation-input').val(atob(expression_base64.replace('/', '')));
-      $('#equation-input').val(expression_base64.replace('/', ''));
+      $('#equation-input').val(atob(expression_base64.replace('/', '')));
+      //$('#equation-input').val(expression_base64.replace('/', ''));
     }
     //$('#equation-input').val(expression.replace('/', ''));
   });
