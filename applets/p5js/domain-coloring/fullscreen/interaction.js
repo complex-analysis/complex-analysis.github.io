@@ -69,6 +69,8 @@ function mouseWheel() {
     resetPlot();
   }
   
+  // This method for getting the shared link works
+  // But I need to refactor
   //JQuery for getting a link with equation to share
   function getQueryVariable(variable) {
     let query = window.location.search.substring(1);
