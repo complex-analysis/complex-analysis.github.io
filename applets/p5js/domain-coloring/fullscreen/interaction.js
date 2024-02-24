@@ -115,7 +115,7 @@ function mouseWheel() {
     //console.log(expression_base64);
     if (expression_base64) {
       //$('#equation-input').val(atob(expression_base64.replace('/', '')));
-      $('#equation-input').val(expression_base64);
+      $('#equation-input').val(decodeURIComponent(expression_base64));
     }
     //$('#equation-input').val(expression_64.replace('/', ''));
   });
