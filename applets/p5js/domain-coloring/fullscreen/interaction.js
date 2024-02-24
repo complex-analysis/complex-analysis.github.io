@@ -110,7 +110,7 @@ function mouseWheel() {
   
   // If the user already specified
   $(function () {
-    let expression_base64 = getQueryVariable('expression');
+    let expression_base64 = trimN(getQueryVariable('expression'));
     //let expression = getQueryVariable('expression');
     //console.log(expression_base64);
     if (expression_base64) {
