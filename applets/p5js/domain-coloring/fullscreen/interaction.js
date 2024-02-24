@@ -69,6 +69,7 @@ function mouseWheel() {
     resetPlot();
   }
   
+  
   //JQuery for getting a link with equation to share
   function getQueryVariable(variable) {
     let query = window.location.search.substring(1);
@@ -97,7 +98,7 @@ function mouseWheel() {
     let expression_base64 = btoa($('#equation-input').val());
     //let expression_base64 = $('#equation-input').val();
     let url = [location.protocol, '//', location.host, location.pathname].join('');
-    url = url + "?expression=" + expression_base64;
+    url = url + "?expression=" + atob(expression_base64);
     //url = url + "?expression=" + expression;
     $('#copyable-link').val(url);
     $('#link-container').show();
@@ -113,10 +114,10 @@ function mouseWheel() {
     //let expression = getQueryVariable('expression');
     //console.log(expression_base64);
     if (expression_base64) {
-      $('#equation-input').val(atob(expression_base64.replace('/', '')));
-      //$('#equation-input').val(expression_base64.replace('/', ''));
+      //$('#equation-input').val(atob(expression_base64.replace('/', '')));
+      $('#equation-input').val(expression_base64);
     }
-    //$('#equation-input').val(expression.replace('/', ''));
+    //$('#equation-input').val(expression_64.replace('/', ''));
   });
   
   function trimN(s) {
