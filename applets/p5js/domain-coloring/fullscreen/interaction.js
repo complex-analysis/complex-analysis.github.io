@@ -69,7 +69,6 @@ function mouseWheel() {
     resetPlot();
   }
   
-  
   //JQuery for getting a link with equation to share
   function getQueryVariable(variable) {
     let query = window.location.search.substring(1);
@@ -132,6 +131,7 @@ function mouseWheel() {
   $('#equation-input').change(resetParameters);
   $('#show-link').click(showLink);
   $(update_expression);
+  
   
   //Next functions for sidebars and interaction with dom
   
