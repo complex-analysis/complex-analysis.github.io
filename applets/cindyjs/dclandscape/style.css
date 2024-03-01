@@ -1,0 +1,13 @@
+#CSCanvas,
+#Cindy3D,
+#cindy,
+.example {
+    background: #fff;
+    display: block;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
+    margin: 0px !important;
+    border: 0 !important;
+    position: relative !important;
+    -ms-flex-negative: .1;
+    flex-shrink: .1
+}
