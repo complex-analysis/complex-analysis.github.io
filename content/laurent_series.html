@@ -218,42 +218,144 @@
 		</figure>
 
 		<p>
-			In practice, the above integral formulae (\ref{non-principalpart}) and 
-			(\ref{principalpart}) may not offer the most practical
-			method for computing the coefficients $a_n$ and $b_n$ for a given function
-			$f(z)$; instead, one often pieces together the Laurent series by combining
-			known Taylor expansions. Because the Laurent expansion of a function is
-			unique whenever it exists, any expression of this form that actually
-			equals the given function $f(z)$ in some annulus must actually be the
-			Laurent expansion of $f(z)$.
+			As a very simple example of (\ref{laurentfunction}) let us consider
+			the function
+			\[
+			f(z) = \frac{1}{z-1}.
+			\]
+			As you can seen, the point $z = 1$ is an isolated singularity of
+			$f$ and consequently the function cannot be expanded in a Taylor
+			series centered at that point. Nevertheless, $f$ can expanded
+			in a series of the form given in (\ref{laurentfunction})
+			that is valid for all $z$ near $1:$
+		</p>
+		<div class="w3-responsive">
+			\begin{eqnarray}\label{simple-example}
+			f(z) = \cdots + 0 \cdot (z-1)^2 + 0 \cdot (z-1) + 0 +  \frac{1}{(z-1)} + \frac{0}{(z-1)^2} + \cdots
+			\end{eqnarray}
+		</div>
+		<p>
+			This series representation is valid for $0 \lt |z - 1| \lt \infty.$
 		</p>
 
-		<p class="w3-responsive">
-			For example, consider the function 
-			$$f(z)=\frac{1}{z(1+z^2)}$$
-			which has isolated singularities at $z=0$
-			and $z=\pm i$.
-			In this case, there is a Laurent series representation for the
-			domain $0\lt |z|\lt 1$ and also one for the domain $1\lt |z|\lt \infty$,
-			which is exterior to the circle $|z|=1$.
-			To find each of these Laurent series, we recall the Maclaurin series representation
-			$$\frac{1}{1-z}=\sum_{n=0}^{\infty}z^n,\quad |z|\lt 1.$$
-			For the domain $0\lt |z|\lt 1$, we have
-			\begin{eqnarray*}
-			f(z)&=&\frac{1}{z}\frac{1}{1+z^2}=\frac{1}{z}\sum_{n=0}^{\infty}\left(-z^2\right)^n \\
-			&=&\sum_{n=0}^{\infty}(-1)^nz^{2n-1}\\
-			&=&\frac{1}{z}+\sum_{n=1}^{\infty}(-1)^nz^{2n-1} \\
-			&=& \sum_{n=0}^{\infty}(-1)^{n+1}z^{2n+1}+\frac{1}{z}.
-			\end{eqnarray*}
-			On the other hand, when $1\lt |z|\lt \infty$,
-			\begin{eqnarray*}
-			f(z)&=&\frac{1}{z^3}\frac{1}{1+\frac{1}{z^2}}=\frac{1}{z^3}\sum_{n=0}^{\infty} \left(-\frac{1}{z^2}
-			\right)^n\\
-			& =&\sum_{n=0}^{\infty}\frac{(-1)^n}{z^{2n+3}}\\
-			&=&\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{z^{2n+1}}
-			\end{eqnarray*}
-			In this last part we use the fact that $(-1)^{n-1}=(-1)^{n-1}(-1)^2=(-1)^{n+1}$.
+		<p>
+			The series on the right-hand side of (\ref{laurentfunction})
+			are given special names. The part consisting of the nonnegative powers
+			of $z - z_0$,
+			\begin{eqnarray}\label{analytic-part}
+			\sum_{n=0}^{\infty} a_n(z-z_0)^n
+			\end{eqnarray}
+			is called the <span id="analytic-part"><strong>analytic part</strong></span>
+			of the series (\ref{laurentfunction}) and will converge for 
+			$|z - z_0| \lt R_2.$
+			The part with negative powers of $z - z_0,$ that is,
+			\begin{eqnarray}\label{principal-part}
+			\sum_{n=1}^{\infty}\frac{b_n}{(z-z_0)^n}
+			\end{eqnarray}
+			is called the <span id="principal-part"><strong>principal part</strong></span> of the series (\ref{laurentfunction})
+			and will converge for
+		   
+			<div class="w3-responsive">
+				$$\abs{\frac{1}{z-z_0}}\lt \frac{1}{R_1} \quad
+			\text{or equivalent }\quad
+			 R_1 \lt \abs{z-z_0}.$$
+			</div>
+			
 		</p>
+
+		<p>
+			Hence, the sum of (\ref{analytic-part}) and (\ref{principal-part}) 
+			converges when $z$ satisfies both $R_1 \lt \abs{z-z_0}$ <em>and</em>
+			$\abs{z-z_0}\lt R_2$, that is, when $z$ is
+			a point in an annular domain defined by $R_1 \lt |z - z_0| \lt R_2.$
+		</p>
+
+		<p>
+			The principal part of the series (\ref{simple-example}) 
+			consists of exactly one nonzero 
+			term, whereas its analytic part consists of all zero terms.
+			The following example illustrates a series of the form (laurentfunction) 
+			in which the principal part of the series also consists 
+			of a finite number of nonzero terms, but this time the 
+			analytic part consists of an infinite number of nonzero terms.
+		</p>
+
+
+		<div class="w3-padding">
+			<p>
+				<strong>Example 1: </strong>
+				The function $f(z) = \dfrac{\sin z}{z^4}$ is 
+				is not analytic at the isolated singularity $z = 0 $
+				and hence cannot be expanded in a Maclaurin series.
+				However, $\sin z$ is an entire
+				function, and we know that its Maclaurin series,
+			</p>
+			<div class="w3-responsive">
+				$$\sin z = z - \frac{z^3}{3!}+ \frac{z^5}{5!} - \frac{z^7}{7!} + \frac{z^9}{9!}- \cdots,$$
+			</div>
+			<p>
+				converges for $|z|\lt \infty.$ By dividing this power
+				series by $z^4$ we obtain a series
+				for $f$ with negative and positive integer powers of $z:$
+			</p>
+			<div class="w3-responsive">
+				\begin{eqnarray}\label{example-1}
+				f(z) = \dfrac{\sin z}{z^4} = \overbrace{\frac{1}{z^3} - \frac{1}{3!z} }^{\textbf{Principal part}} \underbrace{+ \frac{z}{5!} - \frac{z^3}{7!} + \frac{z^5}{9!}- \cdots}_{\textbf{Analytic part}}
+				\end{eqnarray}
+			</div>
+			<p>
+				The analytic part of the series in (\ref{example-1}) 
+				converges for $|z|\lt \infty.$ (Verify!)
+				The principal part is valid for $|z|>0.$ Thus (\ref{example-1}) 
+				converges for all $z$ except at $z=0;$ 
+				that is, the series representation is valid for $0 \lt |z| \lt \infty.$
+			</p>
+
+		</div>
+
+
+
+		<p>
+			In practice, the above integral formulae (\ref{non-principalpart}) and
+			(\ref{principalpart}) provided in <strong>Theorem 1</strong> may not offer the most practical
+			method for computing the coefficients $a_n$ and $b_n$ for a given function
+			$f(z)$; instead, one often pieces together the Laurent series by combining
+			known Taylor expansions, as we did in <strong>Example 1</strong>. 
+			Because the <strong>Laurent expansion of a function is
+			unique whenever it exists</strong>, any expression of this form that actually
+			equals the given function $f(z)$ in some annulus must actually be the
+			Laurent expansion of $f(z).$
+		</p>
+
+		<div class="w3-padding">
+			<p><strong>Example 2: </strong>
+				Consider the function
+				$$f(z)=\frac{1}{z(1+z^2)}$$
+				which has isolated singularities at $z=0$
+				and $z=\pm i.$
+				In this case, there is a Laurent series representation for the
+				domain $0\lt |z|\lt 1$ and also one for the domain $1\lt |z|\lt \infty,$
+				which is exterior to the circle $|z|=1.$
+				To find each of these Laurent series, we recall the Maclaurin series representation
+				$$\frac{1}{1-z}=\sum_{n=0}^{\infty}z^n,\quad |z|\lt 1.$$
+				For the domain $0\lt |z|\lt 1,$ we have
+				\begin{eqnarray*}
+				f(z)&=&\frac{1}{z}\frac{1}{1+z^2}=\frac{1}{z}\sum_{n=0}^{\infty}\left(-z^2\right)^n \\
+				&=&\sum_{n=0}^{\infty}(-1)^nz^{2n-1}\\
+				&=&\frac{1}{z}+\sum_{n=1}^{\infty}(-1)^nz^{2n-1} \\
+				&=& \sum_{n=0}^{\infty}(-1)^{n+1}z^{2n+1}+\frac{1}{z}.
+				\end{eqnarray*}
+				On the other hand, when $1\lt |z|\lt \infty,$
+				\begin{eqnarray*}
+				f(z)&=&\frac{1}{z^3}\frac{1}{1+\frac{1}{z^2}}=\frac{1}{z^3}\sum_{n=0}^{\infty} \left(-\frac{1}{z^2}
+				\right)^n\\
+				& =&\sum_{n=0}^{\infty}\frac{(-1)^n}{z^{2n+3}}\\
+				&=&\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{z^{2n+1}}
+				\end{eqnarray*}
+				In this last part we use the fact that $(-1)^{n-1}=(-1)^{n-1}(-1)^2=(-1)^{n+1}.$
+			</p>
+
+		</div>
 
 		<div class="w3-padding">
 			<p><strong>Exercise:</strong> Expand $f(z)=e^{3/z}$ in a Laurent series valid for
