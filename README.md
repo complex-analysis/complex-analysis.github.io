@@ -1,3 +1,13 @@
+# Major update under process
+
+❤️ Support this project to keep it alive!
+
+* [Patreon](https://www.patreon.com/jcponce)
+
+* [PayPal](https://paypal.me/jcarlosponce/3)
+
+* [T-shirts](https://jcponcemath.secure-decoration.com/shop/category/complex?c=4336971)
+
 # Complex Analysis
 A visual and interactive introduction to [Complex Analysis](https://complex-analysis.github.io).
 
@@ -72,7 +82,6 @@ direct donation using the link below. Thank you for your support!
 * [PayPal](https://paypal.me/jcarlosponce/3)
 
 * [T-shirts](https://jcponcemath.secure-decoration.com/shop/category/complex?c=4336971)
-
 
 ---
 
