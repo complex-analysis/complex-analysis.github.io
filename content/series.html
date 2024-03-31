@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>  Series
+</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Main info: Dublin core -->
+  <meta name="DC.Title" content="Complex Analysis">
+  <meta name="DC.Creator" content="Juan Carlos Ponce Campuzano">
+  <meta name="DC.Date" content="26-01-2019">
+  <meta name="DC.Identifier" content="ISBN-13: 978-0-6485736-0-9">
+  <meta name="DC.Type" content="Interactive Resource">
+  <meta name="DC.Format" content="HTML">
+  <meta name="DC.Language" content="en-US">
+  <meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+  <!-- social media cards -->
+  <meta property="og:title" content="Complex Analysis">
+  <meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta property="og:url" content="https://complex-analysis.com/">
+  <meta property="og:image" content="https://complex-analysis.com/images/complex_analysis_card.jpg">
+  <meta property="og:site_name" content="Complex Analysis">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+  <meta name="twitter:title" content="Complex Analysis">
+  <meta name="twitter:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta name="twitter:site" content="@jcponcemath">
+  <meta name="twitter:image" content="https://complex-analysis.com/images/complex_analysis_card.jpg">
+  <meta name="twitter:creator" content="@jcponcemath">
+
+  <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HVPF4FLZCB');
+  </script>
+</head>
+
+<body data-type="book" id="top">
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="integrals_of_functions_with_branch_cuts.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-solid fa-circle-half-stroke"></i></span>
+        <span class="support-top-button" id="donate"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="table_of_contents.html" class="link" id="center-link">
+            <span class="content-hover-previous">Integrals of Functions with Branch Cuts</span>
+            <span class="content-hover">Table of Contents</span>
+            <span class="content-original">Complex Analysis</span>
+            <span class="content-hover-next">Taylor series</span>
+        </a>
+    </div>
+    <a href="taylor_series.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="series">
+
+    <!-- Starts main content -->
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contents</p>
+        <ul>
+            <li><a href="#section1">Convergence of sequences</a></li>
+            <li><a href="#section2">Convergence of series</a></li>
+            <li><a href="#section3">Geometric series exploration</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br/>
+    
+    <div class="hide-small hide-medium">
+        <iframe src="../applets/p5js/series-exp/" width="800px" height="400px" style="border:none;"></iframe>
+    </div>
+
+    <div class="hide-large" style=" display: block;margin-left: auto; margin-right: auto;width: 80%;">
+        <img width="100%" src="../images/chp05/spiral.jpg" alt="partial sums" title="Spiral">
+    </div>
+
+    <main>
+        <article>
+
+            <h1>Series</h1>
+            <hr>
+
+            <div id="section1">
+
+                <h2>Convergence of sequences</h2>
+
+
+                <p>An infinite sequence $\left\{z_1,z_2,z_3 \ldots\right\}$ of complex numbers has a limit $z$ if,
+                    for each
+                    positive number $\varepsilon$, there exists a positive integer $n_0$ such that
+                    \begin{eqnarray}\label{seq}
+                    \left|z_n-z\right|&lt; \varepsilon \quad \text{whenever}\quad n &gt; n_0.
+                    \end{eqnarray}
+                </p>
+
+
+                <p>Geometrically, this means that for sufficiently large values of $n$, the points $z_n$ lie in any
+                    given
+                    $\varepsilon$ neighborhood of $z$ (Figure 1). Since we can choose $\varepsilon$ as small as we
+                    please, it
+                    follows that the points $z_n$ become arbitrarily close to $z$ as their subscripts increase. Note
+                    that the
+                    value of $n_0$ that is needed will, in general, depend on the value of $\varepsilon$.</p>
+
+
+                <figure>
+                    <img src="../images/chp05/sequence.gif" alt="Geometric interpretation" title="Geometric interpretation" style="width:70%;">
+                    <figcaption>
+                        Geometric interpretation.
+                    </figcaption>
+                </figure>
+
+                <p>The sequence $\left\{z_n\right\}_{n=1}^{\infty}$ can have at most one limit. That is, a limit $z$ is
+                    unique
+                    if it exists. When that limit exists, the sequence is said to <em>converge</em> to $z$; and we write
+                    \begin{eqnarray*}
+                    \lim_{n\rightarrow \infty} z_n=z
+                    \end{eqnarray*}
+                    If the sequence has no limit, it <em>diverges</em>.</p>
+
+                <div class="theorem">
+                    Suppose that $z_n=x_n+iy_n$ ($n=1,2,3,\ldots $)
+                    and
+                    $z=x+iy$. Then
+                    \begin{eqnarray}\label{teoseq01}
+                    \lim_{n\rightarrow \infty} z_n=z
+                    \end{eqnarray}
+                    if and only if
+                    \begin{eqnarray}\label{teoseq02}
+                    \lim_{n\rightarrow \infty} x_n=x\quad \text{and}\quad \lim_{n\rightarrow \infty} y_n=y.
+                    \end{eqnarray}
+                </div>
+
+
+                <details>
+                    <summary><b>Proof</b>
+                    </summary>
+
+                    <p>To prove this theorem, we first assume that conditions (\ref{teoseq02}) hold. That is, there
+                        exist,
+                        for each $\varepsilon&gt;0$, positive integers $n_1$ and $n_2$ such that
+                        \[
+                        |x_n-x|&lt;\frac{\varepsilon}{2}\quad \text{whenever} \quad n&gt;n_1
+                        \]
+                        and
+                        \[
+                        |y_n-y|&lt;\frac{\varepsilon}{2}\quad \text{whenever} \quad n&gt;n_2.
+                        \]
+                        Hence if $n_0$ is the larger of the two integers $n_1$ and $n_2$,
+                        \[
+                        |x_n-x|&lt;\frac{\varepsilon}{2}\quad \text{and} \quad |y_n-y|&lt;\frac{\varepsilon}{2}
+                        \quad
+                        \text{whenever} \quad n &gt; n_0.
+                        \]
+                        Since
+                        \[
+                        |(x_n+iy_n)-(x+iy)|=|(x_n-x)+(y_n-y)|\leq |x_n-x|+|y_n-y|,
+                        \]
+                        then
+                        \[
+                        |z_n-z|&lt; \frac{\varepsilon}{2}+\frac{\varepsilon}{2} \quad \text{whenever} \quad n &gt;
+                        n_0.
+                        \]
+                        Therefore condition (\ref{teoseq01}) holds.</p>
+
+                    <p>Conversely, if we start with condition (\ref{teoseq01}), we know that for each positive
+                        number $\varepsilon$, there exists a positive integer $n_0$ such that
+                        \[
+                        |(x_n+iy_n)-(x+iy)|&lt;\varepsilon \quad \text{whenever} \quad n&gt;n_0.
+                        \]
+                        However
+                        \[
+                        |x_n-x|\leq |(x_n-x)+(y_n-y)|=|(x_n+iy_n)-(x+iy)|
+                        \]
+                        and
+                        \[
+                        |y_n-y|\leq |(x_n-x)+(y_n-y)|=|(x_n+iy_n)-(x+iy)|.
+                        \]
+                        Consequently
+                        \[
+                        |x_n-x|&lt;\varepsilon \quad \text{and} \quad |y_n-y|&lt;\varepsilon \quad \text{whenever}
+                        \quad n
+                        &gt; n_0.
+                        \]
+                        Therefore, conditions (\ref{teoseq02}) are satisfied. $\blacksquare$
+                    </p>
+                </details>
+
+
+            </div>
+
+            <hr>
+
+            <div id="section2">
+
+                <h2>Convergence of series</h2>
+
+                
+                    <p>An infinite series
+                        \begin{eqnarray}\label{series01}
+                        \sum_{n=1}^{\infty}z_n=z_1+z_2+z_3+\cdots
+                        \end{eqnarray}
+                        of complex numbers converges to the sum $S$ if the sequence
+                    </p><div class="scroll-wrapper">
+                        \begin{eqnarray}\label{partialsum}
+                        \sum_{n=1}^{N}z_n=z_1+z_2+z_3+\cdots +z_N\quad(N=1,2,3,\ldots)
+                        \end{eqnarray}
+                    </div>
+                    of partial sums converges to $S$; we then write
+                    $$\sum_{n=1}^{\infty}z_n=S.$$
+                    Note that since a sequence can have at most one limit, a series can have at most
+                    one sum. When a series does not converge, we say that it diverges.
+                    <p></p>
+                
+
+                <div class="theorem">
+                    Suppose that $z_n=x_n+iy_n$ ($n=1,2,3,\ldots $)
+                    and
+                    $S=X+iY$. Then
+                    \begin{eqnarray}\label{teo01}
+                    \sum_{n=1}^{\infty} z_n=S
+                    \end{eqnarray}
+                    if and only if
+                    \begin{eqnarray}\label{teo02}
+                    \sum_{n=1}^{\infty} x_n=X\quad \text{and}\quad \sum_{n=1}^{\infty} y_n=Y.
+                    \end{eqnarray}
+                </div>
+
+
+                
+                    <details>
+                        <summary><b>Proof</b>
+                        </summary>
+
+                        <br>
+
+                        <p>To prove this theorem, we first write the partial sums (\ref{partialsum}) as
+                            \begin{eqnarray}\label{teo03}
+                            S_N = X_N+iY_N,
+                            \end{eqnarray}
+                            where
+                            \[
+                            X_N = \sum_{n=1}^{N}x_n \quad \text{and}\quad Y_N = \sum_{n=1}^{N}y_n.
+                            \]
+                            Now statement (\ref{teo01}) is true if and only if
+                            \begin{eqnarray}\label{teo04}
+                            \lim_{N\rightarrow \infty} S_N = S;
+                            \end{eqnarray}
+                            and, in view of relation (\ref{teo03}) and Theorem 1 on sequences, limit (\ref{teo04}) holds
+                            if and
+                            only if
+                            \begin{eqnarray}\label{teo05}
+                            \lim_{N\rightarrow \infty} X_N=X\quad \text{and}\quad \lim_{N\rightarrow \infty} Y_N=Y.
+                            \end{eqnarray}
+                            Limits (\ref{teo05}) therefore imply statement (\ref{teo01}), and conversely.
+                            Since $X_N=X$ and $Y_N=Y$ are partial sums of the series (\ref{teo02}), the theorem is
+                            proved.
+                            $\blacksquare$</p>
+                    </details>
+                
+
+
+                <br>
+
+                <p>This theorem can be useful in showing that a number of familiar properties
+                    of series in calculus carry over to series whose terms are complex numbers.</p>
+
+                <p><strong>Property 1:</strong> If a series of complex numbers converges, the $n$-th term converges to
+                    zero as
+                    $n$ tends to infinity.</p>
+
+                It follows from <strong>Property 1</strong> that the terms of convergent series are bounded.
+                That is, when series (\ref{series01}) converges, there exists a positive constant $M$ such that
+                $$|z_n| \leq M \; \text{ for each positive integer } n.$$
+
+                <p>Another important property of series of complex numbers that follows from a corresponding property in
+                    calculus is the following.</p>
+
+                <p><strong>Property 2:</strong> The absolute convergence of a series of complex numbers implies the
+                    convergence
+                    of that series.
+                </p>
+
+
+                <p>Recall that series (\ref{series01}) is said to be <em>absolutely convergent</em> if the series
+                    \begin{eqnarray*}\label{series02}
+                    \sum_{n=1}^{\infty}|z_n|=\sum_{n=1}^{\infty}\sqrt{x^2_n+y^2_n}\quad \quad(z_n=x_n+iy_n)
+                    \end{eqnarray*}
+                    of real numbers $\sqrt{x^2_n+y^2_n}$ converges.
+                </p>
+
+
+                <p>To establish the fact that the sum of a series is a given number $S$, it is often convenient to
+                    define the
+                    <em>remainder</em> $\rho_N$ after $N$ terms, using the partial sums:
+                    \begin{eqnarray*}\label{series03}
+                    \rho_N=S-S_N
+                    \end{eqnarray*}
+                    Thus $S=S_N+\rho_N$. Now, since $|S_N-S|=|\rho_N-0|$, then <em>a series converges to a number $S$ if
+                        and
+                        only if the sequence of remainders tends to zero</em>.
+                    <!-- We will make  use of this observation later in our treatment of <em>power series</em>, which are of the form
+$$\sum_{n=1}^{\infty}a_n(z-z_0)^n$$
+where $z_0$ and the coefficients $a_n$ are complex constants and $z$ is any point in a stated region containing $z_0$. In such series, involving a variable $z$, we denote <em>sums</em>, <em>partial sums</em>, and <em>remainders</em> by $S(z)$, $S_N(z)$ and $\rho_N(z)$, respectively. -->
+                </p>
+
+                <div class="practice">
+                    <p><strong>Example:</strong> With the aid of remainders, it is easy to verify that
+                        \begin{eqnarray*}
+                        \sum_{n=0}^{\infty}z^n=\frac{1}{1-z}\quad\text{whenever}\quad |z|&lt; 1
+                        \end{eqnarray*}
+                        We need only recall the identity
+                        $$1+z+z^2+\cdots+z^n=\frac{1-z^{n+1}}{1-z}$$
+                        to write the partial sums
+                    </p><div class="scroll-wrapper">
+                        \begin{eqnarray}
+                        S_N(z)=\sum_{n=0}^{\infty}z^n=1+z+z^2+\cdots+z^{N-1}\quad\quad(z\neq 1)
+                        \end{eqnarray}
+                    </div>
+                    as
+                    $$S_N(z)=\frac{1-z^N}{1-z}.$$
+                    If
+                    $$S(z)=\frac{1}{1-z}$$
+                    then
+                    $$\rho_N(z)=S(z)-S_N(z)=\frac{z^N}{1-z}\quad\quad(z\neq 1).$$
+                    Thus
+                    $$\left|\rho_N\right|=\frac{|z|^N}{|1-z|}\rightarrow 0\quad\text{only when}\quad |z|&lt;1.$$
+                    In this case, it is clear that the remainders $\rho_N$ tend to zero when $|z|&lt;1$ but not when
+                    $|z|\geq 1$.
+                    <p></p>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div id="section3">
+
+                <h2>Geometric series exploration</h2>
+
+                <p>The series introduced in the previous example
+                    \begin{eqnarray*}
+                    \sum_{n=0}^{\infty}z^n=\frac{1}{1-z}\quad\text{whenever}\quad |z|&lt; 1
+                    \end{eqnarray*}
+                    is known as the <em>geometric series</em>.
+                </p>
+
+                <p>Use the following applet to explore this series. Drag the point $z$ around. Observe what happens when
+                    it is
+                    inside, outside or on the border of the unit circle. Drag the slider to show the partial sum.</p>
+
+
+                <div class="ggbElement" id="ggb-element"></div>
+                
+                <details>
+                    <summary><strong>Code</strong></summary>
+
+                    <p>Enter the following script in <a href="https://www.geogebra.org/classic" target="_blank">GeoGebra</a>
+                        to explore it yourself and make your own version.
+                        The symbol <code>#</code> indicates comments.</p>
+
+                    <pre><code>#Complex number
+Z = 0.72 + ί * 0.61
+
+#Circle of radius 1
+c = Circle((0,0), 1)
+
+#Number of terms of the partial series
+n = Slider(0, 250, 1, 1, 150, false, true, false, false)
+SetValue(n, 250)
+
+#Define the sequence z^n
+S = Join({0 + ί * 0, 1 + ί * 0}, Sequence(Z^j, j, 1, n))
+
+#Define partial sum
+SP = Sequence(Sum(S, j), j, 1, n + 2)
+
+#Finally join the points of the partial sum
+L = Sequence(Segment(Element(SP, j), Element(SP, j + 1)), j, 1, n + 1)
+</code></pre>
+                </details>
+
+
+            </div>
+
+
+
+        </article>
+    </main>
+
+    <!--GeoGebra embeding-->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+    <script>
+        let params = {
+            "width": 776,
+            "height": 548,
+            "material_id": "e9zzzqnu",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": false,
+            "showResetIcon": true
+        };
+        let ggbApplet = new GGBApplet(params, true);
+        window.addEventListener("load", () => {
+            ggbApplet.inject('ggb-element');
+        });
+    </script>
+    <!--GeoGebra embeding ends-->
+
+    <a href="taylor_series.html" style="text-decoration: none;">
+        <p class="nextPage">Taylor Series <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 Hello!</strong>
+      </div>
+      <div class="modal-body">
+        <p>
+          If you found this interactive textbook helpful, consider becoming a member in:
+        </p>
+
+        <div class="button-container">
+          <button id="modal-link">
+            <a href="https://www.patreon.com/jcponce"><i class="fa-brands fa-patreon"></i>
+              <strong>Patreon</strong></a>
+          </button>
+        </div>
+
+
+        <p>
+          This project is made possible by the kindness of supporters like you.
+          Your contributions enable me to maintain the site, uphold the applets,
+          and, crucially, <strong>ensure it remains freely accessible</strong> to anyone eager to
+          explore this captivating field of mathematics <strong>—without any distracting ads</strong>.
+        </p>
+
+        <p>If you prefer to donate just once,
+          not monthly, you can use these links:
+        </p>
+
+        <div class="button-container">
+          <button id="modal-link">
+            <a target="_blank"
+              href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=WTMTR7D8RYZ26&item_name=Your+support+will+help+me+to+improve+and+keep+up+to+date+the+applets+of+this+book.+Sincerely+appreciate+it%21&currency_code=AUD&source=url">
+              <strong>❤️ <i class="fa-brands fa-paypal"></i> PayPal Me</strong>
+            </a>
+          </button>
+          <button id="modal-link">
+            <a target="_blank" href="https://jcponcemath.secure-decoration.com/">
+              <strong>❤️ Buy a T-shirt</strong>
+            </a>
+          </button>
+        </div>
+
+        <p>
+          You can't contribute this time, no worries! Maybe you just want to:
+        </p>
+        <div class="button-container">
+          <button id="modal-link">
+            <a href="mailto:jcponcemath@gmail.com"><strong><i class="fa-solid fa-envelope"></i> Send a
+                comment</strong></a>
+          </button>
+
+        </div>
+        <br />
+      </div>
+      <div class="modal-footer">
+        Thank you! 🙏 I highly appreciate your support! 🤗
+      </div>
+    </div>
+
+  </div>
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer>
+
+  <span id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <span class="hide-small">
+      <a href="https://github.com/complex-analysis"><i class="fa-solid fa-code"></i> Source</a>,
+      <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues"><i
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+    </span>
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-solid fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+  
+  <br />
+
+  <a id="licence-link" rel="license"
+    href="license.html">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong style="font-size: 0.9em;">ISBN: 978-0-6485736-0-9</strong> <br>
+  <strong>
+    <span class="hide-small" style="font-size: 0.9em;">&copy; Juan Carlos Ponce Campuzano
+      2019-<script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 0.9em;">&copy; J.C. Ponce Campuzano
+      2019-<script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>

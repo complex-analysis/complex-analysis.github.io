@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Domain coloring - Fullscreen</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Domain coloring">
+    <meta name="author" content="Juan Carlos Ponce Campuzano">
+    <meta name="language" content="en" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.1/p5.min.js"></script>
+    <script language="javascript" type="text/javascript" src="https://dynamicmath.xyz/complex/dctools/libraries/jquery-2.1.4.min.js"></script>
+
+
+    <!--Style-->
+    <link rel="stylesheet" href="https://dynamicmath.xyz/complex/dctools/libraries/css/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="https://dynamicmath.xyz/complex/dctools/libraries/css/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://dynamicmath.xyz/complex/dctools/libraries/css/infinity16.png" sizes="16x16">
+    <link rel="stylesheet" href="https://dynamicmath.xyz/complex/dctools/libraries/css/style.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-HVPF4FLZCB');
+    </script>
+
+</head>
+
+<body>
+
+    <!--Mobile message-->
+    <div class="w3-hide-large w3-hide-medium w3-padding w3-display-middle w3-blue w3-round w3-large">
+        <p>Pssst! Rotate your device to landscape.</p>
+        <p>Or resize your window so it's more wide than tall.</p>
+        <p>Not supported for phones, yet.</p>
+    </div>
+
+    <div class="w3-hide-small">
+        <!--Left sidebar-->
+        <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="leftMenu">
+            <button onclick="closeLeftMenu()"
+                class="w3-top w3-bar-item w3-button w3-large w3-light-grey w3-right-align">Close
+                &times;</button>
+
+            <div class="w3-container w3-large" style="margin:auto;max-width:750px">
+                <div w3-include-html="info.html"></div>
+            </div>
+
+        </div>
+
+        <!--Right sidebar-->
+        <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;line-height: 0.7;"
+            id="rightMenu">
+            <button class="w3-bar-item w3-button w3-large" onclick="closeRightMenu()">&times;</button>
+
+            <div class="w3-container">
+                <div class="w3-row">
+                    <div class="w3-large w3-container w3-right-align w3-col" style="width:180px">
+                        <p style="padding-right:10px;"><strong>Level curves:</strong></p>
+                    </div>
+
+                    <div class="w3-rest w3-container w3-large">
+                        <br />
+                        <div id="mySelect"></div>
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <p class="w3-large"><strong>Parameters</strong></p>
+
+                <br />
+
+                <div class="w3-row">
+                    <div class="w3-col w3-large" style="width:50px">
+                        <label style="padding-right:20px;">t:</label>
+                    </div>
+
+                    <div class="w3-rest">
+
+                        <input type="range" id="pt" min="0" max="1" step="0.001" value="0" />
+                        <br />
+                        <label id="tL" style="padding-left:20px;"></label>
+                        <br />
+                        <p></p>
+                    </div>
+                </div>
+
+                
+
+                <div class="w3-row">
+                    <div class="w3-col w3-large" style="width:50px">
+                        <label style="padding-right:20px;">u:</label>
+                    </div>
+
+                    <div class="w3-rest">
+                        <input type="range" id="pu" min="0" max="3.1415" step="0.0001" value="0" />
+                        <br />
+                        <label id="uL" style="padding-left:20px;"></label>
+                        <br />
+                        <p></p>
+                    </div>
+                </div>
+
+                
+
+                <div class="w3-row">
+                    <div class="w3-col w3-large" style="width:50px">
+                        <label style="padding-right:20px;">n:</label>
+                    </div>
+
+                    <div class="w3-rest">
+                        <input type="range" id="pn" min="0" max="30" step="1" value="1" />
+                        <br />
+                        <label id="nL" style="padding-left:20px;"></label>
+                        <br /><br />
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="w3-container">
+
+                    <div class="w3-button w3-padding-small w3-round-large w3-large" id="zoomIn">
+                        <p><i class="fas fa-search-plus fa-2x"></i></p>
+                    </div>
+                    &nbsp;
+                    <div class="w3-button w3-padding-small w3-round-large w3-large" id="zoomOut">
+                        <p><i class="fas fa-search-minus fa-2x"></i></p>
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div class="w3-container">
+                    <div class="w3-button w3-padding-small w3-round-large" id="save">
+                        <p><i class="fas fa-camera fa-2x"></i></p>
+                    </div>
+                    &nbsp;
+                    <div class="w3-button w3-padding-small w3-round-large" id="reset">
+                        <p><i class="fas fa-redo-alt fa-2x"></i></p>
+                    </div>
+                    &nbsp;
+                    <div class="w3-button w3-padding-small w3-round-large w3-large" id="resize">
+                        <p>Resize</p>
+                    </div>
+                </div>
+
+                <hr>
+
+                
+               
+                 <div class="w3-center">
+                    <p>Support this project</p>
+                    <strong><a class="w3-button w3-round w3-light-grey w3-hover-text-indigo"
+                            href="https://www.patreon.com/jcponce"><i class="fab fa-patreon"></i> Patreon</a></strong>
+                    &nbsp;
+                    <strong><a class="w3-button w3-round w3-light-grey w3-hover-text-indigo"
+                            href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=WTMTR7D8RYZ26&item_name=Your+support+will+help+me+to+improve+and+keep+up+to+date+the+applets+of+this+site.+Sincerely+appreciate+it%21&currency_code=AUD&source=url">❤️
+                            PayPal</a></strong>
+                            &nbsp;
+                    <strong><a class="w3-button w3-round w3-light-grey w3-hover-text-indigo" href="https://jcponcemath.secure-decoration.com/">Get a <i class="fa-solid fa-shirt"></i></a></strong>
+                </div>
+               
+                
+            </div>
+
+        </div>
+
+        <div id="main">
+
+            <div>
+                <button class="w3-button w3-xlarge w3-left w3-text-white" onclick="openLeftMenu()"><i
+                        class="fas fa-question"></i></button>
+
+                <button id="openNav" class="w3-button w3-xlarge w3-right w3-text-white"
+                    onclick="openRightMenu()">&#9776;</button>
+                <div class="w3-container">
+
+                </div>
+            </div>
+
+            <div class="w3-container w3-center">
+                <div id="sketch-Holder"></div>
+            </div>
+
+            <div id="container">
+                <div class="full-width">
+                    <div id="link-container" style="display: none;">
+                        <input id="copyable-link" class="dark-translucent input-control copy-link" value=""></input>
+                    </div>
+
+                    <a class="dark-translucent input-control w3-text-aqua"
+                        href="https://complex-analysis.com/content/domain_coloring.html" id="home">
+                        <i class="fas fa-home"></i></a>
+
+                    <a id="show-link" class="dark-translucent input-control w3-text-aqua" href="#"><i
+                            class="fas fa-external-link-alt"></i></a>
+
+                    <input class="dark-translucent input-control" id="equation-input"
+                        placeholder="e.g. 1 / (z^2 + i)^2 - log(z)" value="(z-1)/(z^2+z+1)"></input>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script language="javascript" type="text/javascript" src="https://dynamicmath.xyz/complex/dctools/libraries/hsluvmin.js"></script>
+    <script language="javascript" type="text/javascript" src="https://dynamicmath.xyz/complex/dctools/libraries/Complex.min.js"></script>
+    <script language="javascript" type="text/javascript" src="https://dynamicmath.xyz/complex/dctools/libraries/domainColoring.min.js"></script>
+    <script language="javascript" type="text/javascript" src="interaction.js"></script>
+    <script language="javascript" type="text/javascript" src="https://dynamicmath.xyz/complex/dctools/libraries/uicontrols.js"></script>
+    <script>
+        includeHTML(); // Import html info file
+    </script>
+
+    <script language="javascript" type="text/javascript" src="sketch.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Explorador del conjunto de Julia">
+    <meta name="author" content="Juan Carlos Ponce Campuzano">
+    <meta name="language" content="es" />
+    <title>Explorador del conjunto de Julia</title>
+
+    <link rel="icon" type="image/png" href="https://jcponce.github.io/assets/img/png/icon/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://jcponce.github.io/assets/img/png/icon/infinity16.png" sizes="16x16">
+    <link rel="stylesheet" href="dat-gui/dat-gui-light-theme.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.1/p5.min.js"></script>
+    <script language="javascript" type="text/javascript" src="dat-gui/dat.gui.min.js"></script>
+
+    <!--MathJax starts-->
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+                       TeX: { equationNumbers: { autoNumber: "AMS" } }
+                       });
+    </script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML">
+        </script>
+    <!--MathJax Ends-->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-HVPF4FLZCB');
+    </script>
+
+
+    <script>
+        function myFunction() {
+            location.reload();
+        }
+    </script>
+
+    <script type="text/javascript">
+        function closeCurrentTab() {
+            var conf = confirm("Are you sure, you want to close this tab?");
+            if (conf == true) {
+                close();
+            }
+        }
+    </script>
+    
+    
+
+    <style>
+        div.sticky {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+        }
+
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+
+        }
+
+        canvas {
+            padding: 0;
+            margin: auto;
+            display: block;
+            width: 490px;
+            height: 490px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    </style>
+    <!-- This line removes any default padding and style. You might only need one of these values set. -->
+
+</head>
+
+<body style="background-color:#d9d9d9;">
+
+
+    <!-- Navbar Stars-->
+    <div class="w3-container w3-black w3-xlarge w3-text-black sticky">
+        <div class="w3-display-topmiddle">
+            <a onclick="closeCurrentTab()" class="w3-button w3-hover-grey w3-opacity w3-round-xxlarge"> <i
+                    class="fas fa-times"></i></a>
+            &nbsp;
+            <a onclick="myFunction()" class="w3-button w3-hover-grey w3-opacity w3-round-xxlarge"> <i
+                    class="fas fa-redo"></i></a>
+            &nbsp;
+            <a href="https://github.com/complex-analysis/complex-analysis.github.io/tree/master/applets/p5js/julia"
+                class="w3-button w3-hover-grey w3-opacity w3-round-xxlarge"> <i class="fas fa-code"></i></a>
+        </div>
+    </div>
+    <!-- Navbar Ends-->
+
+    <div class="w3-card-4 w3-light-grey w3-small" style="width:190px">
+
+        <div class="w3-container">
+
+            <h5><b>Explorador del conjunto de Julia</b></h5>
+            <div class="w3-container w3-left">
+                <p>$z_{n+1}=z_n^2+c$</p>
+            </div>
+
+            <div class="w3-container w3-left w3-small">
+                <h5><b>Controles</b></h5>
+
+                <div class="w3-button w3-padding-small w3-round-large" id="up"><i class="fas fa-arrow-up"></i> : Arriba
+                </div><br>
+                <div class="w3-button w3-padding-small w3-round-large" id="down"><i class="fas fa-arrow-down"></i> :
+                    Abajo</div><br>
+                <div class="w3-button w3-padding-small w3-round-large" id="right"><i class="fas fa-arrow-right"></i> :
+                    Derecha</div><br>
+                <div class="w3-button w3-padding-small w3-round-large" id="left"><i class="fas fa-arrow-left"></i> :
+                    Izquierda</div><br>
+                <div class="w3-button w3-padding-small w3-round-large" id="zoomin"><i class="fas fa-plus"></i> : Acerca
+                </div><br>
+                <div class="w3-button w3-padding-small w3-round-large" id="zoomout"><i class="fas fa-minus"></i> : Aleja
+                </div><br>
+                <div class="w3-button w3-padding-small w3-round-large" id="reset"><b>R</b> : Reset</div><br>
+                <div class="w3-button w3-padding-small w3-round-large" id="info"><b>I</b> : Frame/Info</div><br>
+                <div class="w3-button w3-padding-small w3-round-large" id="screen"><b>B</b> : Ventana grande</div><br>
+                <div class="w3-button w3-padding-small w3-round-large" id="save"><b>S</b> : Guarda jpg</div><br><br>
+                <div id="slider"></div>
+                <p>Presiona <strong>Enter</strong> para fijar <strong>c</strong></p>
+                <p class="w3-hide-small w3-hide-medium">Usa la rueda del mouse para alejar o acercar</p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script language="javascript" type="text/javascript" src="main-es.js"></script>
+
+</body>
+
+
+
+
+</html>

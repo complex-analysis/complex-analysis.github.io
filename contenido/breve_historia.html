@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+  <title>  Una Breve Historia
+</title>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Main info: Dublin core -->
+  <meta name="DC.Title" content="Análisis Complejo">
+  <meta name="DC.Creator" content="Juan Carlos Ponce Campuzano">
+  <meta name="DC.Date" content="26-01-2021">
+  <meta name="DC.Identifier" content="ISBN-13: 978-0-6485736-2-3">
+  <meta name="DC.Type" content="Recurso interactivo">
+  <meta name="DC.Format" content="HTML">
+  <meta name="DC.Language" content="es-mx">
+  <meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+  <!-- social media cards -->
+  <meta property="og:title" content="Análisis Complejo">
+  <meta property="og:description" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta property="og:url" content="https://complex-analysis.com/es.html">
+  <meta property="og:image" content="https://complex-analysis.com/images/complex_analysis_card-es.jpg">
+  <meta property="og:site_name" content="Complex Analysis">
+  <meta property="og:locale" content="es-mx">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta name="twitter:title" content="Análisis Complejo">
+  <meta name="twitter:description" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta name="twitter:site" content="@jcponcemath">
+  <meta name="twitter:image" content="https://complex-analysis.com/images/complex_analysis_card-es.jpg">
+  <meta name="twitter:creator" content="@jcponcemath">
+
+  <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+
+  <link rel="stylesheet" href="css/style-es.css">
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HVPF4FLZCB');
+  </script>
+</head>
+
+<body data-type="book" id="top">
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="comentarios.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-solid fa-circle-half-stroke"></i></span>
+        <span class="support-top-button" id="donate"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="tabla_de_contenidos.html" class="link" id="center-link">
+            <span class="content-hover-previous">Comentarios de los lectores</span>
+            <span class="content-hover">Tabla de Contenidos</span>
+            <span class="content-original">Análisis Complejo</span>
+            <span class="content-hover-next">Terminología y Notación</span>
+        </a>
+    </div>
+    <a href="terminologia_notacion.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="brief-history">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contenidos</p>
+        <ul>
+            <li><a href="#section1">Interpretación geométrica</a></li>
+            <li><a href="#section2">Solución a equaciones cúbicas</a></li>
+            <li><a href="#section3">La génesis de los números imaginarios</a></li>
+            <li><a href="#section4">La maduración de los números complejos</a></li>
+            <li><a href="#section5">Comentarios finales</a></li>
+            <li><a href="#section6">Referencias</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br><br>
+
+    <main>
+        <article>
+
+            <h1>Una Breve Historia</h1>
+
+            <div id="section1">
+
+                <hr>
+
+                <h2>Interpretación geométrica de ecuaciones cuadráticas y cúbicas</h2>
+
+
+                <p>Consideremos la ecuación
+                    \begin{eqnarray}\label{quad001}
+                    x^2 = mx + n.
+                    \end{eqnarray}
+                    En la escuela elemental hemos aprendido a encontrar sus soluciones,
+                    es decir, todos los valores $x$ tales que satisfacen la ecuación
+                    (\ref{quad001}). Para hacer esto solo necesitamos usar la bien conocida
+                    <em>fórmula cuadrática</em>
+                </p><div class="scroll-wrapper">
+                    \begin{eqnarray}\label{quad002}
+                    x = \frac{-b\pm \sqrt{b^2-4ac}}{2a}
+                    \end{eqnarray}
+                </div>
+                de la <em>ecuación general cuadrática</em>
+                \begin{eqnarray}\label{quad003}
+                ax^2+ bx+c = 0 .
+                \end{eqnarray}
+                Al re-escribir la ecuación (\ref{quad001}) como $x^2-mx-n = 0,$ podemos
+                usar (\ref{quad002}) para obtener
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}\label{quad004}
+                    x = \frac{ m \pm \sqrt{m^2 + 4n } }{2} = \frac{m}{2} \pm \sqrt{\frac{m^2}{4} + n}
+                    \end{eqnarray}
+                </div>
+                <p></p>
+
+                <p>
+                    Si graficamos la ecuación (\ref{quad001}) podemos observar geométricamente
+                    que esta representa la intersección de la parábola $y=x^2$ con la línea $y = mx+n.$
+                    Esto se puede apreciar mejor en el siguiente applet. Mueve los deslizadores
+                    en la vista gráfica inferior y observa qué sucede con los puntos de
+                    intersección $x_0$ y $x_1.$
+                </p>
+
+                <div style="display:block;" class="ggbElement" id="ggb-element-01"></div>
+
+
+                <p>
+                    Como ya habrás notado, tenemos tres casos:
+                </p><ol>
+                    <li>Hay dos puntos de intersección, es decir, dos soluciones.</li>
+                    <li>Hay un punto de intersección, es decir, una solución.</li>
+                    <li>No hay puntos de intersección, es decir, no hay soluciones.</li>
+                </ol>
+                <p></p>
+
+                <p>
+                    Sorprendentemente, esto se conoce desde la antigüedad,
+                    incluso sin el uso de símbolos matemáticos o computadoras.
+                    Sabemos por tablillas de arcilla que datan de alrededor del 2000 a. C.
+                    la civilización de Babilonia poseía la fórmula cuadrática,
+                    lo que les permitía (en forma verbal) resolver ecuaciones cuadráticas.
+                    Porque el concepto de números negativos tuvo que esperar hasta el siglo XVI,
+                    los babilonios no consideraron soluciones negativas
+                    <span style="white-space: nowrap;">[<a href="#merzbach-boyer" alt="Merzbach-Boyer" title="Merzbach-Boyer">9</a>,
+                        pp. 29-30]</span>.
+                    También podemos encontrar ecuaciones implícitas
+                    en la geometría desarrollada por los
+                    antiguos griegos, como era de esperar cuando se investigan círculos, parábolas y
+                    objetos geométricos similares, pero no exigimos que cada problema
+                    geométrico tenga una solución
+                    [<a href="#merzbach-boyer" alt="Merzbach-Boyer" title="Merzbach-Boyer">9</a>, Cap. 4].
+                    <!--Cuando nos preguntamos si un círculo en particular y una línea se cruzan, entonces la respuesta
+                        puede ser "sí" o "no". Y cuando la respuesta es "sí", la ecuación cuadrática
+                        para la intersección tiene una solución; si "no", no tiene solución.-->
+                </p>
+
+                <p>
+                    Ahora regresemos a la ecuación cuadrática $x^2= mx+ n.$
+                    Consideremos los valores $m=0$ and $n=-1.$
+                    Si usamos la fórmula (\ref{quad004}), obtenemos
+                    $$x = \pm\sqrt{-1}.$$
+                    ¿Qué está sucediendo aquí?
+                    La mayoría de nosotros hemos aprendido de los cursos de Cálculo,
+                    o en la escuela elemental, que no podemos calcular la raíz cuadrada de
+                    un número negativo.
+                    Entonces, ¿cómo podemos interpretar este valor?
+                    Geométricamente hablando, podemos relacionar la solución
+                    $x = \pm\sqrt{-1}$ con el hecho de que la parábola
+                    $y = x^2$ y la$y=-1$
+                    no se intersecan entre sí, como se aprecia en la Figura 1.
+                    En otras palabras, no hay solución.
+                    En general, si $\dfrac{m^2}{4} + n \lt 0,$
+                    la ecuación $x^2= mx+ n$ no tiene soluciones.
+                </p>
+
+
+                <figure>
+                    <img src="../images/chp01/quadraticminus1.svg" alt="x^2=-1" title="x^2=-1" style="width:75%;">
+                    <figcaption>$x^2=-1.$</figcaption>
+                </figure>
+
+
+                <p>
+                    Se argumenta que esto llevó a la invención de un nuevo número denotado por $i,$
+                    el cual es igual a $\sqrt{-1},$ y se le dió el nombre "imaginario".
+                    Si usamos $i$ como un número tal que $i^2 = -1,$
+                    entonces este valor es la solución de la ecuación $x^2=-1.$
+                </p>
+
+                <p>
+                    También es una práctica común enfatizar en los cursos de matemáticas
+                    que los <em>números complejos</em>, denotados como $a + b\sqrt{-1},$
+                    son necesarios para resolver ciertos tipos de ecuaciones cuadráticas, tales como $x^2+1=0.$
+                    Sin embargo, los números complejos surgieron, en realidad,
+                    de la necesidad de resolver ecuaciones cúbicas.
+                    Más aún, cuando las ecuaciones cuadráticas y cúbicas
+                    aparecieron, en esa época, no había necesidad de calcular las soluciones
+                    de todas las ecuaciones.
+                </p>
+
+                <p>
+                    Entonces ¿cuándo tomaron en realidad relevancia los números complejos?
+                    Para responder a esta pregunta, consideremos primero la ecuación cúbica
+                    \begin{eqnarray}\label{cubic001}
+                    x^3 = p x + q.
+                    \end{eqnarray}
+                    Geométricamente, esta ecuación representa la intersección entre la cúbica
+                    $y = x^3$ con la línea $y = px + q,$
+                    como se muestra en el siguiente applet. Mueve los deslizadores y
+                    observa lo que sucede.
+                </p>
+
+
+                <div class="ggbElement" style="display:block;width:798;height:516;" id="ggb-element-02"></div>
+
+
+                <p>
+                    Como se puede apreciar, no importa cual línea está definida por los parámetros $p$ y $q,$
+                    siempre intersectará a la cúbica en algún lugar, incluso cuando la
+                    línea $px + q$ sea perpendicular al eje $x$ y esté lejos del origen
+                    (es decir, cuando $p$ y $q$ son números positivos/negativos muy grandes).
+                    Esto se debe al hecho de que la cúbica va desde $-\infty$ a $+\infty.$
+                    Por lo tanto, no hay una línea que se pueda dibujar tal que no cruce a la cúbica.
+                    Este ejemplo es muy diferente del caso cuadrático que era una parábola $x^2$
+                    en la cual podemos definir una línea $mx + n$ tal que no se cruce con la parábola.
+                </p>
+
+                <hr>
+
+            </div>
+
+            <div id="section2">
+
+                <h2>Solución de ecuaciones cúbicas</h2>
+
+
+                <p>
+                    Es bien conocido que la solución de la cúbica $x^3 = px + q$
+                    fue desarrollada en el Renacimiento (siglos XV y XVI) por matemáticos italianos.
+                    Scipione del Ferro (1465-1526) y Niccolò Tartaglia (1500-1557),
+                    seguidos por Girolamo Cardano (1501-1576), mostraron que $x^3 = px + q$
+                    tiene una solución dada por
+                </p><div class="scroll-wrapper">
+                    \begin{eqnarray}\label{cubic002}
+                    x = \sqrt[3]{\frac{q}{2} + \sqrt{\frac{q^2}{4} - \frac{p^3}{27}}} -
+                    \sqrt[3]{- \frac{q}{2} + \sqrt{\frac{q^2}{4} - \frac{p^3}{27}}}
+                    \end{eqnarray}
+                </div>
+                Esto se conoce como la fórmula de Cardano y aquí estamos usando la notación moderna.
+                <p></p>
+
+                <div class="figure-container">
+                    <figure>
+                        <img src="../images/chp01/tartaglia.jpg" alt="Niccolò Fontana Tartaglia" title="Niccolò Fontana Tartaglia" style="width:220px;">
+                        <figcaption>
+                            Tartaglia.
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="../images/chp01/cardano.jpg" alt="Gerolamo Cardano" title="Gerolamo Cardano" style="width:250px;">
+                        <figcaption>
+                            Cardano.
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <p>
+                    Para ver como funciona consideremos la ecuación $x^3 = -6 x+ 20.$
+                    En este caso $p=-6$ y $q=20.$ Si sustituimos estos valores en
+                    (\ref{cubic002}), obtenemos la solución
+                </p><div class="scroll-wrapper">
+                    $$x = \displaystyle \sqrt[3]{10 + \sqrt{108}} -
+                    \sqrt[3]{- 10 + \sqrt{108}}.$$
+                </div>
+                Al simplificar obtenemos $x=2,$ una solución a la ecuación dada ya que
+                <div class="scroll-wrapper">
+                    $$8=(2)^3 = -6(2)+ 20 = -12+20=8.$$
+                </div>
+                Esto indica que la fórmula parece funcionar bastante bien, al menos en
+                este caso.
+                <p></p>
+
+                <div class="practice">
+                    <p><strong>Ejercicio:</strong> Intenta resolver la ecuación $x^3=6x+6$ usando la fórmula de
+                        Cardano.</p>
+                </div>
+
+                <hr>
+
+            </div>
+
+            <div id="section3">
+
+                <h2>La génesis de los números imaginarios</h2>
+
+                <p>
+                    Unos años más después del descubrimiento de la fórmula de Cardano,
+                    el ingeniero y arquitecto italiano Rafael Bombelli (1526-1572)
+                    reconoció que había algo extraño y paradójico
+                    acerca de esta fórmula.
+                    Él consideró la ecuación
+                    \begin{eqnarray}\label{cubic003}
+                    x^3= 15 x+ 4
+                    \end{eqnarray}
+                    y, con un poco de reflexión, puedes ver que $x = 4$ es una solución.
+                    Esto también se puede apreciar en la Figura 4. En realidad hay tres soluciones
+                    pero Bombelli no consideró valores negativos, así que tampoco lo haremos nosotros.
+                </p>
+
+                <figure>
+                    <img src="../images/chp01/cubic-line.svg" alt="x^3=15x+4" title="x^3=15x+4" style="width:70%;">
+                    <figcaption>
+                        $x^3=15x+4.$
+                    </figcaption>
+                </figure>
+
+                <div class="w3-responsive">
+                    <p>
+                        Entonces Bombelli usó la fórmula de Cardano para resolver $x^3= 15 x+ 4.$
+                        Así que, considerando $p = 15$ y $q=4,$
+                        obtuvo
+                    </p><div class="scroll-wrapper">
+                        \begin{eqnarray}\label{cubic004}
+                        x = \displaystyle \sqrt[3]{2 + \sqrt{-121}} + \sqrt[3]{2 - \sqrt{-121}}.
+                        \end{eqnarray}
+                    </div>
+                    Aquí nos encontramos con un valor inusual.
+                    Si la fórmula de Cardano
+                    es correcta, este número debe ser igual a 4.
+                    Sin embargo, esto debe ser una tontería y el valor no puede ser real,
+                    porque dentro de la raíz cúbica estamos tomando
+                    la raíz cuadrada de un número negativo, una imposibilidad absoluta
+                    en ese momento (y también en la actualidad).
+                    Cardano también encontró esta dificultad, pero no la enfrentó.
+                    Una vez mencionó números imaginarios, pero en conexión
+                    con una ecuación cuadrática y acompañado del comentario de que
+                    estos números eran "tan sutiles como inútiles"
+                    [<a href="#cardano" alt="Cardano" title="Cardano">2</a>, Ch. 37, Rule II].
+                    <p></p>
+                </div>
+
+                <p>
+                    Sin embargo, Bombelli superó esta dificultad
+                    al ver que la expresión extraña (\ref{cubic004})
+                    que la fórmula de Cardano da para $ x $ es realmente real,
+                    pero expresado de una manera muy desconocida. Esta
+                    intuición no fue fácil. Así lo describió Bombelli en su libro <em> L'Algebra </em>:
+                </p><div style="margin-left: 30px;margin-right: 30px;">
+                    <p>
+                        Y aunque a muchos esto les parecerá una extravagancia,
+                        porque incluso yo sostuve esta opinión hace algún tiempo, ya que apareció
+                        para mí más sofista que verdad, sin embargo busqué arduamente y
+                        encontré la demostración, que se indicará a continuación. ... Pero dejo
+                        el lector aplique toda su fuerza mental, porque [de lo contrario]
+                        incluso él se encontrará engañado.
+                        [<a href="bombelli" alt="Bombelli" title="Bombelli">1</a>, pp. 293-294;
+                        <a href="#oconnor-robertson" alt="O'Connor-Robertson" title="O'Connor-Robertson">10</a>]
+                    </p>
+                </div>
+
+                <figure>
+                    <img src="../images/chp01/algebra-bombelli.jpg" alt="L'Algebra" title="L'Algebra" style="width:45%;">
+                    <figcaption>
+                        <em>L'Algebra</em> por Rafael Bombelli: frontispicio de
+                        la edición de Bolonia de 1579.
+                    </figcaption>
+                </figure>
+                <p></p>
+
+                <div>
+                    <p>
+                        La gran intuición de Bombelli fue simplemente tratar $\sqrt{-1}$ como un número
+                        y operar con él siguiendo reglas aritméticas específicas
+                        (el mismo tipo de reglas que usamos hoy en día).
+                        De esta manera descubrió que
+                    </p><div class="scroll-wrapper">
+                        $$\sqrt[3]{2+ \sqrt{-121}} = 2 + \sqrt{-1} \quad \text{and} \quad \sqrt[3]{2- \sqrt{-121}} = 2 -
+                        \sqrt{-1} .$$
+                    </div>
+                    Al sustituir estos valores en (\ref{cubic004}) Bombelli obtuvo
+                    <div class="scroll-wrapper">
+                        $$x = 2 + \sqrt{-1} + 2 - \sqrt{-1}.$$
+                    </div>
+                    Luego mostró que las raíces cuadradas de los números negativos se cancelan entre sí
+                    [<a href="#bombelli" alt="Bombelli" title="Bombelli">1</a>, p. 169;
+                    <a href="#gonzalez-velasco" alt="Gonzaláz-velasco" title="González-Velasco">7</a>, p. 164]. Esto es
+                    <div class="scroll-wrapper">
+                        $$x = 2 + \cancel{\sqrt{-1}} + 2 - \cancel{\sqrt{-1}}.$$
+                    </div>
+                    Y concluyó que $x = 4$ es en realidad la solución de $x^3=15x+4$
+                    obtenida a partir de la fórmula de Cardano
+                    [<a href="#bombelli" alt="Bombelli" title="Bombelli">1</a>, p. 294], ver Figura 6.
+                    Este truco funciona solo en unos pocos casos, sin embargo, ayudó a
+                    comprender los números imaginarios y calcular sus raíces cúbicas o
+                    manipularlos cuando aparecen a un lado de números reales.
+                    <p></p>
+                </div>
+
+
+
+                <div class="figure-container">
+
+
+                    <figure>
+                        <img src="../images/chp01/bombelli-solution.jpg" alt="Bombelli's solution" title="Bombelli's solution" style="width:100%;">
+
+                        <figcaption>
+                            La solución original de Bombelli.
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <p>
+                            \begin{eqnarray*}
+                            x^3 &amp;=&amp; 15x + 4\\
+                            [x^3 &amp;=&amp; px + p]
+                            \end{eqnarray*}
+                            \begin{eqnarray*}
+                            (4/2)^2-(15/3)^3 &amp;=&amp; -121\\
+                            [\left(q/2\right)^2 -\left(p/2\right)^3]&amp;=&amp;-121
+                            \end{eqnarray*}
+                            \begin{eqnarray*}
+                            x &amp;=&amp; \sqrt[3]{2+ \sqrt{-121}} + \sqrt[3]{2- \sqrt{-121}}\\
+                            x &amp;=&amp; \sqrt[3]{2+ 11\sqrt{-1}} + \sqrt[3]{2- 11\sqrt{-1}} \\
+                            x &amp;=&amp; 2 + \sqrt{-1} + 2 - \sqrt{-1} = 4
+                            \end{eqnarray*}
+
+                        </p>
+                        <figcaption>
+                            Solution in modern algebra.
+                        </figcaption>
+                    </figure>
+
+
+
+
+                </div>
+
+
+
+                <p>
+                    Por supuesto, como puedes apreciar en la Figura 6,
+                    Bombelli no tenía a su disposición el poder de la notación algebraica actual
+                    (ni tampoco computadoras) y sus cálculos se limitaron a números en el "dominio real".
+                    De hecho, la mayoría de los matemáticos italianos en ese momento tendían a pensar en cubos o
+                    cuadrados
+                    como objetos geométricos en lugar de cantidades algebraicas. Sin embargo, gracias a él se logró
+                    observar la
+                    realidad de las soluciones de la ecuación cúbica $ x ^ 3 = 15x + 4 ,$
+                    puesto que demostró el hecho extraordinario de que los números reales podrían ser
+                    generados por números imaginarios.
+                </p>
+
+                <p>
+                    La fórmula de Cardano obligó a los matemáticos
+                    a confrontar raíces cuadradas de números negativos.
+
+                    Este incidente histórico es otro ejemplo que niega la generalizada
+                    vista que las matemáticas están "hechas" por matemáticos. Como suele ser el caso, es
+                    la matemática misma la que nos habla.
+                    A partir de este momento, los números imaginarios perdieron parte de su carácter
+                    místico, aunque su total aceptación como números <em>auténticos</em>
+                    llegó solo en el siglo XIX.
+                </p>
+
+                <div class="practice">
+                    <p><strong>Ejercicio:</strong> Comprueba que $\sqrt[3]{2 \pm \sqrt{-121}} = 2 \pm \sqrt{-1}.$</p>
+                </div>
+
+                <hr>
+
+
+            </div>
+
+            <div id="section4">
+
+
+                <h2>La maduración de los números complejos</h2>
+
+                <p>
+                    Muchos matemáticos después de Cardano y Bombelli hicieron importantes contribuciones a los
+                    números imaginarios (o complejos). Por ejemplo, René Descartes (1596-1650)
+                    acuñó el término "imaginario" en su libro en <em>La Géométrie</em> de 1637 de la siguiente manera:
+
+                </p>
+
+                <div style="margin-left: 30px;margin-right: 30px;">
+                    <p>Ni las raíces verdaderas ni las falsas [negativas] son siempre reales; pero a veces
+                        solo imaginarias. [<a href="#descartes" alt="Descartes" title="Descartes">4</a>, p. 380]
+                    </p>
+                </div>
+
+                <p>
+                    John Wallis (1616-1703) mostró como representar geométricamente
+                    raíces de una ecuación cuadrática con coeficientes reales
+                    [<a href="#kline" alt="Kline" title="Kline">8</a>, p. 594].
+                    Caspar Wessel (1745-1818) y
+                    <span style="white-space: nowrap;">Jean-Robert</span>
+                    Argan (1768-1822)
+                    proporcionaron representaciones geométricas de números complejos como vectores
+                    [<a href="#gonzalez-velasco" alt="González-Velasco" title="González-Velasco">7</a>, pp. 185-190].
+                </p>
+
+
+
+
+                <figure>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Leonhard_Euler.jpg" alt="Euler" title="Euler" style="width:30%;">
+                    <figcaption>
+                        Euler.
+                    </figcaption>
+                </figure>
+
+                <p>
+                    Leonard Euler (1707-1783) estandarizó la notación "$ i = \sqrt {-1} $"
+                    [<a href="#euleri"> 6 </a>, pág. 184] y usó números imaginarios para resolver
+                    ecuaciones cuadráticas y cúbicas, a pesar de que él
+                    todavía sospechaba de estos números.
+                    En su <em> Álgebra </em>, por ejemplo, mencionó:
+                </p>
+
+                <div style="margin-left: 30px;margin-right: 30px;">
+                    <p>[...] ya que todos los números que es posible concebir
+                        son mayores o menores que 0, o son 0 en sí mismo, es
+                        evidente que no podemos clasificar la raíz cuadrada de un
+                        número negativo entre los números posibles, y por lo tanto debemos
+                        decir que es una cantidad imposible. De esta manera esto nos conduce
+                        a la idea de números, que por su naturaleza son imposibles;
+                        y por eso se les suele llamar
+                        cantidades imaginarias, porque existen meramente en la imaginación.
+                        [<a href="#euler-algebra" alt="Euler-Algebra" title="Euler-Algebra">5</a>, p. 43]
+                    </p>
+                </div>
+
+                <p>
+                    Para que nadie tome esto como una condena, continuó:
+                </p>
+
+                <div style="margin-left: 30px;margin-right: 30px;">
+                    <p>a pesar de esto, estos números se presentan
+                        ellos mismos a la mente; existen en nuestra
+                        imaginación, y todavía tenemos una idea suficiente de
+                        ellos; [...] nada nos impide hacer uso de estos
+                        números imaginarios y emplearlos en el cálculo.
+                        <span style="white-space: nowrap;">[<a href="#euler-algebra" alt="Euler" title="Euler">5</a>, p.
+                            43]</span>
+
+                    </p>
+                </div>
+
+                <p>
+                    Después Carl Friedrich Gauss (1777-1855) introdujo el término "número complejo"
+                    refiriéndose a los números de la forma $a+ b \, i $
+                    [<a href="#gonzalez-velasco" alt="González-Velasco" title="González-Velasco">7</a>, p. 191].
+                    También dio cuatro demostraciones del <em> teorema fundamental del álgebra </em> en el transcurso de
+                    su larga carrera. Este teorema nos dice que
+                    cualquier polinomio de $ n $-ésimo grado tiene $ n $ raíces, algunas o todas
+                    puede ser imaginarias. La primera prueba que dio Gauss fue en su disertación de doctorado
+                    de 1799. La última (y quizás la más elegante)
+                    permite el uso de números complejos no solo para la variable sino
+                    también para los coeficientes. Dado que esto dependía necesariamente del reconocimiento
+                    de números complejos, Gauss ayudó a solidificar la posición de estos
+                    números [<a href="#kline" alt="Kline" title="Kline">8</a>, Vol. 2, p. 595].
+                </p>
+
+
+
+                <p>
+                    La primera definición rigurosa de números complejos fue
+                    dada por William Rowan Hamilton (1805-1865). En 1833 propuso a la Academia Irlandesa
+                    que un número complejo puede considerarse como una <em> pareja </em> $ (a, b) ,$
+                    con $ a, b $ números reales
+                    <span style="white-space: nowrap;">[<a href="#gonzalez-velasco" alt="González-Velasco" title="González-Velasco">7</a>, pp. 192-193].</span>
+                    Después definió la adición y multiplicación de <em>parejas</em> como sigue:
+                </p><div class="scroll-wrapper">
+                    $$(a, b)+(c, d) =(a + c, b + d)$$
+                </div>
+                y
+                <div class="scroll-wrapper">
+                    $$(a, b)(c, d) = (ac - bd, bc + ad).$$
+                </div>
+                <p></p>
+                <p>
+                    De hecho, esta es una definición algebraica de números complejos.
+
+                    Desde el punto de vista didáctico y heurístico es preferible introducir
+                    números complejos a través de una interpretación geométrica.
+                    Pero desde el punto de vista lógico, la teoría de las <em>parejas</em>
+                    es mucho más satisfactoria, ya que muestra la consistencia de la
+                    teoría de los números complejos a partir de la consistencia de
+                    los números reales [<a href="#carrucio" alt="Carrucio" title="Carrucio">3</a>, pág. 175].
+                </p>
+
+
+
+                <div class="figure-container">
+                    <figure>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/William_Rowan_Hamilton_portrait_oval_combined.png" alt="William Rowan Hamilton" title="William Rowan Hamilton" style="width:50%;">
+                        <figcaption>
+                            Hamilton.
+                        </figcaption>
+                    </figure>
+
+
+                    <figure>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Augustin-Louis_Cauchy_1901.jpg" alt="Augustin-Louis Cauchy" title="Augustin-Louis Cauchy" style="width:50%;">
+                        <figcaption>
+                            Cauchy.
+                        </figcaption>
+                    </figure>
+                </div>
+
+
+
+                <p>
+                    Entre los muchos matemáticos y científicos que contribuyeron,
+                    hay tres que se destacan por haber influido decisivamente en el curso de
+                    desarrollo del análisis complejo
+                    [<a href="#kline" alt="Kline" title="Kline">8 </a>, Vol.2, Cap. 27].
+                    El primero es Augustin-Louis Cauchy (1789-1857), quien
+                    desarrolló la teoría del cálculo integral complejo.
+                    Mediante el uso de números imaginarios, Cauchy pudo
+                    evaluar "integrales reales" que de otro modo no se podían evaluar,
+                    obteniendo resultados asombrosos como
+                </p><div class="scroll-wrapper">
+                    $$\int_0^{\infty} \frac{\sin x}{x}\,dx=\frac{\pi}{2}$$
+                </div>
+                y
+                <div class="scroll-wrapper">
+                    $$\int_0^{\pi}\log \sin x\,dx =-\pi \log 2.$$
+                </div>
+                La evaluación de integrales reales, además de la solución de
+                la ecuación cúbica y el teorema fundamental del
+                álgebra, demostró lo valioso que era considerar números imaginarios.
+                <p></p>
+
+
+
+                <div class="figure-container">
+                    <figure>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Karl_Weierstrass.jpg" alt="Karl Weierstrass" title="Karl Weierstrass" style="width:50%;">
+                        <figcaption>
+                            Weierstrass.
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Georg_Friedrich_Bernhard_Riemann.jpeg" alt="Georg Friedrich Bernhard Riemann" title="Georg Friedrich Bernhard Riemann" style="width:65%;">
+                        <figcaption>
+                            Riemann.
+                        </figcaption>
+                    </figure>
+                </div>
+
+
+
+
+                <p>
+                    Finalmente, los otros dos matemáticos son Karl Weierstrass
+                    (1815-1897) y Bernhard Riemann (1826-1866), quienes aparecieron en
+                    escena a mediados del siglo XIX. Weierstrass
+                    desarrolló la teoría desde un punto de partida de series de potencia convergente, y
+                    este enfoque condujo a desarrollos algebraicos más formales. Riemann,
+                    por otra parte, aportó más desde un punto de vista geométrico. Sus ideas tuvieron un tremendo
+                    impacto no solo en el análisis complejo sino en las matemáticas en su conjunto,
+                    aunque sus opiniones se afianzaron sólo gradualmente.
+
+                </p>
+
+
+                <hr>
+
+
+            </div>
+
+            <div id="section5">
+
+                <h2>Comentarios finales</h2>
+
+                <p>
+                    Las descripciones anteriores de números complejos no son el final de la historia.
+                    Varios desarrollos en los siglos XIX y XX nos permitieron
+                    obtener una visión más profunda del papel de los números complejos no solo en matemáticas,
+                    pero también en ingeniería y física.
+                    La historia de los números complejos es fascinante y recomiendo encarecidamente
+                    al lector consultar las fuentes primarias citadas aquí, las
+                    cuales pueden servir como punto de partida para ahondar en los detalles históricos
+                    que permitieron el surgimiento y desarrollo de los números complejos.
+                </p>
+                <!-- <p>¿Realmente existen o son simplemente
+                    fantasmas de nuestra "imaginación" y, por tanto, verdaderamente "imaginarios"?
+                    </p>  -->
+
+                <hr>
+
+
+            </div>
+
+            <div id="section6">
+
+                <h2>Referencias</h2>
+
+                <ol class="bbtex-list">
+                    <li id="bombelli">Bombelli, R. (1579). <em>L'Algebra.</em> Bologna. <a href="http://mathematica.sns.it/opere/9/" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+
+                    <li id="cardano">Cardano,&nbsp;H.&nbsp;(1545).&nbsp;<em>Artis magnae, sive de regulis algebraicis, liber
+                            unus.</em>&nbsp;(n.p.):&nbsp;Joh.
+                        Petreius.
+                        <a href="https://www.google.com.au/books/edition/Artis_magnae_sive_de_regulis_algebraicis/-k5ZAAAAcAAJ?hl=en&amp;gbpv=1&amp;pg=PA66&amp;printsec=frontcover&amp;bsq=cuius%20hoc%20extremum%20ut%20dixi%2C%20adeo%20est%20subtile%2C%20ut%20sit%20inutile" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    </li>
+                    <li id="carrucio">Carrucio, E. (2009). <em>Mathematics and Logic in History and Contemporary
+                            Thought</em>.
+                        (I. Quigly, Trans.) USA: Aldine Transaction. (Original work published 1964).</li>
+                    <li id="descartes">Descartes, R. (1637). <em>La Géométrie.</em> Paris: A. Herman, Librairie
+                        Scientifique. <a href="https://archive.org/details/geometryofrene00desc/page/174/mode/2up?q=imaginary" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+                    <li id="euler-algebra">Euler, L. (1972). <em>Elements of Algebra.</em> (Rev. John Hewlett, B.D.
+                        F.A.S. &amp;c,
+                        Trans.). Springer-Verlag.
+                        (Original work published 1770). <a href="https://www.springer.com/gp/book/9781461385134" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+                    <li id="euleri">Euleri, L. (1845). <em>Instituitionum Calculi Integralis.</em> Volumen Quartum.
+                        Petropoli. Impensis Academia Imperialis Scientarum. <a href="https://books.google.it/books?id=rCNRAAAAYAAJ&amp;pg=PA184#v=onepage&amp;q&amp;f=false" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    </li>
+                    <li id="gonzalez-velasco">González-Velasco, A. E. (2011) <em>Journey through Mathematics.</em>
+                        Springer Science+Business Media. <a href="https://www.springer.com/gp/book/9780387921532" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+                    <li id="kline">Kline, M. (1972). <em>Mathematical Thought from Ancient to Modern Times.</em> Vols.
+                        1-3. New York:
+                        Oxford University Press.</li>
+                    <li id="merzbach-boyer">Merzbach, U. C &amp; Boyer, C. B. (2011). <em>A history of mathematics.</em> 3rd
+                        ed.
+                        John Wiley &amp; Sons, Inc., Hoboken, New Jersey.</li>
+                    <li id="oconnor-robertson">O'Connor, J. J. &amp; Robertson, E. F. (2000). <em>Rafael Bombelli.</em>
+                        <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Bombelli/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    </li>
+                </ol>
+
+                <p class="w3-center" style="font-size:24px">
+                    <strong>Otras lecturas</strong>
+                </p>
+
+                <ul style="line-height:28px">
+                    <li id="bagni">Bagni, G. T. (2009). Bombelli's Algebra (1572) and a New Mathematical Object.
+                        <em>For the Learning of Mathematics.</em> Vol. 29, No. 2, pp.
+                        29-31.
+                        <a href="https://www.jstor.org/stable/40248647" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    </li>
+                    <li id="buehler">Buehler, D. (2014). Incomplete understanding of complex numbers
+                        Girolamo Cardano: a case study in the acquisition
+                        of mathematical concepts. <em>Synthese </em> 191:4231-4252.
+                        <a href="https://link.springer.com/article/10.1007/s11229-014-0527-x" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    </li>
+                    <li id="burton">Burton, D. M. (1995). <em>The history of mathematics: An introduction</em> (6th ed.)
+                        (2005). New York: McGraw-Hill.</li>
+
+                    <li>Gindikin, S. (2007). <em>Tales of Mathematicians and Physicists</em>. Second English edition
+                        Springer Science+
+                        Business Media, LLC.
+                        <a href="https://link.springer.com/book/10.1007/978-0-387-48811-0" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    </li>
+                    <li id="nahim">Nahim, P. J. (1998). <em>An imaginary tale: The story of $\sqrt{-1}$</em>. USA:
+                        Princeton
+                        University Press.
+                    </li>
+                    <li id="huffman">Huffman, C. J. (2019). Mathematical Treasure: Raphael Bombelli's L'algebra.
+                        <em>Convergence.</em>
+                        <a href="https://www.maa.org/press/periodicals/convergence/mathematical-treasure-raphael-bombellis-lalgebra" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    </li>
+                    <li id="marsden-tromba">Marsden, J. E. &amp; Tromba, A. J. (2003). <em>Vector Calculus.</em> USA: W. H.
+                        Freeman and
+                        Company.</li>
+                    <li id="merino">Merino, O. (2006). <em>A Short History of Complex Numbers.</em>
+                        <a href="http://www.math.uri.edu/~merino/spring06/mth562/ShortHistoryComplexNumbers2006.pdf" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    </li>
+                    <li id="stillwell">Stillwell, J. (2010). <em>Mathematics and Its History.</em> Springer Science.
+
+                        <a href="https://www.springer.com/gp/book/9781441960528" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <br>
+
+
+        </article>
+    </main>
+
+    <!-- GeoGebra -->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script>
+        let params01 = {
+            "width": 696,
+            "height": 436,
+            "material_id": "mqdbedcd",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": true,
+            "showResetIcon": true
+        };
+        let params02 = {
+            "width": 670,
+            "height": 430,
+            "material_id": "ntehbavr",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": true,
+            "showResetIcon": true
+        };
+        let ggbApplet01 = new GGBApplet(params01, true);
+        let ggbApplet02 = new GGBApplet(params02, true);
+        window.addEventListener("load", () => {
+            ggbApplet01.inject('ggb-element-01');
+            ggbApplet02.inject('ggb-element-02');
+        });
+    </script>
+
+    <a href="terminologia_notacion.html" style="text-decoration: none;">
+        <p class="nextPage">Terminología y Notación <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 ¡Hola!</strong>
+      </div>
+      <div class="modal-body">
+        <p>
+          Si este libro interactivo te ha sido de utilidad, 
+          puedes apoyarme en:
+        </p>
+
+        <div class="button-container">
+          <button id="modal-link">
+            <a href="https://www.patreon.com/jcponce"><i class="fa-brands fa-patreon"></i>
+              <strong>Patreon</strong></a>
+          </button>
+        </div>
+
+
+        <p>
+          Este proyecto es posible gracias al generoso apoyo de personas como tú.
+          Sus contribuciones me permiten mantener este sitio, así como los applets,
+          y crucialmente, <strong>garantizar que permanezca de acceso libre</strong>
+          para toda persona interesada en explorar esta cautivadora rama de las 
+          matemáticas <strong>- sin anuncios que te distraigan</strong>.
+        </p>
+
+        <p>Si prefieres donar una sola vez, no mensualmente, 
+          puedes usar los siguientes enlaces:
+        </p>
+
+        <div class="button-container">
+          <button id="modal-link">
+            <a target="_blank"
+              href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=WTMTR7D8RYZ26&item_name=Your+support+will+help+me+to+improve+and+keep+up+to+date+the+applets+of+this+book.+Sincerely+appreciate+it%21&currency_code=AUD&source=url">
+              <strong>❤️ <i class="fa-brands fa-paypal"></i> PayPal Me</strong>
+            </a>
+          </button>
+          <button id="modal-link">
+            <a target="_blank" href="https://jcponcemath.secure-decoration.com/">
+              <strong>❤️ Adquire una T-shirt</strong>
+            </a>
+          </button>
+        </div>
+
+        <p>
+          No puedes contribuir en esta ocasión, ¡no hay problema!
+          Quizá sólo quieras
+        </p>
+        <div class="button-container">
+          <button id="modal-link">
+            <a href="mailto:jcponcemath@gmail.com"><strong><i class="fa-solid fa-envelope"></i> 
+            Mandar un comentario</strong></a>
+          </button>
+
+        </div>
+        <br />
+      </div>
+      <div class="modal-footer">
+        ¡Gracias! 🙏 !Realmente aprecio tu apoyo! 🤗
+      </div>
+    </div>
+
+  </div>
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer data-type="footer">
+
+  <span id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <span class="hide-small">
+      <a href="https://github.com/complex-analysis"><i class="fa-solid fa-code"></i> Source</a>,
+      <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues"><i
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+    </span>
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-solid fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+
+  <br />
+
+  <a id="licence-link" rel="license" href="licencia.html">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong><span style="font-size: 0.9em;">ISBN: 978-0-6485736-2-3</span></strong><br>
+  <strong>
+    <span class="hide-small" style="font-size: 0.9em;">&copy; Juan Carlos Ponce Campuzano
+      2021-<script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 0.9em;">&copy; J.C. Ponce Campuzano
+      2021-<script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>

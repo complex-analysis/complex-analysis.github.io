@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>  Terminology and Notation
+</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Main info: Dublin core -->
+  <meta name="DC.Title" content="Complex Analysis">
+  <meta name="DC.Creator" content="Juan Carlos Ponce Campuzano">
+  <meta name="DC.Date" content="26-01-2019">
+  <meta name="DC.Identifier" content="ISBN-13: 978-0-6485736-0-9">
+  <meta name="DC.Type" content="Interactive Resource">
+  <meta name="DC.Format" content="HTML">
+  <meta name="DC.Language" content="en-US">
+  <meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+  <!-- social media cards -->
+  <meta property="og:title" content="Complex Analysis">
+  <meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta property="og:url" content="https://complex-analysis.com/">
+  <meta property="og:image" content="https://complex-analysis.com/images/complex_analysis_card.jpg">
+  <meta property="og:site_name" content="Complex Analysis">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+  <meta name="twitter:title" content="Complex Analysis">
+  <meta name="twitter:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta name="twitter:site" content="@jcponcemath">
+  <meta name="twitter:image" content="https://complex-analysis.com/images/complex_analysis_card.jpg">
+  <meta name="twitter:creator" content="@jcponcemath">
+
+  <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HVPF4FLZCB');
+  </script>
+</head>
+
+<body data-type="book" id="top">
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="brief_history.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-solid fa-circle-half-stroke"></i></span>
+        <span class="support-top-button" id="donate"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="table_of_contents.html" class="link" id="center-link">
+            <span class="content-hover-previous">A Brief History</span>
+            <span class="content-hover">Table of Contents</span>
+            <span class="content-original">Complex Analysis</span>
+            <span class="content-hover-next">Geometric Interpretation</span>
+        </a>
+    </div>
+    <a href="geometric_interpretation_add_mult.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="terminology">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <br><br>
+
+    <main>
+        <article>
+
+            <h1>Terminology and Notation</h1>
+
+            <hr>
+
+            <p>A <em>complex number</em> $z$ is a number that can be expressed in the form $x + iy,$ where $x$ and $y$
+                are
+                real numbers and $i$ is the imaginary unit, that is, $i^2 = -1.$ In this expression, $x$ is
+                the <em>real part</em> and $y$ is the <em>imaginary part</em> of the complex number.</p>
+
+            <p>The complex numbers, denoted by $\mathbb C,$ extend the concept of the one-dimensional number line to
+                the two-dimensional complex plane (also known as Argand plane) by using the horizontal axis for the
+                real part and the vertical axis for the imaginary part. The analogy with two-dimensional vectors is
+                immediate. The complex number $x+iy$ can be identified with the point $(x, y)$ in the complex plane
+                but also it can be interpreted as a two-dimensional vector.</p>
+
+            <div class="hide-small" style="text-align: center;">
+                <iframe scrolling="no" title="Complex numbers: cartesian representation" src="https://www.geogebra.org/material/iframe/id/msjwbwej/width/475/height/448/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="475px" height="448px" style="border:0px;" allowfullscreen=""> </iframe>
+            </div>
+
+
+            <div class="hide-medium hide-large" style="text-align: center;">
+                <figure>
+                    <img src="../images/chp01/cartesian.svg" alt="Cartesian form" title="Cartesian form" style="width:100%;">
+                </figure>
+            </div>
+
+
+
+            <p>It is useful to introduce another representation of complex numbers, namely
+                polar coordinates $(r, \theta)$:
+            </p><div class="scroll-wrapper">
+                \begin{eqnarray}\label{par}
+                x= r\cos \theta, \quad y=r\sin \theta \quad (r\geq 0)
+                \end{eqnarray}
+            </div>
+            Hence the complex number $z$ can be written in the alternative polar form:
+            \begin{eqnarray}\label{polar}
+            z=x+iy=r(\cos \theta + i \sin \theta).
+            \end{eqnarray}<p></p>
+
+
+
+            <p>The radius $r$ is denoted by
+                $$r=\sqrt{x^2+y^2}=|z|$$
+                and naturally gives us a notion of the <em>absolute value</em> of $z,$ denoted by $|z|,$
+                that is, it is the length of the vector associated with $z.$
+                The value $|z|$ is often referred to as the <emg>modulus of $z.$
+                    <span id="phase-argument">The angle $\theta$ is called the <em>argument</em> (or <em>phase</em>)
+                        of $z$</span> and is denoted
+                    by $\textbf{arg}(z).$ When $z\neq 0,$ the values of $\theta$ can be found from (\ref{par})
+                    via standard trigonometry:
+                    $$\tan \theta = \frac{y}{x}$$
+                    where the quadrant in which $x,$ $y$ lie is understood as given.
+            </emg></p>
+
+            <p>At this point it is convenient to introduce a special exponential function. The
+                polar exponential is defined by
+                $$\cos \theta +i\sin \theta = e^{i\theta}.$$
+                Hence equation (\ref{polar}) implies that $z$ can be written in the form
+                $$z=r e^{i\theta}.$$
+                This exponential function has all of the standard properties we are familiar
+                within elementary calculus and is a special case of the complex exponential
+                function.</p>
+
+            <div class="hide-small" style="text-align: center;">
+                <iframe scrolling="no" title="Complex numbers: Polar and exponential forms" src="https://www.geogebra.org/material/iframe/id/dmnwp23g/width/475/height/448/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/true/ctl/false" width="475px" height="448px" style="border:0px;" allowfullscreen=""> </iframe>
+            </div>
+            <br>
+
+            <div class="hide-medium hide-large">
+                <figure>
+                    <img src="../images/chp01/polar.svg" alt="Polarform" title="Polar form" style="width:100%;">
+
+                </figure>
+            </div>
+
+            <p>Finally, the <em>complex conjugate</em> of $z$ is defined as
+                $$\overline{z}=x-iy.$$
+            </p>
+
+
+            <p>Addition, subtraction, multiplication, and division of complex numbers follow
+                from the rules governing real numbers. Thus, noting $i^2=-1,$ we have
+            </p><div class="scroll-wrapper">
+                $$z_1\pm z_2=(x_1\pm x_2)+i(y_1\pm y_2)$$
+            </div>
+            and
+            <div class="scroll-wrapper">
+                $$z_1 \cdot z_2=(x_1+iy_1)(x_2+iy_2)=(x_1x_2-y_1y_2)+i(x_1y_2+x_2y_1).$$
+            </div>
+            Now, we note that
+            $$z\overline{z}= (x + iy)(x - iy) = x^2+y^2=|z|^2.$$
+            This fact is useful for division of complex numbers,
+            <div class="scroll-wrapper">
+                \[
+                \frac{z_1}{z_2}=\frac{x_1x_2+y_1y_2}{x_2^2+y_2^2}+i\frac{x_2y_1-x_1y_2}{x_2^2+y_2^2}.
+                \]
+            </div>
+            It is easily shown that the commutative, associative, and distributive laws of
+            addition and multiplication hold.
+            Geometrically speaking, addition of two complex numbers is equivalent to
+            that of the parallelogram law of vectors.
+            <p></p>
+
+
+
+
+            <p>Some of the terminology and notation used to describe complex numbers is summarized in Figure 1.</p>
+
+
+            <figure>
+                <img src="../images/chp01/sum-info.svg" alt="Summarized information" title="Summarized information" style="width:100%;">
+                <figcaption>
+                    Summarized information.
+                </figcaption>
+            </figure>
+
+
+            <p>I suggest you to make yourself comfortable with the concepts, terminology, and notation introduced
+                thus far. To do so, try to convince yourself geometrically (and/or algebraically) of each of the
+                following facts:
+            </p><div class="scroll-wrapper">
+                \begin{eqnarray*}
+                \textbf{Re}(z)=\frac{1}{2}\left(z+\overline{z}\right)\quad\quad
+                \textbf{Im}(z)=\frac{1}{2i}\left(z-\overline{z}\right)\quad \quad|z|=\sqrt{x^2+y^2}
+                \end{eqnarray*}
+                \begin{eqnarray*}
+                \tan\left(\textbf{arg}(z)\right)=\frac{\textbf{Im}(z)}{\textbf{Re}(z)}\quad \quad
+                re^{i\theta}=r(\cos \theta +i \sin \theta)
+                \end{eqnarray*}
+                \begin{eqnarray*}
+                \overline{\overline{z}}=z\quad \quad \left|z_1z_2\right|=\left|z_1\right|\left|z_2\right|\quad \quad
+                \left|\frac{z_1}{z_2}\right|=\frac{\left|z_1\right|}{\left|z_2\right|},\; (z_2\neq0)
+                \end{eqnarray*}
+                \begin{eqnarray*}
+                \overline{z_1\pm z_2}=\overline{z_1}\pm\overline{z_2}\quad \quad \quad
+                \overline{z_1z_2}=\overline{z_1}\cdot \overline{z_2}\quad \quad \quad
+                \overline{\left(\frac{z_1}{z_2}\right)}=\frac{\overline{z_1}}{\overline{z_2}},\; (z_2\neq0)
+                \end{eqnarray*}
+                \begin{eqnarray*}
+                \left|z_1\pm z_2\right|\leq \left|z_1\right|+\left|z_2\right| \quad \quad \quad
+                \left|\left|z_1\right|-\left|z_2\right|\right|\leq \left|z_1\pm z_2\right|
+                \end{eqnarray*}
+            </div>
+
+
+            The following is called the <em>generalized triangle inequality</em>:
+            <div class="scroll-wrapper">
+                \begin{eqnarray*}
+                |z_1+z_2+\cdots +z_n|\leq |z_1|+ |z_2|+\cdots |z_n|
+                \end{eqnarray*}
+            </div>
+
+            When does equality hold?<p></p>
+
+
+            <br>
+
+        </article>
+    </main>
+
+    <a href="geometric_interpretation_add_mult.html" style="text-decoration: none;">
+        <p class="nextPage">Geometric Interpretation <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 Hello!</strong>
+      </div>
+      <div class="modal-body">
+        <p>
+          If you found this interactive textbook helpful, consider becoming a member in:
+        </p>
+
+        <div class="button-container">
+          <button id="modal-link">
+            <a href="https://www.patreon.com/jcponce"><i class="fa-brands fa-patreon"></i>
+              <strong>Patreon</strong></a>
+          </button>
+        </div>
+
+
+        <p>
+          This project is made possible by the kindness of supporters like you.
+          Your contributions enable me to maintain the site, uphold the applets,
+          and, crucially, <strong>ensure it remains freely accessible</strong> to anyone eager to
+          explore this captivating field of mathematics <strong>—without any distracting ads</strong>.
+        </p>
+
+        <p>If you prefer to donate just once,
+          not monthly, you can use these links:
+        </p>
+
+        <div class="button-container">
+          <button id="modal-link">
+            <a target="_blank"
+              href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=WTMTR7D8RYZ26&item_name=Your+support+will+help+me+to+improve+and+keep+up+to+date+the+applets+of+this+book.+Sincerely+appreciate+it%21&currency_code=AUD&source=url">
+              <strong>❤️ <i class="fa-brands fa-paypal"></i> PayPal Me</strong>
+            </a>
+          </button>
+          <button id="modal-link">
+            <a target="_blank" href="https://jcponcemath.secure-decoration.com/">
+              <strong>❤️ Buy a T-shirt</strong>
+            </a>
+          </button>
+        </div>
+
+        <p>
+          You can't contribute this time, no worries! Maybe you just want to:
+        </p>
+        <div class="button-container">
+          <button id="modal-link">
+            <a href="mailto:jcponcemath@gmail.com"><strong><i class="fa-solid fa-envelope"></i> Send a
+                comment</strong></a>
+          </button>
+
+        </div>
+        <br />
+      </div>
+      <div class="modal-footer">
+        Thank you! 🙏 I highly appreciate your support! 🤗
+      </div>
+    </div>
+
+  </div>
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer>
+
+  <span id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <span class="hide-small">
+      <a href="https://github.com/complex-analysis"><i class="fa-solid fa-code"></i> Source</a>,
+      <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues"><i
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+    </span>
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-solid fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+  
+  <br />
+
+  <a id="licence-link" rel="license"
+    href="license.html">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong style="font-size: 0.9em;">ISBN: 978-0-6485736-0-9</strong> <br>
+  <strong>
+    <span class="hide-small" style="font-size: 0.9em;">&copy; Juan Carlos Ponce Campuzano
+      2019-<script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 0.9em;">&copy; J.C. Ponce Campuzano
+      2019-<script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>

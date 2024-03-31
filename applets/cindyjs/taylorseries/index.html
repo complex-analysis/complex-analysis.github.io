@@ -1,0 +1,264 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="https://jcponce.github.io/assets/img/png/icon/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://jcponce.github.io/assets/img/png/icon/infinity16.png" sizes="16x16">
+    <title>Taylor series of complex functions</title>
+    
+    <link rel="icon" type="image/png" href="../../../images/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../../../images/infinity16.png" sizes="16x16">
+    <link rel="stylesheet" href="https://complex-analysis.github.io/css/w3.css">
+     <link rel="stylesheet" href="../assets/app.css" />
+    <link rel="stylesheet" href="../assets/CindyJS.css" />
+<script type="text/javascript" src="../assets/Cindy.js"></script>
+<script type="text/javascript" src="../assets/CindyGL.js"></script>
+<!--<script type="text/javascript" src="dist/v07/katex-plugin.js"></script>-->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+      <script src="../../../js/google-analytics-ga4.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+
+  </head>
+  <body class="with-footer">
+
+    <!-- Header -->
+    
+
+    <div id="between-bars">
+
+      <!-- Main part -->
+      <main>
+      <!-- navigation within gallery -->
+      
+
+<div style="float: left;">
+
+    <div class="w3-hide-small w3-hide-medium">
+        
+		<script id="csinit" type="text/x-cindyscript">
+			f(z):=(z-1)/(z^2+z+1);
+            hsvToRGB(h, s, v) := (
+				regional(j, p, q, t, f);
+
+				h = (h-floor(h))*6;
+
+				j = floor(h);
+				f = h - j;
+
+				p = 1 - s;
+				q = 1 - s*f;
+				t = 1 - s*(1-f);
+
+				if(j == 0, [1, t, p],
+				if(j == 1, [q, 1, p],
+				if(j == 2, [p, 1, t],
+				if(j == 3, [p, q, 1],
+				if(j == 4, [t, p, 1],
+				if(j == 5, [1, p, q]))))))*v
+			);
+
+			color(z) := ( //what color should be given to a complex number z?
+				regional(n, grey1, grey2);
+				n = 12;
+				z = log(z) / (2 * pi);
+
+				zfract = n * z - floor(n * z); //value of n*z in C mod Z[i]
+
+				grey1 = im(zfract);
+				grey2 = re(zfract);
+
+				hsvToRGB(im(z), 1., .5+.5*re(sqrt(grey1*grey2)))
+			);
+
+			n = 1;
+			
+			lastf = "";
+			
+			zoom = 1;
+			lzoom = zoom;
+
+		</script>
+		
+		<script id="csdraw" type="text/x-cindyscript">
+		//if(Input.text!=lastf & Input.text!="",
+		//	parse("f(z) :=" + Input.text);
+		//	lastf = Input.text;
+		//);
+	
+		factorial(n) := if(n == 0, 1, n * factorial(n - 1));
+		
+		coeff = autodiff(f(z), [complex(A*zoom)], n)_1;
+		forall(0..n, k, coeff_(k+1) = coeff_(k+1)/factorial(k));
+		
+		t(z) := coeff*apply(0..n, k, (z-complex(A * zoom))^k);
+		
+
+		colorplot(
+			z = zoom * complex(#);
+			color(t(z));
+			,
+			(-2, -2),(2, 2)
+		);
+		
+		colorplot(
+			z = zoom*(complex(#) + 4);
+			color(f(z));
+			,
+			(-6, -2),(-2, 2)
+		);
+		
+		//Draw background for z_0
+        shape1 = polygon([(-2,1.7), (-0.25,1.7), (-0.25,2), (-2,2)]);
+        fill(shape1,color->(0.8, 0.8, 0.8));
+        draw(shape1, color->(0.8, 0.8, 0.8));
+
+		// Draw info of z_0
+		drawtext((-1.95,1.8), "$z_0=(" + round(( zoom * A.x  ) * 100)/100 + " , " + round((zoom * A.y ) * 100)/100 + ")$", color->(0,0,0));
+        
+
+		//Draw  background for n
+		shape2 = polygon([(1.35,2), (2,2), (2,1.75), (1.35,1.75)]);
+        fill(shape2,color->(0.8,0.8,0.8));
+        draw(shape2, color->(0.8,0.8,0.8));
+
+		// Slider n
+        linesize(1.2);
+		draw((1.8,-1.5),(1.8,1.65), color->[0,0,0]);
+		N.x = 1.8;
+		n = round(15*(N.y+1.65));
+		n = max(1, n);
+		N.y = n/15-1.65;
+
+		drawtext((1.4,1.82),"$n = " + n + "$", color->(0,0,0));
+        
+        //drawtext((-5.9,1.7), "$f(z) =$", color->(0.98,0.98,0.98));
+        //\textcolor{<color>}{<text>}
+        //drawtext((-1.98,1.75), "$\sum_{k=0}^{"+n+"} a_k (z-z_0)^k$", color->(0,0,0));
+		
+		// Line to divide Graphic views
+		linesize(1.2);
+		draw((-2,-3),(-2,3), color->[0,0,0]);
+		
+		// Draw text for Zoom
+        drawtext((A.x+0.06,A.y+0.06),"$z_0$", color->(0.98,0.98,0.98));
+		drawtext((-5.5,-1.85), "Zoom$", color->(0,0,0));
+        
+		// Draw Slider for Zoom 
+		draw((-5,-1.8),(1,-1.8), color->[0,0,0]);
+		Zoom.y = -1.8;
+		Zoom.x = max(Zoom.x, -5);
+		Zoom.x = min(Zoom.x, 1);
+
+		zoom = exp(0.5*(Zoom.x+3));
+		
+		if(lzoom!=zoom,
+			A.xy = A.xy*lzoom/zoom;
+		);
+		lzoom = zoom;
+		
+		</script>
+
+		<div id="CSCanvas"></div>
+        
+		
+		<script type="text/javascript">
+				var cdy = CindyJS({canvasname:"CSCanvas",
+				scripts: "cs*",
+				
+				animation: {autoplay: true},
+				ports: [{
+                          id: "CSCanvas",
+                          width: 860,
+                          height: 430,
+                          transform: [ { visibleRect: [-6, -2, 2, 2] } ]
+						}],
+				geometry: [
+						    {name:"A", type:"Free", pos:[0, 0], color:[0,0.9,1], size:7},
+						    {name:"N", type:"Free", pos:[1, -2], color:[1,1,1], size:8},
+						    {name:"Zoom", type:"Free", pos:[-3, -.3], color:[1,1,1], size:8},
+						    //{name: "Input", type: "EditableText", pos: [-5.35, 1.7], color: [0.0, 0.0, 0.0], fillcolor: [1.0, 0.784, 0.0], fillalpha: 0.5, minwidth: 200, text: "1/(z^2+1)"}
+                          ],
+				use: ["CindyGL", "katex"]
+				});
+                
+var typ=function(e, b){
+  var chCode=e.which ? e.which:e.keyCode;
+  if(chCode==13){
+    console.log("*************");
+    console.log(b.value);
+    cdy.evokeCS('f(z) := (' + b.value + '); forcerecompile();');
+  }
+}
+        
+//var sel=function(e, b){
+//document.getElementById("inp").value = b.value;
+//  cdy.evokeCS('f(z) := (' + b.value + '); forcerecompile();');
+//}
+
+var sel=function(e, b){
+    document.getElementById("inp").value = b.value;
+    cdy.evokeCS('f(z) := (' + b.value + ');');
+    var script = b.options[b.selectedIndex].getAttribute("data-cdy");
+    console.log(b);
+    console.log(script);
+    if(script) {
+        cdy.evokeCS(script);
+    }
+    script = false;
+}
+		</script>
+
+<span style="font-size:18px">f(z) = </span><input type="text" id="inp" value="(z-1)/(z^2+z+1)"  onkeypress="typ(event, this)" size="43" style="font-size:18px">
+</div><!-- hide small end-->
+    
+</div><!-- end left-->
+
+<div class="w3-hide-small w3-hide-medium">
+<p>You can also select one function of the following list:</p>
+        <select id="sel" onchange="sel(event, this)" style="width:10em;">
+            <option value="(z-1)/(z^2+z+1)">(z-1)/(z^2+z+1)</option>
+            <option value="1/z">1/z</option>
+            <option value="z^(1/2)">Square root</option>
+            <option value="log(z)">Logarithm</option>
+            <option value="sin(z)">Sine</option>
+            <option value="sin(z)/cos(z)">Tangent</option>
+            <!--<option value="(exp(z)-exp(-z))/2">Sine Hyperbolic</option>-->
+            <option value="i/2*log((i+z)/(i-z))">Arctangent</option>
+            <option value="exp(z)">Exponential function</option>
+        </select>
+</div>
+
+<div class="w3-hide-small w3-hide-medium"  style="float: left;">
+<p>On the left Graphics view, a <a href="https://jcponce.github.io/domain-coloring/" target="_blank">enhanced 
+	phase portrait</a> of a complex function is displayed.
+    On the right Graphics view, one can see the approximation of the function through 
+	it&#39;s Taylor polynomials $\sum_{k=0}^{n} a_k (z-z_0)^k$ at the blue base point $z_0$.</p>
+<p>The complex function, the base point $z_0$, the order $n$ of the polynomial and the Zoom can be modified.</p>
+</div>
+
+<div class="w3-hide-large w3-padding w3-display-middle w3-red w3-round w3-large">
+    <p>Pssst! Rotate your device to landscape.</p>
+    <p>Or resize your window so it's more wide than tall.</p>
+    <p>Not supported for phones.</p>
+</div>
+
+<div class="w3-hide-small w3-hide-medium"  style="float: left; font-size: 16px">
+    <br><br><br><hr>
+    <p><strong>Note:</strong> The applet was originally written by <a href="https://geo.ma.tum.de/en/people/aaron-montag.html">Aaron Montag</a> using <a href="https://cindyjs.org/">Cindy.js</a>. The source code can be found at <a href="https://github.com/jcponce/complex/tree/gh-pages/taylorseries">GitHub.</a></p>
+</div>
+
+      </main>
+    </div>
+
+    
+
+    <script src="../assets/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,327 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <title>Analytic landscapes</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- dublin core -->
+  <meta name="dc.title" CONTENT="Complex Analysis">
+  <meta name="dc.creator" CONTENT="Juan Carlos Ponce Campuzano">
+  <meta name="dc.date" CONTENT="26-01-2019">
+  <meta name="dc.isbn" CONTENT="ISBN-13: 978-0-6485736-0-9">
+  <meta name="dc.type" CONTENT="Interactive Resource">
+  <meta name="dc.format" CONTENT="HTML">
+  <meta name="dc.language" CONTENT="en-US">
+  <meta name="dc.rights" CONTENT="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+  <!-- social media cards -->
+  <meta property="og:title" content="Complex Analysis">
+  <meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta property="og:type" content="website">
+  <!--<meta property="og:image" content="">
+<meta property="og:url" content="">-->
+  <meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+  <meta property="og:site_name" content="Complex Analysis">
+
+
+  <!-- FONTS AND CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet'
+    type='text/css'>
+  <link href="../../content/css/style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="../../css/w3.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <!-- JQUERY FANCY ADDITIONS -->
+  <!-- add code class, hover text, etc -->
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      // prettyprint the code, pls
+      $('pre').addClass('prettyprint lang-java');
+
+      // add word-breaks to anything with a / or - in it
+      $('h1').each(function () {
+        var t = $(this).text();
+        t = t.replace('/', '/<wbr>');
+        t = t.replace('-', '-<wbr>');
+        $(this).html(t);
+      });
+
+      // set formatting
+      resizeCommands();
+    });
+
+    // when the window gets resized, do some stuff to keep everything
+    // looking pretty
+    $(window).resize(function () {
+      resizeCommands();
+    });
+
+    // things to do when the page is loaded or window resized
+    function resizeCommands() {
+      // large-screen stuff...
+      if ($(window).width() > 600) {
+
+        // long headline on intro page
+        // $('#introHeadline').html('TABLE OF CONTENTS');
+
+        // menu hover stuff on larger screens
+        // (does weird formatting on larger screens)
+        // hover over title to show "Table of Contents"
+        $('#title a').hover(
+          function () {
+            $('#title a').text('Table of Contents');
+          },
+          function () {
+            $('#title a').text('Complex Analysis'); // set back when moving out
+          }
+        );
+
+        // set prev/next titles
+        $('#prev a').hover(
+          function () {
+            $('#title a').text('Prev: The Logarithmic Function');
+          },
+          function () {
+            $('#title a').text('Complex Analysis');
+          }
+        );
+        $('#next a').hover(
+          function () {
+            $('#title a').text('Next: Riemann Sphere');
+          },
+          function () {
+            $('#title a').text('Complex Analysis');
+          }
+        );
+      }
+
+      // small-screen stuff
+      else {
+        // short headline on intro page
+        // $('#introHeadline').html('INTRO');
+      }
+    }
+  </script>
+
+  <!--MathJax starts-->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+                             TeX: { equationNumbers: { autoNumber: "AMS" } }
+                             });
+          </script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+          </script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+<script src="../../js/google-analytics-ga4.js"></script>
+
+  <script src="https://paulmasson.github.io/mathcell/build/mathcell.js"></script>
+  <script src="math.js"></script>
+
+</head>
+
+<body>
+
+  <div id="wraper" style="margin-left:0px; margin-right:0px">
+
+
+    <h1>Riemann surfaces with MathCell</h1>
+    <br />
+
+    <p>Real component of \(f(z)=z^{1/2} \)</p>
+
+    <div class="mathcell" style="width: 550px; height: 550px">
+      <script>
+        var parent = document.currentScript.parentNode;
+
+        var id = generateId();
+        parent.id = id;
+
+        MathCell(id, []);
+
+        parent.update = function (id) {
+
+          var pi = Math.PI;
+
+          //Real component
+          var Re1 = (x, y) => Math.pow(x * x + y * y, 1 / 4) * Math.cos(1 / 2 * Math.atan2(y, x));
+
+          var Re2 = (x, y) => Math.pow(x * x + y * y, 1 / 4) * Math.cos(1 / 2 * (Math.atan2(y, x) + 2 * pi));
+
+          //Imaginary component
+          //var Im1 = (x, y) => Math.pow(x * x + y * y, 1 / 4) * Math.sin(1 / 2 * Math.atan2(y, x));
+
+          //var Im2 = (x, y) => Math.pow(x * x + y * y, 1 / 4) * Math.sin(1 / 2 * (Math.atan2(y, x) + 2 * pi));
+
+          var data = [];
+
+          var s = parametric((u, v) => [u * Math.cos(v),
+              u * Math.sin(v),
+              Re1(u * Math.cos(v), u * Math.sin(v))
+              //Im1(u * Math.cos(v), u * Math.sin(v))
+            ],
+            [0, 2], [-pi, pi], {
+              color: '#80aaff',
+              opacity: 0.9
+            }
+          );
+          var t = parametric((u, v) => [u * Math.cos(v),
+              u * Math.sin(v),
+              Re2(u * Math.cos(v), u * Math.sin(v))
+              //Im2(u * Math.cos(v), u * Math.sin(v))
+            ],
+            [0, 2], [-pi, pi], {
+              color: '#cc99ff',
+              opacity: 0.9
+            }
+          );
+
+          data.push(s);
+          data.push(t);
+
+          var config = {
+            type: 'threejs',
+            frame: true,
+            viewpoint: [1, -1, 0.5]
+          };
+
+          evaluate(id, data, config);
+
+        }
+
+        parent.update(id);
+      </script>
+    </div>
+
+
+    <p>Complete code for this example:</p>
+
+    <pre id="codeDisplay"></pre>
+
+    <script>
+      getCompleteCode();
+    </script>
+
+    <p>Imaginary component of \(f(z)=z^{1/2} \)</p>
+
+    <div class="mathcell" style="width: 550px; height: 550px">
+      <script>
+        var parent = document.currentScript.parentNode;
+
+        var id = generateId();
+        parent.id = id;
+
+        MathCell(id, []);
+
+        parent.update = function (id) {
+
+          var p = parametric((x, y) => [x, y, pow(complex(x, y), 1 / 2)], [-5, 5, 151], [-5, 5, 151], {
+            complexFunction: 'im',
+            colormap: 'complexArgument'
+          });
+
+          var config = {
+            type: 'threejs'
+          };
+
+          evaluate(id, [p], config);
+
+        }
+
+        parent.update(id);
+      </script>
+
+    </div>
+    <!--Ends mathcell-->
+
+    <p>Imaginary component of \(f(z)=z^{1/2} \)</p>
+
+    <div class="mathcell" style="width: 550px; height: 550px">
+      <script>
+        var parent = document.currentScript.parentNode;
+
+        var id = generateId();
+        parent.id = id;
+
+        MathCell(id, [{
+            type: 'buttons',
+            values: ['cool', 'hot', 'spring', 'summer', 'autumn', 'winter'],
+            default: 'hot',
+            width: '.6in',
+            name: 'map',
+            label: 'Colormap: '
+          },
+          {
+            type: 'checkbox',
+            name: 'reversed',
+            label: 'Reversed: '
+          }
+        ]);
+
+        parent.update = function (id) {
+
+          var map = getVariable(id, 'map');
+          var reversed = getVariable(id, 'reversed');
+
+          function noD(x, y) {
+
+            var n = Math.sqrt(x * x + y * y);
+
+            if (n === 0) return 0;
+
+            return x*y/(x*x+y*y);
+
+          }
+
+          var s = parametric((x, y) => [x, y, noD(x,y)], [-10, 10, 150], [-10, 10, 150], {
+            colormap: 'cool',
+            reverseColormap: reversed
+          });
+
+          var data = [s];
+
+          var config = {
+            type: 'threejs',
+            frame: true,
+            aspectRatio: [1, 1, 10],
+            viewpoint: [1, 1, .2]
+          };
+
+          evaluate(id, data, config);
+
+        }
+
+        parent.update(id);
+      </script>
+
+    </div>
+    <!--Ends mathcell-->
+
+    <p>Visit <a href="http://mathcell.org/">MathCell.org</a> to learn more about this project, or go back to <a
+        href="https://complex-analysis.github.io/content/riemann_surfaces.html">Complex Analysis</a>.</p>
+
+    <br />
+    <br />
+    <br />
+
+  </div>
+  <!--end wraper-->
+
+</body>
+
+</html>

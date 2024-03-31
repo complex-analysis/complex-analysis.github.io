@@ -1,4 +1,4 @@
-# MAJOR UPDATE UNDER PROCESS!!!
+# MAJOR UPDATE COMPLETED!!!
 
 ❤️ Support this project to keep it alive!
 

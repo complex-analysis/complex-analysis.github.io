@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Uniform flow around a circle</title>
+<meta charset="UTF-8">
+<meta name="description" content="Uniform flow around circle">
+<meta name="author" content="Juan Carlos Ponce Campuzano">
+<meta name="language" content="en"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="https://jcponce.github.io//assets/img/png/icon/infinity32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="https://jcponce.github.io//assets/img/png/icon/infinity16.png" sizes="16x16">
+
+<!--Style Stars-->
+
+<link rel="stylesheet" href="https://jcponce.github.io//assets/style/w3.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Martel+Sans" rel="stylesheet">
+
+    <style>
+        body,h1,h2,h3,h4,h5,h6 {font-family: 'Martel Sans', sans-serif;}
+
+        .center {
+            margin-left:auto;
+            margin-right:auto;
+            max-width:900px;
+        }
+    </style>
+
+<!--Style ends-->
+
+<!--MathJax starts-->
+      <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      TeX: { equationNumbers: { autoNumber: "AMS" } }
+            });
+       </script>
+       <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+       </script>
+<!---<script type="text/x-mathjax-config">//left-side eq
+         MathJax.Hub.Config({
+               displayAlign: "left",
+               displayIndent: "5em"
+               });
+</script>--->
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+<!--MathJax Ends-->
+
+    </head>
+    <body>
+
+        <!-- Navbar Stars-->
+        <div class="w3-top">
+            <div class="w3-bar w3-black w3-top w3-left-align">
+                <a href="index.html" class="w3-bar-item w3-button w3-hover-indigo"> <i class="fa fa-arrow-left"></i></a>
+                <a href="https://jcponce.github.io/#sketches" class="w3-bar-item w3-button w3-hover-indigo"> <i class="fa fa-home"></i></a>
+                <a class="w3-bar-item w3-right w3-hide-small w3-hide-medium w3-indigo serif">Uniform flow around a circle</a>
+            </div>
+        </div>
+        <!-- Navbar Ends-->
+
+<!-- Main content Stars-->
+<div class="w3-main center" style="margin-top:45px">
+
+<div class="w3-container">
+    <h1>Uniform flow around a circle</h1>
+    <p>A brief description of the mathematics behind the scene</p>
+ <hr>
+ </div>
+
+<div class="w3-container">
+    <h3>Velocity field and the stream function in two dimensions</h3>
+    <p>If we have a (steady-state) incompressible, nonviscous fluid in two dimensions, we are interested in finding its <b style="text-shadow:0px 0px 0 #444">velocity field</b> $$\mathbf V = \left(u(x,y), v(x,y)\right).$$
+    From vector analysis we know that the <b style="text-shadow:0px 0px 0 #444">stream function</b> $\psi$ must satisfy
+        \begin{eqnarray}\label{cond1}
+        u=\frac{\partial \psi}{\partial y},\quad v=-\frac{\partial \psi}{\partial x}.
+        \end{eqnarray}
+    </p>
+    
+    <p>Knowing this, consider the stream function
+    $$\psi = Uy\left(1- \frac{a^2}{x^2+y^2} \right)$$
+    The level curves $\psi = \text{const}$ are called
+    <b style="text-shadow:0px 0px 0 #444">streamlines</b> of the flow and they follow the direction of the velocity field, see figure below.</p>
+    
+    <div class="w3-center">
+        <div class="w3-row-padding">
+            <img id="myImg" class="w3-card-4 w3-round-small" src="streamlines.png" alt="streamlines" style="width:55%">
+                <br>
+            <p>Streamlines $\psi= \text{const}$ with $U>0$ and $a=1$.</p>
+                
+        </div>
+    </div>
+    
+    <div class="w3-responsive">
+    <p>In this case, from (\ref{cond1}), the components of the velocity field $\mathbf V$ are
+    \begin{eqnarray}\label{vel1}
+    u = U\left(1 - a^2\frac{x^2-y^2}{(x^2+y^2)^2}\right),\qquad v= -2  U^{2}  a^{2}  \frac{ x y}{ \left(x^{2} + y^{2} \right)^{2}}.
+    \end{eqnarray}
+    This field represents a <b style="text-shadow:0px 0px 0 #444">uniform flow around a circle</b> of radius $a$ with center at $(0,0)$ and speed $U$, in the $x$-direction.</p>
+    </div>
+    
+    <!--
+    <p>If we have a (steady-state) incompressible, nonviscous fluid, we are interested in finding its velocity field $$\mathbf V (x,y)= \left(u(x,y), v(x,y)\right).$$ From vector analysis we know that 'incompressible' means that the divergence $\text{div}\,\mathbf V =0.$ (We say $\mathbf V$ is <b style="text-shadow:0px 0px 0 #444">divergence free.</b>) We assume that $\mathbf V$ is also a <b style="text-shadow:0px 0px 0 #444">potential flow</b> and hence is circulation free; that is $\mathbf V = \text{grad } \phi $ for some $\phi$ called the <b style="text-shadow:0px 0px 0 #444">velocity potential.</b> Thus $\phi$ is harmonic because $$\nabla^2\phi = \text{div } \text{grad }\phi = \text{div } \mathbf V=0.$$ Thus when we solve for $\phi$ we can obtain $\mathbf V$ by taking $\mathbf V = \text{grad } \phi$.</p>
+    
+    <p>The conjugate $\psi$ of the harmonic function $\phi$ (which will exist on any simple connected region) is called the <b style="text-shadow:0px 0px 0 #444">stream function</b>, and the analytic function $$F=\phi +i\psi$$ is called the <b style="text-shadow:0px 0px 0 #444">complex potential</b>. Lines of constant $\psi$ have $\mathbf V$ as their tangents, so lines of constant $\psi$ may be interpreted as the <i>lines along which particles of fluid move</i>; hence the name stream function.</p>
+    
+    <h4>Example</h4>
+    
+    <p>The complex potential
+    $$F(z)= Uz + \frac{Ua^2}{z}$$
+    represents a uniform flow around a circle of radius $a$ with center at $(0,0)$ and speed $U$, in the $x$-direction.<p>
+   -->
+    
+    <hr>
+</div>
+
+ <div class="w3-container">
+     <h3>Simulation</h3>
+     
+     <p>For this simulation I used equations (\ref{vel1}) but considering a circle with center at $(x_0, y_0)$. Thus the components of the velocity field $\mathbf V $ are
+   \begin{eqnarray*}
+   u &amp; = &amp;U \left(1 - a^2\frac{(x-x_0)^2-(y-y_0)^2}{((x-x_0)^2+(y-y_0)^2)^2}\right),\\
+  v &amp; = &amp; -2  U^{2}  a^{2}  \frac{ (x-x_0) (y-y_0)}{ \left((x-x_0)^{2} + (y-y_0)^{2} \right)^{2}}.
+  \end{eqnarray*}
+ </p>
+ 
+ <p>Since the fluid particles move in accordance with the autonomous, first order system of ordinary differential equations
+ \begin{eqnarray}\label{system}
+ \dfrac{dx}{dt} = u, \quad
+ \dfrac{dy}{dt} = v;
+ \end{eqnarray}
+ an individual particle's position $\mathbf x(t)= (x(t), y(t))$ is uniquely determined solely by its initial condition, that is, when  $t=0$.</p>
+ 
+ <p>We can use numerical methods to approximate the solutions of  system (\ref{system}).  In particular, I used a <a target="_blank"  class="w3-text-indigo w3-hover-text-blue" href="https://en.wikipedia.org/wiki/List_of_Runge%E2%80%93Kutta_methods">4th order Runge-Kutta method</a>.</p>
+ 
+ <p>The source code of the simulation can be found in <a href="https://github.com/jcponce/complex/tree/gh-pages/flowaroundcircle" >GitHub</a>.</p>
+     <!--
+     <h4>Application of Conformal Mappings to Hydrodynamics in Two Dimensions</h4>
+     <p>If we have a (steady-state) incompressible, nonviscous fluid, we are interested in finding its velocity field $$\mathbf V (x,y)= \left(u(x,y), v(x,y)\right).$$ From vector analysis we know that 'incompressible' means that the divergence $\text{div}\,\mathbf V =0.$ (We say $\mathbf V$ is <b style="text-shadow:0px 0px 0 #444">divergence free.</b>) We assume that $\mathbf V$ is also a <b style="text-shadow:0px 0px 0 #444">potential flow</b> and hence is circulation free; that is $\mathbf V = \text{grad } \phi $ for some $\phi$ called the <b style="text-shadow:0px 0px 0 #444">velocity potential.</b> Thus $\phi$ is harmonic because $$\nabla^2\phi = \text{div } \text{grad }\phi = \text{div } \mathbf V=0.$$ Thus when we solve for $\phi$ we can obtain $\mathbf V$ by taking $\mathbf V = \text{grad } \phi$.</p>
+    
+     <p>The conjugate $\psi$ of the harmonic function $\phi$ (which will exist on any simple connected region) is called the <b style="text-shadow:0px 0px 0 #444">stream function</b>, and the analytic function $$F=\phi +i\psi$$ is called the <b style="text-shadow:0px 0px 0 #444">complex potential</b>. Lines of constant $\psi$ have $\mathbf V$ as their tangents, so lines of constant $\psi$ may be interpreted as the <i>lines along which particles of fluid move</i>; hence the name stream function.</p>
+     
+     <h4>Example</h4>
+     
+     <p>The complex potential
+     $$F(z)= Uz + \frac{Ua^2}{z}$$
+     represents a uniform flow around a circle of radius $a$ with center at $(0,0)$ and speed $U$, in the $x$-direction.<p>
+     <p>The streamfunction is just the imaginary part of this function, namely
+     $$\psi = Uy\left(1- \frac{a^2}{x^2+y^2} \right).$$</p>
+     
+     <p>The velocity field $\mathbf V =(u, v)$ can be calculated using the equations
+     $$u= \frac{\partial \psi}{\partial y},\qquad v = -\frac{\partial \psi}{\partial x}.$$</p>
+     <p>Thus
+     $$u = U\left(1 - a^2\frac{x^2-y^2}{(x^2+y^2)^2}\right),\qquad v= -2  U^{2}  a^{2}  \frac{ x y}{ \left(x^{2} + y^{2} \right)^{2}}.$$</p>
+     
+     <p>The following picture shows the streamlines of $F$ with $a=1$ and $U>0$.</p>
+     
+     <div class="w3-center">
+        <div class="w3-row-padding">
+        <img id="myImg" class="w3-card-4 w3-round-small" src="streamlines.png" alt="streamlines" style="width:55%">
+        <br>
+        <p>Streamlines for the complex potential $F$.</p>
+        
+       </div>
+    </div>
+      -->
+ 
+ <hr>
+ </div>
+ 
+ 
+ <div class="w3-container">
+     <h2>Further reading</h2>
+     <p>In preparation for making this simulation I consulted the following books:</p>
+    <ol>
+    <li>Ablowitz, M. J., Fokas, A. S. (2003). <i>Complex Variables: Introduction and Applications</i> 2nd. ed. USA: Cambridge University Press. pp. 40-44. <a href="https://www.cambridge.org/core/books/complex-variables/08A62E6DB03F5D5435F5DE6260618002#" target="_blank" title="Open link" class="w3-text-indigo w3-hover-text-blue"><i class="fas fa-external-link-alt"></i></a></li>
+    <li>Brown, J. W., Churchill, R. V. (2009). <i>Complex Variables   and Applications</i> 8th. ed. USA: McGraw-Hill. pp. 395-397.</li>
+    
+        </ol>
+     
+     <br>
+     
+ </div>
+ 
+</div>
+<!-- END MAIN -->
+
+<!--Footer-->
+
+    <div class="w3-container w3-dark-grey">
+        <p></p>
+    </div>
+
+<!--Footer-->
+
+
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <title>Riemann surfaces</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONTS AND CSS -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,800" rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic" rel='stylesheet'
+    type='text/css'>
+  <link href="../../content/css/style.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155852901-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-155852901-1');
+  </script>
+
+
+  <!--MathJax starts-->
+  <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({
+                             TeX: { equationNumbers: { autoNumber: "AMS" } }
+                             });
+          </script>
+  <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+          </script>
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+
+
+  <script src="mathcell.js"></script>
+
+</head>
+
+<body>
+
+  <div id="wraper">
+
+
+    <h1>Riemann surfaces with MathCell</h1>
+    
+
+    <p>Real component of \(f(z)=z^{1/2} \)</p>
+
+    <div class="mathcell" style="width: 100%; height: 450px">
+      <script>
+
+        var parent = document.currentScript.parentNode;
+
+        var id = generateId();
+        parent.id = id;
+
+        MathCell(id, []);
+
+        parent.update = function (id) {
+
+          var pi = Math.PI;
+
+          //Real component
+          var Re1 = (x, y) => Math.pow(x * x + y * y, 1 / 4) * Math.cos(1 / 2 * Math.atan2(y, x));
+
+          var Re2 = (x, y) => Math.pow(x * x + y * y, 1 / 4) * Math.cos(1 / 2 * (Math.atan2(y, x) + 2 * pi));
+
+          //Imaginary component
+          //var Im1 = (x, y) => Math.pow(x * x + y * y, 1 / 4) * Math.sin(1 / 2 * Math.atan2(y, x));
+
+          //var Im2 = (x, y) => Math.pow(x * x + y * y, 1 / 4) * Math.sin(1 / 2 * (Math.atan2(y, x) + 2 * pi));
+
+          var data = [];
+
+          var s = parametric((u, v) => [u * Math.cos(v),
+          u * Math.sin(v),
+          Re1(u * Math.cos(v), u * Math.sin(v))
+            //Im1(u * Math.cos(v), u * Math.sin(v))
+          ],
+            [0, 2], [-pi, pi],
+            {
+              color: '#80aaff',
+              opacity: 0.9
+            }
+          );
+          var t = parametric((u, v) => [u * Math.cos(v),
+          u * Math.sin(v),
+          Re2(u * Math.cos(v), u * Math.sin(v))
+            //Im2(u * Math.cos(v), u * Math.sin(v))
+          ],
+            [0, 2], [-pi, pi],
+            {
+              color: '#cc99ff',
+              opacity: 0.9
+            }
+          );
+
+          data.push(s);
+          data.push(t);
+
+          var config = {
+            type: 'threejs',
+            frame: true,
+            viewpoint: [1, -1, 0.5]
+          };
+
+          evaluate(id, data, config);
+
+        }
+
+        parent.update(id);
+
+      </script>
+    </div>
+
+
+    <p>Complete code for this example:</p>
+
+    <pre id="codeDisplay"></pre>
+
+    <script> getCompleteCode(); </script>
+
+    <p>Imaginary component of \(f(z)=z^{1/2} \)</p>
+
+    <div class="mathcell" style="width: 100; height: 450px">
+      <script>
+
+        var parent = document.currentScript.parentNode;
+
+        var id = generateId();
+        parent.id = id;
+
+        MathCell(id, []);
+
+        parent.update = function (id) {
+
+          var pi = Math.PI;
+
+          var Im1 = (x, y) => Math.pow(x * x + y * y, 1 / 4) * Math.sin(1 / 2 * Math.atan2(y, x));
+
+          var Im2 = (x, y) => Math.pow(x * x + y * y, 1 / 4) * Math.sin(1 / 2 * (Math.atan2(y, x) + 2 * pi));
+
+          var data = [];
+
+          var s = parametric((u, v) => [u * Math.cos(v),
+          u * Math.sin(v),
+          Im1(u * Math.cos(v), u * Math.sin(v))
+          ],
+            [0, 2], [-pi, pi - pi / 100000],
+            {
+              color: '#ff1a1a'
+            }
+          );
+          var t = parametric((u, v) => [u * Math.cos(v),
+          u * Math.sin(v),
+          Im2(u * Math.cos(v), u * Math.sin(v))
+          ],
+            [0, 2], [-pi, pi - pi / 100000],
+            {
+              color: '#339933',
+              opacity: 0.9
+            }
+          );
+
+          data.push(s);
+          data.push(t);
+
+          var config = {
+            type: 'threejs',
+            frame: true,
+            viewpoint: [1, -1, 0.5]
+          };
+
+          evaluate(id, data, config);
+
+        }
+
+        parent.update(id);
+
+      </script>
+
+    </div><!--Ends mathcell-->
+
+    <p>Visit <a href="http://mathcell.org/">MathCell.org</a> to learn more about this project, or go back to <a
+        href="https://complex-analysis.github.io/content/riemann_surfaces.html">Complex Analysis</a>.</p>
+
+    <br />
+    <br />
+    <br />
+
+  </div><!--end wraper-->
+
+</body>
+
+</html>

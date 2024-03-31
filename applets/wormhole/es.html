@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="https://dynamicmath.xyz/complex/dctools/libraries/css/infinity32.png"
+        sizes="32x32">
+    <link rel="icon" type="image/png" href="https://dynamicmath.xyz/complex/dctools/libraries/css/infinity16.png"
+        sizes="16x16">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>¡Actualizando!</title>
+    <style>
+        body {
+            margin: 0;
+        }
+    </style>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-HVPF4FLZCB');
+    </script>
+    <script type="importmap">
+      {
+				"imports": {
+					"three": "https://cdn.jsdelivr.net/npm/three@0.161/build/three.module.js",
+          "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161/examples/jsm/"
+        }
+			}
+    </script>
+
+</head>
+
+<body>
+    <div class="w3-content" style="line-height:1em;">
+        <div class="w3-container w3-display-topmiddle w3-center w3-card w3-light-grey w3-round-large w3-padding"
+            style="max-width: 50ch;opacity: 0.92;line-height: 1.2;">
+
+            <div class="w3-xlarge" style="margin-top: -20px;">
+                <p style="font-size: 1.3em;"><strong>complex-analysis.com</strong> está siendo
+                    <strong>actualizado</strong></p>
+            </div>
+            <p class="w3-xlarge" style="margin-top: -5px;">❤️ ¡Apoya este proyecto para que siga con vida!</p>
+            <div class="w3-hide-small">
+                <p class="w3-xlarge" style="margin-bottom: 5px;margin-top: -8px;"><a
+                        class="w3-hover-text-indigo w3-text-black w3-button w3-grey w3-round-large"
+                        href="https://www.patreon.com/jcponce"><i class="fa-brands fa-patreon"></i> Patreon</a>
+                    &nbsp;
+
+                    <a class="w3-hover-text-indigo w3-text-black w3-button w3-grey w3-round-large" target="_blank"
+                        href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=WTMTR7D8RYZ26&item_name=Your+support+will+help+me+to+improve+and+keep+up+to+date+the+applets+of+this+book.+Sincerely+appreciate+it%21&currency_code=AUD&source=url">
+                        <i class="fa-brands fa-paypal"></i> PayPal</a>
+
+                    &nbsp;
+
+                    <a class="w3-hover-text-indigo w3-text-black w3-button w3-grey w3-round-large" target="_blank"
+                        href="https://jcponcemath.secure-decoration.com/">Get a <i class="fa-solid fa-shirt"></i></a>
+                </p>
+            </div>
+            <div class="w3-hide-medium w3-hide-large">
+                <p class="w3-large" style="margin-bottom: 5px;margin-top: -8px;"><a
+                        class="w3-hover-text-indigo w3-text-black w3-button w3-grey w3-round-large"
+                        href="https://www.patreon.com/jcponce" style="margin-bottom: 10px;"><i
+                            class="fa-brands fa-patreon"></i>
+                        Patreon</a>
+                    <br />
+
+                    <a class="w3-hover-text-indigo w3-text-black w3-button w3-grey w3-round-large" target="_blank"
+                        style="margin-bottom: 10px;"
+                        href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=WTMTR7D8RYZ26&item_name=Your+support+will+help+me+to+improve+and+keep+up+to+date+the+applets+of+this+book.+Sincerely+appreciate+it%21&currency_code=AUD&source=url">
+                        <i class="fa-brands fa-paypal"></i> PayPal</a>
+
+                    <br />
+
+                    <a style="margin-bottom: 10px;"
+                        class="w3-hover-text-indigo w3-text-black w3-button w3-grey w3-round-large" target="_blank"
+                        href="https://jcponcemath.secure-decoration.com/">Buy a <i class="fa-solid fa-shirt"></i></a>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+
+    <script type="module">
+        /**
+        * Source: https://github.com/bobbyroe
+        * by Bobby Roe
+        * Adaptated by Juan Carlos Ponce Campuzano
+        * 14/Mar/2024
+        */
+
+        import * as THREE from "three";
+        import { OrbitControls } from 'jsm/controls/OrbitControls.js';
+        import { EffectComposer } from "jsm/postprocessing/EffectComposer.js";
+        import { RenderPass } from "jsm/postprocessing/RenderPass.js";
+        import { UnrealBloomPass } from "jsm/postprocessing/UnrealBloomPass.js";
+
+        const curvePath = [10.136184463414924, -1.374508746897471, 10.384881573913269,
+            9.1152593889854714, -1.374508746897471, 8.5846792797570011,
+            9.0669355709754882, -1.0665123466336568, 5.8937771631608156,
+            10.151040177840205, -0.65913653144937956, 3.4340491740541346,
+            10.806779203170416, 1.8859391007298545, 0.46855774212986023,
+            10.761433540147586, 2.8724172201359197, -1.2811838605587311,
+            9.6195923104445065, 2.8724172201359197, -3.2833099941904766,
+            6.9763020889151646, 2.7659257976905427, -4.7591958908830172,
+            6.0461277891353697, 1.0727045302089879, -6.6638740164090482,
+            7.3472235778544794, -1.8228856326635698, -9.0685043046185623,
+            7.226367212900791, -1.8228856326635698, -10.499536640855691,
+            5.8354566696263914, -1.8228856326635698, -12.039219379199908,
+            3.6532357452141353, -0.20463983570573391, -13.87695442281038,
+            -0.30169589630131455, 1.5965000671484342, -14.879986418947327,
+            -2.8925694230502157, 2.2971364614427481, -13.892095587598131,
+            -4.537672295357936, 4.5863515759659208, -12.140831652074551,
+            -6.1287913464117594, 5.9653814634119815, -8.9776527318875896,
+            -6.0120301606452813, 4.4081161943855998, -6.712084358394045,
+            -5.2138252159038974, 2.820894808418279, -4.4532820412085607,
+            -2.3424712835109611, 2.2032065005086259, -3.0788773693500198,
+            -0.0076956453915433265, 1.8931797788880202, -1.6577070662471063,
+            -0.24767503988481437, 2.8845808465856684, 0.073915859214221724,
+            -2.2174044353598896, 4.2415524507318576, 2.215992718290742,
+            -3.4526531678364756, 3.0615192023340851, 4.7922404932096558,
+            -3.7356278971556445, 1.4054080369354316, 7.8432021841434629,
+            -3.4003734463804118, 1.1924069108769393, 9.2464090886227073,
+            -1.8851803760476225, 1.5269331003449989, 10.306083896408374,
+            0.01071077144031829, 2.1101821577522295, 10.490880699847727,
+            0.42562058195647001, 2.2759939598834387, 11.613129436580291,
+            0.096405262182225115, 0.032317784084054391, 16.223455375061565,
+            2.3458797884520433, 0.38907275257695584, 19.91188266079584,
+            5.7018400098488771, 1.73337964747396, 20.615481586999959,
+            7.9720939736751824, 1.73337964747396, 19.303399329816457,
+            9.8672362721095652, 0.090083018057025177, 16.893338541618121,
+            11.225959519544134, -1.374508746897471, 14.279002555560753,
+            11.288646925965876, -1.374508746897471, 11.926359497447137,
+            10.136184463414924, -1.374508746897471, 10.384881573913269
+        ];
+
+        // construct tunnel track
+        const pointsSpline = [];
+        const len = curvePath.length;
+        for (let p = 0; p < len; p += 3) {
+            pointsSpline.push(new THREE.Vector3(
+                curvePath[p],
+                curvePath[p + 1],
+                curvePath[p + 2])
+            );
+        }
+
+        const spline = new THREE.CatmullRomCurve3(pointsSpline);
+
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+        const scene = new THREE.Scene();
+        scene.fog = new THREE.FogExp2(0x000000, 0.4);
+        const camera = new THREE.PerspectiveCamera(75, w / h, 0.1, 1000);
+        camera.position.z = 5;
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(w, h);
+        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        renderer.outputColorSpace = THREE.SRGBColorSpace;
+        document.body.appendChild(renderer.domElement);
+
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.03;
+
+        // post-processing
+        const renderScene = new RenderPass(scene, camera);
+        const bloomPass = new UnrealBloomPass(new THREE.Vector2(w, h), 1.5, 0.4, 100);
+        bloomPass.threshold = 0.002;
+        bloomPass.strength = 1.8;
+        bloomPass.radius = 0.1;
+        const composer = new EffectComposer(renderer);
+        composer.addPass(renderScene);
+        composer.addPass(bloomPass);
+
+        // create a line geometry from the spline
+        const points = spline.getPoints(100);
+        const geometry = new THREE.BufferGeometry().setFromPoints(points);
+        const material = new THREE.LineBasicMaterial({ color: 0xff0000 });
+        const line = new THREE.Line(geometry, material);
+        // scene.add(line);
+
+        // create a tube geometry from the spline
+        const tubeGeo = new THREE.TubeGeometry(spline, 222, 0.65, 16, true);
+
+        // create edges geometry from the spline
+        const edges = new THREE.EdgesGeometry(tubeGeo, 0.2);
+        const lineMat = new THREE.LineBasicMaterial({ color: "#cce6ff" });
+        const tubeLines = new THREE.LineSegments(edges, lineMat);
+        scene.add(tubeLines);
+
+        // one single function to create geometries
+        function createObjects(numObjects, size, geometry, material, colorFunc, scene, tubeGeo) {
+            const objects = [];
+            const edgesThickness = 0.2;
+
+            for (let i = 0; i < numObjects; i++) {
+                const objectMat = new THREE.MeshBasicMaterial({
+                    color: 0xfffff,
+                    wireframe: true
+                });
+                const object = new THREE.Mesh(geometry, material || objectMat);
+                const p = (i / numObjects + Math.random() * 0.1) % 1;
+                const pos = tubeGeo.parameters.path.getPointAt(p);
+                pos.x += Math.random() - 0.4;
+                pos.z += Math.random() - 0.4;
+                object.position.copy(pos);
+                const rote = new THREE.Vector3(
+                    Math.random() * Math.PI,
+                    Math.random() * Math.PI,
+                    Math.random() * Math.PI
+                );
+                object.rotation.set(rote.x, rote.y, rote.z);
+
+                const edgesGeo = new THREE.EdgesGeometry(geometry, edgesThickness);
+                const color = new THREE.Color().setHSL(colorFunc(p), 1, 0.3);
+                const lineMat = new THREE.LineBasicMaterial({ color });
+                const objectLines = new THREE.LineSegments(edgesGeo, lineMat);
+                objectLines.position.copy(pos);
+                objectLines.rotation.set(rote.x, rote.y, rote.z);
+
+                objects.push(object);
+                scene.add(objectLines);
+            }
+
+            return objects;
+        }
+
+        // Usage
+        const numBoxes = 40;
+        const sizeBoxes = 0.075;
+        const boxGeo = new THREE.BoxGeometry(sizeBoxes, sizeBoxes, sizeBoxes);
+        const boxes = createObjects(numBoxes, sizeBoxes, boxGeo, null, p => 0.9 - p, scene, tubeGeo);
+
+        const numTorii = 40;
+        const sizeTorii = 0.075;
+        const torusGeo = new THREE.TorusGeometry(0.075, 0.025, 10, 24);
+        const torii = createObjects(numTorii, sizeTorii, torusGeo, null, p => 0.7 - p, scene, tubeGeo);
+
+        const numSpheres = 40;
+        const sizeSpheres = 0.075;
+        const sphereGeo = new THREE.SphereGeometry(0.075, 12, 12);
+        const spheres = createObjects(numSpheres, sizeSpheres, sphereGeo, null, p => 0.5 - p, scene, tubeGeo);
+
+        const numIcosas = 40;
+        const sizeIcosas = 0.075;
+        const icosaGeo = new THREE.IcosahedronGeometry(0.075);
+        const icosas = createObjects(numIcosas, sizeIcosas, icosaGeo, null, p => 0.3 - p, scene, tubeGeo);
+
+        function updateCamera(t) {
+            const time = t * 0.07;
+            const looptime = 10 * 1000;
+            const p = (time % looptime) / looptime;
+            const pos = tubeGeo.parameters.path.getPointAt(p);
+            const lookAt = tubeGeo.parameters.path.getPointAt((p + 0.03) % 1);
+            camera.position.copy(pos);
+            camera.lookAt(lookAt);
+        }
+
+        function animate(t = 0) {
+            requestAnimationFrame(animate);
+            updateCamera(t);
+            composer.render(scene, camera);
+            controls.update();
+        }
+        animate();
+
+        function handleWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+        window.addEventListener('resize', handleWindowResize, false);
+    </script>
+</body>
+
+</html>

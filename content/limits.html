@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>  Limits
+</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Main info: Dublin core -->
+  <meta name="DC.Title" content="Complex Analysis">
+  <meta name="DC.Creator" content="Juan Carlos Ponce Campuzano">
+  <meta name="DC.Date" content="26-01-2019">
+  <meta name="DC.Identifier" content="ISBN-13: 978-0-6485736-0-9">
+  <meta name="DC.Type" content="Interactive Resource">
+  <meta name="DC.Format" content="HTML">
+  <meta name="DC.Language" content="en-US">
+  <meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+  <!-- social media cards -->
+  <meta property="og:title" content="Complex Analysis">
+  <meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta property="og:url" content="https://complex-analysis.com/">
+  <meta property="og:image" content="https://complex-analysis.com/images/complex_analysis_card.jpg">
+  <meta property="og:site_name" content="Complex Analysis">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+  <meta name="twitter:title" content="Complex Analysis">
+  <meta name="twitter:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta name="twitter:site" content="@jcponcemath">
+  <meta name="twitter:image" content="https://complex-analysis.com/images/complex_analysis_card.jpg">
+  <meta name="twitter:creator" content="@jcponcemath">
+
+  <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HVPF4FLZCB');
+  </script>
+</head>
+
+<body data-type="book" id="top">
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="complex_functions.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-solid fa-circle-half-stroke"></i></span>
+        <span class="support-top-button" id="donate"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="table_of_contents.html" class="link" id="center-link">
+            <span class="content-hover-previous">Complex Functions</span>
+            <span class="content-hover">Table of Contents</span>
+            <span class="content-original">Complex Analysis</span>
+            <span class="content-hover-next">Riemann Sphere</span>
+        </a>
+    </div>
+    <a href="riemann_sphere.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="limits">
+
+    <!-- Starts main content -->
+
+    <br>
+    <img src="../images/chp02/limits.jpg" alt="f(z)=1/z" title="f(z)=1/z">
+    <br>
+
+
+    <main>
+        <article>
+
+            <h1>Limits</h1>
+
+            <hr>
+
+            <p>
+                Let a function $f$ be defined at all points $z$ in some deleted neighborhood
+                of $z_0.$ The statement that the limit of $f (z)$ as $z$ approaches $z_0$ is a number $w_0,$ or
+                that
+                \begin{eqnarray}\label{limit001}
+                \lim_{z\rightarrow z_0}f(z)=w_0
+                \end{eqnarray}
+                means that the point $w = f (z)$ can be made arbitrarily close to $w_0$ if we choose
+                the point $z$ close enough to $z_0$ but distinct from it.
+            </p>
+
+            <p>
+                Formally, the expression (\ref{limit001}) means that for every (sufficiently small)
+                $\varepsilon&gt;0,$ there is a
+                $\delta&gt;0$ such that
+                </p><div class="scroll-wrapper">
+                    \begin{eqnarray}\label{limitcondition}
+                \left|f (z) - w_0\right| \lt \varepsilon \quad \text{whenever}\quad 0 \lt \left|z - z_0\right| \lt
+                \delta
+                \end{eqnarray}
+                </div>
+                
+            <p></p>
+
+            <p>
+                Under the mapping $w = f (z),$ all points
+                interior to the circle $|z - z_0| = \delta$ with $z_0$ deleted are mapped to points interior to
+                the circle $|w - w_0| = \varepsilon,$ see Figure 1. The limit will exist only in the case when $z$
+                approaches
+                $z_0$ (that is, $z \rightarrow z_0$) in an <strong>arbitrary direction</strong>; then this implies that
+                $w
+                \rightarrow w_0.$
+            </p>
+
+
+            <figure>
+                <img src="../images/chp02/limits-complex.svg" alt="Limit" title="Limit" style="width:80%;">
+                <figcaption>
+                    Geometric interpretation of limit.
+                </figcaption>
+            </figure>
+
+            <br>
+
+
+            <div class="theorem">
+                Limits are unique if they exist.
+
+            </div>
+            <div class="proof">
+
+                Suppose that $\lim_{z\rightarrow z_0}f(z)=w_0$ and $\lim_{z\rightarrow z_0}f(z)=w_1$ with
+                $w_0\neq w_1.$ Let $2\varepsilon =|w_0-w_1|,$ so that $\varepsilon &gt;0.$
+                There is a $\delta&gt;0$ such that $0\lt|z-z_0|\lt\delta$ implies that
+                $|f(z)-w_0|\lt\varepsilon$ and $|f(z)-w_1|\lt\varepsilon.$ Choose a point
+                $z$ different to $z_0$ (because $f$ is defined in a deleted
+                neighborhood of $z_0$). Then, using the triangle inequality,
+                $$|w_0-w_1|\leq |w_0-f(z)|+|f(z)-w_1|\lt2\varepsilon.$$
+                But this is a contradiction. Thus $w_0=w_1.$ $\quad \blacksquare$
+            </div>
+
+
+            <div class="practice">
+                <p><strong>Example 1:</strong> Show that
+                    $$\lim_{z\rightarrow z_0}z^2=z_0^2.$$
+                </p>
+                <p>
+                    <strong>Discussion:</strong>
+                    Let's take $\delta = 1.$ So $0\lt\left| z-z_0\right|\lt\delta=1$ implies that
+                    </p><div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                    \left| z^2-z_0^2\right|&amp;\lt&amp;\left| z-z_0\right|\left| z+z_0\right|\\&amp;\lt&amp;\left|
+                    z-z_0+2z_0\right|\\&amp;\lt&amp; \left(\left| z-z_0\right|+2\left|z_0\right|\right)\\
+                    &amp;\lt&amp;\left(1+2\left|z_0\right|\right).
+                    \end{eqnarray*}
+                    </div>
+                    
+                    Now, if $\delta=\dfrac{\varepsilon}{1+2\left|z_0\right|},$ then $0\lt\left| z-z_0\right|\lt\delta$
+                    implies that
+                    $$\left| z^2-z_0^2\right|\lt \left(1+2\left|z_0\right|\right)\lt\varepsilon.$$
+                    This means that
+                    $$\left| z^2-z_0^2\right|\lt\varepsilon \quad\text{whenever}\quad 0\lt\left| z-z_0\right|\lt\delta$$
+                    where $\delta=\min\left\{1,\dfrac{\varepsilon}{1+2\left|z_0\right|}\right\}.$
+                <p></p>
+                <p>
+                    Now we can proceed to write our formal proof.
+                </p>
+                <p>
+                    <strong>Proof:</strong>
+                    Let $\varepsilon&gt;0.$ Choose
+                    $\delta=\min\left\{1,\dfrac{\varepsilon}{1+2\left|z_0\right|}\right\}$ such that
+                    $0\lt\left| z-z_0\right|\lt\delta.$ Therefore
+                    $$
+                    \left| z^2-z_0^2\right|\lt\varepsilon. \quad \blacksquare
+                    $$
+                </p>
+            </div>
+
+            <hr>
+
+            <p>
+                There is a connection between
+                the limits of complex functions $f(z)$ and the limits of
+                real-valued functions of two real values $g(x,y).$
+                The latter type are studied in calculus and we can use their
+                definition and properties, like the following:
+            </p>
+
+            <div class="theorem">
+                Consider
+                $f(z)=u(x,y)+iv(x,y)$
+                and
+                $z_0=x_0+iy_0,$ $w_0=u_0+iv_0.$
+                Then
+                \begin{eqnarray}\label{limitpart01}
+                \lim_{z\rightarrow z_0}f(z)=w_0
+                \end{eqnarray}
+                if and only if
+                \begin{eqnarray}\label{limitpart02}
+                \lim_{\left(x,y\right) \rightarrow \left(x_0,y_0\right)}u\left(x,y\right)=u_0\quad \text{and}\quad
+                \lim_{\left(x,y\right) \rightarrow \left(x_0,y_0\right)}v\left(x,y\right)=v_0
+                \end{eqnarray}
+            </div>
+
+
+            <details>
+                <summary><b>Proof</b>
+                </summary>
+
+                <p>
+                    First, let us assume that limit (\ref{limitpart01}) holds.
+                    Thus, for each positive number $\varepsilon,$ there is a positive number
+                    $\delta$ such
+                    that
+                    \begin{eqnarray}\label{limpart05}
+                    |(u + iv) -(u_0 + iv_0)| \lt \varepsilon
+                    \end{eqnarray}
+                    whenever
+                    \begin{eqnarray}\label{limpart06}
+                    0 \lt |(x + iy) - (x_0 + iy_0)| \lt \delta
+                    \end{eqnarray}
+                    But
+                    </p><div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                    |u-u_0|&amp;=&amp;|(u-u_0) + i(v -v_0)|\;=\;|(u + iv) - (u_0 + iv_0)|,\\
+                    |v-v_0|&amp;=&amp;|(u-u_0) + i(v -v_0)|\;=\;|(u + iv) - (u_0 + iv_0)|
+                    \end{eqnarray*}
+                    </div>
+                    and
+                    <div class="scroll-wrapper">
+                        $$|(x+iy)-(x_0+iy_0)|=|(x-x_0)+i(y-y_0)|=\sqrt{(x-x_0)^2+(y-y_0)^2}$$
+                    </div>
+                    Hence it follows from inequalities (\ref{limpart05}) and (\ref{limpart06}) that
+                    <div class="scroll-wrapper">
+                        $$|u-u_0|\lt\varepsilon\quad \text{and}\quad |v-v_0|\lt\varepsilon$$
+                    </div>
+                    whenever
+                    <div class="scroll-wrapper">
+                        $$0\lt\sqrt{(x-x_0)^2+(y-y_0)^2}\lt\delta$$
+                    </div>
+                    which proves that limits (\ref{limitpart02}) hold.
+                <p></p>
+
+                <p>
+                    Now, we assume that limits (\ref{limitpart02}) hold in order to obtain limit
+                    (\ref{limitpart01}).
+                    Limits (\ref{limitpart02}) tell us that for each positive number $\varepsilon,$ there exist
+                    positive
+                    numbers $\delta_1$
+                    and $\delta_2$ such that
+                    </p><div class="scroll-wrapper">
+                        \begin{eqnarray}\label{limpart03}
+                    |u-u_0|\lt \frac{\varepsilon}{2}\quad\text{whenever}\quad
+                    0\lt\sqrt{(x-x_0)^2+(y-y_0)^2}\lt\delta_1
+                    \end{eqnarray}
+                    </div>
+                    and
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray}\label{limpart04}
+                    |v - v_0| \lt \frac{\varepsilon}{2}\quad\text{whenever}\quad
+                    0\lt\sqrt{(x-x_0)^2+(y-y_0)^2}\lt\delta_2
+                    \end{eqnarray}
+                    </div>
+                    
+                    Let $\delta$ be any positive number smaller than $\delta_1$ and $\delta_2.$ Since
+                    <div class="scroll-wrapper">
+                        $$|(u + iv) - (u_0 + iv_0)| = |(u - u_0) + i(v - v_0)| \leq |u - u_0| + |v - v_0|$$
+                    </div>
+                    and
+                    <div class="scroll-wrapper">
+                        $$\sqrt{(x-x_0)^2+(y-y_0)^2}=|(x-x_0)+i(y-y_0)|\leq |(x+iy)-(x_0+iy_0)|$$
+                    </div>
+                    it follows from statements (\ref{limpart03}) and (\ref{limpart04}) that
+                    <div class="scroll-wrapper">
+                        $$|(u + iv) -(u_0 + iv_0)| \lt\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$$
+                    </div>
+                    whenever
+                    <div class="scroll-wrapper">
+                        $$0 \lt |(x + iy) - (x_0 + iy_0)| \lt \delta.$$
+                    </div>
+                    
+                    That is, limit (\ref{limitpart01}) holds, and this completes the proof of the theorem.
+                    $\blacksquare$
+                <p></p>
+            </details>
+
+            <div class="practice">
+                <p><strong>Example 2:</strong> Show that
+                    $$\lim_{z\rightarrow 0}\dfrac{z}{\overline{z}}$$
+                    does not exist.
+                </p>
+                <p>
+                    <strong>Solution:</strong>
+                    Suppose that the limit exists. Thus we can calculate it by letting the point $z = x+iy$
+                    approach the origin in any manner. However, when $z = x+i0$ is a nonzero point on the
+                    real axis
+                    $$f(z)=\frac{x+i0}{x-i0}=1;$$
+                    and when $z=0+iy$ is a nonzero point on the imaginary axis,
+                    $$f(z)=\frac{0+iy}{0-iy}=-1.$$
+                </p>
+                <p>
+                    Thus, if we let $z$ approach the origin along the real axis, we found that the
+                    limit is $1.$ On the other hand, if we approach along the imaginary axis we found the limit
+                    $-1,$ which is a contradiction because a limit is unique.
+                    Therefore we must conclude that limit
+                    $$\lim_{z\rightarrow 0}\dfrac{z}{\overline{z}}$$
+                    does not exist.
+                </p>
+
+            </div>
+
+            <p>
+                In addition to computing specific limits, <strong>Theorem 2</strong>
+                is also an important theoretical tool that allows us to
+                derive many properties of complex limits from properties 
+                of real limits. The following theorem gives an example of this procedure.
+            </p>
+
+            <p class="theorem" id="limits-properties">
+                Suppose that
+                \begin{eqnarray}
+                \lim_{z\rightarrow z_0}f(z)=w_1\quad \text{and}\quad \lim_{z\rightarrow z_0}g(z)=w_2\label{limithypo}
+                \end{eqnarray}
+                Then
+                \begin{eqnarray}
+                \lim_{z\rightarrow z_0}\big[c\cdot f(z)\big] &amp;=&amp; c\cdot \lim_{z\rightarrow z_0} f(z) \text{ with } c\in\C, \label{limitconst}\\
+                \lim_{z\rightarrow z_0}\big[f(z)+g(z)\big]=w_1+w_2,\label{limitsum}\\
+                \lim_{z\rightarrow z_0}\big[f(z)g(z)\big]=w_1w_2;\label{limitmult}
+                \end{eqnarray}
+                and, if $w_2\neq 0,$
+                \begin{eqnarray}
+                \lim_{z\rightarrow z_0}\frac{f(z)}{g(z)}=\frac{w_1}{w_2}.
+                \end{eqnarray}
+            </p>
+
+
+            <details>
+                <summary><b>Proof</b>
+                </summary>
+
+                <p>
+                    For proving property (\ref{limitsum}), we must show that for any $\varepsilon &gt;0$ we can find
+                    $\delta &gt;0$ such that
+                    </p><div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                    \left| \left(f(z)+g(z)\right)-\left(w_1+w_2\right)\right|\lt\varepsilon \quad \text{when}\quad
+                    0\lt\left| z-z_0\right|\lt\delta
+                    \end{eqnarray*}
+                    </div>
+                    By hypothesis, given $\varepsilon &gt;0$ we can find $\delta_1 &gt;0$ and $\delta_2&gt;0$ such that
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                    \left| f(z)-w_1\right|\lt\varepsilon/2 \quad \text{when}\quad 0\lt\left| z-z_0\right|\lt\delta_1
+                    \\
+                    \left| g(z)-w_2\right|\lt\varepsilon/2 \quad \text{when}\quad 0\lt\left| z-z_0\right|\lt\delta_2
+                    \end{eqnarray*}
+                    </div>
+                    
+                    Then we have
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                    \left| \left(f(z)+g(z)\right)-\left(w_1+w_2\right)\right| &amp;=&amp;\left|
+                    \left(f(z)-w_1\right)+\left(g(z)+w_2\right)\right| \\ &amp;\leq &amp;\left| f(z)-w_1\right|+\left|
+                    g(z)-w_2\right|\\
+                    &amp;\leq &amp; \varepsilon/2+\varepsilon/2=\varepsilon
+                    \end{eqnarray*}
+                    </div>
+                    
+                    Thefore,
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                    \left| \left(f(z)+g(z)\right)-\left(w_1+w_2\right)\right|\lt\varepsilon \quad \text{when}\quad
+                    0\lt\left| z-z_0\right|\lt\delta
+                    \end{eqnarray*}
+                    </div>
+                    where $\delta$ is chosen as the smaller of $\delta_1$ and $\delta_2.$
+                <p></p>
+
+                <p>
+                    Now we will prove property (\ref{limitmult}). First, using the triangle inequality, we write
+                    </p><div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                    \left|f(z)g(z) - w_1w_2\right|&amp; \leq &amp; \left|f(z)g(z) - f(z)w_2\right| + \left|f(z)w_2 -
+                    w_1w_2\right|\\
+                    &amp;=&amp; \left|f(z)\right|\left|g(z) - w_2\right|+ \left|f(z) - w_1\right|\left|w_2\right|
+                    \end{eqnarray*}
+                    </div>
+                    
+                    To estimate each term, we choose $\delta_1\gt 0$
+                    so that $0\lt \left|z-z_0\right|\lt \delta_1$ implies
+                    $\left|f(z)- w_1\right|\lt 1,$ and thus
+                    $\left|f(z)\right|\lt \left|w_1\right|+1,$ since
+                    $$\left|f(z) - w_1\right|\geq \left|f(z)\right|- \left| w_1\right|.$$
+                    Given $\varepsilon\gt 0,$ set $\delta_2$ and $\delta_3$ such that
+                    $0\lt \left|z-z_0\right|\lt \delta_2$ implies
+                    $$\left|f(z)-w_1\right|\lt \frac{\varepsilon}{2\left(|w_2|+1\right)}$$
+                    and
+                    $0\lt \left|z-z_0\right|\lt \delta_3$ implies
+                    $$\left|g(z)-w_2\right|\lt \frac{\varepsilon}{2\left(|w_1|+1\right)}.$$
+                    Thus we can choose $\delta = \min\left\{\delta_1,\delta_2,\delta_3\right\}.$
+                    If $0\lt \left|z-z_0\right|\lt \delta,$ then
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                    \left|f(z)g(z) - w_1w_2\right|&amp; \leq &amp; \left|f(z)\right|\left|g(z) - w_2\right|+ \left|f(z) -
+                    w_1\right|\left|w_2\right|\\
+                    &amp;\lt &amp; \frac{\varepsilon}{2\left(|w_1|+1\right)}\left|f(z)\right| +
+                    \frac{\varepsilon}{2\left(|w_2|+1\right)}\left|w_2\right|\\
+                    &amp;\lt &amp; \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+                    \end{eqnarray*}
+                    </div>
+                    
+                    Therefore, $\lim_{z\rightarrow z_0}\big[f(z)g(z)\big]=w_1w_2$ is proved.
+
+                    <!--
+                         with the aid of <strong>Theorem 2</strong>.
+                    Considering the following
+                    \begin{eqnarray*}
+                    f (z) = u(x, y) + iv(x, y), \quad g(z) = U(x, y) + iV (x, y),\\
+                    z_0 = x_0 + iy_0,\quad w_1 = u_1 + iv_1, \quad w_2 = u_2 + iv_2.
+                    \end{eqnarray*}
+                    Then, according to hypotheses (\ref{limithypo}) and <strong>Theorem 2</strong>, the limits as
+                    $(x, y)$ approaches
+                    $(x_0, y_0)$ of the functions $u, \,v, \,U$ and $V$ exist and have the values $u_1, \,v_1,\, u_2$
+                    and
+                    $v_2,$ respectively. So the real and imaginary components of the product
+                    $$f (z)g(z) = (uU - vV ) + i(vU + uV )$$
+                    have the limits $u_1u_2 - v_1v_2$ and $v_1u_2 + u_1v_2,$ respectively, as $(x, y)$ approaches
+                    $(x_0, y_0).$ Hence, by <strong>Theorem 2</strong> again, $f (z)g(z)$ has the limit
+                    $$(u_1u_2 - v_1v_2) + i(v_1u_2 + u_1v_2)$$
+                    as $z$ approaches $z_0;$ and this is equal to $w_1w_2.$ Property (\ref{limitmult}) is thus
+                    established.
+                    -->
+                <p></p>
+
+                <p>
+                    Properties (\ref{limitconst}) and (\ref{limitsum}) are left as an excersie. $\blacksquare$
+                </p>
+
+            </details>
+
+
+
+        </article>
+    </main>
+
+    <a href="riemann_sphere.html" style="text-decoration: none;">
+        <p class="nextPage">Riemann Sphere <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 Hello!</strong>
+      </div>
+      <div class="modal-body">
+        <p>
+          If you found this interactive textbook helpful, consider becoming a member in:
+        </p>
+
+        <div class="button-container">
+          <button id="modal-link">
+            <a href="https://www.patreon.com/jcponce"><i class="fa-brands fa-patreon"></i>
+              <strong>Patreon</strong></a>
+          </button>
+        </div>
+
+
+        <p>
+          This project is made possible by the kindness of supporters like you.
+          Your contributions enable me to maintain the site, uphold the applets,
+          and, crucially, <strong>ensure it remains freely accessible</strong> to anyone eager to
+          explore this captivating field of mathematics <strong>—without any distracting ads</strong>.
+        </p>
+
+        <p>If you prefer to donate just once,
+          not monthly, you can use these links:
+        </p>
+
+        <div class="button-container">
+          <button id="modal-link">
+            <a target="_blank"
+              href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=WTMTR7D8RYZ26&item_name=Your+support+will+help+me+to+improve+and+keep+up+to+date+the+applets+of+this+book.+Sincerely+appreciate+it%21&currency_code=AUD&source=url">
+              <strong>❤️ <i class="fa-brands fa-paypal"></i> PayPal Me</strong>
+            </a>
+          </button>
+          <button id="modal-link">
+            <a target="_blank" href="https://jcponcemath.secure-decoration.com/">
+              <strong>❤️ Buy a T-shirt</strong>
+            </a>
+          </button>
+        </div>
+
+        <p>
+          You can't contribute this time, no worries! Maybe you just want to:
+        </p>
+        <div class="button-container">
+          <button id="modal-link">
+            <a href="mailto:jcponcemath@gmail.com"><strong><i class="fa-solid fa-envelope"></i> Send a
+                comment</strong></a>
+          </button>
+
+        </div>
+        <br />
+      </div>
+      <div class="modal-footer">
+        Thank you! 🙏 I highly appreciate your support! 🤗
+      </div>
+    </div>
+
+  </div>
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer>
+
+  <span id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <span class="hide-small">
+      <a href="https://github.com/complex-analysis"><i class="fa-solid fa-code"></i> Source</a>,
+      <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues"><i
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+    </span>
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-solid fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+  
+  <br />
+
+  <a id="licence-link" rel="license"
+    href="license.html">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong style="font-size: 0.9em;">ISBN: 978-0-6485736-0-9</strong> <br>
+  <strong>
+    <span class="hide-small" style="font-size: 0.9em;">&copy; Juan Carlos Ponce Campuzano
+      2019-<script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 0.9em;">&copy; J.C. Ponce Campuzano
+      2019-<script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>

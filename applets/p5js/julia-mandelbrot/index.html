@@ -1,0 +1,239 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Mandelbrot-Julia Sets explorer">
+    <meta name="author" content="Juan Carlos Ponce Campuzano">
+    <meta name="language" content="en" />
+    <title>Julia &amp; Mandelbrot Sets Relationship</title>
+
+    <script language="javascript" type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.1/p5.min.js"></script>
+    <script language="javascript" type="text/javascript" src="dat-gui/dat.gui.min.js"></script>
+    <script language="javascript" type="text/javascript" src="auxiliar.js"></script>
+    <script language="javascript" type="text/javascript" src="julia.js"></script>
+    <script language="javascript" type="text/javascript" src="mandelbrot.js"></script>
+    <script language="javascript" type="text/javascript" src="sketch.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-HVPF4FLZCB');
+    </script>
+
+    <script>
+        function myFunction() {
+            location.reload();
+        }
+    </script>
+
+    <script type="text/javascript">
+        function closeCurrentTab() {
+            var conf = confirm("Are you sure, you want to close this tab?");
+            if (conf == true) {
+                close();
+            }
+        }
+    </script>
+    
+    <link rel="icon" type="image/png" href="https://jcponce.github.io/images/icon/infinity32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://jcponce.github.io/images/icon/infinity16.png" sizes="16x16">
+
+    <link rel="stylesheet" href="dat-gui/dat-gui-light-theme.css">
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="styledc.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+    <style>
+        div.sticky {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+        }
+
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        canvas {
+            padding: 0;
+            margin: auto;
+            display: block;
+            width: 960px;
+            height: 480px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    </style>
+    <!-- This line removes any default padding and style. You might only need one of these values set. -->
+
+</head>
+
+<body style="background-color:#f2f2f2">
+
+
+    <!-- Navbar Stars-->
+    <div class="w3-container w3-black w3-xlarge w3-text-black sticky">
+        <div class="w3-display-topmiddle">
+            <a onclick="closeCurrentTab()" class="w3-button w3-hover-grey w3-opacity w3-round-xxlarge"> <i
+                    class="fas fa-times"></i></a>
+            &nbsp;
+            <a onclick="myFunction()" class="w3-button w3-hover-grey w3-opacity w3-round-xxlarge"> <i
+                    class="fas fa-redo"></i></a>
+            &nbsp;
+            <a href="https://github.com/complex-analysis/complex-analysis.github.io/blob/master/applets/p5js/julia-mandelbrot/"
+                class="w3-button w3-hover-grey w3-opacity w3-round-xxlarge"> <i class="fas fa-code"></i></a>
+            &nbsp;
+            <a class="myBtn_multi w3-button w3-hover-grey w3-opacity w3-round-xxlarge w3-hide-small" id="myBtn"> <i
+                    class="fas fa-question"></i></a>
+
+        </div>
+    </div>
+    <!-- Navbar Ends-->
+
+    <div class="w3-card-4 w3-light-grey w3-hide-small w3-hide-medium w3-round-large" style="width:175px;font-size:16px">
+        <div class="w3-container">
+            <p>Double click to fix <strong>c</strong>.</p>
+            <p>Zoom In or Out with mouse wheel.</p>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div class="modal modal_multi">
+
+        <!-- Modal content -->
+        <div class="modal-content w3-large">
+            <span class="close close_multi">&times;</span>
+            <div style="text-align:center">
+                <p class="w3-large"><b class="w3-xlarge">Mandelbrot and Julia Sets</b>
+
+                    <br>
+
+            </div>
+            <p>Welcome! With this application you can explore the relationship between the Julia and Mandelbrot Sets.
+                Move the mouse around to see different Julia sets.</p>
+            <p>Open the controls (upper right corner) to change the number of iterations or to set the value of
+                <strong>c</strong>.</p>
+
+            <p style="text-align:center" class="w3-xlarge"><strong>Control keys</strong></p>
+            <div class="w3-center">
+                <table class="w3-table w3-centered">
+                    <tr>
+                        <td class="w3-left-align">
+                            <div>
+                                <p><i class="fas fa-arrow-up"></i> : Up</p>
+                                <p><i class="fas fa-arrow-down"></i> : Down</p>
+                                <p><i class="fas fa-arrow-right"></i> : Right</p>
+                                <p><i class="fas fa-arrow-left"></i> : Left</p>
+
+                            </div>
+
+                        </td>
+                        <td class="w3-left-align">
+                            <div>
+                                <p><strong><i class="fas fa-plus"></i></strong> : Zoom In</p>
+                                <p><strong><i class="fas fa-minus"></i></strong> : Zoom Out</p>
+                                <p><strong>R</strong> : Reset</p>
+                                <p><strong>I</strong> : Info - Center coordinates</p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <p>If you find this content useful, please
+                consider supporting the work using the links below.</p>
+
+            <div style="text-align: center;">
+                <div class="actions">
+                    <p>
+                        <strong><a class="w3-button w3-round w3-light-grey w3-hover-text-indigo"
+                                href="https://www.patreon.com/jcponce"><i class="fab fa-patreon"></i>
+                                Patreon</a></strong>&nbsp;&nbsp;
+                        <strong><a class="w3-button w3-round w3-light-grey w3-hover-text-indigo"
+                                href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=WTMTR7D8RYZ26&amp;item_name=Your+support+will+help+me+to+improve+and+keep+up+to+date+the+applets+of+this+site.+Sincerely+appreciate+it%21&amp;currency_code=AUD&amp;source=url">&#x2764;&#xFE0F;
+                                PayPal</a></strong>&nbsp;&nbsp;
+                        <strong><a class="w3-button w3-round w3-light-grey w3-hover-text-indigo"
+                                href="https://jcponcemath.secure-decoration.com">&#x2764;&#xFE0F; Buy a
+                                T-shirt</a></strong>
+                    </p>
+                </div>
+            </div>
+
+            <p class="w3-center"><i class="fas fa-infinity"></i></p>
+
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+    //XXXXXXXXXX    script for Modal button instructions    XXXXXXXXXXXXXXXXXX
+    // Get the modal
+
+    var modalparent = document.getElementsByClassName("modal_multi");
+
+    // Get the button that opens the modal
+
+    var modal_btn_multi = document.getElementsByClassName("myBtn_multi");
+
+    // Get the <span> element that closes the modal
+    var span_close_multi = document.getElementsByClassName("close_multi");
+
+    // When the user clicks the button, open the modal
+    function setDataIndex() {
+
+        for (i = 0; i < modal_btn_multi.length; i++) {
+            modal_btn_multi[i].setAttribute('data-index', i);
+            modalparent[i].setAttribute('data-index', i);
+            span_close_multi[i].setAttribute('data-index', i);
+        }
+    }
+
+
+
+    for (i = 0; i < modal_btn_multi.length; i++) {
+        modal_btn_multi[i].onclick = function () {
+            var ElementIndex = this.getAttribute('data-index');
+            modalparent[ElementIndex].style.display = "block";
+        };
+
+        // When the user clicks on <span> (x), close the modal
+        span_close_multi[i].onclick = function () {
+            var ElementIndex = this.getAttribute('data-index');
+            modalparent[ElementIndex].style.display = "none";
+        };
+
+    }
+
+    window.onload = function () {
+
+        setDataIndex();
+    };
+
+    window.onclick = function (event) {
+        if (event.target === modalparent[event.target.getAttribute('data-index')]) {
+            modalparent[event.target.getAttribute('data-index')].style.display = "none";
+        }
+
+        // OLD CODE
+        //if (event.target === modal) {
+        //    modal.style.display = "none";
+        //}
+    };
+</script>
+
+
+</html>

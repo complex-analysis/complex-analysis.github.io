@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>  Complex Functions
+</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Main info: Dublin core -->
+  <meta name="DC.Title" content="Complex Analysis">
+  <meta name="DC.Creator" content="Juan Carlos Ponce Campuzano">
+  <meta name="DC.Date" content="26-01-2019">
+  <meta name="DC.Identifier" content="ISBN-13: 978-0-6485736-0-9">
+  <meta name="DC.Type" content="Interactive Resource">
+  <meta name="DC.Format" content="HTML">
+  <meta name="DC.Language" content="en-US">
+  <meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+  <!-- social media cards -->
+  <meta property="og:title" content="Complex Analysis">
+  <meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta property="og:url" content="https://complex-analysis.com/">
+  <meta property="og:image" content="https://complex-analysis.com/images/complex_analysis_card.jpg">
+  <meta property="og:site_name" content="Complex Analysis">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+  <meta name="twitter:title" content="Complex Analysis">
+  <meta name="twitter:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta name="twitter:site" content="@jcponcemath">
+  <meta name="twitter:image" content="https://complex-analysis.com/images/complex_analysis_card.jpg">
+  <meta name="twitter:creator" content="@jcponcemath">
+
+  <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HVPF4FLZCB');
+  </script>
+</head>
+
+<body data-type="book" id="top">
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="topology_complex_plane.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-solid fa-circle-half-stroke"></i></span>
+        <span class="support-top-button" id="donate"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="table_of_contents.html" class="link" id="center-link">
+            <span class="content-hover-previous">Topology of the Complex Plane</span>
+            <span class="content-hover">Table of Contents</span>
+            <span class="content-original">Complex Analysis</span>
+            <span class="content-hover-next">Limits</span>
+        </a>
+    </div>
+    <a href="limits.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="complex-functions">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contents</p>
+        <ul>
+            <li><a href="#section1">Complex Functions</a></li>
+            <li><a href="#section2">Examples of functions</a></li>
+            <li><a href="#section3">Dynamic exploration</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br>
+    <img src="../images/chp02/complex-f.jpg" alt="f(z)=z+1/z" title="f(z)=z+1/z">
+    <br>
+
+
+    <main>
+        <article>
+
+            <div id="section1">
+
+                <h1>Complex Functions</h1>
+
+                <hr>
+
+                <p>Let $S$ be a set of complex numbers. A <em>function</em> $f$ defined on $S$ is a rule that assigns to
+                    each $z$ in $S$ a complex number $w.$ The number $w$ is called the value of $f$ at $z$ and is
+                    denoted by $f (z)$; that is, $w = f (z).$ The set $S$ is called the domain of definition of $f.$</p>
+
+                <p>If only one value of $w$ corresponds to each value of $z,$ we say that $w$ is
+                    a <em>single-valued</em> function of $z$ or that $f(z)$ is single-valued.
+                    If more than one value of $w$ corresponds to each value of $z,$ we say
+                    that $w$ is a <em>multiple-valued</em> or <em>many-valued</em> function of $z.$
+                </p>
+
+                <p>
+                    A <em>multiple-valued</em> function can be considered as a collection of
+                    single-valued functions, each member of which is called a <em>branch</em>
+                    of the function. In general, we consider one particular member as a
+                    <em>principal branch</em> of the multiple-valued function and the value
+                    of the function corresponding to this branch as the <em>principal value</em>.
+                </p>
+
+                <div class="practice">
+                    <p>
+                        <strong>Example 1:</strong> The function $w=z^2$ is a single-valued function of $z.$ On the
+                        other hand, if $w=z^{\frac{1}{2}},$ then to each value of $z$ there are two values of $w.$
+                        Hence, the function $$w=z^{\frac{1}{2}}$$ is a multiple-valued (in this case two-valued)
+                        function of $z.$
+                    </p>
+                </div>
+
+                <p>Suppose that $w=u+iv$ is the value of a function $f$ at $z= x+iy,$ so that
+                    $$u+iv=f(x+iy)$$
+                    Each of the real numbers $u$ and $v$ depends on the real variables $x$ and $y,$ and it
+                    follows that $f(z)$ can be expressed in terms of a pair of real-valued functions of
+                    the real variables $x$ and $y$:
+                    \begin{eqnarray}\label{eq1}
+                    f(z)= u(x,y)+iv(x,y).
+                    \end{eqnarray}
+                    If the polar coordinates $r$ and $\theta,$ instead of $x$ and $y$ , are used, then
+                    $$u+iv=f\left(re^{i\theta}\right)$$
+                    where $w=u+iv$ and $z=re^{i\theta}.$ In this case, we write
+                    \begin{eqnarray}\label{eq2}
+                    f(z)=u\left(r, \theta\right)+iv\left(r, \theta\right).
+                    \end{eqnarray}
+                </p>
+
+                <div class="practice">
+                    <p>
+                        <strong>Example 2:</strong> If $f(z)= z^2$ then
+                        $$f(x+iy)=(x+iy)^2=x^2-y^2+i(2xy).$$
+                        Hence
+                        $$u(x,y)= x^2-y^2\quad \text{and}\quad v(x,y)= 2xy.$$
+                        When we use polar coordinates, we have
+                        $$u\left(r, \theta\right)= r^2\cos 2\theta \quad \text{and}\quad v\left(r, \theta\right)=
+                        r^2\sin 2\theta.$$
+                    </p>
+                </div>
+
+                <p><strong>Question:</strong> What happens when in either of equations (\ref{eq1}) and (\ref{eq2}) the
+                    function $v$ always has a value zero?</p>
+
+
+            </div>
+
+            <hr>
+
+            <div id="section2">
+
+                <h2>Examples of complex functions</h2>
+
+                <h4 style="text-align:left">Polynomial functions</h4>
+                <p> For $a_n, a_{n-1}, \ldots, a_0$ complex constants we define
+                    </p><div class="scroll-wrapper">
+                        $$p(z) = a_n z^n + a_{n-1} z^{n-1} +\cdots +a_{1}z + a_0$$
+                    </div>
+                    where $a_n\neq 0$ and $n$ is a positive integer
+                    called the <em>degree</em> of the polynomial $p(z).$
+                <p></p>
+
+                <p><em>Rational functions:</em> Ratios
+                    $$\frac{p(z)}{q(z)}$$
+                    where $p(z)$ and $q(z)$ are polynomials and $q(z)\neq 0.$
+                </p>
+
+                <h4 style="text-align:left">Exponential function</h4>
+
+                <p><em>Exponential function:</em> If $z=x+iy,$ the exponential
+                    function $e^z$ is defined by writing
+                    \begin{eqnarray*}
+                    e^z=e^xe^{iy}.
+                    \end{eqnarray*}
+                    Because
+                    \begin{eqnarray*}
+                    e^{iy}=\cos y +i\sin y,
+                    \end{eqnarray*}
+                    then we have
+                    \begin{eqnarray*}
+                    e^z=e^x\left(\cos y +i\sin y\right).
+                    \end{eqnarray*}
+                </p>
+
+                <h4 style="text-align:left">Logarithmic function</h4>
+
+                <p> In a similar fashion, the complex logarithm is a complex extension
+                    of the usual real natural (i.e., base $e$) logarithm. In terms of polar coordinates
+                    $z = r e^{i\theta},$ the complex logarithm has the form
+                    $$\log z = \log\left(r e^{i\theta}\right) = \log r + \log e^{i\theta}= \log r + i \theta.$$
+                    We will explore in detail this function soon.
+                </p>
+
+                <h4 style="text-align:left" id="trig-functions">Trigonometric functions</h4>
+
+                <p> The sine and cosine of a complex variable
+                    $z$ are defined as follows:
+                    </p><div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                    \sin z=\frac{e^{i z}-e^{-iz}}{2i}\quad \text{and}\quad \cos z=\frac{e^{iz} +e^{-i z}}{2}.
+                    \end{eqnarray*}
+                    </div>
+                    
+
+                    The other four trigonometric functions are defined in terms of the sine and cosine functions with
+                    the following relations:
+                    <div class="scroll-wrapper">
+                        \begin{align*}
+                    \tan z&amp;=\frac{\sin z}{\cos z} &amp; \cot z&amp;=\frac{\cos z}{\sin z} \\
+                    \sec z&amp;=\frac{1}{\cos z} &amp; \csc z&amp;=\frac{1}{\sin z}.
+                    \end{align*}
+                    </div>
+                    
+                <p></p>
+
+                <h4 style="text-align:left">Hyperbolic trigonometric functions</h4>
+
+                <p>The hyperbolic sine and the hyperbolic cosine of a complex variable are defined as
+                    they are with a real variable; that is,
+                    </p><div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                    \sinh z=\frac{e^{z}-e^{-z}}{2}\quad \text{and}\quad \cosh z=\frac{e^{z} +e^{- z}}{2}.
+                    \end{eqnarray*}
+                    </div>
+                    
+
+
+                    The other four hyperbolic functions are defined in terms of the hyperbolic sine and cosine functions
+                    with the relations:
+                    <div class="scroll-wrapper">
+                        \begin{align*}
+                    \tanh z&amp;=\frac{\sinh z}{\cosh z} &amp; \coth z&amp;=\frac{\cosh z}{\sinh z} \\
+                    \text{sech } z&amp;=\frac{1}{\cosh z} &amp; \text{csch } z&amp;=\frac{1}{\sinh z}.
+                    \end{align*}
+                    </div>
+                    
+                <p></p>
+
+            </div>
+
+            <hr>
+
+            <div id="section3">
+
+                <h2>Explore the real and imaginary components</h2>
+
+                <p>Use the following applet to explore the real and 
+                    imaginary components of some complex functions:
+                </p>
+
+                <div class="ggbElement" style="display:block" id="ggb-element"></div>
+
+                <div class="practice">
+                    <details>
+                        <summary><strong>Code</strong></summary>
+
+                        <p>Enter the following scripts in <a href="https://www.geogebra.org/classic#3d" target="_blank">GeoGebra</a> to explore it yourself. Open the 3D view. The symbol
+                            <code>#</code> indicates comments.
+                        </p>
+
+                        <pre><code>#Define complex function
+f(z) := z + 1/z
+
+#Define components
+Re = Surface(u, v, real( f(u + ί v) ), u, -5, 5, v, -5, 5)
+Im = Surface(u, v, imaginary( f(u + ί v) ), u, -5, 5, v, -5, 5)
+</code></pre>
+                    </details>
+                </div>
+
+            </div>
+
+
+        </article>
+    </main>
+
+    <!--GeoGebra embeding-->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script>
+        let params = {
+            "width": 772,
+            "height": 541,
+            "material_id": "q8cagcc5",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": true,
+            "showResetIcon": true
+        };
+        let ggbApplet = new GGBApplet(params, true);
+        window.addEventListener("load", () => {
+            ggbApplet.inject('ggb-element');
+        });
+    </script>
+    <!--GeoGebra embeding ends-->
+
+    <a href="limits.html" style="text-decoration: none;">
+        <p class="nextPage">Limits <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 Hello!</strong>
+      </div>
+      <div class="modal-body">
+        <p>
+          If you found this interactive textbook helpful, consider becoming a member in:
+        </p>
+
+        <div class="button-container">
+          <button id="modal-link">
+            <a href="https://www.patreon.com/jcponce"><i class="fa-brands fa-patreon"></i>
+              <strong>Patreon</strong></a>
+          </button>
+        </div>
+
+
+        <p>
+          This project is made possible by the kindness of supporters like you.
+          Your contributions enable me to maintain the site, uphold the applets,
+          and, crucially, <strong>ensure it remains freely accessible</strong> to anyone eager to
+          explore this captivating field of mathematics <strong>—without any distracting ads</strong>.
+        </p>
+
+        <p>If you prefer to donate just once,
+          not monthly, you can use these links:
+        </p>
+
+        <div class="button-container">
+          <button id="modal-link">
+            <a target="_blank"
+              href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=WTMTR7D8RYZ26&item_name=Your+support+will+help+me+to+improve+and+keep+up+to+date+the+applets+of+this+book.+Sincerely+appreciate+it%21&currency_code=AUD&source=url">
+              <strong>❤️ <i class="fa-brands fa-paypal"></i> PayPal Me</strong>
+            </a>
+          </button>
+          <button id="modal-link">
+            <a target="_blank" href="https://jcponcemath.secure-decoration.com/">
+              <strong>❤️ Buy a T-shirt</strong>
+            </a>
+          </button>
+        </div>
+
+        <p>
+          You can't contribute this time, no worries! Maybe you just want to:
+        </p>
+        <div class="button-container">
+          <button id="modal-link">
+            <a href="mailto:jcponcemath@gmail.com"><strong><i class="fa-solid fa-envelope"></i> Send a
+                comment</strong></a>
+          </button>
+
+        </div>
+        <br />
+      </div>
+      <div class="modal-footer">
+        Thank you! 🙏 I highly appreciate your support! 🤗
+      </div>
+    </div>
+
+  </div>
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer>
+
+  <span id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <span class="hide-small">
+      <a href="https://github.com/complex-analysis"><i class="fa-solid fa-code"></i> Source</a>,
+      <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues"><i
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+    </span>
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-solid fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+  
+  <br />
+
+  <a id="licence-link" rel="license"
+    href="license.html">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong style="font-size: 0.9em;">ISBN: 978-0-6485736-0-9</strong> <br>
+  <strong>
+    <span class="hide-small" style="font-size: 0.9em;">&copy; Juan Carlos Ponce Campuzano
+      2019-<script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 0.9em;">&copy; J.C. Ponce Campuzano
+      2019-<script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>

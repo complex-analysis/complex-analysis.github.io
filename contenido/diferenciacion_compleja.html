@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+  <title>  Diferenciación Compleja
+</title>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Main info: Dublin core -->
+  <meta name="DC.Title" content="Análisis Complejo">
+  <meta name="DC.Creator" content="Juan Carlos Ponce Campuzano">
+  <meta name="DC.Date" content="26-01-2021">
+  <meta name="DC.Identifier" content="ISBN-13: 978-0-6485736-2-3">
+  <meta name="DC.Type" content="Recurso interactivo">
+  <meta name="DC.Format" content="HTML">
+  <meta name="DC.Language" content="es-mx">
+  <meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+  <!-- social media cards -->
+  <meta property="og:title" content="Análisis Complejo">
+  <meta property="og:description" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta property="og:url" content="https://complex-analysis.com/es.html">
+  <meta property="og:image" content="https://complex-analysis.com/images/complex_analysis_card-es.jpg">
+  <meta property="og:site_name" content="Complex Analysis">
+  <meta property="og:locale" content="es-mx">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta name="twitter:title" content="Análisis Complejo">
+  <meta name="twitter:description" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta name="twitter:site" content="@jcponcemath">
+  <meta name="twitter:image" content="https://complex-analysis.com/images/complex_analysis_card-es.jpg">
+  <meta name="twitter:creator" content="@jcponcemath">
+
+  <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+
+  <link rel="stylesheet" href="css/style-es.css">
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HVPF4FLZCB');
+  </script>
+</head>
+
+<body data-type="book" id="top">
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="continuidad.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-solid fa-circle-half-stroke"></i></span>
+        <span class="support-top-button" id="donate"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="tabla_de_contenidos.html" class="link" id="center-link">
+            <span class="content-hover-previous">Continuidad</span>
+            <span class="content-hover">Tabla de Contenidos</span>
+            <span class="content-original">Análisis Complejo</span>
+            <span class="content-hover-next">La Función logaritmo</span>
+        </a>
+    </div>
+    <a href="funcion_logaritmo.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="complex-differentiation">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contenidos</p>
+        <ul>
+            <li><a href="#section1">Diferenciación Compleja</a></li>
+            <li><a href="#section2">Ecuaciones de Cauchy-Riemann</a></li>
+            <li><a href="#section3">Condiciones suficientes</a></li>
+            <li><a href="#section4">Funciones analíticas</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br>
+    <img src="../images/chp02/complex_functions.jpg" alt="f(z)=z^2" title="f(z)=z^2">
+    <br>
+
+    <main>
+        <article>
+
+            <div id="section1">
+
+
+                <h1>Diferenciación Compleja</h1>
+
+
+                <hr>
+
+                <p>La noción de derivada compleja es la base de
+                    la teoría de funciones complejas.
+                    La diferenciación compleja se define de la misma manera que en los cursos de
+                    Cálculo usando la definición de límite de la derivada de una función.
+                    Sin embargo, a pesar de su superficial similaridad, la diferenciación compleja
+                    es profundamente una teoría diferente.
+                </p>
+
+
+
+                <p>Una función compleja $f(z)$ es <em>diferenciable</em> en el punto $z_0\in \mathbb C$
+                    si y solo si el siguiente límite del cociente de diferencias existe
+                </p><div class="scroll-wrapper">
+                    \begin{eqnarray}\label{diff01}
+                    f'(z_0) = \lim_{z \rightarrow z_0} \frac{f(z)-f(z_0)}{z-z_0}.
+                    \end{eqnarray}
+                </div>
+                <p></p>
+                <p>Alternativamente, definiendo $\Delta z = z-z_0,$ podemos escribir
+                </p><div class="scroll-wrapper">
+                    \begin{eqnarray}\label{diff02}
+                    f'(z_0) = \lim_{\Delta z \rightarrow 0} \frac{f(z_0+\Delta z)-f(z_0)}{\Delta z}.
+                    \end{eqnarray}
+                </div>
+                <p></p>
+                <p>Usualmente omitimos el sub-índice en $z_0$ e introducimos el número
+                    \[\Delta w = f(z+\Delta z)-f(z).\]
+                    el cual denota el cambio en el valor $w=f(z)$ correspondiente al cambio $\Delta z$
+                    en el punto en el cual $f$ está evaluada. Entonces podemos escribir la equación (\ref{diff02})
+                    como
+                    \[\frac{d w}{d z}= \lim_{\Delta z \rightarrow 0}\frac{\Delta w}{\Delta z}.\]
+                </p>
+
+
+                <p>
+                    A pesar del hecho de que la fórmula (\ref{diff01}) para una derivada es identica en forma
+                    a la derivada de una función real, debemos notar que $f'(z_0)$
+                    se trata de un límite de dos dimensiones. De esta forma
+                    para que $f'(z_0),$ el límite relevante deve existir independientemente de la dirección
+                    en la cual $z$ se aproxima al punto límite $z_0.$ Para una función de una variable real
+                    sólo tenemos dos direcciones, esto es, $x\lt x_0$ y $x\gt x_0.$
+                </p>
+                <br>
+
+                <div class="hide-medium hide-small" style="text-align: center;">
+                    <iframe scrolling="no" title="Complex differentiation" src="https://www.geogebra.org/material/iframe/id/yn5rs5wg/width/617/height/474/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="617px" height="474px" style="border:0px;" allowfullscreen=""> </iframe>
+                    <!--<div style="width:776px;height:548px;display:block" id="applet_container1"></div>-->
+                </div>
+
+                <div class="hide-large ">
+                    <img class="w3-image w3-mobile" src="../images/chp02/derivative.gif" alt="derivative" title="Geometric interpretation" style="width:703px;">
+                </div>
+
+                <figure class="w3-center">
+                    <figcaption>
+                        Existe una variedad infinita de direcciones para aproximarse a $z_0.$
+                    </figcaption>
+                </figure>
+
+
+                <p>Una característica importate de la diferenciación compleja
+                    es que la existencia de una derivada compleja automáticamente implica
+                    la existencia de infinitas derivadas.
+                    Esto es en contraste con el caso de la función real $g(x),$ en la cual
+                    $g'(x)$ puede existir sin la existencia de $g''(x).$
+                </p>
+
+            </div>
+
+            <hr>
+
+            <div id="section2">
+
+                <h2>Ecuaciones de Cauchy-Riemann</h2>
+
+                <p>Para comprendet las consecuencias de la definición (\ref{diff01}),
+                    veamos qué sucede cuando nos aproximamos a $z_0$
+                    a lo largo de dos direcciones simples - de forma horizontal y vertical.
+                    Si definimos
+                    $$z= z_0 + h = (x_0+h)+iy_0,\quad h\in \mathbb R,$$
+                    entonces $z \rightarrow z_0$ a lo largo de una línea horizontal
+                    cuando $h\rightarrow 0.$
+                    Si escribimos
+                    $$f(z) = u(x,y)+iv(x,y)$$
+                    en términos de sus partes real e imaginaria, entonces
+                    $$f'(z_0)= \lim_{h \rightarrow 0}\frac{f(z_0+h)-f(z_0)}{h}$$
+                    de lo cual se tenemos que
+                </p><div class="scroll-wrapper">
+                    \begin{eqnarray*}
+                    f'(z_0)&amp;= &amp; \lim_{h \rightarrow 0} \frac{f(z_0+h)-f(z_0)}{h} = \lim_{h \rightarrow 0}
+                    \frac{f(x_0+h + iy_0)-f(x_0+iy_0)}{h} \\
+                    &amp;= &amp; \lim_{h \rightarrow 0} \left[ \frac{u \left( x_0 +h, y_0 \right) - u \left( x_0 , y_0
+                    \right)}{h}\right]+i \lim_{h \rightarrow 0} \left[ \frac{v \left( x_0 +h, y_0 \right) - v \left( x_0
+                    ,
+                    y_0 \right)}{h}\right] \\
+                    &amp;= &amp; u_x(x_0, y_0)+ i v_x(x_0,y_0)
+                    \end{eqnarray*}
+                </div>
+                donde $u_x(x_0, y_0)$ y $v_x(x_0,y_0)$ denotan las derivadas parciales
+                de primer orden con respecto a $x$ de las funciones $u$ y $v,$ respectivamente,
+                en $(x_0, y_0).$
+                Si ahora definimos
+                $$z = z_0+ik = x_0 + i(y_0+k), \quad k\in \mathbb R,$$
+                entonces $z\rightarrow 0$ a lo largo de la línea vertical cuando $k\rightarrow 0.$
+                Por lo tanto, también tenemos
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
+                    f'(z_0)&amp;= &amp; \lim_{k \rightarrow 0} \frac{f(z_0+ik)-f(z_0)}{ik} = \lim_{k \rightarrow 0}
+                    \left[
+                    -i \frac{f(x_0 + i(y_0+k))-f(x_0+iy_0)}{k} \right] \\
+                    &amp;= &amp; \lim_{k \rightarrow 0} \left[ \frac{v \left( x_0 , y_0 + k\right) - v \left( x_0 , y_0
+                    \right)}{k}-i \frac{u \left( x_0 , y_0 +k \right) - u \left( x_0 , y_0 \right)}{k}\right] \\
+                    &amp;= &amp; v_y(x_0, y_0)- i u_y(x_0,y_0)
+                    \end{eqnarray*}
+                </div>
+                donde las derivadas parciales de $u$ y $v$ son, en este caso, con respecto a $y.$
+                Cuando igualamos las partes real e imaginaria de estas dos fórmulas
+                para la derivada compleja $f'(z_0),$ descubrimos que
+                las componentes real e imaginaria de $f(z)$ deben satisfacer un sistema lineal
+                homogéneo de ecuaciones diferenciales:
+                $$u_x=v_y, \quad u_y=-v_x.$$
+                Estas son las <em>ecuaciones de Cauchy-Riemann</em> cuyo nombre se debe a los famosos
+                matemáticos del siglo XIX Augustin-Louis Cauchy y Bernhard Riemann, dos de los
+                fundadores del análisis complejo moderno.
+                <p></p>
+
+
+                <div class="theorem">
+                    Una función compleja $f(z)=u(x,y)+iv(x,y)$
+                    tiene una derivada compleja $f'(z)$
+                    si y solo si su parte real e imaginaria son diferencialmente
+                    continuas y además satisfacen las  ecuaciones de Cauchy-Riemann
+                    \begin{eqnarray*}
+                    u_x=v_y, \quad u_y=-v_x
+                    \end{eqnarray*}
+                    En este caso, la derivada compleja de $f(z)$ es igual a cualquiera de las siguientes
+                    espresiones:
+                    $$f'(z)=u_x+iv_x = v_y - i u_y.$$
+
+                </div>
+
+
+
+                <div class="practice">
+                    <p><strong>Ejemplo 1:</strong> Considera la función $f(z)=z^2,$ la cual se puede
+                        escribir como
+                        $$z^2 = \left(x^2-y^2\right)+ i \left(2xy\right).$$
+                        Su parte real $u = x^2-y^2$ e imaginaria $v=2xy$ satisfacen las ecuaciones de
+                        Cauchy-Riemann, dado que
+                        $$u_x=2x = v_y, \quad u_y = -2y = -v_x.$$
+                        El Teorema 1 implica que $f(z)=z^2$ es diferenciable. Su derivada es
+                    </p><div class="scroll-wrapper">
+                        $$f'(z)=u_x+iv_x = v_y - i u_y = 2x + i 2y = 2(x+iy) = 2z.$$
+                    </div>
+                    <p></p>
+                </div>
+
+
+                <p>Afortunadamente, la derivada compleja obedece todas
+                    las reglas que has aprendido en un curso de cálculo.
+                    Por ejemplo
+                </p><div class="scroll-wrapper">
+                    $$\frac{d}{dz}z^n = nz^{n-1}, \quad \frac{d}{dz} e^{cz} = ce^{cz}, \quad \frac{d}{dz} \log z =
+                    \frac{1}{z}.$$
+                </div>
+                <p></p>
+                <p>Aquí, la potencia $n$ puede ser un número real (o incluso un número complejo
+                    debido a la identidad $z^n = e^{n \log z}$), mientras que $c$
+                    es una constante compleja.
+                    Las <a href="complex_functions.html#trig-functions" target="_blank">fórmulas exponenciales</a>
+                    para las funciones trigonométricas implica que también satisfacen
+                    las reglas estándares
+                </p><div class="scroll-wrapper">
+                    \begin{eqnarray*}
+                    \frac{d}{dz}\text{sen}\, z &amp;=&amp; \cos z, \quad \frac{d}{dz} \cos z = -\text{sen}\, z.\\
+                    \frac{d}{dz}\text{senh}\, z &amp;=&amp; \cosh z, \quad \frac{d}{dz} \cosh z = \text{senh}\, z.
+                    \end{eqnarray*}
+                </div>
+                <p></p>
+                <p>
+                    Si las derivadas de $f$ y $g$ existen en el punto $z,$ entonces
+                    \begin{eqnarray*}
+                    \frac{d}{dz}\left[f(z)+g(z) \right]=f^{\prime}(z)+g^{\prime}(z)\\
+                    \frac{d}{dz}\left[f(z)g(z) \right]=f(z)g^{\prime}(z)+f^{\prime}(z)g(z)
+                    \end{eqnarray*}
+                    y, cuando $g(z)\neq 0,$
+                    \begin{eqnarray*}
+                    \frac{d}{dz}\left[\frac{f(z)}{g(z)}
+                    \right]=\frac{g(z)f^{\prime}(z)-f(z)g^{\prime}(z)}{\left[g(z)\right]^2}
+                    \end{eqnarray*}
+                    Finalmente, supongamos que
+                    $f$ tiene derivada en $z_0$
+                    y que $g$ tiene derivada en $f (z_0).$ Entonces la función
+                    $F(z) = g\left(f (z)\right)$ tiene derivada en $z_0,$ y
+                    \begin{eqnarray*}
+                    F^{\prime}(z)=g^{\prime}\left(f(z_0)\right)f^{\prime}(z_0)
+                    \end{eqnarray*}
+                    Nota que las fórmulas para la diferenciación de sumas, productos, razones,
+                    inversas y la composición de funciones son identicas a sus versiones
+                    de variable real, con demostraciones similares. De esta forma,
+                    afortunadamente, no necesitarás aprender nuevas reglas para realizar
+                    el cálculo de derivadas complejas.
+
+
+                </p>
+
+            </div>
+
+            <hr>
+
+            <div id="section3">
+
+                <h3>Condiciones suficientes para diferenciabilidad</h3>
+
+                <p>
+                    Si se satisfacen las ecuaciones de Cauchy-Riemann equations en un punto
+                    $z_0 = (x_0, y_0),$ esto no es suficiente para asegurar la
+                    existencia de la derivada de una función $f(z)$ en ese punto.
+                    Sin embargo, al agregar condiciones de continuidad
+                    a las derivadas parciales,
+                    tenemos el siquiente teorema.
+                </p>
+
+
+                <div class="theorem">
+
+                    Sea
+                    $f(z) = u(x, y) + iv(x, y)$
+                    la función definida en una $\epsilon$ vecindad de
+                    un punto $z_0 = x_0 + iy_0,$ y sugpongamos que
+                    (1) las derivadas parciales de primer orden
+                    de las funciones
+                    $u$ y $v$ con respecto a $x$ y
+                    $y$ existen en toda la vecindad; (2)
+                    estas derivadas parciales son continuas
+                    en $(x_0, y_0)$
+                    y satisfacen las ecuaciones de Cauchy-
+                    Riemann
+                    $$u_x = v_y,\quad u_y =-v_x$$
+                    at $(x_0, y_0).$
+
+                    Entonces $f^{\prime}(z_0)$ existe
+                    y su valor es
+                    $$f^{\prime}(z_0) = u_x + iv_x$$
+                    donde el lado derecho
+                    está evaluado en $(x_0, y_0).$
+
+                </div>
+
+
+                <div class="practice">
+                    <p>
+                        <strong>Ejemplo 2:</strong> Consideremos la función exponencial
+                        $$f (z) = e^z = e^xe^{iy} \quad \quad (z = x + iy),$$
+                        Usando la fórmula de Euler, la podemos re-escribir como
+                        $$f(z) = e^x \cos y + ie^x \,\text{sen}\, y,$$
+                        donde $y$ se considera en radianes cuando se evalúan
+                        $\cos y$ y $\text{sen}\, y.$ Entonces
+                    </p><div class="scroll-wrapper">
+                        $$u(x, y) = e^x \cos y\quad \text{and} \quad v(x, y) = e^x \,\text{sen}\, y.$$
+                    </div>
+                    <p></p>
+                    <p>
+                        Dado que $u_x = v_y$ y $u_y = -v_x$ se satisfacen y estas derivadas son continuas,
+                        las condiciones del teorema se satisface en todos los puntos del plano complejo.
+                        De esta manera, $f^{\prime}(z)$ existe, y además
+                    </p><div class="=scroll-wrapper">
+                        $$f^{\prime}(z) = u_x + iv_x = e^x \cos y + ie^x \,\text{sen}\, y.$$
+                    </div>
+
+                    <p></p>
+                    <p>
+                        Nota que $f^{\prime}(z) = f (z)$ para todo $z.$
+                    </p>
+                </div>
+
+                <p>
+                    Una consecuencia de las condiciones en las
+                    ecuaciones de Cauchy-Riemann conditions es que las <strong>curvas de nivel</strong>
+                    de $u,$ esto es,
+                    las curvas
+                    $u(x,y)=c_1$ para $c_1$ una constante real, son ortogonales
+                    a las curvas de nivel de $v,$ donde $v(x,y)=c_2,$ en todos
+                    los puntos donde $f^{\prime}$ existe y es diferente de cero.
+                    Del <strong>Theorema 2</strong> tenemos
+
+                </p><div class="scroll-wrapper">
+                    \begin{eqnarray*}
+                    \bigg|f^{\prime}(z)\bigg|^2 &amp;= &amp;\left(\frac{\partial u}{\partial x}\right)^2+\left(\frac{\partial
+                    v}{\partial x}\right)^2\\
+                    &amp;=&amp; \left(\frac{\partial u}{\partial x}\right)^2+\left(\frac{\partial u}{\partial y}\right)^2\\
+                    &amp;=&amp; \left(\frac{\partial v}{\partial x}\right)^2+\left(\frac{\partial v}{\partial y}\right)^2
+                    \end{eqnarray*}
+                </div>
+
+                por lo que los gradientes en dos dimensiones
+
+                <div class="scroll-wrapper">
+                    \begin{align*}
+                    \nabla u &amp;= \left(\frac{\partial u}{\partial x},\frac{\partial u}{\partial y}\right) \quad
+                    \text{and}\quad
+                    \nabla v = \left(\frac{\partial v}{\partial x},\frac{\partial v}{\partial y}\right)
+                    \end{align*}
+                </div>
+
+                son diferente de cero.
+                Sabemos del calculo vectorial que el gradiente es ortogonal
+                a sus curvas de nivel (i. e.,
+                $du=\nabla u\cdot \mathbf{ds}=0,$ donde $\mathbf{ds}$
+                apunta en la dirección de la tangente en la curva de nivel),
+                y de la condición de Cauchy-Riemann del (<strong>Theorem 2</strong>)
+                podemos obervar que los gradientes $\nabla u$
+                y $\nabla v$ son ortogonales debido que
+                el producto punto es cero:
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
+                    \nabla u\cdot \nabla v&amp;=&amp; \frac{\partial u}{\partial x}\frac{\partial v}{\partial x}+\frac{\partial
+                    u}{\partial y}\frac{\partial v}{\partial y}\\
+                    &amp;=&amp;-\frac{\partial u}{\partial x}\frac{\partial u}{\partial y}+\frac{\partial u}{\partial
+                    x}\frac{\partial
+                    u}{\partial x}=0
+                    \end{eqnarray*}
+                </div>
+
+                <p></p>
+
+                <p>
+                    Consequentemente,
+                    las curvas de nivel en dos dimensiones
+                    $u(x,y)=c_1$ and $v(x,y)=c_2$ son ortogonales.
+                </p>
+
+                <div class="practice">
+                    <p>
+                        <strong>Ejemplo 3:</strong> Para la función $f(z) = z^2,$ las curvas de nivel $u(x, y) = c_1$ y
+                        $v(x, y) =
+                        c_2$ son hiperbolas, como se muestra en la Figura 2.
+                        Nota la ortogonalidad de las dos familias de curvas.
+                        Observa también que las curvas $u(x, y) = 0$ y
+                        $v(x, y) = 0$ se intersectan en el origen pero no
+                        son ortogonales la una a la otra.
+                    </p>
+                    <br>
+                    <figure>
+                        <img src="../images/chp02/ortho-curves.png" alt="Orthogonal level curves" title="Piecewise smooth curve" style="width:60%;">
+                        <figcaption>
+                            Curvas de nivel ortogonales de las components real e imaginaria de
+                            $f(z) = z^2.$
+                        </figcaption>
+                    </figure>
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div id="section4">
+
+                <h2>Funciones analíticas</h2>
+
+                <p>
+                    Sea
+                    $f:A\rightarrow \mathbb C$ donde $A\subset \mathbb C$ es un conjunto abierto.
+                    Decimos que la función es <em>analítica</em> en $A$ si
+                    $f$ es diferenciable en cada punto $z_0\in A.$
+                    En algunas ocasiones se usa también la palabra
+                    "holomórfica", la cual es sinónimo con la "analílica".
+                    La frase <em>"analítica en $z_0$"</em>
+                    significa que $f$ es analítica en una vecindad de $z_0.$
+                </p>
+
+                <p>
+                    Una <strong>función entera</strong>
+                    es una función que es analítica en cada
+                    punto en todo el plano finito.
+                    Dado que la derivada de un polinomio
+                    existe en todas partes, se sigue que
+                    <strong>todo polinomio es una función entera</strong>.
+                </p>
+
+                <p>
+                    Si una función $f$ falla en ser analítica
+                    en un punto $z_0$ pero es analítica en alguna
+                    vecidndad de $z_0,$ entonces $z_0$ se denomina
+                    <strong>punto singular</strong> o
+                    <strong>singularidad</strong>, de $f.$
+
+                </p>
+
+                <div class="practice">
+
+                    <p>
+                        <strong>Ejemplo 4:</strong>
+                        La función
+                        $$f(z) = \frac{1}{z}$$
+                        es analítica en cada punto diferente de cero en el pano finito.
+                        Por otra parte, la función
+                        $$f(z) = |z|^2$$
+                        no es analítica en cualquier punto ya que su deriviada
+                        existe solo en $z = 0$ y no sobre una vecidad.
+                    </p>
+                    <p>
+                        El punto $z = 0$ es evidentemente un punto singular
+                        de la función $f(z) = 1/z.$ La función $f(z) = |z|^2,$
+                        por otra parte, no tiene puntos singulares
+                        dado que no es analítca en ninguna parte.
+                    </p>
+                </div>
+
+                <p>
+                    Si dos funciones son analíticas en un dominio $D,$
+                    su suma y su producto son ambos analíticos en $D.$
+                    De manera similar, su cociente es analítico en $D$
+                    siempre que la función en el denominador no sea cero
+                    en $D.$ En particular, el cociente
+                    $$\frac{P(z)}{Q(z)}$$
+                    de dos polinomios es analítico en cualquier dominio
+                    en el cual $Q(z)\neq 0.$
+                </p>
+
+                <p>
+                    Además, de la regla de la cadena para la derivada
+                    de una función compuesta, implica que
+                    una composición de dos funciones analíticas es analítica.
+                </p>
+
+
+                <div class="practice">
+                    <p>
+                        <strong>Ejemplo 5:</strong>
+                        La función
+                        $$f(z) = \frac{4z+1}{z^3-z},$$
+                        es analítica en todo el plano $z$ excepto para los puntos singulares
+                        $z=0$ and $z=1,-1.$
+                        La analiticidad de debe a la existencia de las
+                        familiares fórmulas de diferenciación,
+                        las cuales se necesitan aplicar sólo si se necesita la expresión
+                        para $f^{\prime}(z).$
+                        En este caso, tenemos
+                        $$f^{\prime}(z)=\frac{-8z^3-3z^2+1}{z^2(z^2-1)^2}.$$
+                    </p>
+                </div>
+                <p>
+                    Cuando una función se da en términos de sus componentes
+                    $$u(x, y)\quad \text{y}\quad v(x, y),$$
+                    su analiticidad se puede demostrar
+                    directamente con la applicación de las ecuaciones de Cauchy-Riemann.
+                </p>
+
+
+                <div class="practice">
+                    <p>
+                        <strong>Ejemplo 6:</strong>
+                        La fución
+                        $$f(z)=e^ye^{ix}=e^y\cos x +ie^y\,\text{sen}\, x$$
+                        no es analítica en ninguna parte.
+                        Sus componentes son
+                        $$u(x,y)=e^y\cos x\quad\text{and}\quad v(x,y)=e^y\,\text{sen}\, x.$$
+                        Si $f(z)$ fuera analítica, entonces (usando las ecuaciones de Cauchy-Riemann)
+                    </p><div class="scroll-wrapper">
+
+                        $$u_x=v_y \Rightarrow -e^y\,\text{sen}\, x=e^y\,\text{sen}\, x \Rightarrow 2e^y\,\text{sen}\, x=0 \Rightarrow \text{sen}\, x=0$$
+
+                    </div>
+
+                    y
+
+                    <div class="scroll-wrapper">
+
+                        $$u_y=-v_x \Rightarrow e^y\cos x=-e^y\cos x \Rightarrow 2e^y\cos x=0 \Rightarrow \cos x=0.$$
+                    </div>
+
+                    Por otra parte, tenemos que las raíces de
+                    $\text{sen}\, x$ son $n\pi$ (with $n\in \mathbb Z$) pero $\cos
+                    (n\pi)=(-1)^n\neq0.$
+                    Por otra parte, las raíces de $\cos x$ are $(2n-1)\pi/2$
+                    pero
+
+                    <div class="scroll-wrapper">
+                        $$\text{sen}\, ((2n-1)\pi/2)=-\cos(n\pi)=-(-1)^n\neq 0.$$
+
+                    </div>
+
+                    consequentemente, las ecuaciones de
+                    Cauchy-Riemann no se satisfaces <em>en ninguna parte</em>.
+                    <p></p>
+                </div>
+
+            </div>
+
+
+        </article>
+    </main>
+
+    <a href="funcion_logaritmo.html" style="text-decoration: none;">
+        <p class="nextPage">La Función Logarítmo <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 ¡Hola!</strong>
+      </div>
+      <div class="modal-body">
+        <p>
+          Si este libro interactivo te ha sido de utilidad, 
+          puedes apoyarme en:
+        </p>
+
+        <div class="button-container">
+          <button id="modal-link">
+            <a href="https://www.patreon.com/jcponce"><i class="fa-brands fa-patreon"></i>
+              <strong>Patreon</strong></a>
+          </button>
+        </div>
+
+
+        <p>
+          Este proyecto es posible gracias al generoso apoyo de personas como tú.
+          Sus contribuciones me permiten mantener este sitio, así como los applets,
+          y crucialmente, <strong>garantizar que permanezca de acceso libre</strong>
+          para toda persona interesada en explorar esta cautivadora rama de las 
+          matemáticas <strong>- sin anuncios que te distraigan</strong>.
+        </p>
+
+        <p>Si prefieres donar una sola vez, no mensualmente, 
+          puedes usar los siguientes enlaces:
+        </p>
+
+        <div class="button-container">
+          <button id="modal-link">
+            <a target="_blank"
+              href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=WTMTR7D8RYZ26&item_name=Your+support+will+help+me+to+improve+and+keep+up+to+date+the+applets+of+this+book.+Sincerely+appreciate+it%21&currency_code=AUD&source=url">
+              <strong>❤️ <i class="fa-brands fa-paypal"></i> PayPal Me</strong>
+            </a>
+          </button>
+          <button id="modal-link">
+            <a target="_blank" href="https://jcponcemath.secure-decoration.com/">
+              <strong>❤️ Adquire una T-shirt</strong>
+            </a>
+          </button>
+        </div>
+
+        <p>
+          No puedes contribuir en esta ocasión, ¡no hay problema!
+          Quizá sólo quieras
+        </p>
+        <div class="button-container">
+          <button id="modal-link">
+            <a href="mailto:jcponcemath@gmail.com"><strong><i class="fa-solid fa-envelope"></i> 
+            Mandar un comentario</strong></a>
+          </button>
+
+        </div>
+        <br />
+      </div>
+      <div class="modal-footer">
+        ¡Gracias! 🙏 !Realmente aprecio tu apoyo! 🤗
+      </div>
+    </div>
+
+  </div>
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer data-type="footer">
+
+  <span id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <span class="hide-small">
+      <a href="https://github.com/complex-analysis"><i class="fa-solid fa-code"></i> Source</a>,
+      <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues"><i
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+    </span>
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-solid fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+
+  <br />
+
+  <a id="licence-link" rel="license" href="licencia.html">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong><span style="font-size: 0.9em;">ISBN: 978-0-6485736-2-3</span></strong><br>
+  <strong>
+    <span class="hide-small" style="font-size: 0.9em;">&copy; Juan Carlos Ponce Campuzano
+      2021-<script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 0.9em;">&copy; J.C. Ponce Campuzano
+      2021-<script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>

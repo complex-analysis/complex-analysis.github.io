@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Explorador de los conjuntos Mandelbrot y Julia">
+    <meta name="author" content="Juan Carlos Ponce Campuzano">
+    <meta name="language" content="es" />
+    <title>Explorador de los conjuntos Mandelbrot y Julia</title>
+
+    <script language="javascript" type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.1/p5.min.js"></script>
+    <script language="javascript" type="text/javascript" src="libraries/dat.gui.min.js"></script>
+
+    <link rel="stylesheet" href="libraries/dat-gui-light-theme.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+    <style>
+        div.sticky {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        canvas {
+            position: absolute;
+            z-index: -2;
+            width: 800px;
+            height: 400px;
+            left: 0px;
+            top: 0px;
+        }
+
+    </style>
+
+
+</head>
+
+<body style="background-color:#333333;">
+
+    <div id="my-gui-container"></div>
+
+    <script language="javascript" type="text/javascript" src="auxiliar.js"></script>
+    <script language="javascript" type="text/javascript" src="julia.js"></script>
+    <script language="javascript" type="text/javascript" src="mandelbrot.js"></script>
+    <script language="javascript" type="text/javascript" src="sketch-es.js"></script>
+</body>
+
+
+
+</html>
