@@ -69,7 +69,19 @@ quite right, or a typo, please
 ---
 
 ## DESIGN CREDITS
-The design of this book is based upon the fantastic book [Collision Detection](http://www.jeffreythompson.org/collision-detection/index.php) written by [Jeffrey Thompson](http://www.jeffreythompson.org/). If you want to learn about the algorithms behind collisions using basic geometrical shapes, you should check it!
+The initial design of this book was based upon the fantastic book [Collision Detection](http://www.jeffreythompson.org/collision-detection/index.php) written by [Jeffrey Thompson](http://www.jeffreythompson.org/). If you want to learn about the algorithms behind collisions using basic geometrical shapes, you should check it! The current version, released in 2024, was built thanks to the following projects:
+
+<ul>
+<li>
+<a href="https://github.com/vincentdoerig/latex-css" target="_blank">LaTeX.CSS</a> by Vincent Dörig
+</li>
+<li>
+<a href="https://github.com/davidrzs/latexcss" target="_blank">LatexCSS</a> by David Zollikofer
+</li>
+<li>
+<a href="https://github.com/magicbookproject" target="_blank">The Magic Book project</a>.
+</li>
+</ul>
 
 --- 
 
