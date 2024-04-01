@@ -13,7 +13,7 @@ A visual and interactive introduction to [Complex Analysis](https://complex-anal
 
 ##### ISBN 978-0-6485736-0-9
 
-![alt tag](preview.png)
+![alt tag](preview.jpg)
 
 ---
 ## INTRO
