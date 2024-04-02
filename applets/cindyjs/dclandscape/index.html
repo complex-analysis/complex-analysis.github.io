@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" href="https://jcponce.github.io/assets/img/png/icon/infinity32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="https://jcponce.github.io/assets/img/png/icon/infinity16.png" sizes="16x16">
 
-  <link rel="stylesheet" href="https://complex-analysis.github.io/css/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="../assets/app.css" />
   <link rel="stylesheet" href="../assets/CindyJS.css" />
   <script type="text/javascript" src="../assets/Cindy.js"></script>
@@ -21,8 +21,15 @@
     src="https://cdn.jsdelivr.net/npm/algebrite@1.2.1/dist/algebrite.bundle-for-browser.js"></script>
 
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
-  <script src="../../../js/google-analytics-ga4.js"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HVPF4FLZCB');
+  </script>
 
 
 </head>
@@ -472,9 +479,7 @@
 
           <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-          <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-</script>
+          <script type="text/x-mathjax-config">  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
 
         </div><!--End Hide small -->
 
@@ -482,7 +487,7 @@
 
       <div class="w3-hide-small  w3-hide-medium">
         <p>You can enter your own function $f$ or select one function of the following list:</p>
-        <p><select id="sel" size="6" style="width:10em;">
+        <p><select id="sel" size="6" style="width:9em;">
             <option data-a="1" data-p="z">z</option>
             <option data-zoom=".15" data-p="z^2">z^2</option>
             <option data-a="1" data-zoom="0.1" data-q="z">1/z</option>
