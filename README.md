@@ -1,12 +1,6 @@
 # MAJOR UPDATE COMPLETED!!!
 
-❤️ Support this project to keep it alive!
-
-* [Patreon](https://www.patreon.com/jcponce)
-
-* [PayPal](https://paypal.me/jcarlosponce/3)
-
-* [T-shirts](https://jcponcemath.secure-decoration.com/shop/category/complex?c=4336971)
+Enjoy the new design with improved performance for the applets.
 
 # Complex Analysis
 A visual and interactive introduction to [Complex Analysis](https://complex-analysis.github.io).
@@ -85,15 +79,17 @@ The initial design of this book was based upon the fantastic book [Collision Det
 
 --- 
 
-## SUPPORT THIS PROJECT
-If you like this work and would like to support it, you can make a 
-direct donation using the link below. Thank you for your support!
+## ❤️ Support this project to keep it alive!
+
+This interactive book is free for everybody, as I believe that everyone should have access to high-quality learning resources to explore and learn mathematics. That's why many users choose to contribute to my efforts. If you believe in what I do and want to help me on my journey, you can do so now with the links below:
 
 * [Patreon](https://www.patreon.com/jcponce)
 
 * [PayPal](https://paypal.me/jcarlosponce/3)
 
 * [T-shirts](https://jcponcemath.secure-decoration.com/shop/category/complex?c=4336971)
+
+Your contributions help me to maintain this site and, crucially, ensure it remains freely accessible to anyone eager to explore this captivating field of mathematics —without any distracting ads.
 
 ---
 
