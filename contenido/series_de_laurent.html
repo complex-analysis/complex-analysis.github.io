@@ -95,9 +95,9 @@
 
             <p>
                 Recordemos que una función $f$ de variable compleja $z$ es <em>analítica</em> en
-                un punto $z_0$ si tiene una derivada en cada punto dentro de una becindad
+                un punto $z_0$ si tiene una derivada en cada punto dentro de una vecindad
                 de $z_0.$
-                Una función <em>entera</em> aquella que es analítca en cada punto del plano complejo.
+                Una función <em>entera</em> aquella que es analítica en cada punto del plano complejo.
                 Si una función $f$ no es analítica en un punto $z_0$ pero es analítica
                 en cada vecindad de $z_0,$ entonces $z_0$ se llama
                 <em>punto singular</em>, o <em>singularidad</em>, de $f.$
@@ -128,7 +128,7 @@
                 Supongamos que una función $f$ es analítica
                 en una región anular
                 $R_1 \lt |z - z_0| \lt R_2,$ con centro en $z_0,$ y sea $C$ cualquier contorno cerrado
-                simple orientado positivamente al rededor de $z_0$ y contenido en la region anular mencionada.
+                simple orientado positivamente alrededor de $z_0$ y contenido en la región anular mencionada.
                 Entonces, en cada punto del dominio, $f (z)$ tiene la representación
                 en series
                 \begin{eqnarray}\label{laurentfunction}
@@ -165,7 +165,7 @@
                 $f$ y consecuentemente la función no se puede expandir en una serie de Taylor
                 alrededor de ese punto. Sin embargo,  $f$ se puede expandir en 
                 una serie de la forma dada en (\ref{laurentfunction})
-                la cual es válidad para todo  $z$ cercano a $1:$
+                la cual es válida para todo  $z$ cercano a $1:$
             </p>
             <div class="scroll-wrapper">
                 \begin{eqnarray}\label{simple-example}
@@ -173,7 +173,7 @@
                 \end{eqnarray}
             </div>
             <p>
-                Esta representación en series es válidad para $0 \lt |z - 1| \lt \infty.$
+                Esta representación en series es válida para $0 \lt |z - 1| \lt \infty.$
             </p>
 
             <p>
@@ -192,7 +192,7 @@
                 \end{eqnarray}
                 se denomina como la <span id="principal-part"><strong>parte principal</strong></span> 
                 de la serie (\ref{laurentfunction})
-                y convege para 
+                y converge para 
             </p><div class="scroll-wrapper">
                 $$\abs{\frac{1}{z-z_0}}\lt \frac{1}{R_1} \quad
                 \text{o equivalentemente }\quad
@@ -205,7 +205,7 @@
                 Por lo tanto, la suma de  (\ref{analytic-part}) y (\ref{principal-part})
                 converge cuando $z$ satisface ambas desigualdades $R_1 \lt \abs{z-z_0}$ <em>y</em>
                 $\abs{z-z_0}\lt R_2,$ esto es, cuando $z$ es
-                un punto en un dominuo anular definido por $R_1 \lt |z - z_0| \lt R_2.$
+                un punto en un dominio anular definido por $R_1 \lt |z - z_0| \lt R_2.$
             </p>
 
             <p>
@@ -213,8 +213,8 @@
                 consiste de exactamente un término diferente de cero,
                 mientras que su parte analítica consiste de todos los 
                 términos iguales a cero.
-                El siguiente ejemplo ilustra el caso de una serie de la forma (laurentfunction)
-                en la cual la parte principal consite de un número infinito de términos,
+                El siguiente ejemplo ilustra el caso de una serie de la forma (\ref{laurentfunction})
+                en la cual la parte principal consiste de un número infinito de términos,
                 pero esta vez la parte analítica consiste de un número infinito de 
                 términos distintos de cero.
             </p>
@@ -223,10 +223,10 @@
             <div class="practice">
                 <p>
                     <strong>Ejemplo 1: </strong>
-                    La fución $f(z) = \dfrac{\sin z}{z^4}$ no es
+                    La función $f(z) = \dfrac{\sin z}{z^4}$ no es
                     analítica en la singularidad aislada $z = 0 $
-                    y por lo tanto no se puede representa como una serie de Maclaurin.
-                    Sin emmbargo, $\sin z$ es una función entera, 
+                    y por lo tanto no se puede representar como una serie de Maclaurin.
+                    Sin embargo, $\sin z$ es una función entera, 
                     y sabemos que la serie de Maclaurin,
                 </p>
                 <div class="scroll-wrapper">
@@ -246,10 +246,10 @@
                 <p>
                     La parte analítica de la serie en (\ref{example-1})
                     converge para $|z|\lt \infty.$ (¡Verifícalo!)
-                    La parte principal es válidad para $|z|&gt;0.$ 
-                    De esta forma la expresion en (\ref{example-1})
+                    La parte principal es válida para $|z|&gt;0.$ 
+                    De esta forma la expresión en (\ref{example-1})
                     converge para todo $z$ excepto en $z=0;$
-                    es decir, la representación en series es valida para $0 \lt |z| \lt \infty.$
+                    es decir, la representación en series es válida para $0 \lt |z| \lt \infty.$
                 </p>
 
             </div>
@@ -270,14 +270,14 @@
             </p>
 
             <div class="practice">
-                <p><strong>Example 2: </strong>
+                <p><strong>Ejemplo 2: </strong>
                     Consideremos la función
                     $$f(z)=\frac{1}{z(1+z^2)}$$
                     la cual tiene singulares aisladas en $z=0$
                     y $z=\pm i.$
                     En este caso, existe una serie de Laurent para el dominio
                     $0\lt |z|\lt 1$ y también para el dominio $1\lt |z|\lt \infty,$
-                    el cual es exterior al círuclo $|z|=1.$
+                    el cual es exterior al círculo $|z|=1.$
                     Para encontrar cada serie de Laurent,
                     recordemos la serie de Maclaurin
                     $$\frac{1}{1-z}=\sum_{n=0}^{\infty}z^n,\quad |z|\lt 1.$$
