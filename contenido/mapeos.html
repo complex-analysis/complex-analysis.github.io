@@ -138,6 +138,28 @@
                 serán dominios en el sentido topológico.
             </p>
 
+            <hr/>
+
+            <h2>Exploración Dinámica</h2>
+
+            <p>
+              En el siguiente applet puedes explorar diferentes funciones complejas
+              consideradas como mapeos.
+              Cuando mueves la region cuadrada con el ratón en el plano $xy$ 
+              (lado izquierdo) 
+              puedes apreciar los cambios en el plano $uv$ (lado derecho).
+            </p>
+
+            <div class="ggbElement" id="ggb-element2"></div>
+
+            <p><strong>Más cosas que puedes probar</strong></p>
+
+            <ul style="margin-top: -2px;">
+              <li>Cambia la función compleja.</li>
+              <li>Cambia la región al seleccionar 
+                los lados del cuadrado o activa la opción <code>More</code>.</li>
+            </ul>
+
             <br>
 
         </article>
@@ -146,7 +168,7 @@
     <!--GeoGebra embeding-->
     <script src="https://www.geogebra.org/apps/deployggb.js"></script>
     <script>
-        let params = {
+        let params1 = {
             "width": 800,
             "height": 445,
             "material_id": "jj4sef6w",
@@ -156,9 +178,21 @@
             "enableShiftDragZoom": true,
             "showResetIcon": true
         };
-        let ggbApplet = new GGBApplet(params, true);
+        let params2 = {
+            "width": 794,
+            "height": 448,
+            "material_id": "qCSzkRsP",
+            "borderColor": "888888",
+            "playButton": false,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": true,
+            "showResetIcon": true
+        };
+        let ggbApplet1 = new GGBApplet(params1, true);
+        let ggbApplet2 = new GGBApplet(params2, true);
         window.addEventListener("load", () => {
-            ggbApplet.inject('ggb-element');
+            ggbApplet1.inject('ggb-element1');
+            ggbApplet2.inject('ggb-element2');
         });
     </script>
     <!--GeoGebra embeding ends-->
