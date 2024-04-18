@@ -118,7 +118,7 @@
                 the transformation in the $w$-plane.
             </p>
 
-            <div class="ggbElement" id="ggb-element"></div>
+            <div class="ggbElement" id="ggb-element1"></div>
 
             <p><strong>Remark:</strong> In complex analysis the notion of domain has two different meanings. The first
                 one alludes to the domain set of a function, while the second pertains to any open and connected subset
@@ -127,6 +127,25 @@
             </p>
 
 
+            <hr/>
+
+            <h2>Dynamic Exploration</h2>
+
+            <p>
+              In the following applet you can explore how different complex functions
+              considered as mappings.
+              When you drag the square around on the $xy$-plane (left-side graphics view) 
+              you can appreciate the changes on the $uv$-plane (right-side graphics view).
+            </p>
+
+            <div class="ggbElement" id="ggb-element2"></div>
+
+            <p><strong>More things to try:</strong></p>
+
+            <ul style="margin-top: -2px;">
+              <li>Change the complex function.</li>
+              <li>Change the region by dragging the sides of the square or activate the box <strong>More</strong>.</li>
+            </ul>
 
             <br>
 
@@ -137,7 +156,7 @@
     <!--GeoGebra embeding-->
     <script src="https://www.geogebra.org/apps/deployggb.js"></script>
     <script>
-         let params = {
+         let params1 = {
             "width": 800,
             "height": 445,
             "material_id": "jj4sef6w",
@@ -147,9 +166,21 @@
             "enableShiftDragZoom": true,
             "showResetIcon": true
         };
-        let ggbApplet = new GGBApplet(params, true);
+         let params2 = {
+            "width": 794,
+            "height": 448,
+            "material_id": "qCSzkRsP",
+            "borderColor": "888888",
+            "playButton": false,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": true,
+            "showResetIcon": true
+        };
+        let ggbApplet1 = new GGBApplet(params1, true);
+        let ggbApplet2 = new GGBApplet(params2, true);
         window.addEventListener("load", () => {
-            ggbApplet.inject('ggb-element');
+            ggbApplet1.inject('ggb-element1');
+            ggbApplet2.inject('ggb-element2');
         });
     </script>
     <!--GeoGebra embeding ends-->
