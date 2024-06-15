@@ -35,8 +35,8 @@
   <meta name="twitter:image" content="https://complex-analysis.com/images/complex_analysis_card-es.jpg">
   <meta name="twitter:creator" content="@jcponcemath">
 
-  <link rel="icon" type="image/png" href="contenido/images/infinity32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="contenido/images/infinity16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="images/infinity16.png" sizes="16x16">
 
   <link rel="stylesheet" href="contenido/css/style-es.css">
 
@@ -53,6 +53,27 @@
 </head>
 
 <body data-type="book" id="top">
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-solid fa-circle-half-stroke"></i></span>
+        <span class="support-top-button" id="donate"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="tabla_de_contenidos.html" class="link" id="center-link">
+            <span class="content-hover">Tabla de Contenidos</span>
+            <span class="content-original">Análisis Complejo</span>
+            <span class="content-hover-next">Tabla de contenidos</span>
+        </a>
+    </div>
+    <a href="contenido/tabla_de_contenidos.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
 
   <!-- Main DIV Starts here -->
   <div class="container">
@@ -84,7 +105,8 @@
                 </h1>
 
                 <p class="hide-small author" style="margin-top: -30px;">Juan Carlos Ponce Campuzano <br>
-                    2021 - <script>document.write(new Date().getFullYear());</script>
+                    2021 -
+                    <script>document.write(new Date().getFullYear());</script>
                     <br>
                     <span class="dark-mode-button" id="dark-mode-toggle">
                         <i class="fa-solid fa-circle-half-stroke"></i>
@@ -93,7 +115,8 @@
 
                 <p class="hide-large hide-medium author" style="font-size:16px">Juan Carlos <br> Ponce Campuzano
                     <br>
-                    2021 - <script>document.write(new Date().getFullYear());</script>
+                    2021 -
+                    <script>document.write(new Date().getFullYear());</script>
                     <br>
                     <span class="dark-mode-button" id="dark-mode-toggle">
                         <i class="fa-solid fa-circle-half-stroke"></i>
@@ -131,11 +154,11 @@
 
             <div class="callout">
                 <strong>¡ACTUALIZACIONES!</strong>
-                Este sitio ahora cuenta con un nuevo diseño, 
+                Este sitio ahora cuenta con un nuevo diseño,
                 en celebración al quinto aniversario.
-                También he actualizado muchos de los applet de JavaScript 
-                para mejor rendimiento. No olvides obtener tu galería 
-                de funciones complejas en 
+                También he actualizado muchos de los applet de JavaScript
+                para mejor rendimiento. No olvides obtener tu galería
+                de funciones complejas en
                 <a href="https://www.patreon.com/posts/celebrating-5-of-99495115?utm_medium=clipboard_copy&amp;utm_source=copyLink&amp;utm_campaign=postshare_creator&amp;utm_content=join_link" target="_blank">Patreon</a>.
                 <br>
                 He agregado y actualizado unas secciones:
@@ -220,9 +243,9 @@
             </p>
 
             <a href="https://www.acds.edu.au/resource/complex-analysis-a-visual-and-interactive-introduction/" target="_blank">
-              <img src="images/acds-logo.png" style="width: 40%;float:right; padding-top: 24px; padding-left: 20px;padding-bottom: 30px;">
+                <img src="images/acds-logo.png" style="width: 40%;float:right; padding-top: 24px; padding-left: 20px;padding-bottom: 30px;">
             </a>
-            
+
             <p>
                 Este libro digital ha sido incluido en el
                 <a href="https://www.acds.edu.au/resource/complex-analysis-a-visual-and-interactive-introduction/" target="_blank">repositorio
@@ -235,17 +258,19 @@
 
             <h2 style="text-align: center;">PROBLEMAS Y ERRORES</h2>
             <p>Por supuesto, ningún proyecto como este puede estar libre de errores.
-                Si encuentras applets que no se ejecutan correctamente, o los 
-               ejemplos no se explican bien, o un error tipográfico, 
-               <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues">infórmalo en el repositorio
-               de GitHub</a> de este proyecto. ¡Gracias por tu ayuda!
-           </p>
+                Si encuentras applets que no se ejecutan correctamente, o los
+                ejemplos no se explican bien, o un error tipográfico,
+                <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues">infórmalo en el
+                    repositorio
+                    de GitHub</a> de este proyecto. ¡Gracias por tu ayuda!
+            </p>
 
             <hr>
 
             <h2 style="text-align: center;">CRÉDITOS DE DISEÑO</h2>
-            <p>El diseño inicial de este libro se basó en el fantástico libro 
-                <a href="https://www.jeffreythompson.org/collision-detection/index.php" target="_blank">Collision Detection</a> 
+            <p>El diseño inicial de este libro se basó en el fantástico libro
+                <a href="https://www.jeffreythompson.org/collision-detection/index.php" target="_blank">Collision
+                    Detection</a>
                 escrito por <a href="https://www.jeffreythompson.org/" target="_blank">Jeffrey Thompson</a>.
                 La versión actual, publicada en 2024, se construyó gracias a los siguientes proyectos:
             </p>
@@ -284,31 +309,32 @@
                         <strong>Tienda</strong>
                     </a>
                 </div>
-                <!--
-                    <div style="padding: 0 15px;">
+                
+                <div style="padding: 0 15px;">
                     <i class="fa-brands fa-square-x-twitter"></i> <a target="_blank"
                         href="https://twitter.com/share?ref_src=twsrc%5Etfw">
                         <strong>Post</strong>
                     </a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
-                -->
+                
             </div>
             <p style="text-align: center;">
                 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" target="_blank" class="twitter-share-button" data-show-count="false">Post</a>
                 <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </p>
             <p style="text-align: center;">
-               ¡Gracias por tu apoyo! ❤️
+                ¡Gracias por tu apoyo! ❤️
             </p>
 
 
             <hr>
 
             <h2 style="text-align: center;">NAVEGACIÓN</h2>
-            <p>¡Bien, comencemos! Haz clic en el enlace en la parte inferior de la página o en las 
-                flechas en la parte superior para pasar al siguiente capítulo. El enlace 
-                <strong>Análisis Complejo</strong> en la parte superior te llevará de regreso a 
-                la <a href="contenido/tabla_de_contenidos.html">Tabla de Contenidos</a>.</p>
+            <p>¡Bien, comencemos! Haz clic en el enlace en la parte inferior de la página o en las
+                flechas en la parte superior para pasar al siguiente capítulo. El enlace
+                <strong>Análisis Complejo</strong> en la parte superior te llevará de regreso a
+                la <a href="contenido/tabla_de_contenidos.html">Tabla de Contenidos</a>.
+            </p>
 
 
 
@@ -339,7 +365,7 @@
         <p>
           Este libro interactivo es <strong>gratis para todo el mundo</strong>,
           porque tengo la firme creencia de que 
-          cualquier persona debería tener accesso 
+          cualquier persona debería tener acceso 
           a recursos de aprendizaje de alta calidad para explorar y aprender 
           matemáticas.
           Es por esta razón que muchos usuarios han elegido contribuir
