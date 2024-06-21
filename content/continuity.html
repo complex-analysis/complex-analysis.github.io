@@ -57,8 +57,8 @@
         <a href="riemann_sphere.html" class="link" id="prev-link">
             <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
         </a>
-        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-solid fa-circle-half-stroke"></i></span>
-        <span class="support-top-button" id="donate"
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-solid fa-moon"></i></span>
+        <span class="support-top-button" id="donate" title="Support"
             onclick="document.getElementById('myModal').style.display='block'">
             <i class="fa-regular fa-heart"></i></span>
     </div>
@@ -111,7 +111,7 @@
             </ol>
 
             <p>
-                Notice that <strong>statement 3</strong> actually contains 
+                Notice that <strong>statement 3</strong> actually contains
                 <strong>statement 1</strong> and <strong>2</strong>, since the
                 existence of the quantity on each side of the equation there is needed.
             </p>
@@ -133,7 +133,7 @@
             </p>
 
             <p>
-                If a function $f$ is not continuous at a point $z_0$ 
+                If a function $f$ is not continuous at a point $z_0$
                 then we say that $f$ is discontinuous at $z_0.$
                 For example, the function
                 \[
@@ -161,14 +161,15 @@
                     \]
                     </div>
                     That is
-                      $\dfrac{1}{|z_0||z|}\lt \dfrac{2}{|z_0|^2}.$
+                    $\dfrac{1}{|z_0||z|}\lt \dfrac{2}{|z_0|^2}.$
                     Therefore
                     <div class="scroll-wrapper">
-                        \[
-                    \abs{\frac{1}{z}-\frac{1}{z_0}} =  \frac{\abs{z-z_0}}{\abs{z} \abs{z_0}} \lt \frac{2}{\abs{z_0}^2}\abs{z-z_0}.
+                    \[
+                    \abs{\frac{1}{z}-\frac{1}{z_0}} = \frac{\abs{z-z_0}}{\abs{z} \abs{z_0}} \lt
+                    \frac{2}{\abs{z_0}^2}\abs{z-z_0}.
                     \]
                     </div>
-                    
+
                 <p></p>
                 <p>
                     Thus, by choosing $\delta = \min\left\{ \dfrac{\abs{z_0}^2}{2}\epsilon, \dfrac{\abs{z_0}}{2}
@@ -184,11 +185,11 @@
                 <strong>Remark:</strong>
                 A <em>useful strategy</em> for showing that $f(z)$ is continuous at $z_0$ is
                 to obtain an estimate of the form
-                </p><div class="scroll-wrapper">
-                    $$|f(z)-f(z_0)|\leq C|z-z_0|\;\; \text{for }\, z \;\;\text{near}\;\; z_0.$$
-                </div>
-                This guarantees that $|f(z)-f(z_0)|\lt\epsilon $ whenever $|z-z_0|\lt\dfrac{\epsilon}{C},$
-                so that we can take $\delta=\dfrac{\epsilon}{C}$ in the formal definition of limit.
+            </p><div class="scroll-wrapper">
+                $$|f(z)-f(z_0)|\leq C|z-z_0|\;\; \text{for }\, z \;\;\text{near}\;\; z_0.$$
+            </div>
+            This guarantees that $|f(z)-f(z_0)|\lt\epsilon $ whenever $|z-z_0|\lt\dfrac{\epsilon}{C},$
+            so that we can take $\delta=\dfrac{\epsilon}{C}$ in the formal definition of limit.
 
             <p></p>
 
@@ -201,8 +202,8 @@
             <div class="practice">
                 <p>
                     <strong>Example 2:</strong>
-                   
-                    Consider the function $f(z) = z^2 - iz+ 2.$ 
+
+                    Consider the function $f(z) = z^2 - iz+ 2.$
                     In order to show that $f$ is continuous at, say, $z_0=1-i,$
                     we must find $\ds \lim_{z\to z_0} f(z)$ and $f(z_0),$ then
                     check to see whether these two complex values are equal.
@@ -210,26 +211,27 @@
                 <p>
                     Using the <a href="license.html#limits-properties">properties of limits</a>
                     we have that
-                    </p><div class="scroll-wrapper">
-                        \[
-                    \lim_{z\to z_0} f(z) = \lim_{z\to 1-i } \left(z^2 - iz+ 2\right) = \left(1-i\right)^2-i(1-i)+ 2 = 1-3i.
+                </p><div class="scroll-wrapper">
+                    \[
+                    \lim_{z\to z_0} f(z) = \lim_{z\to 1-i } \left(z^2 - iz+ 2\right) = \left(1-i\right)^2-i(1-i)+ 2 =
+                    1-3i.
                     \]
-                    </div>
-                    
+                </div>
+
 
                 <p></p>
                 <p>
                     Furthermore, for $z_0=1-i$ we have
-                    </p><div class="scroll-wrapper">
-                        \[
-                    f(z_0) = f(1-i) =  \left(1-i\right)^2-i(1-i)+ 2 = 1-3i.
+                </p><div class="scroll-wrapper">
+                    \[
+                    f(z_0) = f(1-i) = \left(1-i\right)^2-i(1-i)+ 2 = 1-3i.
                     \]
-                    </div>
-                    
+                </div>
+
                 <p></p>
                 <p>
-                    Since $ \ds\lim_{z\to z_0} f(z) = f(z_0),$ we conclude that 
-                    $f(z) = z^2 - iz+ 2$ is continuous at $z_0 = 1-i.$ 
+                    Since $ \ds\lim_{z\to z_0} f(z) = f(z_0),$ we conclude that
+                    $f(z) = z^2 - iz+ 2$ is continuous at $z_0 = 1-i.$
                 </p>
             </div>
 
@@ -247,7 +249,7 @@
                 Then the composition $W=g\big(f(z)\big)$ is defined for all $z$ in the
                 neighborhood $|z - z_0 | \lt \delta_1.$
 
-                
+
 
                 <p>
                     Suppose now that $f$ is continuous at $z$ and that $g$ is
@@ -286,7 +288,7 @@
             </div>
 
             <div class="proof">
-                
+
                 Suppose that $f$ is continuous and $f(z_0)\neq 0.$
                 Then for every $\epsilon\gt 0$ there exists a $\delta\gt 0$
                 such that $|z-z_0|\lt\delta$ implies
@@ -297,23 +299,23 @@
                 <p>
                     Since $f(z_0)\neq 0$, we can take $\epsilon=\dfrac{|f(z_0)|}{2}.$
                     So we have
-                    </p><div class="scroll-wrapper">
-                        $$|f(z)-f(z_0)|\lt\frac{\abs{f(z_0)}}{2}\quad \text{whenever}\quad |z-z_0|\lt\delta.$$
-                    </div>
+                </p><div class="scroll-wrapper">
+                    $$|f(z)-f(z_0)|\lt\frac{\abs{f(z_0)}}{2}\quad \text{whenever}\quad |z-z_0|\lt\delta.$$
+                </div>
 
-                    Now, if there is a point $z$ in the neighborhood 
-                    $|z - z_0| \lt\delta$ at which $f(z)=0,$
-                    we have that
-                    $$|f(z_0)|\lt\frac{f(z_0)}{2},$$
-                    which is a contradiction.
-                    Hence the theorem is proved.
+                Now, if there is a point $z$ in the neighborhood
+                $|z - z_0| \lt\delta$ at which $f(z)=0,$
+                we have that
+                $$|f(z_0)|\lt\frac{f(z_0)}{2},$$
+                which is a contradiction.
+                Hence the theorem is proved.
                 <p></p>
 
             </div>
 
             <p>
-                The algebraic <a href="limits.html#limits-properties">properties of limits</a> can also be 
-                restated in terms of continuity of complex functions. The proof of the 
+                The algebraic <a href="limits.html#limits-properties">properties of limits</a> can also be
+                restated in terms of continuity of complex functions. The proof of the
                 following theorem is left as an
                 exercise.
             </p>

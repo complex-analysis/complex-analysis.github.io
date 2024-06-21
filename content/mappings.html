@@ -54,17 +54,13 @@
 
 <div class="fixed-bar" id="fixed-bar">
     <div class="link-container">
-        <a href="riemann_surfaces.html" class="link" id="prev-link">
-        <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
-        </a>
-        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-solid fa-circle-half-stroke"></i></span>
-        <span class="support-top-button" id="donate"
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-solid fa-moon"></i></span>
+        <span class="support-top-button" id="donate" title="Support"
             onclick="document.getElementById('myModal').style.display='block'">
             <i class="fa-regular fa-heart"></i></span>
     </div>
     <div class="link">
         <a href="table_of_contents.html" class="link" id="center-link">
-            <span class="content-hover-previous">Riemann Surfaces</span>
             <span class="content-hover">Table of Contents</span>
             <span class="content-original">Complex Analysis</span>
             <span class="content-hover-next">The Transformation $w=1/z$</span>
@@ -72,7 +68,7 @@
     </div>
     <a href="mapping_1overz.html" class="link" id="next-link">
         <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
-    </a> 
+    </a>
 </div>
 
 
@@ -118,7 +114,7 @@
                 the transformation in the $w$-plane.
             </p>
 
-            <div class="ggbElement" id="ggb-element1"></div>
+            <div class="ggbElement" id="ggb-element"></div>
 
             <p><strong>Remark:</strong> In complex analysis the notion of domain has two different meanings. The first
                 one alludes to the domain set of a function, while the second pertains to any open and connected subset
@@ -126,16 +122,15 @@
                 this book will indeed be domains in the topological sense.
             </p>
 
-
-            <hr/>
+            <hr>
 
             <h2>Dynamic Exploration</h2>
 
             <p>
-              In the following applet you can explore how different complex functions
-              considered as mappings.
-              When you drag the square around on the $xy$-plane (left-side graphics view) 
-              you can appreciate the changes on the $uv$-plane (right-side graphics view).
+                In the following applet you can explore how different complex functions
+                considered as mappings.
+                When you drag the square around on the $xy$-plane (left-side graphics view)
+                you can appreciate the changes on the $uv$-plane (right-side graphics view).
             </p>
 
             <div class="ggbElement" id="ggb-element2"></div>
@@ -143,9 +138,10 @@
             <p><strong>More things to try:</strong></p>
 
             <ul style="margin-top: -2px;">
-              <li>Change the complex function.</li>
-              <li>Change the region by dragging the sides of the square or activate the box <code>More</code>.</li>
+                <li>Change the complex function.</li>
+                <li>Change the region by dragging the sides of the square or activate the box <code>More</code>.</li>
             </ul>
+
 
             <br>
 
@@ -156,7 +152,7 @@
     <!--GeoGebra embeding-->
     <script src="https://www.geogebra.org/apps/deployggb.js"></script>
     <script>
-         let params1 = {
+        let params1 = {
             "width": 800,
             "height": 445,
             "material_id": "jj4sef6w",
