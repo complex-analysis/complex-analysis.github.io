@@ -558,6 +558,28 @@ región donde $w=z^2$ sea conforme?
           </p>
         </div>
 
+        <div class="ggbElement" id="ggb-element-2"></div>
+
+
+        <br/>
+
+        <div class="practice">
+          <strong>Ejercicio 1:</strong>
+          Con base en tus obervaciones del applet anterior,
+          ¿puedes determinar cuales mapeos no son conformes en
+          $S=[-0.5,0.5]\times[-0.5,-1.5]$?
+        </div>
+
+
+        <div class="practice">
+          <strong>Ejercicio 2:</strong>
+          Usa el Teorema 1 para demostrar que $f(z)=\sin z$ 
+          es un mapeo conforme para cada $z\in\C$  tal que  
+          $z\neq (2n+1)\pi/2$ con 
+          $n=0,\pm 1, \pm 2,\ldots.$ Puedes usar el applet anterior para 
+          exporar el comportamiento de esta función en estos puntos.
+        </div>
+
       </div>
 
 
@@ -607,23 +629,23 @@ región donde $w=z^2$ sea conforme?
       "enableShiftDragZoom": false,
       "showResetIcon": true
     };
-    /*
+    
     let params2 = {
-        "width": 719,
-        "height": 449,
-        "material_id": "??",
+        "width": 675,
+        "height": 473,
+        "material_id": "tmnebrfq",
         "borderColor": "888888",
         "playButton": true,
         "showFullscreenButton": true,
-        "enableShiftDragZoom": false,
+        "enableShiftDragZoom": true,
         "showResetIcon": true
     };
-    */
+    
     let ggbApplet1 = new GGBApplet(params1, true);
-    //let ggbApplet2 = new GGBApplet(params2, true);
+    let ggbApplet2 = new GGBApplet(params2, true);
     window.addEventListener("load", () => {
       ggbApplet1.inject('ggb-element-1');
-      //ggbApplet2.inject('ggb-element-2');
+      ggbApplet2.inject('ggb-element-2');
     });
   </script>
   <!--GeoGebra embeding ends-->
