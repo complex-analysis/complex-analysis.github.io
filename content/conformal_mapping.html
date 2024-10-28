@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>  Conformal Mapping
+</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Main info: Dublin core -->
+  <meta name="DC.Title" content="Complex Analysis">
+  <meta name="DC.Creator" content="Juan Carlos Ponce Campuzano">
+  <meta name="DC.Date" content="26-01-2019">
+  <meta name="DC.Identifier" content="ISBN-13: 978-0-6485736-0-9">
+  <meta name="DC.Type" content="Interactive Resource">
+  <meta name="DC.Format" content="HTML">
+  <meta name="DC.Language" content="en-US">
+  <meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+  <!-- social media cards -->
+  <meta property="og:title" content="Complex Analysis">
+  <meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta property="og:url" content="https://complex-analysis.com/">
+  <meta property="og:image" content="https://complex-analysis.com/images/complex_analysis_card.jpg">
+  <meta property="og:site_name" content="Complex Analysis">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+  <meta name="twitter:title" content="Complex Analysis">
+  <meta name="twitter:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta name="twitter:site" content="@jcponcemath">
+  <meta name="twitter:image" content="https://complex-analysis.com/images/complex_analysis_card.jpg">
+  <meta name="twitter:creator" content="@jcponcemath">
+
+  <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HVPF4FLZCB');
+  </script>
+</head>
+
+<body data-type="book" id="top">
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="julia_set.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-regular fa-sun"></i></span>
+        <span class="support-top-button" id="donate" title="Support"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="table_of_contents.html" class="link" id="center-link">
+            <span class="content-hover-previous">The Julia set</span>
+            <span class="content-hover">Table of Contents</span>
+            <span class="content-original">Complex Analysis</span>
+            <span class="content-hover-next">Applications of Conformal Mappings</span>
+        </a>
+    </div>
+    <a href="applications_conformal.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="conformal-mappings">
+
+  <!-- Starts main content -->
+
+  <div w3-include-html="small_screen_message.html"></div>
+
+  <div class="toc-chapter" id="toc-chapter">
+    <p><i class="fa-solid fa-list"></i>Contents</p>
+    <ul>
+      <li><a href="#section1">Conformal mapping</a></li>
+      <li><a href="#section2">Analytic functions</a></li>
+      <li><a href="#section3">Examples</a></li>
+      <!-- Add more sections as needed -->
+    </ul>
+  </div>
+
+  <br>
+
+
+  <main>
+    <article>
+
+      <div id="section1">
+
+        <h1>Conformal Mapping</h1>
+        <hr>
+
+
+
+        <p>
+          Let $w=f(z)$ be a complex mapping defined in a domain $A$.
+          Consider two smooth curves $C_1$ and $C_2$ in $A$
+          that intersect at $z_0$ and have a fixed orientation.
+          Let $z_1(t)$ and $z_2(t)$ be parametrizations of $C_1$ and $C_2$
+          such that $z_1(t_0) = z_2(t_0) = z_0$, and such that the
+          orientations on $C_1$ and $C_2$ correspond to the
+          increasing values of the parameter $t.$ Since $C_1$ and
+          $C_2$ are smooth, the
+          tangent vectors $z_1' = z_1'(t_0)$ and $z_2' = z_2'(t_0)$
+          are both nonzero.
+          Then, $\text{arg}\left(z_1'\right)$ and $\text{arg}\left(z_2'\right)$ represent the angles
+          between the position vectors of $z_1'$ and $z_2'$,
+          respectively, and the positive \( x \)-axis.
+
+
+        </p>
+
+        <div class="practice">
+          <p>
+            <strong>Remark 1:</strong> Here we will consider one single value of $\text{arg}\left(z\right).$
+            For more details see <a href="principal_argument.html" target="_blank">The Principal Argument</a>.
+          </p>
+        </div>
+
+        <figure>
+          <table style="width: 100%;border:none">
+            <tbody>
+              <tr style="border: none;">
+                <td style="width: 50%; border:none;">
+                  <img src="../images/chp06/define-angle-z1-x-axis.svg" alt="Representation of arg(z_1)" title="Representation of arg(z_1)" style="width:100%;">
+                </td>
+                <td style="width: 50%; border:none;">
+                  <img src="../images/chp06/define-angle-z2-x-axis.svg" alt="Representation of arg(z_2)" title="Representation of arg(z_2)" style="width:100%;">
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <figcaption>
+            Geometrical representation of $\text{arg}\left(z_1'\right)$ and $\text{arg}\left(z_2'\right).$
+          </figcaption>
+        </figure>
+
+
+
+        <p>
+          We define the angle $\theta$ between $C_1$ and $C_2$ at $z_0$ is
+          as the value of
+          \begin{eqnarray}\label{theta-angle}
+          \text{arg}\left(z_2'\right)-\text{arg}\left(z_1'\right)
+          \end{eqnarray}
+          in the interval $[0,\pi],$ provided that we can rotate $z_1'$
+          counterclockwise about $0$ through the angle $\theta$ onto
+          $z_2'.$ In the case that a clockwise rotation is needed,
+          then $-\theta$ is the value of (\ref{theta-angle}) in
+          the interval $(-\pi, 0).$ In either case, we see that
+          (\ref{theta-angle}) gives both the magnitude
+          and sense of the angle between $C_1$ and $C_2$ at $z_0.$
+        </p>
+
+        <figure>
+          <img src="../images/chp06/define-angle-z1-z2.svg" alt="Angle between C_1 and C_2" title="Angle $\theta$ between C_1 and C_2" width="50%">
+          <figcaption>
+            Angle defined between $C_1$ and $C_2.$
+          </figcaption>
+        </figure>
+
+
+
+
+        <p>
+          Now suppose that under the
+          mapping $w = f(z)$ the curves $C_1$ and $C_2$
+          in the $z$-plane are mapped
+          onto the curves $\Gamma_1$ and $\Gamma_2$ in the $w$-plane,
+          respectively. Because $C_1$ and $C_2$
+          intersect at $z_0$, we must have that $\Gamma_1$ and $\Gamma_2$
+          intersect at $f(z_0)$. If $\Gamma_1$ and $\Gamma_2$
+          are smooth, then the angle between
+          $\Gamma_1$ and $\Gamma_2$ at $f(z_0)$ is
+          similarly defined to
+          be the angle $\phi\in [0,\pi]$
+          between similarly defined tangent vectors
+          $w_1'$ and $w_2'.$ We say that the angles
+          $\theta$ and $\phi$ are <em>equal in magnitude</em>
+          if $\theta=\phi.$
+        </p>
+
+
+        <figure>
+
+          <table style="width: 100%;border:none">
+            <tbody>
+              <tr style="border: none;">
+                <td style="width: 50%; border:none;">
+                  <img src="../images/chp06/define-angle-z.svg" alt="C_1 and C_2 on the z-plane" title="C_1 and C_2 on the z-plane" style="width:100%;">
+                </td>
+                <td style="width: 50%; border:none;">
+                  <img src="../images/chp06/define-angle-w.svg" alt="Gamma_1 and Gamma_2 on the w-plane" title="Gamma_1 and Gamma_2 on the w-plane" style="width:100%;">
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <figcaption>
+            The angles $\theta$ and $\phi$ are equal in magnitude.
+          </figcaption>
+        </figure>
+
+
+
+
+        <p>
+          In the $z$-plane, the vector $z_1',$ whose initial point is $z_0,$
+          can be rotated through the angle $\theta$ onto the vector $z_2'.$
+          Of course, this rotation in the $z$-plane can be either in the counterclockwise
+          or the clockwise direction.
+        </p>
+
+
+
+        <div class="figure-container">
+          <figure>
+            <img src="../images/chp06/anti-clockwise.gif" alt="Counterclockwise rotation of z_1'." title="Counterclockwise rotation of z_1'." style="width:90%;">
+            <figcaption>
+              Counterclockwise rotation of $z_1'.$
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="../images/chp06/clockwise.gif" alt=" Clockwise rotation of z_1'." title=" Clockwise rotation of z_1'." style="width:90%;">
+            <figcaption>
+              Clockwise rotation of $z_1'.$
+            </figcaption>
+          </figure>
+
+        </div>
+
+
+
+        <p>
+          Similarly, in the $w$-plane, the
+          vector $w_1'$ whose initial point is $f(z_0),$ can be rotated in
+          either the counterclockwise or clockwise direction through
+          an angle of $\phi$ onto the vector $w_2'.$
+          If the rotation in the
+          $z$-plane is the same direction as the rotation in the $w$-plane,
+          we say that the angles
+          $\theta$ and $\phi$ are <em>equal in sense</em>.
+        </p>
+
+        <p>
+          Now that we have established
+          the terminology regarding the magnitude and sense of an
+          angle, we are now in a position
+          to introduce the concept of
+          <em>conformal mapping</em>. We say that the mapping $w=f(z)$ is
+          <em>conformal</em> at a point $z_0$ in $A$
+          if for every pair of smooth oriented curves
+          $C_1$ and $C_2$ in $A$, intersecting at $z_0$, the angle
+          between $C_1$ and $C_2$ at $z_0$ is equal to the angle
+          between the image curves $\Gamma_1$ and $\Gamma_2$ at $f(z_0)$
+          in both magnitude and sense.
+        </p>
+
+        <br>
+
+
+
+        <figure>
+          <div class="ggbElement" id="ggb-element-1"></div>
+          <figcaption>
+            After the mapping is applied, the angles $\theta$ and $\phi$
+            are equal in magnitude and sense.
+          </figcaption>
+        </figure>
+
+        <p>
+          We will also use the term <em>conformal mapping</em> to
+          refer to a complex mapping $w = f(z)$ that is conformal
+          at $z_0.$ In addition, if $w = f(z)$ maps a domain
+          $A$ onto a domain $B$ and if $w=f(z)$ is conformal at
+          every point in $A,$
+          then we call $w = f(z)$ a conformal mapping of $A$ onto $B.$
+        </p>
+
+
+
+
+
+      </div>
+
+      <hr>
+
+
+      <div id="section2">
+
+        <h2>Analytics functions</h2>
+
+        <p>
+          A remarkable geometrical property enjoyed by all complex
+          analytic functions is that,
+          at non-critical points, they preserve angles, and
+          therefore define conformal mappings.
+        </p>
+
+        <div class="theorem">
+          If $f$ is analytic in a domain $D$ containing $z_0,$ and if
+          $f'(z_0)\neq 0,$ then $w=f(z)$ is a conformal mapping at $z_0.$
+        </div>
+
+        <div class="proof">
+          Suppose $f$ is analytic in a domain $D$ containing $z_0,$ and that
+          $f'(z_0)\neq 0.$ Let $C_1$ and $C_2$ be two smooth curves in $D$
+          parametrized by $z_1(t)$ and $z_2(t),$ respectively, with
+          $z_1(t_0)= z_2(t_0)= z_0.$ Also, assume that $w=f(z)$ maps the
+          curves $C_1$ and $C_2$ onto the curves $\Gamma_1$ and $\Gamma_2.$
+          Here $\Gamma_1$ and $\Gamma_2$ are
+          parametrized by $w_1(t)=f(z_1(t))$ and $w_2(t)=f(z_2(t)),$ respectively.
+
+          <p>
+            We wish to prove that the angle $\theta$ between $C_1$ and $C_2$ at $z_0$
+            is equal to the angle $\phi$ between $\Gamma_1$ and $\Gamma_2$ at
+            $f(z_0)$ in both magnitude and sense.
+          </p>
+
+          <p>
+            We may assume, by renumbering $C_1$ and $C_2$ if necessary, that
+            $z_1'=z_1'(t_0)$ can be rotated counterclockwise about $0$ through the
+            angle $\theta$ onto $z_2'=z_2'(t_0).$ Then, using (\ref{theta-angle}), we know that
+            \[
+            \theta = \text{arg}\left(z_2'\right)-\text{arg}\left(z_1'\right)
+            \]
+            in the interval $[0,\pi].$
+          </p>
+
+          <p>
+            Using the chain rule we have that
+            \begin{eqnarray*}
+            w_1' = w_1'(t_0)= f'\left(z_1\left(t_0\right)\right)\cdot z_1'\left(t_0\right)= f'\left(z_0\right)\cdot z_1'
+            \end{eqnarray*}
+            and
+            \begin{eqnarray*}
+            w_2' = w_2'(t_0)= f'\left(z_2\left(t_0\right)\right)\cdot z_2'\left(t_0\right)= f'\left(z_0\right)\cdot
+            z_2'.
+            \end{eqnarray*}
+          </p>
+
+          <p>
+            Since $C_1$ and $C_2$ are smooth, both $z_1'$ and $z_2'$ are nonzero.
+            Moreover, we have that $f'\left(z_0\right)\neq 0,$ and thus,
+            both $w_1'$ and $w_2'$ are nonzero. Now, the angle $\phi$
+            between $\Gamma_1$ and $\Gamma_2$ at $f(z_0)$ is a value of
+          </p><div class="scroll-wrapper">
+            \begin{eqnarray*}
+            \text{arg}\left(w_2'\right)-\text{arg}\left(w_1'\right) &amp;= &amp; \text{arg}\left(f'\left(z_0\right)\cdot
+            z_2'\right)-\text{arg}\left(f'\left(z_0\right)\cdot z_1'\right).
+            \end{eqnarray*}
+          </div>
+          Applying properties of the argument, we have that
+          <div class="scroll-wrapper">
+            \begin{eqnarray*}
+            \text{arg}\left(f'\left(z_0\right)\cdot z_2'\right)-\text{arg}\left(f'\left(z_0\right)\cdot z_1'\right) &amp;= &amp;
+            \text{arg}\left(f'\left(z_0\right) z_2'\right) +
+            \text{arg}\left(z_2'\right)-\left[\text{arg}\left(f'\left(z_0\right)\right)+ \text{arg}\left(z_1'\right)
+            \right]\\
+            &amp;=&amp; \text{arg}\left(z_2'\right) - \text{arg}\left(z_1'\right).
+            \end{eqnarray*}
+          </div>
+          This expression has a unique value in $[0, \pi],$ namely $\theta.$
+          Therefore, $\theta=\phi$ in both magnitude and sense,
+          and consequently $w=f(z)$ is a conformal mapping at $z_0.$
+          <p></p>
+
+
+        </div>
+
+        <div class="practice">
+          <p>
+            <strong>Remark 2:</strong>
+            The previous theorem establishes that
+            a mapping is conformal at $z_0$ if $f$ is anlytic and $f'(z_0)\neq 0.$
+            Such transformation is actually conformal at at each point in some
+            neighborhood of $z_0.$ This is because it must be analytic in a
+            neighborhood of $z_0$; and since its derivative $f'$ is continuous
+            in that neighborhood, there is also a neighborhood
+            of $z_0$ throughout which $f'(z_0)\neq 0.$
+          </p>
+        </div>
+
+
+
+      </div>
+
+      <hr>
+
+      <div id="section3">
+        <h2>Examples</h2>
+
+
+
+        <p>
+          Now, with the help of Theorem 1, it is relatively easy to determine
+          where an analytic function is a conformal mapping.
+        </p>
+
+
+
+
+        <div class="practice">
+
+          <p>
+            <strong>Example 1: </strong>
+            The mapping $w = e^z$ is conformal throughout the entire $z$
+            plane since $(e^z)'= e^z \neq 0$ for each $z$. Consider
+            any two lines $x = c_1$ and $y = c_2$ in
+            the $z$ plane, the first with upward direction and the
+            second directed to the right. The images under the
+            mapping $w = e^z$ are a positively
+            oriented circle centred at the origin and a ray from
+            the origin, respectively. As illustrated
+            in Figure 6, the angle between the
+            lines at their point of intersection
+            is a right angle in the negative direction,
+            and the same is true of the angle between
+            the circle and the ray at the corresponding point in the $w$ plane.
+
+          </p>
+          <figure>
+            <img src="../images/chp06/example-exp.svg" alt="Conformal mapping w=e^z" title="Conformal mapping w=e^z" width="100%">
+            <figcaption>
+              Conformal mapping $w=e^z.$
+            </figcaption>
+          </figure>
+        </div>
+
+
+
+        <div class="practice">
+          <p>
+            <strong>Example 2: </strong>
+            The entire function $f(z)=z^2$ is not conformal at $z_0=0.$
+            The explanation is, of course, that $z_0=0$ is a critical
+            point of $f$, that is $f'(0)=0.$ Amazingly, the map
+            preserves angles everywhere else.
+            For example, consider the right
+            half-plane $\{\textbf{Re}(z)&gt;0\}.$ This region
+            is mapped conformally by $w=z^2$ onto the slit
+            plane $\mathbb C \setminus (-\infty,0],$
+            as illustrated in Figure 8. Can you think of another
+            region where $w=z^2$ is conformal?
+          </p>
+
+          <figure>
+
+            <table style="width: 100%;border:none">
+              <tbody>
+                <tr style="border: none;">
+                  <td style="width: 50%; border:none;">
+                    <img src="../images/chp06/example-z-squared.svg" alt="C_1 and C_2 on the z-plane" title="C_1 and C_2 on the z-plane" style="width:100%;">
+                  </td>
+                  <td style="width: 50%; border:none;">
+                    <img src="../images/chp06/example-z-squared-mapped.svg" alt="Gamma_1 and Gamma_2 on the w-plane" title="Gamma_1 and Gamma_2 on the w-plane" style="width:100%;">
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <figcaption>
+              The region $\{\textbf{Re}(z)&gt;0\}$ is mapped by $w=z^2$
+              onto the slit plane $\mathbb C \setminus (-\infty,0].$
+            </figcaption>
+          </figure>
+        </div>
+
+        <p>
+          A mapping that preserves the magnitude of the angle
+          between two smooth curves but not necessarily the sense
+          is called an <em>isogonal mapping</em>.
+        </p>
+
+        <div class="practice">
+          <p>
+            <strong>Example 3: </strong>
+            The mapping $w = \conj{z}$ is a reflection in the real axis.
+            This mapping is isogonal but not conformal.
+          </p>
+
+          <p>
+            Consider for example the curves $C_1$ and $C_2$ given by
+          </p><div class="scroll-wrapper">
+            \begin{eqnarray*}
+            z_1 (t) = t+(2t-t^2)i \quad\text{and}\quad z_2(t) = t+\frac{1}{2}\left(t^2+1\right)\quad \text{with}\quad
+            0\leq t\leq 2,
+            \end{eqnarray*}
+          </div>
+          respectively. These curves intersect at
+          $z_0 = z_1(1)=z_2(1)= 1+i.$ The tangent vectors at $z_0$ are
+          $z_1'=z_1'(1)=1$ and $z_2'=z_2'(1)=1+i.$ Furthermore, we can see
+          in Figure 9 (left) that
+          the angle between $C_1$ and $C_2$ at $z_0$ is $\theta=\pi/4.$
+          Under the mapping $w=\conj{z},$ the images of $C_1$ and $C_2$ are the curves
+          $\Gamma_1$ and $\Gamma_2,$ respectively, as shown in Figure 9 (right).
+          <p></p>
+
+
+
+          <figure>
+
+            <table style="width: 100%;border:none">
+              <tbody>
+                <tr style="border: none;">
+                  <td style="width: 50%; border:none;">
+                    <img src="../images/chp06/example-conj-z.svg" alt="C_1 and C_2 on the z-plane" title="C_1 and C_2 on the z-plane" style="width:100%;">
+                  </td>
+                  <td style="width: 50%; border:none;">
+                    <img src="../images/chp06/example-conj-z-mapped.svg" alt="Gamma_1 and Gamma_2 on the w-plane" title="Gamma_1 and Gamma_2 on the w-plane" style="width:100%;">
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <figcaption>
+              $C_1$ and $C_2$ in the $z$-plane (left).
+              $\Gamma_1$ and $\Gamma_2$ in the $w$-plane (right).
+            </figcaption>
+          </figure>
+
+          <p>
+            The image curves are parametrized by
+          </p><div class="scroll-wrapper">
+            \begin{eqnarray*}
+            w_1 (t) = t-(2t-t^2)i \quad\text{and}\quad z_2(t) = t-\frac{1}{2}\left(t^2+1\right)
+            \end{eqnarray*}
+          </div>
+          with $0\leq t\leq 2;$
+          and intersect at $w_0= f(z_0)= 1-i.$ In addition, at
+          $w_0$ we have the tangent vectors $w_1' = w_1'(1)=1$ and $w_2'= w_2(1)=1-i$
+          to $\Gamma_1$ and $\Gamma_2,$ respectively.
+          <p></p>
+          <p>
+            The angle between $\Gamma_1$ and $\Gamma_2$ at $w_0$ is $\phi=\pi/4.$
+            Thus, the angles $\theta$ and $\phi$ are equal in maginitude.
+            However, because the rotation through $\pi/4$ of the vector
+            $z_1'$ onto $z_2'$ must be <em>counterclockwise</em>, whereas the rotation through
+            $\pi/4$ of $w_1'$ onto $w_2'$ must be <em>clockwise</em>, we
+            conclude that $\theta$ and $\phi$ are not equal in sense.
+          </p>
+
+          <p>
+            Therefore, $w=\conj{z}$ is not conformal.
+          </p>
+        </div>
+
+      </div>
+
+
+
+
+      <!--
+              <div class="section3">
+
+              <h2>Local inverses</h2>
+
+              <p>
+                A transformation $w = f (z)$ that is conformal at a point $z_0$ has a 
+                local inverse there. That is, if $w_0 = f (z_0),$ then there exists a 
+                unique transformation $z = f^{-1}(w),$ which is defined and analytic
+                 in a neighborhood $N$ of $w_0,$ such that $f^{-1}(w_0) = z_0$ and 
+                 $f \left(f^{-1}(w)\right) = w $
+                 for all points $w$ in $N .$ The derivative of $f^{-1}(w)$ is, moreover,
+                 \[
+                 \frac{d}{dw}f^{-1}(w) = \frac{1}{f'(z)}.
+                 \]
+              </p>
+
+              
+
+            </div>
+            -->
+
+
+
+
+
+
+    </article>
+  </main>
+
+  <!--GeoGebra embeding-->
+  <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+  <script>
+    let params1 = {
+      "width": 725,
+      "height": 410,
+      "material_id": "pptj3gaw",
+      "borderColor": "888888",
+      "playButton": false,
+      "showFullscreenButton": true,
+      "enableShiftDragZoom": false,
+      "showResetIcon": true
+    };
+    /*
+    let params2 = {
+        "width": 719,
+        "height": 449,
+        "material_id": "??",
+        "borderColor": "888888",
+        "playButton": true,
+        "showFullscreenButton": true,
+        "enableShiftDragZoom": false,
+        "showResetIcon": true
+    };
+    */
+    let ggbApplet1 = new GGBApplet(params1, true);
+    //let ggbApplet2 = new GGBApplet(params2, true);
+    window.addEventListener("load", () => {
+      ggbApplet1.inject('ggb-element-1');
+      //ggbApplet2.inject('ggb-element-2');
+    });
+  </script>
+  <!--GeoGebra embeding ends-->
+
+  <a href="applications_conformal.html" style="text-decoration: none;">
+    <p class="nextPage">Applications of Conformal Mappings <i class="fa-solid fa-angles-right"></i></p>
+  </a>
+  <!-- Ends main content -->
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+  <!-- The Modal    -->
+
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 Hey there!</strong>
+      </div>
+      <div class="modal-body">
+
+        <div w3-include-html="message-modal.html"></div>
+
+        
+        <br />
+      </div>
+      <div class="modal-footer">
+        Thank you! 🙏 I highly appreciate your support! 🤗
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer>
+
+  <span id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <span class="hide-small">
+      <a href="https://github.com/complex-analysis"><i class="fa-solid fa-code"></i> Source</a>,
+      <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues"><i
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+    </span>
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-solid fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+  
+  <br />
+
+  <a id="licence-link" rel="license"
+    href="license.html">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong style="font-size: 0.9em;">ISBN: 978-0-6485736-0-9</strong> <br>
+  <strong>
+    <span class="hide-small" style="font-size: 0.9em;">&copy; Juan Carlos Ponce Campuzano
+      2019-<script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 0.9em;">&copy; J.C. Ponce Campuzano
+      2019-<script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>

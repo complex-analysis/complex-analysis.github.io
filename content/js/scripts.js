@@ -67,7 +67,7 @@ function loadMode() {
     }
   }
 }
-
+ 
 // Add event listener for mouse click
 document.getElementById("dark-mode-toggle").addEventListener("click", toggleMode);
 
@@ -266,7 +266,7 @@ window.onclick = function (event) {
 
 let myInterval = setInterval(function () {
   showMessage();
-}, 600000);
+}, 1800000);
 // 3000 3 seconds
 // 8000 8 seconds
 // 30000 30 seconds
