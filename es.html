@@ -35,10 +35,10 @@
   <meta name="twitter:image" content="https://complex-analysis.com/images/complex_analysis_card-es.jpg">
   <meta name="twitter:creator" content="@jcponcemath">
 
-  <link rel="icon" type="image/png" href="images/infinity32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="images/infinity16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
 
-  <link rel="stylesheet" href="contenido/css/style-es.css">
+  <link rel="stylesheet" href="css/style-es.css">
 
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -53,6 +53,8 @@
 </head>
 
 <body data-type="book" id="top">
+
+
 
   <!-- Main DIV Starts here -->
   <div class="container">
@@ -88,7 +90,7 @@
                     <script>document.write(new Date().getFullYear());</script>
                     <br>
                     <span class="dark-mode-button" id="dark-mode-toggle">
-                        <i class="fa-regular fa-sun"></i>
+                        <i class="fa-solid fa-moon"></i>
                     </span>
                 </p>
 
@@ -98,7 +100,7 @@
                     <script>document.write(new Date().getFullYear());</script>
                     <br>
                     <span class="dark-mode-button" id="dark-mode-toggle">
-                        <i class="fa-regular fa-sun"></i>
+                        <i class="fa-solid fa-moon"></i>
                     </span>
                 </p>
                 <br>
@@ -290,10 +292,9 @@
                 </div>
                 
                 <div style="padding: 0 15px;">
-                    <i class="fa-brands fa-square-x-twitter"></i> <a target="_blank"
-                        href="https://twitter.com/share?ref_src=twsrc%5Etfw">
+                    <i class="fa-brands fa-square-x-twitter"></i> <a target="_blank" href="https://twitter.com/share?ref_src=twsrc%5Etfw">
                         <strong>Post</strong>
-                    </a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </a><script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
                 
             </div>
@@ -328,7 +329,7 @@
   <!-- Main DIV Ends here -->
 
   <!-- The Modal -->
-<div id="myModal" class="modal">
+  <div id="myModal" class="modal">
 
     <!-- Modal content -->
     <div class="modal-content">
@@ -338,47 +339,8 @@
       </div>
       <div class="modal-body">
 
-        <p>
-          Este libro interactivo es <strong>gratis para todo el mundo</strong>,
-          porque tengo la firme creencia de que 
-          cualquier persona debería tener acceso 
-          a recursos de aprendizaje de alta calidad para explorar y aprender 
-          matemáticas.
-          Es por esta razón que muchos usuarios han elegido contribuir
-          a mis esfuerzos. Si tú crees en lo que hago y deseas ayudarme
-          en mi jornada, puedes hacerlo ahora con los siguientes enlaces:
-        </p>
-
-        <div class="button-container">
-          <button id="modal-link">
-            <a href="https://www.patreon.com/jcponce"><i class="fa-brands fa-patreon"></i>
-              <strong>Patreon</strong></a>
-          </button>
-          <button id="modal-link">
-            <a target="_blank"
-              href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=WTMTR7D8RYZ26&item_name=Your+support+will+help+me+to+improve+and+keep+up+to+date+the+applets+of+this+book.+Sincerely+appreciate+it%21&currency_code=AUD&source=url">
-              <strong><i class="fa-brands fa-paypal"></i> PayPal</strong>
-            </a>
-          </button>
-          <button id="modal-link">
-            <a target="_blank" href="https://jcponcemath.secure-decoration.com/">
-              <strong>Get a <i class="fa-solid fa-shirt"></i></strong>
-            </a>
-          </button>
-        </div>
-
-
-        <p>
-          Tu ayuda me permite mantener este sitio
-          y crucialmente, <strong>garantizar que permanezca de acceso libre</strong>
-          para toda persona interesada en explorar esta cautivadora rama de las 
-          matemáticas <strong>- sin anuncios que te distraigan</strong>.
-        </p>
-
-        <p>
-          No puedes contribuir en esta ocasión, ¡no hay problema! Quizá sólo quieras
-          <i class="fa-solid fa-envelope"></i> <a href="mailto:jcponcemath@gmail.com"><strong> Mandar un comentario</strong></a>
-        </p>
+        <div w3-include-html="message-modal.html"></div>
+        
         <br />
       </div>
 
@@ -388,6 +350,7 @@
     </div>
 
   </div>
+
   <!-- Button to Top -->
   <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
 
@@ -430,11 +393,11 @@
   </strong>
 
 </footer>
-  <script src="contenido/js/mathjax.js"></script>
+  <script src="js/mathjax.js"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-  <script src="contenido/js/scripts.js"></script>
-  <script async src="contenido/js/prism.js"></script>
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
 </body>
 
 </html>

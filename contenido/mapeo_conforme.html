@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+  <title>  Mapeo Conforme
+</title>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Main info: Dublin core -->
+  <meta name="DC.Title" content="Análisis Complejo">
+  <meta name="DC.Creator" content="Juan Carlos Ponce Campuzano">
+  <meta name="DC.Date" content="26-01-2021">
+  <meta name="DC.Identifier" content="ISBN-13: 978-0-6485736-2-3">
+  <meta name="DC.Type" content="Recurso interactivo">
+  <meta name="DC.Format" content="HTML">
+  <meta name="DC.Language" content="es-mx">
+  <meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+  <!-- social media cards -->
+  <meta property="og:title" content="Análisis Complejo">
+  <meta property="og:description" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta property="og:url" content="https://complex-analysis.com/es.html">
+  <meta property="og:image" content="https://complex-analysis.com/images/complex_analysis_card-es.jpg">
+  <meta property="og:site_name" content="Complex Analysis">
+  <meta property="og:locale" content="es-mx">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta name="twitter:title" content="Análisis Complejo">
+  <meta name="twitter:description" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta name="twitter:site" content="@jcponcemath">
+  <meta name="twitter:image" content="https://complex-analysis.com/images/complex_analysis_card-es.jpg">
+  <meta name="twitter:creator" content="@jcponcemath">
+
+  <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+
+  <link rel="stylesheet" href="css/style-es.css">
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HVPF4FLZCB');
+  </script>
+</head>
+
+<body data-type="book" id="top">
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="conjunto_de_julia.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-regular fa-sun"></i></span>
+        <span class="support-top-button" id="donate"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="tabla_de_contenidos.html" class="link" id="center-link">
+            <span class="content-hover-previous">El Conjuto de Julia</span>
+            <span class="content-hover">Tabla de Contenidos</span>
+            <span class="content-original">Análisis Complejo</span>
+            <span class="content-hover-next">Aplicaciones de Mapeos Conformes</span>
+        </a>
+    </div>
+    <a href="aplicaciones_conformal.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="conformal-mappings">
+
+  <!-- Starts main content -->
+
+  <div w3-include-html="small_screen_message.html"></div>
+
+  <div class="toc-chapter" id="toc-chapter">
+    <p><i class="fa-solid fa-list"></i>Contenidos</p>
+    <ul>
+      <li><a href="#section1">Mapeo conforme</a></li>
+      <li><a href="#section2">Funciones analíticas</a></li>
+      <li><a href="#section3">Ejemplos</a></li>
+      <!-- Add more sections as needed -->
+    </ul>
+  </div>
+
+  <br>
+
+
+  <main>
+    <article>
+
+      <div id="section1">
+
+        <h1>Mapeo Conforme</h1>
+        <hr>
+
+        <p>
+          Sea $w=f(z)$ una aplicación compleja definida en un dominio $A.$
+          Consideremos dos curvas suaves $C_1$ y $C_2$ en $A$ que se
+          intersectan en $z_0$ y tienen una orientación fija.
+          Sean $z_1(t)$ y $z_2(t)$ parametrizaciones de $C_1$ y $C_2$
+          tal que $z_1(t_0) = z_2(t_0) = z_0,$ y tal que las
+          orientaciones en $C_1$ y $C_2$ correspondan a los valores crecientes del parámetro $t.$
+          Dado que $C_1$ y $C_2$ son suaves, los vectores tangentes
+          $z_1' = z_1'(t_0)$ y $z_2' = z_2'(t_0)$ son ambos diferentes de cero.
+          Entonces, $\text{arg}\left(z_1'\right)$ y $\text{arg}\left(z_2'\right)$ representan los ángulos entre
+          los vectores de posición de $z_1'$ y $z_2',$ respectivamente, y el eje \( x \) positivo.
+        </p>
+
+        <div class="practice">
+          <p>
+            <strong>Observación 1:</strong> 
+            Aquí consideraremos un sólo valor de  $\text{arg}\left(z\right).$
+            Para mayores detalles véase <a href="argumento_principal.html" target="_blank">El Argumento Principal</a>.
+          </p>
+        </div>
+
+        <figure>
+          <table style="width: 100%;border:none">
+            <tbody>
+              <tr style="border: none;">
+                <td style="width: 50%; border:none;">
+                  <img src="../images/chp06/define-angle-z1-x-axis.svg" alt="Representation of arg(z_1)" title="Representation of arg(z_1)" style="width:100%;">
+                </td>
+                <td style="width: 50%; border:none;">
+                  <img src="../images/chp06/define-angle-z2-x-axis.svg" alt="Representation of arg(z_2)" title="Representation of arg(z_2)" style="width:100%;">
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <figcaption>
+            Representación geometrica de $\text{arg}\left(z_1'\right)$ y $\text{arg}\left(z_2'\right).$
+          </figcaption>
+        </figure>
+
+
+
+        <p>
+          Definimos el ángulo $\theta$ entre $C_1$ y $C_2$ en $z_0$
+como el valor de
+\begin{eqnarray}\label{theta-angle}
+\text{arg}\left(z_2'\right) - \text{arg}\left(z_1'\right)
+\end{eqnarray}
+en el intervalo $[0, \pi],$ siempre que podamos rotar $z_1'$
+en sentido antihorario alrededor de $z_0$ mediante el ángulo $\theta$ hasta
+$z_2'.$ En el caso de que se necesite una rotación en sentido horario,
+entonces $-\theta$ es el valor de (\ref{theta-angle}) en
+el intervalo $(-\pi, 0).$ En cualquiera de los casos, vemos que
+(\ref{theta-angle}) proporciona tanto la magnitud
+como el sentido del ángulo entre $C_1$ y $C_2$ en $z_0.$
+        </p>
+
+        <figure>
+          <img src="../images/chp06/define-angle-z1-z2.svg" alt="Angle between C_1 and C_2" title="Angle $\theta$ between C_1 and C_2" width="50%">
+          <figcaption>
+            Ángulo definido entre $C_1$ y $C_2.$
+          </figcaption>
+        </figure>
+
+
+
+
+        <p>
+          Supongamos ahora que, bajo la aplicación $w = f(z),$ las curvas $C_1$ y $C_2$
+en el plano $z$ se mapean
+en las curvas $\Gamma_1$ y $\Gamma_2$ en el plano $w,$
+respectivamente. Debido a que $C_1$ y $C_2$
+se intersectan en $z_0,$ debemos tener que $\Gamma_1$ y $\Gamma_2$
+se intersectan en $f(z_0).$ Si $\Gamma_1$ y $\Gamma_2$
+son suaves, entonces el ángulo entre
+$\Gamma_1$ y $\Gamma_2$ en $f(z_0)$ se define de manera similar
+como el ángulo $\phi\in [0, \pi]$
+entre los vectores tangentes
+$w_1'$ y $w_2'$ definidos de manera análoga.
+Decimos que los ángulos $\theta$ y $\phi$ son <em>iguales en magnitud</em>
+si $\theta = \phi.$
+        </p>
+
+
+        <figure>
+
+          <table style="width: 100%;border:none">
+            <tbody>
+              <tr style="border: none;">
+                <td style="width: 50%; border:none;">
+                  <img src="../images/chp06/define-angle-z.svg" alt="C_1 and C_2 on the z-plane" title="C_1 and C_2 on the z-plane" style="width:100%;">
+                </td>
+                <td style="width: 50%; border:none;">
+                  <img src="../images/chp06/define-angle-w.svg" alt="Gamma_1 and Gamma_2 on the w-plane" title="Gamma_1 and Gamma_2 on the w-plane" style="width:100%;">
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <figcaption>
+            Los ángulos $\theta$ y $\phi$ son iguales en magnitud.
+          </figcaption>
+        </figure>
+
+
+
+
+        <p>
+          En el plano $z,$ el vector $z_1',$ cuyo punto inicial es $z_0,$
+puede rotarse mediante el ángulo $\theta$ hasta el vector $z_2'.$
+Por supuesto, esta rotación en el plano $z$ puede ser en dirección
+antihoraria o en dirección horaria.
+        </p>
+
+
+
+        <div class="figure-container">
+          <figure>
+            <img src="../images/chp06/anti-clockwise.gif" alt="Counterclockwise rotation of z_1'." title="Counterclockwise rotation of z_1'." style="width:90%;">
+            <figcaption>
+              Rotación antihoraia de $z_1'.$
+            </figcaption>
+          </figure>
+          <figure>
+            <img src="../images/chp06/clockwise.gif" alt=" Clockwise rotation of z_1'." title=" Clockwise rotation of z_1'." style="width:90%;">
+            <figcaption>
+              Rotación horaria de $z_1'.$
+            </figcaption>
+          </figure>
+
+        </div>
+
+
+
+        <p>
+          De manera similar, en el plano $w,$ el vector $w_1',$ 
+          cuyo punto inicial es $f(z_0),$
+puede rotarse en dirección antihoraria o en dirección horaria mediante
+un ángulo de $\phi$ hasta el vector $w_2'.$
+Si la rotación en el plano-$z$ es en la misma dirección que la rotación en el plano-$w,$
+decimos que los ángulos $\theta$ y $\phi$ son <em>iguales en sentido</em>.
+
+        </p>
+
+        <p>
+          Ahora que hemos establecido
+la terminología con respecto a la magnitud y el sentido de un
+ángulo, estamos en posición
+de introducir el concepto de
+<em>mapeo conforme</em>. Decimos que la aplicación $w=f(z)$ es
+<em>conforme</em> en un punto $z_0$ en $A$
+si para cada par de curvas suaves orientadas
+$C_1$ y $C_2$ en $A,$ que se intersectan en $z_0,$ el ángulo
+entre $C_1$ y $C_2$ en $z_0$ es igual al ángulo
+entre las curvas imagen $\Gamma_1$ y $\Gamma_2$ en $f(z_0)$
+tanto en magnitud como en sentido.
+        </p>
+
+        <br>
+
+
+
+        <figure>
+          <div class="ggbElement" id="ggb-element-1"></div>
+          <figcaption>
+            Después de aplicar la applicación, los ángulos $\theta$ y $\phi$
+            son iguales en magnitud y sentido.
+          </figcaption>
+        </figure>
+
+        <p>
+          También utilizaremos el término <em>mapeo conforme</em> para
+referirnos a una aplicación compleja $w = f(z)$ que es conforme
+en $z_0.$ Además, si $w = f(z)$ mapea un dominio
+$A$ en un dominio $B$ y si $w = f(z)$ es conforme en
+cada punto de $A,$
+entonces llamamos a $w = f(z)$ un mapeo conforme de $A$ en $B.$
+        </p>
+
+
+      </div>
+
+      <hr>
+
+
+      <div id="section2">
+
+        <h2>Funciones analíticas</h2>
+
+        <p>
+          Una propiedad geométrica notable que poseen todas las funciones
+analíticas complejas es que,
+en puntos no críticos, preservan los ángulos y,
+por lo tanto, definen mapeos conformes.
+
+        </p>
+
+        <div class="theorem">
+          Si  $f$ es analítica en un dominio $D$  que  contiene al punto $z_0,$ y si
+          $f'(z_0)\neq 0,$ entonces $w=f(z)$ es un mapeo conforme en $z_0.$
+        </div>
+
+        <div class="proof">
+          Supongamos que $f$ es analítica en un dominio $D$ que contiene $z_0,$ y que
+$f'(z_0)\neq 0.$ Sea $C_1$ y $C_2$ dos curvas suaves en $D$
+parametrizadas por $z_1(t)$ y $z_2(t),$ respectivamente, con
+$z_1(t_0)= z_2(t_0)= z_0.$ También asumimos que $w=f(z)$ mapea las
+curvas $C_1$ y $C_2$ en las curvas $\Gamma_1$ y $\Gamma_2.$
+Aquí, $\Gamma_1$ y $\Gamma_2$ están
+parametrizadas por $w_1(t)=f(z_1(t))$ y $w_2(t)=f(z_2(t)),$ respectivamente.
+
+
+          <p>
+            Deseamos probar que el ángulo $\theta$ entre $C_1$ y $C_2$ en $z_0$
+es igual al ángulo $\phi$ entre $\Gamma_1$ y $\Gamma_2$ en
+$f(z_0)$ tanto en magnitud como en sentido.
+
+          </p>
+
+          <p>
+            Podemos asumir, renumerando $C_1$ y $C_2$ si es necesario, que
+$z_1'=z_1'(t_0)$ puede rotarse en sentido antihorario alrededor de $z_0$ mediante el
+ángulo $\theta$ hasta $z_2'=z_2'(t_0).$ Entonces, utilizando (\ref{theta-angle}), sabemos que
+\[
+\theta = \text{arg}\left(z_2'\right) - \text{arg}\left(z_1'\right)
+\]
+en el intervalo $[0,\pi].$
+
+            
+          </p>
+
+          <p>
+            Usando la regla de la cadena, tenemos que
+            \begin{eqnarray*}
+            w_1' = w_1'(t_0)= f'\left(z_1\left(t_0\right)\right)\cdot z_1'\left(t_0\right)= f'\left(z_0\right)\cdot z_1'
+            \end{eqnarray*}
+            y
+            \begin{eqnarray*}
+            w_2' = w_2'(t_0)= f'\left(z_2\left(t_0\right)\right)\cdot z_2'\left(t_0\right)= f'\left(z_0\right)\cdot
+            z_2'.
+            \end{eqnarray*}
+          </p>
+
+          <p>
+            Dado que $C_1$ y $C_2$ son suaves, tanto $z_1'$ como $z_2'$ son distintos de cero.
+Además, tenemos que $f'\left(z_0\right)\neq 0,$ y por lo tanto,
+tanto $w_1'$ como $w_2'$ son distintos de cero. Ahora,
+el ángulo  $\phi$ entre  $\Gamma_1$ y $\Gamma_2$ en $f(z_0)$ 
+tiene como un valor
+          </p><div class="scroll-wrapper">
+            \begin{eqnarray*}
+            \text{arg}\left(w_2'\right)-\text{arg}\left(w_1'\right) &amp;= &amp; \text{arg}\left(f'\left(z_0\right)\cdot
+            z_2'\right)-\text{arg}\left(f'\left(z_0\right)\cdot z_1'\right).
+            \end{eqnarray*}
+          </div>
+          Aplicando propiedades del argumento obtenemos
+          <div class="scroll-wrapper">
+            \begin{eqnarray*}
+            \text{arg}\left(f'\left(z_0\right)\cdot z_2'\right)-\text{arg}\left(f'\left(z_0\right)\cdot z_1'\right) &amp;= &amp;
+            \text{arg}\left(f'\left(z_0\right) z_2'\right) +
+            \text{arg}\left(z_2'\right)-\left[\text{arg}\left(f'\left(z_0\right)\right)+ \text{arg}\left(z_1'\right)
+            \right]\\
+            &amp;=&amp; \text{arg}\left(z_2'\right) - \text{arg}\left(z_1'\right).
+            \end{eqnarray*}
+          </div>
+          Esta expresión tiene un valor único en $[0, \pi],$ el cual es $\theta.$
+          Por lo que, $\theta=\phi$ en magnitud y sentido,
+          y consequentemente $w=f(z)$ es un mapeo conforme en $z_0.$
+          <p></p>
+
+
+        </div>
+
+        <div class="practice">
+          <p>
+            <strong>Observación 2:</strong>
+            El teorema anterior establece que
+una transformación es conforme en $z_0$ si $f$ es analítica y $f'(z_0)\neq 0.$
+Tal transformación es, de hecho, conforme en cada punto de alguna
+vecindad de $z_0.$ Esto se debe a que debe ser analítica en una 
+vecindad de $z_0;$ y dado que su derivada $f'$ es continua
+en esa vecindad, también existe una vecindad
+de $z_0$ en donde $f'(z_0)\neq 0.$
+          </p>
+        </div>
+
+
+
+      </div>
+
+      <hr>
+
+      <div id="section3">
+        <h2>Ejemplos</h2>
+
+
+
+        <p>
+          Ahora, con ayuda del Teorema 1, es relativamente sencillo
+          determinad cuando una función analítica es conforme.
+        </p>
+
+
+
+
+        <div class="practice">
+
+          <p>
+            <strong>Ejemplo 1: </strong>
+            El mapeo $w = e^z$ es conforme en todo el plano $z$ 
+ya que $(e^z)'= e^z \neq 0$ para cada $z.$ Consideremos
+cualquier par de líneas $x = c_1$ y $y = c_2$ en
+el plano $z,$ la primera con dirección hacia arriba y la
+segunda dirigida hacia la derecha. Las imágenes bajo el
+mapeo $w = e^z$ son un círculo orientado positivamente 
+centrado en el origen y un rayo que parte del origen, respectivamente. 
+Como se ilustra en la Figura 7, el ángulo entre las
+líneas en su punto de intersección
+es un ángulo recto en la dirección negativa,
+y lo mismo es cierto para el ángulo entre
+el círculo y el rayo en el punto correspondiente en el plano $w.$
+
+           
+          </p>
+          <figure>
+            <img src="../images/chp06/example-exp.svg" alt="Conformal mapping w=e^z" title="Conformal mapping w=e^z" width="100%">
+            <figcaption>
+              Mapeo conforme $w=e^z.$
+            </figcaption>
+          </figure>
+        </div>
+
+
+
+        <div class="practice">
+          <p>
+            <strong>Ejemplo 2: </strong>
+            La función $f(z)=z^2$ no es conforme en $z_0=0.$
+La explicación es, por supuesto, que $z_0=0$ es un punto crítico de $f,$ es decir, $f'(0)=0.$ Sorprendentemente, el mapeo
+preserva ángulos en todas partes, excepto en este punto.
+Por ejemplo, consideremos el semiplano derecho $\{\textbf{Re}(z)&gt;0\}.$ Esta región
+es mapeada por $w=z^2$ de manera conforme sobre el plano cortado $\mathbb C \setminus (-\infty,0],$
+como se ilustra en la Figura 8. ¿Puedes pensar en otra
+región donde $w=z^2$ sea conforme?
+
+           
+          </p>
+
+          <figure>
+
+            <table style="width: 100%;border:none">
+              <tbody>
+                <tr style="border: none;">
+                  <td style="width: 50%; border:none;">
+                    <img src="../images/chp06/example-z-squared.svg" alt="C_1 and C_2 on the z-plane" title="C_1 and C_2 on the z-plane" style="width:100%;">
+                  </td>
+                  <td style="width: 50%; border:none;">
+                    <img src="../images/chp06/example-z-squared-mapped.svg" alt="Gamma_1 and Gamma_2 on the w-plane" title="Gamma_1 and Gamma_2 on the w-plane" style="width:100%;">
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <figcaption>
+              La región $\{\textbf{Re}(z)&gt;0\}$ es mapeada por $w=z^2$
+              sobre el plano cortado $\mathbb C \setminus (-\infty,0].$
+            </figcaption>
+          </figure>
+        </div>
+
+        <p>
+          Un mapeo que preserva la magnitud del ángulo entre dos
+          curvas suaves pero no necesariamente el sentido se denomina
+          un <em>imapeo isogonal</em>.
+        </p>
+
+        <div class="practice">
+          <p>
+            <strong>Ejemplo 3: </strong>
+            El mapeo  $w = \conj{z}$ es una reflección 
+            del eje real. El mapeo es isogonal pero no conforme.
+          </p>
+
+          <p>
+            Consideremos, por ejemplo, las curvas $C_1$ y $C_2$ dadas por
+          </p><div class="scroll-wrapper">
+            \begin{eqnarray*}
+            z_1 (t) = t+(2t-t^2)i \quad\text{y}\quad z_2(t) = t+\frac{1}{2}\left(t^2+1\right)\quad \text{con}\quad
+            0\leq t\leq 2,
+            \end{eqnarray*}
+          </div>
+          respectivamente. Estas curvas se intersectan en
+          $z_0 = z_1(1)=z_2(1)= 1+i.$ Los vectores tangentes en $z_0$ son
+          $z_1'=z_1'(1)=1$ y $z_2'=z_2'(1)=1+i.$ Además, podemos ver
+          en la Figura 9 (izquierda) que
+          el ángulo entre $C_1$ y $C_2$ en $z_0$ es $\theta=\pi/4.$
+          Bajo el mapeo $w=\conj{z},$ las imágenes de $C_1$ y $C_2$ son las curvas
+          $\Gamma_1$ y $\Gamma_2,$ respectivamente, como se muestra en la Figura 9 (derecha).
+
+          
+          <p></p>
+
+
+
+          <figure>
+
+            <table style="width: 100%;border:none">
+              <tbody>
+                <tr style="border: none;">
+                  <td style="width: 50%; border:none;">
+                    <img src="../images/chp06/example-conj-z.svg" alt="C_1 and C_2 on the z-plane" title="C_1 and C_2 on the z-plane" style="width:100%;">
+                  </td>
+                  <td style="width: 50%; border:none;">
+                    <img src="../images/chp06/example-conj-z-mapped.svg" alt="Gamma_1 and Gamma_2 on the w-plane" title="Gamma_1 and Gamma_2 on the w-plane" style="width:100%;">
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <figcaption>
+              $C_1$ y $C_2$ en el plano $z$ (izquierda).
+              $\Gamma_1$ y $\Gamma_2$ en el plano $w$ (derecha).
+            </figcaption>
+          </figure>
+
+          <p>
+            Las curvas imagen están parametrizadas por
+          </p><div class="scroll-wrapper">
+            \begin{eqnarray*}
+            w_1 (t) = t-(2t-t^2)i \quad\text{y}\quad z_2(t) = t-\frac{1}{2}\left(t^2+1\right)
+            \end{eqnarray*}
+          </div>
+          con $0\leq t\leq 2;$
+          e intersectan en $w_0= f(z_0)= 1-i.$ Además, en
+          $w_0$ tenemos los vectores tangentes $w_1' = w_1'(1)=1$ y $w_2' = w_2(1)=1-i$
+          para $\Gamma_1$ y $\Gamma_2,$ respectivamente.
+          <p></p>
+          <p>
+            El ángulo entre $\Gamma_1$ y $\Gamma_2$ en $w_0$ es $\phi=\pi/4.$
+          Así, los ángulos $\theta$ y $\phi$ son iguales en magnitud.
+          Sin embargo, dado que la rotación a través de $\pi/4$ del vector
+          $z_1'$ sobre $z_2'$ debe ser <em>en sentido antihorario</em>, mientras que la rotación a través de
+          $\pi/4$ de $w_1'$ sobre $w_2'$ debe ser <em>en sentido horario</em>, concluimos que $\theta$ y $\phi$ no son iguales en sentido.
+            
+          </p>
+
+          <p>
+            Por lo tanto, $w=\conj{z}$ no es conforme.
+          </p>
+        </div>
+
+      </div>
+
+
+
+
+      <!--
+              <div class="section3">
+
+              <h2>Local inverses</h2>
+
+              <p>
+                A transformation $w = f (z)$ that is conformal at a point $z_0$ has a 
+                local inverse there. That is, if $w_0 = f (z_0),$ then there exists a 
+                unique transformation $z = f^{-1}(w),$ which is defined and analytic
+                 in a neighborhood $N$ of $w_0,$ such that $f^{-1}(w_0) = z_0$ and 
+                 $f \left(f^{-1}(w)\right) = w $
+                 for all points $w$ in $N .$ The derivative of $f^{-1}(w)$ is, moreover,
+                 \[
+                 \frac{d}{dw}f^{-1}(w) = \frac{1}{f'(z)}.
+                 \]
+              </p>
+
+              
+
+            </div>
+            -->
+
+
+
+
+
+
+    </article>
+  </main>
+
+  <!--GeoGebra embeding-->
+  <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+  <script>
+    let params1 = {
+      "width": 725,
+      "height": 410,
+      "material_id": "pptj3gaw",
+      "borderColor": "888888",
+      "playButton": false,
+      "showFullscreenButton": true,
+      "enableShiftDragZoom": false,
+      "showResetIcon": true
+    };
+    /*
+    let params2 = {
+        "width": 719,
+        "height": 449,
+        "material_id": "??",
+        "borderColor": "888888",
+        "playButton": true,
+        "showFullscreenButton": true,
+        "enableShiftDragZoom": false,
+        "showResetIcon": true
+    };
+    */
+    let ggbApplet1 = new GGBApplet(params1, true);
+    //let ggbApplet2 = new GGBApplet(params2, true);
+    window.addEventListener("load", () => {
+      ggbApplet1.inject('ggb-element-1');
+      //ggbApplet2.inject('ggb-element-2');
+    });
+  </script>
+  <!--GeoGebra embeding ends-->
+
+  <a href="applications_conformal.html" style="text-decoration: none;">
+    <p class="nextPage">Applications of Conformal Mappings <i class="fa-solid fa-angles-right"></i></p>
+  </a>
+  <!-- Ends main content -->
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 ¡Hola!</strong>
+      </div>
+      <div class="modal-body">
+
+        <div w3-include-html="message-modal.html"></div>
+        
+        <br />
+      </div>
+
+      <div class="modal-footer">
+        ¡Gracias! 🙏 !Realmente aprecio tu apoyo! 🤗
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer data-type="footer">
+
+  <span id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <span class="hide-small">
+      <a href="https://github.com/complex-analysis"><i class="fa-solid fa-code"></i> Source</a>,
+      <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues"><i
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+    </span>
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-solid fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+
+  <br />
+
+  <a id="licence-link" rel="license" href="licencia.html">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong><span style="font-size: 0.9em;">ISBN: 978-0-6485736-2-3</span></strong><br>
+  <strong>
+    <span class="hide-small" style="font-size: 0.9em;">&copy; Juan Carlos Ponce Campuzano
+      2021-<script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 0.9em;">&copy; J.C. Ponce Campuzano
+      2021-<script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>
