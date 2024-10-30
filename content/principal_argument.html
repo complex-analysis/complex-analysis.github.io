@@ -168,6 +168,84 @@
 
             <div class="ggbElement" id="ggb-element"></div>
 
+            <hr>
+
+            <h2>
+                Arguments of products and quotients
+            </h2>
+
+            <p>
+                If  $z_1= r_1e^{\theta_1}$ and $z_2= r_2e^{\theta_2},$ then
+                \begin{eqnarray}\label{product}
+                z_1z_2 = \left(r_1r_2\right)e^{i\left(\theta_1 \theta_2\right)}
+                \end{eqnarray}
+                implies 
+                \begin{eqnarray}\label{arg-product}
+                \arg\left(z_1z_2\right) = \arg\left(z_1\right) + \arg\left(z_2\right).
+                \end{eqnarray}
+                We can easily prove (\ref{arg-product}) by letting $\theta_1$ and $\theta_2$ denote any
+                values of $\arg\left(z_1\right)$ and $\arg\left(z_1\right),$ respectively. 
+                Then expression (\ref{product}) tells us that $\theta_1+\theta_2$ is 
+                a value of $\arg\left(z_1z_2\right).$ If the values of 
+                $\arg\left(z_1z_2\right)$ and $\arg\left(z_1\right)$ are specified, those values 
+                correspond to particular choices of $n$ and $k$ in the expressions
+                \[
+                \arg\left(z_1z_2\right) = \left(\theta_1 + \theta_2\right)+ 2n\pi\quad (n\in \Z)
+                \]
+                and 
+                \[
+                \arg\left(z_1\right) =\theta_1 + 2k\pi\quad (k\in \Z)
+                \]
+                Now, since 
+                \[
+                \left(\theta_1 + \theta_2\right)+ 2n\pi = \theta_1 + 2k\pi + \left[\theta_2 + 2(n-k)\pi\right],
+                \]
+                equation (\ref{arg-product}) is satisfied when we choose the value
+                \[
+                \arg\left(z_2\right) =\theta_2 + 2(n-k)\pi.
+                \]
+                The verification when values of 
+                $\arg\left(z_1z_2\right)$ and $\arg\left(z_2\right)$ are specified follows by symmetry.
+            </p>
+
+            <p>
+                Statement (\ref{arg-product}) is sometimes valid when $\arg$ is replaced 
+                everywhere by $\Arg.$ However, as the following example illustrates, that is not 
+                always the case.
+            </p>
+
+            <div class="practice">
+                <p>
+                    <strong>Example:</strong>
+                    Consider $z_1 = -1$ and $z_2=i.$ Then
+                    \[
+                    \Arg\left(z_1z_2\right) = \Arg(-i)=-\frac{\pi}{2}
+                    \]
+                    but
+                    \[
+                    \Arg\left(z_1\right)+\Arg\left(z_2\right) = \pi +\frac{\pi}{2}= \frac{3\pi}{2}.
+                    \]
+                    However, if we take the values of $\arg (z_1)$ and $\arg (z_2)$
+                    just used and select the value
+                    \[
+                    \Arg\left(z_1z_2\right) + 2\pi = -\frac{\pi}{2}+ 2\pi = \frac{3\pi}{2}
+                    \]
+                    of $\arg (z_1z_2),$ we find that equation (\ref{arg-product}) is satisfied.
+                </p>
+            </div>
+
+            <div class="practice">
+                <p>
+                    <strong>Exercise:</strong>
+                    Recall that $\dfrac{z_1}{z_2}=z_1z_2^{-1}.$ Use statemet (\ref{arg-product})
+                    to show that
+                    \[
+                    \arg\left(\frac{z_1}{z_2}\right) = \arg\left(z_1\right) -\arg\left(z_2\right).
+                    \]
+                </p>
+            </div>
+            
+
         </article>
     </main>
 
@@ -212,7 +290,6 @@
       <div class="modal-body">
 
         <div w3-include-html="message-modal.html"></div>
-
         
         <br />
       </div>
