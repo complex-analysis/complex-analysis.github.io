@@ -172,6 +172,82 @@
             <div class="ggbElement" id="ggb-element"></div>
 
 
+            <hr>
+
+            <h2>
+                Argumentos de productos y cocientes
+            </h2>
+
+            <p>
+                Si $z_1= r_1e^{\theta_1}$ y $z_2= r_2e^{\theta_2},$ entonces
+                \begin{eqnarray}\label{product}
+                z_1z_2 = \left(r_1r_2\right)e^{i\left(\theta_1 + \theta_2\right)}
+                \end{eqnarray}
+                implica
+                \begin{eqnarray}\label{arg-product}
+                \arg\left(z_1z_2\right) = \arg\left(z_1\right) + \arg\left(z_2\right).
+                \end{eqnarray}
+                Podemos probar fácilmente (\ref{arg-product}) dejando que $\theta_1$ y $\theta_2$ representen cualquier
+                valor de $\arg\left(z_1\right)$ y $\arg\left(z_2\right),$ respectivamente.
+                Entonces la expresión (\ref{product}) nos dice que $\theta_1+\theta_2$ es
+                un valor de $\arg\left(z_1z_2\right).$ Si los valores de
+                $\arg\left(z_1z_2\right)$ y $\arg\left(z_1\right)$ están especificados, estos valores
+                corresponden a elecciones particulares de $n$ y $k$ en las expresiones
+                \[
+                \arg\left(z_1z_2\right) = \left(\theta_1 + \theta_2\right)+ 2n\pi\quad (n\in \Z)
+                \]
+                y
+                \[
+                \arg\left(z_1\right) =\theta_1 + 2k\pi\quad (k\in \Z)
+                \]
+                Ahora, dado que
+                \[
+                \left(\theta_1 + \theta_2\right)+ 2n\pi = \theta_1 + 2k\pi + \left[\theta_2 + 2(n-k)\pi\right],
+                \]
+                la ecuación (\ref{arg-product}) se satisface al elegir el valor
+                \[
+                \arg\left(z_2\right) =\theta_2 + 2(n-k)\pi.
+                \]
+                La verificación cuando los valores de
+                $\arg\left(z_1z_2\right)$ y $\arg\left(z_2\right)$ están especificados sigue por simetría.
+            </p>
+
+            <p>
+                La afirmación (\ref{arg-product}) a veces es válida cuando se reemplaza
+                $\arg$ por $\Arg$ en todas partes. Sin embargo, como ilustra el siguiente ejemplo, no es
+                siempre el caso.
+            </p>
+
+            <div class="practice">
+                <p>
+                    <strong>Ejemplo:</strong>
+                    Considera $z_1 = -1$ y $z_2=i.$ Entonces
+                    \[
+                    \Arg\left(z_1z_2\right) = \Arg(-i)=-\frac{\pi}{2}
+                    \]
+                    pero
+                    \[
+                    \Arg\left(z_1\right)+\Arg\left(z_2\right) = \pi +\frac{\pi}{2}= \frac{3\pi}{2}.
+                    \]
+                    Sin embargo, si tomamos los valores de $\arg (z_1)$ y $\arg (z_2)$
+                    que acabamos de usar y seleccionamos el valor
+                    \[
+                    \Arg\left(z_1z_2\right) + 2\pi = -\frac{\pi}{2}+ 2\pi = \frac{3\pi}{2}
+                    \]
+                    de $\arg (z_1z_2),$ encontramos que la ecuación (\ref{arg-product}) se satisface.
+                </p>
+            </div>
+
+            <div class="practice">
+                <p>
+                    <strong>Ejercicio:</strong>
+                    Recuerda que $\dfrac{z_1}{z_2}=z_1z_2^{-1}.$ Usa la afirmación (\ref{arg-product})
+                    para mostrar que
+                    \[
+                    \arg\left(\frac{z_1}{z_2}\right) = \arg\left(z_1\right) -\arg\left(z_2\right).
+                    \]
+                </p>
+            </div>
 
 
 
