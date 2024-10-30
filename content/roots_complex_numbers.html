@@ -107,23 +107,27 @@
                 \end{eqnarray*}</p>
 
 
-            <p>Let $w$ be a complex number. Using de Moivre's formula will help us
-                to solve the equation $$z^n=w$$
-                for $z$ when $w$ is given.</p>
+            <p>Let $z$ be a nonzero complex number. Using de Moivre's formula will help us
+                to solve the equation $$w^n=z$$
+                for $w$ when $z$ is given.</p>
 
-            <p>Suppose that $w=r(\cos \theta +i\sin \theta)$ and $z=\rho (\cos \psi +i\sin \psi).$
+            <p>Suppose that $z=r(\cos \theta +i\sin \theta)$ and $w=\rho (\cos \psi +i\sin \psi).$
                 Then de Moivre's formula gives
-                $$z^n=\rho^n(\cos n\psi+i\sin n\psi).$$
-                It follows that
+                $$w^n=\rho^n(\cos n\psi+i\sin n\psi).$$
+                Since $w^n=z,$ it follows that
                 $$\rho^n=r=|w|$$
                 by uniqueness of the polar representation and
                 $$n\psi = \theta +k(2\pi),$$
-                where $k$ is some integer. Thus
+                where $k$ is some integer. Thus, 
+                the $n$th <em>roots</em> of a nonzero complex number $z$ 
+                are given by
             </p><div class="scroll-wrapper">
-                \[z=\sqrt[n]{r}\left[\cos\left(\frac{\theta}{n}+\frac{2k\pi}{n}\right)+i\sin\left(\frac{\theta}{n}+\frac{2k\pi}{n}\right)
-                \right].\]
+                \begin{eqnarray}\label{n-roots}
+                w_k=z^{1/n}=\sqrt[n]{r}\left[\cos\left(\frac{\theta}{n}+\frac{2k\pi}{n}\right)+i\sin\left(\frac{\theta}{n}+\frac{2k\pi}{n}\right)
+                \right].
+                \end{eqnarray}
             </div>
-            Each value of $k=0,1,2,\ldots ,n-1$ gives a different value of $z.$ Any other value of $k$ merely repeats
+            Each value of $k=0,1,2,\ldots ,n-1$ gives a different value of $w_k.$ Any other value of $k$ merely repeats
             one of the values of $z$ corresponding to $k=0,1,2,\ldots ,n-1.$ Thus there are exactly $n$th roots of a
             nonzero complex number.<p></p>
 
@@ -133,17 +137,42 @@
                 $$z=re^{i\theta} = r \,\mbox{exp}(i \theta).$$</p>
 
 
-            <p>Thus, the $n$th roots of a nonzero complex number $z\neq 0$ can also be expressed as
+            <p>Thus, the $n$th roots of a complex number $z\neq 0$ can also be expressed as
             </p><div class="scroll-wrapper">
                 \begin{eqnarray}\label{expform}
-                z=\sqrt[n]{r}\;\mbox{exp}\left[i\left(\frac{\theta}{n}+\frac{2k\pi}{n}\right)\right]
+                w_k=z^{1/n}=\sqrt[n]{r}\;\mbox{exp}\left[i\left(\frac{\theta}{n}+\frac{2k\pi}{n}\right)\right]
                 \end{eqnarray}
             </div>
             where $k=0, 1, 2, \ldots , n-1.$
             <p></p>
 
+            <div class="practice">
+                <p>
+                    <strong>Example:</strong>
+                    The complex number $z=i$ has three cube roots. In this case
+                    $r=1,$ and $\theta = \arg(z) = \pi/2.$ Thus the polar of the given number
+                    is 
+                    \[
+                    z = \cos \frac{\pi}{2} + i \sin\frac{\pi}{2}.
+                    \]
+                    Using (\ref{n-roots}) we then obtain
+                    </p><div class="scroll-wrapper">
+                        \[
+                        w_k = \sqrt[3]{1}\left[\cos\left(\frac{\pi/2}{3}+\frac{2k\pi}{3}\right)+i\sin\left(\frac{\pi/2}{3}+\frac{2k\pi}{3}\right)\right]
+                        \]
+                    </div>
+                    with $k=0,1,2.$ Hence the three roots are
+                    \begin{eqnarray*}
+                    k=0,\quad w_0 &amp;=&amp; \cos\frac{\pi}{6} + i \sin\frac{\pi}{6}  = \frac{\sqrt{3}}{2}+\frac{1}{2}i\\
+                    k=1,\quad w_1 &amp;=&amp; \cos\frac{5\pi}{6} + i \sin\frac{5\pi}{6}  = -\frac{\sqrt{3}}{2}+\frac{1}{2} i \\
+                    k=2,\quad w_2 &amp;=&amp; \cos\frac{3\pi}{2} + i \sin\frac{3\pi}{2}  = -i .
+                    \end{eqnarray*}
+                <p></p>
+            </div>
+
             <p>The applet below shows a geometrical representation of the $n$th roots of a complex number, up to $n=10.$
-                Drag the red point around to change the value of $z$ or drag the sliders.
+                Drag the red point around to change the value of $z$ or drag the sliders. 
+                You can check the roots of the previous example.
             </p>
 
             <!-- ctl=play button; sfsb=fullscreen button-->
@@ -181,9 +210,14 @@ nRoots = Sequence(r^(1/n) * exp( ί * ( theta/n + 2 * pi * k/n ) ), k, 0, n-1)
             <hr>
 
             <div class="practice">
-                <p><strong>Exercise:</strong> From the exponential form (\ref{expform})
+                <p><strong>Exercise 1:</strong> From the exponential form (\ref{expform})
                     of the roots, show that all the $n$th roots lie on the circle $|z|=\sqrt[n]{r}$ about the origin and
                     are equally spaced every $2\pi/n$ radians, starting with argument $\theta/n.$</p>
+
+                <p>
+                    <strong>Exercise 2:</strong>
+                    Find the four roots of $z=1+i.$
+                </p>
             </div>
             <br>
 
@@ -198,7 +232,7 @@ nRoots = Sequence(r^(1/n) * exp( ί * ( theta/n + 2 * pi * k/n ) ), k, 0, n-1)
             "height": 439,
             "material_id": "egcv9rkx",
             "borderColor": "888888",
-            "playButton": true,
+            "playButton": false,
             "showFullscreenButton": true,
             "enableShiftDragZoom": true,
             "showResetIcon": true
@@ -232,7 +266,6 @@ nRoots = Sequence(r^(1/n) * exp( ί * ( theta/n + 2 * pi * k/n ) ), k, 0, n-1)
       <div class="modal-body">
 
         <div w3-include-html="message-modal.html"></div>
-
         
         <br />
       </div>
