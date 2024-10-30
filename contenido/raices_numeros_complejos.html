@@ -95,7 +95,8 @@
 
             <hr>
 
-            <p>Recordemos que si $z=x+iy$ es un número complejo <em>diferente de cero</em>, entonces se puede escribir
+            <p>Recordemos que si $z=x+iy$ es un número complejo 
+                <em>diferente de cero</em>, entonces se puede escribir
                 en su forma polar como
                 \[z=r(\cos \theta +i \,\text{sen } \theta)\]
                 donde $r=\sqrt{x^2+y^2}$ y $\theta$ es el ángulo, en radianes, medido desde el eje positivo
@@ -109,25 +110,28 @@
                 \end{eqnarray*}</p>
 
 
-            <p>Sea $w$ un número complejo. Usando la fórmula de De Moivre nos ayudará a resolver la ecuación
-                $$z^n=w$$
-                para $z$ cuando $w$ es dado.</p>
+            <p>Sea $z$ un número complejo. Usando la fórmula de De Moivre nos ayudará a resolver la ecuación
+                $$w^n=z$$
+                para $w$ cuando $z$ es dado.</p>
 
-            <p>Supongamos que $w=r(\cos \theta +i\,\text{sen } \theta)$ y $z=\rho (\cos \psi +i\,\text{sen } \psi).$
+            <p>Supongamos que $z=r(\cos \theta +i\,\text{sen } \theta)$ y $w=\rho (\cos \psi +i\,\text{sen } \psi).$
                 Entonces De Moivre nos dice que
-                $$z^n=\rho^n(\cos n\psi+i\,\text{sen } n\psi).$$
-                De aquí sigue que
+                $$w^n=\rho^n(\cos n\psi+i\,\text{sen } n\psi).$$
+                Dado que $w^n=z,$ se aquí sigue que
                 $$\rho^n=r=|w|$$
                 por la unicidad de la representación polar y además
                 $$n\psi = \theta +k(2\pi),$$
-                donde $k$ es un entero. De esta forma
+                donde $k$ es un entero. De esta forma, la $n$-ésima raíz de un número complejo
+                differente de zero esta dada por
             </p><div class="scroll-wrapper">
-                \[z=\sqrt[n]{r}\left[\cos\left(\frac{\theta}{n}+\frac{2k\pi}{n}\right)+i\sin\left(\frac{\theta}{n}+\frac{2k\pi}{n}\right)
-                \right].\]
+                \begin{eqnarray}\label{n-roots}
+                w_k=z^{1/n}=\sqrt[n]{r}\left[\cos\left(\frac{\theta}{n}+\frac{2k\pi}{n}\right)+i\sin\left(\frac{\theta}{n}+\frac{2k\pi}{n}\right)
+                \right].
+                \end{eqnarray}
             </div>
-            Cada valor de $k=0,1,2,\ldots ,n-1$ nos da un valor diferente de $z.$ Cualquier otro valor de $k$
+            Cada valor de $k=0,1,2,\ldots ,n-1$ nos da un valor diferente de $w_k.$ Cualquier otro valor de $k$
             simplemente repite uno de los valores de
-            $z$ correspondiente a $k=0,1,2,\ldots ,n-1.$ Por lo que hay exactamente $n$ raíces de un número
+            $w_k$ correspondiente a $k=0,1,2,\ldots ,n-1.$ Por lo que hay exactamente $n$ raíces de un número
             complejo $z\neq 0.$
             <p></p>
 
@@ -141,14 +145,40 @@
             <p>De esta manera, las $n$ raíces del número complejo $z\neq 0$ se pueden expresar como
             </p><div class="scroll-wrapper">
                 \begin{eqnarray}\label{expform}
-                z=\sqrt[n]{r}\;\mbox{exp}\left[i\left(\frac{\theta}{n}+\frac{2k\pi}{n}\right)\right]
+                w_k=z^{1/n}=\sqrt[n]{r}\;\mbox{exp}\left[i\left(\frac{\theta}{n}+\frac{2k\pi}{n}\right)\right]
                 \end{eqnarray}
             </div>
             donde $k=0, 1, 2, \ldots , n-1.$
             <p></p>
 
-            <p>El applet siguiente muestra una representación geométrica de las  $n$ raíces de un número complejo, hasta $n=10.$ 
-                Mueve el punto rojo alrededor para cambiar el valor de $z$ o mueve los deslizadores.
+            <div class="practice">
+                <p>
+                    <strong>Ejemplo:</strong>
+                    El número complejo $z=i$ tiene tres raíces cúbicas. En este caso
+                    $r=1,$ y $\theta = \arg(z) = \pi/2.$ Entonces la forma polar de este número es
+                    \[
+                    z = \cos \frac{\pi}{2} + i \,\text{sen}\frac{\pi}{2}.
+                    \]
+                    Usando (\ref{n-roots}) obtenemos
+                    </p><div class="scroll-wrapper">
+                        \[
+                        w_k = \sqrt[3]{1}\left[\cos\left(\frac{\pi/2}{3}+\frac{2k\pi}{3}\right)+i\,\text{sen }\left(\frac{\pi/2}{3}+\frac{2k\pi}{3}\right)\right]
+                        \]
+                    </div>
+                    con $k=0,1,2.$ Por lo tanto las tres raíces son
+                    \begin{eqnarray*}
+                    k=0,\quad w_0 &amp;=&amp; \cos\frac{\pi}{6} + i \,\text{sen }\frac{\pi}{6}  = \frac{\sqrt{3}}{2}+\frac{1}{2}i\\
+                    k=1,\quad w_1 &amp;=&amp; \cos\frac{5\pi}{6} + i \,\text{sen }\frac{5\pi}{6}  = -\frac{\sqrt{3}}{2}+\frac{1}{2} i \\
+                    k=2,\quad w_2 &amp;=&amp; \cos\frac{3\pi}{2} + i \,\text{sen }\frac{3\pi}{2}  = -i .
+                    \end{eqnarray*}
+                <p></p>
+            </div>
+
+            <p>El applet siguiente muestra una representación geométrica y numérica de las 
+                $n$ raíces de un número complejo, hasta $n=10.$ 
+                Mueve el punto rojo alrededor para cambiar el valor de $z$ 
+                o activa la caja <code>Especifíca valores</code> para mover los deslizadores.
+                Puedes explorar las raíces del ejemplo anterior.
             </p>
 
             <!-- ctl=play button; sfsb=fullscreen button-->
@@ -183,10 +213,13 @@ nRoots = Sequence(r^(1/n) * exp( ί * ( theta/n + 2 * pi * k/n ) ), k, 0, n-1)
             <hr>
 
             <div class="practice">
-                <p><strong>Ejercicio:</strong> Usando la forma exponencial de las raíces complejas
+                <p><strong>Ejercicio 1:</strong> Usando la forma exponencial de las raíces complejas
                     definida en (\ref{expform}), demuestra que las $n$ raíces se encuentran sobre el círculo $|z|=\sqrt[n]{r}$ 
                     con centro en el origen y están distribuidas alrededor de este en espacios iguales a $2\pi/n$ radianes,
                     comenzando con el argumento $\theta/n.$</p>
+                
+                <p><strong>Ejercicio 2:</strong> Encuentra las cuatro raíces de $z=1+i.$ Puedes usar el 
+                applet anterior para checar tu resultado.</p>
             </div>
             <br>
 
@@ -201,7 +234,7 @@ nRoots = Sequence(r^(1/n) * exp( ί * ( theta/n + 2 * pi * k/n ) ), k, 0, n-1)
             "height": 439,
             "material_id": "qy6n3ht8",
             "borderColor": "888888",
-            "playButton": true,
+            "playButton": false,
             "showFullscreenButton": true,
             "enableShiftDragZoom": true,
             "showResetIcon": true
