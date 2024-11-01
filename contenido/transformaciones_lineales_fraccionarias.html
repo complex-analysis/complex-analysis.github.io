@@ -1,4 +1,86 @@
-<section data-type="chapter" id="linear-fractional-transformations">
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+  <title>  Transformaciones Lineales Fraccionarias
+</title>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Main info: Dublin core -->
+  <meta name="DC.Title" content="Análisis Complejo">
+  <meta name="DC.Creator" content="Juan Carlos Ponce Campuzano">
+  <meta name="DC.Date" content="26-01-2021">
+  <meta name="DC.Identifier" content="ISBN-13: 978-0-6485736-2-3">
+  <meta name="DC.Type" content="Recurso interactivo">
+  <meta name="DC.Format" content="HTML">
+  <meta name="DC.Language" content="es-mx">
+  <meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+  <!-- social media cards -->
+  <meta property="og:title" content="Análisis Complejo">
+  <meta property="og:description" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta property="og:url" content="https://complex-analysis.com/es.html">
+  <meta property="og:image" content="https://complex-analysis.com/images/complex_analysis_card-es.jpg">
+  <meta property="og:site_name" content="Complex Analysis">
+  <meta property="og:locale" content="es-mx">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta name="twitter:title" content="Análisis Complejo">
+  <meta name="twitter:description" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta name="twitter:site" content="@jcponcemath">
+  <meta name="twitter:image" content="https://complex-analysis.com/images/complex_analysis_card-es.jpg">
+  <meta name="twitter:creator" content="@jcponcemath">
+
+  <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+
+  <link rel="stylesheet" href="css/style-es.css">
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HVPF4FLZCB');
+  </script>
+</head>
+
+<body data-type="book" id="top">
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="mapeo_conforme.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-regular fa-sun"></i></span>
+        <span class="support-top-button" id="donate"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="tabla_de_contenidos.html" class="link" id="center-link">
+            <span class="content-hover-previous">Mapeo Conforme</span>
+            <span class="content-hover">Tabla de Contenidos</span>
+            <span class="content-original">Análisis Complejo</span>
+            <span class="content-hover-next">Aplicaciones de Mapeos Conformes</span>
+        </a>
+    </div>
+    <a href="aplicaciones_conformal.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="linear-fractional-transformations">
 
   <!-- Starts main content -->
 
@@ -34,7 +116,7 @@
           \end{eqnarray}
           se llama <em>transformación lineal fraccionaria</em> o <em>transformación de Möbius</em>.
           Observa que también podemos escribir (\ref{mobius}) en la forma
-        <div class="scroll-wrapper">
+        </p><div class="scroll-wrapper">
           \begin{eqnarray}\label{bilinear}
           Azw + Bz+Cw+D = 0 \qquad (AD-BC\neq 0);
           \end{eqnarray}
@@ -42,18 +124,18 @@
         con $w = T(z).$ Dado que esta forma alternativa es lineal en $z$ y lineal en $w,$
         otro nombre para la transformación lineal fraccionaria es
         <em>transformación bilineal</em>.
-        </p>
+        <p></p>
 
         <p>
           Si $c=0,$ entonces la condición $ad-bc\neq 0$ en la ecuación (\ref{mobius})
           se convierte en $ad\neq 0.$ Así, la transformación $T$ se reduce a una función lineal no constante
           $az+b.$ Cuando $c\neq 0,$ podemos escribir la ecuación (\ref{mobius}) como
-        <div class="scroll-wrapper">
+        </p><div class="scroll-wrapper">
           \begin{eqnarray}\label{mobius-composition}
           T(z) = \frac{bc-ad}{c}\cdot \frac{1}{cz+d}+ \frac{a}{c} \qquad (ad-bc\neq 0)
           \end{eqnarray}
         </div>
-        </p>
+        <p></p>
         <p>De nuevo, la condición $ad-bc\neq 0$ asegura que no obtenemos una función constante.
           La transformación $T(z)=1/z$ es obviamente un caso especial de (\ref{mobius})
           cuando $c\neq 0.$ (Ya cubrimos esta función en el
@@ -63,12 +145,12 @@
         <p>
           La ecuación (\ref{mobius-composition}) revela que una transformación lineal
           es una composición de las transformaciones:
-        <div class="scroll-wrapper">
+        </p><div class="scroll-wrapper">
           \[
           f(z)= \frac{bc-ad}{c}z+\frac{a}{c},\quad g(z) = \frac{1}{z}, \quad h(z) = cz+d.
           \]
         </div>
-        </p>
+        <p></p>
         <p>Es decir, $T(z) = f\circ g \circ h(z) = f\left( g\left( h(z)\right)\right).$
           Así, se deduce que, independientemente de si $c$ es cero o no,
           cualquier transformación lineal fraccionaria
@@ -91,18 +173,18 @@
         <p>
           Cuando $c\neq 0,$ es decir, cuando $T$ no es una función lineal, es a menudo
           útil ver $T$ como una transformación del plano complejo extendido:
-        <div class="scroll-wrapper">
+        </p><div class="scroll-wrapper">
           \begin{eqnarray}\label{mobius-extended}
           T(z) = \left\{
           \begin{array}{ll}
-          \dfrac{az+b}{cz+d}, & z\neq -\dfrac{d}{c}, z\neq \infty\\
-          \infty, & z=-\dfrac{d}{c}\\
-          \dfrac{a}{c}, & z=\infty.
+          \dfrac{az+b}{cz+d}, &amp; z\neq -\dfrac{d}{c}, z\neq \infty\\
+          \infty, &amp; z=-\dfrac{d}{c}\\
+          \dfrac{a}{c}, &amp; z=\infty.
           \end{array}
           \right.
           \end{eqnarray}
         </div>
-        </p>
+        <p></p>
 
         <p>
           En este caso, $T$ es una transformación uno-a-uno del plano complejo extendido.
@@ -134,21 +216,21 @@
 
         <p>
           Considera la siguiente ecuación
-        <div class="scroll-wrapper">
+        </p><div class="scroll-wrapper">
           \begin{eqnarray}\label{cross}
           \frac{\left(w- w_1\right)\left(w_2- w_3\right)}{\left(w- w_3\right)\left(w_2- w_1\right)} = \frac{\left(z-
           z_1\right)\left(z_2- z_3\right)}{\left(z- z_3\right)\left(z_2- z_1\right)}.
           \end{eqnarray}
         </div>
         Los dos lados de esta ecuación se conocen como <em>razones cruzadas</em>.
-        </p>
+        <p></p>
 
         <p>
           La ecuación (\ref{cross}) define (implícitamente) una transformación lineal fraccionaria que mapea
           tres puntos distintos $z_1,$ $z_2,$ y $z_3$ en el plano $z$ finito
           respectivamente sobre tres puntos distintos $w_1,$ $w_2,$ y $w_3$ en el plano $w$ finito.
           Podemos verificar fácilmente esto escribiendo la ecuación (\ref{cross}) como
-        <div class="scroll-wrapper">
+        </p><div class="scroll-wrapper">
           \begin{eqnarray}\label{cross-02}
           \left(z- z_3\right)\left(w- w_1\right)\left(z_2- z_1\right)\left(w_2- w_3\right) = \left(z- z_1\right)\left(w-
           w_3\right)\left(z_2- z_3\right)\left(w_2- w_1\right)
@@ -172,7 +254,7 @@
             $w=w_3.$
           </li>
         </ul>
-        </p>
+        <p></p>
 
 
         <p>
@@ -194,7 +276,7 @@
             Para encontrar una transformación lineal fraccional que mapea
             $z_1=1,$ $z_2=i,$ y $z_3=-1$ sobre $w_1=-1,$ $w_2=0,$ y $w_3=1,$
             usamos la ecuación (\ref{cross}) para escribir
-          <div class="scroll-wrapper">
+          </p><div class="scroll-wrapper">
             \begin{eqnarray*}
             \frac{\left(w+1\right)\left(0-1\right)}{\left(w- 1\right)\left(0+ 1\right)} = \frac{\left(z- 1\right)\left(i
             + 1\right)}{\left(z+1\right)\left(i- 1\right)}.
@@ -204,7 +286,7 @@
           \[
           w = T(z) = \frac{z-i}{iz-1}.
           \]
-          </p>
+          <p></p>
         </div>
 
         <p>
@@ -215,7 +297,7 @@
           $z_1$ en el lado derecho de la ecuación (\ref{cross})
           por $1/z_1,$ eliminar fracciones y
           dejar que $z_1$ tienda a cero. Es decir
-        <div class="scroll-wrapper">
+        </p><div class="scroll-wrapper">
           \begin{eqnarray*}
           \lim_{z_1\to 0} \frac{\left(z- 1/z_1\right)\left(z_2 -z_3\right)}{\left(z-z_3\right)\left(z_2-
           1/z_1\right)}\cdot \frac{z_1}{z_1} = \lim_{z_1\to 0} \frac{\left(z_1z- 1/z\right)\left(z_2
@@ -232,7 +314,7 @@
         Esta modificación se obtiene simplemente eliminando los factores que involucran
         $z_1$ en la ecuación (\ref{cross}). Es fácil comprobar que el mismo enfoque
         se aplica cuando cualquiera de los otros puntos prescritos es $\infty.$
-        </p>
+        <p></p>
 
 
         <div class="practice">
@@ -244,7 +326,7 @@
             que mapea
             $z_1=1,$ $z_2=0,$ y $z_3=-1$ sobre $w_1=i,$ $w_2=\infty,$ y $w_3=1,$
             usamos la modificación
-          <div class="scroll-wrapper">
+          </p><div class="scroll-wrapper">
             \begin{eqnarray*}
             \frac{\left(w- w_1\right)}{\left(w- w_3\right)} = \frac{\left(z- z_1\right)\left(z_2- z_3\right)}{\left(z-
             z_3\right)\left(z_2- z_1\right)}.
@@ -258,7 +340,7 @@
             1\right)\left(0+1\right)}{\left(z+1\right)\left(0- 1\right)}.
             \end{eqnarray*}
           </div>
-          </p>
+          <p></p>
           <p>
             Al resolver para $w$ obtenemos
             \[
@@ -299,7 +381,7 @@
         </p>
 
 
-        <br />
+        <br>
 
         <div class="ggbElement" id="ggb-element-1"></div>
 
@@ -322,7 +404,7 @@
           </p>
 
         </div>
-        <br />
+        <br>
       </div>
 
     </article>
@@ -371,3 +453,79 @@
   <!-- Ends main content -->
 
 </section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 ¡Hola!</strong>
+      </div>
+      <div class="modal-body">
+
+        <div w3-include-html="message-modal.html"></div>
+        
+        <br />
+      </div>
+
+      <div class="modal-footer">
+        ¡Gracias! 🙏 !Realmente aprecio tu apoyo! 🤗
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer data-type="footer">
+
+  <span id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <span class="hide-small">
+      <a href="https://github.com/complex-analysis"><i class="fa-solid fa-code"></i> Source</a>,
+      <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues"><i
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+    </span>
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-solid fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+
+  <br />
+
+  <a id="licence-link" rel="license" href="licencia.html">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong><span style="font-size: 0.9em;">ISBN: 978-0-6485736-2-3</span></strong><br>
+  <strong>
+    <span class="hide-small" style="font-size: 0.9em;">&copy; Juan Carlos Ponce Campuzano
+      2021-<script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 0.9em;">&copy; J.C. Ponce Campuzano
+      2021-<script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>
