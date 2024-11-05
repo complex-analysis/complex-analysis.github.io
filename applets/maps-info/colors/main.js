@@ -193,6 +193,7 @@ polygonSeries.data.setAll([
   { id: "NI", value: 140 },
   { id: "BW", value: 51 },
   { id: "BN", value: 49 },
+  { id: "XK", value: 77 },
   { id: "UZ", value: 167 },
   { id: "PS", value: 46 },
   { id: "LV", value: 123 },
@@ -223,6 +224,7 @@ polygonSeries.data.setAll([
   { id: "CI", value: 11 },
   { id: "PG", value: 10 },
   { id: "AD", value: 9 },
+  { id: "CD", value: 19 },
   { id: "CV", value: 9 },
   { id: "LS", value: 8 },
   { id: "MG", value: 8 },
@@ -274,7 +276,6 @@ polygonSeries.data.setAll([
   { id: "AQ", value: 0 },
   { id: "ML", value: 1 }, // Mali
   { id: "TD", value: 1 }, // Chad
-  { id: "CD", value: 0 },
   { id: "CG", value: 0 },
   { id: "CF", value: 0 },
   { id: "IS", value: 99 }, // Iceland
@@ -283,9 +284,7 @@ polygonSeries.data.setAll([
   { id: "GF", value: 0 },
   { id: "ER", value: 2 }, // Eritrea
   { id: "KP", value: 0 },
-  { id: "LA", value: 5 }, // Laos
   { id: "GW", value: 0 }, // Guinea Bissau
-  { id: "XK", value: 29 }, // Kosovo
   { id: "TL", value: 0 },
   { id: "AX", value: 0 },
   { id: "SB", value: 7 }, // Solomon Islands
