@@ -300,7 +300,7 @@ var heatLegend = chart.children.push(am5.HeatLegend.new(root, {
   endColor: am5.color("#0f1317"),
   startText: "0",
   endText: "89K",
-  //stepCount: 6
+  stepCount: 6
 }));
 
 heatLegend.startLabel.setAll({
