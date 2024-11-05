@@ -610,7 +610,7 @@
           inversa local allí. Es decir,
           si $w_0 = f (z_0),$ entonces existe una
           transformación única $z = f^{-1}(w),$ que está definida y es analítica
-          en un vecindario $V$ de $w_0,$ tal que $f^{-1}(w_0) = z_0.$ Además,
+          en una vecindad $V$ de $w_0,$ tal que $f^{-1}(w_0) = z_0.$ Además,
           $f^{-1}(w)$ es diferenciable en $V$ y
           \[
           \frac{d}{dw}f^{-1}(w) = \frac{1}{f'(z)}.
@@ -626,7 +626,7 @@
         <div class="theorem">
           Si $f:A \subset \R^2 \to \R^2$ es continuamente diferenciable y
           $J_f(x_0, y_0)$, el Jacobiano de $f$ en $(x_0,y_0)$, tiene un determinante distinto de cero, entonces existen
-          vecindarios $U$ de $(x_0,y_0)$ y
+          vecindades $U$ de $(x_0,y_0)$ y
           $V$ de $f(x_0,y_0)$ tales que $f:U\to V$ es una biyección,
           $f^{-1}:V\to U$ es diferenciable, y
           \[
@@ -636,21 +636,21 @@
 
         <p>
           Si $w = f (z)$ es conforme en
-          $z_0 = x_0+iy_0,$ existe algún
-          vecindario $U$ de $z_0$ en el cual $f$ es analítica.
+          $z_0 = x_0+iy_0,$ existe alguna
+          vecindad $U$ de $z_0$ en la cual $f$ es analítica.
           Para $z=x+iy,$ si escribimos
           \begin{eqnarray}\label{trans01}
           f(z) = u(x,y)+ iv(x,y),
           \end{eqnarray}
-          sabemos que existe un vecindario del punto $(x_0,y_0)$
-          en el cual las funciones $u(x,y)$ y $v(x,y),$ junto con
+          sabemos que existe una vecindad del punto $(x_0,y_0)$
+          en la cual las funciones $u(x,y)$ y $v(x,y),$ junto con
           sus derivadas parciales de todos los órdenes, son continuas
           (una nueva sección sobre este hecho estará disponible pronto).
         </p>
 
         <p>
           La función definida en (\ref{trans01})
-          representa una transformación del vecindario
+          representa una transformación de la vecindad
           $U$ al plano $uv$. Además, el determinante
         </p>
         <div class="scroll-wrapper">
@@ -692,12 +692,12 @@
           \begin{eqnarray}\label{trans02}
           f^{-1}(w) = x(u,v)+ i y(u,v)
           \end{eqnarray}
-          definida en un vecindario $V$ del punto $(u_0,v_0)$ y que mapea
-          ese punto a $(x_0,y_0),$ tal que las ecuaciones (\ref{trans01}) se cumplen
-          cuando las ecuaciones (\ref{trans02}) se cumplen.
+          definida en una vecindad $V$ del punto $(u_0,v_0)$ y que mapea
+          ese punto a $(x_0,y_0),$ tal que la ecuación (\ref{trans01}) se cumplen
+          cuando la ecuación (\ref{trans02}) se cumplen.
         </p>
 
-        <p>Además de ser continua, los componentes real e imaginario de
+        <p>Además de ser continua, los componentes real e imaginaria de
           la función (\ref{trans02}) tienen
           derivadas parciales de primer orden continuas que satisfacen las ecuaciones
         </p>
@@ -728,14 +728,14 @@
 
 
         <p>
-          Por lo tanto, acabamos de demostrar lo siguiente:
+          Por lo tanto, acabamos de demostrar el siguiente:
         </p>
 
         <div class="theorem">
           <strong><span style="font-style: normal !important;">(Teorema de la Función Inversa)</span></strong>
           Sea $f:A \to \C$ una función analítica y supongamos que
-          $f'(z_0)\neq 0.$ Entonces existe un
-          vecindario $U$ de $z_0$ y un vecindario $V$ de $w_0=f(z_0)$
+          $f'(z_0)\neq 0.$ Entonces existe una
+          vecindad $U$ de $z_0$ y una vecindad $V$ de $w_0=f(z_0)$
           tal que $f:U\to V$ es una biyección (inyectiva y suprayectiva)
           y su función inversa $f^{-1}$ es analítica con derivada
           dada por
@@ -751,7 +751,7 @@
           El <em>Teorema de la Función Inversa</em> establece que $f$ tiene una única inversa analítica local,
           que es, de hecho, alguna rama de la función raíz cuadrada $f^{-1}=\sqrt{z}.$
           Sin embargo, $f$ no es inyectiva en todo $A,$ ya que $f(1)= f(-1).$ Por lo tanto,
-          $f$ será inyectiva solo dentro de vecindarios suficientemente pequeños alrededor
+          $f$ será inyectiva solo dentro de vecindades suficientemente pequeños alrededor
           de cada punto.
         </p>
 
@@ -781,47 +781,48 @@
         <div class="theorem">
           <strong><span style="font-style: normal !important;">(Teorema de Mapeo de Riemann)</span></strong>
           Sea \( A \) un dominio simplemente conexo tal que \( A \) no es todo \( \C \). Entonces existe un mapeo
-          conforme biyectivo \( f: A \to D \) donde \( D = \left\{z : |z| &lt; 1\right\} \). </div>
-
-            <p>
-              A partir de este resultado, vemos que si \( A \) y \( B \) son dos dominios simplemente conexos, con \( A
-              \neq \C \) y \( B \neq \C \), entonces existe un mapeo conforme biyectivo \( h: A \to B \). Si \( f: A \to
-              D \) y \( g: B \to D \) son conformes, podemos establecer \( h = g^{-1} \circ f \) (ver Figura 10). Dos
-              dominios \( A \) y \( B \) se llaman <em>equivalentes conforme</em> si hay un mapeo conforme biyectivo de
-              \( A \) a \( B \). Así, el <em>Teorema de Mapeo de Riemann</em> implica que dos dominios simplemente
-              conexos (distintos de \( \C \)) son equivalentes conforme.
-            </p>
-
-
-
-
-            <figure>
-              <img src="../images/chp06/riemann-mapping-theorem.gif" alt="Dos dominios conformamente equivalentes" title="Dos dominios conformamente equivalentes" width="85%">
-              <figcaption>
-                Para transformar $A$ en $B$ realizamos la composición $g^{-1}$ with $f.$
-              </figcaption>
-            </figure>
-
-
-            <p> El teorema de Riemann es de crítica importancia teórica, pero su prueba no es constructiva. Esto
-              significa que el teorema establece la existencia del mapeo \( f \), pero no ofrece un método para
-              encontrar una fórmula para \( f \). Una prueba del <em>Teorema de Mapeo de Riemann</em> está más allá del
-              alcance de este texto. El lector interesado puede consultar los libros: </p>
-            
-            
-
-            <ul>
-              <li>
-                <em>Complex Analysis</em>
-                por Lars V. Alfors, McGraw-Hill, 1979; y
-              </li>
-              <li>
-                <em>Basic Complex Analysis</em>
-                por Jerrold. E. Marsden &amp; Michael J. Hoffman, W. H. Freeman and Company, 1999.
-              </li>
-            </ul>
-
+          conforme biyectivo \( f: A \to D \) donde \( D = \left\{z : |z| \lt 1\right\} \).
         </div>
+
+        <p>
+          A partir de este resultado, vemos que si \( A \) y \( B \) son dos dominios simplemente conexos, con \( A
+          \neq \C \) y \( B \neq \C \), entonces existe un mapeo conforme biyectivo \( h: A \to B \). Si \( f: A \to
+          D \) y \( g: B \to D \) son conformes, podemos establecer \( h = g^{-1} \circ f \) (ver Figura 10). Dos
+          dominios \( A \) y \( B \) se llaman <em>conformemente equivalentes</em> si hay un mapeo conforme biyectivo de
+          \( A \) a \( B \). Así, el <em>Teorema del Mapeo de Riemann</em> implica que dos dominios simplemente
+          conexos (distintos de \( \C \)) son conformemente equivalentes.
+        </p>
+
+
+
+
+        <figure>
+          <img src="../images/chp06/riemann-mapping-theorem.gif" alt="Dos dominios conformamente equivalentes" title="Dos dominios conformamente equivalentes" width="85%">
+          <figcaption>
+            Para transformar $A$ en $B$ realizamos la composición $g^{-1}$ with $f.$
+          </figcaption>
+        </figure>
+
+
+        <p> El teorema de Riemann es de crítica importancia teórica, pero su prueba no es constructiva. Esto
+          significa que el teorema establece la existencia del mapeo \( f \), pero no ofrece un método para
+          encontrar una fórmula para \( f \). Una prueba del <em>Teorema de Mapeo de Riemann</em> está más allá del
+          alcance de este texto. El lector interesado puede consultar los libros: </p>
+
+
+
+        <ul>
+          <li>
+            <em>Complex Analysis</em>
+            por Lars V. Alfors, McGraw-Hill, 1979; y
+          </li>
+          <li>
+            <em>Basic Complex Analysis</em>
+            por Jerrold. E. Marsden &amp; Michael J. Hoffman, W. H. Freeman and Company, 1999.
+          </li>
+        </ul>
+
+      </div>
 
 
 
