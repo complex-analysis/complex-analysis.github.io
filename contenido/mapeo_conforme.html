@@ -92,6 +92,8 @@
       <li><a href="#section1">Mapeo conforme</a></li>
       <li><a href="#section2">Funciones analíticas</a></li>
       <li><a href="#section3">Ejemplos</a></li>
+      <li><a href="#section4">Inversas locales</a></li>
+      <li><a href="#section5">El Teorema del Mapeo de Riemann</a></li>
       <!-- Add more sections as needed -->
     </ul>
   </div>
@@ -122,8 +124,8 @@
 
         <div class="practice">
           <p>
-            <strong>Observación 1:</strong> 
-            Aquí consideraremos un sólo valor de  $\text{arg}\left(z\right).$
+            <strong>Observación 1:</strong>
+            Aquí consideraremos un sólo valor de $\text{arg}\left(z\right).$
             Para mayores detalles véase <a href="argumento_principal.html" target="_blank">El Argumento Principal</a>.
           </p>
         </div>
@@ -151,17 +153,17 @@
 
         <p>
           Definimos el ángulo $\theta$ entre $C_1$ y $C_2$ en $z_0$
-como el valor de
-\begin{eqnarray}\label{theta-angle}
-\text{arg}\left(z_2'\right) - \text{arg}\left(z_1'\right)
-\end{eqnarray}
-en el intervalo $[0, \pi],$ siempre que podamos rotar $z_1'$
-en sentido antihorario alrededor de $z_0$ mediante el ángulo $\theta$ hasta
-$z_2'.$ En el caso de que se necesite una rotación en sentido horario,
-entonces $-\theta$ es el valor de (\ref{theta-angle}) en
-el intervalo $(-\pi, 0).$ En cualquiera de los casos, vemos que
-(\ref{theta-angle}) proporciona tanto la magnitud
-como el sentido del ángulo entre $C_1$ y $C_2$ en $z_0.$
+          como el valor de
+          \begin{eqnarray}\label{theta-angle}
+          \text{arg}\left(z_2'\right) - \text{arg}\left(z_1'\right)
+          \end{eqnarray}
+          en el intervalo $[0, \pi],$ siempre que podamos rotar $z_1'$
+          en sentido antihorario alrededor de $z_0$ mediante el ángulo $\theta$ hasta
+          $z_2'.$ En el caso de que se necesite una rotación en sentido horario,
+          entonces $-\theta$ es el valor de (\ref{theta-angle}) en
+          el intervalo $(-\pi, 0).$ En cualquiera de los casos, vemos que
+          (\ref{theta-angle}) proporciona tanto la magnitud
+          como el sentido del ángulo entre $C_1$ y $C_2$ en $z_0.$
         </p>
 
         <figure>
@@ -176,18 +178,18 @@ como el sentido del ángulo entre $C_1$ y $C_2$ en $z_0.$
 
         <p>
           Supongamos ahora que, bajo la aplicación $w = f(z),$ las curvas $C_1$ y $C_2$
-en el plano $z$ se mapean
-en las curvas $\Gamma_1$ y $\Gamma_2$ en el plano $w,$
-respectivamente. Debido a que $C_1$ y $C_2$
-se intersectan en $z_0,$ debemos tener que $\Gamma_1$ y $\Gamma_2$
-se intersectan en $f(z_0).$ Si $\Gamma_1$ y $\Gamma_2$
-son suaves, entonces el ángulo entre
-$\Gamma_1$ y $\Gamma_2$ en $f(z_0)$ se define de manera similar
-como el ángulo $\phi\in [0, \pi]$
-entre los vectores tangentes
-$w_1'$ y $w_2'$ definidos de manera análoga.
-Decimos que los ángulos $\theta$ y $\phi$ son <em>iguales en magnitud</em>
-si $\theta = \phi.$
+          en el plano $z$ se mapean
+          en las curvas $\Gamma_1$ y $\Gamma_2$ en el plano $w,$
+          respectivamente. Debido a que $C_1$ y $C_2$
+          se intersectan en $z_0,$ debemos tener que $\Gamma_1$ y $\Gamma_2$
+          se intersectan en $f(z_0).$ Si $\Gamma_1$ y $\Gamma_2$
+          son suaves, entonces el ángulo entre
+          $\Gamma_1$ y $\Gamma_2$ en $f(z_0)$ se define de manera similar
+          como el ángulo $\phi\in [0, \pi]$
+          entre los vectores tangentes
+          $w_1'$ y $w_2'$ definidos de manera análoga.
+          Decimos que los ángulos $\theta$ y $\phi$ son <em>iguales en magnitud</em>
+          si $\theta = \phi.$
         </p>
 
 
@@ -216,9 +218,9 @@ si $\theta = \phi.$
 
         <p>
           En el plano $z,$ el vector $z_1',$ cuyo punto inicial es $z_0,$
-puede rotarse mediante el ángulo $\theta$ hasta el vector $z_2'.$
-Por supuesto, esta rotación en el plano $z$ puede ser en dirección
-antihoraria o en dirección horaria.
+          puede rotarse mediante el ángulo $\theta$ hasta el vector $z_2'.$
+          Por supuesto, esta rotación en el plano $z$ puede ser en dirección
+          antihoraria o en dirección horaria.
         </p>
 
 
@@ -242,27 +244,27 @@ antihoraria o en dirección horaria.
 
 
         <p>
-          De manera similar, en el plano $w,$ el vector $w_1',$ 
+          De manera similar, en el plano $w,$ el vector $w_1',$
           cuyo punto inicial es $f(z_0),$
-puede rotarse en dirección antihoraria o en dirección horaria mediante
-un ángulo de $\phi$ hasta el vector $w_2'.$
-Si la rotación en el plano-$z$ es en la misma dirección que la rotación en el plano-$w,$
-decimos que los ángulos $\theta$ y $\phi$ son <em>iguales en sentido</em>.
+          puede rotarse en dirección antihoraria o en dirección horaria mediante
+          un ángulo de $\phi$ hasta el vector $w_2'.$
+          Si la rotación en el plano-$z$ es en la misma dirección que la rotación en el plano-$w,$
+          decimos que los ángulos $\theta$ y $\phi$ son <em>iguales en sentido</em>.
 
         </p>
 
         <p>
           Ahora que hemos establecido
-la terminología con respecto a la magnitud y el sentido de un
-ángulo, estamos en posición
-de introducir el concepto de
-<em>mapeo conforme</em>. Decimos que la aplicación $w=f(z)$ es
-<em>conforme</em> en un punto $z_0$ en $A$
-si para cada par de curvas suaves orientadas
-$C_1$ y $C_2$ en $A,$ que se intersectan en $z_0,$ el ángulo
-entre $C_1$ y $C_2$ en $z_0$ es igual al ángulo
-entre las curvas imagen $\Gamma_1$ y $\Gamma_2$ en $f(z_0)$
-tanto en magnitud como en sentido.
+          la terminología con respecto a la magnitud y el sentido de un
+          ángulo, estamos en posición
+          de introducir el concepto de
+          <em>mapeo conforme</em>. Decimos que la aplicación $w=f(z)$ es
+          <em>conforme</em> en un punto $z_0$ en $A$
+          si para cada par de curvas suaves orientadas
+          $C_1$ y $C_2$ en $A,$ que se intersectan en $z_0,$ el ángulo
+          entre $C_1$ y $C_2$ en $z_0$ es igual al ángulo
+          entre las curvas imagen $\Gamma_1$ y $\Gamma_2$ en $f(z_0)$
+          tanto en magnitud como en sentido.
         </p>
 
         <br>
@@ -279,11 +281,11 @@ tanto en magnitud como en sentido.
 
         <p>
           También utilizaremos el término <em>mapeo conforme</em> para
-referirnos a una aplicación compleja $w = f(z)$ que es conforme
-en $z_0.$ Además, si $w = f(z)$ mapea un dominio
-$A$ en un dominio $B$ y si $w = f(z)$ es conforme en
-cada punto de $A,$
-entonces llamamos a $w = f(z)$ un mapeo conforme de $A$ en $B.$
+          referirnos a una aplicación compleja $w = f(z)$ que es conforme
+          en $z_0.$ Además, si $w = f(z)$ mapea un dominio
+          $A$ en un dominio $B$ y si $w = f(z)$ es conforme en
+          cada punto de $A,$
+          entonces llamamos a $w = f(z)$ un mapeo conforme de $A$ en $B.$
         </p>
 
 
@@ -298,44 +300,44 @@ entonces llamamos a $w = f(z)$ un mapeo conforme de $A$ en $B.$
 
         <p>
           Una propiedad geométrica notable que poseen todas las funciones
-analíticas complejas es que,
-en puntos no críticos, preservan los ángulos y,
-por lo tanto, definen mapeos conformes.
+          analíticas complejas es que,
+          en puntos no críticos, preservan los ángulos y,
+          por lo tanto, definen mapeos conformes.
 
         </p>
 
         <div class="theorem">
-          Si  $f$ es analítica en un dominio $D$  que  contiene al punto $z_0,$ y si
+          Si $f$ es analítica en un dominio $D$ que contiene al punto $z_0,$ y si
           $f'(z_0)\neq 0,$ entonces $w=f(z)$ es un mapeo conforme en $z_0.$
         </div>
 
         <div class="proof">
           Supongamos que $f$ es analítica en un dominio $D$ que contiene $z_0,$ y que
-$f'(z_0)\neq 0.$ Sea $C_1$ y $C_2$ dos curvas suaves en $D$
-parametrizadas por $z_1(t)$ y $z_2(t),$ respectivamente, con
-$z_1(t_0)= z_2(t_0)= z_0.$ También asumimos que $w=f(z)$ mapea las
-curvas $C_1$ y $C_2$ en las curvas $\Gamma_1$ y $\Gamma_2.$
-Aquí, $\Gamma_1$ y $\Gamma_2$ están
-parametrizadas por $w_1(t)=f(z_1(t))$ y $w_2(t)=f(z_2(t)),$ respectivamente.
+          $f'(z_0)\neq 0.$ Sea $C_1$ y $C_2$ dos curvas suaves en $D$
+          parametrizadas por $z_1(t)$ y $z_2(t),$ respectivamente, con
+          $z_1(t_0)= z_2(t_0)= z_0.$ También asumimos que $w=f(z)$ mapea las
+          curvas $C_1$ y $C_2$ en las curvas $\Gamma_1$ y $\Gamma_2.$
+          Aquí, $\Gamma_1$ y $\Gamma_2$ están
+          parametrizadas por $w_1(t)=f(z_1(t))$ y $w_2(t)=f(z_2(t)),$ respectivamente.
 
 
           <p>
             Deseamos probar que el ángulo $\theta$ entre $C_1$ y $C_2$ en $z_0$
-es igual al ángulo $\phi$ entre $\Gamma_1$ y $\Gamma_2$ en
-$f(z_0)$ tanto en magnitud como en sentido.
+            es igual al ángulo $\phi$ entre $\Gamma_1$ y $\Gamma_2$ en
+            $f(z_0)$ tanto en magnitud como en sentido.
 
           </p>
 
           <p>
             Podemos asumir, renumerando $C_1$ y $C_2$ si es necesario, que
-$z_1'=z_1'(t_0)$ puede rotarse en sentido antihorario alrededor de $z_0$ mediante el
-ángulo $\theta$ hasta $z_2'=z_2'(t_0).$ Entonces, utilizando (\ref{theta-angle}), sabemos que
-\[
-\theta = \text{arg}\left(z_2'\right) - \text{arg}\left(z_1'\right)
-\]
-en el intervalo $[0,\pi].$
+            $z_1'=z_1'(t_0)$ puede rotarse en sentido antihorario alrededor de $z_0$ mediante el
+            ángulo $\theta$ hasta $z_2'=z_2'(t_0).$ Entonces, utilizando (\ref{theta-angle}), sabemos que
+            \[
+            \theta = \text{arg}\left(z_2'\right) - \text{arg}\left(z_1'\right)
+            \]
+            en el intervalo $[0,\pi].$
 
-            
+
           </p>
 
           <p>
@@ -352,10 +354,10 @@ en el intervalo $[0,\pi].$
 
           <p>
             Dado que $C_1$ y $C_2$ son suaves, tanto $z_1'$ como $z_2'$ son distintos de cero.
-Además, tenemos que $f'\left(z_0\right)\neq 0,$ y por lo tanto,
-tanto $w_1'$ como $w_2'$ son distintos de cero. Ahora,
-el ángulo  $\phi$ entre  $\Gamma_1$ y $\Gamma_2$ en $f(z_0)$ 
-tiene como un valor
+            Además, tenemos que $f'\left(z_0\right)\neq 0,$ y por lo tanto,
+            tanto $w_1'$ como $w_2'$ son distintos de cero. Ahora,
+            el ángulo $\phi$ entre $\Gamma_1$ y $\Gamma_2$ en $f(z_0)$
+            tiene como un valor
           </p><div class="scroll-wrapper">
             \begin{eqnarray*}
             \text{arg}\left(w_2'\right)-\text{arg}\left(w_1'\right) &amp;= &amp; \text{arg}\left(f'\left(z_0\right)\cdot
@@ -384,12 +386,12 @@ tiene como un valor
           <p>
             <strong>Observación 2:</strong>
             El teorema anterior establece que
-una transformación es conforme en $z_0$ si $f$ es analítica en ese punto y $f'(z_0)\neq 0.$
-Tal transformación es, de hecho, conforme en cada punto de alguna
-vecindad de $z_0.$ Esto se debe a que debe ser analítica en una 
-vecindad de $z_0;$ y dado que su derivada $f'$ es continua
-en esa vecindad, también existe una vecindad
-de $z_0$ en donde $f'(z_0)\neq 0.$
+            una transformación es conforme en $z_0$ si $f$ es analítica en ese punto y $f'(z_0)\neq 0.$
+            Tal transformación es, de hecho, conforme en cada punto de alguna
+            vecindad de $z_0.$ Esto se debe a que debe ser analítica en una
+            vecindad de $z_0;$ y dado que su derivada $f'$ es continua
+            en esa vecindad, también existe una vecindad
+            de $z_0$ en donde $f'(z_0)\neq 0.$
           </p>
         </div>
 
@@ -416,20 +418,20 @@ de $z_0$ en donde $f'(z_0)\neq 0.$
 
           <p>
             <strong>Ejemplo 1: </strong>
-            El mapeo $w = e^z$ es conforme en todo el plano $z$ 
-ya que $(e^z)'= e^z \neq 0$ para cada $z.$ Consideremos
-cualquier par de líneas $x = c_1$ y $y = c_2$ en
-el plano $z,$ la primera con dirección hacia arriba y la
-segunda dirigida hacia la derecha. Las imágenes bajo el
-mapeo $w = e^z$ son un círculo orientado positivamente 
-centrado en el origen y un rayo que parte del origen, respectivamente. 
-Como se ilustra en la Figura 7, el ángulo entre las
-líneas en su punto de intersección
-es un ángulo recto en la dirección negativa,
-y lo mismo es cierto para el ángulo entre
-el círculo y el rayo en el punto correspondiente en el plano $w.$
+            El mapeo $w = e^z$ es conforme en todo el plano $z$
+            ya que $(e^z)'= e^z \neq 0$ para cada $z.$ Consideremos
+            cualquier par de líneas $x = c_1$ y $y = c_2$ en
+            el plano $z,$ la primera con dirección hacia arriba y la
+            segunda dirigida hacia la derecha. Las imágenes bajo el
+            mapeo $w = e^z$ son un círculo orientado positivamente
+            centrado en el origen y un rayo que parte del origen, respectivamente.
+            Como se ilustra en la Figura 7, el ángulo entre las
+            líneas en su punto de intersección
+            es un ángulo recto en la dirección negativa,
+            y lo mismo es cierto para el ángulo entre
+            el círculo y el rayo en el punto correspondiente en el plano $w.$
 
-           
+
           </p>
           <figure>
             <img src="../images/chp06/example-exp.svg" alt="Conformal mapping w=e^z" title="Conformal mapping w=e^z" width="100%">
@@ -445,14 +447,15 @@ el círculo y el rayo en el punto correspondiente en el plano $w.$
           <p>
             <strong>Ejemplo 2: </strong>
             La función $f(z)=z^2$ no es conforme en $z_0=0.$
-La explicación es, por supuesto, que $z_0=0$ es un punto crítico de $f,$ es decir, $f'(0)=0.$ Sorprendentemente, el mapeo
-preserva ángulos en todas partes, excepto en este punto.
-Por ejemplo, consideremos el semiplano derecho $\{\textbf{Re}(z)&gt;0\}.$ Esta región
-es mapeada por $w=z^2$ de manera conforme sobre el plano cortado $\mathbb C \setminus (-\infty,0],$
-como se ilustra en la Figura 8. ¿Puedes pensar en otra
-región donde $w=z^2$ sea conforme?
+            La explicación es, por supuesto, que $z_0=0$ es un punto crítico de $f,$ es decir, $f'(0)=0.$
+            Sorprendentemente, el mapeo
+            preserva ángulos en todas partes, excepto en este punto.
+            Por ejemplo, consideremos el semiplano derecho $\{\textbf{Re}(z)&gt;0\}.$ Esta región
+            es mapeada por $w=z^2$ de manera conforme sobre el plano cortado $\mathbb C \setminus (-\infty,0],$
+            como se ilustra en la Figura 8. ¿Puedes pensar en otra
+            región donde $w=z^2$ sea conforme?
 
-           
+
           </p>
 
           <figure>
@@ -486,7 +489,7 @@ región donde $w=z^2$ sea conforme?
         <div class="practice">
           <p>
             <strong>Ejemplo 3: </strong>
-            El mapeo  $w = \conj{z}$ es una reflección 
+            El mapeo $w = \conj{z}$ es una reflección
             del eje real. El mapeo es isogonal pero no conforme.
           </p>
 
@@ -506,7 +509,7 @@ región donde $w=z^2$ sea conforme?
           Bajo el mapeo $w=\conj{z},$ las imágenes de $C_1$ y $C_2$ son las curvas
           $\Gamma_1$ y $\Gamma_2,$ respectivamente, como se muestra en la Figura 9 (derecha).
 
-          
+
           <p></p>
 
 
@@ -546,11 +549,12 @@ región donde $w=z^2$ sea conforme?
           <p></p>
           <p>
             El ángulo entre $\Gamma_1$ y $\Gamma_2$ en $w_0$ es $\phi=\pi/4.$
-          Así, los ángulos $\theta$ y $\phi$ son iguales en magnitud.
-          Sin embargo, dado que la rotación a través de $\pi/4$ del vector
-          $z_1'$ sobre $z_2'$ debe ser <em>en sentido antihorario</em>, mientras que la rotación a través de
-          $\pi/4$ de $w_1'$ sobre $w_2'$ debe ser <em>en sentido horario</em>, concluimos que $\theta$ y $\phi$ no son iguales en sentido.
-            
+            Así, los ángulos $\theta$ y $\phi$ son iguales en magnitud.
+            Sin embargo, dado que la rotación a través de $\pi/4$ del vector
+            $z_1'$ sobre $z_2'$ debe ser <em>en sentido antihorario</em>, mientras que la rotación a través de
+            $\pi/4$ de $w_1'$ sobre $w_2'$ debe ser <em>en sentido horario</em>, concluimos que $\theta$ y $\phi$ no son
+            iguales en sentido.
+
           </p>
 
           <p>
@@ -559,13 +563,13 @@ región donde $w=z^2$ sea conforme?
         </div>
 
         <p>
-          En el applet de abajo puedes explorar el efecto de 
+          En el applet de abajo puedes explorar el efecto de
           algunas transformaciones sobre una región. En particular, el applet
-          comienza con un cuadrado definido como $S=[-0.5,0.5]\times[-0.5,-1.5].$ 
-          Primero, selecciona una transformación y observa cómo se transforma 
+          comienza con un cuadrado definido como $S=[-0.5,0.5]\times[-0.5,-1.5].$
+          Primero, selecciona una transformación y observa cómo se transforma
           la región $S$.
-          Luego, modifica esta región arrastrando los puntos de las esquinas 
-          del cuadrado. 
+          Luego, modifica esta región arrastrando los puntos de las esquinas
+          del cuadrado.
           ¿Qué notas? ¿Qué preguntas pueden surgir?
         </p>
 
@@ -584,41 +588,240 @@ región donde $w=z^2$ sea conforme?
 
         <div class="practice">
           <strong>Ejercicio 2:</strong>
-          Usa el Teorema 1 para demostrar que $f(z)=\sin z$ 
-          es un mapeo conforme para cada $z\in\C$  tal que  
-          $z\neq (2n+1)\pi/2$ con 
-          $n=0,\pm 1, \pm 2,\ldots.$ Puedes usar el applet anterior para 
+          Usa el Teorema 1 para demostrar que $f(z)=\sin z$
+          es un mapeo conforme para cada $z\in\C$ tal que
+          $z\neq (2n+1)\pi/2$ con
+          $n=0,\pm 1, \pm 2,\ldots.$ Puedes usar el applet anterior para
           exporar el comportamiento de esta función en estos puntos.
         </div>
 
       </div>
 
 
+      <hr>
 
 
-      <!--
-              <div class="section3">
+      <div id="section4">
 
-              <h2>Local inverses</h2>
+        <h2>Inversas locales</h2>
 
-              <p>
-                A transformation $w = f (z)$ that is conformal at a point $z_0$ has a 
-                local inverse there. That is, if $w_0 = f (z_0),$ then there exists a 
-                unique transformation $z = f^{-1}(w),$ which is defined and analytic
-                 in a neighborhood $N$ of $w_0,$ such that $f^{-1}(w_0) = z_0$ and 
-                 $f \left(f^{-1}(w)\right) = w $
-                 for all points $w$ in $N .$ The derivative of $f^{-1}(w)$ is, moreover,
-                 \[
-                 \frac{d}{dw}f^{-1}(w) = \frac{1}{f'(z)}.
-                 \]
-              </p>
+        <p>
+          Una transformación $w = f (z)$ que es conforme en un punto $z_0$ tiene una
+          inversa local allí. Es decir,
+          si $w_0 = f (z_0),$ entonces existe una
+          transformación única $z = f^{-1}(w),$ que está definida y es analítica
+          en un vecindario $V$ de $w_0,$ tal que $f^{-1}(w_0) = z_0.$ Además,
+          $f^{-1}(w)$ es diferenciable en $V$ y
+          \[
+          \frac{d}{dw}f^{-1}(w) = \frac{1}{f'(z)}.
+          \]
+        </p>
 
-              
+        <p>
+          La existencia de tal inversa puede verificarse
+          usando el <em>Teorema de la Función Inversa</em>
+          de análisis real en dos dimensiones:
+        </p>
 
-            </div>
-            -->
+        <div class="theorem">
+          Si $f:A \subset \R^2 \to \R^2$ es continuamente diferenciable y
+          $J_f(x_0, y_0)$, el Jacobiano de $f$ en $(x_0,y_0)$, tiene un determinante distinto de cero, entonces existen
+          vecindarios $U$ de $(x_0,y_0)$ y
+          $V$ de $f(x_0,y_0)$ tales que $f:U\to V$ es una biyección,
+          $f^{-1}:V\to U$ es diferenciable, y
+          \[
+          \frac{d}{dz} f^{-1}(z) = \frac{1}{f'(x,y)}\quad \text{donde}\quad z=f(x,y).
+          \]
+        </div>
+
+        <p>
+          Si $w = f (z)$ es conforme en
+          $z_0 = x_0+iy_0,$ existe algún
+          vecindario $U$ de $z_0$ en el cual $f$ es analítica.
+          Para $z=x+iy,$ si escribimos
+          \begin{eqnarray}\label{trans01}
+          f(z) = u(x,y)+ iv(x,y),
+          \end{eqnarray}
+          sabemos que existe un vecindario del punto $(x_0,y_0)$
+          en el cual las funciones $u(x,y)$ y $v(x,y),$ junto con
+          sus derivadas parciales de todos los órdenes, son continuas
+          (una nueva sección sobre este hecho estará disponible pronto).
+        </p>
+
+        <p>
+          La función definida en (\ref{trans01})
+          representa una transformación del vecindario
+          $U$ al plano $uv$. Además, el determinante
+        </p>
+        <div class="scroll-wrapper">
+          \[
+          J_f = \left|\begin{array}{cc}
+          u_x &amp; u_y \\
+          v_x &amp; v_y
+          \end{array} \right|= u_x v_y - v_x u_y,
+          \]
+        </div>
+        <p>
+          conocido como el <em>Jacobiano de la transformación</em> $f$,
+          no es cero en el punto $(x_0,y_0).$ Es fácil demostrar esto
+          considerando las ecuaciones de Cauchy-Riemann
+          \[
+          u_x = v_y \quad \text{y}\quad u_y = -v_x.
+          \]
+          Luego podemos escribir $J_f$ como
+          \[
+          J_f = \left(u_x\right)^2+\left(v_x\right)^2=\left|f'(z)\right|^2.
+          \]
+          Dado que $w=f(z)$ es conforme en $z_0,$
+          entonces $f'\left(z_0\right)\neq 0,$ y, en consecuencia,
+          el Jacobiano no es cero en el punto $(x_0,y_0).$
+        </p>
 
 
+        <p>
+          Las condiciones de continuidad anteriores en las funciones $u(x,y) $
+          y $v(x,y)$ y sus derivadas, junto con esta condición sobre el Jacobiano que no es cero en el punto
+          $(x_0,y_0)$,
+          son suficientes para asegurar la existencia
+          de una inversa local de la transformación (\ref{trans01}) en $(x_0,y_0),$
+          lo cual se establece en el <strong>Teorema 2</strong>.
+        </p>
+
+        <p>
+          En otras palabras, si $u_0 = u(x_0,y_0)$ y $v_0=v(x_0,y_0),$ entonces existe una única transformación continua
+          \begin{eqnarray}\label{trans02}
+          f^{-1}(w) = x(u,v)+ i y(u,v)
+          \end{eqnarray}
+          definida en un vecindario $V$ del punto $(u_0,v_0)$ y que mapea
+          ese punto a $(x_0,y_0),$ tal que las ecuaciones (\ref{trans01}) se cumplen
+          cuando las ecuaciones (\ref{trans02}) se cumplen.
+        </p>
+
+        <p>Además de ser continua, los componentes real e imaginario de
+          la función (\ref{trans02}) tienen
+          derivadas parciales de primer orden continuas que satisfacen las ecuaciones
+        </p>
+        <div class="scroll-wrapper">
+          \begin{eqnarray}\label{eqls}
+          x_u = \frac{1}{J_f}v_y,\;\;x_v = -\frac{1}{J_f}u_y,\;\;y_u = -\frac{1}{J_f}v_x,\;\;y_v = \frac{1}{J_f}u_x
+          \end{eqnarray}
+        </div>
+        <p>
+          en todo $V.$
+          Como las ecuaciones de Cauchy-Riemann se cumplen para $u$ y $v,$ también
+          se cumplen para $x$ y $y,$ es decir
+          \[
+          x_u = y_v \quad \text{y}\quad x_v = - y_u.
+          \]
+          en todo $V.$
+          En consecuencia, la función definida en (\ref{trans02})
+          es diferenciable. Además, usando las expresiones en (\ref{eqls})
+          y las ecuaciones de Cauchy-Riemann, tenemos que
+        </p>
+        <div class="scroll-wrapper">
+          \begin{eqnarray*}
+          \frac{d}{dw}f^{-1}(w) &amp;= &amp; x_u+ i y_u = \frac{1}{J_f} v_y + i \left( -\frac{1}{J_f} v_x \right) \\
+          &amp; = &amp; \frac{1}{J_f} \left(v_y - i v_x \right) = \frac{1}{J_f} \left(u_x - i v_x \right) \\
+          &amp; = &amp; \frac{\conj{f'(z)}}{\abs{f'(z)}^2} = \frac{1}{f'(z)}.
+          \end{eqnarray*}
+        </div>
+
+
+        <p>
+          Por lo tanto, acabamos de demostrar lo siguiente:
+        </p>
+
+        <div class="theorem">
+          <strong><span style="font-style: normal !important;">(Teorema de la Función Inversa)</span></strong>
+          Sea $f:A \to \C$ una función analítica y supongamos que
+          $f'(z_0)\neq 0.$ Entonces existe un
+          vecindario $U$ de $z_0$ y un vecindario $V$ de $w_0=f(z_0)$
+          tal que $f:U\to V$ es una biyección (inyectiva y suprayectiva)
+          y su función inversa $f^{-1}$ es analítica con derivada
+          dada por
+          \[
+          \frac{d}{dw}f^{-1}(w) = \frac{1}{f'(z)}\quad \textit{donde}\quad w = f(z).
+          \]
+        </div>
+
+        <p>
+          El <em>Teorema de la Función Inversa</em> afirma solo la existencia de una inversa <em>local</em>
+          para $f.$ Por ejemplo, consideremos la función $f(z)=z^2$ definida
+          en $A = \C\setminus \{0\}.$ Entonces $f'(z)= 2z \neq 0 $ para cada punto de $A.$
+          El <em>Teorema de la Función Inversa</em> establece que $f$ tiene una única inversa analítica local,
+          que es, de hecho, alguna rama de la función raíz cuadrada $f^{-1}=\sqrt{z}.$
+          Sin embargo, $f$ no es inyectiva en todo $A,$ ya que $f(1)= f(-1).$ Por lo tanto,
+          $f$ será inyectiva solo dentro de vecindarios suficientemente pequeños alrededor
+          de cada punto.
+        </p>
+
+
+
+
+      </div>
+
+
+      <hr>
+
+      <div id="section5">
+
+        <h2>El Teorema del Mapeo de Riemann</h2>
+
+
+        <p> En muchas aplicaciones, es común buscar un mapeo conforme de un dominio \( A \) a un dominio más simple \( B
+          \). Una pregunta natural que hacer es si tal mapeo existe. Es decir, dado el dominio \( A \) y \( B \),
+          ¿existe un mapeo conforme de \( A \) a \( B \)? </p>
+
+
+        <p>
+          Una respuesta a esta pregunta fue dada por Bernhard Riemann en 1851. Aunque hubo una laguna en la prueba
+          original de Riemann (que fue posteriormente corregida), este asombroso teorema todavía lleva su nombre:
+        </p>
+
+        <div class="theorem">
+          <strong><span style="font-style: normal !important;">(Teorema de Mapeo de Riemann)</span></strong>
+          Sea \( A \) un dominio simplemente conexo tal que \( A \) no es todo \( \C \). Entonces existe un mapeo
+          conforme biyectivo \( f: A \to D \) donde \( D = \left\{z : |z| &lt; 1\right\} \). </div>
+
+            <p>
+              A partir de este resultado, vemos que si \( A \) y \( B \) son dos dominios simplemente conexos, con \( A
+              \neq \C \) y \( B \neq \C \), entonces existe un mapeo conforme biyectivo \( h: A \to B \). Si \( f: A \to
+              D \) y \( g: B \to D \) son conformes, podemos establecer \( h = g^{-1} \circ f \) (ver Figura 10). Dos
+              dominios \( A \) y \( B \) se llaman <em>equivalentes conforme</em> si hay un mapeo conforme biyectivo de
+              \( A \) a \( B \). Así, el <em>Teorema de Mapeo de Riemann</em> implica que dos dominios simplemente
+              conexos (distintos de \( \C \)) son equivalentes conforme.
+            </p>
+
+
+
+
+            <figure>
+              <img src="../images/chp06/riemann-mapping-theorem.gif" alt="Dos dominios conformamente equivalentes" title="Dos dominios conformamente equivalentes" width="85%">
+              <figcaption>
+                Para transformar $A$ en $B$ realizamos la composición $g^{-1}$ with $f.$
+              </figcaption>
+            </figure>
+
+
+            <p> El teorema de Riemann es de crítica importancia teórica, pero su prueba no es constructiva. Esto
+              significa que el teorema establece la existencia del mapeo \( f \), pero no ofrece un método para
+              encontrar una fórmula para \( f \). Una prueba del <em>Teorema de Mapeo de Riemann</em> está más allá del
+              alcance de este texto. El lector interesado puede consultar los libros: </p>
+            
+            
+
+            <ul>
+              <li>
+                <em>Complex Analysis</em>
+                por Lars V. Alfors, McGraw-Hill, 1979; y
+              </li>
+              <li>
+                <em>Basic Complex Analysis</em>
+                por Jerrold. E. Marsden &amp; Michael J. Hoffman, W. H. Freeman and Company, 1999.
+              </li>
+            </ul>
+
+        </div>
 
 
 
@@ -640,18 +843,18 @@ región donde $w=z^2$ sea conforme?
       "enableShiftDragZoom": false,
       "showResetIcon": true
     };
-    
+
     let params2 = {
-        "width": 675,
-        "height": 473,
-        "material_id": "tmnebrfq",
-        "borderColor": "888888",
-        "playButton": true,
-        "showFullscreenButton": true,
-        "enableShiftDragZoom": true,
-        "showResetIcon": true
+      "width": 675,
+      "height": 473,
+      "material_id": "tmnebrfq",
+      "borderColor": "888888",
+      "playButton": true,
+      "showFullscreenButton": true,
+      "enableShiftDragZoom": true,
+      "showResetIcon": true
     };
-    
+
     let ggbApplet1 = new GGBApplet(params1, true);
     let ggbApplet2 = new GGBApplet(params2, true);
     window.addEventListener("load", () => {
