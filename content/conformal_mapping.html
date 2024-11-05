@@ -91,6 +91,8 @@
       <li><a href="#section1">Conformal mapping</a></li>
       <li><a href="#section2">Analytic functions</a></li>
       <li><a href="#section3">Examples</a></li>
+      <li><a href="#section4">Local inverses</a></li>
+      <li><a href="#section5">The Riemann Mapping Theorem</a></li>
       <!-- Add more sections as needed -->
     </ul>
   </div>
@@ -390,7 +392,7 @@
             <strong>Remark 2:</strong>
             The previous theorem establishes that
             a mapping is conformal at $z_0$ if $f$ is analytic there and $f'(z_0)\neq 0.$
-            Such transformation is actually conformal  at each point in some
+            Such transformation is actually conformal at each point in some
             neighborhood of $z_0.$ This is because it must be analytic in a
             neighborhood of $z_0$; and since its derivative $f'$ is continuous
             in that neighborhood, there is also a neighborhood
@@ -563,14 +565,14 @@
         </div>
 
         <p>
-          In the applet below you can explore the effect of 
+          In the applet below you can explore the effect of
           some mappings over a region. In particular, the applet
-          starts with a squared defined as $S=[-0.5,0.5]\times[-0.5,-1.5].$ 
-          First, select a mapping and observe how the region $S$ 
+          starts with a squared defined as $S=[-0.5,0.5]\times[-0.5,-1.5].$
+          First, select a mapping and observe how the region $S$
           is transformed.
-          Then, modify this region by dragging the corner 
-          points of the square. 
-          What do you notice? What do you wonder? 
+          Then, modify this region by dragging the corner
+          points of the square.
+          What do you notice? What do you wonder?
         </p>
 
         <div class="ggbElement" id="ggb-element-2"></div>
@@ -580,46 +582,256 @@
 
         <div class="practice">
           <strong>Exercise 1:</strong>
-          Based on your observations from the previous applet, 
-          can you determine which mappings are not conformal in 
+          Based on your observations from the previous applet,
+          can you determine which mappings are not conformal in
           $S=[-0.5,0.5]\times[-0.5,-1.5]$?
         </div>
 
 
         <div class="practice">
           <strong>Exercise 2:</strong>
-          Use Theorem 1 to show that $f(z)=\sin z$ is a conformal 
-          mapping for every $z\in\C$ such that $z\neq (2n+1)\pi/2$ with 
+          Use Theorem 1 to show that $f(z)=\sin z$ is a conformal
+          mapping for every $z\in\C$ such that $z\neq (2n+1)\pi/2$ with
           $n=0,\pm 1, \pm 2,\ldots.$ You can use the previous applet
           to explore the behaviour of this function on these points.
         </div>
 
       </div>
 
+      <hr>
+
+
+      <div id="section4">
+
+        <h2>Local inverses</h2>
+
+        <p>
+          A transformation $w = f (z)$ that is conformal at a point $z_0$ has a
+          local inverse there. That is,
+          if $w_0 = f (z_0),$ then there exists a
+          unique transformation $z = f^{-1}(w),$ which is defined and analytic
+          in a neighborhood $V$ of $w_0,$ such that $f^{-1}(w_0) = z_0.$ Furthermore,
+          $f^{-1}(w)$ is differentiable in $V$ and
+          \[
+          \frac{d}{dw}f^{-1}(w) = \frac{1}{f'(z)}.
+          \]
+        </p>
+
+        <p>
+          The existence of such an inverse can be verified
+          using the <em>Inverse Function Theorem</em>
+          from real analysis in two dimensions:
+        </p>
+
+        <div class="theorem">
+          If $f:A \subset \R^2 \to \R^2$ is continuously differentiable and
+          $J_f(x_0, y_0)$, the Jacobian of $f$ at $(x_0,y_0)$, has a nonzero
+          determinant, then there are neighborhoods $U$ of $(x_0,y_0)$ and
+          $V$ of $f(x_0,y_0)$ such that $f:U\to V$ is a bijection,
+          $f^{-1}:V\to U$ is differentiable, and
+          \[
+          \frac{d}{dz} f^{-1}(z) = \frac{1}{f'(x,y)}\quad \text{where}\quad z=f(x,y).
+          \]
+        </div>
+
+        <p>
+          If $w = f (z)$ is conformal at
+          $z_0 = x_0+iy_0,$ there is some
+          neighborhood $U$ of $z_0$ throughout which $f$ is analytic.
+          For $z=x+iy,$ if we write
+          \begin{eqnarray}\label{trans01}
+          f(z) = u(x,y)+ iv(x,y),
+          \end{eqnarray}
+          we know that there is a neighborhood of the point $(x_0,y_0)$
+          throughout which the functions $u(x,y)$ and $v(x,y),$ along with
+          their partial derivatives of all orders, are continuous
+          (a new section about this fact will be available soon).
+        </p>
+
+        <p>
+          The function defined in (\ref{trans01})
+          represents a transformation from the neighborhood
+          $U$ into the $uv$ plane. Furthermore, the determinant
+        </p>
+        <div class="scroll-wrapper">
+          \[
+          J_f = \left|\begin{array}{cc}
+          u_x &amp; u_y \\
+          v_x &amp; v_y
+          \end{array} \right|= u_x v_y - v_x u_y,
+          \]
+        </div>
+        <p>
+          which is known as the <em>Jacobian of the transformation</em> $f$,
+          is nonzero at the point $(x_0,y_0).$ It is easy to prove this
+          by considering the Cauchy-Riemann equations
+          \[
+          u_x = v_y \quad \text{and}\quad u_y = -v_x.
+          \]
+          Then we can write $J_f$ as
+          \[
+          J_f = \left(u_x\right)^2+\left(v_x\right)^2=\left|f'(z)\right|^2.
+          \]
+          Since $w=f(z)$ is conformal at $z_0,$
+          then $f'\left(z_0\right)\neq 0,$ and consequently,
+          the Jacobian is nonzero at the point $(x_0,y_0).$
+        </p>
+
+        <p>
+          The above continuity conditions on the functions $u(x,y) $
+          and $v(x,y)$ and their derivatives, together with this condition on
+          the Jacobian nonzero at the point $(x_0,y_0)$,
+          are sufficient to ensure the existence
+          of a local inverse of transformation (\ref{trans01}) at $(x_0,y_0),$
+          which is established by <strong>Theorem 2</strong>.
+        </p>
+
+
+        <p>
+          In other words, if $u_0 = u(x_0,y_0)$ and $v_0=v(x_0,y_0),$ then there
+          is a unique continuous transformation
+          \begin{eqnarray}\label{trans02}
+          f^{-1}(w) = x(u,v)+ i y(u,v)
+          \end{eqnarray}
+          defined on a neighborhood $V$ of the point $(u_0,v_0)$ and mapping
+          that point onto $(x_0,y_0),$ such that equations (\ref{trans01}) hold
+          when equations (\ref{trans02}) hold.
+        </p>
+
+        <p>In addition to being continuous, the real and imaginary components of
+          the function (\ref{trans02}) have
+          continuous first-order partial derivatives satisfying the equations
+        </p>
+        <div class="scroll-wrapper">
+          \begin{eqnarray}\label{eqls}
+          x_u = \frac{1}{J_f}v_y,\;\;x_v = -\frac{1}{J_f}u_y,\;\;y_u = -\frac{1}{J_f}v_x,\;\;y_v = \frac{1}{J_f}u_x
+          \end{eqnarray}
+        </div>
+        <p>
+          throughout $V.$
+          Since the Cauchy-Riemann equations hold for $u$ and $v,$ they also
+          fold for $x$ and $y,$ that is
+          \[
+          x_u = y_v \quad \text{and}\quad x_v = - y_u.
+          \]
+          throughout $V.$
+          Consequently, the function defined in (\ref{trans02})
+          is differentiable. Furthermore, using the expressions in (\ref{eqls})
+          and the Cauchy-Riemann equations we have
+          that
+        </p>
+        <div class="scroll-wrapper">
+          \begin{eqnarray*}
+          \frac{d}{dw}f^{-1}(w) &amp;= &amp; x_u+ i y_u = \frac{1}{J_f} v_y + i \left( -\frac{1}{J_f} v_x \right) \\
+          &amp; = &amp; \frac{1}{J_f} \left(v_y - i v_x \right) = \frac{1}{J_f} \left(u_x - i v_x \right) \\
+          &amp; = &amp; \frac{\conj{f'(z)}}{\abs{f'(z)}^2} = \frac{1}{f'(z)}.
+          \end{eqnarray*}
+        </div>
+
+        <p>
+          Hence, we have just proven the following:
+        </p>
+
+        <div class="theorem">
+          <strong><span style="font-style: normal !important;">(Inverse Function Theorem)</span></strong>
+          Let $f:A \to \C$ be analytic and assume that
+          $f'(z_0)\neq 0.$ Then there exists a
+          neighborhood $U$ of $z_0$ and a neighborhood $V$ of $w_0=f(z_0)$
+          such that $f:U\to V$ is a bijection (one-to-one and onto)
+          and its inverse function $f^{-1}$ is analytic with derivative
+          given by
+          \[
+          \frac{d}{dw}f^{-1}(w) = \frac{1}{f'(z)}\quad \textit{where}\quad w = f(z).
+          \]
+        </div>
+
+
+        <p>
+
+          The <em>Inverse Function Theorem</em> states only the existence of a <em>local</em>
+          inverse for $f.$ For example, consider the function $f(z)=z^2$ defined
+          on $A = \C\setminus \{0\}.$ Then $f'(z)= 2z \neq 0 $ for every point of $A.$
+          The <em>Inverse Function Theorem</em> says that $f$ has a unique local analytic inverse,
+          which is, in fact, some branch of the square root function $f^{-1}=\sqrt{z}.$
+          However, $f$ is not one-to-one on all $A,$ since $f(1)= f(-1).$ Thus
+          $f$ will be one-to-one only within sufficiently small neighborhoods surrounding
+          each point.
+        </p>
 
 
 
-      <!--
-              <div class="section3">
+      </div>
 
-              <h2>Local inverses</h2>
 
-              <p>
-                A transformation $w = f (z)$ that is conformal at a point $z_0$ has a 
-                local inverse there. That is, if $w_0 = f (z_0),$ then there exists a 
-                unique transformation $z = f^{-1}(w),$ which is defined and analytic
-                 in a neighborhood $N$ of $w_0,$ such that $f^{-1}(w_0) = z_0$ and 
-                 $f \left(f^{-1}(w)\right) = w $
-                 for all points $w$ in $N .$ The derivative of $f^{-1}(w)$ is, moreover,
-                 \[
-                 \frac{d}{dw}f^{-1}(w) = \frac{1}{f'(z)}.
-                 \]
-              </p>
+      <hr>
 
-              
+      <div id="section5">
 
-            </div>
-            -->
+        <h2>The Riemann Mapping Theorem</h2>
+
+        <p>
+          In many applications it is common to look for a conformal
+          mapping of a domain $A$ onto a simpler domain $B.$
+          A natural question to ask is whether such a mapping exists.
+          That is, given domain $A$ and $B$, does there exist a conformal
+          mapping of $A$ onto $B$?
+        </p>
+
+        <p>
+          An answer to this question was given by Bernhard Riemann in 1851.
+          Although there was a gap in
+          Riemann's original proof (which was subsequently filled), this amazing
+          theorem still bears his name:
+        </p>
+
+        <div class="theorem">
+          <strong><span style="font-style: normal !important;">(The Riemann Mapping Theorem)</span></strong>
+          Let $A$ be a simply connected domain such that
+          $A$ is not all of $\C.$ Then there exists a bijective conformal map
+          $f:A\to D$ where $D = \left\{z : |z|\lt 1\right\}.$
+        </div>
+
+        <p>
+          From this result we see that if $A$ and $B$ are any two simply connected domains,
+          with $A\neq \C,$ $B\neq \C,$ then there exists a bijective conformal map $h:A\to B.$
+          If $f:A\to D$ and $g:B\to D$ are conformal, we can set $h = g^{-1}\circ f$
+          (see Figure 10). Two domains $A$ and $B$ are called <em>conformally equivalent</em>
+          if there is a bijective conformal map from $A$ to $B.$ Thus the
+          <em>Riemann Mapping Theorem</em> implies that two simple connected domains (unequal to $\C$)
+          are conformally equivalent.
+        </p>
+
+
+        <figure>
+          <img src="../images/chp06/riemann-mapping-theorem.gif" alt="Two conformally equivalent domains" title="Two conformally equivalent domains" width="85%">
+          <figcaption>
+            To transform $A$ to $B$ we compose $g^{-1}$ with $f.$
+          </figcaption>
+        </figure>
+
+        <p>
+          Riemann's theorem is of critical theoretical importance, but its proof is
+          not constructive. This means that the theorem establishes the existence
+          of the mapping $f$ but it does not offer
+          a method to find a formula for $f.$ A proof of
+          the <em>Riemann Mapping Theorem</em> is beyond the scope of this text.
+          The interested reader can refer to 
+          the books:
+        </p>
+
+        <ul>
+          <li>
+            <em>Complex Analysis</em>
+            by Lars V. Alfors, McGraw-Hill, 1979; and
+          </li>
+          <li>
+            <em>Basic Complex Analysis</em>
+            by Jerrold. E. Marsden &amp; Michael J. Hoffman, W. H. Freeman and Company, 1999.
+          </li>
+        </ul>
+
+      </div>
+
 
 
 
@@ -643,18 +855,18 @@
       "enableShiftDragZoom": false,
       "showResetIcon": true
     };
-    
+
     let params2 = {
-        "width": 675,
-        "height": 473,
-        "material_id": "tmnebrfq",
-        "borderColor": "888888",
-        "playButton": true,
-        "showFullscreenButton": true,
-        "enableShiftDragZoom": true,
-        "showResetIcon": true
+      "width": 675,
+      "height": 473,
+      "material_id": "tmnebrfq",
+      "borderColor": "888888",
+      "playButton": true,
+      "showFullscreenButton": true,
+      "enableShiftDragZoom": true,
+      "showResetIcon": true
     };
-    
+
     let ggbApplet1 = new GGBApplet(params1, true);
     let ggbApplet2 = new GGBApplet(params2, true);
     window.addEventListener("load", () => {
