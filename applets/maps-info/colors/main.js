@@ -272,24 +272,24 @@ polygonSeries.data.setAll([
 
   // https://www.iso.org/obp/ui/#home
   { id: "AQ", value: 0 },
-  { id: "ML", value: 0 },
-  { id: "TD", value: 0 },
+  { id: "ML", value: 1 }, // Mali
+  { id: "TD", value: 1 }, // Chad
   { id: "CD", value: 0 },
   { id: "CG", value: 0 },
   { id: "CF", value: 0 },
-  { id: "IS", value: 0 },
+  { id: "IS", value: 99 }, // Iceland
   { id: "SJ", value: 0 },
   { id: "TJ", value: 0 },
   { id: "GF", value: 0 },
-  { id: "ER", value: 0 },
+  { id: "ER", value: 2 }, // Eritrea
   { id: "KP", value: 0 },
-  { id: "LA", value: 0 },
-  { id: "GW", value: 0 },
-  { id: "XK", value: 0 },
+  { id: "LA", value: 5 }, // Laos
+  { id: "GW", value: 0 }, // Guinea Bissau
+  { id: "XK", value: 29 }, // Kosovo
   { id: "TL", value: 0 },
   { id: "AX", value: 0 },
-  { id: "SB", value: 0 },
-  { id: "DJ", value: 0 },
+  { id: "SB", value: 7 }, // Solomon Islands
+  { id: "DJ", value: 1 }, // Djibouti
   { id: "MQ", value: 0 },
   { id: "FK", value: 0 },
 ]);
