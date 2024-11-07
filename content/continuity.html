@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>  Continuity
+</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Main info: Dublin core -->
+  <meta name="DC.Title" content="Complex Analysis">
+  <meta name="DC.Creator" content="Juan Carlos Ponce Campuzano">
+  <meta name="DC.Date" content="26-01-2019">
+  <meta name="DC.Identifier" content="ISBN-13: 978-0-6485736-0-9">
+  <meta name="DC.Type" content="Interactive Resource">
+  <meta name="DC.Format" content="HTML">
+  <meta name="DC.Language" content="en-US">
+  <meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+  <!-- social media cards -->
+  <meta property="og:title" content="Complex Analysis">
+  <meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta property="og:url" content="https://complex-analysis.com/">
+  <meta property="og:image" content="https://complex-analysis.com/images/complex_analysis_card.jpg">
+  <meta property="og:site_name" content="Complex Analysis">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+  <meta name="twitter:title" content="Complex Analysis">
+  <meta name="twitter:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta name="twitter:site" content="@jcponcemath">
+  <meta name="twitter:image" content="https://complex-analysis.com/images/complex_analysis_card.jpg">
+  <meta name="twitter:creator" content="@jcponcemath">
+
+  <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HVPF4FLZCB');
+  </script>
+</head>
+
+<body data-type="book" id="top">
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="riemann_sphere.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-regular fa-sun"></i></span>
+        <span class="support-top-button" id="donate" title="Support"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="table_of_contents.html" class="link" id="center-link">
+            <span class="content-hover-previous">Riemann Sphere</span>
+            <span class="content-hover">Table of Contents</span>
+            <span class="content-original">Complex Analysis</span>
+            <span class="content-hover-next">Complex Differentiation</span>
+        </a>
+    </div>
+    <a href="complex_differentiation.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="continuity">
+
+    <!-- Starts main content -->
+
+    <br>
+    <img src="../images/chp02/continuity.jpg" alt="f(z)=log((-z+4.5)^(0.85))-log((z+4.5)^(0.85))-4.9*arctan(z)" title="f(z)=log((-z+4.5)^(0.85))-log((z+4.5)^(0.85))-4.9*arctan(z)">
+    <br>
+
+    <main>
+        <article>
+
+            <h1>Continuity</h1>
+            <hr>
+
+
+            <p>A function $f$ is <strong>continuous at a point</strong> $z_0$ if the following
+                conditions are
+                satisfied:
+            </p>
+            <ol style="font-weight: bold;">
+                <li>
+                    $\ds\lim_{z\rightarrow z_0}f(z)$ exists,
+                </li>
+                <li>
+                    $f(z_0)$ exists, and
+                </li>
+                <li>
+                    $\ds\lim_{z\rightarrow z_0}f(z) = f(z_0).$
+                </li>
+            </ol>
+
+            <p>
+                Notice that <strong>statement 3</strong> actually contains
+                <strong>statement 1</strong> and <strong>2</strong>, since the
+                existence of the quantity on each side of the equation there is needed.
+            </p>
+
+            <p>
+                <strong>Statement 3</strong>
+                says that for each positive number $\epsilon,$ there is a positive number $\delta$ such
+                that
+            </p>
+            <div class="scroll-wrapper">
+                \begin{eqnarray}\label{continuouscondition}
+                \left|f (z) - f(z_0)\right| \lt \epsilon \quad \text{whenever}\quad 0 \lt |z - z_0| \lt \delta
+                \end{eqnarray}
+            </div>
+
+            <p>
+                A function of a complex variable is said to be <strong>continuous in a region</strong> $R$ if it is
+                continuous at each point in $R.$
+            </p>
+
+            <p>
+                If a function $f$ is not continuous at a point $z_0$
+                then we say that $f$ is discontinuous at $z_0.$
+                For example, the function
+                \[
+                f(z)=\frac{1}{1+z^2}
+                \]
+                is discontinuous at $z=i$ and $z=-i.$
+            </p>
+
+            <div class="practice">
+                <p>
+                    <strong>Example 1:</strong>
+                    We claim that the function $f(z)=\dfrac{1}{z}$ is continuous for every $z\neq 0.$
+
+                </p>
+                <p>
+                    To prove this fix $z_0\in \C\setminus\{0\}.$ If $z\in \C\setminus\{0\},$
+                    then
+                    \[
+                    \abs{\frac{1}{z}-\frac{1}{z_0}} = \frac{\abs{z-z_0}}{\abs{z} \abs{z_0}}.
+                    \]
+                    If $\abs{z-z_0}\lt \dfrac{\abs{z_0}}{2},$ then
+                    </p><div class="scroll-wrapper">
+                    \[
+                    \abs{z}= \abs{z_0+z-z_0} \geq \abs{z_0}-\abs{z-z_0} \gt \frac{\abs{z_0}}{2}.
+                    \]
+                    </div>
+                    That is
+                    $\dfrac{1}{|z_0||z|}\lt \dfrac{2}{|z_0|^2}.$
+                    Therefore
+                    <div class="scroll-wrapper">
+                    \[
+                    \abs{\frac{1}{z}-\frac{1}{z_0}} = \frac{\abs{z-z_0}}{\abs{z} \abs{z_0}} \lt
+                    \frac{2}{\abs{z_0}^2}\abs{z-z_0}.
+                    \]
+                    </div>
+
+                <p></p>
+                <p>
+                    Thus, by choosing $\delta = \min\left\{ \dfrac{\abs{z_0}^2}{2}\epsilon, \dfrac{\abs{z_0}}{2}
+                    \right\}$
+                    then we have that
+                    $$
+                    \abs{z-z_0}\lt \delta \implies \left| \frac{1}{z}-\frac{1}{z_0}\right|\lt\epsilon.
+                    $$
+                </p>
+            </div>
+
+            <p>
+                <strong>Remark:</strong>
+                A <em>useful strategy</em> for showing that $f(z)$ is continuous at $z_0$ is
+                to obtain an estimate of the form
+            </p><div class="scroll-wrapper">
+                $$|f(z)-f(z_0)|\leq C|z-z_0|\;\; \text{for }\, z \;\;\text{near}\;\; z_0.$$
+            </div>
+            This guarantees that $|f(z)-f(z_0)|\lt\epsilon $ whenever $|z-z_0|\lt\dfrac{\epsilon}{C},$
+            so that we can take $\delta=\dfrac{\epsilon}{C}$ in the formal definition of limit.
+
+            <p></p>
+
+            <p>
+                In the previous example we showed that a function is continuous
+                at every point $z\in \C\setminus\{0\}.$ The following example shows
+                how to determine continuity at a point using properties of limits.
+            </p>
+
+            <div class="practice">
+                <p>
+                    <strong>Example 2:</strong>
+
+                    Consider the function $f(z) = z^2 - iz+ 2.$
+                    In order to show that $f$ is continuous at, say, $z_0=1-i,$
+                    we must find $\ds \lim_{z\to z_0} f(z)$ and $f(z_0),$ then
+                    check to see whether these two complex values are equal.
+                </p>
+                <p>
+                    Using the <a href="license.html#limits-properties">properties of limits</a>
+                    we have that
+                </p><div class="scroll-wrapper">
+                    \[
+                    \lim_{z\to z_0} f(z) = \lim_{z\to 1-i } \left(z^2 - iz+ 2\right) = \left(1-i\right)^2-i(1-i)+ 2 =
+                    1-3i.
+                    \]
+                </div>
+
+
+                <p></p>
+                <p>
+                    Furthermore, for $z_0=1-i$ we have
+                </p><div class="scroll-wrapper">
+                    \[
+                    f(z_0) = f(1-i) = \left(1-i\right)^2-i(1-i)+ 2 = 1-3i.
+                    \]
+                </div>
+
+                <p></p>
+                <p>
+                    Since $ \ds\lim_{z\to z_0} f(z) = f(z_0),$ we conclude that
+                    $f(z) = z^2 - iz+ 2$ is continuous at $z_0 = 1-i.$
+                </p>
+            </div>
+
+            <br>
+
+            <div class="theorem">
+                A composition of continuous functions is itself continuous.
+            </div>
+
+            <div class="proof">
+                Let $w = f (z)$ be a function that is defined for all $z$ in a neighborhood
+                $|z - z_0 | \lt \delta_1$ of a point $z_0,$ and let
+                $W=g(w)$ be a function whose domain of definition contains the
+                image of that neighborhood under $f.$
+                Then the composition $W=g\big(f(z)\big)$ is defined for all $z$ in the
+                neighborhood $|z - z_0 | \lt \delta_1.$
+
+
+
+                <p>
+                    Suppose now that $f$ is continuous at $z$ and that $g$ is
+                    continuous at the point $f (z )$ in the $w$-plane.
+                    Since $g$ is continuous at $f (z ),$ for each
+                    $\epsilon\gt 0$ there is $\delta_2\gt 0 $ such that
+                </p>
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}\label{composition}
+                    \abs{g\big(f(z)\big)- g\big(f(z_0)\big)}\lt \epsilon \;\;\text{whenever}\;\; \abs{f(z)- f(z_0)}\lt
+                    \delta_2.
+                    \end{eqnarray}
+
+                </div>
+
+                <figure>
+                    <img src="../images/chp02/composition.svg" alt="Composition" title="Composition" style="width:100%;">
+                    <figcaption>
+                        Geometric interpretation of composition of functions.
+                    </figcaption>
+                </figure>
+
+                <p>
+                    Since $f$ is continuous at $z_0,$ this ensures that the neighborhood
+                    $\abs{z-z_0}\lt\delta_1$ can be made small enough such that the
+                    inequalities given in (\ref{composition}) hold. Therefore,
+                    the compostion $g\big(f(z)\big)$ is continuous.
+                </p>
+            </div>
+
+            <br>
+
+            <div class="theorem">
+                If a function $f$ is continuous and nonzero at a point $z_0,$ then
+                $f(z)\neq 0$ throughout some neighborhood of that point.
+            </div>
+
+            <div class="proof">
+
+                Suppose that $f$ is continuous and $f(z_0)\neq 0.$
+                Then for every $\epsilon\gt 0$ there exists a $\delta\gt 0$
+                such that $|z-z_0|\lt\delta$ implies
+                <div class="scroll-wrapper">
+                    $$|f(z)-f(z_0)|\lt\epsilon.$$
+                </div>
+
+                <p>
+                    Since $f(z_0)\neq 0$, we can take $\epsilon=\dfrac{|f(z_0)|}{2}.$
+                    So we have
+                </p><div class="scroll-wrapper">
+                    $$|f(z)-f(z_0)|\lt\frac{\abs{f(z_0)}}{2}\quad \text{whenever}\quad |z-z_0|\lt\delta.$$
+                </div>
+
+                Now, if there is a point $z$ in the neighborhood
+                $|z - z_0| \lt\delta$ at which $f(z)=0,$
+                we have that
+                $$|f(z_0)|\lt\frac{f(z_0)}{2},$$
+                which is a contradiction.
+                Hence the theorem is proved.
+                <p></p>
+
+            </div>
+
+            <p>
+                The algebraic <a href="limits.html#limits-properties">properties of limits</a> can also be
+                restated in terms of continuity of complex functions. The proof of the
+                following theorem is left as an
+                exercise.
+            </p>
+
+            <div class="theorem" id="contuity-properties">
+                Suppose that $f$ and $g$ are continous at $z_0,$ then the following
+                are continuous functions at $z_0:$
+                <ol class="roman-list">
+                    <li>$c\cdot f,$ with $c$ a complex constant,</li>
+                    <li>$f \pm g,$</li>
+                    <li>$f\cdot g,$ and</li>
+                    <li>$\dfrac{f}{g},$ if $g(z_0)\neq 0.$</li>
+                </ol>
+            </div>
+
+            <div class="practice">
+                <p>
+                    <strong>Exercise:</strong>
+                    Prove that polynomial functions are continuous
+                    on the entire complex plane $\C.$
+                </p>
+            </div>
+            <br>
+
+        </article>
+    </main>
+
+    <a href="complex_differentiation.html" style="text-decoration: none;">
+        <p class="nextPage">Complex Differentiation <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+  <!-- The Modal    -->
+
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 Hey there!</strong>
+      </div>
+      <div class="modal-body">
+
+        <div w3-include-html="message-modal.html"></div>
+
+        
+        <br />
+      </div>
+      <div class="modal-footer">
+        Thank you! 🙏 I highly appreciate your support! 🤗
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer>
+
+  <span id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <span class="hide-small">
+      <a href="https://github.com/complex-analysis"><i class="fa-solid fa-code"></i> Source</a>,
+      <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues"><i
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+    </span>
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-solid fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+  
+  <br />
+
+  <a id="licence-link" rel="license"
+    href="license.html">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong style="font-size: 0.9em;">ISBN: 978-0-6485736-0-9</strong> <br>
+  <strong>
+    <span class="hide-small" style="font-size: 0.9em;">&copy; Juan Carlos Ponce Campuzano
+      2019-<script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 0.9em;">&copy; J.C. Ponce Campuzano
+      2019-<script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>

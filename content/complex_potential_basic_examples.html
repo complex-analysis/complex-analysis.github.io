@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>  Complex Potential
+</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Main info: Dublin core -->
+  <meta name="DC.Title" content="Complex Analysis">
+  <meta name="DC.Creator" content="Juan Carlos Ponce Campuzano">
+  <meta name="DC.Date" content="26-01-2019">
+  <meta name="DC.Identifier" content="ISBN-13: 978-0-6485736-0-9">
+  <meta name="DC.Type" content="Interactive Resource">
+  <meta name="DC.Format" content="HTML">
+  <meta name="DC.Language" content="en-US">
+  <meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+  <!-- social media cards -->
+  <meta property="og:title" content="Complex Analysis">
+  <meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta property="og:url" content="https://complex-analysis.com/">
+  <meta property="og:image" content="https://complex-analysis.com/images/complex_analysis_card.jpg">
+  <meta property="og:site_name" content="Complex Analysis">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+  <meta name="twitter:title" content="Complex Analysis">
+  <meta name="twitter:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta name="twitter:site" content="@jcponcemath">
+  <meta name="twitter:image" content="https://complex-analysis.com/images/complex_analysis_card.jpg">
+  <meta name="twitter:creator" content="@jcponcemath">
+
+  <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HVPF4FLZCB');
+  </script>
+</head>
+
+<body data-type="book" id="top">
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="applications_conformal.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-regular fa-sun"></i></span>
+        <span class="support-top-button" id="donate" title="Support"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="table_of_contents.html" class="link" id="center-link">
+            <span class="content-hover-previous">Applications of Conformal Mappings</span>
+            <span class="content-hover">Table of Contents</span>
+            <span class="content-original">Complex Analysis</span>
+            <span class="content-hover-next">Uniform Flow Around a Circle</span>
+        </a>
+    </div>
+    <a href="flow_around_circle.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="complex-potential">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contents</p>
+        <ul>
+            <li><a href="#section1">Uniform flow</a></li>
+            <li><a href="#section2">Stagnation point flow</a></li>
+            <li><a href="#section3">Source &amp; Sink</a></li>
+            <li><a href="#section4">Vortex</a></li>
+            <li><a href="#section5">Combining complex potentials</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br><br>
+
+
+    <main>
+        <article>
+
+            <h1>Complex Potential</h1>
+            <h2 style="text-align: center;margin-top: -10px;">Basic examples</h2>
+            <hr>
+
+            <div id="section1">
+
+                <h2>Uniform flow</h2>
+
+                <p>The complex potential
+                    \begin{eqnarray}\label{uniform}
+                    F(z)=Ue^{-i\alpha}z
+                    \end{eqnarray}
+                    corresponds to uniform flow at speed $U$ in a direction making an angle
+                    with the $x$-axis.
+                </p>
+
+                <p>Here we are interested in finding the velocity field $$\mathbf V = \left(u(x,y), v(x,y)\right).$$
+                    But first we need to obtain the stream function $\psi,$ which is the
+                    imaginary component of ($\ref{uniform}$). </p>
+
+
+                <p>Rewriting ($\ref{uniform}$)
+                    we obtain
+                    \begin{eqnarray*}
+                    F(z)&amp;=&amp; Ue^{-i\alpha}z \\
+                    &amp;=&amp; U\left( \cos \alpha - i \sin \alpha \right)\left( x+iy\right) \\
+                    &amp;=&amp; U\left( x\cos \alpha + y \sin \alpha \right) + i U\left( y\cos \alpha - x \sin
+                    \alpha \right).
+                    \end{eqnarray*}
+                    Thus
+                    \begin{eqnarray*}
+                    \psi = U\left( y\cos \alpha - x \sin \alpha \right).
+                    \end{eqnarray*}
+                </p>
+
+
+                <p>Finally, since $u=\dfrac{\partial \psi}{\partial y}$ and
+                    $v=-\dfrac{\partial \psi}{\partial x},$
+                    we have that
+                    \begin{eqnarray*}
+                    u=U \cos \alpha ,\quad v=U\sin \alpha.
+                    \end{eqnarray*}
+                </p>
+
+                <p>The applet below shows a simulation of the uniform flow. Drag the sliders to
+                    change parameters. Click on <code>Trace</code> button to show streamlines. Click on
+                    <code>Field</code> button to show vector field.
+                </p>
+
+                <br>
+
+                <div class="hide-small hide-medium" style="text-align: center;">
+                    <iframe loading="lazy" name="uniform" src="../applets/p5js/uniform/index.html" width="700px" height="500px" style="border:none;overflow:hidden;"></iframe>
+
+                    
+                    <div style="text-align: center;">
+                        <button onclick="var ifr=document.getElementsByName('uniform')[0]; ifr.src=ifr.src;" style="cursor: pointer;font-weight: bold;">Reset</button>
+                    </div>
+                </div>
+
+                <div class="hide-large">
+                    <div w3-include-html="fixed_applets_message.html"></div>
+                </div>
+
+
+            </div>
+
+            <hr>
+            <div id="section2">
+
+                <h2>Stagnation point flow</h2>
+
+                <p>The complex potential
+                    \begin{eqnarray*}
+                    F(z)=\frac{k z^2}{2}
+                    \end{eqnarray*}
+                    corresponds to the stagnation point flow with strength $k\geq 0.$
+                </p>
+
+                <br>
+
+                <div class="hide-small hide-medium" style="text-align: center;">
+                    <iframe loading="lazy" name="nearawall" src="../applets/p5js/nearawall/index.html" width="700px" height="500px" style="border:none;overflow:hidden;"></iframe>
+
+                    <div style="text-align: center;">
+                        <button onclick="var ifr=document.getElementsByName('nearawall')[0]; ifr.src=ifr.src;" style="cursor: pointer;font-weight: bold;">Reset</button>
+
+                    </div>
+                </div>
+
+                <div class="hide-large">
+                    <div w3-include-html="fixed_applets_message.html"></div>
+                </div>
+
+
+            </div>
+
+            <hr>
+            <div id="section3">
+
+                <h2>Source &amp; Sink</h2>
+
+                <p>A source of strength $Q&gt;0$ at the origin is represented
+                    by the complex potential
+                    \begin{eqnarray}\label{source-sink}
+                    F(z)=\frac{Q}{2\pi}\log z .
+                    \end{eqnarray}
+                    Note that this is a multi-valued function, with a branch point
+                    at the origin. If $Q&lt;0,$ then the complex potential corresponds to a sink.
+                </p>
+
+                <br>
+
+                <div class="hide-small hide-medium " style="text-align: center;">
+                    <iframe loading="lazy" name="sourcesink" src="../applets/p5js/sourcesink/index.html" width="700px" height="500px" style="border:none;"></iframe>
+
+                    
+                    <div style="text-align: center;">
+                        <button onclick="var ifr=document.getElementsByName('sourcesink')[0]; ifr.src=ifr.src;" style="cursor: pointer;font-weight: bold;">Reset</button>
+
+                    </div>
+                </div>
+
+                <div class="hide-large">
+                    <div w3-include-html="fixed_applets_message.html"></div>
+                </div>
+
+                
+
+                <p>It is easy to generalize (\ref{source-sink}) for an arbitrary point $(a, b)$ in the complex
+                    plane. The required complex potential is
+                    \begin{eqnarray*}
+                    F(z)=\frac{Q}{2\pi}\log(z-c).
+                    \end{eqnarray*}
+                    where $c= a+ib.$
+                </p>
+
+            </div>
+
+            <hr>
+            <div id="section4">
+
+                <h2>Vortex</h2>
+
+                <p>A vortex of strength $C$ at the origin is represented
+                    by the complex potential
+                    \begin{eqnarray*}
+                    F(z)=\frac{-iC}{2\pi}\log z .
+                    \end{eqnarray*}
+                    This is again a multi-valued function. For $C&gt;0,$ rotation is anticlockwise,
+                    and for $C &lt; 0$ rotation is clockwise.
+                </p>
+                <br>
+
+                <div class="hide-small hide-medium " style="text-align: center;">
+                    <iframe loading="lazy" name="vortex" src="../applets/p5js/vortex/index.html" width="700px" height="500px" style="border:none;overflow:hidden;"></iframe>
+
+                    <div style="text-align: center;">
+                        <button onclick="var ifr=document.getElementsByName('vortex')[0]; ifr.src=ifr.src;" style="cursor: pointer;font-weight: bold;">Reset</button>
+
+                    </div>
+                </div>
+
+                <div class="hide-large ">
+                    <div w3-include-html="fixed_applets_message.html"></div>
+                </div>
+
+                
+
+                <p>A vortex at an arbitrary point $c\in \mathbb C$ is represented by the
+                    complex potential
+                    \begin{eqnarray*}
+                    F(z)=\frac{-iC}{2\pi}\log(z-c).
+                    \end{eqnarray*}
+                    where $c= a+ib.$
+                </p>
+
+
+                <div class="practice">
+                    <p><strong>Exercise:</strong> Find the velocity fields of the Stagnation point,
+                        Source &amp; Sink and Vortex flows.</p>
+                </div>
+
+            </div>
+
+            <hr>
+            <div id="section5">
+
+                <h2>Combining complex potentials</h2>
+                <p>
+                    The basic flows presented above can be combined by simply superimposing the corresponding
+                    complex potentials.</p>
+
+                <p>For example, consider a uniform flow $Uz,$ with speed $U\ge 0,$ and a source
+                    $\frac{Q}{2\pi}\log z ,$ with $Q\ge 0.$ Thus we can produce the complex potential
+                    \begin{eqnarray}\label{comb}
+                    F(z)=Uz+\frac{Q}{2\pi}\log z .
+                    \end{eqnarray}
+                    The following applet shows the flow produced by (\ref{comb}). Drag the sliders to
+                    change parameters.</p>
+
+                    <br>
+
+                <div class="hide-small hide-medium " style="text-align: center;">
+                    <iframe loading="lazy" name="source-uniform" src="../applets/p5js/source-uniform/index.html" width="700px" height="500px" style="border:none;overflow:hidden;"></iframe>
+
+                   
+                    <div style="text-align: center;">
+                        <button onclick="var ifr=document.getElementsByName('source-uniform')[0]; ifr.src=ifr.src;" style="cursor: pointer;font-weight: bold;">Reset</button>
+
+                    </div>
+                </div>
+
+                <div class="hide-large">
+                    <div w3-include-html="fixed_applets_message.html"></div>
+                </div>
+
+               
+
+                <div class="practice">
+                    <p><strong>Exercise:</strong> Find the velocity field of the flow produced
+                        by a source of strength $Q$ in a uniform flow at speed $U$ in the
+                        $x$-direction.</p>
+                </div>
+
+
+                <br>
+
+            </div>
+
+
+        </article>
+    </main>
+
+    <a href="flow_around_circle.html" style="text-decoration: none;">
+        <p class="nextPage">Uniform flow around circle <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+  <!-- The Modal    -->
+
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 Hey there!</strong>
+      </div>
+      <div class="modal-body">
+
+        <div w3-include-html="message-modal.html"></div>
+
+        
+        <br />
+      </div>
+      <div class="modal-footer">
+        Thank you! 🙏 I highly appreciate your support! 🤗
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer>
+
+  <span id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <span class="hide-small">
+      <a href="https://github.com/complex-analysis"><i class="fa-solid fa-code"></i> Source</a>,
+      <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues"><i
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+    </span>
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-solid fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+  
+  <br />
+
+  <a id="licence-link" rel="license"
+    href="license.html">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong style="font-size: 0.9em;">ISBN: 978-0-6485736-0-9</strong> <br>
+  <strong>
+    <span class="hide-small" style="font-size: 0.9em;">&copy; Juan Carlos Ponce Campuzano
+      2019-<script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 0.9em;">&copy; J.C. Ponce Campuzano
+      2019-<script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>

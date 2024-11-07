@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>  The Complex Power Function
+</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Main info: Dublin core -->
+  <meta name="DC.Title" content="Complex Analysis">
+  <meta name="DC.Creator" content="Juan Carlos Ponce Campuzano">
+  <meta name="DC.Date" content="26-01-2019">
+  <meta name="DC.Identifier" content="ISBN-13: 978-0-6485736-0-9">
+  <meta name="DC.Type" content="Interactive Resource">
+  <meta name="DC.Format" content="HTML">
+  <meta name="DC.Language" content="en-US">
+  <meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+  <!-- social media cards -->
+  <meta property="og:title" content="Complex Analysis">
+  <meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta property="og:url" content="https://complex-analysis.com/">
+  <meta property="og:image" content="https://complex-analysis.com/images/complex_analysis_card.jpg">
+  <meta property="og:site_name" content="Complex Analysis">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+  <meta name="twitter:title" content="Complex Analysis">
+  <meta name="twitter:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta name="twitter:site" content="@jcponcemath">
+  <meta name="twitter:image" content="https://complex-analysis.com/images/complex_analysis_card.jpg">
+  <meta name="twitter:creator" content="@jcponcemath">
+
+  <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HVPF4FLZCB');
+  </script>
+</head>
+
+<body data-type="book" id="top">
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="domain_coloring.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-regular fa-sun"></i></span>
+        <span class="support-top-button" id="donate" title="Support"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="table_of_contents.html" class="link" id="center-link">
+            <span class="content-hover-previous">Domain coloring</span>
+            <span class="content-hover">Table of Contents</span>
+            <span class="content-original">Complex Analysis</span>
+            <span class="content-hover-next">Curves in the complex plane</span>
+        </a>
+    </div>
+    <a href="curves_in_the_complex_plane.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="power-function">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+
+    <br><br>
+
+    <!-- Cindy.js -->
+    <script type="text/javascript" src="../applets/cindyjs/assets/Cindy.js"></script>
+    <script type="text/javascript" src="../applets/cindyjs/assets/CindyGL.js"></script>
+    <script type="text/javascript" src="../applets/cindyjs/assets/symbolic.js"></script>
+
+    <main>
+        <article>
+
+            <h1>The Complex Power Function</h1>
+
+            <hr>
+
+
+            <p>The <em>generalized complex power function</em> is defined as:
+                \begin{eqnarray}\label{gcp}
+                f(z) = z^c = \exp(c\log z), \quad \text{with}\quad z\neq 0.
+                \end{eqnarray}
+            </p>
+
+
+            <p>Due to the multi-valued nature of $\log z,$ it follows that (\ref{gcp}) is also multi-valued for
+                any non-integer value of $c,$ with a branch point at $z=0.$ In other words
+            </p><div class="scroll-wrapper">
+                \begin{eqnarray*}
+                f(z) = z^c&amp;= &amp;\exp\left(c \log z\right) = \exp\left[c \left( \text{Log}\,z + 2n\pi i \right)\right],
+                \end{eqnarray*}
+            </div>
+            with $n\in \mathbb Z.$
+            <p></p>
+            <p>On the other hand, we have that the <em>generalized exponential function</em>, for $c \neq 0 ,$
+                is defined as:
+            </p><div class="scroll-wrapper">
+                \begin{eqnarray}\label{gef}
+                f(z)=c^z=\exp(z\log c)=\exp\left[z \left(\text{Log}\,c +2 n \pi \, i\right)\right],
+                \end{eqnarray}
+            </div>
+            with $n\in \mathbb Z.$
+            <p></p>
+
+            <p>
+                Notice that (\ref{gef}) possesses no branch point (or any other type of singularity) in the
+                infinite complex $z$-plane. Thus, we can regard the equation (\ref{gef}) as defining a set of
+                independent single-value functions for each value of $n.$</p>
+
+
+            <p>This is the reason why the multi-valued <em>nature</em> of the function $f(z)=z^c$ differs from the
+                multi-valued function $f(z)=c^z.$</p>
+
+
+            <p>Typically, the $n=0$ case is the most useful, in which case, we would simply define:
+                $$w=c^z=\exp(z\log c)=\exp(z\,\text{Log}\,c),$$
+                with $c\neq 0.$</p>
+
+
+            <p>This conforms with the definition of exponential function
+                $$e^z=e^x(\cos y +i\sin y )$$
+                where $c = e$ (the Euler constant).</p>
+
+            <p>Use the following applet to explore functions (\ref{gcp}) and (\ref{gef}) defined on the region
+                $[-3,3]\times[-3,3].$ The enhanced phase portrait is used with contour lines of modulus and phase.
+                Drag the points to change the value of $c$ in each case. You can also deactivate the contour lines,
+                if you want.</p>
+
+
+            <div class="hide-small hide-medium">
+                <div id="applet">
+
+                    <script id="csinit" type="text/x-cindyscript">
+                            grid1=true;
+                            grid2=true;
+                        </script>
+
+                    <script id="csdraw" type="text/x-cindyscript">
+
+            N.y = -2.5;
+            n = round(5*(N.x+4));
+            //n = min(-17)
+            n = max(-22, n);
+            N.x = n/5-4;
+            
+            hsvToRGB(h, s, v) := (
+				regional(j, p, q, t, f);
+
+				h = (h-floor(h))*6;
+
+				j = floor(h);
+				f = h - j;
+
+				p = 1 - s;
+				q = 1 - s*f;
+				t = 1 - s*(1-f);
+
+				if(j == 0, [1, t, p],
+				if(j == 1, [q, 1, p],
+				if(j == 2, [p, 1, t],
+				if(j == 3, [p, q, 1],
+				if(j == 4, [t, p, 1],
+				if(j == 5, [1, p, q]))))))*v
+			);
+            
+            color(z) := ( //what color should be given to a complex number z?
+				regional(n0, grey1, grey2);
+				n0 = 12;
+                         z = log(z)/2/pi;// + i * N.x * pi;
+
+				zfract = n0*z - floor(n0*z); //value of n*z in C mod Z[i]
+
+				//grey1 = im(zfract);
+				//grey2 = re(zfract);
+                         
+                grey1 = if(grid1, im(zfract), 1);
+                grey2 = if(grid2, re(zfract), 1);
+
+				hsvToRGB(im(z), 1.0, .6+.5*re(sqrt(grey1 * grey2)))
+			);
+		
+		t(z) := (A.x + i*A.y)^z;
+        u(z) := z^(B.x + 6 + i * B.y);
+
+		colorplot(
+			//z = zoom*complex(#);
+            z = complex(#);
+			color(t(z));
+			,
+			(-3,-3),(3,3)
+		);
+		
+		colorplot(
+			z = (complex(#)+6);
+			color(u(z));
+			,
+			(-9,-3),(-3,3)
+		);
+		
+        
+        shape1 = polygon([(-9,2.5), (-6,2.5), (-6,3), (-9,3)]);
+        fill(shape1,color->(0.9,0.9,0.9));
+        draw(shape1, color->(0.9,0.9,0.9));
+        
+        shape2 = polygon([(-3,2.5), (0,2.5), (0,3), (-3,3)]);
+        fill(shape2,color->(0.9,0.9,0.9));
+        draw(shape2, color->(0.9,0.9,0.9));
+		
+        drawtext((-2.9,2.7), "$c^z,$ $c = (" + round(A.x  * 100)/100 + " , " + round(A.y * 100)/100 + ")$", color->(0,0,0));
+		drawtext((-8.9,2.7), "$z^c,$ $c = (" + round((B.x + 6 ) * 100)/100 + " , " + round(B.y * 100)/100 + ")$", color->(0,0,0));
+        
+        
+        linesize(3);
+		draw((-3,-3),(-3,3), color->[0,0,0]);
+		
+        
+        drawtext((A.x+0.15,A.y+0.15),"$c$", color->(0.098,0.098,0.098));
+        drawtext((B.x+0.15,B.y+0.15),"$c$", color->(0.098,0.098,0.098));
+        
+        if(A.x < -3, A.x=-3);
+        if(A.y < -3, A.y=-3);
+        if(A.x > 3, A.x=3);
+        if(A.y > 3, A.y=3);
+        
+        if(B.x < -9, B.x=-9);
+        if(B.y < -3, B.y=-3);
+        if(B.x > -3, B.x=-3);
+        if(B.y > 3, B.y=3);
+        
+        //draw((-8.5,-2.5),(2.5,-2.5), color->[0,0,0]);
+        
+        //drawtext((N.x-0.2,N.y+0.3),"$n = " + n + "$", color->(0.98,0.98,0.98));
+		
+		</script>
+
+                    <div id="CSCanvas" style="border:2px solid black"></div>
+                    <input id="ch1" onclick="check1()" checked="" type="checkbox">Phase&nbsp;&nbsp;&nbsp;
+                    <input id="ch2" onclick="check2()" checked="" type="checkbox">Modulus
+
+                    <script type="text/javascript">
+                        var cdy = CindyJS({
+                            canvasname: "CSCanvas",
+                            scripts: "cs*",
+                            geometry: [
+                                { name: "A", type: "Free", pos: [1.2, 0.8], color: [0, 0.9, 1], size: 8 },
+                                { name: "B", type: "Free", pos: [-4.5, 0.6], color: [0, 0.9, 1], size: 8 },
+                                //{name:"N", type:"Free", pos:[-4, -2], color:[0.9,0.9,1], size:8}
+                            ],
+                            animation: { autoplay: true },
+                            ports: [{
+                                id: "CSCanvas",
+                                width: 800,
+                                height: 400,
+                                transform: [{ visibleRect: [-9, -3, 3, 3] }]
+                            }],
+                            use: ["CindyGL", "katex"]
+                        });
+
+                        var check1 = function () {
+                            if (document.getElementById("ch1").checked) {
+                                cdy.evokeCS('grid1=true;');
+                            } else {
+                                cdy.evokeCS('grid1=false;');
+
+                            }
+                        }
+
+                        var check2 = function () {
+                            if (document.getElementById("ch2").checked) {
+                                cdy.evokeCS('grid2=true;');
+                            } else {
+                                cdy.evokeCS('grid2=false;');
+
+                            }
+                        }
+
+                    </script>
+
+                </div><!--ends applet-->
+
+            </div><!--end hidesmall-->
+
+            <div class="hide-large ">
+                <div w3-include-html="fixed_applets_message.html"></div>
+            </div>
+
+            <br>
+
+            <hr>
+
+            <p><strong>Final remark: </strong>In practice, many textbooks treat the <em>generalized exponential
+                    function</em> as a single-valued function, $c^z=\exp(z\,\text{Log } c ),$ only
+                when $c$ is a positive real number. For any other value of $c,$ the multi-valued function
+                $c^z=\exp(z \log c )$ is preferred.</p>
+            <p></p>
+
+            <br>
+
+
+        </article>
+    </main>
+
+    <a href="curves_in_the_complex_plane.html" style="text-decoration: none;">
+        <p class="nextPage">Curves in the Complex Plane <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+  <!-- The Modal    -->
+
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 Hey there!</strong>
+      </div>
+      <div class="modal-body">
+
+        <div w3-include-html="message-modal.html"></div>
+
+        
+        <br />
+      </div>
+      <div class="modal-footer">
+        Thank you! 🙏 I highly appreciate your support! 🤗
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer>
+
+  <span id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <span class="hide-small">
+      <a href="https://github.com/complex-analysis"><i class="fa-solid fa-code"></i> Source</a>,
+      <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues"><i
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+    </span>
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-solid fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+  
+  <br />
+
+  <a id="licence-link" rel="license"
+    href="license.html">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong style="font-size: 0.9em;">ISBN: 978-0-6485736-0-9</strong> <br>
+  <strong>
+    <span class="hide-small" style="font-size: 0.9em;">&copy; Juan Carlos Ponce Campuzano
+      2019-<script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 0.9em;">&copy; J.C. Ponce Campuzano
+      2019-<script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+  <title>  Transformaciones Lineales Fraccionarias
+</title>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Main info: Dublin core -->
+  <meta name="DC.Title" content="Análisis Complejo">
+  <meta name="DC.Creator" content="Juan Carlos Ponce Campuzano">
+  <meta name="DC.Date" content="26-01-2021">
+  <meta name="DC.Identifier" content="ISBN-13: 978-0-6485736-2-3">
+  <meta name="DC.Type" content="Recurso interactivo">
+  <meta name="DC.Format" content="HTML">
+  <meta name="DC.Language" content="es-mx">
+  <meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+  <!-- social media cards -->
+  <meta property="og:title" content="Análisis Complejo">
+  <meta property="og:description" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta property="og:url" content="https://complex-analysis.com/es.html">
+  <meta property="og:image" content="https://complex-analysis.com/images/complex_analysis_card-es.jpg">
+  <meta property="og:site_name" content="Complex Analysis">
+  <meta property="og:locale" content="es-mx">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta name="twitter:title" content="Análisis Complejo">
+  <meta name="twitter:description" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta name="twitter:site" content="@jcponcemath">
+  <meta name="twitter:image" content="https://complex-analysis.com/images/complex_analysis_card-es.jpg">
+  <meta name="twitter:creator" content="@jcponcemath">
+
+  <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+
+  <link rel="stylesheet" href="css/style-es.css">
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HVPF4FLZCB');
+  </script>
+</head>
+
+<body data-type="book" id="top">
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="mapeo_conforme.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-regular fa-sun"></i></span>
+        <span class="support-top-button" id="donate"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="tabla_de_contenidos.html" class="link" id="center-link">
+            <span class="content-hover-previous">Mapeo Conforme</span>
+            <span class="content-hover">Tabla de Contenidos</span>
+            <span class="content-original">Análisis Complejo</span>
+            <span class="content-hover-next">Aplicaciones de Mapeos Conformes</span>
+        </a>
+    </div>
+    <a href="aplicaciones_conformal.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="linear-fractional-transformations">
+
+  <!-- Starts main content -->
+
+  <div w3-include-html="small_screen_message.html"></div>
+
+  <div class="toc-chapter" id="toc-chapter">
+    <p><i class="fa-solid fa-list"></i>Contenidos</p>
+    <ul>
+      <li><a href="#section1">Transformaciones lineales...</a></li>
+      <li><a href="#section2">Razones Cruzadas</a></li>
+      <li><a href="#section3">Mapeos del plano...</a></li>
+      <!-- Add more sections as needed -->
+    </ul>
+  </div>
+
+  <br>
+
+
+  <main>
+    <article>
+
+      <div id="section1">
+
+        <h1>Transformaciones Lineales Fraccionarias</h1>
+        <hr>
+
+
+
+        <p>
+          Si $a,b,c,$ y $d$ son constantes complejas con $ad-bc\neq 0,$ entonces la transformación
+          \begin{eqnarray}\label{mobius}
+          T(z) = \frac{az+b}{cz+d}
+          \end{eqnarray}
+          se llama <em>transformación lineal fraccionaria</em> o <em>transformación de Möbius</em>.
+          Observa que también podemos escribir (\ref{mobius}) en la forma
+        </p><div class="scroll-wrapper">
+          \begin{eqnarray}\label{bilinear}
+          Azw + Bz+Cw+D = 0 \qquad (AD-BC\neq 0);
+          \end{eqnarray}
+        </div>
+        con $w = T(z).$ Dado que esta forma alternativa es lineal en $z$ y lineal en $w,$
+        otro nombre para la transformación lineal fraccionaria es
+        <em>transformación bilineal</em>.
+        <p></p>
+
+        <p>
+          Si $c=0,$ entonces la condición $ad-bc\neq 0$ en la ecuación (\ref{mobius})
+          se convierte en $ad\neq 0.$ Así, la transformación $T$ se reduce a una función lineal no constante
+          $az+b.$ Cuando $c\neq 0,$ podemos escribir la ecuación (\ref{mobius}) como
+        </p><div class="scroll-wrapper">
+          \begin{eqnarray}\label{mobius-composition}
+          T(z) = \frac{bc-ad}{c}\cdot \frac{1}{cz+d}+ \frac{a}{c} \qquad (ad-bc\neq 0)
+          \end{eqnarray}
+        </div>
+        <p></p>
+        <p>De nuevo, la condición $ad-bc\neq 0$ asegura que no obtenemos una función constante.
+          La transformación $T(z)=1/z$ es obviamente un caso especial de (\ref{mobius})
+          cuando $c\neq 0.$ (Ya cubrimos esta función en el
+          <a href="mapping_1overz.html" target="_blank">Capítulo 3</a>)
+        </p>
+
+        <p>
+          La ecuación (\ref{mobius-composition}) revela que una transformación lineal
+          es una composición de las transformaciones:
+        </p><div class="scroll-wrapper">
+          \[
+          f(z)= \frac{bc-ad}{c}z+\frac{a}{c},\quad g(z) = \frac{1}{z}, \quad h(z) = cz+d.
+          \]
+        </div>
+        <p></p>
+        <p>Es decir, $T(z) = f\circ g \circ h(z) = f\left( g\left( h(z)\right)\right).$
+          Así, se deduce que, independientemente de si $c$ es cero o no,
+          cualquier transformación lineal fraccionaria
+          <em>mapea círculos y líneas en círculos y líneas</em>.
+          Puedes verificar esto fácilmente para las funciones $f$ y $h.$
+          La función $g$ ya fue explorada en
+          la sección: <a href="mapeo_1sobrez.html" target="_blank">La Transformación $1/z$</a>.
+        </p>
+
+        <p>
+          El dominio de una transformación lineal fraccionaria $T$ dada en (\ref{mobius})
+          es el conjunto de todos los números complejos $z$ tales que $z\neq d/c.$ Además, dado que
+          \[
+          T'(z) = \frac{ad-bc}{\left(cz+d\right)^2},
+          \]
+          con $ad-bc \neq 0,$ entonces
+          <em>las transformaciones lineales fraccionarias son conformes en sus dominios</em>.
+        </p>
+
+        <p>
+          Cuando $c\neq 0,$ es decir, cuando $T$ no es una función lineal, es a menudo
+          útil ver $T$ como una transformación del plano complejo extendido:
+        </p><div class="scroll-wrapper">
+          \begin{eqnarray}\label{mobius-extended}
+          T(z) = \left\{
+          \begin{array}{ll}
+          \dfrac{az+b}{cz+d}, &amp; z\neq -\dfrac{d}{c}, z\neq \infty\\
+          \infty, &amp; z=-\dfrac{d}{c}\\
+          \dfrac{a}{c}, &amp; z=\infty.
+          \end{array}
+          \right.
+          \end{eqnarray}
+        </div>
+        <p></p>
+
+        <p>
+          En este caso, $T$ es una transformación uno-a-uno del plano complejo extendido.
+          Por lo tanto, existe $T^{-1}$ tal que
+          $T^{-1}\left(T(z)\right) = z =T\left(T^{-1}(z)\right).$ En este caso,
+          $T^{-1}$ es también una transformación lineal fraccionaria y se define como
+          \[
+          T^{-1}(w) = \frac{-dw + b}{cw -a} \qquad (ad-bc\neq 0).
+          \]
+        </p>
+
+        <p>
+          En aplicaciones, a menudo necesitamos encontrar una transformación conforme de un dominio $D$
+          limitado por círculos a un dominio $D'$ limitado por líneas.
+          Las transformaciones lineales fraccionarias son, en particular, adecuadas para
+          dichas aplicaciones.
+        </p>
+
+
+
+      </div>
+
+      <hr>
+
+      <div id="section2">
+
+        <h2>Razones Cruzadas</h2>
+
+
+        <p>
+          Considera la siguiente ecuación
+        </p><div class="scroll-wrapper">
+          \begin{eqnarray}\label{cross}
+          \frac{\left(w- w_1\right)\left(w_2- w_3\right)}{\left(w- w_3\right)\left(w_2- w_1\right)} = \frac{\left(z-
+          z_1\right)\left(z_2- z_3\right)}{\left(z- z_3\right)\left(z_2- z_1\right)}.
+          \end{eqnarray}
+        </div>
+        Los dos lados de esta ecuación se conocen como <em>razones cruzadas</em>.
+        <p></p>
+
+        <p>
+          La ecuación (\ref{cross}) define (implícitamente) una transformación lineal fraccionaria que mapea
+          tres puntos distintos $z_1,$ $z_2,$ y $z_3$ en el plano $z$ finito
+          respectivamente sobre tres puntos distintos $w_1,$ $w_2,$ y $w_3$ en el plano $w$ finito.
+          Podemos verificar fácilmente esto escribiendo la ecuación (\ref{cross}) como
+        </p><div class="scroll-wrapper">
+          \begin{eqnarray}\label{cross-02}
+          \left(z- z_3\right)\left(w- w_1\right)\left(z_2- z_1\right)\left(w_2- w_3\right) = \left(z- z_1\right)\left(w-
+          w_3\right)\left(z_2- z_3\right)\left(w_2- w_1\right)
+          \end{eqnarray}
+        </div>
+        <ul>
+          <li>
+            Si $z=z_1,$ entonces el lado derecho de (\ref{cross-02}) es cero. Así que $w=w_1.$
+          </li>
+          <li>
+            Si $z=z_2,$ entonces tenemos la ecuación lineal
+            <div class="scroll-wrapper">
+              \[
+              \left(w- w_1\right)\left(w_2- w_3\right)=\left(w- w_3\right)\left(w_2- w_1\right)
+              \]
+            </div>
+            cuya solución única es $w=w_2.$
+          </li>
+          <li>
+            Si $z=z_3,$ entonces el lado izquierdo de (\ref{cross-02}) es cero; y, en consecuencia,
+            $w=w_3.$
+          </li>
+        </ul>
+        <p></p>
+
+
+        <p>
+          Se puede demostrar que la ecuación (\ref{cross}) define una transformación lineal fraccionaria
+          expandiendo los productos de (\ref{cross-02}) y escribiendo el resultado en la forma
+          \[
+          Azw+Bz+Cw+D=0 \qquad (AD-BC\neq 0).
+          \]
+          Como ejercicio, demuestra que la ecuación (\ref{cross}) define en realidad la <em>única</em>
+          transformación lineal que mapea los puntos $z_1,$ $z_2,$ y $z_3$
+          sobre $w_1,$ $w_2,$ y $w_3,$ respectivamente.
+        </p>
+
+        <div class="practice">
+          <p>
+            <strong>
+              Ejemplo 1:
+            </strong>
+            Para encontrar una transformación lineal fraccional que mapea
+            $z_1=1,$ $z_2=i,$ y $z_3=-1$ sobre $w_1=-1,$ $w_2=0,$ y $w_3=1,$
+            usamos la ecuación (\ref{cross}) para escribir
+          </p><div class="scroll-wrapper">
+            \begin{eqnarray*}
+            \frac{\left(w+1\right)\left(0-1\right)}{\left(w- 1\right)\left(0+ 1\right)} = \frac{\left(z- 1\right)\left(i
+            + 1\right)}{\left(z+1\right)\left(i- 1\right)}.
+            \end{eqnarray*}
+          </div>
+          Resolviendo para $w$ en términos de $z$ obtenemos
+          \[
+          w = T(z) = \frac{z-i}{iz-1}.
+          \]
+          <p></p>
+        </div>
+
+        <p>
+          Si la ecuación (\ref{cross}) se modifica adecuadamente, también puede usarse cuando el punto
+          en el infinito es uno de los puntos prescritos en el plano (extendido) $z$ o
+          $w.$ Supongamos, por ejemplo, que $z_1=\infty.$ Dado que cualquier transformación lineal fraccional es
+          continua en el plano extendido, solo necesitamos reemplazar
+          $z_1$ en el lado derecho de la ecuación (\ref{cross})
+          por $1/z_1,$ eliminar fracciones y
+          dejar que $z_1$ tienda a cero. Es decir
+        </p><div class="scroll-wrapper">
+          \begin{eqnarray*}
+          \lim_{z_1\to 0} \frac{\left(z- 1/z_1\right)\left(z_2 -z_3\right)}{\left(z-z_3\right)\left(z_2-
+          1/z_1\right)}\cdot \frac{z_1}{z_1} = \lim_{z_1\to 0} \frac{\left(z_1z- 1/z\right)\left(z_2
+          -z_3\right)}{\left(z-z_3\right)\left(z_1z_2- 1\right)} = \frac{z_2 -z_2}{z-z_3} .
+          \end{eqnarray*}
+        </div>
+        Así obtenemos la modificación deseada de la ecuación (\ref{cross})
+        <div class="scroll-wrapper">
+          \begin{eqnarray*}
+          \frac{\left(w- w_1\right)\left(w_2- w_3\right)}{\left(w- w_3\right)\left(w_2- w_1\right)} = \frac{\left(z_2-
+          z_3\right)}{\left(z- z_3\right)}.
+          \end{eqnarray*}
+        </div>
+        Esta modificación se obtiene simplemente eliminando los factores que involucran
+        $z_1$ en la ecuación (\ref{cross}). Es fácil comprobar que el mismo enfoque
+        se aplica cuando cualquiera de los otros puntos prescritos es $\infty.$
+        <p></p>
+
+
+        <div class="practice">
+          <p>
+            <strong>
+              Example 2:
+            </strong>
+            Para encontrar la transformación lineal fraccionaria
+            que mapea
+            $z_1=1,$ $z_2=0,$ y $z_3=-1$ sobre $w_1=i,$ $w_2=\infty,$ y $w_3=1,$
+            usamos la modificación
+          </p><div class="scroll-wrapper">
+            \begin{eqnarray*}
+            \frac{\left(w- w_1\right)}{\left(w- w_3\right)} = \frac{\left(z- z_1\right)\left(z_2- z_3\right)}{\left(z-
+            z_3\right)\left(z_2- z_1\right)}.
+            \end{eqnarray*}
+          </div>
+          de la equación (\ref{cross}).
+          De esta forma
+          <div class="scroll-wrapper">
+            \begin{eqnarray*}
+            \frac{\left(w- i\right)}{\left(w- 1\right)} = \frac{\left(z-
+            1\right)\left(0+1\right)}{\left(z+1\right)\left(0- 1\right)}.
+            \end{eqnarray*}
+          </div>
+          <p></p>
+          <p>
+            Al resolver para $w$ obtenemos
+            \[
+            w = T(z) = \frac{(i+1)z+(i-1)}{2z}.
+            \]
+          </p>
+        </div>
+
+
+      </div>
+
+      <hr>
+
+      <div id="section3">
+
+
+        <h2>Mapeos del semiplano superior</h2>
+
+        <p>
+          La siguiente transformación
+          \begin{eqnarray}\label{upper}
+          T(z) = e^{i\alpha} \frac{z- z_0}{z-\conj{z}},
+          \end{eqnarray}
+          con $\alpha\in \R$ y $\Im(z_0)\gt 0,$ define todas las
+          transformaciones lineales fraccionales que mapean
+          el semiplano superior $\Im(z)$ en el disco abierto $|w| \lt 1 $
+          y la frontera $\Im(z)=0$ del semiplano en la frontera 
+          $|w| = 1$ del disco.
+        </p>
+
+        <p>
+          Use el applet a continuación para explorar la transformación definida en (\ref{upper}).
+          Aquí empezamos en el disco $|w| \leq 1.$ Arrastra el deslizador para aplicar la
+          transformación. Luego,
+          mueva el punto $z_0$ y observa qué sucede.
+          También puedes modificar el valor de $\alpha.$
+          ¿Qué notas? ¿Qué preguntas te puedes hacer?
+        </p>
+
+
+        <br>
+
+        <div class="ggbElement" id="ggb-element-1"></div>
+
+        <div class="practice">
+
+          <p>
+            <strong>Ejercicio 1:</strong>
+            Con base en tus observaciones del applet anterior,
+            ¿qué puedes decir acerca de la transformación cuando
+            $\Im(z_0) = 0$ o $\Im(z_0) \lt 0$?
+            ¿Qué sucede cuando modificas el valor de $\alpha$?
+          </p>
+
+
+          <p>
+            <strong>Ejercicio 2:</strong>
+            Desmuestra que la transformación definida en  (\ref{upper})
+            mapea el  semiplano superior  $\Im (z) \gt 0$ en el disco
+            $|w| \lt 1$ y la frontera del semiplano en la frontera del disco.
+          </p>
+
+        </div>
+        <br>
+      </div>
+
+    </article>
+  </main>
+
+  <!--GeoGebra embeding-->
+  <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+  <script>
+    let params1 = {
+      "width": 800,
+      "height": 520,
+      "material_id": "mugcuvk7",
+      "borderColor": "888888",
+      "playButton": false,
+      "showFullscreenButton": true,
+      "enableShiftDragZoom": false,
+      "showResetIcon": true
+    };
+
+    /*
+    let params2 = {
+        "width": 675,
+        "height": 473,
+        "material_id": "tmnebrfq",
+        "borderColor": "888888",
+        "playButton": true,
+        "showFullscreenButton": true,
+        "enableShiftDragZoom": true,
+        "showResetIcon": true
+    };
+    */
+
+    let ggbApplet1 = new GGBApplet(params1, true);
+    //let ggbApplet2 = new GGBApplet(params2, true);
+    window.addEventListener("load", () => {
+      ggbApplet1.inject('ggb-element-1');
+      //ggbApplet2.inject('ggb-element-2');
+    });
+  </script>
+  <!--GeoGebra embeding ends-->
+
+  <a href="aplicaciones_conformal.html" style="text-decoration: none;">
+    <p class="nextPage">Applicaciones de Mapeos Conformes<i class="fa-solid fa-angles-right"></i></p>
+  </a>
+  <!-- Ends main content -->
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 ¡Hola!</strong>
+      </div>
+      <div class="modal-body">
+
+        <div w3-include-html="message-modal.html"></div>
+        
+        <br />
+      </div>
+
+      <div class="modal-footer">
+        ¡Gracias! 🙏 !Realmente aprecio tu apoyo! 🤗
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer data-type="footer">
+
+  <span id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <span class="hide-small">
+      <a href="https://github.com/complex-analysis"><i class="fa-solid fa-code"></i> Source</a>,
+      <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues"><i
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+    </span>
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-solid fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+
+  <br />
+
+  <a id="licence-link" rel="license" href="licencia.html">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong><span style="font-size: 0.9em;">ISBN: 978-0-6485736-2-3</span></strong><br>
+  <strong>
+    <span class="hide-small" style="font-size: 0.9em;">&copy; Juan Carlos Ponce Campuzano
+      2021-<script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 0.9em;">&copy; J.C. Ponce Campuzano
+      2021-<script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>

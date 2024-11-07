@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+  <title>  Topología del Plano Complejo
+</title>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Main info: Dublin core -->
+  <meta name="DC.Title" content="Análisis Complejo">
+  <meta name="DC.Creator" content="Juan Carlos Ponce Campuzano">
+  <meta name="DC.Date" content="26-01-2021">
+  <meta name="DC.Identifier" content="ISBN-13: 978-0-6485736-2-3">
+  <meta name="DC.Type" content="Recurso interactivo">
+  <meta name="DC.Format" content="HTML">
+  <meta name="DC.Language" content="es-mx">
+  <meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+  <!-- social media cards -->
+  <meta property="og:title" content="Análisis Complejo">
+  <meta property="og:description" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta property="og:url" content="https://complex-analysis.com/es.html">
+  <meta property="og:image" content="https://complex-analysis.com/images/complex_analysis_card-es.jpg">
+  <meta property="og:site_name" content="Complex Analysis">
+  <meta property="og:locale" content="es-mx">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta name="twitter:title" content="Análisis Complejo">
+  <meta name="twitter:description" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta name="twitter:site" content="@jcponcemath">
+  <meta name="twitter:image" content="https://complex-analysis.com/images/complex_analysis_card-es.jpg">
+  <meta name="twitter:creator" content="@jcponcemath">
+
+  <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+
+  <link rel="stylesheet" href="css/style-es.css">
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HVPF4FLZCB');
+  </script>
+</head>
+
+<body data-type="book" id="top">
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="raices_numeros_complejos.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-regular fa-sun"></i></span>
+        <span class="support-top-button" id="donate"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="tabla_de_contenidos.html" class="link" id="center-link">
+            <span class="content-hover-previous">Raíces de Números Complejos</span>
+            <span class="content-hover">Tabla de Contenidos</span>
+            <span class="content-original">Análisis Complejo</span>
+            <span class="content-hover-next">Funciones Complejas</span>
+        </a>
+    </div>
+    <a href="funciones_complejas.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="topology">
+
+    <!-- Starts main content -->
+
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contenidos</p>
+        <ul>
+            <li><a href="#section1">Vecindades</a></li>
+            <li><a href="#section2">Clasificación de puntos</a></li>
+            <li><a href="#section3">Espacio topológico</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+
+    <br><br>
+
+    <main>
+        <article>
+
+            <h1>Topología del Plano Complejo</h1>
+
+            <hr>
+
+            <div id="section1">
+
+                <h2>Vecindades</h2>
+
+
+                <p>
+                    Una $\varepsilon$ <em id="neighbourhood">vecindad</em>, también llamada
+                    <em>bola abierta</em> o <em>disco abierto</em>, de un número complejo
+                    $z_0$ consiste en todos los puntos
+                    $z$ que se encuentran dentro, pero no en el círculo, con centro en
+                    $z_0$ y con radio
+                    $\varepsilon&gt;0,$ la cual se denota como
+                </p><div class="scroll-wrapper">
+                    \begin{eqnarray}
+                    B_{\varepsilon}(z_0)=\{z:|z-z_0| \lt \varepsilon\}.
+                    \end{eqnarray}
+                </div>
+                La $\varepsilon$ <em id="closed-neighbourhood">vecindad cerrada</em>
+                de $z_0$ se denota por
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}
+                    \overline{B}_{\varepsilon}(z_0)=\{z:|z-z_0|\leq \varepsilon\}.
+                    \end{eqnarray}
+                </div>
+                Finalmente, una $\varepsilon$ <em>vecindad borrada</em>
+                de $z_0,$ también llamada <em>bola perforada</em> o <em>disco perforado</em>, se expresa como
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}
+                    B_{\varepsilon}(z_0)\setminus \{z_0\}=\{z:0 \lt |z-z_0| \lt \varepsilon\}.
+                    \end{eqnarray}
+                </div>
+                La Figura 1 muestra la representación geométrica de los
+                siguientes ejemplos:
+                <p></p>
+
+                <div class="scroll-wrapper">
+                    <ol>
+                        <li>$B_{1}(0)=\{z:|z|\lt 1\}$</li>
+                        <li> $\overline{B}_{\frac{7}{8}}\left(-1-\sqrt{2}i\right)=\left\{z:|z-\left(-1-\sqrt{2}i\right)|\leq
+                            \frac{7}{8}\right\}$</li>
+                        <li>$\overline{B}_{\frac{1}{2}}\left(2+\sqrt{3}i\right)\setminus
+                            \left\{2+\sqrt{3}i\right\}=\left\{z:0
+                            \lt |z-\left(2+\sqrt{3}i\right)|\leq\frac{1}{2}\right\}$</li>
+                    </ol>
+                </div>
+
+
+                <figure>
+                    <img src="../images/chp01/balls.svg" alt="Neighborhoods" title="Neighborhoods" style="width:60%;">
+                    <figcaption>
+                        Representación geométrica de vecindades.
+                    </figcaption>
+                </figure>
+
+
+
+
+            </div>
+
+            <hr>
+
+            <div id="section2">
+
+                <h2>Clasificación of puntos</h2>
+
+                <p>
+                    Un punto $z_0$ se dice ser <em id="interior-point">interior</em>
+                    de un conjunto $S\subset \mathbb C$ cuando existe una vecindad de
+                    $z_0$ que contiene solo puntos de $S$; un punto se dice ser
+                    <em id="exterior-point">exterior</em> de $S$ cuando
+                    existe una vecindad de este que no contiene puntos de $S.$
+                    Si $z_0$ no es ninguno de estos puntos, se dice que es un
+                    <em id="boundary-point">punto frontera</em> de $S.$ Un punto
+                    frontera es, por lo tanto, un punto en el cual todas
+                    las vecindades contienen al menos un punto en $S$ y al menos un punto que no está
+                    en $S.$ A la totalidad de todos los puntos frontera se denomina
+                    <em id="boundary">frontera</em> de $S.$
+                </p>
+
+
+                <p>
+                    En este texto usaremos la notación:
+                </p>
+                <div class="scroll-wrapper">
+                    <ol>
+                        <li>$\text{Int } S=\left\{z: z \text{ es un punto interior de } S \right\}$</li>
+                        <li>$\text{Ext } S=\left\{z: z \text{ es un punto exterior de } S \right\}$</li>
+                        <li>$\partial S=\left\{z: z \text{ es un punto frontera de } S \right\}$</li>
+                    </ol>
+                </div>
+
+
+                <figure>
+                    <img src="../images/chp01/classification.svg" alt="Interior, boundary, and exterior S" title="Interior, boundary, and exterior S" style="width:50%;">
+                    <figcaption>
+                        Interior, frontera y exterior del conjunto $S.$
+                    </figcaption>
+                </figure>
+
+
+                <p>
+                    Considerando los ejemplos previos de vecindades, sea
+                </p><div class="scroll-wrapper">
+                    $$
+                    S_1=B_1(0),\;
+                    S_2=\overline{B}_{\frac{7}{8}}\left(-1-\sqrt{2}i\right) \text{ and }
+                    S_3=\overline{B}_{\frac{1}{2}}\left(2+\sqrt{3}i\right)\setminus \left\{2+\sqrt{3}i\right\}.
+                    $$
+                </div>
+                De esta manera, para $S_1$ tenemos:
+                <ul>
+                    <li>$\text{Int } S_1=B_1(0)$</li>
+                    <li>$\text{Ext } S_1=\{z: |z|&gt;1 \}$</li>
+                    <li>$\partial S_1=\{z: |z|=1 \}$</li>
+                </ul>
+                <p></p>
+
+
+
+                <p>
+                    Para $S_2$ tenemos:
+
+                </p>
+                <div class="scroll-wrapper">
+                    <ul>
+                        <li>$\text{Int } S_2=B_{\frac{7}{8}}\left(-1-\sqrt{2}i\right)$</li>
+                        <li>$\text{Ext } S_2=\left\{z:|z-\left(-1-\sqrt{2}i\right)|&gt;\frac{7}{8}\right\}$</li>
+                        <li>$\partial S_2=\left\{z:| z-\left(-1-\sqrt{2}i\right)| =\frac{7}{8}\right\}$</li>
+                    </ul>
+                </div>
+
+
+
+                <p>
+                    Finalmente, para $S_3$ tenemos:
+
+                </p>
+                <div class="scroll-wrapper">
+                    <ul>
+                        <li>$\text{Int } S_3=B_{\frac{1}{2}}\left(2+\sqrt{3}i\right)\setminus \{2+\sqrt{3}i\}$</li>
+                        <li>$\text{Ext } S_3=\left\{z:|z-\left(2+\sqrt{3}i\right)|&gt;\frac{1}{2}\right\}$</li>
+                        <li>$\partial S_3=\left\{z:|z-\left(2+\sqrt{3}i\right)|=\frac{1}{2}\right\}\cup\{2+\sqrt{3}i\}$
+                        </li>
+                    </ul>
+                </div>
+
+
+
+            </div>
+
+            <hr>
+
+            <div id="section3">
+
+                <h2>Espacio topológico</h2>
+
+                <p>
+                    <!--
+			Topology is, in essence, the study of the properties that 
+			are preserved through continuous deformations of "objects",
+			such as twisting, stretching or bending, but not tearing or 
+			gluing.
+
+The "objects" of study in topology are formally defined as topological spaces,
+which are sets endowed with a structure, called a topology. 
+This topology allows to define continuous deformations of 
+subspaces, and, more generally, all kinds of continuity.
+
+In particulartopology In the case of the set of complex numbers $\mathbb C$
+The "" In topology the main objects of study are called topological spaces.  
+We can think of topological spaces as sets of points together with some 
+notion of continuity. This notion of continuity, in this case, comes in the form
+of a mathematical gadget called topology that determines which funtions mapping out
+
+The technical definition of topology is a bit unintuitive.
+
+https://www.youtube.com/watch?v=pSjahcOnJvU
+                        -->
+
+                    Un conjunto $S$ es <em id="open-set">abierto</em> si para cada $z\in S,$ existe
+                    $\varepsilon&gt;0$ tal que
+                    $$B_{\varepsilon}(z)\subset S.$$
+                    Esto es, $\text{Int } S= S.$
+
+                    Un conjunto $S$ es <em id="closed-set">cerrado</em> si contiene todos sus
+                    puntos frontera, esto es
+                    $$\partial S\subseteq S.$$
+                    El conjunto $\mathbb C$ es abierto y cerrado al mismo tiempo dado que no tiene puntos frontera.
+                </p>
+
+                <p>
+
+                    El conjunto $\mathbb C,$ junto con la colección
+                    $\tau =\{S\subseteq \mathbb C: S \text{ es abierto} \}$ es un
+                    <a href="https://encyclopediaofmath.org/index.php?title=Topological_space" target="_blank">espacio
+                        topológico</a>, y esto se expresa con la pareja $\left(\mathbb C, \tau\right).$
+
+                    El espacio topológico $\left(\mathbb C, \tau\right)$ satisface lo siguiente:
+                </p><ol>
+                    <li>$\emptyset$ y $\mathbb C$ son abiertos.</li>
+                    <li>La unión arbitraria de conjuntos abiertos es también un conjunto abierto.</li>
+                    <li>Si $S_1$ y $S_2$ son abiertos, entonces $S_1\bigcap S_2$ es abierto.</li>
+                </ol>
+
+                <p></p>
+
+                <p><strong>Observación:</strong> La definición técnica de espacio topológico
+                    es un poco intuitiva, particularmente para aquellos que no han estudiado
+                    topología. En esencia, esta nos dice que las propiedades geométricas
+                    de subconjuntos de $\mathbb C$ se preservarán cuando se aplican transformaciones
+                    continuas (funciones o mapeos).</p>
+
+                <!--
+		<p>
+			On the other hand, considering closed sets, we have the following properties:
+			<ol>
+				<li>$\emptyset$ and $\mathbb C$ are closed.</li>
+				<li>Whenever two or more sets are closed, then so is their union.</li>
+				<li>Whenever sets $S_1$ and $S_2$ are closed, then so is $S_1\bigcap S_2.$</li>
+			</ol>
+
+
+			
+
+		</p>
+	-->
+
+                <p>
+                    La <em id="closure">cerradura</em> de un conjunto $S$ es el conjunto
+                    cerrado que consiste de todos los puntos en $S$ junto con su frontera.
+                    En otras palabras
+                    $$\overline{S}=S\cup \partial S.$$
+                </p>
+
+                <p>
+                    En general un conjunto es conexo si no se puede expresar
+                    como la unión de dos conjuntos abiertos disjuntos.
+                    Un conjunto abierto $S$ es <em id="connected-set">poligonalmente conexo</em>
+                    si cada par de puntos $z_1$ y $z_2$ en él se pueden unir con
+                    una línea poligonal, la cual consiste de un número finito de
+                    segmentos de línea unidos de un extremo a otro, en el interior de $S.$
+                    Un conjunto abierto $S$ es conexo si y sólo si $S$ es
+                    poligonalmente conexo.
+                </p>
+
+                <br>
+                <figure>
+                    <img src="../images/chp01/connected-set.gif" alt="Connected set" title="Connected set" style="width:50%;">
+                    <figcaption>
+                        Conjunto poligonalmente conexo.
+                    </figcaption>
+                </figure>
+
+                <p>
+                    Notemos por ejemplo que el conjunto abierto $|z| \lt 1$ es conexo.
+                    El <em id="annulus">anulus</em> $1 \lt |z| \lt 2$ es abierto y también conexo,
+                    ver Figuras 4 y 5.
+                </p>
+
+                <br>
+
+                <div class="figure-container">
+                    <figure id="open-connected">
+                        <img src="../images/chp01/unit-ball.svg" alt="Open connected set" title="Open connected set" style="width:95%;">
+                        <figcaption>
+                            $|z| \lt 1.$
+                        </figcaption>
+                    </figure>
+                    <br>
+                    <figure id="annulus">
+                        <img src="../images/chp01/annulus.svg" alt="Annulus" title="Annulus" style="width:95%;">
+                        <figcaption>
+                            $1 \lt |z| \lt 2.$
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <p>
+                    Un conjunto no vació y abierto que es conexo es llamado 
+                    <em id="domain">dominio</em>. En este contexto, 
+                    cualquier vecindad es un dominio. Un dominio junto con algunos,
+                    ninguno, o todos sus puntos frontera se le conoce como una 
+                    <em id="region">región</em>. En otras palabras, 
+                    un conjunto cuyo interior es un dominio es llamado <em>región</em>.
+                    Un conjunto  $S$ es acotado si existe 
+                    $R&gt;0$ tal que 
+                    $$S\subset B_R(0)=\{z\in \mathbb C: |z|\lt R\}.$$
+                </p>
+                <br>
+                <figure>
+                    <img src="../images/chp01/bounded.svg" alt="Bounded set" title="Bounded set" style="width:55%;">
+                    <figcaption>
+                        Conjunto acotado.
+                    </figcaption>
+                </figure>
+
+                <!--
+			<p>
+			A point $z\in \mathbb C$ is an <em id="accumulation
+			point">accumulation point</em> of $S\subseteq \mathbb C$ if every 
+			deleted neighbourhood of $z$
+			intersects $S.$ It follows that if a set $S$ is closed, then it contains 
+			each of its accumulation
+			points. For if an accumulation point $z_0$ were not in $S,$ it would 
+			be a boundary point of $S$; but
+			this contradicts the fact that a closed set contains all of its 
+			boundary points. It is left as an
+			exercise to show that the converse is, in fact, true. Thus a set 
+			is closed if and only if it
+			contains all of its accumulation points. Evidently, a point $z_0$ 
+			is not an accumulation point of a
+			set S whenever there exists some deleted neighbourhood of $z_0$ 
+			that does not contain at least one
+			point of $S.$ Note that the origin is the only accumulation point 
+			of the set $z_n=i/n$ with $n=1, 2,
+			3,\ldots $ </p>
+		-->
+
+                <div class="practice">
+                    <p><strong>Ejercicio:</strong> Realiza el esbozo del conjunto de puntos $S$ en el plano complejo 
+                        que satisface la desigualdad dada. Determina si el conjunto es (<em>a</em>) abierto, 
+                        (<em>b</em>) cerrado,
+                        (<em>c</em>) un dominio, (<em>d</em>) acotado, o (<em>e</em>) conexo.</p>
+                    <ul>
+                        <li>$\text{Im}(z)\lt 0$</li>
+                        <li>$-1\lt \text{Re(z)} \lt 1$</li>
+                        <li>$|z|&gt;1$</li>
+                        <li>$2\le |z - 3+4i |\le 5$</li>
+                    </ul>
+                </div>
+
+
+            </div>
+
+        </article>
+    </main>
+
+    <a href="funciones_complejas.html" style="text-decoration: none;">
+        <p class="nextPage">Funciones Complejas <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 ¡Hola!</strong>
+      </div>
+      <div class="modal-body">
+
+        <div w3-include-html="message-modal.html"></div>
+        
+        <br />
+      </div>
+
+      <div class="modal-footer">
+        ¡Gracias! 🙏 !Realmente aprecio tu apoyo! 🤗
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer data-type="footer">
+
+  <span id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <span class="hide-small">
+      <a href="https://github.com/complex-analysis"><i class="fa-solid fa-code"></i> Source</a>,
+      <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues"><i
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+    </span>
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-solid fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+
+  <br />
+
+  <a id="licence-link" rel="license" href="licencia.html">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong><span style="font-size: 0.9em;">ISBN: 978-0-6485736-2-3</span></strong><br>
+  <strong>
+    <span class="hide-small" style="font-size: 0.9em;">&copy; Juan Carlos Ponce Campuzano
+      2021-<script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 0.9em;">&copy; J.C. Ponce Campuzano
+      2021-<script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>
