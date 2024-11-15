@@ -53,7 +53,14 @@
 
 <body data-type="book" id="top">
 
-
+  <div class="myLoader" id="loader">
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="loadingMessage">Loading...</div>
+  </div>
 
   <!-- Main DIV Starts here -->
   <div class="container">
@@ -133,7 +140,7 @@
             <p>In this book you will find examples, problems and applets that allow you to explore complex analysis by
                 using
                 the visual interactive power of the computer (or tablet).</p>
-
+ 
             <p class="callout" style="text-align:left"><strong>UPDATES!</strong>
                 There is a new design in celebration to the 5th anniversary of this site.
                 I have also updated many of the JavaScript applets for better performance.
@@ -141,13 +148,13 @@
                 <a href="https://www.patreon.com/posts/celebrating-5-of-99495115?utm_medium=clipboard_copy&amp;utm_source=copyLink&amp;utm_campaign=postshare_creator&amp;utm_content=join_link" target="_blank">Patreon</a>
                 to get your complex functions gallery.
                 <br>
-                A few new sections were added and updated:
+                A few of sections were added and updated:
                 <a href="content/limits.html">Limits</a>,
-                <a href="content/complex_integration.html">Integration of complex functions</a>,
-                <a href="content/laurent_series.html">Laurent series</a>,
+                <a href="content/complex_integration.html">Integration of complex functions</a>
+                and <a href="content/laurent_series.html">Laurent series</a>,
                 <a href="content/topology_complex_plane.html">Topology of the complex plane</a>,
                 <a href="content/complex_differentiation.html">Complex differentiation</a>, 
-                <a href="content/conformal_mapping.html">Complex mapping</a>, and
+                <a href="content/complex_mapping.html">Complex mapping</a>, and
                 <a href="content/linear_fractional_transformations.html">Linear fractional transformations</a>.
                 <br>
                 <br>
@@ -189,11 +196,11 @@
                     -
                     <a target="_blank" href="https://p5js.org/">
                         <strong>p5.js</strong></a>
-                    -
+                    - 
                     <a target="_blank" href="https://cindyjs.org/">
                         <strong>Cindy.js</strong>
                     </a>
-                    -
+                    - 
                     <a target="_blank" href="https://mathcell.org/">
                         <strong>MathCell.js</strong>
                     </a>
@@ -351,6 +358,8 @@
   </div>
   <!-- Main DIV Ends here -->
 
+  
+
   <!-- The Modal    -->
 
   <div id="myModal" class="modal">
@@ -364,7 +373,6 @@
       <div class="modal-body">
 
         <div w3-include-html="content/message-modal.html"></div>
-
         
         <br />
       </div>
@@ -385,7 +393,7 @@
 
   <span id="footer-elements">
     <span style="font-weight: bold;">[</span>
-    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <a href="/"><i class="fa-solid fa-house"></i> Home</a>,
     <span class="hide-small">
       <a href="https://github.com/complex-analysis"><i class="fa-solid fa-code"></i> Source</a>,
       <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues"><i

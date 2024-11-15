@@ -52,6 +52,15 @@
 
 <body data-type="book" id="top">
 
+  <div class="myLoader" id="loader">
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="loadingMessage">Loading...</div>
+  </div>
+
 <div class="fixed-bar" id="fixed-bar">
     <div class="link-container">
         <a href="brief_history.html" class="link" id="prev-link">
@@ -80,6 +89,7 @@
   <!-- Main DIV Starts here -->
   <div class="container">
     <section data-type="chapter" id="terminology">
+
 
     <!-- Starts main content -->
 
@@ -260,6 +270,8 @@
   </div>
   <!-- Main DIV Ends here -->
 
+  
+
   <!-- The Modal    -->
 
   <div id="myModal" class="modal">
@@ -273,7 +285,6 @@
       <div class="modal-body">
 
         <div w3-include-html="message-modal.html"></div>
-
         
         <br />
       </div>

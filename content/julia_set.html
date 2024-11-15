@@ -52,6 +52,15 @@
 
 <body data-type="book" id="top">
 
+  <div class="myLoader" id="loader">
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="loadingMessage">Loading...</div>
+  </div>
+
 <div class="fixed-bar" id="fixed-bar">
     <div class="link-container">
         <a href="mandelbrot_set.html" class="link" id="prev-link">
@@ -158,7 +167,7 @@
 
                     </div> 
                     
-                    <div style="text-align: center;margin-top: 10px;">
+                    <div style="text-align: center;margin-top: -20px;">
                         <button onclick="var ifr=document.getElementsByName('Julia')[0]; ifr.src=ifr.src;" style="cursor: pointer;font-weight: bold;">Reset</button>
                         &nbsp;&nbsp;
                         <button>
@@ -289,13 +298,15 @@
     </main>
 
     <a href="conformal_mapping.html" style="text-decoration: none;">
-        <p class="nextPage">Conformal Mapping <i class="fa-solid fa-angles-right"></i></p>
+        <p class="nextPage">Conformal Mapping<i class="fa-solid fa-angles-right"></i></p>
     </a>
     <!-- Ends main content -->
 
 </section>
   </div>
   <!-- Main DIV Ends here -->
+
+  
 
   <!-- The Modal    -->
 
@@ -310,7 +321,6 @@
       <div class="modal-body">
 
         <div w3-include-html="message-modal.html"></div>
-
         
         <br />
       </div>

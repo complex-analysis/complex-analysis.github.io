@@ -52,6 +52,15 @@
 
 <body data-type="book" id="top">
 
+  <div class="myLoader" id="loader">
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="loadingMessage">Loading...</div>
+  </div>
+
 <div class="fixed-bar" id="fixed-bar">
     <div class="link-container">
         <a href="principal_argument.html" class="link" id="prev-link">
@@ -170,7 +179,8 @@
                 <p></p>
             </div>
 
-            <p>The applet below shows a geometrical representation of the $n$th roots of a complex number, up to $n=10.$
+            <p>The applet below shows a geometrical and numerical 
+                representation of the $n$th roots of a complex number, up to $n=10.$
                 Drag the red point around to change the value of $z$ or 
                 activate the check box <code>Specify values</code> to drag the sliders. 
                 You can check the roots of the previous example.
@@ -254,6 +264,8 @@ nRoots = Sequence(r^(1/n) * exp( ί * ( theta/n + 2 * pi * k/n ) ), k, 0, n-1)
 </section>
   </div>
   <!-- Main DIV Ends here -->
+
+  
 
   <!-- The Modal    -->
 
