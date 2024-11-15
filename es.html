@@ -54,6 +54,34 @@
 
 <body data-type="book" id="top">
 
+  <div class="myLoader" id="loader">
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="loadingMessage">Cargando...</div>
+  </div>
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-regular fa-sun"></i></span>
+        <span class="support-top-button" id="donate"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="tabla_de_contenidos.html" class="link" id="center-link">
+            <span class="content-hover">Tabla de Contenidos</span>
+            <span class="content-original">Análisis Complejo</span>
+            <span class="content-hover-next">Tabla de contenidos</span>
+        </a>
+    </div>
+    <a href="tabla_de_contenidos.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
 
 
   <!-- Main DIV Starts here -->
@@ -148,14 +176,13 @@
                 <a href="contenido/series_de_laurent.html">Series de Laurent</a>,
                 <a href="contenido/integracion_compleja.html">Integración de funciones complejas</a>,
                 <a href="contenido/diferenciacion_compleja.html">Diferenciación compleja</a>,
-                <a href="contenido/topologia_plano_complejo.html">Topología del plano complejo</a> y
-                <a href="contenido/limites.html">Límites</a> y
+                <a href="contenido/topologia_plano_complejo.html">Topología del plano complejo</a>,
                 <a href="contenido/mapeo_conforme.html">Mapeo conforme</a> y
-                <a href="contenido/transformaciones_lineales_fraccionarias.html">Transformaciones lineales fraccionarias.</a>.
+                <a href="contenido/transformaciones_lineales_fraccionarias.html">Transformaciones lineales fraccionarias</a>.
                 <br><br>
                 Recientemente, comencé a trabajar en la <a href="it.html">versión Italiana</a> de 
                 este sitio, y en otros proyectos para crear
-                más libros interactivos en línea. Ya tengo un adelanto de Análisis Real.
+                más libros interactivos en línea.  Ya tengo un adelanto de Análisis Real.
                 Si quieres saber más al respecto, consulta mi
                 <a href="https://www.patreon.com/posts/real-analysis-98129332?utm_medium=clipboard_copy&amp;utm_source=copyLink&amp;utm_campaign=postshare_creator&amp;utm_content=join_link" target="_blank">☞ Patreon</a>.
                 <br>
@@ -394,7 +421,7 @@
 
   <span id="footer-elements">
     <span style="font-weight: bold;">[</span>
-    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <a href="/"><i class="fa-solid fa-house"></i> Home</a>,
     <span class="hide-small">
       <a href="https://github.com/complex-analysis"><i class="fa-solid fa-code"></i> Source</a>,
       <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues"><i
@@ -407,7 +434,7 @@
 
   <br />
 
-  <a id="licence-link" rel="license" href="licencia.html">
+  <a id="licence-link" rel="license" href="contenido/licencia.html">
     <i class="fa-brands fa-creative-commons"></i>
     <i class="fa-brands fa-creative-commons-by"></i>
     <i class="fa-brands fa-creative-commons-nc"></i>
