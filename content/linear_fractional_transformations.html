@@ -1,4 +1,94 @@
-<section data-type="chapter" id="linear-fractional-transformations">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>  Linear Fractional Transformations
+</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Main info: Dublin core -->
+  <meta name="DC.Title" content="Complex Analysis">
+  <meta name="DC.Creator" content="Juan Carlos Ponce Campuzano">
+  <meta name="DC.Date" content="26-01-2019">
+  <meta name="DC.Identifier" content="ISBN-13: 978-0-6485736-0-9">
+  <meta name="DC.Type" content="Interactive Resource">
+  <meta name="DC.Format" content="HTML">
+  <meta name="DC.Language" content="en-US">
+  <meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+  <!-- social media cards -->
+  <meta property="og:title" content="Complex Analysis">
+  <meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta property="og:url" content="https://complex-analysis.com/">
+  <meta property="og:image" content="https://complex-analysis.com/images/complex_analysis_card.jpg">
+  <meta property="og:site_name" content="Complex Analysis">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+  <meta name="twitter:title" content="Complex Analysis">
+  <meta name="twitter:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta name="twitter:site" content="@jcponcemath">
+  <meta name="twitter:image" content="https://complex-analysis.com/images/complex_analysis_card.jpg">
+  <meta name="twitter:creator" content="@jcponcemath">
+
+  <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HVPF4FLZCB');
+  </script>
+</head>
+
+<body data-type="book" id="top">
+
+  <div id="loader">
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="loadingMessage">Loading...</div>
+  </div>
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="conformal_mapping.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-regular fa-sun"></i></span>
+        <span class="support-top-button" id="donate" title="Support"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="table_of_contents.html" class="link" id="center-link">
+            <span class="content-hover-previous">Conformal Mapping</span>
+            <span class="content-hover">Table of Contents</span>
+            <span class="content-original">Complex Analysis</span>
+            <span class="content-hover-next">Applications of Conformal Mappings</span>
+        </a>
+    </div>
+    <a href="applications_conformal.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="linear-fractional-transformations">
 
   <!-- Starts main content -->
 
@@ -34,7 +124,7 @@
           \end{eqnarray}
           is called <em>linear fractional transformation</em>, or <em>Möbius transformation</em>. 
           Observe that we can also write (\ref{mobius}) in the form
-          <div class="scroll-wrapper">
+          </p><div class="scroll-wrapper">
             \begin{eqnarray}\label{bilinear}
           Azw + Bz+Cw+D = 0 \qquad (AD-BC\neq 0);
           \end{eqnarray}
@@ -42,19 +132,19 @@
           with $w = T(z).$ Since this alternative form is linear in $z$ and linear in $w,$
           another name for linear fractional transformation is 
           <em>bilinear transformation</em>.
-        </p>
+        <p></p>
 
 
         <p>
           If $c=0,$ then the condition $ad-bc\neq 0$ with equation (\ref{mobius})
           becomes $ad\neq 0.$ So the transformation $T$ reduces to a nonconstant linear function
           $az+b.$ When $c\neq 0,$ then we can write equation (\ref{mobius}) as 
-          <div class="scroll-wrapper">
+          </p><div class="scroll-wrapper">
           \begin{eqnarray}\label{mobius-composition}
           T(z) =  \frac{bc-ad}{c}\cdot \frac{1}{cz+d}+ \frac{a}{c}  \qquad (ad-bc\neq 0)
           \end{eqnarray}
           </div>
-        </p>
+        <p></p>
         <p>Again, the condition $ad-bc\neq 0$ ensures that we do not have a constant function.
           The transformation $T(z)=1/z$ us obviously a special case of (\ref{mobius})
           when $c\neq 0.$ (We already covered this function in 
@@ -63,12 +153,12 @@
         <p>
           Equation (\ref{mobius-composition}) reveals that a linear transformation 
           is a composition of the mappings:
-          <div class="scroll-wrapper">
+          </p><div class="scroll-wrapper">
             \[
           f(z)=  \frac{bc-ad}{c}z+\frac{a}{c},\quad g(z) = \frac{1}{z}, \quad h(z) = cz+d.
           \]
           </div>
-        </p>
+        <p></p>
         <p>That is, $T(z) = f\circ g \circ h(z) =  f\left( g\left( h(z)\right)\right).$
           Thus it follows that, regardless of whether $c$ is zero or nonzero,
           any linear fractional transformation 
@@ -90,18 +180,18 @@
         <p>
           When $c\neq 0,$ that is, when $T$ is not a linear function, it is often 
           useful to view $T$ as a mapping of the extended complex plane:
-          <div class="scroll-wrapper">
+          </p><div class="scroll-wrapper">
             \begin{eqnarray}\label{mobius-extended}
             T(z) = \left\{
               \begin{array}{ll}
-              \dfrac{az+b}{cz+d}, & z\neq -\dfrac{d}{c}, z\neq \infty\\
-              \infty, & z=-\dfrac{d}{c}\\
-              \dfrac{a}{c}, & z=\infty.
+              \dfrac{az+b}{cz+d}, &amp; z\neq -\dfrac{d}{c}, z\neq \infty\\
+              \infty, &amp; z=-\dfrac{d}{c}\\
+              \dfrac{a}{c}, &amp; z=\infty.
               \end{array}
               \right.
             \end{eqnarray}
             </div>
-        </p>
+        <p></p>
 
         <p>
           In this case, $T$ is a one-to-one mapping of the extended 
@@ -132,21 +222,21 @@
 
         <p>
           Consider the following equation
-          <div class="scroll-wrapper">
+          </p><div class="scroll-wrapper">
             \begin{eqnarray}\label{cross}
             \frac{\left(w- w_1\right)\left(w_2- w_3\right)}{\left(w- w_3\right)\left(w_2- w_1\right)} = \frac{\left(z- z_1\right)\left(z_2- z_3\right)}{\left(z- z_3\right)\left(z_2- z_1\right)}.
             \end{eqnarray}
             </div>
             The two sides of this equation are knwon as <em>cross ratios</em>. 
          
-        </p>
+        <p></p>
 
         <p>
           Equation (\ref{cross}) defines (implicitly) a linear fractional transformation that maps
           disctinct three points $z_1,$ $z_2,$ and $z_3$ in the finite $z$ plane 
           onto three distinct points  $w_1,$ $w_2,$ and $w_3,$ respectively, in the finite $w$ plane.
           We can easily verify this by writing equation (\ref{cross}) as
-          <div class="scroll-wrapper">
+          </p><div class="scroll-wrapper">
             \begin{eqnarray}\label{cross-02}
             \left(z- z_3\right)\left(w- w_1\right)\left(z_2- z_1\right)\left(w_2- w_3\right) = \left(z- z_1\right)\left(w- w_3\right)\left(z_2- z_3\right)\left(w_2- w_1\right)  
             \end{eqnarray}
@@ -169,7 +259,7 @@
                 $w=w_3.$
               </li>
             </ul>
-        </p>
+        <p></p>
 
         <p>
           It can be proved that equation (\ref{cross}) defines linear fractional transformation 
@@ -190,7 +280,7 @@
             To find a linear fractional transformation that maps 
             $z_1=1,$ $z_2=i,$ and $z_3=-1$ onto $w_1=-1,$ $w_2=0,$ and $w_3=1,$
             we use equation (\ref{cross}) to write 
-             <div class="scroll-wrapper">
+             </p><div class="scroll-wrapper">
               \begin{eqnarray*}
               \frac{\left(w+1\right)\left(0-1\right)}{\left(w- 1\right)\left(0+ 1\right)} = \frac{\left(z- 1\right)\left(i + 1\right)}{\left(z+1\right)\left(i- 1\right)}.
               \end{eqnarray*}
@@ -199,7 +289,7 @@
               \[
               w = T(z) = \frac{z-i}{iz-1}.
               \]
-          </p>
+          <p></p>
         </div>
 
         <p>
@@ -210,7 +300,7 @@
            $z_1$ on the right-hand side of equation (\ref{cross}) 
            by $1/z_1,$ clear fractions, and 
             let $z_1$ tend to zero. That is
-            <div class="scroll-wrapper">
+            </p><div class="scroll-wrapper">
               \begin{eqnarray*}
               \lim_{z_1\to 0}  \frac{\left(z- 1/z_1\right)\left(z_2 -z_3\right)}{\left(z-z_3\right)\left(z_2- 1/z_1\right)}\cdot \frac{z_1}{z_1} =  \lim_{z_1\to 0}  \frac{\left(z_1z- 1/z\right)\left(z_2 -z_3\right)}{\left(z-z_3\right)\left(z_1z_2- 1\right)} =  \frac{z_2 -z_2}{z-z_3} .
               \end{eqnarray*}
@@ -224,7 +314,7 @@
            This modification is obtained by simply deleting the factors involving 
            $z_1$ in equation (\ref{cross}). It is easy to check that the same  approach 
            applies when any of the other prescribed points is $\infty.$
-        </p>
+        <p></p>
 
         <div class="practice">
           <p>
@@ -234,7 +324,7 @@
             To find a linear fractional transformation that maps 
             $z_1=1,$ $z_2=0,$ and $z_3=-1$ onto $w_1=i,$ $w_2=\infty,$ and $w_3=1,$
             we use the modification
-             <div class="scroll-wrapper">
+             </p><div class="scroll-wrapper">
               \begin{eqnarray*}
             \frac{\left(w- w_1\right)}{\left(w- w_3\right)} = \frac{\left(z- z_1\right)\left(z_2- z_3\right)}{\left(z- z_3\right)\left(z_2- z_1\right)}.
             \end{eqnarray*}
@@ -246,7 +336,7 @@
               \frac{\left(w- i\right)}{\left(w- 1\right)} = \frac{\left(z- 1\right)\left(0+1\right)}{\left(z+1\right)\left(0- 1\right)}.
               \end{eqnarray*}
                 </div>
-          </p>
+          <p></p>
           <p>
             Solving for $w$ we obtain 
             \[
@@ -286,9 +376,9 @@
           You can aslo modify the value of $\alpha.$
           What do you notice? What do you wonder?
         </p>
-        <br/>
+        <br>
 
-        <div  class="ggbElement" id="ggb-element-1"></div>
+        <div class="ggbElement" id="ggb-element-1"></div>
 
         <div class="practice">
 
@@ -310,7 +400,7 @@
             </p>
          
         </div>
-        <br/>
+        <br>
       </div>
 
     </article>
@@ -359,3 +449,83 @@
   <!-- Ends main content -->
 
 </section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+  
+
+  <!-- The Modal    -->
+
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 Hey there!</strong>
+      </div>
+      <div class="modal-body">
+
+        <div w3-include-html="message-modal.html"></div>
+        
+        <br />
+      </div>
+      <div class="modal-footer">
+        Thank you! 🙏 I highly appreciate your support! 🤗
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer>
+
+  <span id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <span class="hide-small">
+      <a href="https://github.com/complex-analysis"><i class="fa-solid fa-code"></i> Source</a>,
+      <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues"><i
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+    </span>
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-solid fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+  
+  <br />
+
+  <a id="licence-link" rel="license"
+    href="license.html">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong style="font-size: 0.9em;">ISBN: 978-0-6485736-0-9</strong> <br>
+  <strong>
+    <span class="hide-small" style="font-size: 0.9em;">&copy; Juan Carlos Ponce Campuzano
+      2019-<script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 0.9em;">&copy; J.C. Ponce Campuzano
+      2019-<script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>
