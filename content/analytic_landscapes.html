@@ -1,4 +1,94 @@
-<section data-type="chapter" id="analytic-landscapes">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>  Analytic Landscapes
+</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Main info: Dublin core -->
+  <meta name="DC.Title" content="Complex Analysis">
+  <meta name="DC.Creator" content="Juan Carlos Ponce Campuzano">
+  <meta name="DC.Date" content="26-01-2019">
+  <meta name="DC.Identifier" content="ISBN-13: 978-0-6485736-0-9">
+  <meta name="DC.Type" content="Interactive Resource">
+  <meta name="DC.Format" content="HTML">
+  <meta name="DC.Language" content="en-US">
+  <meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+  <!-- social media cards -->
+  <meta property="og:title" content="Complex Analysis">
+  <meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta property="og:url" content="https://complex-analysis.com/">
+  <meta property="og:image" content="https://complex-analysis.com/images/complex_analysis_card.jpg">
+  <meta property="og:site_name" content="Complex Analysis">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+  <meta name="twitter:title" content="Complex Analysis">
+  <meta name="twitter:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta name="twitter:site" content="@jcponcemath">
+  <meta name="twitter:image" content="https://complex-analysis.com/images/complex_analysis_card.jpg">
+  <meta name="twitter:creator" content="@jcponcemath">
+
+  <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HVPF4FLZCB');
+  </script>
+</head>
+
+<body data-type="book" id="top">
+
+  <div id="loader">
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="loadingMessage">Loading...</div>
+  </div>
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="mapping_1overz.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-regular fa-sun"></i></span>
+        <span class="support-top-button" id="donate" title="Support"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="table_of_contents.html" class="link" id="center-link">
+            <span class="content-hover-previous">The Transformation $w=1/z$</span>
+            <span class="content-hover">Table of Contents</span>
+            <span class="content-original">Complex Analysis</span>
+            <span class="content-hover-next">Domain coloring</span>
+        </a>
+    </div>
+    <a href="domain_coloring.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="analytic-landscapes">
 
   <!-- Starts main content -->
 
@@ -52,11 +142,10 @@
           iconic status. Today it is hard to believe that this detailed hand-drawn picture could be created
           without the help
           of computers!
-        <p>
+        </p><p>
 
-        <figure>
-          <img src="../images/chp03/Jahnke_gamma_function.png" alt="Analytic landscape" title="Analytic landscape"
-            style="width:80%;">
+        </p><figure>
+          <img src="../images/chp03/Jahnke_gamma_function.png" alt="Analytic landscape" title="Analytic landscape" style="width:80%;">
           <figcaption>
             A historical analytic landscape of $\Gamma(z).$
           </figcaption>
@@ -138,8 +227,7 @@
         <p>Complex functions $ f:\mathbb{C}\to\mathbb{C} $ can be visualized by plotting the function $g:
           \mathbb{R^2}
           \to \mathbb{R}$ with $$g(x,y) = |f\left(x + i y\right)|.$$
-          The color of each point $\left(x, \,y, \,g(x,y)\right)$ indicates <a
-            href="terminology_notation.html#phase-argument" target="_blank">the phase (or argument)</a> of
+          The color of each point $\left(x, \,y, \,g(x,y)\right)$ indicates <a href="terminology_notation.html#phase-argument" target="_blank">the phase (or argument)</a> of
           the complex
           number $f(x + i y).$</p>
 
@@ -619,9 +707,7 @@
                   &nbsp;
                   <span>
                     <button>
-                      <a href="../applets/cindyjs/dclandscape/"
-                        style="color: black;font-weight: bold;outline: none;text-decoration: none;" target="_blank"
-                        title="Fullscreen">Fullscreen</a>
+                      <a href="../applets/cindyjs/dclandscape/" style="color: black;font-weight: bold;outline: none;text-decoration: none;" target="_blank" title="Fullscreen">Fullscreen</a>
                     </button>
                   </span>
                 </p>
@@ -672,10 +758,7 @@
         <br>
         <hr>
 
-        <p style="font-size: 16px"><strong>Note:</strong> The last applet was written by <a
-            href="https://geo.ma.tum.de/en/people/aaron-montag.html">Aaron Montag</a> using <a
-            href="https://cindyjs.org/">CindyJS</a>. The source code can be found at <a
-            href="https://github.com/complex-analysis/complex-analysis.github.io/tree/master/applets/cindyjs/analyticlandscape">GitHub.</a>
+        <p style="font-size: 16px"><strong>Note:</strong> The last applet was written by <a href="https://geo.ma.tum.de/en/people/aaron-montag.html">Aaron Montag</a> using <a href="https://cindyjs.org/">CindyJS</a>. The source code can be found at <a href="https://github.com/complex-analysis/complex-analysis.github.io/tree/master/applets/cindyjs/analyticlandscape">GitHub.</a>
         </p>
 
 
@@ -693,3 +776,83 @@
   <!-- Ends main content -->
 
 </section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+  
+
+  <!-- The Modal    -->
+
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 Hey there!</strong>
+      </div>
+      <div class="modal-body">
+
+        <div w3-include-html="message-modal.html"></div>
+        
+        <br />
+      </div>
+      <div class="modal-footer">
+        Thank you! 🙏 I highly appreciate your support! 🤗
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer>
+
+  <span id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <span class="hide-small">
+      <a href="https://github.com/complex-analysis"><i class="fa-solid fa-code"></i> Source</a>,
+      <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues"><i
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+    </span>
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-solid fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+  
+  <br />
+
+  <a id="licence-link" rel="license"
+    href="license.html">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong style="font-size: 0.9em;">ISBN: 978-0-6485736-0-9</strong> <br>
+  <strong>
+    <span class="hide-small" style="font-size: 0.9em;">&copy; Juan Carlos Ponce Campuzano
+      2019-<script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 0.9em;">&copy; J.C. Ponce Campuzano
+      2019-<script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>
