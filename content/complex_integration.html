@@ -431,7 +431,7 @@
                 </div>
 
                 <p> 
-                    Finally, consider a path $C,$ parametrized by $z(t)$ for $t\in[a,b],$
+                    Consider now a path $C,$ parametrized by $z(t)$ for $t\in[a,b],$
                     that consists of a contour $C_1$
                     from $z_1$ to $z_2$ followed by a contour $C_2$ from 
                     $z_2$ to $z_3,$ the initial point of $C_2$ being the final point of $C_1.$
@@ -458,6 +458,46 @@
                         (\ref{sum-paths}).
                     </p>
                 </div>
+
+                <p>
+                    Finally we introduce an inequality involving contour integrals that is
+                    extremely important in various applications. Consider 
+                    $C$ a smooth curve parametrized by $z(t)=x(t)+ iy(t)$ with $t\in [a,b].$ 
+                    Suppose that the components $x'(t)$ and $y'(t)$ of the derivative 
+                    \[
+                    z'(t) = x'(t) + iy'(t)
+                    \]
+                    are continuos on the entire interval $[a,b].$
+                    Then the real-valued function 
+                    \[
+                    \left|z'(t)\right| =\sqrt{\left[x'(t)\right]^2+ \left[y'(t)\right]^2}
+                    \]
+                    is integrable on $[a,b].$ According to the definition of arc length 
+                    from calculus, the <em>length of</em> $C$ is the number 
+                    \[
+                    L = \int_a^b \left|z'(z)\right|\,dt. 
+                    \]
+                </p>
+
+                <p>
+                    If $C$ is a contour of lenght $L$ and $f$ is a piecewise continuous 
+                    function on $C,$ and $M$ is a nonnegative contant such that
+                    $\left|f(z)\right|\leq M$ for all points $z$ on $C$ at which $f(z)$ 
+                    is defined, then
+                    \begin{eqnarray}\label{ML-inequality}
+                    \left|\int_C f(z)\, dz\right|\leq ML
+                    \end{eqnarray}
+                </p>
+
+                <p>
+                    Note that since $C$ is a contour and $f$ is piecewise continuous on $C,$ a number 
+                    $M$ appearing in  the inequality $\left|f(z)\right|\leq M$ will always exist.
+                    The reason is that the real-valued function $\left|f\big(z(t )\big)\right|$ is continuous on the 
+                    closed bounded interval $[a,b]$ when $f$ is continuous on $C;$ and this
+                    function always reaches a maximum value $M$ on that interval. 
+                    Therefore $|f (z)|$ has a maximum value on $C$ when $f$ is continuous on it. 
+                    This is also true when $f$ is piecewise continuous on $C.$
+                </p>
             </div>
 
             <hr>
