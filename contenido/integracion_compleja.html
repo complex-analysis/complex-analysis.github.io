@@ -101,7 +101,8 @@
             <li><a href="#section1">Integral de Contorno</a></li>
             <li><a href="#section2">Exploración numérica 1</a></li>
             <li><a href="#section3">Exploración numérica 2</a></li>
-            <li><a href="#section4">Antiderivadas</a></li>
+            <li><a href="#section4">Propiedades</a></li>
+            <li><a href="#section5">Antiderivadas</a></li>
             <!-- Add more sections as needed -->
         </ul>
     </div>
@@ -362,6 +363,195 @@
 
             <div id="section4">
 
+                <h2>Propiedades</h2>
+
+                <p>
+                    Todas las siguientes propiedades conocidas de las integrales 
+                        pueden ser probadas directamente a partir de la definición 
+                        dada en (\ref{integral-real-cv}). Si 
+                        \( w(t) = u(t) + iv(t) \) y \( s(t) = \upsilon(t) + i\nu(t) \) 
+                        son funciones de valor complejo de una variable real \( t \) 
+                        continuas en un intervalo \([a,b],\) entonces:
+                </p>
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}
+                    \int_a^b k \, w(t)\, dt &=& k \int_a^b w(t)\,dt, \quad k\text{ es una constante compleja,}\\
+                    \int_a^b \big[ w(t) + s(t)\big] \,dt &=&  \int_a^b  w(t)\,dt +  \int_a^b  s(t) \,dt,\\
+                    \int_a^b w(t)  \,dt &=&  \int_a^c  w(t)\,dt +  \int_c^b  w(t) \,dt \quad c\in[a,b], \\
+                    \int_a^b w(t)  \,dt &=&  -\int_b^a  w(t)\,dt.
+                    \end{eqnarray}
+                </div>
+
+                <p>
+                    De la definición (\ref{contour-integral}) y las 
+                    propiedades mencionadas anteriormente, se sigue inmediatamente que: 
+                </p>
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}
+                    \int_{C} z_0 \, f(z) \, dz &=& z_0 \int_{C} f(z) \, dz, \quad z_0 \text{ es una constante compleja,}\\
+                    \int_{C} \big[ f(z) + g(z) \big] \, dz &=& \int_{C} \, f(z) \, dz + \int_{C}  g(z) \, dz \\
+                    \end{eqnarray}
+                </div>
+
+                <p>
+                    Ahora consideremos el contorno definido para la integral 
+                    (\ref{contour-integral}). El contorno $-C$ consiste en el
+                     mismo conjunto de puntos pero con el orden invertido, 
+                     de modo que el nuevo contorno se extiende desde $z_2$ 
+                     hasta $z_1,$ como se muestra en la Figura 3. 
+                </p>
+
+                <figure>
+                    <img src="../images/chp04/reversed-contour.svg" alt="Reversed contour" title="Reversed contour" style="width:60%;">
+                        <figcaption>
+                           El contorno $-C$ se extiende desde $z_2$ hasta $z_1.$
+                        </figcaption>
+                </figure>
+
+                <p>
+                    El contorno $-C$ tiene una representación
+                     paramétrica $z = z(-t)$ con $-b \leq t \leq -a.$ Por lo tanto, 
+                </p>
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
+                    \int_{-C} f(z) \, dz = \int_{-b}^{-a} f\left[z(-t)\right]\frac{d}{dt}z(-t)\,dt = -\int_{-b}^{-a} f\left[z(-t)\right]z'(-t)\,dt.
+                    \end{eqnarray*}
+                </div>
+                <p>
+                    Si utilizamos la sustitución $\tau = -t$ en la última integral, entonces:
+                </p>
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
+                    \int_{-C} f(z) \, dz = -\int_{a}^{b} f\left[z(\tau)\right]z'(\tau)\,dt.
+                    \end{eqnarray*}
+                </div>
+                <p>
+                    Por lo tanto, obtenemos la siguiente propiedad
+                </p>
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}
+                    \int_{-C} f(z) \, dz = -\int_{C} f(z)\, dz.
+                    \end{eqnarray}
+                </div>
+
+                <p> 
+                    Consideremos ahora un camino $C,$ parametrizado por $z(t)$ 
+                    para $t \in [a,b],$ que consiste en un contorno $C_1$ 
+                    desde $z_1$ hasta $z_2$ seguido por un contorno $C_2$ 
+                    desde $z_2$ hasta $z_3,$ siendo el punto inicial de $C_2$ 
+                    el punto final de $C_1.$ Entonces
+                </p>
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}\label{sum-paths}
+                    \int_{C} f(z) \, dz = \int_{C_1} f(z) \, dz  + \int_{C_2} f(z) \, dz.
+                    \end{eqnarray}
+                </div>
+
+                <figure>
+                    <img src="../images/chp04/sum-contours.svg" alt="Sum of contours" title="Sum of contours" style="width:60%;">
+                        <figcaption>
+                            $C= C_1 + C_2.$
+                        </figcaption>
+                </figure>
+
+                <div class="practice">
+                    <p>
+                        <strong>Ejercicio 4:</strong>
+                        
+                        Usa las propiedades para integrales de funciones de la forma $w(t)$ para demostrar
+                        (\ref{sum-paths}).
+                    </p>
+                </div>
+
+                <p>
+                    Finalmente, introducimos una desigualdad que involucra integrales de contorno, 
+                    la cual es de suma importancia en varias aplicaciones. Consideremos $C$ una 
+                    curva suave parametrizada por $z(t) = x(t) + iy(t)$ con $t \in [a,b].$ 
+                    Supongamos que las componentes $x'(t)$ y $y'(t)$ de la derivada 
+                    \[ z'(t) = x'(t) + iy'(t) \] son continuas en todo el intervalo $[a,b].$ 
+                    Entonces, la función real 
+                    \[ \left|z'(t)\right| = \sqrt{\left[x'(t)\right]^2 + \left[y'(t)\right]^2} \] 
+                    es integrable en $[a,b].$ Según la definición de longitud de arco de cálculo, 
+                    la <em>longitud de</em> $C$ es el número 
+                    \[ L = \int_a^b \left|z'(t)\right|\,dt. \]
+                </p>
+
+                <p>
+                    Si $C$ es un contorno de longitud $L$ y $f$ es una función por 
+                    tramos continua en $C$, y $M$ es una constante no negativa tal 
+                    que $\left|f(z)\right|\leq M$ para todos los puntos $z$ en $C$ 
+                    donde $f(z)$ está definida, entonces 
+                    \begin{eqnarray}\label{ML-inequality}
+                    \left|\int_C f(z)\, dz\right|\leq ML
+                    \end{eqnarray}
+                </p>
+
+                <p> Dado que $C$ es un contorno y $f$ es una función por 
+                    tramos continua en $C$, siempre existirá un número $M$ que aparece
+                     en la desigualdad $\left|f(z)\right|\leq M$. La razón es que la 
+                     función de valor real $\left|f\big(z(t)\big)\right|$ es continua 
+                     en el intervalo cerrado y acotado $[a,b]$ cuando $f$ es 
+                     continua en $C$; y esta función siempre alcanza un valor 
+                     máximo $M$ en ese intervalo. Por lo tanto, $|f(z)|$ tiene 
+                     un valor máximo en $C$ cuando $f$ es continua en él. Esto 
+                     también es cierto cuando $f$ es por tramos continua en $C$.
+                </p> 
+
+                <p> La propiedad (\ref{ML-inequality}) se utiliza frecuentemente 
+                    en la teoría de la integración compleja y a veces se conoce 
+                    como la <strong>desigualdad ML</strong>.
+                </p>
+
+                
+
+                <div class="practice">
+
+                    <p>
+                        <strong>Ejemplo 3:</strong>
+                        Sea $C$ el contorno del círculo $|z|=2$ desde $z_1=2$ hasta $z_2=2i$
+                        que se encuentra en el primer cuadrante, como se muestra en la Figura 5. 
+                        Podemos usar la desigualdad (\ref{ML-inequality}) 
+                        para demostrar que 
+                        \[   \left|\int_C \frac{dz}{z^2-1}\right|\leq \frac{\pi}{3}.                    \]
+                        sin evaluar la integral. 
+                    </p>
+                    
+
+                    <figure>
+                        <img src="../images/chp04/integral-example-3-ml-inequality.svg" alt="ML-inequality example" title="ML-inequality example" style="width:50%;">
+                            <figcaption>
+                                Círculo $|z|=2$ from $z_1=2$ to $z_2=2i.$
+                            </figcaption>
+                    </figure>
+
+                    <p>
+                        Observa que si $z$ es un punto de $C,$ entonces
+                    </p>
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                        \left|z^2-1\right|\geq \left|\left|z^2\right|- 1\right|= \left|\left|z\right|^2- 1\right| = \left|4- 1\right|=3
+                        \end{eqnarray*}
+                    </div>
+                    <p>
+                        De esta manera
+                        \[
+                         \left|\frac{1}{z^2-1}\right| = \frac{1}{ \left|z^2- 1\right|}\leq \frac{1}{3}
+                        \]
+                        Además, la longitud de $C$ es $\dfrac{1}{4}(4\pi).$ Así que, 
+                        si tomamos $M=\dfrac{1}{3}$ y 
+                        $L= \pi,$ encontramos que 
+                        \[
+                        \left|\int_C \frac{dz}{z^2-1}\right|\leq ML =  \frac{\pi}{3}.
+                        \]
+                    </p>
+                </div>
+            </div>
+
+
+            <hr>
+
+            <div id="section5">
+
                 <h2>Antiderivadas</h2>
 
                 <p>
@@ -424,18 +614,18 @@
                     Por lo tanto el resultado demuestra
                     que la integral es independiente del camino recorrido.
                     Este hecho se ilustra en la
-                    Figura 3.
+                    Figura 6.
                 </p>
 
                 <figure>
-                    <img src="../images/chp04/equalpath.jpg" alt="Piecewise smooth curve" title="Piecewise smooth curve" style="width:50%;">
+                    <img src="../images/chp04/path-independence.svg" alt="Path independence" title="Path independence" style="width:60%;">
                     <figcaption>
                         Caminos independientes formando una curva cerrada.
                     </figcaption>
                 </figure>
 
                 <p>
-                    Considerando la Figura 3, tenemos que
+                    Considerando la Figura 6, tenemos que
                     $$\int_{C_1} f\left(z\right)dz=\int_{C_2} f\left(z\right)dz$$
                     porque
                 </p><div class="w3-responsive">
