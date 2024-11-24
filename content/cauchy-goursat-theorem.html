@@ -641,6 +641,12 @@
                 general path by approximating it by polygonal paths [9].
               </p>
 
+              <p>
+                To avoid needless repetition throughout the following discussion 
+                we will take for granted that we are working in a simply connected 
+                domain $D$ and that $f$ represents a complex function analytic in $D.$
+              </p>
+
 
               <div class="lemma">
                 If $\Delta$ is a triangular contour lying entirely within $D,$
@@ -648,16 +654,33 @@
               </div>
 
               <div class="proof">
-                Let $\Delta$ be the triangular contour shown in Figure ??. 
+                Let $\Delta$ be the triangular contour shown in Figure 12. 
                 The vertices of $\Delta$ are labeled $V_1,V_2$ and $V_3.$ 
                 We form smaller triangles $\Delta_1, \Delta_2,$ $\Delta_3$ and $\Delta_4$ 
                 by joining the midpoints $M_1,M_2$ and $M_3$ of the sides of $\Delta$ 
-                by straight line segments as shown in Figure ??. Then
+                by straight line segments as shown in Figure 13. Then
                 <div class="scroll-wrapper">
                   \begin{eqnarray}\label{sumcontours}
                   \int_{\Delta} f(z)\,dz = \int_{C_1} f(z)\,dz +\int_{C_2} f(z)\,dz +\int_{C_3} f(z)\,dz +\int_{C_4} f(z)\,dz.
                   \end{eqnarray}
                 </div>
+
+                <div class="figure-container">
+                  <figure>
+                    <img src="../images/chp04/cauchy-theorem-lemma-01-a.svg" alt="Triangle in D." title="Triangle in D." style="width:100%;">
+                    <figcaption>
+                      Triangular contour $\Delta$ within $D.$
+                    </figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../images/chp04/cauchy-theorem-lemma-01-b.svg" alt="Partition." title="Partition." style="width:100%;">
+                    <figcaption>
+                      Triangular contours $C_k.$ 
+                    </figcaption>
+                  </figure>
+        
+                </div>
+
                 <p>
                   Using the triangle inequality we have
                 </p>
@@ -672,15 +695,15 @@
                   them must be greater than or equal to the other three. 
                   Let's denote the triangular contour of the integral
                    with the largest modulus by the symbol $\Delta_1.$ Thus
-                   \[
-                   \left|\int_{\Delta} f(z)\,dz\right| \leq 4 \left|\int_{\Delta_1} f(z)\,dz\right| 
-                   \]
+                   \begin{eqnarray}\label{triangle02}
+                   \left|\int_{\Delta} f(z)\,dz\right| \leq 4 \left|\int_{\Delta_1} f(z)\,dz\right| .
+                   \end{eqnarray}
                 </p>
 
                 <p>
                   Now we repeat the foregoing process for the triangle $\Delta_1.$ That is,
                   we form triangles within $\Delta_1$ by joining the midpoints of its
-                  sides by line segments in the fashion shown in Figure ?? 
+                  sides by line segments in the same way as shown in Figure 13 
                   and proceed to the equivalent of (\ref{sumcontours}) and (\ref{triangle01}). 
                   The integral of $f$ along one of these new triangular contous, let's call it 
                   $\Delta_2$ then satisifies 
@@ -690,7 +713,7 @@
                 </p>
 
                 <p>
-                  We combine this last inequality with (3) to obtain
+                  We combine this last inequality with (\ref{triangle02}) to obtain
                   \[
                   \left|\int_{\Delta_1} f(z)\,dz\right| \leq 4 \left|\int_{\Delta_1} f(z)\,dz\right| \leq 4^2 \left|\int_{\Delta_2} f(z)\,dz\right| .
                   \]
@@ -700,7 +723,7 @@
                   We continue in this way to obtain a sequence of "nested" triangular 
                   contours $\Delta, \Delta_1, \Delta_2,\ldots,$ that is, 
                   each triangle in the sequence is contained in the one immediately 
-                  preceding it. After $n$ steps we arrive at
+                  preceding it. After $n$ steps we get
                   \begin{eqnarray}\label{bound4}
                   \left|\int_{\Delta_1} f(z)\,dz\right| \leq 4^n \left|\int_{\Delta_n} f(z)\,dz\right| .
                   \end{eqnarray}
@@ -726,10 +749,7 @@
                   \begin{eqnarray}\label{smallenough}
                   \left|\Lambda(z)\right|\lt  \epsilon \quad \text{whenever}\quad \left|z-z_0\right|\lt \delta.
                   \end{eqnarray}
-                  We solve (\ref{lambda}) for $f(z)$ to obtain
-                  \[
-                  f(z) = f(z_0)+(z-z_0)f'(z_0)+ (z-z_0)\Lambda(z)
-                  \]
+                  We can solve (\ref{lambda}) for $f(z)$ 
                   and replace this value in the integrand in (\ref{bound4}) to obtain
                 </p>
                 <div class="scroll-wrapper">
@@ -759,10 +779,8 @@
                 </p>
 
                 <p>
-                  For any point $z$ on $\Delta_n,$
-                  \[
-                  \abs{z-z_0}\lt L_n,\quad \text{where}\quad L_n= \frac{1}{2^n}L.
-                  \]
+                  For any point $z$ on $\Delta_n,$ 
+                  \abs{z-z_0}\lt L_n, $ where $\ds L_n= \frac{1}{2^n}L. 
                   If we choose $n$ large enough so that 
                   \[
                   \abs{z-z_0}\lt \frac{1}{2^n}L\lt \delta,
@@ -802,10 +820,27 @@
                   contour $C$  can be "triangulated" to prove <strong>Lemma 8</strong>. 
                 </p>
 
+                <div class="figure-container">
+                  <figure>
+                    <img src="../images/chp04/cauchy-theorem-lemma-02-a.svg" alt="Triangle in D" title="Triangle in D" style="width:100%;">
+                    <figcaption>
+                      Closed polygonal contour $C$ within $D.$
+                    </figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../images/chp04/cauchy-theorem-lemma-02-b.svg" alt="Partition" title="Partition" style="width:100%;">
+                    <figcaption>
+                      Triangulation of the polygonal contour $C.$
+                    </figcaption>
+                  </figure>
+        
+                </div>
+
                 <p>
+                  <strong>Remark:</strong> 
                   Roughly, "triangulated" means that the closed polygon $C$ can be decomposed 
                   into a finite number of triangles by adding lines as shown in 
-                  Figure AII.4. 
+                  Figure 15. 
                   Note that we can then proceed as in the proof of <strong>Lemma 7</strong> 
                   and integrate twice along these added line segments but 
                   in opposite directions. If the closed polygon $C$ has $n$ sides,
@@ -819,22 +854,31 @@
               </div>
 
               <p>
-                Finally, Cauchy-Goursat Theorem ca be easily proved using 
-                <strong>Lemma 8</strong> and the fact that any closed contour $C$ can be approximated 
-                to any desired degree of accuracy by a closed polygonal path.
+                Now the Cauchy-Goursat Theorem can easily be proved using 
+                <strong>Lemma 8</strong> and the fact that any closed contour 
+                $C$ can be approximated to any desired degree of accuracy 
+                by a closed polygonal path.
               </p>
 
+              <figure>
+                <img src="../images/chp04/cauchy-theorem-final-proof.gif" alt="Approximation by polygonal path" title="Approximation by polygonal path" style="width:500px;">
+                <figcaption>
+                  The countour $C$ is approximated by a  polygonal contour $P.$
+                </figcaption>
+              </figure>
+
               <p>
+                <em>Proof of Cauchy-Goursat Theorem.</em>
                 Consider a simple closed contour $C$ and $n$ points $z_1,z_2, \ldots, z_n$
                 on $C$ through wich a polygonal path $P$ hs been constructed. 
                 Then it can be shown that the difference between the integral along 
                 $C,$ $\int_C f(z)\,dz,$ and the integral along the polygonal contour $P,$
                 $\int_P f(z)\,dz,$ can be made arbitrarily small as $n\to \infty.$
-                Consequently, by <strong>Lemma 8</strong>, 
+                Thus,  <strong>Lemma 8</strong>, 
                 \[
                 \int_P f(z)\,dz = 0
                 \]
-                for any $n.$ Therefore $\ds \int_C f(z)\,dz=0.$
+                for any $n.$ Therefore $\ds \int_C f(z)\,dz=0.$ $\hspace{10pt} \blacksquare$
               </p>
 
 
@@ -877,7 +921,7 @@
             </div>
 
 
-            <br><br><br><br>
+            <br>
 
            
 
@@ -886,7 +930,38 @@
         </article>
     </main>
 
-  
+    <!--GeoGebra embeding
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+    <script>
+        let params1 = {
+            "width": 721,
+            "height": 451,
+            "material_id": "uye8xbbj",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": false,
+            "showResetIcon": true
+        };
+        let params2 = {
+            "width": 719,
+            "height": 449,
+            "material_id": "am4gsavs",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": false,
+            "showResetIcon": true
+        };
+        let ggbApplet1 = new GGBApplet(params1, true);
+        let ggbApplet2 = new GGBApplet(params2, true);
+        window.addEventListener("load", () => {
+            ggbApplet1.inject('ggb-element-1');
+            ggbApplet2.inject('ggb-element-2');
+        });
+    </script>
+    GeoGebra embeding ends-->
 
     <a href="integrals_of_functions_with_branch_cuts.html" style="text-decoration: none;">
         <p class="nextPage">Integrals of Functions with Branch Cuts <i class="fa-solid fa-angles-right"></i></p>
