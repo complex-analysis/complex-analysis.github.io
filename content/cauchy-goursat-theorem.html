@@ -272,7 +272,7 @@
                    <p>are entire, then</p>
                   <div class="scroll-wrapper">
                     \begin{eqnarray*}
-                    \int_C \sin z\,dz = 0,\int_C \cos z\,dz = 0,\int_C p(z)\,dz = 0.
+                    \int_C \sin z\,dz = 0,\quad \int_C \cos z\,dz = 0,\quad \int_C p(z)\,dz = 0.
                     \end{eqnarray*}
                    </div>
                    <p>
@@ -287,7 +287,7 @@
                   \[
                   \int_C \frac{1}{z^2}\,dz,
                   \]
-                  where $C$ is the ellipse $(x-2)^2+\frac{1}{4}(y-5)^2=1.$
+                  where $C$ is the ellipse $(x-2)^2+\dfrac{1}{4}(y-5)^2=1.$
                   Note that the function $f(z)=1/z^2$ is
                   analytic everywhere except at $z=0.$ In this case, $z=0$ is not inside 
                   or on the simple closed elliptical contour $C.$ Hence
@@ -299,7 +299,7 @@
                 <figure>
                   <img src="../images/chp04/cauchy-theorem-example-03.svg" alt="Cauchy-Goursat Theorem example" title="Cauchy-Goursat Theorem example" style="width:55%;">
                   <figcaption>
-                     $C:= (x-2)^2+\frac{1}{4}(y-5)^2=1.$
+                     $C: (x-2)^2+\dfrac{1}{4}(y-5)^2=1.$
                   </figcaption>
                 </figure>
             </div>
@@ -410,7 +410,7 @@
                 <figure>
                   <img src="../images/chp04/cauchy-theorem-example-04.svg" alt="Cauchy-Goursat Theorem example" title="Cauchy-Goursat Theorem example" style="width:75%;">
                   <figcaption>
-                    The open disk $D:=|z|\lt 2$ is simply connected and $C$ is any closed contour.
+                    The open disk $D:|z|\lt 2$ is simply connected and $C$ is any closed contour.
                   </figcaption>
                 </figure>
               </div>
@@ -518,7 +518,7 @@
 
               <p>
                 The following corollary is known as the <strong>principle of deformation of
-                 paths</strong> since it tells us that if $C_1$ is continuously deformed 
+                 contours</strong> since it tells us that if $C_1$ is continuously deformed 
                  into $C_2$ always passing through points at
                  which $f$ is analytic, then the value of the integral 
                  of $f$ over $C_1$ never changes. 
@@ -571,9 +571,27 @@
                 <figure>
                   <img src="../images/chp04/cauchy-theorem-simply-deformation-example.gif" alt="Cauchy-Goursat Theorem" title="Cauchy-Goursat" style="width:60%;">
                   <figcaption>
-                   $\int_{C_0} \frac{1}{z} dz= 2\pi \,i.$
+                   $\ds \int_{C_0} \frac{1}{z} dz= 2\pi \,i.$
                   </figcaption>
                 </figure>
+              </div>
+
+              <div class="practice">
+                <p>
+                  <strong>Exercise 1:</strong>
+                  Use the principle of deformation of contours to show that 
+                  if $z_0$ is any complex constant interior to any simple 
+                  closed contour $C,$ then for $n$ an integer we have 
+                  \[
+                  \int_C \frac{dz}{z-z_0} = 
+                  \left\{
+                    \begin{array}{ll}
+                    2\pi \, i &amp; n = 1,\\
+                    0, &amp; n\neq 1.
+                    \end{array}
+                    \right.
+                  \]
+                </p>
               </div>
 
             </div>
@@ -588,11 +606,11 @@
                 Cauchy first communicated the integral theorem to the 
                 <em>Académie des Sciences</em> in 1814, as  part of a memoir related with 
                 other topics (improper real integrals) 
-                [1 pp. 132-133, 2, 10 pp. 56-57]. 
+                [<a href="#bottazzini1984">1</a> pp. 132-133, <a href="#cauchy1841">3</a>, <a href="#smithies1997">11</a> pp. 56-57]. 
                 The first general form of the integral theorem was communicated to the 
                 <em>Académie</em> in 1825 in a memoir entitled 
                 <em>Mémoire sur les intégrales définies, prises entre des limites imaginaires</em>
-                [1 pp. 151-156, 10 pp. 89-91].
+                [<a href="#bottazzini1984">1</a> pp. 151-156, <a href="#cauchy1825">4</a>, <a href="#smithies1997">11</a> pp. 89-91].
               </p>
 
               <p>
@@ -604,9 +622,9 @@
                 and then adding the results. To obtain this 
                 estimate for arbitrary $\epsilon$ he needs 
                 the uniform continuity of $f'$ 
-                [5]. 
+                [<a href="#goursat1884">6</a>]. 
                 In his 1900 paper, Goursat finally removed 
-                the assumption of continuity of $f'$ [6]. 
+                the assumption of continuity of $f'$ [<a href="#goursat1900">7</a>]. 
                 The argument is as before, but he now subdivides 
                 each square until the necessary estimate holds for each
                 of them, that is,
@@ -623,22 +641,25 @@
               </p>
 
               <p>
-                Also in 1900, Eliakim H. Moore cleaned up the proof a bit, paying more 
-                careful attention to the treatment of the boundary curve. 
-                He also introduced the current idea of proof by contradiction, 
-                by subdividing and always selecting a part where the desired 
-                conclusion is maximally violated, and then applying 
-                the definition of the derivative at the resulting limit point [8].
+                In 1900, Eliakim H. Moore refined the proof, addressing the 
+                treatment of the boundary curve with greater precision [<a href="#moore1900">10</a>].
+                He also introduced the modern approach of proof by contradiction, which 
+                involves subdividing the domain, selecting the region where the 
+                conclusion is most significantly contradicted, and then applying 
+                the definition of the derivative at the resulting limit point
+                [<a href="#hance-olsen2008">8</a>, p. 651].
               </p>
 
               <p>
                 Later in 1901 Alfred Pringsheim presented a criticism of Goursat's treatment 
-                of the boundary curve. He pointed out that these problems disappear 
-                if the proof technique is applied to a simple geometric figure 
-                such as a triangle. Then the theorem follows for simple 
-                polygonal paths in a simply connected domain by triangulating 
-                the interior of the path, and finally one gets it for a 
-                general path by approximating it by polygonal paths [9].
+                of the boundary curve [<a href="#pringsheim1901">11</a>].
+                He observed that these issues vanish when the proof technique is 
+                applied to a basic geometric shape, such as a triangle. From there, 
+                the theorem extends to simple polygonal paths within a simply connected 
+                domain by triangulating the interior of the path. Finally, it can be 
+                generalized to arbitrary paths by approximating them with polygonal paths.
+                [<a href="#hance-olsen2008">8</a>, p. 651]. This is the method that we 
+                will use to prove the Cauchy-Goursat Theorem.
               </p>
 
               <p>
@@ -733,14 +754,14 @@
                   Since the sequence triangular contours 
                   $\Delta, \Delta_1, \Delta_2,\ldots,$ are nested, there exists 
                   a point $z_0$  in the domain $D$ that is common to every
-                  triangle in the sequence. $f$ is analytic, then $f'(z_0)$
+                  triangle in the sequence. Also, since $f$ is analytic, then $f'(z_0)$
                   exists. If we define 
                   \begin{eqnarray}\label{lambda}
                   \Lambda(z) = \frac{f(z)-f(z_0)}{z-z_0} - f'(z_0),
                   \end{eqnarray}
                   then $\left|\Lambda(z)\right|$ can be made arbitrarily small whenever 
-                  $z$ is sufficiently close to $z_0.$ This is because $f$ is analytic in $D$
-                  and so the limit 
+                  $z$ is sufficiently close to $z_0.$ This is true 
+                  because $f$ is analytic in $D$ and so the limit 
                   \begin{eqnarray*}
                   \lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}
                   \end{eqnarray*}
@@ -774,13 +795,13 @@
                   it is a straightforward problem in similar triangles to show that 
                   $L_1$ is related to $L$ by $L_1=\frac{1}{2}L.$ Likewise, 
                   if $L_2$ is the legth of $\Delta_2,$ then $L_2=\frac{1}{2}L_1 = \frac{1}{2^2}L.$ 
-                  In gerneral we have that if $L_n$ is the length of $\Delta_n,$ then 
+                  In general we have that if $L_n$ is the length of $\Delta_n,$ then 
                   $L_n= \frac{1}{2^n}L.$ 
                 </p>
 
                 <p>
-                  For any point $z$ on $\Delta_n,$ 
-                  \abs{z-z_0}\lt L_n, $ where $\ds L_n= \frac{1}{2^n}L. 
+                  For any $z\in \Delta_n,$ we have that 
+                  $\abs{z-z_0}\lt L_n,$ where $\ds L_n= \frac{1}{2^n}L.$ 
                   If we choose $n$ large enough so that 
                   \[
                   \abs{z-z_0}\lt \frac{1}{2^n}L\lt \delta,
@@ -815,7 +836,7 @@
 
               <div class="practice">
                 <p>
-                  <strong>Exercise:</strong>
+                  <strong>Exercise 2:</strong>
                   Use <strong>Lemma 7</strong> and the fact that any closed polygonal 
                   contour $C$  can be "triangulated" to prove <strong>Lemma 8</strong>. 
                 </p>
@@ -869,19 +890,30 @@
 
               <p>
                 <em>Proof of Cauchy-Goursat Theorem.</em>
-                Consider a simple closed contour $C$ and $n$ points $z_1,z_2, \ldots, z_n$
-                on $C$ through wich a polygonal path $P$ hs been constructed. 
-                Then it can be shown that the difference between the integral along 
-                $C,$ $\int_C f(z)\,dz,$ and the integral along the polygonal contour $P,$
-                $\int_P f(z)\,dz,$ can be made arbitrarily small as $n\to \infty.$
-                Thus,  <strong>Lemma 8</strong>, 
+                Consider a simple closed contour $C$ and $n$ points $z_1, z_2, \ldots, z_n$
+                on $C$ through wich a polygonal path $P$ has been constructed. 
+                Then it can be shown that the difference 
                 \[
-                \int_P f(z)\,dz = 0
+                \abs{\int_C f(z)\,dz - \int_P f(z)\,dz} 
                 \]
-                for any $n.$ Therefore $\ds \int_C f(z)\,dz=0.$ $\hspace{10pt} \blacksquare$
+                can be made arbitrarily small as $n\to \infty.$
+                Thus, by <strong>Lemma 8</strong>, $\ds \int_P f(z)\,dz = 0$
+                for any $n.$ Therefore 
+                $\ds \int_C f(z)\,dz=0.$ $\hspace{10pt}\blacksquare$
               </p>
 
 
+              <p>
+                There are several methods to prove the Cauchy-Goursat Theorem. For example, 
+                it can be proved for rectangles or disks, see 
+                [<a href="#brown2009">2</a>, <a href="#marsden1999">9</a>]. 
+                Besides these techniques, there have been many other proofs of 
+                this theorem. For instance John D. Dixon made a remarkably short and 
+                elegant proof, which requires only the basics of complex 
+                function theore in convex sets [<a href="#dixon1971">5</a>]. 
+                Rudolf Výborný provided a prove using
+                differentiable homotopy [<a href="#vyborny1979">13</a>].
+              </p>
 
             </div>
 
@@ -891,9 +923,13 @@
               <h2>References</h2>
 
               <ol class="bbtex-list">
-                <li id="bottazzini1986">Bottazzini, U. (1984). <em>The higher calculus: a history of real and complex analysis from Euler to Weierstrass</em>. New York : Springer-Verlag. <a href="https://archive.org/details/highercalculushi0000bott/mode/2up" target="_blank"><i class="fas fa-external-link-alt"></i></a> </li>
-                <li id="cauchy1814">Cauchy, A. (1814). <em>Mémoire sur la théorie des intégrales définies,</em> <a href="https://www.cambridge.org/core/books/abs/oeuvres-completes/calcul-integral-memoire-sur-la-theorie-des-integrales-definies-singulieres-appliquee-generalement-a-la-determination-des-integrales-definies-et-en-particulier-a-l-evaluation-des-integrales-euleriennes/E76C6D1FA04232AD7B07FB3332CAEEEB" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
-                <li id="cauchy1814">Cauchy, A. (1825). <em>Mémoire sur les intégrales définies, prises entre des limites imaginaires,</em> <a href="https://archive.org/details/mmoiresurlesin00cauc/mode/2up" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+                <li id="bottazzini1984">Bottazzini, U. (1984). <em>The higher calculus: a history of real and complex analysis from Euler to Weierstrass</em>. New York : Springer-Verlag. <a href="https://archive.org/details/highercalculushi0000bott/mode/2up" target="_blank"><i class="fas fa-external-link-alt"></i></a> </li>
+                <li id="brown2009">Brown, J. W., Churchill, R. V. (2009). <em>Complex Variables and Applications.</em> 8th Edition. New
+                  York: McGraw-Hill Higher Education.</li>
+                <li id="cauchy1814">Cauchy, A. (1814). <em>Mémoire sur la théorie des intégrales définies,</em>
+                  in Œuvres complètes d'Augustin Cauchy, $\text{I}^{re}$ série, vol. I, Gauthier Villars, Paris. <a href="https://doi.org/10.1017/CBO9780511702174" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+                <li id="cauchy1825">Cauchy, A. (1825). <em>Mémoire sur les intégrales définies, prises entre des limites imaginaires,</em>
+                  in Œuvres complètes d'Augustin Cauchy, $\text{II}^{e}$ série, vol. XV, Gauthier Villars, Paris. <a href="https://archive.org/details/mmoiresurlesin00cauc/mode/2up" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
                 <li id="dixon1971">Dixon, J. D. (1971). A brief proof of Cauchy's integral theorem, <em>Proceedings of the American Mathematical Society</em>, Vol. 29, No. 3, pp. 625-626.
                   <a href="https://doi.org/10.2307/2038614" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
                 <li id="goursat1884">Goursat, E. (1884). Démonstration du théorème de Cauchy. <em>Acta Mathematica</em>, 4, pp. 197-200.
@@ -901,10 +937,11 @@
                 <li id="goursat1900">Goursat, E. (1900).  Sur la définition générale des fonctions analytiques, d'après Cauchy, <em>Transactions of the American Mathematical Society</em>, Vol. 1, No. 1, pp. 14-16.
                   <a href="https://doi.org/10.2307/1986398" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                 </li>
-                <li id="goursat2008">Hance-Olsen, H. (2008). On Goursat's Proof of Cauchy's Integral Theorem, <em>The American Mathematical Monthly</em>, 115, pp. 648-652.
+                <li id="hance-olsen2008">Hance-Olsen, H. (2008). On Goursat's Proof of Cauchy's Integral Theorem, <em>The American Mathematical Monthly</em>, 115, pp. 648-652.
                   <a href="https://www.jstor.org/stable/27642560" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                 </li>
-                <li id="goursat1900">Moore, E. H. (1900). A Simple Proof of the Fundamental Cauchy-Goursat Theorem, <em>Transactions of the American Mathematical Society</em>, Vol. 1, No. 4, pp. 499-506.
+                <li id="marsden1999">Marsden, J. E. &amp; Hoffman, M. J. (1999) <em>Basic Complex Analysis.</em> (3rd ed.) New York: W. H. Freeman and Co.</li>
+                <li id="moore1900">Moore, E. H. (1900). A Simple Proof of the Fundamental Cauchy-Goursat Theorem, <em>Transactions of the American Mathematical Society</em>, Vol. 1, No. 4, pp. 499-506.
                   <a href="https://doi.org/10.2307/1986368" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                 </li>
                 <li id="pringsheim1901">Pringsheim, A. (1901). Ueber den Goursat'schen Beweis des Cauchy'schen Integralsatzes, <em>Transactions of the American Mathematical Society</em>, Vol. 2, No. 4, pp. 413-421.
@@ -913,8 +950,8 @@
                 <li id="smithies1997">Smithies, F. (1997). <em>Cauchy and the Creation of Complex Function Theory.</em> UK: Cambridge University Press.
                   <a href="https://archive.org/details/cauchycreationof0000smit/mode/2up" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                 </li>
-                <li id="vynorny1979">Výborný, R. (1979). On the Use of a Differentiable Homotopy in the Proof of the Cauchy Theorem <em>The American Mathematical Monthly</em>, Vol. 86, No. 5, pp. 380-382.
-                  <a href="https://archive.org/details/cauchycreationof0000smit/mode/2up" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                <li id="vynorny1979">Výborný, R. (1979). On the Use of a Differentiable Homotopy in the Proof of the Cauchy Theorem, <em>The American Mathematical Monthly</em>, Vol. 86, No. 5, pp. 380-382.
+                  <a href="https://doi.org/10.2307/2321099" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                 </li>
             </ol>
 
