@@ -1,919 +1,1098 @@
-<section data-type="chapter" id="cauchy-goursat-theorem">
+<!DOCTYPE html>
+<html lang="en">
 
-  <!-- Starts main content -->
+<head>
+  <title>  Cauchy-Goursat Theorem
+</title>
 
-  <div w3-include-html="small_screen_message.html"></div>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <div class="toc-chapter" id="toc-chapter">
-      <p><i class="fa-solid fa-list"></i>Contents</p>
-      <ul>
-          <li><a href="#section1">Cauchy's Theorem</a></li>
-          <li><a href="#section2">Cauchy-Goursat Theorem</a></li>
-          <li><a href="#section3">Connected domains</a></li>
-          <li><a href="#section4">Historical notes &amp; Proof</a></li>
-          <li><a href="#section5">References</a></li>
-          <!-- Add more sections as needed -->
-      </ul>
+  <!-- Main info: Dublin core -->
+  <meta name="DC.Title" content="Complex Analysis">
+  <meta name="DC.Creator" content="Juan Carlos Ponce Campuzano">
+  <meta name="DC.Date" content="26-01-2019">
+  <meta name="DC.Identifier" content="ISBN-13: 978-0-6485736-0-9">
+  <meta name="DC.Type" content="Interactive Resource">
+  <meta name="DC.Format" content="HTML">
+  <meta name="DC.Language" content="en-US">
+  <meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+  <!-- social media cards -->
+  <meta property="og:title" content="Complex Analysis">
+  <meta property="og:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta property="og:url" content="https://complex-analysis.com/">
+  <meta property="og:image" content="https://complex-analysis.com/images/complex_analysis_card.jpg">
+  <meta property="og:site_name" content="Complex Analysis">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="An online interactive introduction to the study of complex analysis.">
+  <meta name="twitter:title" content="Complex Analysis">
+  <meta name="twitter:description" content="An online interactive introduction to the study of complex analysis.">
+  <meta name="twitter:site" content="@jcponcemath">
+  <meta name="twitter:image" content="https://complex-analysis.com/images/complex_analysis_card.jpg">
+  <meta name="twitter:creator" content="@jcponcemath">
+
+  <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HVPF4FLZCB');
+  </script>
+</head>
+
+<body data-type="book" id="top">
+
+  <!-- Dark Mode Loader -->
+  <div class="myLoader" id="loader">
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="loadingMessage">Loading...</div>
   </div>
 
-  <br><br>
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="integrals_of_functions_with_branch_cuts.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-regular fa-sun"></i></span>
+        <span class="support-top-button" id="donate" title="Support"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="table_of_contents.html" class="link" id="center-link">
+            <span class="content-hover-previous">Integrals of Functions with Branch Cuts</span>
+            <span class="content-hover">Table of Contents</span>
+            <span class="content-original">Complex Analysis</span>
+            <span class="content-hover-next">Cauchy Integral Formula</span>
+        </a>
+    </div>
+    <a href="cauchy_integral_formula.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
 
-  <main>
-      <article>
 
-          
 
-          <h1>Cauchy-Goursat Theorem</h1>
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="cauchy-goursat-theorem">
 
-          <hr>
+    <!-- Starts main content -->
 
-          <div id="section1">
+    <div w3-include-html="small_screen_message.html"></div>
 
-              <h2>Cauchy's Theorem</h2>
+    <div class="toc-chapter" id="toc-chapter">
+        <p><i class="fa-solid fa-list"></i>Contents</p>
+        <ul>
+            <li><a href="#section1">Cauchy's Theorem</a></li>
+            <li><a href="#section2">Cauchy-Goursat Theorem</a></li>
+            <li><a href="#section3">Connected domains</a></li>
+            <li><a href="#section4">Historical notes &amp; Proof</a></li>
+            <li><a href="#section5">References</a></li>
+            <!-- Add more sections as needed -->
+        </ul>
+    </div>
+ 
+    <br><br>
 
-             <p>
-              In 1825 the French mathematician Augustin-Louis Cauchy proved 
-              one of the most important theorems in complex analysis:
-             </p>
+    <main>
+        <article>
 
-             <div class="theorem">
-              <span style="font-style: normal!important;"><strong>(Cauchy's Theorem)</strong></span>
-              Suppose that $f$ is analytic, with the derivative $f'$
-              continuous on and inside a closed simple contour $C.$
-              Then
-              \[
-              \int_C f(z)\, dz = 0.
-              \]
-             </div>
+            
 
-            <figure>
-              <img src="../images/chp04/cauchy-theorem.svg" alt="Cauchy's Theorem" title="Cauchy's Theorem" style="width:60%;">
-              <figcaption>
-                  Cauchy's Theorem: $\displaystyle \int_C f(z)\,dz =0.$
-              </figcaption>
-            </figure>
+            <h1>Cauchy-Goursat Theorem</h1>
 
-             <p>
-              If the function is not analytic on the whole region inside $C,$
-              then the integral may or may not be $0.$ For instance, 
-              Let $C$ be the unit circle and $f(z)=1/z.$ Then $f$ is analytic
-              at all points except $z=0,$  and indeed the integral is
-              <em>not zero</em>. In fact,
-              \[
-              \int_C \frac{1}{z}\,dz = 2\pi i,
-              \]
-              as shown in example 2 from the section 
-              <a href="complex_integration.html">Complex Integration</a>.
-              On the other hand, if $f(z) = 1/z^2,$ then $f$ is still analytic
-              at all points except $z=0,$ but now the integral <em>is</em> $0.$
-              This value results <em>not</em> from Cauchy's Theorem, since $f$
-              is not analytic everywhere inside $C,$ but rather from the fact that 
-              $f$ has an antiderivative on $\C\setminus \{0\}.$ That is, $f$ is 
-              the derivative of $-1/z.$
-             </p>
+            <hr>
 
-             <p>
-              <em>Proof of Theorem 1.</em> The proof of this theorem is an immediate consequence
-              of <strong>Green's theorem</strong> in the plane, which states that, for 
-              continuously differentiable functions $P(x,y)$ and $Q(x,y),$
-             </p>
-             <div class="scroll-wrapper">
-              \begin{eqnarray}\label{green-theo}
-              \int_C P\,dx + Q\, dy &amp; =&amp; \iint_R \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dA
-              \end{eqnarray}
-             </div>
-             <p>
-              In Green's theorem, $R$ represents the <em>inside</em> 
-              of $C,$ $C$ is traversed in a counterclockwise direction, and 
-              $P$ and $Q$ are sufficiently smooth.
-             </p>
-             <p>Setting $f=u+iv,$ we have</p>
-             <div class="scroll-wrapper">
-              \begin{eqnarray*}
-              \int_C f(z)\,dz &amp; =&amp; \int_C \left(u+iv\right) \left(dx+idy\right)\\
-              &amp; =&amp; \int_C \left(u\,dx - v\,dy \right)  + i \int_C \left(u\, dy+v \,dx\right).
-              \end{eqnarray*}
-             </div>
-             <p>
-              By applying Green's theorem to each integral, we get
-             </p>
-             <div class="scroll-wrapper">
-              \begin{eqnarray*}
-              \int_C f(z)\,dz &amp; =&amp; \iint_R \left(-\frac{\partial v}{\partial x} - \frac{\partial u}{\partial y}\right) dA + i  \iint_R \left(\frac{\partial u}{\partial x} - \frac{\partial v}{\partial y}\right) dA \\
-              \end{eqnarray*}
-             </div>
-             <p>
-              Both terms are zero by the <a href="complex_differentiation.html">Cauchy-Riemann equations</a>. $\hspace{5pt} \blacksquare$
-             </p>
+            <div id="section1">
 
-             <p>Observe that once it has been established that the value 
-              of this integral is zero,
-              the orientation of $C$ becomes irrelevant.
-              The conclusion in Theorem 1 is also true if $C$ is taken in the
-              clockwise direction, since then we can use the fact that 
-              \[
-              \int_C f(z)\,dz = - \int_{-C} f(z)\,dz.
-              \]
-             </p>
+                <h2>Cauchy's Theorem</h2>
 
-             <div class="practice">
-              
-              <p><strong>Example 1:</strong>
-                Consider the function $f(z)= \exp\left(z^3\right).$ If $C$ is 
-                any simple closed countour, in either direction, then
+               <p>
+                In 1825 the French mathematician Augustin-Louis Cauchy proved 
+                one of the most important theorems in complex analysis:
+               </p>
+
+               <div class="theorem">
+                <span style="font-style: normal!important;"><strong>(Cauchy's Theorem)</strong></span>
+                Suppose that $f$ is analytic, with the derivative $f'$
+                continuous on and inside a closed simple contour $C.$
+                Then
                 \[
-                \int_C \exp\left(z^3\right)\,dz =0.
+                \int_C f(z)\, dz = 0.
                 \]
-                In this case $f$ is the composition of two functions, both analytic everywhere.
-                Thus, $f$ is also analytic and its derivative 
-                $f'(z) = 3z^2\exp\left(z^3\right)$
-                is continuous everywhere.
-              </p>
-             </div>
-             
+               </div>
 
-          </div>
+              <figure>
+                <img src="../images/chp04/cauchy-theorem.svg" alt="Cauchy's Theorem" title="Cauchy's Theorem" style="width:60%;">
+                <figcaption>
+                    Cauchy's Theorem: $\displaystyle \int_C f(z)\,dz =0.$
+                </figcaption>
+              </figure>
 
-          <hr>
+               <p>
+                If the function is not analytic on the whole region inside $C,$
+                then the integral may or may not be $0.$ For instance, 
+                Let $C$ be the unit circle and $f(z)=1/z.$ Then $f$ is analytic
+                at all points except $z=0,$  and indeed the integral is
+                <em>not zero</em>. In fact,
+                \[
+                \int_C \frac{1}{z}\,dz = 2\pi i,
+                \]
+                as shown in example 2 from the section 
+                <a href="complex_integration.html">Complex Integration</a>.
+                On the other hand, if $f(z) = 1/z^2,$ then $f$ is still analytic
+                at all points except $z=0,$ but now the integral <em>is</em> $0.$
+                This value results <em>not</em> from Cauchy's Theorem, since $f$
+                is not analytic everywhere inside $C,$ but rather from the fact that 
+                $f$ has an antiderivative on $\C\setminus \{0\}.$ That is, $f$ is 
+                the derivative of $-1/z.$
+               </p>
 
+               <p>
+                <em>Proof of Theorem 1.</em> The proof of this theorem is an immediate consequence
+                of <strong>Green's theorem</strong> in the plane, which states that, for 
+                continuously differentiable functions $P(x,y)$ and $Q(x,y),$
+               </p>
+               <div class="scroll-wrapper">
+                \begin{eqnarray}\label{green-theo}
+                \int_C P\,dx + Q\, dy &amp; =&amp; \iint_R \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dA
+                \end{eqnarray}
+               </div>
+               <p>
+                In Green's theorem, $R$ represents the <em>inside</em> 
+                of $C,$ $C$ is traversed in a counterclockwise direction, and 
+                $P$ and $Q$ are sufficiently smooth.
+               </p>
+               <p>Setting $f=u+iv,$ we have</p>
+               <div class="scroll-wrapper">
+                \begin{eqnarray*}
+                \int_C f(z)\,dz &amp; =&amp; \int_C \left(u+iv\right) \left(dx+idy\right)\\
+                &amp; =&amp; \int_C \left(u\,dx - v\,dy \right)  + i \int_C \left(u\, dy+v \,dx\right).
+                \end{eqnarray*}
+               </div>
+               <p>
+                By applying Green's theorem to each integral, we get
+               </p>
+               <div class="scroll-wrapper">
+                \begin{eqnarray*}
+                \int_C f(z)\,dz &amp; =&amp; \iint_R \left(-\frac{\partial v}{\partial x} - \frac{\partial u}{\partial y}\right) dA + i  \iint_R \left(\frac{\partial u}{\partial x} - \frac{\partial v}{\partial y}\right) dA \\
+                \end{eqnarray*}
+               </div>
+               <p>
+                Both intergrals, on the right side, are zero by the <a href="complex_differentiation.html">Cauchy-Riemann equations</a>. $\hspace{5pt} \blacksquare$
+               </p>
 
+               <p>Observe that once it has been established that the value 
+                of this integral is zero,
+                the orientation of $C$ becomes irrelevant.
+                The conclusion in Theorem 1 is also true if $C$ is taken in the
+                clockwise direction, since then we can use the fact that 
+                \[
+                \int_C f(z)\,dz = - \int_{-C} f(z)\,dz.
+                \]
+               </p>
 
-          <div id="section2">
-            <h2>Cauchy-Goursat Theorem</h2>
+               <div class="practice">
+                
+                <p><strong>Example 1:</strong>
+                  Consider the function $f(z)= \exp\left(z^3\right).$ If $C$ is 
+                  any simple closed countour, in either direction, then
+                  \[
+                  \int_C \exp\left(z^3\right)\,dz =0.
+                  \]
+                  In this case $f$ is the composition of two functions, both analytic everywhere.
+                  Thus, $f$ is also analytic and its derivative 
+                  $f'(z) = 3z^2\exp\left(z^3\right)$
+                  is continuous everywhere.
+                </p>
+               </div>
+               
 
-            <p>
-              In 1900 the French mathematician Edouard Goursat 
-              proved that the assumption of continuity of $f'$
-              is not necessary to reach the conclusion of <em>Cauchy's theorem</em>. 
-              The resulting modified version of Cauchy's theorem is known 
-              today as the <em>Cauchy-Goursat Theorem</em>. 
-              as we can expect,
-              with fewer hypotheses, the proof of this version of Cauchy's
-              theorem is more complicated than the one just presented.
-            </p>
-
-            <div class="theorem">
-              <span style="font-style: normal!important;"><strong>(Cauchy-Goursat Theorem)</strong></span>
-              If a function $f$ is analytic at all points interior to and on a simple 
-              closed contour $C,$ then
-              \[
-              \int_C f(z) \, dz = 0.
-              \]
             </div>
 
-            <div class="practice">
+            <hr>
+
+ 
+
+            <div id="section2">
+              <h2>Cauchy-Goursat Theorem</h2>
+
+              <p>
+                In 1900 the French mathematician Edouard Goursat 
+                proved that the assumption of continuity of $f'$
+                is not necessary to reach the conclusion of <em>Cauchy's theorem</em>. 
+                The resulting modified version of Cauchy's theorem is known 
+                today as the <em>Cauchy-Goursat Theorem</em>. 
+                as we can expect,
+                with fewer hypotheses, the proof of this version of Cauchy's
+                theorem is more complicated than the one just presented.
+              </p>
+
+              <div class="theorem">
+                <span style="font-style: normal!important;"><strong>(Cauchy-Goursat Theorem)</strong></span>
+                If a function $f$ is analytic at all points interior to and on a simple 
+                closed contour $C,$ then
+                \[
+                \int_C f(z) \, dz = 0.
+                \]
+              </div>
+
+              <div class="practice">
+                  <p>
+                    <strong>Example 2:</strong>
+                    The function $f(z)=\exp(z)$ is entire and consequently
+                    is analytic at all points within and on any simple closed 
+                    contour $C.$ It follows from the Cauchy-Goursat Theorem that 
+                    \[
+                    \int_C \exp(z)\,dz = 0.
+                    \]
+                    Similarly, since  $\sin z,$ $\cos z$ and
+                  </p>
+                  <div class="scroll-wrapper">
+                    \begin{eqnarray*}
+                    p(z) = a_nz^n+ a_{n-1}z^{n-1} + \cdots + a_1 z + a_0, 
+                    \quad (n =0,1,2,\ldots)
+                    \end{eqnarray*}
+                   </div>
+                   <p>are entire, then</p>
+                  <div class="scroll-wrapper">
+                    \begin{eqnarray*}
+                    \int_C \sin z\,dz = 0,\quad \int_C \cos z\,dz = 0,\quad \int_C p(z)\,dz = 0.
+                    \end{eqnarray*}
+                   </div>
+                   <p>
+                    for any simple closed contour $C$
+                   </p>
+              </div>
+
+              <div class="practice">
                 <p>
-                  <strong>Example 2:</strong>
-                  The function $f(z)=\exp(z)$ is entire and consequently
-                  is analytic at all points within and on any simple closed 
-                  contour $C.$ It follows from the Cauchy-Goursat Theorem that 
+                  <strong>Example 3:</strong>
+                  We can use Cauchy-Goursat Theorem to evaluate 
                   \[
-                  \int_C \exp(z)\,dz = 0.
+                  \int_C \frac{1}{z^2}\,dz,
                   \]
-                  Similarly, since  $\sin z,$ $\cos z$ and
+                  where $C$ is the ellipse $(x-2)^2+\dfrac{1}{4}(y-5)^2=1.$
+                  Note that the function $f(z)=1/z^2$ is
+                  analytic everywhere except at $z=0.$ In this case, $z=0$ is not inside 
+                  or on the simple closed elliptical contour $C.$ Hence
+                  \[
+                  \int_C \frac{1}{z^2}\,dz=0.
+                  \]
+                </p>
+
+                <figure>
+                  <img src="../images/chp04/cauchy-theorem-example-03.svg" alt="Cauchy-Goursat Theorem example" title="Cauchy-Goursat Theorem example" style="width:55%;">
+                  <figcaption>
+                     $C: (x-2)^2+\dfrac{1}{4}(y-5)^2=1.$
+                  </figcaption>
+                </figure>
+            </div>
+
+            </div>
+
+            <hr>
+
+            <div id="section3">
+              <h2>Simply and multiply connected domains</h2>
+              
+              <p>
+                We say that a domain $D$ is <em>simply connected</em> if every simple 
+                closed contour $C$ lying entirely in $D$ can be shrunk to a point
+                without leaving $D.$ See Figure 3. In other words, if we draw 
+                any simple closed contour $C$ so that it lies entirely within 
+                a simply connected domain, then $C$ encloses only points of 
+                the domain $D.$ 
+              </p>
+
+              <figure>
+                <img src="../images/chp04/cauchy-theorem-simply-connected.gif" alt="Simply connected" title="Simply connected" style="width:55%;">
+                <figcaption>
+                  Simply connected domain $D.$
+                </figcaption>
+              </figure>
+
+              
+
+              <p>
+                In other words, a simply connected domain has no "holes" in it. 
+                The entire complex plane is an example of a simply 
+                connected domain; the annulus defined by $1 \lt |z| \lt 2$ is 
+                not simply connected.
+              </p>
+
+              <figure id="annulus">
+                <img src="../images/chp04/annulus.svg" alt="Annulus" title="Annulus" style="width:50%;">
+                <figcaption>
+                    $1 \lt |z| \lt 2.$
+                </figcaption>
+               </figure>
+                
+              <p>A domain that is not simply 
+                connected is called a <em>multiply connected</em> domain; that is, a 
+                multiply connected domain has "holes" in it. For example,
+                note in Figure 5
+                that if the curve $C$ enclosing the "hole" (on the left side)
+                is shrunk to a point, the curve would have to leave $D$ eventually. 
+              </p>
+
+              <figure>
+                <img src="../images/chp04/cauchy-theorem-not-simply-connected.gif" alt="No simply connected" title="Not simply connected" style="width:55%;">
+                <figcaption>
+                  Not simply connected domain $D.$
+                </figcaption>
+              </figure>
+                
+           
+
+              <p>
+                The closed contour in the Cauchy-Goursat Theorem does not need to be
+                simple when the theorem is adapted to simply connected domains. 
+                That is, the contour can actually cross itself. The following 
+                theorem allows for this possibility.
+              </p>
+
+              <div class="theorem">
+                If a function $f$ is analytic throughout a simply simple connected domain $D,$ 
+                then
+                \[
+                \int_C f(z) \, dz = 0.
+                \]
+                for every closed contour $C$ lying in $D.$
+              </div>
+
+              <p>
+                The proof is easy if $C$ is a simple closed contour or if it is 
+                a closed contour that intersects itself a finite number of times.
+                In the case that $C$ is simple and lies in $D,$ the function $f$ is analytic
+                at each point interior to and on $C.$ 
+                The Cauchy-Goursat
+                Theorem ensures that the conclusion of Theorem 3 holds. 
+                On the other hand, if $C$
+                is closed but intersects itself a finite number of times,
+                it consists of a finite number of simple closed contours. 
+                This is illustrated in Figure 6, where the simple closed 
+                contours $C_k$ $(k = 1, 2, 3, 4)$ make up $C.$ Since the value 
+                of the integral around each $C_k$ is zero, according to the 
+                Cauchy-Goursat theorem, it follows that
+              </p>
+              <div class="scroll-wrapper">
+                \begin{eqnarray*}
+                \int_C f(z)\,dz = \sum_{k=1}^{4}\int_{C_k}f(z)\, dz = 0.
+                \end{eqnarray*}
+               </div>
+
+               <figure>
+                <img src="../images/chp04/cauchy-theorem-closed-contours-sum.svg" alt="Simply connected" title="Simply connected" style="width:55%;">
+                <figcaption>
+                  Simply closed contours $C_k.$
+                </figcaption>
+              </figure>
+
+
+              <div class="practice">
+                <p><strong>Example 4:</strong>
+                Let $C$ be any closed contour lying in the open disk $|z|\lt 2.$
+                Then
+                \[
+                \int_C \frac{z\sin(z)}{\left(z^2-9\right)^3}dz =0.
+                \]
+                Note that the disk is a simply connected domain and the two
+                singularities $z=\pm 3$ of the integrand are outside the disk.
+                </p>
+                <figure>
+                  <img src="../images/chp04/cauchy-theorem-example-04.svg" alt="Cauchy-Goursat Theorem example" title="Cauchy-Goursat Theorem example" style="width:75%;">
+                  <figcaption>
+                    The open disk $D:|z|\lt 2$ is simply connected and $C$ is any closed contour.
+                  </figcaption>
+                </figure>
+              </div>
+               
+
+
+              <div class="corollary">
+                A function $f$ that is analytic throughout a simply simple connected domain $D$ 
+                must have an antiderivative everywhere in $D.$
+              </div>
+
+              <p>
+                If $f$ is analytic in a multiply connected domain $D$ then we cannot conclude 
+                that $\int_C f(z)\,dz=0$  for every simple closed contour $C$ in $D.$
+                Suppose that $D$ is muliply connected with two "holes". 
+                Let $C,$ $C_1$ and $C_2$ be simple 
+                closed contours such that each $C_k$ surrounds only one "hole" in the 
+                domain and are inside $C.$ See Figure 8.
+              </p>
+
+              <figure>
+                <img src="../images/chp04/cauchy-theorem-multiply-connected-contours-start.svg" alt="Cauchy-Goursat Theorem multiply connected" title="Cauchy-Goursat multiply connected" style="width:60%;">
+                <figcaption>
+                  $D$ is multiply connected with two "holes".
+                </figcaption>
+              </figure>
+
+              <p>
+                Now, suppose also that
+                $f$ is analytic on each contour and throughout 
+                the multiply connected domain consisting of 
+                the points inside $C$ and exterior to each $C_k.$
+                Assume that $C$ is described in the counterclockwise direction and 
+                each $C_k$ is described in the clockwise direction. 
+                We introduce a polygonal path $L_1,$ consisting
+                of a finite number of line segments joined end to end, 
+                to connect the outer contour $C$ to the inner contour $C_1.$
+                We introduce another polygonal path $L_2$ which connects 
+                $C_1$ to $C_2;$ and finally another polygonal path
+                $L_3$ connecting $C_3$ to $C.$ See Figure 9.
+              </p>
+
+              <figure>
+                <img src="../images/chp04/cauchy-theorem-multiply-connected-contours.svg" alt="Cauchy-Goursat Theorem multiply connected" title="Cauchy-Goursat multiply connected" style="width:60%;">
+                <figcaption>
+                  Polygonal lines $L_k$ are introduced.
+                </figcaption>
+              </figure>
+
+              <p>
+                As indicated in Figure 10, two simple closed contours 
+                $\Gamma_1$ and $\Gamma_2$ can be formed, each consisting of polygonal paths
+                $L_k$ or $-L_k$ and pieces of $C$ and $C_k$ and each described in
+                 such a direction that the points enclosed by them 
+                 lie to the left. Here we can apply the 
+                 Cauchy-Goursat Theorem to $f$ on $\Gamma_1$ and $\Gamma_2,$ 
+                 and the sum of the 
+                 values of the integrals over those contours is found 
+                 to be zero. Since the integrals in opposite directions 
+                 along each path $L_k$ cancel,
+                 only the integrals along $C$ 
+                 and the $C_k$ remain. Thus we obtain
+              </p>
+              <div class="scroll-wrapper">
+                \begin{eqnarray*}
+                \int_C f(z)\,dz +  \int_{C_1} f(z)\,dz + \int_{C_2} f(z)\,dz =0
+                \end{eqnarray*}
+               </div>
+
+               <figure>
+                <img src="../images/chp04/cauchy-theorem-multiply-connected-contours-final.svg" alt="Cauchy-Goursat Theorem multiply connected" title="Cauchy-Goursat multiply connected" style="width:60%;">
+                <figcaption>
+                 $\int_{L_k}f(z)\,dz = -\int_{-L_k}f(z)\,dz .$
+                </figcaption>
+              </figure>
+
+              <p>
+                The next theorem summarizes the general result for a
+                multiply connected domain with $n$ “holes.”
+              </p>
+
+              <div class="theorem">
+                Suppose that 
+                <ol>
+                  <li>
+                    C is a simple closed contour, described in the counterclockwise direction;
+                  </li>
+                  <li>
+                    $C_k$ $(k = 1, 2, \ldots , n)$ are simple closed contours interior 
+                    to $C,$ all described in the clockwise direction, that are 
+                    disjoint and whose interiors have no points in common.
+                  </li>
+                </ol>
+                <p>
+                  If  $f$ is analytic on all of these contours and 
+                  throughout the multiply connected domain consisting of
+                  the points inside $C$ and exterior to each $C_k,$ then
                 </p>
                 <div class="scroll-wrapper">
                   \begin{eqnarray*}
-                  p(z) = a_nz^n+ a_{n-1}z^{n-1} + \cdots + a_1 z + a_0, 
-                  \quad (n =0,1,2,\ldots)
+                  \int_C f(z)\,dz + \sum_{n=1}^{n} \int_{C_k} f(z)\,dz  =0
                   \end{eqnarray*}
                  </div>
-                 <p>are entire, then</p>
+              </div>
+
+              <p>
+                The following corollary is known as the <strong>principle of deformation of
+                 contours</strong> since it tells us that if $C_1$ is continuously deformed 
+                 into $C_2$ always passing through points at
+                 which $f$ is analytic, then the value of the integral 
+                 of $f$ over $C_1$ never changes. 
+              </p>
+
+              <div class="corollary">
+                Let $C_1$ and $C_2$ denote positively oriented simple 
+                closed contours, where $C_1$ is interior to $C_2.$
+                If $f$ is analytic in the closed region 
+                consisting of those contours and all points between 
+                them, then
+                \[
+                \int_{C_2} f(z) \, dz  = \int_{C_1} f(z) \, dz  .
+                \]
+              </div>
+
+              <figure>
+                <img src="../images/chp04/cauchy-theorem-simply-deformation.gif" alt="Cauchy-Goursat Theorem" title="Cauchy-Goursat" style="width:60%;">
+                <figcaption>
+                  $C_1$ is continuously deformed into $C_2.$
+                </figcaption>
+              </figure>
+
+              <div class="practice">
+                <p>
+                  <strong>Example 5:</strong>
+                  We can use the previous corollary to show that 
+                  \[
+                  \int_C \frac{1}{z} dz= 2\pi \,i
+                  \]
+                  for any positively oriented simple closed contour $C$
+                   surrounding the origin.
+                </p>
+                <p>
+                  Consider $C_0$ a positively oriented 
+                  circle with center at the origin and radius 
+                  so small that $C_0$ lies entirely inside $C.$ 
+                </p>
+
+                <p>
+                  We know that (see example 2 from the section 
+                  <a href="complex_integration.html">Complex Integration</a>)
+                  \[
+                  \int_{C_0} \frac{1}{z} dz= 2\pi \,i.
+                  \]
+                  and since $1/z$ is analytic everywhere 
+                  except at $z = 0,$ the result follows easily.
+                </p>
+
+                <figure>
+                  <img src="../images/chp04/cauchy-theorem-simply-deformation-example.gif" alt="Cauchy-Goursat Theorem" title="Cauchy-Goursat" style="width:60%;">
+                  <figcaption>
+                   $\ds \int_{C_0} \frac{1}{z} dz= 2\pi \,i.$
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="practice">
+                <p>
+                  <strong>Exercise 1:</strong>
+                  Use the principle of deformation of contours to show that 
+                  if $z_0$ is any complex constant interior to any simple 
+                  closed contour $C,$ then for $n$ an integer we have 
+                  \[
+                  \int_C \frac{dz}{(z-z_0)^{n}} = 
+                  \left\{
+                    \begin{array}{ll}
+                    2\pi  i &amp; n = 1,\\
+                    0, &amp; n\neq 1.
+                    \end{array}
+                    \right.
+                  \]
+                </p>
+              </div>
+
+            </div>
+
+            <hr>
+
+            <div id="section4">
+
+              <h2>Historical notes &amp; Proof</h2>
+
+              <p>
+                Cauchy first communicated the integral theorem to the 
+                <em>Académie des Sciences</em> in 1814, as  part of a memoir related with 
+                other topics (improper real integrals) 
+                [<a href="#bottazzini1984">1</a> pp. 132-133, <a href="#cauchy1841">4</a>, <a href="#smithies1997">13</a> pp. 56-57]. 
+                The first general form of the integral theorem was communicated to the 
+                <em>Académie</em> in 1825 in a memoir entitled 
+                <em>Mémoire sur les intégrales définies, prises entre des limites imaginaires</em>
+                [<a href="#bottazzini1984">1</a> pp. 151-156, <a href="#cauchy1825">5</a>, <a href="#smithies1997">13</a> pp. 89-91].
+              </p>
+
+              <p>
+                Goursat presented a proof Cauchy's Theorem in 1884 for the case of a 
+                simple closed curve, by dividing by
+                dividing up the interior into small squares, 
+                showing that the integral around each square of 
+                side $\ell$ is bounded by $\epsilon \ell ^2,$ 
+                and then adding the results. To obtain this 
+                estimate for arbitrary $\epsilon$ he needs 
+                the uniform continuity of $f'$ 
+                [<a href="#goursat1884">7</a>]. 
+                In his 1900 paper, Goursat finally removed 
+                the assumption of continuity of $f'$ [<a href="#borger1921">2</a>, <a href="#goursat1900">8</a>]. 
+                The argument is as before, but he now subdivides 
+                each square until the necessary estimate holds for each
+                of them, that is,
+              </p>
+              <div class="scroll-wrapper">
+                \[
+                \left|f(z) - f(z_0) - f'(z_0)(z-z_0)\right|\lt \epsilon \left|z-z_0\right|
+                \]
+              </div>
+              <p>
+                for every $z$ on the boundary of the subsquare, where $z_0$ 
+                is some fixed point in the subsquare. The important point here 
+                is that the same $\epsilon$ will do for each subsquare. 
+              </p>
+
+              <p>
+                In 1900, Eliakim H. Moore refined the proof, addressing the 
+                treatment of the boundary curve with greater precision [<a href="#moore1900">11</a>].
+                He also introduced the modern approach of proof by contradiction, which 
+                involves subdividing the domain, selecting the region where the 
+                conclusion is most significantly contradicted, and then applying 
+                the definition of the derivative at the resulting limit point
+                [<a href="#hance-olsen2008">9</a>, p. 651].
+              </p>
+
+              <p>
+                Later in 1901 Alfred Pringsheim presented a criticism of Goursat's treatment 
+                of the boundary curve [<a href="#pringsheim1901">12</a>].
+                He observed that these issues vanish when the proof technique is 
+                applied to a basic geometric shape, such as a triangle. From there, 
+                the theorem extends to simple polygonal paths within a simply connected 
+                domain by triangulating the interior of the path. Finally, it can be 
+                generalized to arbitrary paths by approximating them with polygonal paths.
+                [<a href="#hance-olsen2008">9</a>, p. 651]. This is the method that we 
+                will use to prove the Cauchy-Goursat Theorem.
+              </p>
+
+              <p>
+                To avoid needless repetition throughout the following discussion 
+                we will take for granted that we are working in a simply connected 
+                domain $D$ and that $f$ represents a complex function analytic in $D.$
+              </p>
+
+
+              <div class="lemma">
+                If $\Delta$ is a triangular contour lying entirely within $D,$
+                then $\int_{\Delta} f(z)\,dz=0.$
+              </div>
+
+              <div class="proof">
+                Let $\Delta$ be the triangular contour shown in Figure 13. 
+                The vertices of $\Delta$ are labeled $V_1,V_2$ and $V_3.$ 
+                We form smaller triangles $\Delta_1, \Delta_2,$ $\Delta_3$ and $\Delta_4$ 
+                by joining the midpoints $M_1,M_2$ and $M_3$ of the sides of $\Delta$ 
+                by straight line segments as shown in Figure 14. Then
                 <div class="scroll-wrapper">
+                  \begin{eqnarray}\label{sumcontours}
+                  \int_{\Delta} f(z)\,dz = \int_{C_1} f(z)\,dz +\int_{C_2} f(z)\,dz +\int_{C_3} f(z)\,dz +\int_{C_4} f(z)\,dz.
+                  \end{eqnarray}
+                </div>
+
+                <div class="figure-container">
+                  <figure>
+                    <img src="../images/chp04/cauchy-theorem-lemma-01-a.svg" alt="Triangle in D." title="Triangle in D." style="width:100%;">
+                    <figcaption>
+                      Triangular contour $\Delta$ within $D.$
+                    </figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../images/chp04/cauchy-theorem-lemma-01-b.svg" alt="Partition." title="Partition." style="width:100%;">
+                    <figcaption>
+                      Triangular contours $C_k.$ 
+                    </figcaption>
+                  </figure>
+        
+                </div>
+
+                <p>
+                  Using the triangle inequality we have
+                </p>
+                <div class="scroll-wrapper">
+                  \begin{eqnarray}\label{triangle01}
+                  \left|\int_{\Delta} f(z)\,dz\right| \leq  \left|\int_{C_1} f(z)\,dz\right| + \left|\int_{C_2} f(z)\,dz\right| + \left|\int_{C_3} f(z)\,dz\right| + \left|\int_{C_4} f(z)\,dz\right|.
+                  \end{eqnarray}
+                </div>
+                <p>
+                  Since the four quantities on the right side of the previous inequality 
+                  are nonnegative real numbers and, as a consequence, one of 
+                  them must be greater than or equal to the other three. 
+                  Let's denote the triangular contour of the integral
+                   with the largest modulus by the symbol $\Delta_1.$ Thus
+                   \begin{eqnarray}\label{triangle02}
+                   \left|\int_{\Delta} f(z)\,dz\right| \leq 4 \left|\int_{\Delta_1} f(z)\,dz\right| .
+                   \end{eqnarray}
+                </p>
+
+                <p>
+                  Now we repeat the foregoing process for the triangle $\Delta_1.$ That is,
+                  we form triangles within $\Delta_1$ by joining the midpoints of its
+                  sides by line segments in the same way as shown in Figure 14 
+                  and proceed to the equivalent of (\ref{sumcontours}) and (\ref{triangle01}). 
+                  The integral of $f$ along one of these new triangular contous, let's call it 
+                  $\Delta_2$ then satisifies 
+                  \[
+                   \left|\int_{\Delta_1} f(z)\,dz\right| \leq 4 \left|\int_{\Delta_2} f(z)\,dz\right| .
+                  \]
+                </p>
+
+                <p>
+                  We combine this last inequality with (\ref{triangle02}) to obtain
+                  \[
+                  \left|\int_{\Delta_1} f(z)\,dz\right| \leq 4 \left|\int_{\Delta_1} f(z)\,dz\right| \leq 4^2 \left|\int_{\Delta_2} f(z)\,dz\right| .
+                  \]
+                </p>
+
+                <p>
+                  We continue in this way to obtain a sequence of "nested" triangular 
+                  contours $\Delta, \Delta_1, \Delta_2,\ldots,$ that is, 
+                  each triangle in the sequence is contained in the one immediately 
+                  preceding it. After $n$ steps we get
+                  \begin{eqnarray}\label{bound4}
+                  \left|\int_{\Delta_1} f(z)\,dz\right| \leq 4^n \left|\int_{\Delta_n} f(z)\,dz\right| .
+                  \end{eqnarray}
+                </p>
+
+                <p>
+                  Since the sequence triangular contours 
+                  $\Delta, \Delta_1, \Delta_2,\ldots,$ are nested, there exists 
+                  a point $z_0$  in the domain $D$ that is common to every
+                  triangle in the sequence. Also, since $f$ is analytic, then $f'(z_0)$
+                  exists. If we define 
+                  \begin{eqnarray}\label{lambda}
+                  \Lambda(z) = \frac{f(z)-f(z_0)}{z-z_0} - f'(z_0),
+                  \end{eqnarray}
+                  then $\left|\Lambda(z)\right|$ can be made arbitrarily small whenever 
+                  $z$ is sufficiently close to $z_0.$ This is true 
+                  because $f$ is analytic in $D$ and so the limit 
                   \begin{eqnarray*}
-                  \int_C \sin z\,dz = 0,\quad \int_C \cos z\,dz = 0,\quad \int_C p(z)\,dz = 0.
+                  \lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}
                   \end{eqnarray*}
-                 </div>
-                 <p>
-                  for any simple closed contour $C$
-                 </p>
-            </div>
+                  exists and is equal to $f'(z_0).$ In other words, for every $\epsilon\gt 0,$
+                  there exist $\delta\gt 0$ such that 
+                  \begin{eqnarray}\label{smallenough}
+                  \left|\Lambda(z)\right|\lt  \epsilon \quad \text{whenever}\quad \left|z-z_0\right|\lt \delta.
+                  \end{eqnarray}
+                  We can solve (\ref{lambda}) for $f(z)$ 
+                  and replace this value in the integrand in (\ref{bound4}) to obtain
+                </p>
+                <div class="scroll-wrapper">
+                  \begin{eqnarray}\label{expanded}
+                  \int_{\Delta_n}f(z)\,dz = f(z_0) \int_{\Delta_n}dz + f'(z_0)\int_{\Delta_n}(z-z_0)\,dz + \int_{\Delta_n}(z-z_0)\Lambda(z)\,dz. 
+                  \end{eqnarray}
+                </div>
+                <p>
+                  Since 
+                  \[
+                  \int_{\Delta_n}dz =0 \quad \text{and}\quad \int_{\Delta_n}(z-z_0)\,dz=0
+                  \]
+                  (Why?), the right side of (\ref{expanded}) reduces to 
+                  \begin{eqnarray}\label{reduced}
+                  \int_{\Delta_n}f(z)\,dz = \int_{\Delta_n}(z-z_0)\Lambda(z)\,dz. 
+                  \end{eqnarray}
+                </p>
 
-            <div class="practice">
+                <p>
+                  Now let $L$ and $L_1$ denote the lengths of the triangular contours $\Delta$ and $\Delta_1,$
+                  respectively. Then, if we keep in mind how the triangle $\Delta_1$ was constructed, 
+                  it is a straightforward problem in similar triangles to show that 
+                  $L_1$ is related to $L$ by $L_1=\frac{1}{2}L.$ Likewise, 
+                  if $L_2$ is the legth of $\Delta_2,$ then $L_2=\frac{1}{2}L_1 = \frac{1}{2^2}L.$ 
+                  In general we have that if $L_n$ is the length of $\Delta_n,$ then 
+                  $L_n= \frac{1}{2^n}L.$ 
+                </p>
+
+                <p>
+                  For any $z\in \Delta_n,$ we have that 
+                  $\abs{z-z_0}\lt L_n,$ where $\ds L_n= \frac{1}{2^n}L.$ 
+                  If we choose $n$ large enough so that 
+                  \[
+                  \abs{z-z_0}\lt \frac{1}{2^n}L\lt \delta,
+                  \]
+                  it then follows from (\ref{reduced}), (\ref{smallenough}) and the 
+                  <em>ML</em>-inequality
+                </p>
+                <div class="scroll-wrapper">
+                  \begin{eqnarray}\label{boundgeneral}
+                  \abs{\int_{\Delta_n}f(z)\,dz } = \abs{ \int_{\Delta_n}(z-z_0)\Lambda(z)\,dz} \leq \frac{L}{2^n}\cdot \epsilon \cdot \frac{L}{2^n}  = \frac{L^2}{4^n}\epsilon 
+                  \end{eqnarray}
+                </div>
+
+                <p>
+                  Putting (\ref{bound4}) together with (\ref{boundgeneral}) gives us a bound for 
+                  the modulus of the integral on $\Delta:$
+                  \begin{eqnarray}\label{lastbound}
+                  \abs{\int_{\Delta}f(z)\,dz }  \leq 4^n \frac{L^2}{4^n}\epsilon  = L^2\epsilon.
+                  \end{eqnarray}
+                  Since $\epsilon \gt 0$ can be made arbitrarily small, then $\abs{\int_{\Delta}f(z)\,dz}=0.$
+                  Therefore
+                  \begin{eqnarray*}
+                  \int_{\Delta}f(z)\,dz =0.
+                  \end{eqnarray*}
+                </p>
+              </div>
+
+              <div class="lemma">
+                If $C$ is a closed polygonal contour lying entirely within $D,$ 
+                then $\int_C f(z)\,dz=0.$
+              </div>
+
+              <div class="practice">
+                <p>
+                  <strong>Exercise 2:</strong>
+                  Use <strong>Lemma 7</strong> and the fact that any closed polygonal 
+                  contour $C$  can be "triangulated" to prove <strong>Lemma 8</strong>. 
+                </p>
+
+                <div class="figure-container">
+                  <figure>
+                    <img src="../images/chp04/cauchy-theorem-lemma-02-a.svg" alt="Triangle in D" title="Triangle in D" style="width:100%;">
+                    <figcaption>
+                      Closed polygonal contour $C$ within $D.$
+                    </figcaption>
+                  </figure>
+                  <figure>
+                    <img src="../images/chp04/cauchy-theorem-lemma-02-b.svg" alt="Partition" title="Partition" style="width:100%;">
+                    <figcaption>
+                      Triangulation of the polygonal contour $C.$
+                    </figcaption>
+                  </figure>
+        
+                </div>
+
+                <p>
+                  <strong>Remark:</strong> 
+                  Roughly, "triangulated" means that the closed polygon $C$ can be decomposed 
+                  into a finite number of triangles by adding lines as shown in 
+                  Figure 16. 
+                  Note that we can then proceed as in the proof of <strong>Lemma 7</strong> 
+                  and integrate twice along these added line segments but 
+                  in opposite directions. If the closed polygon $C$ has $n$ sides,
+                  then it can be decomposed 
+                  into n triangles $C_1,C_2, \ldots, C_n$ and we would eventually arrive 
+                  at the following analogue of (\ref{sumcontours}):
+                  \[
+                  \int_C f(z)\,dz = \sum_{k=1}^{n} \int_{C_k}f(z)\,dz.
+                  \]
+                </p>
+              </div>
+
               <p>
-                <strong>Example 3:</strong>
-                We can use Cauchy-Goursat Theorem to evaluate 
-                \[
-                \int_C \frac{1}{z^2}\,dz,
-                \]
-                where $C$ is the ellipse $(x-2)^2+\dfrac{1}{4}(y-5)^2=1.$
-                Note that the function $f(z)=1/z^2$ is
-                analytic everywhere except at $z=0.$ In this case, $z=0$ is not inside 
-                or on the simple closed elliptical contour $C.$ Hence
-                \[
-                \int_C \frac{1}{z^2}\,dz=0.
-                \]
+                Now the Cauchy-Goursat Theorem can easily be proved using 
+                <strong>Lemma 8</strong> and the fact that any closed contour 
+                $C$ can be approximated to any desired degree of accuracy 
+                by a closed polygonal path.
               </p>
 
               <figure>
-                <img src="../images/chp04/cauchy-theorem-example-03.svg" alt="Cauchy-Goursat Theorem example" title="Cauchy-Goursat Theorem example" style="width:55%;">
+                <img src="../images/chp04/cauchy-theorem-final-proof.gif" alt="Approximation by polygonal path" title="Approximation by polygonal path" style="width:500px;">
                 <figcaption>
-                   $C: (x-2)^2+\dfrac{1}{4}(y-5)^2=1.$
+                  The countour $C$ is approximated by a  polygonal contour $P.$
                 </figcaption>
               </figure>
-          </div>
 
-          </div>
-
-          <hr>
-
-          <div id="section3">
-            <h2>Simply and multiply connected domains</h2>
-            
-            <p>
-              We say that a domain $D$ is <em>simply connected</em> if every simple 
-              closed contour $C$ lying entirely in $D$ can be shrunk to a point
-              without leaving $D.$ See Figure 3. In other words, if we draw 
-              any simple closed contour $C$ so that it lies entirely within 
-              a simply connected domain, then $C$ encloses only points of 
-              the domain $D.$ 
-            </p>
-
-            <figure>
-              <img src="../images/chp04/cauchy-theorem-simply-connected.gif" alt="Simply connected" title="Simply connected" style="width:55%;">
-              <figcaption>
-                Simply connected domain $D.$
-              </figcaption>
-            </figure>
-
-            
-
-            <p>
-              In other words, a simply connected domain has no "holes" in it. 
-              The entire complex plane is an example of a simply 
-              connected domain; the annulus defined by $1 \lt |z| \lt 2$ is 
-              not simply connected.
-            </p>
-
-            <figure id="annulus">
-              <img src="../images/chp04/annulus.svg" alt="Annulus" title="Annulus" style="width:50%;">
-              <figcaption>
-                  $1 \lt |z| \lt 2.$
-              </figcaption>
-             </figure>
-              
-            <p>A domain that is not simply 
-              connected is called a <em>multiply connected</em> domain; that is, a 
-              multiply connected domain has "holes" in it. For example,
-              note in Figure 5
-              that if the curve $C$ enclosing the "hole" (on the left side)
-              is shrunk to a point, the curve would have to leave $D$ eventually. 
-            </p>
-
-            <figure>
-              <img src="../images/chp04/cauchy-theorem-not-simply-connected.gif" alt="No simply connected" title="Not simply connected" style="width:55%;">
-              <figcaption>
-                Not simply connected domain $D.$
-              </figcaption>
-            </figure>
-              
-         
-
-            <p>
-              The closed contour in the Cauchy-Goursat Theorem does not need to be
-              simple when the theorem is adapted to simply connected domains. 
-              That is, the contour can actually cross itself. The following 
-              theorem allows for this possibility.
-            </p>
-
-            <div class="theorem">
-              If a function $f$ is analytic throughout a simply simple connected domain $D,$ 
-              then
-              \[
-              \int_C f(z) \, dz = 0.
-              \]
-              for every closed contour $C$ lying in $D.$
-            </div>
-
-            <p>
-              The proof is easy if $C$ is a simple closed contour or if it is 
-              a closed contour that intersects itself a finite number of times.
-              In the case that $C$ is simple and lies in $D,$ the function $f$ is analytic
-              at each point interior to and on $C.$ 
-              The Cauchy-Goursat
-              Theorem ensures that the conclusion of Theorem 3 holds. 
-              On the other hand, if $C$
-              is closed but intersects itself a finite number of times,
-              it consists of a finite number of simple closed contours. 
-              This is illustrated in Figure ??, where the simple closed 
-              contours $C_k$ $(k = 1, 2, 3, 4)$ make up $C.$ Since the value 
-              of the integral around each $C_k$ is zero, according to the 
-              Cauchy-Goursat theorem, it follows that
-            </p>
-            <div class="scroll-wrapper">
-              \begin{eqnarray*}
-              \int_C f(z)\,dz = \sum_{k=1}^{4}\int_{C_k}f(z)\, dz = 0.
-              \end{eqnarray*}
-             </div>
-
-            <div class="practice">
-              <p><strong>Example 4:</strong>
-              Let $C$ be any closed contour lying in the open disk $|z|\lt 2.$
-              Then
-              \[
-              \int_C \frac{z\sin(z)}{\left(z^2-9\right)^3}dz =0.
-              \]
-              Note that the disk is a simply connected domain and the two
-              singularities $z=\pm 3$ of the integrand are outside the disk.
+              <p>
+                <em>Proof of Cauchy-Goursat Theorem.</em>
+                Consider a simple closed contour $C$ and $n$ points $z_1, z_2, \ldots, z_n$
+                on $C$ through wich a polygonal path $P$ has been constructed. 
+                Then it can be shown that the difference 
+                \[
+                \abs{\int_C f(z)\,dz - \int_P f(z)\,dz} 
+                \]
+                can be made arbitrarily small as $n\to \infty.$
+                Thus, by <strong>Lemma 8</strong>, $\ds \int_P f(z)\,dz = 0$
+                for any $n.$ Therefore 
+                $\ds \int_C f(z)\,dz=0.$ $\hspace{10pt}\blacksquare$
               </p>
-              <figure>
-                <img src="../images/chp04/cauchy-theorem-example-04.svg" alt="Cauchy-Goursat Theorem example" title="Cauchy-Goursat Theorem example" style="width:75%;">
-                <figcaption>
-                  The open disk $D:|z|\lt 2$ is simply connected and $C$ is any closed contour.
-                </figcaption>
-              </figure>
+
+
+              <p>
+                There are several methods to prove the Cauchy-Goursat Theorem. For example, 
+                it can be proved for rectangles or disks, see 
+                [<a href="#brown2009">3</a>, <a href="#marsden1999">10</a>]. 
+                Besides these techniques, there have been many other proofs of 
+                this theorem. For instance John D. Dixon made a remarkably short and 
+                elegant proof, which requires only the basics of complex 
+                function theore in convex sets [<a href="#dixon1971">6</a>]. 
+                Rudolf Výborný provided a prove using
+                differentiable homotopy [<a href="#vyborny1979">14</a>].
+              </p>
+
             </div>
-             
 
+            <hr>
 
-            <div class="corollary">
-              A function $f$ that is analytic throughout a simply simple connected domain $D$ 
-              must have an antiderivative everywhere in $D.$
-            </div>
+            <div id="section5">
+              <h2>References</h2>
 
-            <p>
-              If $f$ is analytic in a multiply connected domain $D$ then we cannot conclude 
-              that $\int_C f(z)\,dz=0$  for every simple closed contour $C$ in $D.$
-              Suppose that $D$ is muliply connected with two "holes". 
-              Let $C,$ $C_1$ and $C_2$ be simple 
-              closed contours such that each $C_k$ surrounds only one "hole" in the 
-              domain and are inside $C.$ See Figure 7.
-            </p>
-
-            <figure>
-              <img src="../images/chp04/cauchy-theorem-multiply-connected-contours-start.svg" alt="Cauchy-Goursat Theorem multiply connected" title="Cauchy-Goursat multiply connected" style="width:60%;">
-              <figcaption>
-                $D$ is multiply connected with two "holes".
-              </figcaption>
-            </figure>
-
-            <p>
-              Now, suppose also that
-              $f$ is analytic on each contour and throughout 
-              the multiply connected domain consisting of 
-              the points inside $C$ and exterior to each $C_k.$
-              Assume that $C$ is described in the counterclockwise direction and 
-              each $C_k$ is described in the clockwise direction. 
-              We introduce a polygonal path $L_1,$ consisting
-              of a finite number of line segments joined end to end, 
-              to connect the outer contour $C$ to the inner contour $C_1.$
-              We introduce another polygonal path $L_2$ which connects 
-              $C_1$ to $C_2;$ and finally another polygonal path
-              $L_3$ connecting $C_3$ to $C.$ 
-            </p>
-
-            <figure>
-              <img src="../images/chp04/cauchy-theorem-multiply-connected-contours.svg" alt="Cauchy-Goursat Theorem multiply connected" title="Cauchy-Goursat multiply connected" style="width:60%;">
-              <figcaption>
-                Polygonal lines $L_k$ are introduced.
-              </figcaption>
-            </figure>
-
-            <p>
-              As indicated in Figure 9, two simple closed contours 
-              $\Gamma_1$ and $\Gamma_2$ can be formed, each consisting of polygonal paths
-              $L_k$ or $-L_k$ and pieces of $C$ and $C_k$ and each described in
-               such a direction that the points enclosed by them 
-               lie to the left. Here we can apply the 
-               Cauchy-Goursat Theorem to $f$ on $\Gamma_1$ and $\Gamma_2,$ 
-               and the sum of the 
-               values of the integrals over those contours is found 
-               to be zero. Since the integrals in opposite directions 
-               along each path $L_k$ cancel,
-               only the integrals along $C$ 
-               and the $C_k$ remain. Thus we obtain
-            </p>
-            <div class="scroll-wrapper">
-              \begin{eqnarray*}
-              \int_C f(z)\,dz +  \int_{C_1} f(z)\,dz + \int_{C_2} f(z)\,dz =0
-              \end{eqnarray*}
-             </div>
-
-             <figure>
-              <img src="../images/chp04/cauchy-theorem-multiply-connected-contours-final.svg" alt="Cauchy-Goursat Theorem multiply connected" title="Cauchy-Goursat multiply connected" style="width:60%;">
-              <figcaption>
-               $\int_{L_k}f(z)\,dz = -\int_{-L_k}f(z)\,dz .$
-              </figcaption>
-            </figure>
-
-            <p>
-              The next theorem summarizes the general result for a
-              multiply connected domain with $n$ “holes.”
-            </p>
-
-            <div class="theorem">
-              Suppose that 
-              <ol>
-                <li>
-                  C is a simple closed contour, described in the counterclockwise direction;
+              <ol class="bbtex-list">
+                <li id="bottazzini1984">Bottazzini, U. (1984). <em>The higher calculus: a history of real and complex analysis from Euler to Weierstrass</em>. New York : Springer-Verlag. <a href="https://archive.org/details/highercalculushi0000bott/mode/2up" target="_blank"><i class="fas fa-external-link-alt"></i></a> </li>
+                <li id="borger1921">Borger, R. L. (1921). On the Cauchy-Goursat theorem, <em>Bulletin of the American Mathematical Society</em>, Vol. 27, No. 7, pp. 325-329.
+                  <a href="https://projecteuclid.org/journals/bulletin-of-the-american-mathematical-society/volume-27/issue-7/On-the-Cauchy-Goursat-theorem/bams/1183425654.full" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+                <li id="brown2009">Brown, J. W., Churchill, R. V. (2009). <em>Complex Variables and Applications.</em> 8th Edition. New
+                  York: McGraw-Hill Higher Education.</li>
+                <li id="cauchy1814">Cauchy, A. (1814). <em>Mémoire sur la théorie des intégrales définies,</em>
+                  in Œuvres complètes d'Augustin Cauchy, $\text{I}^{re}$ série, vol. I, Gauthier Villars, Paris. <a href="https://doi.org/10.1017/CBO9780511702174" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+                <li id="cauchy1825">Cauchy, A. (1825). <em>Mémoire sur les intégrales définies, prises entre des limites imaginaires,</em>
+                  in Œuvres complètes d'Augustin Cauchy, $\text{II}^{e}$ série, vol. XV, Gauthier Villars, Paris. <a href="https://archive.org/details/mmoiresurlesin00cauc/mode/2up" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+                <li id="dixon1971">Dixon, J. D. (1971). A brief proof of Cauchy's integral theorem, <em>Proceedings of the American Mathematical Society</em>, Vol. 29, No. 3, pp. 625-626.
+                  <a href="https://doi.org/10.2307/2038614" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+                <li id="goursat1884">Goursat, E. (1884). Démonstration du théorème de Cauchy. <em>Acta Mathematica</em>, 4, pp. 197-200.
+                  <a href="https://link.springer.com/article/10.1007/BF02418419" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+                <li id="goursat1900">Goursat, E. (1900).  Sur la définition générale des fonctions analytiques, d'après Cauchy, <em>Transactions of the American Mathematical Society</em>, Vol. 1, No. 1, pp. 14-16.
+                  <a href="https://doi.org/10.2307/1986398" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                 </li>
-                <li>
-                  $C_k$ $(k = 1, 2, \ldots , n)$ are simple closed contours interior 
-                  to $C,$ all described in the clockwise direction, that are 
-                  disjoint and whose interiors have no points in common.
+                <li id="hance-olsen2008">Hance-Olsen, H. (2008). On Goursat's Proof of Cauchy's Integral Theorem, <em>The American Mathematical Monthly</em>, 115, pp. 648-652.
+                  <a href="https://www.jstor.org/stable/27642560" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                 </li>
-              </ol>
-              <p>
-                If  $f$ is analytic on all of these contours and 
-                throughout the multiply connected domain consisting of
-                the points inside $C$ and exterior to each $C_k,$ then
-              </p>
-              <div class="scroll-wrapper">
-                \begin{eqnarray*}
-                \int_C f(z)\,dz + \sum_{n=1}^{n} \int_{C_k} f(z)\,dz  =0
-                \end{eqnarray*}
-               </div>
+                <li id="marsden1999">Marsden, J. E. &amp; Hoffman, M. J. (1999) <em>Basic Complex Analysis.</em> (3rd ed.) New York: W. H. Freeman and Co.</li>
+                <li id="moore1900">Moore, E. H. (1900). A Simple Proof of the Fundamental Cauchy-Goursat Theorem, <em>Transactions of the American Mathematical Society</em>, Vol. 1, No. 4, pp. 499-506.
+                  <a href="https://doi.org/10.2307/1986368" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                </li>
+                <li id="pringsheim1901">Pringsheim, A. (1901). Ueber den Goursat'schen Beweis des Cauchy'schen Integralsatzes, <em>Transactions of the American Mathematical Society</em>, Vol. 2, No. 4, pp. 413-421.
+                  <a href="https://doi.org/10.2307/1986254" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                </li>
+                <li id="smithies1997">Smithies, F. (1997). <em>Cauchy and the Creation of Complex Function Theory.</em> UK: Cambridge University Press.
+                  <a href="https://archive.org/details/cauchycreationof0000smit/mode/2up" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                </li>
+                <li id="vynorny1979">Výborný, R. (1979). On the Use of a Differentiable Homotopy in the Proof of the Cauchy Theorem, <em>The American Mathematical Monthly</em>, Vol. 86, No. 5, pp. 380-382.
+                  <a href="https://doi.org/10.2307/2321099" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                </li>
+            </ol>
+
             </div>
 
-            <p>
-              The following corollary is known as the <strong>principle of deformation of
-               contours</strong> since it tells us that if $C_1$ is continuously deformed 
-               into $C_2$ always passing through points at
-               which $f$ is analytic, then the value of the integral 
-               of $f$ over $C_1$ never changes. 
-            </p>
 
-            <div class="corollary">
-              Let $C_1$ and $C_2$ denote positively oriented simple 
-              closed contours, where $C_1$ is interior to $C_2.$
-              If $f$ is analytic in the closed region 
-              consisting of those contours and all points between 
-              them, then
-              \[
-              \int_{C_2} f(z) \, dz  = \int_{C_1} f(z) \, dz  .
-              \]
-            </div>
+            <br>
 
-            <figure>
-              <img src="../images/chp04/cauchy-theorem-simply-deformation.gif" alt="Cauchy-Goursat Theorem" title="Cauchy-Goursat" style="width:60%;">
-              <figcaption>
-                $C_1$ is continuously deformed into $C_2.$
-              </figcaption>
-            </figure>
-
-            <div class="practice">
-              <p>
-                <strong>Example 5:</strong>
-                We can use the previous corollary to show that 
-                \[
-                \int_C \frac{1}{z} dz= 2\pi \,i
-                \]
-                for any positively oriented simple closed contour $C$
-                 surrounding the origin.
-              </p>
-              <p>
-                Consider $C_0$ a positively oriented 
-                circle with center at the origin and radius 
-                so small that $C_0$ lies entirely inside $C.$ 
-              </p>
-
-              <p>
-                We know that (see example 2 from the section 
-                <a href="complex_integration.html">Complex Integration</a>)
-                \[
-                \int_{C_0} \frac{1}{z} dz= 2\pi \,i.
-                \]
-                and since $1/z$ is analytic everywhere 
-                except at $z = 0,$ the result follows easily.
-              </p>
-
-              <figure>
-                <img src="../images/chp04/cauchy-theorem-simply-deformation-example.gif" alt="Cauchy-Goursat Theorem" title="Cauchy-Goursat" style="width:60%;">
-                <figcaption>
-                 $\ds \int_{C_0} \frac{1}{z} dz= 2\pi \,i.$
-                </figcaption>
-              </figure>
-            </div>
-
-            <div class="practice">
-              <p>
-                <strong>Exercise 1:</strong>
-                Use the principle of deformation of contours to show that 
-                if $z_0$ is any complex constant interior to any simple 
-                closed contour $C,$ then for $n$ an integer we have 
-                \[
-                \int_C \frac{dz}{z-z_0} = 
-                \left\{
-                  \begin{array}{ll}
-                  2\pi \, i & n = 1,\\
-                  0, & n\neq 1.
-                  \end{array}
-                  \right.
-                \]
-              </p>
-            </div>
-
-          </div>
-
-          <hr>
-
-          <div id="section4">
-
-            <h2>Historical notes &amp; Proof</h2>
-
-            <p>
-              Cauchy first communicated the integral theorem to the 
-              <em>Académie des Sciences</em> in 1814, as  part of a memoir related with 
-              other topics (improper real integrals) 
-              [<a href="#bottazzini1984">1</a> pp. 132-133, <a href="#cauchy1841">4</a>, <a href="#smithies1997">13</a> pp. 56-57]. 
-              The first general form of the integral theorem was communicated to the 
-              <em>Académie</em> in 1825 in a memoir entitled 
-              <em>Mémoire sur les intégrales définies, prises entre des limites imaginaires</em>
-              [<a href="#bottazzini1984">1</a> pp. 151-156, <a href="#cauchy1825">5</a>, <a href="#smithies1997">13</a> pp. 89-91].
-            </p>
-
-            <p>
-              Goursat presented a proof Cauchy's Theorem in 1884 for the case of a 
-              simple closed curve, by dividing by
-              dividing up the interior into small squares, 
-              showing that the integral around each square of 
-              side $\ell$ is bounded by $\epsilon \ell ^2,$ 
-              and then adding the results. To obtain this 
-              estimate for arbitrary $\epsilon$ he needs 
-              the uniform continuity of $f'$ 
-              [<a href="#goursat1884">7</a>]. 
-              In his 1900 paper, Goursat finally removed 
-              the assumption of continuity of $f'$ [<a href="#borger1921">2</a>, <a href="#goursat1900">8</a>]. 
-              The argument is as before, but he now subdivides 
-              each square until the necessary estimate holds for each
-              of them, that is,
-            </p>
-            <div class="scroll-wrapper">
-              \[
-              \left|f(z) - f(z_0) - f'(z_0)(z-z_0)\right|\lt \epsilon \left|z-z_0\right|
-              \]
-            </div>
-            <p>
-              for every $z$ on the boundary of the subsquare, where $z_0$ 
-              is some fixed point in the subsquare. The important point here 
-              is that the same $\epsilon$ will do for each subsquare. 
-            </p>
-
-            <p>
-              In 1900, Eliakim H. Moore refined the proof, addressing the 
-              treatment of the boundary curve with greater precision [<a href="#moore1900">11</a>].
-              He also introduced the modern approach of proof by contradiction, which 
-              involves subdividing the domain, selecting the region where the 
-              conclusion is most significantly contradicted, and then applying 
-              the definition of the derivative at the resulting limit point
-              [<a href="#hance-olsen2008">9</a>, p. 651].
-            </p>
-
-            <p>
-              Later in 1901 Alfred Pringsheim presented a criticism of Goursat's treatment 
-              of the boundary curve [<a href="#pringsheim1901">12</a>].
-              He observed that these issues vanish when the proof technique is 
-              applied to a basic geometric shape, such as a triangle. From there, 
-              the theorem extends to simple polygonal paths within a simply connected 
-              domain by triangulating the interior of the path. Finally, it can be 
-              generalized to arbitrary paths by approximating them with polygonal paths.
-              [<a href="#hance-olsen2008">9</a>, p. 651]. This is the method that we 
-              will use to prove the Cauchy-Goursat Theorem.
-            </p>
-
-            <p>
-              To avoid needless repetition throughout the following discussion 
-              we will take for granted that we are working in a simply connected 
-              domain $D$ and that $f$ represents a complex function analytic in $D.$
-            </p>
-
-
-            <div class="lemma">
-              If $\Delta$ is a triangular contour lying entirely within $D,$
-              then $\int_{\Delta} f(z)\,dz=0.$
-            </div>
-
-            <div class="proof">
-              Let $\Delta$ be the triangular contour shown in Figure 12. 
-              The vertices of $\Delta$ are labeled $V_1,V_2$ and $V_3.$ 
-              We form smaller triangles $\Delta_1, \Delta_2,$ $\Delta_3$ and $\Delta_4$ 
-              by joining the midpoints $M_1,M_2$ and $M_3$ of the sides of $\Delta$ 
-              by straight line segments as shown in Figure 13. Then
-              <div class="scroll-wrapper">
-                \begin{eqnarray}\label{sumcontours}
-                \int_{\Delta} f(z)\,dz = \int_{C_1} f(z)\,dz +\int_{C_2} f(z)\,dz +\int_{C_3} f(z)\,dz +\int_{C_4} f(z)\,dz.
-                \end{eqnarray}
-              </div>
-
-              <div class="figure-container">
-                <figure>
-                  <img src="../images/chp04/cauchy-theorem-lemma-01-a.svg" alt="Triangle in D." title="Triangle in D." style="width:100%;">
-                  <figcaption>
-                    Triangular contour $\Delta$ within $D.$
-                  </figcaption>
-                </figure>
-                <figure>
-                  <img src="../images/chp04/cauchy-theorem-lemma-01-b.svg" alt="Partition." title="Partition." style="width:100%;">
-                  <figcaption>
-                    Triangular contours $C_k.$ 
-                  </figcaption>
-                </figure>
-      
-              </div>
-
-              <p>
-                Using the triangle inequality we have
-              </p>
-              <div class="scroll-wrapper">
-                \begin{eqnarray}\label{triangle01}
-                \left|\int_{\Delta} f(z)\,dz\right| \leq  \left|\int_{C_1} f(z)\,dz\right| + \left|\int_{C_2} f(z)\,dz\right| + \left|\int_{C_3} f(z)\,dz\right| + \left|\int_{C_4} f(z)\,dz\right|.
-                \end{eqnarray}
-              </div>
-              <p>
-                Since the four quantities on the right side of the previous inequality 
-                are nonnegative real numbers and, as a consequence, one of 
-                them must be greater than or equal to the other three. 
-                Let's denote the triangular contour of the integral
-                 with the largest modulus by the symbol $\Delta_1.$ Thus
-                 \begin{eqnarray}\label{triangle02}
-                 \left|\int_{\Delta} f(z)\,dz\right| \leq 4 \left|\int_{\Delta_1} f(z)\,dz\right| .
-                 \end{eqnarray}
-              </p>
-
-              <p>
-                Now we repeat the foregoing process for the triangle $\Delta_1.$ That is,
-                we form triangles within $\Delta_1$ by joining the midpoints of its
-                sides by line segments in the same way as shown in Figure 13 
-                and proceed to the equivalent of (\ref{sumcontours}) and (\ref{triangle01}). 
-                The integral of $f$ along one of these new triangular contous, let's call it 
-                $\Delta_2$ then satisifies 
-                \[
-                 \left|\int_{\Delta_1} f(z)\,dz\right| \leq 4 \left|\int_{\Delta_2} f(z)\,dz\right| .
-                \]
-              </p>
-
-              <p>
-                We combine this last inequality with (\ref{triangle02}) to obtain
-                \[
-                \left|\int_{\Delta_1} f(z)\,dz\right| \leq 4 \left|\int_{\Delta_1} f(z)\,dz\right| \leq 4^2 \left|\int_{\Delta_2} f(z)\,dz\right| .
-                \]
-              </p>
-
-              <p>
-                We continue in this way to obtain a sequence of "nested" triangular 
-                contours $\Delta, \Delta_1, \Delta_2,\ldots,$ that is, 
-                each triangle in the sequence is contained in the one immediately 
-                preceding it. After $n$ steps we get
-                \begin{eqnarray}\label{bound4}
-                \left|\int_{\Delta_1} f(z)\,dz\right| \leq 4^n \left|\int_{\Delta_n} f(z)\,dz\right| .
-                \end{eqnarray}
-              </p>
-
-              <p>
-                Since the sequence triangular contours 
-                $\Delta, \Delta_1, \Delta_2,\ldots,$ are nested, there exists 
-                a point $z_0$  in the domain $D$ that is common to every
-                triangle in the sequence. Also, since $f$ is analytic, then $f'(z_0)$
-                exists. If we define 
-                \begin{eqnarray}\label{lambda}
-                \Lambda(z) = \frac{f(z)-f(z_0)}{z-z_0} - f'(z_0),
-                \end{eqnarray}
-                then $\left|\Lambda(z)\right|$ can be made arbitrarily small whenever 
-                $z$ is sufficiently close to $z_0.$ This is true 
-                because $f$ is analytic in $D$ and so the limit 
-                \begin{eqnarray*}
-                \lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}
-                \end{eqnarray*}
-                exists and is equal to $f'(z_0).$ In other words, for every $\epsilon\gt 0,$
-                there exist $\delta\gt 0$ such that 
-                \begin{eqnarray}\label{smallenough}
-                \left|\Lambda(z)\right|\lt  \epsilon \quad \text{whenever}\quad \left|z-z_0\right|\lt \delta.
-                \end{eqnarray}
-                We can solve (\ref{lambda}) for $f(z)$ 
-                and replace this value in the integrand in (\ref{bound4}) to obtain
-              </p>
-              <div class="scroll-wrapper">
-                \begin{eqnarray}\label{expanded}
-                \int_{\Delta_n}f(z)\,dz = f(z_0) \int_{\Delta_n}dz + f'(z_0)\int_{\Delta_n}(z-z_0)\,dz + \int_{\Delta_n}(z-z_0)\Lambda(z)\,dz. 
-                \end{eqnarray}
-              </div>
-              <p>
-                Since 
-                \[
-                \int_{\Delta_n}dz =0 \quad \text{and}\quad \int_{\Delta_n}(z-z_0)\,dz=0
-                \]
-                (Why?), the right side of (\ref{expanded}) reduces to 
-                \begin{eqnarray}\label{reduced}
-                \int_{\Delta_n}f(z)\,dz = \int_{\Delta_n}(z-z_0)\Lambda(z)\,dz. 
-                \end{eqnarray}
-              </p>
-
-              <p>
-                Now let $L$ and $L_1$ denote the lengths of the triangular contours $\Delta$ and $\Delta_1,$
-                respectively. Then, if we keep in mind how the triangle $\Delta_1$ was constructed, 
-                it is a straightforward problem in similar triangles to show that 
-                $L_1$ is related to $L$ by $L_1=\frac{1}{2}L.$ Likewise, 
-                if $L_2$ is the legth of $\Delta_2,$ then $L_2=\frac{1}{2}L_1 = \frac{1}{2^2}L.$ 
-                In general we have that if $L_n$ is the length of $\Delta_n,$ then 
-                $L_n= \frac{1}{2^n}L.$ 
-              </p>
-
-              <p>
-                For any $z\in \Delta_n,$ we have that 
-                $\abs{z-z_0}\lt L_n,$ where $\ds L_n= \frac{1}{2^n}L.$ 
-                If we choose $n$ large enough so that 
-                \[
-                \abs{z-z_0}\lt \frac{1}{2^n}L\lt \delta,
-                \]
-                it then follows from (\ref{reduced}), (\ref{smallenough}) and the 
-                <em>ML</em>-inequality
-              </p>
-              <div class="scroll-wrapper">
-                \begin{eqnarray}\label{boundgeneral}
-                \abs{\int_{\Delta_n}f(z)\,dz } = \abs{ \int_{\Delta_n}(z-z_0)\Lambda(z)\,dz} \leq \frac{L}{2^n}\cdot \epsilon \cdot \frac{L}{2^n}  = \frac{L^2}{4^n}\epsilon 
-                \end{eqnarray}
-              </div>
-
-              <p>
-                Putting (\ref{bound4}) together with (\ref{boundgeneral}) gives us a bound for 
-                the modulus of the integral on $\Delta:$
-                \begin{eqnarray}\label{lastbound}
-                \abs{\int_{\Delta}f(z)\,dz }  \leq 4^n \frac{L^2}{4^n}\epsilon  = L^2\epsilon.
-                \end{eqnarray}
-                Since $\epsilon \gt 0$ can be made arbitrarily small, then $\abs{\int_{\Delta}f(z)\,dz}=0.$
-                Therefore
-                \begin{eqnarray*}
-                \int_{\Delta}f(z)\,dz =0.
-                \end{eqnarray*}
-              </p>
-            </div>
-
-            <div class="lemma">
-              If $C$ is a closed polygonal contour lying entirely within $D,$ 
-              then $\int_C f(z)\,dz=0.$
-            </div>
-
-            <div class="practice">
-              <p>
-                <strong>Exercise 2:</strong>
-                Use <strong>Lemma 7</strong> and the fact that any closed polygonal 
-                contour $C$  can be "triangulated" to prove <strong>Lemma 8</strong>. 
-              </p>
-
-              <div class="figure-container">
-                <figure>
-                  <img src="../images/chp04/cauchy-theorem-lemma-02-a.svg" alt="Triangle in D" title="Triangle in D" style="width:100%;">
-                  <figcaption>
-                    Closed polygonal contour $C$ within $D.$
-                  </figcaption>
-                </figure>
-                <figure>
-                  <img src="../images/chp04/cauchy-theorem-lemma-02-b.svg" alt="Partition" title="Partition" style="width:100%;">
-                  <figcaption>
-                    Triangulation of the polygonal contour $C.$
-                  </figcaption>
-                </figure>
-      
-              </div>
-
-              <p>
-                <strong>Remark:</strong> 
-                Roughly, "triangulated" means that the closed polygon $C$ can be decomposed 
-                into a finite number of triangles by adding lines as shown in 
-                Figure 15. 
-                Note that we can then proceed as in the proof of <strong>Lemma 7</strong> 
-                and integrate twice along these added line segments but 
-                in opposite directions. If the closed polygon $C$ has $n$ sides,
-                then it can be decomposed 
-                into n triangles $C_1,C_2, \ldots, C_n$ and we would eventually arrive 
-                at the following analogue of (\ref{sumcontours}):
-                \[
-                \int_C f(z)\,dz = \sum_{k=1}^{n} \int_{C_k}f(z)\,dz.
-                \]
-              </p>
-            </div>
-
-            <p>
-              Now the Cauchy-Goursat Theorem can easily be proved using 
-              <strong>Lemma 8</strong> and the fact that any closed contour 
-              $C$ can be approximated to any desired degree of accuracy 
-              by a closed polygonal path.
-            </p>
-
-            <figure>
-              <img src="../images/chp04/cauchy-theorem-final-proof.gif" alt="Approximation by polygonal path" title="Approximation by polygonal path" style="width:500px;">
-              <figcaption>
-                The countour $C$ is approximated by a  polygonal contour $P.$
-              </figcaption>
-            </figure>
-
-            <p>
-              <em>Proof of Cauchy-Goursat Theorem.</em>
-              Consider a simple closed contour $C$ and $n$ points $z_1, z_2, \ldots, z_n$
-              on $C$ through wich a polygonal path $P$ has been constructed. 
-              Then it can be shown that the difference 
-              \[
-              \abs{\int_C f(z)\,dz - \int_P f(z)\,dz} 
-              \]
-              can be made arbitrarily small as $n\to \infty.$
-              Thus, by <strong>Lemma 8</strong>, $\ds \int_P f(z)\,dz = 0$
-              for any $n.$ Therefore 
-              $\ds \int_C f(z)\,dz=0.$ $\hspace{10pt}\blacksquare$
-            </p>
-
-
-            <p>
-              There are several methods to prove the Cauchy-Goursat Theorem. For example, 
-              it can be proved for rectangles or disks, see 
-              [<a href="#brown2009">3</a>, <a href="#marsden1999">10</a>]. 
-              Besides these techniques, there have been many other proofs of 
-              this theorem. For instance John D. Dixon made a remarkably short and 
-              elegant proof, which requires only the basics of complex 
-              function theore in convex sets [<a href="#dixon1971">6</a>]. 
-              Rudolf Výborný provided a prove using
-              differentiable homotopy [<a href="#vyborny1979">14</a>].
-            </p>
-
-          </div>
-
-          <hr>
-
-          <div id="section5">
-            <h2>References</h2>
-
-            <ol class="bbtex-list">
-              <li id="bottazzini1984">Bottazzini, U. (1984). <em>The higher calculus: a history of real and complex analysis from Euler to Weierstrass</em>. New York : Springer-Verlag. <a href="https://archive.org/details/highercalculushi0000bott/mode/2up" target="_blank"><i class="fas fa-external-link-alt"></i></a> </li>
-              <li id="borger1921">Borger, R. L. (1921). On the Cauchy-Goursat theorem, <em>Bulletin of the American Mathematical Society</em>, Vol. 27, No. 7, pp. 325-329.
-                <a href="https://projecteuclid.org/journals/bulletin-of-the-american-mathematical-society/volume-27/issue-7/On-the-Cauchy-Goursat-theorem/bams/1183425654.full" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
-              <li id="brown2009">Brown, J. W., Churchill, R. V. (2009). <em>Complex Variables and Applications.</em> 8th Edition. New
-                York: McGraw-Hill Higher Education.</li>
-              <li id="cauchy1814">Cauchy, A. (1814). <em>Mémoire sur la théorie des intégrales définies,</em>
-                in Œuvres complètes d'Augustin Cauchy, $\text{I}^{re}$ série, vol. I, Gauthier Villars, Paris. <a href="https://doi.org/10.1017/CBO9780511702174" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
-              <li id="cauchy1825">Cauchy, A. (1825). <em>Mémoire sur les intégrales définies, prises entre des limites imaginaires,</em>
-                in Œuvres complètes d'Augustin Cauchy, $\text{II}^{e}$ série, vol. XV, Gauthier Villars, Paris. <a href="https://archive.org/details/mmoiresurlesin00cauc/mode/2up" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
-              <li id="dixon1971">Dixon, J. D. (1971). A brief proof of Cauchy's integral theorem, <em>Proceedings of the American Mathematical Society</em>, Vol. 29, No. 3, pp. 625-626.
-                <a href="https://doi.org/10.2307/2038614" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
-              <li id="goursat1884">Goursat, E. (1884). Démonstration du théorème de Cauchy. <em>Acta Mathematica</em>, 4, pp. 197-200.
-                <a href="https://link.springer.com/article/10.1007/BF02418419" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
-              <li id="goursat1900">Goursat, E. (1900).  Sur la définition générale des fonctions analytiques, d'après Cauchy, <em>Transactions of the American Mathematical Society</em>, Vol. 1, No. 1, pp. 14-16.
-                <a href="https://doi.org/10.2307/1986398" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-              </li>
-              <li id="hance-olsen2008">Hance-Olsen, H. (2008). On Goursat's Proof of Cauchy's Integral Theorem, <em>The American Mathematical Monthly</em>, 115, pp. 648-652.
-                <a href="https://www.jstor.org/stable/27642560" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-              </li>
-              <li id="marsden1999">Marsden, J. E. &amp; Hoffman, M. J. (1999) <em>Basic Complex Analysis.</em> (3rd ed.) New York: W. H. Freeman and Co.</li>
-              <li id="moore1900">Moore, E. H. (1900). A Simple Proof of the Fundamental Cauchy-Goursat Theorem, <em>Transactions of the American Mathematical Society</em>, Vol. 1, No. 4, pp. 499-506.
-                <a href="https://doi.org/10.2307/1986368" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-              </li>
-              <li id="pringsheim1901">Pringsheim, A. (1901). Ueber den Goursat'schen Beweis des Cauchy'schen Integralsatzes, <em>Transactions of the American Mathematical Society</em>, Vol. 2, No. 4, pp. 413-421.
-                <a href="https://doi.org/10.2307/1986254" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-              </li>
-              <li id="smithies1997">Smithies, F. (1997). <em>Cauchy and the Creation of Complex Function Theory.</em> UK: Cambridge University Press.
-                <a href="https://archive.org/details/cauchycreationof0000smit/mode/2up" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-              </li>
-              <li id="vynorny1979">Výborný, R. (1979). On the Use of a Differentiable Homotopy in the Proof of the Cauchy Theorem, <em>The American Mathematical Monthly</em>, Vol. 86, No. 5, pp. 380-382.
-                <a href="https://doi.org/10.2307/2321099" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-              </li>
-          </ol>
-
-          </div>
-
-
-          <br>
-
-         
+           
 
 
 
-      </article>
-  </main>
+        </article>
+    </main>
 
-  <!--GeoGebra embeding
-  <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <!--GeoGebra embeding
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
 
-  <script>
-      let params1 = {
-          "width": 721,
-          "height": 451,
-          "material_id": "uye8xbbj",
-          "borderColor": "888888",
-          "playButton": true,
-          "showFullscreenButton": true,
-          "enableShiftDragZoom": false,
-          "showResetIcon": true
-      };
-      let params2 = {
-          "width": 719,
-          "height": 449,
-          "material_id": "am4gsavs",
-          "borderColor": "888888",
-          "playButton": true,
-          "showFullscreenButton": true,
-          "enableShiftDragZoom": false,
-          "showResetIcon": true
-      };
-      let ggbApplet1 = new GGBApplet(params1, true);
-      let ggbApplet2 = new GGBApplet(params2, true);
-      window.addEventListener("load", () => {
-          ggbApplet1.inject('ggb-element-1');
-          ggbApplet2.inject('ggb-element-2');
-      });
-  </script>
-  GeoGebra embeding ends-->
+    <script>
+        let params1 = {
+            "width": 721,
+            "height": 451,
+            "material_id": "uye8xbbj",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": false,
+            "showResetIcon": true
+        };
+        let params2 = {
+            "width": 719,
+            "height": 449,
+            "material_id": "am4gsavs",
+            "borderColor": "888888",
+            "playButton": true,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": false,
+            "showResetIcon": true
+        };
+        let ggbApplet1 = new GGBApplet(params1, true);
+        let ggbApplet2 = new GGBApplet(params2, true);
+        window.addEventListener("load", () => {
+            ggbApplet1.inject('ggb-element-1');
+            ggbApplet2.inject('ggb-element-2');
+        });
+    </script>
+    GeoGebra embeding ends-->
 
-  <a href="integrals_of_functions_with_branch_cuts.html" style="text-decoration: none;">
-      <p class="nextPage">Integrals of Functions with Branch Cuts <i class="fa-solid fa-angles-right"></i></p>
-  </a>
-  <!-- Ends main content -->
+    <a href="cauchy_integral_formula.html" style="text-decoration: none;">
+        <p class="nextPage">Cauchy Integral Formula <i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
 
 </section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+  
+
+  <!-- The Modal    -->
+
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 Hey there!</strong>
+      </div>
+      <div class="modal-body">
+
+        <div w3-include-html="message-modal.html"></div>
+        
+        <br />
+      </div>
+      <div class="modal-footer">
+        Thank you! 🙏 I highly appreciate your support! 🤗
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer>
+
+  <span id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <span class="hide-small">
+      <a href="https://github.com/complex-analysis"><i class="fa-solid fa-code"></i> Source</a>,
+      <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues"><i
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+    </span>
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-solid fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+  
+  <br />
+
+  <a id="licence-link" rel="license"
+    href="license.html">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong style="font-size: 0.9em;">ISBN: 978-0-6485736-0-9</strong> <br>
+  <strong>
+    <span class="hide-small" style="font-size: 0.9em;">&copy; Juan Carlos Ponce Campuzano
+      2019-<script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 0.9em;">&copy; J.C. Ponce Campuzano
+      2019-<script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>
