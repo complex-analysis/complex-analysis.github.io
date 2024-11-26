@@ -77,10 +77,10 @@
             <span class="content-hover-previous">Cauchy-Goursat Theorem</span>
             <span class="content-hover">Table of Contents</span>
             <span class="content-original">Complex Analysis</span>
-            <span class="content-hover-next">Series</span>
+            <span class="content-hover-next">The Fundamental Theorem of Algebra</span>
         </a>
     </div>
-    <a href="series.html" class="link" id="next-link">
+    <a href="fundamental_theorem_of_algebra.html" class="link" id="next-link">
         <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
     </a>
 </div>
@@ -120,15 +120,15 @@
 
               <p>
                 If $f$ is analytic in a simply connected domain $D$ and 
-                $z_0$ is a point in $D$, the quotient $f(z)/(z - z_0)$ 
+                $z_0\in D$, the quotient $f(z)/(z - z_0)$ 
                 is undefined at $z_0$, making it non-analytic in $D.$
                 Consequently, the Cauchy-Goursat theorem does not allow 
-                us to conclude that the integral of $(z)/(z - z_0)$ 
+                us to conclude that the integral of $f(z)/(z - z_0)$ 
                 around a simple closed contour $C$ containing $z_0$ is zero. 
-                However, as we shall see, the integral of $(z)/(z - z_0)$ 
+                However, as we shall see, the integral of $f(z)/(z - z_0)$ 
                 around $C$ evaluates to $2\pi i f(z_0)$. This result is 
                 the first of two remarkable formulas and is known as the 
-                Cauchy integral formula.
+                <em>Cauchy integral formula</em>.
               </p>
 
               <div class="theorem">
@@ -142,13 +142,20 @@
 
               <div class="proof">
                 Let $C_r$ be a positively oriented circle $\abs{z-z_0}=r,$
-                where $r\gt 0$ is small enough that $C_r$ is inside $C.$
-                Now, since the quotient $f(z)(z - z_0)$ is analytic between 
+                where $r\gt 0$ is small enough that $C_r$ is inside $C.$ See Figure 1.
+                Now, since the quotient $f(z)/(z - z_0)$ is analytic between 
                 and on the contours $C$ and $C_r,$ then by the principle of deformation 
                 of contours we have
                 \[
                 \int_C \frac{f(z)}{z-z_0}dz =  \int_{C_r} \frac{f(z)}{z-z_0}dz.
                 \]
+
+                <figure>
+                  <img src="../images/chp04/cauchy-integral-formula-01.svg" alt="Circle C_r inside the contour" title="Circle C_r inside the contour" style="width:60%">
+                  <figcaption>
+                      Circle $C_r$ inside the contour $C.$
+                  </figcaption>
+                </figure>
 
                 <p>
                   We wish to show that the value of the integral on 
@@ -157,7 +164,7 @@
                 </p>
                 <div class="scroll-wrapper">
                   \begin{eqnarray}
-                  \int_{C_r} \frac{f(z)}{z-z_0}dz &amp;=&amp; \int_{C_r} \frac{f(z_0) - f(z_0)f(z)}{z-z_0}dz \nonumber\\
+                  \int_{C_r} \frac{f(z)}{z-z_0}dz &amp;=&amp; \int_{C_r} \frac{f(z_0) - f(z_0)+ f(z)}{z-z_0}dz \nonumber\\
                   &amp; = &amp; f(z_0)\int_{C_r} \frac{1}{z-z_0}dz + \int_{C_r} \frac{f(z)- f(z_0)}{z-z_0}dz \label{formula-01}.
                   \end{eqnarray}
                 </div>
@@ -223,19 +230,25 @@
               <div class="practice">
                 <p>
                   <strong>Example 1:</strong>
-                  Let $C$ be the circle $|z|= 2.$ Since the function 
+                  Let $C$ be the circle $|z|= 2.$ 
+                  To compute the integral 
                   \[
-                  f(z) = z^2-4z+4
+                  \int_C \frac{z^2-4z+4}{z+i}dz,
                   \]
-                  is analytic at all points within and on the contour $C$, and 
-                  since the point $z_0=- i $ is interior to $C$, by the 
-                  Cauchy integral formula we obtain
+                  notice that $f(z) = z^2-4z+4$
+                  is analytic at all points within and on the contour $C.$
+                  Since the point $z_0=- i $ is interior to $C,$ by the 
+                  Cauchy integral formula, we obtain
                 </p>
                 <div class="scroll-wrapper">
                   \[
                   \int_C \frac{z^2-4z+4}{z+i}dz = 2\pi \, i f(-i)=  2\pi (3+ 4i) = \pi (-8+6i).
                   \]
                 </div>
+
+                <div class="ggbElement" id="ggb-element-1"></div>
+
+                
 
               </div>
 
@@ -378,104 +391,103 @@
                 </p>
               </div>
 
-              <hr>
-
-              <div id="section3">
-                <h2>Some consequences of the extension</h2>
-                <p>
-                  An immediate, and remarkable, consequence of the extension of 
-                  the Cauchy integral formula is the following:
-                </p>
-
-                <div class="theorem">
-                   If a function $f$ is analytic at a given point, 
-                   then its derivatives of all orders are analytic there too.
-                </div>
-
-                <div class="proof">
-                  Assume that $f$ is anallytic at $z_0.$ Then there must be 
-                  a neighborhood $\abs{z-z_0}\lt \epsilon$ of $z_0$ throughout 
-                  $f$ is analytic. This means that there is a positively oriented 
-                  circle centered at $z_0$ with radius $\epsilon /2,$ such that 
-                  $f$ is also analytic inside and on $C_0.$ From (\ref{general-derivative}) we 
-                  know that
-                  \[
-                  f^{(2)}(z) = \frac{1}{2pi i} \int_{C_0} \frac{f(s)}{(s-z)^3}ds
-                  \]
-                  at each point $z$ inside $C_0,$ and the existence of $f^{(2)}(z)$ 
-                  throughout the neighborhood $|z - z_0| \lt \epsilon /2$ 
-                  means that $f'$ is analytic at $z_0.$
-
-                  <p>
-                    We can apply a similar argument to the analytic function 
-                    $f'$ to conclude that $f^{(2)}(z)$ is analytic, 
-                    and so on.  
-                  </p>
-                </div>
-
-                <p>
-                  As a consequence, when a function $ f (z) = u(x, y) + iv(x, y)$
-                  is analytic at a point $z = (x, y),$ the differentiability of 
-                  $f'$'ensures the continuity od $f'$ there. Then, since
-                  \[
-                  f'(z) = u_x + iv_x = v_y - i u_y,
-                  \]
-                  the first-order partial derivatives of $u$ and $v$ are 
-                  continuous at that point. Furthermore, since
-                  \begin{eqnarray*}
-                  f''(z)&amp;=&amp; u_{xx} + iv_{xx} = v_{yx} - i u_{yx},\\
-                  &amp; \vdots &amp;
-                  \end{eqnarray*}
-                  we can also conclude that the real functions $u$ and $v$ 
-                  have continuous partial derivatives of all orders at a 
-                  point of analyticity.
-                </p>
-
-                <div class="corollary">
-                  If $ f (z) = u(x, y) + iv(x, y)$ is analytic at a 
-                  point $z = (x, y),$ then the component functions $u$ and $v$ have 
-                  continuous partial derivatives of all orders at that point.
-                </div>
-
-                <p>
-                  Finally, the last consequence of the Cauchy Integral Formula, that 
-                  will be essential in the next section. 
-                </p>
-
-                <div class="theorem">
-                  Suppose that $f$ is analytic inside and on a positively 
-                  oriented circle $C_r$ centered at $z_0$ and with radius $r.$
-                  If $\abs{f(z)}\leq M_r$ for all points $z$ on $C_r,$ then 
-                  \[
-                  \abs{f^{(n)}(z_0)}\leq \frac{n!M_r}{r^n}
-                  \]
-               </div>
-
-               <div class="proof">
-                This inequality is called <strong>Cauchy's inequality</strong> and is 
-                an immediate consecuence of the expression (\ref{general-derivative}).
-                From the hypothesis,
-                \[
-                \abs{\frac{f(z)}{(z-z_0)^{n+1}}}= \frac{\abs{f(z)}}{r^{n+1}}\leq \frac{M_r}{r^{n+1}}.
-                \] 
-
-                <p>
-                  Thus, from (\ref{general-derivative}) and the ML-inequality, we have 
-                </p>
-                <div class="scroll-wrapper">
-                  \begin{eqnarray*}
-                  \abs{f^{(n)}(z_0)} = \frac{n!}{2\pi} \abs{\int_C\frac{f(z)}{(z-z_0)^{n+1}}dz}\leq \frac{n!}{2\pi} \frac{M_r}{r^{n+1}}2 \pi r = \frac{n!M_r}{r^n}.
-                  \end{eqnarray*}
-                </div>
-               </div>
-
-               
-              </div>
-
+             
 
             </div>
             
+            <hr>
 
+            <div id="section3">
+              <h2>Some consequences of the extension</h2>
+              <p>
+                An immediate, and remarkable, consequence of the extension of 
+                the Cauchy integral formula is the following:
+              </p>
+
+              <div class="theorem">
+                 If a function $f$ is analytic at a given point, 
+                 then its derivatives of all orders are analytic there too.
+              </div>
+
+              <div class="proof">
+                Assume that $f$ is anallytic at $z_0.$ Then there must be 
+                a neighborhood $\abs{z-z_0}\lt \epsilon$ of $z_0$ throughout 
+                $f$ is analytic. This means that there is a positively oriented 
+                circle centered at $z_0$ with radius $\epsilon /2,$ such that 
+                $f$ is also analytic inside and on $C_0.$ From (\ref{general-derivative}) we 
+                know that
+                \[
+                f^{(2)}(z) = \frac{1}{2\pi i} \int_{C_0} \frac{f(s)}{(s-z)^3}ds
+                \]
+                at each point $z$ inside $C_0,$ and the existence of $f^{(2)}(z)$ 
+                throughout the neighborhood $|z - z_0| \lt \epsilon /2$ 
+                means that $f'$ is analytic at $z_0.$
+
+                <p>
+                  We can apply a similar argument to the analytic function 
+                  $f'$ to conclude that $f^{(2)}(z)$ is analytic, 
+                  and so on.  
+                </p>
+              </div>
+
+              <p>
+                As a consequence, when a function $ f (z) = u(x, y) + iv(x, y)$
+                is analytic at a point $z = (x, y),$ the differentiability of 
+                $f'$'ensures the continuity od $f'$ there. Then, since
+                \[
+                f'(z) = u_x + iv_x = v_y - i u_y,
+                \]
+                the first-order partial derivatives of $u$ and $v$ are 
+                continuous at that point. Furthermore, since
+                \begin{eqnarray*}
+                f''(z)&amp;=&amp; u_{xx} + iv_{xx} = v_{yx} - i u_{yx},\\
+                &amp; \vdots &amp;
+                \end{eqnarray*}
+                we can also conclude that the real functions $u$ and $v$ 
+                have continuous partial derivatives of all orders at a 
+                point of analyticity.
+              </p>
+
+              <div class="corollary">
+                If $ f (z) = u(x, y) + iv(x, y)$ is analytic at a 
+                point $z = (x, y),$ then the component functions $u$ and $v$ have 
+                continuous partial derivatives of all orders at that point.
+              </div>
+
+              <p>
+                Finally, the last consequence of the Cauchy Integral Formula, that 
+                will be essential in the next section. 
+              </p>
+
+              <div class="theorem">
+                Suppose that $f$ is analytic inside and on a positively 
+                oriented circle $C_r$ centered at $z_0$ and with radius $r.$
+                If $\abs{f(z)}\leq M_r$ for all points $z$ on $C_r,$ then 
+                \[
+                \abs{f^{(n)}(z_0)}\leq \frac{n!M_r}{r^n}
+                \]
+             </div>
+
+             <div class="proof">
+              This inequality is called <strong>Cauchy's inequality</strong> and is 
+              an immediate consecuence of the expression (\ref{general-derivative}).
+              From the hypothesis,
+              \[
+              \abs{\frac{f(z)}{(z-z_0)^{n+1}}}= \frac{\abs{f(z)}}{r^{n+1}}\leq \frac{M_r}{r^{n+1}}.
+              \] 
+
+              <p>
+                Thus, from (\ref{general-derivative}) and the ML-inequality, we have 
+              </p>
+              <div class="scroll-wrapper">
+                \begin{eqnarray*}
+                \abs{f^{(n)}(z_0)} = \frac{n!}{2\pi} \abs{\int_C\frac{f(z)}{(z-z_0)^{n+1}}dz}\leq \frac{n!}{2\pi} \frac{M_r}{r^{n+1}}2 \pi r = \frac{n!M_r}{r^n}.
+                \end{eqnarray*}
+              </div>
+             </div>
+
+             
+            </div>
 
             <br>
 
@@ -486,21 +498,21 @@
         </article>
     </main>
 
-    <!--GeoGebra embeding
+    <!--GeoGebra embeding-->
     <script src="https://www.geogebra.org/apps/deployggb.js"></script>
 
     <script>
         let params1 = {
-            "width": 721,
-            "height": 451,
-            "material_id": "uye8xbbj",
+            "width": 564,
+            "height": 493,
+            "material_id": "vqtzpnrs",
             "borderColor": "888888",
-            "playButton": true,
+            "playButton": false,
             "showFullscreenButton": true,
             "enableShiftDragZoom": false,
             "showResetIcon": true
         };
-        let params2 = {
+        /*let params2 = {
             "width": 719,
             "height": 449,
             "material_id": "am4gsavs",
@@ -509,18 +521,18 @@
             "showFullscreenButton": true,
             "enableShiftDragZoom": false,
             "showResetIcon": true
-        };
+        };*/
         let ggbApplet1 = new GGBApplet(params1, true);
-        let ggbApplet2 = new GGBApplet(params2, true);
+        //let ggbApplet2 = new GGBApplet(params2, true);
         window.addEventListener("load", () => {
             ggbApplet1.inject('ggb-element-1');
-            ggbApplet2.inject('ggb-element-2');
+            //ggbApplet2.inject('ggb-element-2');
         });
     </script>
-    GeoGebra embeding ends-->
+    <!--GeoGebra embeding ends-->
 
-    <a href="series.html" style="text-decoration: none;">
-        <p class="nextPage">Series <i class="fa-solid fa-angles-right"></i></p>
+    <a href="fundamental_theorem_of_algebra.html" style="text-decoration: none;">
+        <p class="nextPage">The Fundamental Theorem of Algebra<i class="fa-solid fa-angles-right"></i></p>
     </a>
     <!-- Ends main content -->
 
