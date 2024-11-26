@@ -52,6 +52,7 @@
 
 <body data-type="book" id="top">
 
+  <!-- Dark Mode Loader -->
   <div class="myLoader" id="loader">
     <div class="dots">
       <div class="dot"></div>
@@ -119,13 +120,13 @@
                 Formally, the expression (\ref{limit001}) means that for every (sufficiently small)
                 $\varepsilon&gt;0,$ there is a
                 $\delta&gt;0$ such that
-                </p><div class="scroll-wrapper">
-                    \begin{eqnarray}\label{limitcondition}
+            </p><div class="scroll-wrapper">
+                \begin{eqnarray}\label{limitcondition}
                 \left|f (z) - w_0\right| \lt \varepsilon \quad \text{whenever}\quad 0 \lt \left|z - z_0\right| \lt
                 \delta
                 \end{eqnarray}
-                </div>
-                
+            </div>
+
             <p></p>
 
             <p>
@@ -173,20 +174,20 @@
                 <p>
                     <strong>Discussion:</strong>
                     Let's take $\delta = 1.$ So $0\lt\left| z-z_0\right|\lt\delta=1$ implies that
-                    </p><div class="scroll-wrapper">
-                        \begin{eqnarray*}
+                </p><div class="scroll-wrapper">
+                    \begin{eqnarray*}
                     \left| z^2-z_0^2\right|&amp;=&amp;\left| z-z_0\right|\left| z+z_0\right|\\&amp;\lt&amp;\left|
                     z-z_0+2z_0\right|\\&amp;\lt&amp; \left| z-z_0\right|+2\left|z_0\right|\\
                     &amp;\lt&amp;1+2\left|z_0\right|.
                     \end{eqnarray*}
-                    </div>
-                    
-                    Now, if $\delta=\dfrac{\varepsilon}{1+2\left|z_0\right|},$ then $0\lt\left| z-z_0\right|\lt\delta$
-                    implies that
-                    $$\left| z^2-z_0^2\right|\lt 1+2\left|z_0\right|\lt\varepsilon.$$
-                    This means that
-                    $$\left| z^2-z_0^2\right|\lt\varepsilon \quad\text{whenever}\quad 0\lt\left| z-z_0\right|\lt\delta$$
-                    where $\delta=\min\left\{1,\dfrac{\varepsilon}{1+2\left|z_0\right|}\right\}.$
+                </div>
+
+                Now, if $\delta=\dfrac{\varepsilon}{1+2\left|z_0\right|},$ then $0\lt\left| z-z_0\right|\lt\delta$
+                implies that
+                $$\left| z^2-z_0^2\right|\lt 1+2\left|z_0\right|\lt\varepsilon.$$
+                This means that
+                $$\left| z^2-z_0^2\right|\lt\varepsilon \quad\text{whenever}\quad 0\lt\left| z-z_0\right|\lt\delta$$
+                where $\delta=\min\left\{1,\dfrac{\varepsilon}{1+2\left|z_0\right|}\right\}.$
                 <p></p>
                 <p>
                     Now we can proceed to write our formal proof.
@@ -229,43 +230,38 @@
             </div>
 
 
-            <details>
-                <summary><b>Proof</b>
-                </summary>
-
-                <p>
-                    First, let us assume that limit (\ref{limitpart01}) holds.
-                    Thus, for each positive number $\varepsilon,$ there is a positive number
-                    $\delta$ such
-                    that
-                    \begin{eqnarray}\label{limpart05}
-                    |(u + iv) -(u_0 + iv_0)| \lt \varepsilon
-                    \end{eqnarray}
-                    whenever
-                    \begin{eqnarray}\label{limpart06}
-                    0 \lt |(x + iy) - (x_0 + iy_0)| \lt \delta
-                    \end{eqnarray}
-                    But
-                    </p><div class="scroll-wrapper">
-                        \begin{eqnarray*}
+            <div class="proof">
+                First, let us assume that limit (\ref{limitpart01}) holds.
+                Thus, for each positive number $\varepsilon,$ there is a positive number
+                $\delta$ such
+                that
+                \begin{eqnarray}\label{limpart05}
+                |(u + iv) -(u_0 + iv_0)| \lt \varepsilon
+                \end{eqnarray}
+                whenever
+                \begin{eqnarray}\label{limpart06}
+                0 \lt |(x + iy) - (x_0 + iy_0)| \lt \delta
+                \end{eqnarray}
+                But
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
                     |u-u_0|&amp;\leq &amp;|(u-u_0) + i(v -v_0)|\;=\;|(u + iv) - (u_0 + iv_0)|,\\
                     |v-v_0|&amp;\leq &amp;|(u-u_0) + i(v -v_0)|\;=\;|(u + iv) - (u_0 + iv_0)|
                     \end{eqnarray*}
-                    </div>
-                    and
-                    <div class="scroll-wrapper">
-                        $$|(x+iy)-(x_0+iy_0)|=|(x-x_0)+i(y-y_0)|=\sqrt{(x-x_0)^2+(y-y_0)^2}$$
-                    </div>
-                    Hence it follows from inequalities (\ref{limpart05}) and (\ref{limpart06}) that
-                    <div class="scroll-wrapper">
-                        $$|u-u_0|\lt\varepsilon\quad \text{and}\quad |v-v_0|\lt\varepsilon$$
-                    </div>
-                    whenever
-                    <div class="scroll-wrapper">
-                        $$0\lt\sqrt{(x-x_0)^2+(y-y_0)^2}\lt\delta$$
-                    </div>
-                    which proves that limits (\ref{limitpart02}) hold.
-                <p></p>
+                </div>
+                and
+                <div class="scroll-wrapper">
+                    $$|(x+iy)-(x_0+iy_0)|=|(x-x_0)+i(y-y_0)|=\sqrt{(x-x_0)^2+(y-y_0)^2}$$
+                </div>
+                Hence it follows from inequalities (\ref{limpart05}) and (\ref{limpart06}) that
+                <div class="scroll-wrapper">
+                    $$|u-u_0|\lt\varepsilon\quad \text{and}\quad |v-v_0|\lt\varepsilon$$
+                </div>
+                whenever
+                <div class="scroll-wrapper">
+                    $$0\lt\sqrt{(x-x_0)^2+(y-y_0)^2}\lt\delta$$
+                </div>
+                which proves that limits (\ref{limitpart02}) hold.
 
                 <p>
                     Now, we assume that limits (\ref{limitpart02}) hold in order to obtain limit
@@ -274,41 +270,40 @@
                     positive
                     numbers $\delta_1$
                     and $\delta_2$ such that
-                    </p><div class="scroll-wrapper">
-                        \begin{eqnarray}\label{limpart03}
+                </p><div class="scroll-wrapper">
+                    \begin{eqnarray}\label{limpart03}
                     |u-u_0|\lt \frac{\varepsilon}{2}\quad\text{whenever}\quad
                     0\lt\sqrt{(x-x_0)^2+(y-y_0)^2}\lt\delta_1
                     \end{eqnarray}
-                    </div>
-                    and
-                    <div class="scroll-wrapper">
-                        \begin{eqnarray}\label{limpart04}
+                </div>
+                and
+                <div class="scroll-wrapper">
+                    \begin{eqnarray}\label{limpart04}
                     |v - v_0| \lt \frac{\varepsilon}{2}\quad\text{whenever}\quad
                     0\lt\sqrt{(x-x_0)^2+(y-y_0)^2}\lt\delta_2
                     \end{eqnarray}
-                    </div>
-                    
-                    Let $\delta$ be any positive number smaller than $\delta_1$ and $\delta_2.$ Since
-                    <div class="scroll-wrapper">
-                        $$|(u + iv) - (u_0 + iv_0)| = |(u - u_0) + i(v - v_0)| \leq |u - u_0| + |v - v_0|$$
-                    </div>
-                    and
-                    <div class="scroll-wrapper">
-                        $$\sqrt{(x-x_0)^2+(y-y_0)^2}=|(x-x_0)+i(y-y_0)|\leq |(x+iy)-(x_0+iy_0)|$$
-                    </div>
-                    it follows from statements (\ref{limpart03}) and (\ref{limpart04}) that
-                    <div class="scroll-wrapper">
-                        $$|(u + iv) -(u_0 + iv_0)| \lt\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$$
-                    </div>
-                    whenever
-                    <div class="scroll-wrapper">
-                        $$0 \lt |(x + iy) - (x_0 + iy_0)| \lt \delta.$$
-                    </div>
-                    
-                    That is, limit (\ref{limitpart01}) holds, and this completes the proof of the theorem.
-                    $\blacksquare$
+                </div>
+
+                Let $\delta$ be any positive number smaller than $\delta_1$ and $\delta_2.$ Since
+                <div class="scroll-wrapper">
+                    $$|(u + iv) - (u_0 + iv_0)| = |(u - u_0) + i(v - v_0)| \leq |u - u_0| + |v - v_0|$$
+                </div>
+                and
+                <div class="scroll-wrapper">
+                    $$\sqrt{(x-x_0)^2+(y-y_0)^2}=|(x-x_0)+i(y-y_0)|\leq |(x+iy)-(x_0+iy_0)|$$
+                </div>
+                it follows from statements (\ref{limpart03}) and (\ref{limpart04}) that
+                <div class="scroll-wrapper">
+                    $$|(u + iv) -(u_0 + iv_0)| \lt\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon$$
+                </div>
+                whenever
+                <div class="scroll-wrapper">
+                    $$0 \lt |(x + iy) - (x_0 + iy_0)| \lt \delta.$$
+                </div>
+
+                That is, limit (\ref{limitpart01}) holds, and this completes the proof of the theorem.
                 <p></p>
-            </details>
+            </div>
 
             <div class="practice">
                 <p><strong>Example 2:</strong> Show that
@@ -338,7 +333,7 @@
             <p>
                 In addition to computing specific limits, <strong>Theorem 2</strong>
                 is also an important theoretical tool that allows us to
-                derive many properties of complex limits from properties 
+                derive many properties of complex limits from properties
                 of real limits. The following theorem gives an example of this procedure.
             </p>
 
@@ -349,7 +344,8 @@
                 \end{eqnarray}
                 Then
                 \begin{eqnarray}
-                \lim_{z\rightarrow z_0}\big[c\cdot f(z)\big] &amp;=&amp; c\cdot \lim_{z\rightarrow z_0} f(z) \text{ with } c\in\C, \label{limitconst}\\
+                \lim_{z\rightarrow z_0}\big[c\cdot f(z)\big] &amp;=&amp; c\cdot \lim_{z\rightarrow z_0} f(z) \text{ with }
+                c\in\C, \label{limitconst}\\
                 \lim_{z\rightarrow z_0}\big[f(z)+g(z)\big]=w_1+w_2,\label{limitsum}\\
                 \lim_{z\rightarrow z_0}\big[f(z)g(z)\big]=w_1w_2;\label{limitmult}
                 \end{eqnarray}
@@ -360,84 +356,80 @@
             </p>
 
 
-            <details>
-                <summary><b>Proof</b>
-                </summary>
-
-                <p>
-                    For proving property (\ref{limitsum}), we must show that for any $\varepsilon &gt;0$ we can find
-                    $\delta &gt;0$ such that
-                    </p><div class="scroll-wrapper">
-                        \begin{eqnarray*}
+            <div class="proof">
+                For proving property (\ref{limitsum}), we must show that for any $\varepsilon &gt;0$ we can find
+                $\delta &gt;0$ such that
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
                     \left| \left(f(z)+g(z)\right)-\left(w_1+w_2\right)\right|\lt\varepsilon \quad \text{when}\quad
                     0\lt\left| z-z_0\right|\lt\delta
                     \end{eqnarray*}
-                    </div>
-                    By hypothesis, given $\varepsilon &gt;0$ we can find $\delta_1 &gt;0$ and $\delta_2&gt;0$ such that
-                    <div class="scroll-wrapper">
-                        \begin{eqnarray*}
+                </div>
+                By hypothesis, given $\varepsilon &gt;0$ we can find $\delta_1 &gt;0$ and $\delta_2&gt;0$ such that
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
                     \left| f(z)-w_1\right|\lt\varepsilon/2 \quad \text{when}\quad 0\lt\left| z-z_0\right|\lt\delta_1
                     \\
                     \left| g(z)-w_2\right|\lt\varepsilon/2 \quad \text{when}\quad 0\lt\left| z-z_0\right|\lt\delta_2
                     \end{eqnarray*}
-                    </div>
-                    
-                    Then we have
-                    <div class="scroll-wrapper">
-                        \begin{eqnarray*}
+                </div>
+
+                <p>Then we have
+                </p><div class="scroll-wrapper">
+                    \begin{eqnarray*}
                     \left| \left(f(z)+g(z)\right)-\left(w_1+w_2\right)\right| &amp;=&amp;\left|
                     \left(f(z)-w_1\right)+\left(g(z)+w_2\right)\right| \\ &amp;\leq &amp;\left| f(z)-w_1\right|+\left|
                     g(z)-w_2\right|\\
                     &amp;\leq &amp; \varepsilon/2+\varepsilon/2=\varepsilon
                     \end{eqnarray*}
-                    </div>
-                    
-                    Thefore,
-                    <div class="scroll-wrapper">
-                        \begin{eqnarray*}
+                </div>
+
+                Thefore,
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
                     \left| \left(f(z)+g(z)\right)-\left(w_1+w_2\right)\right|\lt\varepsilon \quad \text{when}\quad
                     0\lt\left| z-z_0\right|\lt\delta
                     \end{eqnarray*}
-                    </div>
-                    where $\delta$ is chosen as the smaller of $\delta_1$ and $\delta_2.$
+                </div>
+                where $\delta$ is chosen as the smaller of $\delta_1$ and $\delta_2.$
                 <p></p>
 
                 <p>
                     Now we will prove property (\ref{limitmult}). First, using the triangle inequality, we write
-                    </p><div class="scroll-wrapper">
-                        \begin{eqnarray*}
+                </p><div class="scroll-wrapper">
+                    \begin{eqnarray*}
                     \left|f(z)g(z) - w_1w_2\right|&amp; \leq &amp; \left|f(z)g(z) - f(z)w_2\right| + \left|f(z)w_2 -
                     w_1w_2\right|\\
                     &amp;=&amp; \left|f(z)\right|\left|g(z) - w_2\right|+ \left|f(z) - w_1\right|\left|w_2\right|
                     \end{eqnarray*}
-                    </div>
-                    
-                    To estimate each term, we choose $\delta_1\gt 0$
-                    so that $0\lt \left|z-z_0\right|\lt \delta_1$ implies
-                    $\left|f(z)- w_1\right|\lt 1,$ and thus
-                    $\left|f(z)\right|\lt \left|w_1\right|+1,$ since
-                    $$\left|f(z) - w_1\right|\geq \left|f(z)\right|- \left| w_1\right|.$$
-                    Given $\varepsilon\gt 0,$ set $\delta_2$ and $\delta_3$ such that
-                    $0\lt \left|z-z_0\right|\lt \delta_2$ implies
-                    $$\left|f(z)-w_1\right|\lt \frac{\varepsilon}{2\left(|w_2|+1\right)}$$
-                    and
-                    $0\lt \left|z-z_0\right|\lt \delta_3$ implies
-                    $$\left|g(z)-w_2\right|\lt \frac{\varepsilon}{2\left(|w_1|+1\right)}.$$
-                    Thus we can choose $\delta = \min\left\{\delta_1,\delta_2,\delta_3\right\}.$
-                    If $0\lt \left|z-z_0\right|\lt \delta,$ then
-                    <div class="scroll-wrapper">
-                        \begin{eqnarray*}
+                </div>
+
+                To estimate each term, we choose $\delta_1\gt 0$
+                so that $0\lt \left|z-z_0\right|\lt \delta_1$ implies
+                $\left|f(z)- w_1\right|\lt 1,$ and thus
+                $\left|f(z)\right|\lt \left|w_1\right|+1,$ since
+                $$\left|f(z) - w_1\right|\geq \left|f(z)\right|- \left| w_1\right|.$$
+                Given $\varepsilon\gt 0,$ set $\delta_2$ and $\delta_3$ such that
+                $0\lt \left|z-z_0\right|\lt \delta_2$ implies
+                $$\left|f(z)-w_1\right|\lt \frac{\varepsilon}{2\left(|w_2|+1\right)}$$
+                and
+                $0\lt \left|z-z_0\right|\lt \delta_3$ implies
+                $$\left|g(z)-w_2\right|\lt \frac{\varepsilon}{2\left(|w_1|+1\right)}.$$
+                Thus we can choose $\delta = \min\left\{\delta_1,\delta_2,\delta_3\right\}.$
+                If $0\lt \left|z-z_0\right|\lt \delta,$ then
+                <div class="scroll-wrapper">
+                    \begin{eqnarray*}
                     \left|f(z)g(z) - w_1w_2\right|&amp; \leq &amp; \left|f(z)\right|\left|g(z) - w_2\right|+ \left|f(z) -
                     w_1\right|\left|w_2\right|\\
                     &amp;\lt &amp; \frac{\varepsilon}{2\left(|w_1|+1\right)}\left|f(z)\right| +
                     \frac{\varepsilon}{2\left(|w_2|+1\right)}\left|w_2\right|\\
                     &amp;\lt &amp; \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
                     \end{eqnarray*}
-                    </div>
-                    
-                    Therefore, $\lim_{z\rightarrow z_0}\big[f(z)g(z)\big]=w_1w_2$ is proved.
+                </div>
 
-                    <!--
+                Therefore, $\ds \lim_{z\rightarrow z_0}\big[f(z)g(z)\big]=w_1w_2$ is proved.
+
+                <!--
                          with the aid of <strong>Theorem 2</strong>.
                     Considering the following
                     \begin{eqnarray*}
@@ -459,10 +451,9 @@
                 <p></p>
 
                 <p>
-                    Properties (\ref{limitconst}) and (\ref{limitdiv}) are left as an exercise. $\blacksquare$
+                    Properties (\ref{limitconst}) and (\ref{limitdiv}) are left as an exercise.
                 </p>
-
-            </details>
+            </div>
 
 
 
