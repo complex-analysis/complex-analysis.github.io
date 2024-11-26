@@ -297,9 +297,11 @@
                 </p>
 
                 <figure>
-                  <img src="../images/chp04/cauchy-theorem-example-03.svg" alt="Cauchy-Goursat Theorem example" title="Cauchy-Goursat Theorem example" style="width:55%;">
+                  <div class="ggbElement" id="ggb-element-1"></div>
+                  <!--<img src="../images/chp04/cauchy-theorem-example-03.svg" alt="Cauchy-Goursat Theorem example" title="Cauchy-Goursat Theorem example" style="width:55%;">-->
                   <figcaption>
-                     $C: (x-2)^2+\dfrac{1}{4}(y-5)^2=1.$
+                     The elliptical contour $C.$ Activate the box <code>Phase portrait</code> to show  
+                     the enhanced phase portrait of $f(z)=1/z^2,$ with level curves of the modulus.
                   </figcaption>
                 </figure>
             </div>
@@ -337,7 +339,7 @@
               </p>
 
               <figure id="annulus">
-                <img src="../images/chp04/annulus.svg" alt="Annulus" title="Annulus" style="width:50%;">
+                <img src="../images/chp04/annulus.svg" alt="Annulus" title="Annulus" style="width:55%;">
                 <figcaption>
                     $1 \lt |z| \lt 2.$
                 </figcaption>
@@ -775,12 +777,14 @@
                   \end{eqnarray*}
                   exists and is equal to $f'(z_0).$ In other words, for every $\epsilon\gt 0,$
                   there exist $\delta\gt 0$ such that 
-                  \begin{eqnarray}\label{smallenough}
+                  </p><div class="scroll-wrapper">
+                    \begin{eqnarray}\label{smallenough}
                   \left|\Lambda(z)\right|\lt  \epsilon \quad \text{whenever}\quad \left|z-z_0\right|\lt \delta.
                   \end{eqnarray}
+                  </div>
                   We can solve (\ref{lambda}) for $f(z)$ 
                   and replace this value in the integrand in (\ref{bound4}) to obtain
-                </p>
+                <p></p>
                 <div class="scroll-wrapper">
                   \begin{eqnarray}\label{expanded}
                   \int_{\Delta_n}f(z)\,dz = f(z_0) \int_{\Delta_n}dz + f'(z_0)\int_{\Delta_n}(z-z_0)\,dz + \int_{\Delta_n}(z-z_0)\Lambda(z)\,dz. 
@@ -977,38 +981,28 @@
         </article>
     </main>
 
-    <!--GeoGebra embeding
-    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+   <!--GeoGebra embeding-->
+   <script src="https://www.geogebra.org/apps/deployggb.js"></script>
 
-    <script>
-        let params1 = {
-            "width": 721,
-            "height": 451,
-            "material_id": "uye8xbbj",
-            "borderColor": "888888",
-            "playButton": true,
-            "showFullscreenButton": true,
-            "enableShiftDragZoom": false,
-            "showResetIcon": true
-        };
-        let params2 = {
-            "width": 719,
-            "height": 449,
-            "material_id": "am4gsavs",
-            "borderColor": "888888",
-            "playButton": true,
-            "showFullscreenButton": true,
-            "enableShiftDragZoom": false,
-            "showResetIcon": true
-        };
-        let ggbApplet1 = new GGBApplet(params1, true);
-        let ggbApplet2 = new GGBApplet(params2, true);
-        window.addEventListener("load", () => {
-            ggbApplet1.inject('ggb-element-1');
-            ggbApplet2.inject('ggb-element-2');
-        });
-    </script>
-    GeoGebra embeding ends-->
+   <script>
+       let params1 = {
+           "width": 564,
+           "height": 493,
+           "material_id": "g9f5shdn",
+           "borderColor": "888888",
+           "playButton": false,
+           "showFullscreenButton": true,
+           "enableShiftDragZoom": false,
+           "showResetIcon": true
+       };
+      
+       let ggbApplet1 = new GGBApplet(params1, true);
+       
+       window.addEventListener("load", () => {
+           ggbApplet1.inject('ggb-element-1');
+       });
+   </script>
+   <!--GeoGebra embeding ends-->
 
     <a href="cauchy_integral_formula.html" style="text-decoration: none;">
         <p class="nextPage">Cauchy Integral Formula <i class="fa-solid fa-angles-right"></i></p>
