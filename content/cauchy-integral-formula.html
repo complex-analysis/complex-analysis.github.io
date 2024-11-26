@@ -127,11 +127,11 @@
                 around a simple closed contour $C$ containing $z_0$ is zero. 
                 However, as we shall see, the integral of $f(z)/(z - z_0)$ 
                 around $C$ evaluates to $2\pi i f(z_0)$. This result is 
-                the first of two remarkable formulas and is known as the 
-                <em>Cauchy integral formula</em>.
+                the first of two remarkable formulas.
               </p>
 
               <div class="theorem">
+                <span style="font-style: normal!important;font-weight: bold!important;">(Cauchy's integral formula)</span>
                 Let $f$ be analytic everywhere inside and on a simple closed 
                 contour $C,$ taken in the positive sense. If $z_0$ is any point 
                 interior to $C,$ then
@@ -247,8 +247,6 @@
                 </div>
 
                 <div class="ggbElement" id="ggb-element-1"></div>
-
-                
 
               </div>
 
@@ -373,6 +371,8 @@
                   \int_C \frac{z+1}{z^4+2iz^3} dz =  \frac{2\pi i}{2!} f^{(2)}(0) = -\frac{\pi}{4} + \frac{\pi}{2}i.
                   \end{eqnarray*}
                 </div>
+
+                <div class="ggbElement" id="ggb-element-2"></div>
               </div>
 
               <div class="practice">
@@ -459,7 +459,8 @@
                 will be essential in the next section. 
               </p>
 
-              <div class="theorem">
+              <div class="theorem" id="cauchy-inequality">
+                <span style="font-style: normal!important;font-weight: bold!important;">(Cauchy's inequality)</span>
                 Suppose that $f$ is analytic inside and on a positively 
                 oriented circle $C_r$ centered at $z_0$ and with radius $r.$
                 If $\abs{f(z)}\leq M_r$ for all points $z$ on $C_r,$ then 
@@ -469,7 +470,7 @@
              </div>
 
              <div class="proof">
-              This inequality is called <strong>Cauchy's inequality</strong> and is 
+              This inequality is called <em>Cauchy's inequality</em> and is 
               an immediate consecuence of the expression (\ref{general-derivative}).
               From the hypothesis,
               \[
@@ -512,21 +513,21 @@
             "enableShiftDragZoom": false,
             "showResetIcon": true
         };
-        /*let params2 = {
+        let params2 = {
             "width": 719,
             "height": 449,
-            "material_id": "am4gsavs",
+            "material_id": "wwspnnk6",
             "borderColor": "888888",
-            "playButton": true,
+            "playButton": false,
             "showFullscreenButton": true,
             "enableShiftDragZoom": false,
             "showResetIcon": true
-        };*/
+        };
         let ggbApplet1 = new GGBApplet(params1, true);
-        //let ggbApplet2 = new GGBApplet(params2, true);
+        let ggbApplet2 = new GGBApplet(params2, true);
         window.addEventListener("load", () => {
             ggbApplet1.inject('ggb-element-1');
-            //ggbApplet2.inject('ggb-element-2');
+            ggbApplet2.inject('ggb-element-2');
         });
     </script>
     <!--GeoGebra embeding ends-->
