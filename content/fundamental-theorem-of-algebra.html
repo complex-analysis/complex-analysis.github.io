@@ -113,7 +113,7 @@
             </p>
             <div class="scroll-wrapper">
               \begin{eqnarray}\label{example-001}
-              p(z) = z^8-2z^7+2z^6-4z^5+2z^4-2z^3-5z^2+4z-1
+              p(z) = z^8-2z^7+2z^6-4z^5+2z^4-2z^3-5z^2+4z-4
               \end{eqnarray}
             </div>
 
@@ -184,7 +184,7 @@
            <hr>
 
            
-            <h2>Proof </h2>
+            <h2>Proof &amp; historical notes</h2>
 
             <p>
               <a href="cauchy_integral_formula.html#cauchy-inequality">Cauchy's inequality</a> 
@@ -237,22 +237,83 @@
               exist at least one number $z$ for which $p(z) = 0.$
             </div>
 
-
             <p>
-              For more interesting proofs, and historical notes, of the fundamental theorem, 
-              I highly recommend you to consult:
+              According to B. Fine &amp; G. Rosenberger 
+              [<a href="#fine1997">7</a>, Chapter 1],
+              the Fundamental Theorem of Algebra was first mentioned by Peter 
+              Roth of Nuremberg in 1608. However, the conjecture is generally 
+              attributed to Albert Girard, who articulated the result in 1629. 
+              René Descartes later provided a clearer formulation in 1637, 
+              distinguishing between real and imaginary roots.
+              The first published proof of the theorem came from Jean 
+              le Rond d'Alembert in 1746, though it contained significant gaps. 
+              The first widely accepted proof was presented by Carl Friedrich Gauss 
+              in his 1797 Ph.D. thesis, published in 1799 [<a href="#gauss1799">8</a>]. Interestingly, modern 
+              scholars note that Gauss's original proof has as many gaps as d'Alembert's.
+              Nonetheless, Gauss went on to produce three more rigorous proofs: 
+              two published in 1816 and a final version, essentially a 
+              refinement of his first proof, presented in 1849.
             </p>
 
-            <ul>
-              <li>
-                B. Fine &amp; G. Rosengerger. (1997). 
-                <a href="https://link.springer.com/book/10.1007/978-1-4612-1928-6" target="_blank"><em>The Fundamental Theorem of Algebra</em></a>.
-                New York: Springer-Verlag Inc.
-              </li>
-              <li>
-                D. J. Vellemen. (2015). <a href="https://link.springer.com/article/10.1007/s00283-015-9572-7" target="_blank">The Fundamental Theorem of Algebra: A Visual Approach</a>, <em>The Mathematical Intelligencer,</em> Vol. 37, pp. 12-21.
-              </li>
-            </ul>
+            <p>
+              <strong>Outline of Gauss' original proof:</strong>
+              Since $p(z)$ is a complex numbers for any $z\in \C$ and since 
+              $z=x+iy$ with $x,y\in \R$ we have that 
+              \[
+              p(z) = u(x,y) + i v(x,y).
+              \]
+              The equations $u(x,y)=0$ and $v(x,y)=0$ then represent curves in the plane
+              $\R^2.$ By careful examination of the possible functions 
+              $u(x,y)=0,$ $v(x,y)$ for a complex polynomial $p(z),$ Gauss showed 
+              that the curves $u(x,y)=0,$ $v(x,y)=0$ must have a common solution $(x_0, y_0).$
+              The complex number $z_0= x_0+iy_0$ is then the root of $p(z).$
+              Figure 2 shows the curves $u(x,y)=0$ and $v(x,y)=0$ for the 
+              polynomial 
+              \[
+              p(z) = z^8-2z^7+2z^6-4z^5+2z^4-2z^3-5z^2+4z-4.
+              \]
+            </p>
+
+            <figure>
+              <img src="../images/chp04/fta-gauss.svg" alt="Real and imaginary components of a polynomial" title="Real and imaginary components of a polynomial" style="width:70%">
+              <figcaption>
+                  Real (Red) and imaginary (Blue) components of $p(z)$ and the points 
+                  $z_k$ represent the roots.
+                  <!--<a href="https://complex-analysis.com/applets/p5js/domain-coloring/?expression=el44LTJ6XjcrMnpeNi00el41KzJ6XjQtMnpeMy01el4yKzR6LTQ=" target="_blank"><i class="fas fa-external-link-alt"></i></a>-->
+              </figcaption>
+            </figure>
+
+            <p>
+              Of course, Gauss's first proof of the Fundamental Theorem of 
+              Algebra was essentially different from the proof presented here
+              (in <strong>Theorem 2</strong>). Furthermore,  
+              nowadays there are many known proofs of this theorem, 
+              including proofs using methods of algebra, analysis, and topology. 
+              The references include many papers and books containing proofs 
+              of the Fundamental Theorem; for example, [<a href="#fine1997">7</a>] 
+              alone contains 11 proofs.
+            </p>
+
+
+            <hr>
+
+            <h2>References</h2>
+
+            <ol class="bbtex-list">
+              <li>Abian, A. (1986). A new proof of the fundamental theorem of algebra, <em>Caribbean J. Math.</em> <strong>5</strong>, no. 1, 9-12. <a href="https://link.springer.com/chapter/10.1007/BFb0121246" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li>Bennish, J. (1992). Another proof of the fundamental theorem of algebra, <em>Amer. Math. Monthly</em>, <strong>99</strong>, 426. <a href="https://doi.org/10.2307/30037388" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li> Boas, Jr.,  R. P. (1935). A proof of the fundamental theorem of algebra, <em>Amer. Math. Monthly</em>, <strong>42</strong>, 501-502. <a href="https://doi.org/10.2307/2300477" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li>Boas, Jr., R. P. (1964). Yet another proof of the fundamental theorem of algebra, <em>Amer. Math. Monthly</em>, <strong>71</strong>, 180. <a href="https://doi.org/10.2307/2311751" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li>Byl, J. (1999). A simple proof of the fundamental theorem of algebra, <em>Internat. J. Math. Ed. Sci. Tech.</em> <strong>30</strong>, no. 4, 602-603.</li>
+              <li>Fefferman, C. (1967). An easy proof of the fundamental theorem of algebra,  <em>Amer. Math. Monthly</em>, <strong>74</strong>, 854-855. <a href="https://doi.org/10.2307/2315823" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li id="fine1997">Fine, B. &amp; Rosengerger. G. (1997). <em>The Fundamental Theorem of Algebra</em>. New York: Springer-Verlag Inc. <a href="https://link.springer.com/book/10.1007/978-1-4612-1928-6" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li id="gauss1799">Gauss, C. F. (1799). <em>Demonstratio nova theorematis omnem functionem algebraicum rationalem integram unius variabilis in factores reales primi vel secundi gradus resolvi posse, Helmstedt dissertation</em>, reprinted in <strong>Werke</strong>, Vol. 3, 1-30. <a href="https://archive.org/details/bub_gb_BDdbpjy3BnEC/page/n3/mode/2up" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li>Redheffer, R. M. (1964). What! Another note just on the fundamental theorem of algebra?, <em>Amer. Math. Monthly</em>, <strong>71</strong>, 180-185. <a href="https://doi.org/10.2307/2311752" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li>Sen, A. (2000). Fundamental theorem of algebra—yet another proof, <em>Amer. Math. Monthly</em>, <strong>107</strong>, 842-843. <a href="https://doi.org/10.2307/2695742" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li>Velleman, D. J. (1997). Another proof of the fundamental theorem of algebra,   <em>Math. Mag.</em> <strong>70</strong>(1997), 216-217. <a href="https://doi.org/10.1080/0025570X.1997.11996539" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li>Vellemen, D. J. (2015). The Fundamental Theorem of Algebra: A Visual Approach, <em>The Mathematical Intelligencer,</em> Vol. 37, pp. 12-21. <a href="https://link.springer.com/article/10.1007/s00283-015-9572-7" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              
+            </ol>
            
 
 
