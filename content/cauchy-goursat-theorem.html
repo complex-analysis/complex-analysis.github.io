@@ -153,14 +153,14 @@
                 \[
                 \int_C \frac{1}{z}\,dz = 2\pi i,
                 \]
-                as shown in example 2 from the section 
-                <a href="complex_integration.html">Complex Integration</a>.
+                as shown in example 2 from the 
+                <a href="complex_integration.html">Complex Integration</a> section.
                 On the other hand, if $f(z) = 1/z^2,$ then $f$ is still analytic
                 at all points except $z=0,$ but now the integral <em>is</em> $0.$
                 This value results <em>not</em> from Cauchy's Theorem, since $f$
                 is not analytic everywhere inside $C,$ but rather from the fact that 
                 $f$ has an antiderivative on $\C\setminus \{0\}.$ That is, $f$ is 
-                the derivative of $-1/z.$
+                the derivative of $F'(z)=-1/z.$
                </p>
 
                <p>
@@ -233,7 +233,8 @@
               <h2>Cauchy-Goursat Theorem</h2>
 
               <p>
-                In 1900 the French mathematician Edouard Goursat 
+                In 1900 the French mathematician 
+                <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Goursat/" target="_blank">Edouard Goursat</a>
                 proved that the assumption of continuity of $f'$
                 is not necessary to reach the conclusion of <em>Cauchy's theorem</em>. 
                 The resulting modified version of Cauchy's theorem is known 
@@ -384,7 +385,7 @@
                 In the case that $C$ is simple and lies in $D,$ the function $f$ is analytic
                 at each point interior to and on $C.$ 
                 The Cauchy-Goursat
-                Theorem ensures that the conclusion of Theorem 3 holds. 
+                Theorem ensures that the conclusion of <strong>Theorem 3</strong> holds. 
                 On the other hand, if $C$
                 is closed but intersects itself a finite number of times,
                 it consists of a finite number of simple closed contours. 
@@ -458,9 +459,9 @@
                 We introduce a polygonal path $L_1,$ consisting
                 of a finite number of line segments joined end to end, 
                 to connect the outer contour $C$ to the inner contour $C_1.$
-                We introduce another polygonal path $L_2$ which connects 
+                As shown in Figure 9, we introduce another polygonal path $L_2$ which connects 
                 $C_1$ to $C_2;$ and finally another polygonal path
-                $L_3$ connecting $C_3$ to $C.$ See Figure 9.
+                $L_3$ connecting $C_3$ to $C.$
               </p>
 
               <figure>
@@ -569,8 +570,8 @@
                 </p>
 
                 <p>
-                  We know that (see example 2 from the section 
-                  <a href="complex_integration.html">Complex Integration</a>)
+                  We know that (see example 2 from the  
+                  <a href="complex_integration.html">Complex Integration</a> section)
                   \[
                   \int_{C_0} \frac{1}{z} dz= 2\pi \,i.
                   \]
@@ -625,8 +626,7 @@
 
               <p>
                 Goursat presented a proof Cauchy's Theorem in 1884 for the case of a 
-                simple closed curve, by dividing by
-                dividing up the interior into small squares, 
+                simple closed curve, by dividing up the interior into small squares, 
                 showing that the integral around each square of 
                 side $\ell$ is bounded by $\epsilon \ell ^2,$ 
                 and then adding the results. To obtain this 
@@ -805,10 +805,10 @@
                   Now let $L$ and $L_1$ denote the lengths of the triangular contours $\Delta$ and $\Delta_1,$
                   respectively. Then, if we keep in mind how the triangle $\Delta_1$ was constructed, 
                   it is a straightforward problem in similar triangles to show that 
-                  $L_1$ is related to $L$ by $L_1=\frac{1}{2}L.$ Likewise, 
-                  if $L_2$ is the legth of $\Delta_2,$ then $L_2=\frac{1}{2}L_1 = \frac{1}{2^2}L.$ 
+                  $L_1$ is related to $L$ by $L_1=\dfrac{1}{2}L.$ Likewise, 
+                  if $L_2$ is the legth of $\Delta_2,$ then $L_2=\dfrac{1}{2}L_1 = \dfrac{1}{2^2}L.$ 
                   In general we have that if $L_n$ is the length of $\Delta_n,$ then 
-                  $L_n= \frac{1}{2^n}L.$ 
+                  $L_n= \dfrac{1}{2^n}L.$ 
                 </p>
 
                 <p>
@@ -916,14 +916,14 @@
 
 
               <p>
-                There are several methods to prove the Cauchy-Goursat Theorem. For example, 
-                it can be proved for rectangles or disks, see 
-                [<a href="#brown2009">3</a>, <a href="#marsden1999">10</a>]. 
-                Besides these techniques, there have been many other proofs of 
-                this theorem. For instance John D. Dixon made a remarkably short and 
-                elegant proof, which requires only the basics of complex 
-                function theore in convex sets [<a href="#dixon1971">6</a>]. 
-                Rudolf Výborný provided a prove using
+                The Cauchy-Goursat Theorem has been established through various methods. 
+                For instance, proofs have been constructed specifically for 
+                rectangles or disks (see [<a href="#brown2009">3</a>, <a href="#marsden1999">10</a>]). 
+                Beyond these approaches, many other proofs of the theorem have been developed. 
+                Notably, John D. Dixon presented a concise and elegant proof relying only on 
+                fundamental concepts of complex function theory in convex sets 
+                [<a href="#dixon1971">6</a>]. 
+                Rudolf Výborný, on the other hand, offered a proof based on 
                 differentiable homotopy [<a href="#vyborny1979">14</a>].
               </p>
 
