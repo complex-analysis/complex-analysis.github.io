@@ -124,16 +124,17 @@
             </p>
 
             <figure>
-              <img src="../images/chp04/poly-001.jpg" alt="Polynomial of degree 8" title="Polynomial of degree 8" style="width:600px;">
+              <img src="../images/chp04/poly-001.jpg" alt="Polynomial of degree 8" title="Polynomial of degree 8" style="width:550px;">
               <figcaption>
-                  $p(z) = z^8-2z^7+2z^6-4z^5+2z^4-2z^3-5z^2+4z-4.$
+                  Enhaced phase portrait of $p(z),$ with 
+                  level curves of $\abs{p(z)}.$
                   <a href="https://complex-analysis.com/applets/p5js/domain-coloring/?expression=el44LTJ6XjcrMnpeNi00el41KzJ6XjQtMnpeMy01el4yKzR6LTQ=" target="_blank"><i class="fas fa-external-link-alt"></i></a>
               </figcaption>
              </figure>
 
             <p>
               Figure 1 shows an <a href="domain_coloring.html">enhanced phase portrait</a>, with 
-              the level curves of the modulus, of the polynomial defined in (\ref{example-001}).
+              level curves of the modulus, of the polynomial defined in (\ref{example-001}).
               The first thing to notice from this picture is that 
               Fundamental Theorem of Algebra does, indeed, hold for $p(z).$
               Recall that we can easly spot the roots, or zeros, of complex functions 
@@ -141,8 +142,8 @@
               where all the colors meet. In Figure 1 we can clearly see that there are 
               six points where all the colors meet, which means that 
               $p(z)$ has 6 roots. 
-              <em>Why does $p(z),$ a polynomial of degree eight, have only six
-                roots?</em> The reason is that two of the roots are <em>double roots</em>
+              <strong>Why does $p(z),$ a polynomial of degree eight, have only six
+                roots?</strong> The reason is that two of the roots are <em>double roots</em>
               (we also say that its <em>multiplicy is two</em>),
               and this fact is also evident in the picture. The <em>single roots</em>
               occur at
@@ -157,10 +158,13 @@
               appreciate their multiplicity, which is indicated by the number 
               of times the colors repeat. For example, for the double roots, the
               <a href="https://en.wikipedia.org/wiki/Hue">hue colors</a> repeat twice, 
-              whereas at the single roots they repeat only once.
+              whereas at the single roots they repeat only once. Activate the 
+              check boxes to highlight the roots.
             </p>
 
             <div class="ggbElement" id="ggb-element-1"></div>
+            
+            <br>
 
             <p>
               Another fascinating property of the polynomial 
@@ -172,7 +176,8 @@
               This behavior is illustrated in the applet below. On the left, the roots of 
               $p(z) $ and the circle are displayed. 
               On the right, you can see the corresponding 
-              image of the circle, clearly showing the wrapping effect. Just drag the slider below.
+              image of the circle, clearly showing the wrapping effect. 
+              Just drag the slider below.
             </p>
 
 
@@ -230,7 +235,8 @@
               f(z) = \frac{1}{p(z)}
               \]
               is an entire function. For $\abs{z}\to \infty$ we see that 
-              $\abs{f(z)}\to 0.$ Hence $f(z)$ is bounded in the entire complex plane.
+              $\abs{f(z)}\to 0.$ 
+              Hence $f(z)$ is bounded in the entire complex plane.
               Liouville's Theorem then implies that $f(z)$ is a constant, and consequently
               $p(z)$ is a contant as well.   
               But this is a contradiction to our underlying assumption that 
@@ -242,33 +248,37 @@
               According to B. Fine &amp; G. Rosenberger 
               [<a href="#fine1997">7</a>, Chapter 1],
               the Fundamental Theorem of Algebra was first mentioned by Peter 
-              Roth of Nuremberg in 1608. However, the conjecture is generally 
+              Roth of Nuremberg in 1608. However, it is also 
               attributed to Albert Girard, who articulated the result in 1629. 
               René Descartes later provided a clearer formulation in 1637, 
               distinguishing between real and imaginary roots.
               The first published proof of the theorem came from Jean 
               le Rond d'Alembert in 1746, though it contained significant gaps. 
               The first widely accepted proof was presented by Carl Friedrich Gauss 
-              in his 1797 Ph.D. thesis, published in 1799 [<a href="#gauss1799">8</a>]. Interestingly, modern 
-              scholars note that Gauss's original proof has as many gaps as d'Alembert's.
+              in his 1797 Ph.D. thesis, published in 1799 [<a href="#gauss1799">8</a>].
+              Interestingly, modern scholars note that Gauss's original proof 
+              has as many gaps as d'Alembert's 
+              (see for example [<a href="#stillwell1989">12</a>, <a href="#velleman2015">14</a>]).
               Nonetheless, Gauss went on to produce three more rigorous proofs: 
               two published in 1816 and a final version, essentially a 
-              refinement of his first proof, presented in 1849.
+              refinement of his first proof, presented in 1849 [<a href="#gauss1850">9</a>].
             </p>
 
-            <p>
-              <strong>Outline of Gauss' original proof:</strong>
-              Since $p(z)$ is a complex numbers for any $z\in \C$ and since 
-              $z=x+iy$ with $x,y\in \R$ we have that 
-              \[
-              p(z) = u(x,y) + i v(x,y).
-              \]
-              The equations $u(x,y)=0$ and $v(x,y)=0$ then represent curves in the plane
-              $\R^2.$ By careful examination of the possible functions 
-              $u(x,y),$ $v(x,y)$ for a complex polynomial $p(z),$ Gauss showed 
-              that the curves $u(x,y)=0,$ $v(x,y)=0$ must have a common solution $(x_0, y_0).$
-              The complex number $z_0= x_0+iy_0$ is then the root of $p(z).$
-            </p>
+            <div class="practice">
+              <p>
+                <strong>Outline of Gauss' original proof:</strong>
+                Since $p(z)$ is a complex numbers for any $z\in \C$ and since 
+                $z=x+iy$ with $x,y\in \R$ we have that 
+                \[
+                p(z) = u(x,y) + i v(x,y).
+                \]
+                The equations $u(x,y)=0$ and $v(x,y)=0$ then represent curves in the plane
+                $\R^2.$ By careful examination of the possible functions 
+                $u(x,y),$ $v(x,y)$ for a complex polynomial $p(z),$ Gauss showed 
+                that the curves $u(x,y)=0,$ $v(x,y)=0$ must have a common solution $(x_0, y_0).$
+                The complex number $z_0= x_0+iy_0$ is then the root of $p(z).$
+              </p>
+            </div>
 
             <p>For example, Figure 2 shows the curves $u(x,y)=0$ and $v(x,y)=0$ for the 
               our initial polynomial $p(z) = z^8-2z^7+2z^6-4z^5+2z^4-2z^3-5z^2+4z-4.$</p>
@@ -277,21 +287,28 @@
               <img src="../images/chp04/fta-gauss.svg" alt="Real and imaginary components of a polynomial" title="Real and imaginary components of a polynomial" style="width:70%">
               <figcaption>
                   The curves $u(x,y)=0$ (Red) and $v(x,y)=0$ (Blue) of $p(z).$
-                  The points $Z_k$ represent the roots.
-                  <!--<a href="" target="_blank">Interactive graph <i class="fas fa-external-link-alt"></i></a>-->
+                  The roots are represented with the points $Z_k$.
               </figcaption>
             </figure>
 
+            <!--
+              <figure>
+              <img src="../images/chp04/gauss-original.jpg" alt="Real and imaginary components of a fifth degree polynomial" title="Real and imaginary components of a fifth degree polynomial" style="width:60%">
+              <figcaption>
+                  Gauss' original picture made for a special equation of 
+                  fifth degree.
+              </figcaption>
+            </figure>
+            -->
             <p>
-              Of course, Gauss's first proof of the Fundamental Theorem of 
-              Algebra was essentially different from the proof presented here
-              (in <strong>Theorem 2</strong>). In fact,
-              nowadays there are many known proofs of this theorem, 
+              Nowadays there are many known proofs of this theorem, 
               including proofs using methods of abstract algebra, analysis, and topology. 
               The references include many papers and books containing proofs 
               of the Fundamental Theorem; for example, [<a href="#fine1997">7</a>] 
               alone contains 11 proofs.
             </p>
+
+            <br>
 
 
             <hr>
@@ -306,18 +323,19 @@
               <li>Byl, J. (1999). A simple proof of the fundamental theorem of algebra, <em>Internat. J. Math. Ed. Sci. Tech.</em> <strong>30</strong>, no. 4, 602-603.</li>
               <li>Fefferman, C. (1967). An easy proof of the fundamental theorem of algebra,  <em>Amer. Math. Monthly</em>, <strong>74</strong>, 854-855. <a href="https://doi.org/10.2307/2315823" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
               <li id="fine1997">Fine, B. &amp; Rosengerger. G. (1997). <em>The Fundamental Theorem of Algebra</em>. New York: Springer-Verlag Inc. <a href="https://link.springer.com/book/10.1007/978-1-4612-1928-6" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
-              <li id="gauss1799">Gauss, C. F. (1799). <em>Demonstratio nova theorematis omnem functionem algebraicum rationalem integram unius variabilis in factores reales primi vel secundi gradus resolvi posse,</em> Helmstedt dissertation, reprinted in <strong>Werke</strong>, Vol. 3, 1-30. <a href="https://archive.org/details/bub_gb_BDdbpjy3BnEC/page/n3/mode/2up" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li id="gauss1799">Gauss, C. F. (1799). <em>Demonstratio nova theorematis omnem functionem algebraicum rationalem integram unius variabilis in factores reales primi vel secundi gradus resolvi posse,</em> Helmstedt dissertation, reprinted in <strong>Werke</strong>, Vol. 3, 1-30. <a href="https://archive.org/details/werkecarlf03gausrich/mode/2up" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li id="gauss1850">Gauss, C. F. (1850). Beiträge zur Theorie der algebraischen Gleichungen". <em>Abhandlungen der Königlichen Gesellschaft der Wissenschaften zu Göttingen.,</em> <strong>4:</strong> 34-35. <a href="https://gdz.sub.uni-goettingen.de/id/PPN235999628?tify=%7B%22pages%22%3A%5B77%5D%2C%22pan%22%3A%7B%22x%22%3A0.452%2C%22y%22%3A1.019%7D%2C%22view%22%3A%22info%22%2C%22zoom%22%3A0.456%7D" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
               <li>Redheffer, R. M. (1964). What! Another note just on the fundamental theorem of algebra?, <em>Amer. Math. Monthly</em>, <strong>71</strong>, 180-185. <a href="https://doi.org/10.2307/2311752" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
               <li>Sen, A. (2000). Fundamental theorem of algebra—yet another proof, <em>Amer. Math. Monthly</em>, <strong>107</strong>, 842-843. <a href="https://doi.org/10.2307/2695742" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li id="stillwell1989">Stillwell, J. (1989).  <em>Mathematics and its History</em>. New York: Springer-Verlag.  <a href="https://link.springer.com/book/10.1007/978-1-4899-0007-4" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
               <li>Velleman, D. J. (1997). Another proof of the fundamental theorem of algebra,   <em>Math. Mag.</em> <strong>70</strong>(1997), 216-217. <a href="https://doi.org/10.1080/0025570X.1997.11996539" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
-              <li>Vellemen, D. J. (2015). The Fundamental Theorem of Algebra: A Visual Approach, <em>The Mathematical Intelligencer,</em> Vol. 37, pp. 12-21. <a href="https://link.springer.com/article/10.1007/s00283-015-9572-7" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li id="velleman2015">Vellemen, D. J. (2015). The Fundamental Theorem of Algebra: A Visual Approach, <em>The Mathematical Intelligencer,</em> Vol. 37, pp. 12-21. <a href="https://link.springer.com/article/10.1007/s00283-015-9572-7" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
             </ol>
            
 
 
             <br>
 
-           
 
 
 
