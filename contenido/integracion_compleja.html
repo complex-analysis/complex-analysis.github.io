@@ -655,7 +655,8 @@
                     F(z) = \int_{z_0}^{z}f(s)\,ds  
                     \end{eqnarray}  
                     donde \(s\) denota una variable compleja, \(z_0\) es un punto fijo en \(D,\)  
-                    y \(z\) representa cualquier punto en \(D.\) Asumiendo que  
+                    y \(z\) representa cualquier punto en \(D.\) 
+                    Asumiendo que  
                     \(f\) es continua y \(\ds\int_C f(z)\,dz\) es independiente del camino,  
                     queremos demostrar que \(F'(z) = f(z),\) es decir, que (\ref{anti-exists})  
                     es una antiderivada de \(f\) en \(D.\)
@@ -671,7 +672,8 @@
                     <p>  
                         Dado que \(D\) es un dominio, podemos elegir \(\Delta z\) de modo que  
                         \(z + \Delta z\) esté en \(D.\)  
-                        Además, \(z\) y \(z + \Delta z\) pueden unirse mediante un segmento recto.  
+                        Además, \(z\) y \(z + \Delta z\) pueden unirse mediante
+                        un segmento recto, como se muestra en la Figura 7.  
                         Este es el contorno que utilizamos en la última  
                         integral en (\ref{anti-def}). Para \(z\) fijo, podemos escribir:  
                     </p>
@@ -680,6 +682,15 @@
                         f(z) \Delta z =f(z) \int_{z}^{z+\Delta z}ds  = \int_{z}^{z+\Delta z}f(z)\,ds  \quad \text{o}\quad f(z) = \frac{1}{\Delta z} \int_{z}^{z+\Delta z}f(z)\,ds.
                         \end{eqnarray}
                     </div>
+
+                    <figure>
+                        <img src="../images/chp04/proof-anti-derivative-exists.svg" alt="Proof" title="Proof" style="width:60%;">
+                        <figcaption>
+                           Los puntos \(z\) y \(z + \Delta z\) pueden unirse mediante
+                           un segmento recto.
+                        </figcaption>
+                    </figure>
+
                     <p>
                         De la expressiones (\ref{anti-def}) y (\ref{anti-expand}) obtenemos
                     </p>
