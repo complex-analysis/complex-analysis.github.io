@@ -568,16 +568,30 @@
                     <p></p>
                 </div>
 
-                <p> 
-                    Another useful property what we will use later is the following:
-                </p>
-
                 <div class="theorem" id="derivative-zero">
                     If $f'(z)=0$ everywhere in a domain $D,$
                     then $f(z)$ is constant throughout $D.$
                 </div>
 
-                <p><em>Proof.</em> Coming soon!</p>
+                <div class="proof">
+                    Let $z_1,z_2\in D.$ Let $c(t):[a,b]\to \C$ be a path joining 
+                    $z_1$ to $z_2.$ That is, $c(a)=z_1$ and $c(b)=z_2.$  
+                    Using the chain rule we have 
+                    \[
+                    \frac{d}{dt}f\left(c(t)\right) = f'\left(c(t)\right)\cdot c'(t) = 0,
+                    \]
+                    since $f'(z)=0$ everywhere in $D.$ 
+                    If $f(z) = u(x,y)+iv(x,y),$ we have that 
+                    <div class="scroll-wrapper">
+                    \[
+                    \frac{d }{dt}u\left(c(t)\right) = 0,\quad \text{and}\quad  \frac{d }{dt}v\left(c(t)\right)=0.
+                    \]
+                    </div>
+                    From calculus, this implies that $u\left(c(t)\right)$ 
+                    and $v\left(c(t)\right)$ are constant functions of $t.$ 
+                    By comparing the values at $t=a$ and $t=b$ we conclude that 
+                    $f(z_1) = f(z_2).$ Therefore, $f$ is constant throughout $D.$
+                </div>
 
             </div>
 
