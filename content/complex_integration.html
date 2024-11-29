@@ -551,6 +551,61 @@
                     </p>
                 </div>
 
+                <div class="practice">
+                    <p>
+                        <strong>Example 4:</strong>
+                        We can also use the ML-inequality to find the value of
+                        the integral 
+                        \[
+                        \lim_{R\to \infty} \int_{C_R}\frac{z^{1/2}}{z^2+1}dz
+                        \]
+                        where $C_R$ is the arc $z(t)= Re^{it},$ with $t\in[0,\pi]$ and 
+                        $z^{1/2}$ denotes the branch 
+                        \[
+                        z^{1/2} = \exp\left(\frac{1}{2}\log z\right) = \sqrt{r}e^{it/2},\quad \left(r>0,-\frac{\pi}{2}\lt t \lt \frac{3\pi}{2}\right)
+                        \] 
+                        of the square root function. 
+                    </p>
+
+                    <figure>
+                        <img src="../images/chp04/example-02-ML-inequality.svg" alt="ML-inequality example"
+                            title="ML-inequality example" style="width:60%;">
+                        <figcaption>
+                            The arc $z(t)= Re^{it},$ with $t\in[0,\pi].$ The dashed ray indicates the 
+                            branch cut.
+                        </figcaption>
+                    </figure>
+
+
+                    <p>
+                        Note that when $|z|=R\gt 1,$ then $\abs{z^{1/2}}= \sqrt{R}e^{it/2} = \sqrt{R}$ and 
+                        \[
+                        \abs{z^2+1}\geq \abs{\abs{z^2}-1} = R^2-1.
+                        \]
+                        Thus, at points on $C_R$, we have 
+                    </p>
+                    <div class="scroll-wrapper">
+                        \[
+                        \abs{\frac{z^{1/2}}{z^2+1}}\leq M_R \quad \text{where} \quad M_R = \frac{\sqrt{R}}{R^2-1}.
+                        \]
+                    </div>
+                    <p>
+                        Since the length of $C_R$ is $L=\pi R,$ we obtain 
+                    </p>
+                    <div class="scroll-wrapper">
+                        \[
+                        \abs{\int_{C_R}\frac{z^{1/2}}{z^2+1}dz}\leq  M_R L = \frac{\pi R\sqrt{R}}{R^2-1} \cdot \frac{1/R^2}{1/R^2}= \frac{\dfrac{\pi}{\sqrt{R}}}{1 - \dfrac{1}{R^2}}.
+                        \]
+                    </div>
+                    <p>
+                        Since the term  on the right tends to zero as $R$ tends to infinity, we 
+                        conclude that 
+                        \[
+                        \lim_{R\to \infty} \int_{C_R}\frac{z^{1/2}}{z^2+1}dz=0.
+                        \]
+                    </p>
+                </div>
+
             </div>
 
             <hr>
