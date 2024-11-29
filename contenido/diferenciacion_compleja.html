@@ -465,10 +465,11 @@
                     </p>
                     <br>
                     <figure>
-                        <img src="../images/chp02/ortho-curves.png" alt="Orthogonal level curves" title="Piecewise smooth curve" style="width:60%;">
+                        <img src="../images/chp02/ortho-curves.jpg" alt="Orthogonal level curves" title="Orthogonal level curves" style="width:60%;">
                         <figcaption>
-                            Curvas de nivel ortogonales de las componentes real e imaginaria de
-                            $f(z) = z^2.$
+                            Curvas de nivel ortogonales de las componentes 
+                            real e imaginaria de $f(z) = z^2.$
+                            <a href="https://www.desmos.com/calculator/dqhfeamiea" target="_blank">Gráfica interactiva <i class="fas fa-external-link-alt"></i></a>
                         </figcaption>
                     </figure>
                 </div>
@@ -615,7 +616,25 @@
                     entonces \(f(z)\) es constante en \(D\).
                 </div>
     
-                <p><em>Demostración.</em> ¡Próximamente!</p>
+                <div class="proof">
+                    Sean \(z_1, z_2 \in D.\) Sea \(c(t): [a, b] \to \C\) una curva que conecta \(z_1\) con \(z_2.\) 
+                    Es decir, \(c(a) = z_1\) y \(c(b) = z_2.\)  
+                    Usando la regla de la cadena, tenemos 
+                    \[
+                    \frac{d}{dt}f\left(c(t)\right) = f'\left(c(t)\right)\cdot c'(t) = 0,
+                    \]
+                    ya que \(f'(z) = 0\) en todas partes de \(D.\)  
+                    Si \(f(z) = u(x,y) + iv(x,y),\) entonces
+                    <div class="scroll-wrapper">
+                    \[
+                    \frac{d }{dt}u\left(c(t)\right) = 0, \quad \text{y} \quad \frac{d }{dt}v\left(c(t)\right) = 0.
+                    \]
+                    </div>
+                    Esto implica que \(u\left(c(t)\right)\) 
+                    y \(v\left(c(t)\right)\) son funciones constantes de \(t.\)  
+                    Comparando los valores en \(t = a\) y \(t = b,\) concluimos que 
+                    \(f(z_1) = f(z_2).\) Por lo tanto, \(f\) es constante en todo \(D.\)
+                </div>
 
             </div>
 

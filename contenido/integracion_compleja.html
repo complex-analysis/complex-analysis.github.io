@@ -375,10 +375,10 @@
                 </p>
                 <div class="scroll-wrapper">
                     \begin{eqnarray}
-                    \int_a^b k \, w(t)\, dt &=& k \int_a^b w(t)\,dt, \quad k\text{ es una constante compleja,}\\
-                    \int_a^b \big[ w(t) + s(t)\big] \,dt &=&  \int_a^b  w(t)\,dt +  \int_a^b  s(t) \,dt,\\
-                    \int_a^b w(t)  \,dt &=&  \int_a^c  w(t)\,dt +  \int_c^b  w(t) \,dt \quad c\in[a,b], \\
-                    \int_a^b w(t)  \,dt &=&  -\int_b^a  w(t)\,dt.
+                    \int_a^b k \, w(t)\, dt &amp;=&amp; k \int_a^b w(t)\,dt, \quad k\text{ es una constante compleja,}\\
+                    \int_a^b \big[ w(t) + s(t)\big] \,dt &amp;=&amp;  \int_a^b  w(t)\,dt +  \int_a^b  s(t) \,dt,\\
+                    \int_a^b w(t)  \,dt &amp;=&amp;  \int_a^c  w(t)\,dt +  \int_c^b  w(t) \,dt \quad c\in[a,b], \\
+                    \int_a^b w(t)  \,dt &amp;=&amp;  -\int_b^a  w(t)\,dt.
                     \end{eqnarray}
                 </div>
 
@@ -388,8 +388,8 @@
                 </p>
                 <div class="scroll-wrapper">
                     \begin{eqnarray}
-                    \int_{C} z_0 \, f(z) \, dz &=& z_0 \int_{C} f(z) \, dz, \quad z_0 \text{ es una constante compleja,}\\
-                    \int_{C} \big[ f(z) + g(z) \big] \, dz &=& \int_{C} \, f(z) \, dz + \int_{C}  g(z) \, dz \\
+                    \int_{C} z_0 \, f(z) \, dz &amp;=&amp; z_0 \int_{C} f(z) \, dz, \quad z_0 \text{ es una constante compleja,}\\
+                    \int_{C} \big[ f(z) + g(z) \big] \, dz &amp;=&amp; \int_{C} \, f(z) \, dz + \int_{C}  g(z) \, dz \\
                     \end{eqnarray}
                 </div>
 
@@ -547,7 +547,6 @@
                 </div>
             </div>
 
-
             <hr>
 
             <div id="section5">
@@ -567,24 +566,24 @@
                     El siguiente teorema es útil para determinar
                     cuando la integración es independiente del camino y, más aún,
                     cuando una integral alrededor de un camino cerrado tiene un valor cero.
+                    Este teorema involucra el concepto de <em>antiderivada</em> 
+                    (o <em>primitiva</em>) de una función continua \(f(z)\)
+                    en un dominio \(D,\) es decir, una función  
+                    \(F(z)\) tal que \(F'(z) = f(z)\) para todo \(z \in D.\)
                     Este es conocido como la versión compleja
                     del <em>Teorema Fundamental del Cálculo</em>.
                 </p>
 
                 <div class="theorem" id="FTC">
-                    Sea $f(z)=F'(z)$
-                    la derivada de una función compleja $F(z)$
-                    definida en un dominio $\Omega \subset \mathbb C.$
-                    Sea $C$ un contorno arbitrario
-                    contenido en $\Omega$ con punto inicial $z_1$ y punto final $z_2.$
-                    Entonces
+                    Supongamos que  $f(z)$ es continua en un dominio $D.$
+                    Si $f(z)$ tiene una antiderivada en $D,$
+                    entonces para cualquier contorno $C$ contenido 
+                    en $D$, con punto inicial $z_1$ y punto final $z_2,$
+                    tenemos que
                     \begin{eqnarray}\label{FTC}
                     \int_C f(z) dz = \bigg. F(z) \bigg|_{z_1}^{z_2} =F(z_2)- F(z_1).
                     \end{eqnarray}
                 </div>
-
-                <p><strong>Observación:</strong> A la función $F(z)$ del <strong>Teorema 1</strong>
-                se le conoce como <strong>antiderivada</strong> (o <strong>primitiva</strong>). </p>
 
                 <div class="proof">
                     Esto se puede deducir de la definición
@@ -633,20 +632,91 @@
                     \int_{C} f\left(z\right)dz=\int_{C_1} f\left(z\right)dz-\int_{C_2} f\left(z\right)dz=0
                     \end{eqnarray*}
                 </div>
-                donde el contorno cerrado es es $C = C_1 - C_2.$
+                donde el contorno cerrado es es $C = C_1 - C_2.$ En otras palabras:
                 <p></p>
+                <div class="theorem">
+                    Si \(f\) es continua y tiene una antiderivada en todo un dominio \(D,\)  
+                    entonces \(\ds\int_C f(z)\,dz\) es independiente del camino.
+                </div>
+                
+                <p>
+                    Además, tenemos la siguiente condición suficiente 
+                    para la existencia de una antiderivada:
+                </p>
 
-                <!---
-		<p>
-			<strong>Final remark:</strong>
-			Sometimes it is convenient to evaluate the complex integral by reducing it
-			to two real-line integrals in the $x, y$ plane. In the definition 
-			(\ref{contour-integral}) we consider $f(z) =
-			u(x, y) + iv(x, y)$ and $dz = dx + idy$ to obtain
-			\begin{eqnarray}
-			\int_C f(z)dz=\int_C\left[\left(udx-vdy\right)+ \left(vdx-udy\right)\right]
-			\end{eqnarray}
-		</p>-->
+                <div class="theorem">
+                    Si \(f\) es continua y \(\ds\int_C f(z)\,dz\) es independiente del camino,  
+                    entonces \(f\) tiene una antiderivada en todo \(D.\)
+                </div>
+
+                <div class="proof">
+                    Consideremos la función  
+                    \begin{eqnarray}\label{anti-exists}  
+                    F(z) = \int_{z_0}^{z}f(s)\,ds  
+                    \end{eqnarray}  
+                    donde \(s\) denota una variable compleja, \(z_0\) es un punto fijo en \(D,\)  
+                    y \(z\) representa cualquier punto en \(D.\) Asumiendo que  
+                    \(f\) es continua y \(\ds\int_C f(z)\,dz\) es independiente del camino,  
+                    queremos demostrar que \(F'(z) = f(z),\) es decir, que (\ref{anti-exists})  
+                    es una antiderivada de \(f\) en \(D.\)
+
+                    <p>
+                       Usando las propiedade de la integral tenemos
+                    </p>
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray}\label{anti-def}
+                        F(z+ \Delta z) - F(z) = \int_{z_0}^{z+\Delta z}f(s)\,ds - \int_{z_0}^{z}f(s)\,ds = \int_{z}^{z+\Delta z}f(s)\,ds.
+                        \end{eqnarray}
+                    </div>
+                    <p>  
+                        Dado que \(D\) es un dominio, podemos elegir \(\Delta z\) de modo que  
+                        \(z + \Delta z\) esté en \(D.\)  
+                        Además, \(z\) y \(z + \Delta z\) pueden unirse mediante un segmento recto.  
+                        Este es el contorno que utilizamos en la última  
+                        integral en (\ref{anti-def}). Para \(z\) fijo, podemos escribir:  
+                    </p>
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray}\label{anti-expand}
+                        f(z) \Delta z =f(z) \int_{z}^{z+\Delta z}ds  = \int_{z}^{z+\Delta z}f(z)\,ds  \quad \text{o}\quad f(z) = \frac{1}{\Delta z} \int_{z}^{z+\Delta z}f(z)\,ds.
+                        \end{eqnarray}
+                    </div>
+                    <p>
+                        De la expressiones (\ref{anti-def}) y (\ref{anti-expand}) obtenemos
+                    </p>
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                        \frac{F(z+\Delta z)-f(z)}{\Delta z}  = \frac{1}{\Delta z} \int_{z}^{z+\Delta z}\left[f(s) - f(z)\right]\,ds.
+                        \end{eqnarray*}
+                    </div>
+
+                    <p>  
+                        Ahora, dado que \(f\) es continua, para cualquier \(\epsilon &gt; 0\)  
+                        existe un \(\delta &gt; 0\) tal que \(\abs{f(s) - f(z)} \lt \epsilon\)  
+                        siempre que \(\abs{s - z} \lt \delta.\)  
+                        Por lo tanto, si elegimos \(z + \Delta z\) lo suficientemente cerca de \(z\)  
+                        de modo que \(\abs{\Delta z} \lt \delta,\)  
+                        se deduce de la desigualdad ML que  
+                    </p>
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                        \abs{\frac{F(z+\Delta z)-f(z)}{\Delta z} } &amp;= &amp;\abs{\frac{1}{\Delta z} \int_{z}^{z+\Delta z}\left[f(s) - f(z)\right]\,ds}\\
+                        &amp;=&amp; \abs{\frac{1}{\Delta z}} \abs{ \int_{z}^{z+\Delta z}\left[f(s) - f(z)\right]\,ds}\\
+                        &amp;\leq &amp; \abs{\frac{1}{\Delta z}}\epsilon \abs{\Delta z} = \epsilon.
+                        \end{eqnarray*}
+                    </div>
+                    <p>
+                        Por lo tanto, hemos probado que
+                    </p>
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                        \lim_{\Delta z \to 0}\frac{F(z+\Delta z)-f(z)}{\Delta z}  = f(z)\quad \text{o}\quad F'(z) = f(z).
+                        \end{eqnarray*}
+                    </div>
+                </div>
+
+
+
+              
 
 
                 <br>
