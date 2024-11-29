@@ -653,7 +653,8 @@
                     F(z) = \int_{z_0}^{z}f(s)\,ds
                     \end{eqnarray}
                     where $s$ denotes a complex variable, $z_0$ is a fixed points in $D,$
-                    and $z$ represents any point in $D.$ Assuming that
+                    and $z$ represents any point in $D.$ 
+                    Assuming that
                     $f$ is continuous and $\ds\int_C f(z)\,dz$ is independent of path,
                     we wish to prove that $F'(z) = f(z),$ that is, (\ref{anti-exists})
                     is an antiderivate of $f$ in $D.$
@@ -666,11 +667,13 @@
                         F(z+ \Delta z) - F(z) = \int_{z_0}^{z+\Delta z}f(s)\,ds - \int_{z_0}^{z}f(s)\,ds = \int_{z}^{z+\Delta z}f(s)\,ds.
                         \end{eqnarray}
                     </div>
+
+
                     <p>
                         Since  $D$ is a domain, we can choose $\Delta z$ so that
                         $z + \Delta z$ is in $D.$
                         Furthermore, $z$ and $z + \Delta z$ can be 
-                        joined by a straight segment. 
+                        joined by a straight segment, as shown un Figure 7. 
                         This is the contour we use in the last 
                         integral in (\ref{anti-def}). For $z$ fixed, we can write
                     </p>
@@ -679,6 +682,15 @@
                         f(z) \Delta z =f(z) \int_{z}^{z+\Delta z}ds  = \int_{z}^{z+\Delta z}f(z)\,ds  \quad \text{or}\quad f(z) = \frac{1}{\Delta z} \int_{z}^{z+\Delta z}f(z)\,ds.
                         \end{eqnarray}
                     </div>
+
+                    <figure>
+                        <img src="../images/chp04/proof-anti-derivative-exists.svg" alt="Proof" title="Proof" style="width:60%;">
+                        <figcaption>
+                            The points $z$ and $z + \Delta z$ can be 
+                            joined by a straight segment.
+                        </figcaption>
+                    </figure>
+
                     <p>
                         From (\ref{anti-def}) and (\ref{anti-expand}) we obtain
                     </p>
