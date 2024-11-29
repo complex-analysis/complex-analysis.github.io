@@ -52,6 +52,7 @@
 
 <body data-type="book" id="top">
 
+  <!-- Dark Mode Loader -->
   <div class="myLoader" id="loader">
     <div class="dots">
       <div class="dot"></div>
@@ -98,8 +99,8 @@
         <p><i class="fa-solid fa-list"></i>Contents</p>
         <ul>
             <li><a href="#section1">Contour integral</a></li>
-            <li><a href="#section2">Numerical evaluation Exp 1</a></li>
-            <li><a href="#section3">Numerical evaluation Exp 2</a></li>
+            <li><a href="#section2">Numerical evaluation 1</a></li>
+            <li><a href="#section3">Numerical evaluation 2</a></li>
             <li><a href="#section4">Properties</a></li>
             <li><a href="#section5">Antiderivatives</a></li>
             <!-- Add more sections as needed -->
@@ -164,13 +165,13 @@
                     in terms of its real and imaginary parts, as well as the differential
                     $$dz=\frac{dz}{dt}dt = \left(\frac{dx}{dt}+ i \frac{dy}{dt}\right)dt = dx+ i dy$$
                     Then the complex integral (\ref{contour-integral}) splits up into a pair of real line integrals:
-                    </p><div class="scroll-wrapper">
-                        \begin{eqnarray}\label{real-integrals}
+                </p><div class="scroll-wrapper">
+                    \begin{eqnarray}\label{real-integrals}
                     \int_C f(z)\,dz = \int_C\left(u+iv\right)\left(dx+idy\right) = \int_C\left(u\,dx-v\,dy\right) + i
                     \int_C\left(v\,dx+u\,dy\right).
                     \end{eqnarray}
-                    </div>
-                    
+                </div>
+
                 <p></p>
 
                 <div class="practice">
@@ -218,9 +219,9 @@
 
                     <figure>
                         <img src="../images/chp04/integral-example-2.gif" alt="Piecewise smooth curve" title="Piecewise smooth curve" style="width:45%;">
-                            <figcaption>
-                                $C$: $z(t)=\cos t + i \sin t = e^{it},$ with $0\leq t\leq 2\pi .$
-                            </figcaption>
+                        <figcaption>
+                            $C$: $z(t)=\cos t + i \sin t = e^{it},$ with $0\leq t\leq 2\pi .$
+                        </figcaption>
                     </figure>
 
                     <p>
@@ -265,9 +266,10 @@
 
 
                 <div class="ggbElement" id="ggb-element-1"></div>
-                <p style="text-align: center;margin-top: -10px;"><em>The arrows on the contours indicate direction.</em></p>
+                <p style="text-align: center;margin-top: -10px;"><em>The arrows on the contours indicate direction.</em>
+                </p>
 
-                
+
                 <div class="practice">
                     <p><strong>Exercise 1:</strong> Use definition (\ref{contour-integral}) to
                         evaluate $\displaystyle \int_C \overline{z}\, dz,$ for the following
@@ -292,7 +294,7 @@
 
             </div>
 
-          
+
 
             <div id="section3">
 
@@ -311,8 +313,8 @@
 
 
                 <div class="ggbElement" id="ggb-element-2"></div>
-                
-              
+
+
                 <div class="practice">
                     <p><strong>Exercise 2:</strong> Consider the integral
                         $$I_1 =\int_C \left(z^2+z\right) dz.$$
@@ -365,29 +367,29 @@
                 <h2>Properties</h2>
 
                 <p>
-                    All the following familiar properties of integrals can be proved directly 
-                    from the definition given in (\ref{integral-real-cv}). 
-                    If $w(t)= u(t)+iv(t)$ and $s(t)= \upsilon(t)+i \nu(t)$ 
-                    are complex-valued functions of a real variable $t$ continuous 
+                    All the following familiar properties of integrals can be proved directly
+                    from the definition given in (\ref{integral-real-cv}).
+                    If $w(t)= u(t)+iv(t)$ and $s(t)= \upsilon(t)+i \nu(t)$
+                    are complex-valued functions of a real variable $t$ continuous
                     on an interval $[a,b],$ then
                 </p>
                 <div class="scroll-wrapper">
                     \begin{eqnarray}
-                    \int_a^b k \, w(t)\, dt &=& k \int_a^b w(t)\,dt, \quad k\text{ is a complex contant,}\\
-                    \int_a^b \big[ w(t) + s(t)\big] \,dt &=&  \int_a^b  w(t)\,dt +  \int_a^b  s(t) \,dt,\\
-                    \int_a^b w(t)  \,dt &=&  \int_a^c  w(t)\,dt +  \int_c^b  w(t) \,dt \quad c\in[a,b], \\
-                    \int_a^b w(t)  \,dt &=&  -\int_b^a  w(t)\,dt.
+                    \int_a^b k \, w(t)\, dt &amp;=&amp; k \int_a^b w(t)\,dt, \quad k\text{ is a complex contant,}\\
+                    \int_a^b \big[ w(t) + s(t)\big] \,dt &amp;=&amp; \int_a^b w(t)\,dt + \int_a^b s(t) \,dt,\\
+                    \int_a^b w(t) \,dt &amp;=&amp; \int_a^c w(t)\,dt + \int_c^b w(t) \,dt \quad c\in[a,b], \\
+                    \int_a^b w(t) \,dt &amp;=&amp; -\int_b^a w(t)\,dt.
                     \end{eqnarray}
                 </div>
 
                 <p>
-                    From definition (\ref{contour-integral}), and the properties just mentioned above, 
+                    From definition (\ref{contour-integral}), and the properties just mentioned above,
                     it also follows immediatly that
                 </p>
                 <div class="scroll-wrapper">
                     \begin{eqnarray}
-                    \int_{C} z_0 \, f(z) \, dz &=& z_0 \int_{C} f(z) \, dz, \quad z_0 \text{ is a complex contant,}\\
-                    \int_{C} \big[ f(z) + g(z) \big] \, dz &=& \int_{C} \, f(z) \, dz + \int_{C}  g(z) \, dz \\
+                    \int_{C} z_0 \, f(z) \, dz &amp;=&amp; z_0 \int_{C} f(z) \, dz, \quad z_0 \text{ is a complex contant,}\\
+                    \int_{C} \big[ f(z) + g(z) \big] \, dz &amp;=&amp; \int_{C} \, f(z) \, dz + \int_{C} g(z) \, dz \\
                     \end{eqnarray}
                 </div>
 
@@ -399,9 +401,9 @@
 
                 <figure>
                     <img src="../images/chp04/reversed-contour.svg" alt="Reversed contour" title="Reversed contour" style="width:60%;">
-                        <figcaption>
-                            The contour $-C$  extends from $z_2$ to $z_1.$
-                        </figcaption>
+                    <figcaption>
+                        The contour $-C$ extends from $z_2$ to $z_1.$
+                    </figcaption>
                 </figure>
 
                 <p>
@@ -410,7 +412,8 @@
                 </p>
                 <div class="scroll-wrapper">
                     \begin{eqnarray*}
-                    \int_{-C} f(z) \, dz = \int_{-b}^{-a} f\left[z(-t)\right]\frac{d}{dt}z(-t)\,dt = -\int_{-b}^{-a} f\left[z(-t)\right]z'(-t)\,dt.
+                    \int_{-C} f(z) \, dz = \int_{-b}^{-a} f\left[z(-t)\right]\frac{d}{dt}z(-t)\,dt = -\int_{-b}^{-a}
+                    f\left[z(-t)\right]z'(-t)\,dt.
                     \end{eqnarray*}
                 </div>
                 <p>
@@ -422,7 +425,7 @@
                     \end{eqnarray*}
                 </div>
                 <p>
-                    Hence, we obtain the following property 
+                    Hence, we obtain the following property
                 </p>
                 <div class="scroll-wrapper">
                     \begin{eqnarray}
@@ -430,59 +433,59 @@
                     \end{eqnarray}
                 </div>
 
-                <p> 
+                <p>
                     Consider now a path $C,$ parametrized by $z(t)$ for $t\in[a,b],$
                     that consists of a contour $C_1$
-                    from $z_1$ to $z_2$ followed by a contour $C_2$ from 
+                    from $z_1$ to $z_2$ followed by a contour $C_2$ from
                     $z_2$ to $z_3,$ the initial point of $C_2$ being the final point of $C_1.$
                     Then
                 </p>
                 <div class="scroll-wrapper">
                     \begin{eqnarray}\label{sum-paths}
-                    \int_{C} f(z) \, dz = \int_{C_1} f(z) \, dz  + \int_{C_2} f(z) \, dz.
+                    \int_{C} f(z) \, dz = \int_{C_1} f(z) \, dz + \int_{C_2} f(z) \, dz.
                     \end{eqnarray}
                 </div>
 
                 <figure>
                     <img src="../images/chp04/sum-contours.svg" alt="Sum of contours" title="Sum of contours" style="width:60%;">
-                        <figcaption>
-                            $C= C_1 + C_2.$
-                        </figcaption>
+                    <figcaption>
+                        $C= C_1 + C_2.$
+                    </figcaption>
                 </figure>
 
                 <div class="practice">
                     <p>
                         <strong>Exercise 4:</strong>
-                        
-                        Use the properties for integrals of functions $w(t)$ to prove 
+
+                        Use the properties for integrals of functions $w(t)$ to prove
                         (\ref{sum-paths}).
                     </p>
                 </div>
 
                 <p>
                     Finally we introduce an inequality involving contour integrals that is
-                    extremely important in various applications. Consider 
-                    $C$ a smooth curve parametrized by $z(t)=x(t)+ iy(t)$ with $t\in [a,b].$ 
-                    Suppose that the components $x'(t)$ and $y'(t)$ of the derivative 
+                    extremely important in various applications. Consider
+                    $C$ a smooth curve parametrized by $z(t)=x(t)+ iy(t)$ with $t\in [a,b].$
+                    Suppose that the components $x'(t)$ and $y'(t)$ of the derivative
                     \[
                     z'(t) = x'(t) + iy'(t)
                     \]
                     are continuos on the entire interval $[a,b].$
-                    Then the real-valued function 
+                    Then the real-valued function
                     \[
                     \left|z'(t)\right| =\sqrt{\left[x'(t)\right]^2+ \left[y'(t)\right]^2}
                     \]
-                    is integrable on $[a,b].$ According to the definition of arc length 
-                    from calculus, the <em>length of</em> $C$ is the number 
+                    is integrable on $[a,b].$ According to the definition of arc length
+                    from calculus, the <em>length of</em> $C$ is the number
                     \[
-                    L = \int_a^b \left|z'(z)\right|\,dt. 
+                    L = \int_a^b \left|z'(z)\right|\,dt.
                     \]
                 </p>
 
                 <p>
-                    If $C$ is a contour of lenght $L$ and $f$ is a piecewise continuous 
+                    If $C$ is a contour of lenght $L$ and $f$ is a piecewise continuous
                     function on $C,$ and $M$ is a nonnegative contant such that
-                    $\left|f(z)\right|\leq M$ for all points $z$ on $C$ at which $f(z)$ 
+                    $\left|f(z)\right|\leq M$ for all points $z$ on $C$ at which $f(z)$
                     is defined, then
                     \begin{eqnarray}\label{ML-inequality}
                     \left|\int_C f(z)\, dz\right|\leq ML
@@ -490,18 +493,18 @@
                 </p>
 
                 <p>
-                    
-                    Note that since $C$ is a contour and $f$ is piecewise continuous on $C,$ a number 
-                    $M$ appearing in  the inequality $\left|f(z)\right|\leq M$ will always exist.
-                    The reason is that the real-valued function $\left|f\big(z(t )\big)\right|$ is continuous on the 
+
+                    Note that since $C$ is a contour and $f$ is piecewise continuous on $C,$ a number
+                    $M$ appearing in the inequality $\left|f(z)\right|\leq M$ will always exist.
+                    The reason is that the real-valued function $\left|f\big(z(t )\big)\right|$ is continuous on the
                     closed bounded interval $[a,b]$ when $f$ is continuous on $C;$ and this
-                    function always reaches a maximum value $M$ on that interval. 
-                    Therefore $|f (z)|$ has a maximum value on $C$ when $f$ is continuous on it. 
+                    function always reaches a maximum value $M$ on that interval.
+                    Therefore $|f (z)|$ has a maximum value on $C$ when $f$ is continuous on it.
                     This is also true when $f$ is piecewise continuous on $C.$
                 </p>
                 <p>
-                    The property (\ref{ML-inequality}) is often used in the theory 
-                    of complex integration and is sometimes referred to as the 
+                    The property (\ref{ML-inequality}) is often used in the theory
+                    of complex integration and is sometimes referred to as the
                     <strong>ML-inequality</strong>.
                 </p>
 
@@ -510,19 +513,20 @@
                     <p>
                         <strong>Example 3:</strong>
                         Let $C$ be the contour of the circle $|z|=2$ from $z_1=2$ to $z_2=2i$
-                        that lies in the first quadrant, as shown in Figure 5. We can use inequality (\ref{ML-inequality}) 
-                        to show that 
+                        that lies in the first quadrant, as shown in Figure 5. We can use inequality
+                        (\ref{ML-inequality})
+                        to show that
                         \[
                         \left|\int_C \frac{dz}{z^2-1}\right|\leq \frac{\pi}{3}.
                         \]
-                        without evaluating the integral. 
+                        without evaluating the integral.
                     </p>
 
                     <figure>
                         <img src="../images/chp04/integral-example-3-ml-inequality.svg" alt="ML-inequality example" title="ML-inequality example" style="width:50%;">
-                            <figcaption>
-                                Circle $|z|=2$ from $z_1=2$ to $z_2=2i.$
-                            </figcaption>
+                        <figcaption>
+                            Circle $|z|=2$ from $z_1=2$ to $z_2=2i.$
+                        </figcaption>
                     </figure>
 
                     <p>
@@ -530,21 +534,23 @@
                     </p>
                     <div class="scroll-wrapper">
                         \begin{eqnarray*}
-                        \left|z^2-1\right|\geq \left|\left|z^2\right|- 1\right|= \left|\left|z\right|^2- 1\right| = \left|4- 1\right|=3
+                        \left|z^2-1\right|\geq \left|\left|z^2\right|- 1\right|= \left|\left|z\right|^2- 1\right| =
+                        \left|4- 1\right|=3
                         \end{eqnarray*}
                     </div>
                     <p>
                         Thus
                         \[
-                         \left|\frac{1}{z^2-1}\right| = \frac{1}{ \left|z^2- 1\right|}\leq \frac{1}{3}
+                        \left|\frac{1}{z^2-1}\right| = \frac{1}{ \left|z^2- 1\right|}\leq \frac{1}{3}
                         \]
-                        Also the length of $C$ is $\dfrac{1}{4}(4\pi).$ Thus, if we take $M=\dfrac{1}{3}$ and 
-                        $L= \pi,$ we find that 
+                        Also the length of $C$ is $\dfrac{1}{4}(4\pi).$ Thus, if we take $M=\dfrac{1}{3}$ and
+                        $L= \pi,$ we find that
                         \[
-                        \left|\int_C \frac{dz}{z^2-1}\right|\leq ML =  \frac{\pi}{3}.
+                        \left|\int_C \frac{dz}{z^2-1}\right|\leq ML = \frac{\pi}{3}.
                         \]
                     </p>
                 </div>
+
             </div>
 
             <hr>
@@ -554,28 +560,30 @@
                 <h2>Antiderivatives</h2>
 
                 <p>
-                    Although the value of a contour integral of a function $f (z)$ from a fixed point $z_0$ to
-                    a fixed point $z_1$ depends, in general, on the path that is taken, there are certain
-                    functions whose integrals from $z_0$ to $z_1$ have values that are independent of path,
+                    While the value of a contour integral of a function $f (z)$ from a fixed point $z_0$ to
+                    a fixed point $z_1$ generally depends on the chosen path,
+                    there are certain functions for which the integrals from
+                    $z_0$ to $z_1$ have values that are <em>independent of path</em>,
                     as you have seen in Exercises 2 and 3.
                     These examples also illustrate the
                     fact that the values of integrals around closed paths are sometimes, but not always,
                     zero. The next theorem is useful in determining when integration is independent
                     of path and, moreover, when an integral around a closed path has value zero.
+                    This theorem involves the concept of <em>antiderivative</em> (or <em>primitive</em>)
+                    of a continuous function $f(z)$ on a domain $D,$ that is, a function
+                    $F(z)$ such that $F'(z)=f(z)$ for all $z\in D.$
                     This is known as the complex version of the <em>Fundamental Theorem of Calculus</em>.
                 </p>
 
                 <div class="theorem" id="FTC">
-                    Let $f(z)=F'(z)$ be the derivative of a
-                            single-valued complex function $F(z)$ defined on a domain $\Omega \subset \mathbb C.$
-                            Let $C$ be any contour lying entirely in $\Omega$ with initial point $z_1$ and final point
-                            $z_2.$
-                            Then
-                            \begin{eqnarray}\label{FTC}
-                            \int_C f(z) dz = \bigg. F(z) \bigg|_{z_1}^{z_2} =F(z_2)- F(z_1).
-                            \end{eqnarray}
-                        
-                    
+                    Suppose that $f(z)$ is continuous on a domain $D.$
+                    If $f(z)$ has an antiderivative throughtout $D,$ then
+                    for any contour $C$ lying entirely in $D$,
+                    with initial fixed point $z_1$ and
+                    final fixed point $z_2,$ we have that
+                    \begin{eqnarray}\label{FTC}
+                    \int_C f(z) dz = \bigg. F(z) \bigg|_{z_1}^{z_2} =F(z_2)- F(z_1).
+                    \end{eqnarray}
                 </div>
 
                 <div class="proof">
@@ -587,7 +595,7 @@
                     &amp;=&amp; F\left(z(b)\right) - F\left(z(a)\right) \\
                     &amp;=&amp; F\left(z_2\right) - F\left(z_1\right)
                     \end{eqnarray*}
-                    where $z_1= z(a)$ and $z_2= z(b)$ are the endpoints of the contour $C.$ 
+                    where $z_1= z(a)$ and $z_2= z(b)$ are the endpoints of the contour $C.$
                 </div>
 
                 <p>
@@ -616,25 +624,95 @@
                     Considering Figure 6, we have
                     $$\int_{C_1} f\left(z\right)dz=\int_{C_2} f\left(z\right)dz$$
                     because
-                    </p><div class="w3-responsive">
+                </p><div class="w3-responsive">
                     \begin{eqnarray*}
                     \int_{C} f\left(z\right)dz=\int_{C_1} f\left(z\right)dz-\int_{C_2} f\left(z\right)dz=0
                     \end{eqnarray*}
-                    </div>
-                    where the closed contour is $C = C_1 - C_2.$
+                </div>
+                where the closed contour is $C = C_1 - C_2.$ In other words:
                 <p></p>
 
-                <!---
-		<p>
-			<strong>Final remark:</strong>
-			Sometimes it is convenient to evaluate the complex integral by reducing it
-			to two real-line integrals in the $x, y$ plane. In the definition 
-			(\ref{contour-integral}) we consider $f(z) =
-			u(x, y) + iv(x, y)$ and $dz = dx + idy$ to obtain
-			\begin{eqnarray}
-			\int_C f(z)dz=\int_C\left[\left(udx-vdy\right)+ \left(vdx-udy\right)\right]
-			\end{eqnarray}
-		</p>-->
+                <div class="theorem">
+                    If $f$ is continuous and has an antiderivative throughout a domain $D,$
+                    then $\ds\int_C f(z)\,dz$ is independent of path.
+                </div>
+
+                <p>
+                    In addition, we have the following sufficient condition for the
+                    existence of an antiderivate:
+                </p>
+
+                <div class="theorem">
+                    If $f$ is continuous and $\ds\int_C f(z)\,dz$ is independent of path,
+                    then $f$ has an antiderivate everywhere in $D.$
+                </div>
+
+                <div class="proof">
+                    Consider the function
+                    \begin{eqnarray}\label{anti-exists}
+                    F(z) = \int_{z_0}^{z}f(s)\,ds
+                    \end{eqnarray}
+                    where $s$ denotes a complex variable, $z_0$ is a fixed points in $D,$
+                    and $z$ represents any point in $D.$ Assuming that
+                    $f$ is continuous and $\ds\int_C f(z)\,dz$ is independent of path,
+                    we wish to prove that $F'(z) = f(z),$ that is, (\ref{anti-exists})
+                    is an antiderivate of $f$ in $D.$
+
+                    <p>
+                        Using properties of the integral we have
+                    </p>
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray}\label{anti-def}
+                        F(z+ \Delta z) - F(z) = \int_{z_0}^{z+\Delta z}f(s)\,ds - \int_{z_0}^{z}f(s)\,ds = \int_{z}^{z+\Delta z}f(s)\,ds.
+                        \end{eqnarray}
+                    </div>
+                    <p>
+                        Since  $D$ is a domain, we can choose $\Delta z$ so that
+                        $z + \Delta z$ is in $D.$
+                        Furthermore, $z$ and $z + \Delta z$ can be 
+                        joined by a straight segment. 
+                        This is the contour we use in the last 
+                        integral in (\ref{anti-def}). For $z$ fixed, we can write
+                    </p>
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray}\label{anti-expand}
+                        f(z) \Delta z =f(z) \int_{z}^{z+\Delta z}ds  = \int_{z}^{z+\Delta z}f(z)\,ds  \quad \text{or}\quad f(z) = \frac{1}{\Delta z} \int_{z}^{z+\Delta z}f(z)\,ds.
+                        \end{eqnarray}
+                    </div>
+                    <p>
+                        From (\ref{anti-def}) and (\ref{anti-expand}) we obtain
+                    </p>
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                        \frac{F(z+\Delta z)-f(z)}{\Delta z}  = \frac{1}{\Delta z} \int_{z}^{z+\Delta z}\left[f(s) - f(z)\right]\,ds.
+                        \end{eqnarray*}
+                    </div>
+
+                    <p>
+                        Now, since $f$ is continuous, for any $\epsilon\gt 0 $ there 
+                        exists a $\delta\gt 0$ such that $\abs{f(s)-f(z)}\lt \epsilon$
+                        whenever $\abs{s-z}\lt \delta.$
+                        Thus, if we choose $z+ \Delta z$ clos enough to $z$ 
+                        so that $\abs{\Delta z}\lt \delta,$
+                        it follows from the ML-inequality that 
+                    </p>
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                        \abs{\frac{F(z+\Delta z)-f(z)}{\Delta z} } &amp;= &amp;\abs{\frac{1}{\Delta z} \int_{z}^{z+\Delta z}\left[f(s) - f(z)\right]\,ds}\\
+                        &amp;=&amp; \abs{\frac{1}{\Delta z}} \abs{ \int_{z}^{z+\Delta z}\left[f(s) - f(z)\right]\,ds}\\
+                        &amp;\leq &amp; \abs{\frac{1}{\Delta z}}\epsilon \abs{\Delta z} = \epsilon.
+                        \end{eqnarray*}
+                    </div>
+                    <p>
+                        Therefore, we have proved that 
+                    </p>
+                    <div class="scroll-wrapper">
+                        \begin{eqnarray*}
+                        \lim_{\Delta z \to 0}\frac{F(z+\Delta z)-f(z)}{\Delta z}  = f(z)\quad \text{or}\quad F'(z) = f(z).
+                        \end{eqnarray*}
+                    </div>
+
+                </div>
 
 
                 <br>
