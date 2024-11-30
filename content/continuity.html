@@ -323,6 +323,43 @@
             </div>
 
             <p>
+                Notice  also that the continuity of 
+                \begin{eqnarray}\label{components}
+                f(z) = u(x,y)+iv(x,y)
+                \end{eqnarray}
+                is closely related to the continuity of its components functions 
+                $u$ and $v.$ In fact, from 
+                <a href="limits.html" target="_blank">Theorem 2</a> in the 
+                Limits section, it follows that the function (\ref{components}) 
+                is continuous at a point $z_0 = (x_0, y_0)$ if and only 
+                if its component functions are continuous there.
+                The proof of the upcoming theorem demonstrates the application
+                of this statement. This theorem is highly significant and will
+                frequently appear in subsequent chapters, particularly 
+                in practical applications. Before presenting the theorem, 
+                let us recall that a region $R$ is closed if it includes 
+                all its boundary points, and it is bounded if it lies
+                entirely within some circle centered at the origin.
+            </p>
+
+            <div class="theorem">
+                If $f$ is continuous throughtout a region $R$ that is 
+                both bounded and closed, there there exists 
+                $M\gt 0$ such that $\abs{f(z)}\leq M$ for all points in $R,$ 
+                where the equality holds for at least one such $z.$
+            </div>
+
+            <div class="proof">
+                If $f(z) = u(x,y)+iv(x,y)$ is continuous, then the function
+                \[
+                F(x,y)=\sqrt{u^2 + v^2}
+                \]
+                is also continuous throughout $R.$ This means that $F(x,y)$ reaches a 
+                maximum value $M$ somewhere in $R.$ Hence 
+                $\abs{f(z)}\leq M$ for all points in $R.$ 
+            </div>
+
+            <p>
                 The algebraic <a href="limits.html#limits-properties">properties of limits</a> can also be
                 restated in terms of continuity of complex functions. The proof of the
                 following theorem is left as an

@@ -323,6 +323,42 @@
 
             </div>
 
+            <p>  
+                Observemos también que la continuidad de  
+                \begin{eqnarray}\label{components}  
+                f(z) = u(x,y) + iv(x,y)  
+                \end{eqnarray}  
+                está estrechamente relacionada con la continuidad de sus componentes  
+                \(u\) y \(v.\) De hecho, según  
+                <a href="limits.html" target="_blank">el Teorema 2</a> en la sección  
+                de Límites, se deduce que la función (\ref{components})  
+                es continua en un punto \(z_0 = (x_0, y_0)\) si y solo si sus funciones  
+                componentes son continuas en ese punto.  
+                La demostración del próximo teorema muestra una aplicación de esta afirmación.  
+                Este teorema es altamente significativo y aparecerá con frecuencia en capítulos  
+                posteriores, particularmente en aplicaciones prácticas. Antes de presentar el teorema,  
+                recordemos que una región \(R\) es cerrada si incluye todos sus puntos frontera,  
+                y está acotada si se encuentra completamente dentro de algún círculo  
+                centrado en el origen.  
+            </p>  
+            
+            <div class="theorem">  
+                Si \(f\) es continua en toda una región \(R\) que es  
+                tanto acotada como cerrada, entonces existe  
+                \(M > 0\) tal que \(\abs{f(z)} \leq M\) para todos los puntos en \(R,\)  
+                donde la igualdad se cumple para al menos uno de esos \(z.\)  
+            </div>
+
+            <div class="proof">  
+                Si \(f(z) = u(x,y) + iv(x,y)\) es continua, entonces la función  
+                \[  
+                F(x,y) = \sqrt{u^2 + v^2}  
+                \]  
+                también es continua en toda \(R.\) Esto significa que \(F(x,y)\) alcanza un  
+                valor máximo \(M\) en algún punto de \(R.\) Por lo tanto,  
+                \(\abs{f(z)} \leq M\) para todos los puntos en \(R.\)  
+            </div>
+
             <p>
                 Las <a href="limites.html#limits-properties">properties algebraicas de límites</a>
                 se pueden re-escribir en términos de continuidad de funciones complejas. 
