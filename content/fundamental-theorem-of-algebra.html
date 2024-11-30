@@ -211,7 +211,8 @@
               \]
               By making $r$ arbitrarily large, we can make $\abs{f'(z)}$
               as small as we wish. This means that $f'(z_0)= 0$ for all points 
-              $z_0$ in the complex plane. Hence, by <a href="complex_differentiation.html#derivative-zero">Theorem 3</a>
+              $z_0$ in the complex plane. Hence, by 
+              <a href="complex_differentiation.html#derivative-zero" target="_blank">Theorem 3</a>
               in the Complex Differentiation section, $f$ must be constant.
             </div>
 
@@ -234,15 +235,38 @@
               \[
               f(z) = \frac{1}{p(z)}
               \]
-              is an entire function. For $\abs{z}\to \infty$ we see that 
-              $\abs{f(z)}\to 0.$ 
+              is an entire function. 
+              Since $\abs{p(z)}\to \infty$ as 
+              $\abs{z}\to \infty,$ there exists $M,$ $R\gt 0$ such that 
+              $\abs{p(z)}\gt M$ if $\abs{z}\gt R.$ 
+              This implies that for $\abs{z}\gt R,$ 
+              \[
+              \abs{f(z)}  =  \abs{\frac{1}{p(z)}} \lt \frac{1}{M}.
+              \]
+              Now, $f$ is continuous on the region $\abs{z}\leq R,$ which is closed and bounded.
+              By <a href="continuity.html#bounded-function" target="_blank">Theorem 3</a>, in the Continuity section,
+              $f$ is also bounded for $\abs{z}\leq R.$ 
               Hence $f(z)$ is bounded in the entire complex plane.
-              Liouville's Theorem then implies that $f(z)$ is a constant, and consequently
-              $p(z)$ is a contant as well.   
-              But this is a contradiction to our underlying assumption that 
-              $p(z)$ was not a constant polynomial. We conclude that there must 
+              Liouville's Theorem then implies that $f(z)$ is a constant, 
+              and consequently $p(z)$ is a constant as well.   
+              But this is a contradiction. We conclude that there must 
               exist at least one number $z$ for which $p(z) = 0.$
+              <p></p>
             </div>
+
+            <p>
+              It follows in the usual way that any polynomial $p(z)$ of degree 
+              $n,$ with complex coefficients, can be expressed as a 
+              product of linear terms:
+              \begin{eqnarray}\label{factorized}
+              p(z) = c\left(z-\alpha_1\right)\left(z-\alpha_2\right)\cdots \left(z-\alpha_n\right),
+              \end{eqnarray}
+             where $c$ and $\alpha_k$ $(k=1,2,\ldots, n)$ are complex constants. 
+             Of course, some of the constants $\alpha_k$ in expression (\ref{factorized}) may
+             appear more than once, and it is clear that $p(z)$ cannot have 
+             more than $n$ distinct zeros.
+            </p>
+            
 
             <p>
               According to B. Fine &amp; G. Rosenberger 
@@ -326,7 +350,7 @@
               <li>Boas, Jr., R. P. (1964). Yet another proof of the fundamental theorem of algebra, <em>Amer. Math. Monthly</em>, <strong>71</strong>, 180. <a href="https://doi.org/10.2307/2311751" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
               <li>Byl, J. (1999). A simple proof of the fundamental theorem of algebra, <em>Internat. J. Math. Ed. Sci. Tech.</em> <strong>30</strong>, no. 4, 602-603.</li>
               <li>Fefferman, C. (1967). An easy proof of the fundamental theorem of algebra,  <em>Amer. Math. Monthly</em>, <strong>74</strong>, 854-855. <a href="https://doi.org/10.2307/2315823" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
-              <li id="fine1997">Fine, B. &amp; Rosengerger. G. (1997). <em>The Fundamental Theorem of Algebra</em>. New York: Springer-Verlag Inc. <a href="https://link.springer.com/book/10.1007/978-1-4612-1928-6" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li id="fine1997">Fine, B. &amp; Rosenberger. G. (1997). <em>The Fundamental Theorem of Algebra</em>. New York: Springer-Verlag Inc. <a href="https://link.springer.com/book/10.1007/978-1-4612-1928-6" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
               <li id="gauss1799">Gauss, C. F. (1799). <em>Demonstratio nova theorematis omnem functionem algebraicum rationalem integram unius variabilis in factores reales primi vel secundi gradus resolvi posse,</em> Helmstedt dissertation, reprinted in <strong>Werke</strong>, Vol. 3, 1-30. <a href="https://archive.org/details/werkecarlf03gausrich/mode/2up" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
               <li id="gauss1850">Gauss, C. F. (1850). Beiträge zur Theorie der algebraischen Gleichungen". <em>Abhandlungen der Königlichen Gesellschaft der Wissenschaften zu Göttingen.,</em> <strong>4:</strong> 34-35. <a href="https://gdz.sub.uni-goettingen.de/id/PPN235999628?tify=%7B%22pages%22%3A%5B77%5D%2C%22pan%22%3A%7B%22x%22%3A0.452%2C%22y%22%3A1.019%7D%2C%22view%22%3A%22info%22%2C%22zoom%22%3A0.456%7D" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
               <li>Redheffer, R. M. (1964). What! Another note just on the fundamental theorem of algebra?, <em>Amer. Math. Monthly</em>, <strong>71</strong>, 180-185. <a href="https://doi.org/10.2307/2311752" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
