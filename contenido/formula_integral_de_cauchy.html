@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+  <title>  Fórmula Integral de Cauchy
+</title>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Main info: Dublin core -->
+  <meta name="DC.Title" content="Análisis Complejo">
+  <meta name="DC.Creator" content="Juan Carlos Ponce Campuzano">
+  <meta name="DC.Date" content="26-01-2021">
+  <meta name="DC.Identifier" content="ISBN-13: 978-0-6485736-2-3">
+  <meta name="DC.Type" content="Recurso interactivo">
+  <meta name="DC.Format" content="HTML">
+  <meta name="DC.Language" content="es-mx">
+  <meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+  <!-- social media cards -->
+  <meta property="og:title" content="Análisis Complejo">
+  <meta property="og:description" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta property="og:url" content="https://complex-analysis.com/es.html">
+  <meta property="og:image" content="https://complex-analysis.com/images/complex_analysis_card-es.jpg">
+  <meta property="og:site_name" content="Complex Analysis">
+  <meta property="og:locale" content="es-mx">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta name="twitter:title" content="Análisis Complejo">
+  <meta name="twitter:description" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta name="twitter:site" content="@jcponcemath">
+  <meta name="twitter:image" content="https://complex-analysis.com/images/complex_analysis_card-es.jpg">
+  <meta name="twitter:creator" content="@jcponcemath">
+
+  <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+
+  <link rel="stylesheet" href="css/style-es.css">
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HVPF4FLZCB');
+  </script>
+</head>
+
+<body data-type="book" id="top">
+
+  <div class="myLoader" id="loader">
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="loadingMessage">Cargando...</div>
+  </div>
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="teorema_de_cauchy_goursat.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-regular fa-sun"></i></span>
+        <span class="support-top-button" id="donate"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="tabla_de_contenidos.html" class="link" id="center-link">
+            <span class="content-hover-previous">Teorema de Cauchy-Goursat</span>
+            <span class="content-hover">Tabla de Contenidos</span>
+            <span class="content-original">Análisis Complejo</span>
+            <span class="content-hover-next">El Teorema Fundamental del Álgebra</span>
+        </a>
+    </div>
+    <a href="teorema_fundamental_del_algebra.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="cauchy-integral-formula">
+
+  <!-- Starts main content -->
+
+  <div w3-include-html="small_screen_message.html"></div>
+
+  <br><br>
+
+  <main>
+    <article>
+
+
+
+      <h1>Fórmula Integral de Cauchy</h1>
+      <div style="text-align: center!important;"><strong>¡Nota!</strong> Traducción en proceso.</div>
+
+      <hr>
+
+
+
+      <p>
+        If $f$ is analytic in a simply connected domain $D$ and
+        $z_0\in D$, the quotient $f(z)/(z - z_0)$
+        is undefined at $z_0$, making it non-analytic in $D.$
+        Consequently, the Cauchy-Goursat theorem does not allow
+        us to conclude that the integral
+        \[
+        \int_C \frac{f(z)}{z-z_0}dz,
+        \]
+        around a simple closed contour $C$ containing $z_0$, is zero.
+        However, as we shall see, the value of this integral is $2\pi i f(z_0)$. This result is
+        the first of two remarkable formulas.
+      </p>
+
+      <div class="theorem">
+        <span style="font-style: normal!important;font-weight: bold!important;">(Cauchy's integral formula)</span>
+        Let $f$ be analytic everywhere inside and on a simple closed
+        contour $C,$ taken in the positive sense. If $z_0$ is any point
+        interior to $C,$ then
+        \begin{eqnarray}\label{cauchy-int-form}
+        f(z_0)= \frac{1}{2\pi i} \int_C \frac{f(z)}{z-z_0}dz
+        \end{eqnarray}
+      </div>
+
+      <div class="proof">
+        Let $C_r$ be a positively oriented circle $\abs{z-z_0}=r,$
+        where $r\gt 0$ is small enough that $C_r$ is inside $C.$ See Figure 1.
+        Now, since the quotient $f(z)/(z - z_0)$ is analytic between
+        and on the contours $C$ and $C_r,$ then by the principle of deformation
+        of contours we have
+        \[
+        \int_C \frac{f(z)}{z-z_0}dz = \int_{C_r} \frac{f(z)}{z-z_0}dz.
+        \]
+
+        <figure>
+          <img src="../images/chp04/cauchy-integral-formula-01.svg" alt="Circle C_r inside the contour" title="Circle C_r inside the contour" style="width:60%">
+          <figcaption>
+            Circle $C_r$ inside the contour $C.$
+          </figcaption>
+        </figure>
+
+        <p>
+          We wish to show that the value of the integral on
+          the right is $2\pi i f(z_0).$ To do this we add and subtract
+          the constant $f(z_0)$ in the numerator of the integrand,
+        </p>
+        <div class="scroll-wrapper">
+          \begin{eqnarray}
+          \int_{C_r} \frac{f(z)}{z-z_0}dz &amp;=&amp; \int_{C_r} \frac{f(z_0) - f(z_0)+ f(z)}{z-z_0}dz \nonumber\\
+          &amp; = &amp; f(z_0)\int_{C_r} \frac{1}{z-z_0}dz + \int_{C_r} \frac{f(z)- f(z_0)}{z-z_0}dz \label{formula-01}.
+          \end{eqnarray}
+        </div>
+
+        <p>
+          We know that $\ds \int_{C_r}\frac{1}{z-z_0}dz = 2\pi i$ (see Exercise 1 from
+          <a href="cauchy_goursat_theorem.html">Cauchy-Goursat theorem</a> section), and so
+          (\ref{formula-01}) becomes
+        </p>
+        <div class="scroll-wrapper">
+          \begin{eqnarray}\label{formula-02}
+          \int_{C_r} \frac{f(z)}{z-z_0}dz &amp; = &amp; 2\pi i f(z_0) + \int_{C_r} \frac{f(z)- f(z_0)}{z-z_0}dz .
+          \end{eqnarray}
+        </div>
+
+        <p>
+          Now the fact that $f$ is analytic, and therefore continuous, at $z_0$
+          ensures that for every $\epsilon\gt 0,$
+          there is $\delta\gt 0$ such that
+        </p>
+        <div class="scroll-wrapper">
+          \begin{eqnarray}\label{formula-03}
+          \abs{f(z)-f(z_0)}\lt \epsilon \quad \text{whenever} \quad \abs{z-z_0}\lt \delta.
+          \end{eqnarray}
+        </div>
+
+        <p>
+          Choose the radius $r$ of the circle $C_r$ smaller thatn the number
+          $\delta$ in the second of these inequalities. Since
+          $\abs{z-z_0}=r\lt \delta$ when $z $ is on $C_r,$ it follows that
+          the first of inequalities in (\ref{formula-03}) holds
+          when $z$ has this condition. Then, by the ML-inequality,
+          the absolute value of the integral on the right side of
+          the equality in (\ref{formula-02}) satisfies
+        </p>
+        <div class="scroll-wrapper">
+          \begin{eqnarray*}\label{formula-04}
+          \abs{ \int_{C_r} \frac{f(z)- f(z_0)}{z-z_0}dz }\lt \frac{\epsilon}{r} 2 \pi r = 2\pi \epsilon.
+          \end{eqnarray*}
+        </div>
+
+        <p>
+          Thus, in view of equation (\ref{formula-02}), we have
+        </p>
+        <div class="scroll-wrapper">
+          \begin{eqnarray*}\label{formula-05}
+          \abs{ \int_{C_r} \frac{f(z)}{z-z_0}dz - 2\pi i f(z_0) }\lt 2\pi \epsilon.
+          \end{eqnarray*}
+        </div>
+
+        <p>
+          Since the left-hand side of this inequality is a nonnegative constant
+          that is less than an arbitrarily small positive number, it must
+          be equal to zero. Therefore
+          \[
+          f(z_0)= \frac{1}{2\pi i} \int_C \frac{f(z)}{z-z_0}dz.
+          \]
+        </p>
+
+      </div>
+
+      <div class="practice">
+        <p>
+          <strong>Example 1:</strong>
+          Let $C$ be the circle $|z|= 2.$
+          To compute the integral
+          \[
+          \int_C \frac{z^2-4z+4}{z+i}dz
+          \]
+          notice that $f(z) = z^2-4z+4$
+          is analytic at all points within and on the contour $C.$
+          Since the point $z_0=- i $ is interior to $C$ (see Figure 2),
+          by the Cauchy integral formula, we obtain
+        </p>
+        <div class="scroll-wrapper">
+          \[
+          \int_C \frac{z^2-4z+4}{z+i}dz = 2\pi \, i f(-i)= 2\pi (3+ 4i) = \pi (-8+6i).
+          \]
+        </div>
+
+        <figure>
+          <div class="ggbElement" id="ggb-element-1"></div>
+          <figcaption>
+            The contour $|z|= 2.$ Activate the box <code>Phase portrait</code> to show
+            the enhanced phase portrait of $f(z)=\dfrac{z^2-4z+4}{z+i},$ with level curves of the modulus.
+          </figcaption>
+        </figure>
+
+      </div>
+
+
+      <div class="practice">
+        <p>
+          <strong>Exercise 1:</strong>
+          Show that $\ds \int_C \frac{z}{z^2+9}dz = \pi i,$
+          where $C$ is the circle $\abs{z-2i}=4.$
+        </p>
+
+      </div>
+
+
+      <hr>
+
+
+      <h2>An extension of the Cauchy Integral Formula</h2>
+
+      <p>
+        The Cauchy integral formula in <strong>Theorem 1</strong> can
+        be extended to provide an integral representation for
+        derivatives of $f$ at $z_0.$ To obtain such extension, we consider
+        a function $f$ that is analytic everywhere inside and on a simple closed
+        contour $C,$ positively oriented. Then we write the Cauchy
+        Integral Formula as
+        \[
+        f(z)= \frac{1}{2\pi i} \int_C \frac{f(s)}{s-z}ds,
+        \]
+        where $z$ is inside $C$ and $s$ denotes points on $C.$
+        If we compute the derivative with respect to $z,$ we find
+        \begin{eqnarray}\label{integral-derivative}
+        f'(z)= \frac{1}{2\pi i} \int_C \frac{f(s)}{(s-z)^2}ds.
+        \end{eqnarray}
+        For the second derivative we have
+        \begin{eqnarray}\label{integral-derivative-02}
+        f''(z) = f^{(2)}(z)= \frac{1}{\pi i} \int_C \frac{f(s)}{(s-z)^3}ds.
+        \end{eqnarray}
+      </p>
+
+      <div class="practice">
+        <p>
+          <strong>Exercise 2:</strong>
+          Use the formal defition of derivative to verify that
+          $f'(z)$ exists and the expression (\ref{integral-derivative})
+          is in fact valid.
+        </p>
+
+        <details>
+          <summary>
+            Hint
+          </summary>
+          <p>
+            Note that we can write
+          </p>
+          <div class="scroll-wrapper">
+            \[
+            \frac{f(z+\delta z)- f(z)}{\delta z} = \frac{1}{2\pi i} \int_C \frac{f(s)}{(s-z-\delta z)(s-z)}.
+            \]
+          </div>
+          <p>You can also use the fact that $f$ is continuous on the contour $C,$
+            which guarantees that there exists $M\gt 0 $ such that
+            $f(z)\leq M$ for all points on $C.$
+          </p>
+        </details>
+
+
+
+      </div>
+
+      <p>
+        In general, we can use induction to obtain the second remarkabl formula:
+      </p>
+      <div class="scroll-wrapper">
+        \begin{eqnarray}\label{general-derivative}
+        f^{(n)}(z)= \frac{n!}{2\pi i} \int_C \frac{f(s)}{(s-z)^{n+1}}ds \quad (n= 0,1,2,\ldots),
+        \end{eqnarray}
+      </div>
+      <p>
+        which can be re-written as
+      </p>
+      <div class="scroll-wrapper">
+        \begin{eqnarray}\label{general-integral-der}
+        \int_C \frac{f(s)}{(s-z)^{n+1}}ds = \frac{2\pi i}{n!} f^{(n)}(z) \quad (n= 0,1,2,\ldots).
+        \end{eqnarray}
+      </div>
+
+      <p>
+        Verifying (\ref{general-derivative}) is more complicated than the cases
+        $n=1$ and $n=2.$ For more details, I recommend you to consult the book
+        <a href="https://archive.org/details/theoryoffunction0001mark/mode/2up" target="_blank"><em>Theory of functions
+            of a complex variable</em></a>
+        by Alekseĭ I. Markushevich (pp. 299-301).
+      </p>
+
+
+
+      <div class="practice">
+        <p>
+          <strong>Example 2:</strong>
+          We wish to evaluate
+          \[
+          \int_C \frac{z+1}{z^4+2iz^3}dz ,
+          \]
+          where $C$ is the circle $\abs{z}=1.$
+        </p>
+        <p>
+          Note that the integrand is not analytic at $z=0$ and $z=-2i.$
+          However, only $z=0$ lies inside the closed contour, as shown in Figure 3.
+        </p>
+
+        <figure>
+          <div class="ggbElement" id="ggb-element-2"></div>
+          <figcaption>
+            The contour $|z|= 1.$ Activate the box <code>Phase portrait</code> to show
+            the enhanced phase portrait of $f(z)=\dfrac{z+1}{z^4+2iz^3},$ with level curves of the modulus.
+          </figcaption>
+        </figure>
+
+        <p>
+          By re-writting the integrand as
+          \[
+          \frac{z+1}{z^4+2iz^3} = \frac{\dfrac{z+1}{z+2i}}{z^3}
+          \]
+          we can identiry, $z_0=0,$ $n=2$ and $f(z) = \dfrac{z+1}{z+2i}.$
+          Then
+          \[
+          f^{(2)}(z) = \frac{2-4i}{(z+2i)^3},
+          \]
+          and so $f(0) = \ds\frac{2i+1}{4i}.$ Hence, by (\ref{general-integral-der}) we find
+        </p>
+        <div class="scroll-wrapper">
+          \begin{eqnarray*}
+          \int_C \frac{z+1}{z^4+2iz^3} dz = \frac{2\pi i}{2!} f^{(2)}(0) = -\frac{\pi}{4} + \frac{\pi}{2}i.
+          \end{eqnarray*}
+        </div>
+
+
+      </div>
+
+      <div class="practice">
+        <p>
+          <strong>Exercise 3:</strong>
+          Let $z_0$ be any point interior to a positively oriented simple
+          closed contour $C.$ If $f (z) = 1,$ expression (\ref{general-integral-der}), show that
+          \[
+          \int_C \frac{dz}{z-z_0} = 2\pi i
+          \]
+          and
+          \[
+          \int_C \frac{dz}{(z-z_0)^{n+1}} =0 \quad (n=1, 2, \ldots).
+          \]
+          Compare with <strong>Exercise 1</strong> in the <a href="cauchy_goursat_theorem.html">Cauchy-Goursat
+            Theorem</a> section.
+        </p>
+      </div>
+
+
+
+
+
+      <hr>
+
+
+      <h2>Some consequences of the extension</h2>
+      <p>
+        An immediate, and also remarkable, consequence of the extension of
+        the Cauchy integral formula is the following:
+      </p>
+
+      <div class="theorem">
+        If a function $f$ is analytic at a given point,
+        then its derivatives of all orders are analytic there too.
+      </div>
+
+      <div class="proof">
+        Assume that $f$ is analytic at $z_0.$ Then there must be
+        a neighborhood $\abs{z-z_0}\lt \epsilon$ of $z_0$ throughout
+        $f$ is analytic. This means that there is a positively oriented
+        circle centered at $z_0$ with radius $\epsilon /2,$ such that
+        $f$ is also analytic inside and on $C_0.$ From (\ref{general-derivative}) we
+        know that
+        \[
+        f^{(2)}(z) = \frac{1}{2\pi i} \int_{C_0} \frac{f(s)}{(s-z)^3}ds
+        \]
+        at each point $z$ inside $C_0,$ and the existence of $f^{(2)}(z)$
+        throughout the neighborhood $|z - z_0| \lt \epsilon /2$
+        means that $f'$ is analytic at $z_0.$
+
+        <p>
+          We can apply a similar argument to the analytic function
+          $f'$ to conclude that $f^{(2)}(z)$ is analytic,
+          and so on.
+        </p>
+      </div>
+
+      <p>
+        As a consequence, when a function $ f (z) = u(x, y) + iv(x, y)$
+        is analytic at a point $z = (x, y),$ the differentiability of
+        $f'$ ensures the continuity od $f'$ there. Then, since
+        \[
+        f'(z) = u_x + iv_x = v_y - i u_y,
+        \]
+        the first-order partial derivatives of $u$ and $v$ are
+        continuous at that point. Furthermore, since
+        \begin{eqnarray*}
+        f''(z)=&amp; u_{xx} + iv_{xx} &amp;= v_{yx} - i u_{yx},\\
+        &amp; \vdots &amp;
+        \end{eqnarray*}
+        we can also conclude that the real functions $u$ and $v$
+        have continuous partial derivatives of all orders at a
+        point of analyticity.
+      </p>
+
+      <div class="corollary">
+        If $ f (z) = u(x, y) + iv(x, y)$ is analytic at a
+        point $z = (x, y),$ then the  functions $u$ and $v$ have
+        continuous partial derivatives of all orders at that point.
+      </div>
+
+      <p>
+        
+      </p>
+
+      <p>
+        Finally, another consequence of the Cauchy integral formula that
+        will be essential in the next section.
+      </p>
+
+      <div class="theorem" id="cauchy-inequality">
+        <span style="font-style: normal!important;font-weight: bold!important;">(Cauchy's inequality)</span>
+        Suppose that $f$ is analytic inside and on a positively
+        oriented circle $C_r$ centered at $z_0$ and with radius $r.$
+        If $\abs{f(z)}\leq M_r$ for all points $z$ on $C_r,$ then
+        \[
+        \abs{f^{(n)}(z_0)}\leq \frac{n!M_r}{r^n}
+        \]
+      </div>
+
+      <div class="proof">
+        This inequality is called <em>Cauchy's inequality</em> and is
+        an immediate consecuence of the expression (\ref{general-derivative}).
+        From the hypothesis,
+        \[
+        \abs{\frac{f(z)}{(z-z_0)^{n+1}}}= \frac{\abs{f(z)}}{r^{n+1}}\leq \frac{M_r}{r^{n+1}}.
+        \]
+
+        <p>
+          Thus, from (\ref{general-derivative}) and the ML-inequality, we have
+        </p>
+        <div class="scroll-wrapper">
+          \begin{eqnarray*}
+          \abs{f^{(n)}(z_0)} = \frac{n!}{2\pi} \abs{\int_C\frac{f(z)}{(z-z_0)^{n+1}}dz}\leq \frac{n!}{2\pi}
+          \frac{M_r}{r^{n+1}}2 \pi r = \frac{n!M_r}{r^n}.
+          \end{eqnarray*}
+        </div>
+      </div>
+
+
+
+
+      <br>
+
+
+
+
+
+    </article>
+  </main>
+
+  <!--GeoGebra embeding-->
+  <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+  <script>
+    let params1 = {
+      "width": 564,
+      "height": 493,
+      "material_id": "vqtzpnrs",
+      "borderColor": "888888",
+      "playButton": false,
+      "showFullscreenButton": true,
+      "enableShiftDragZoom": false,
+      "showResetIcon": true
+    };
+    let params2 = {
+      "width": 564,
+      "height": 493,
+      "material_id": "wwspnnk6",
+      "borderColor": "888888",
+      "playButton": false,
+      "showFullscreenButton": true,
+      "enableShiftDragZoom": false,
+      "showResetIcon": true
+    };
+    let ggbApplet1 = new GGBApplet(params1, true);
+    let ggbApplet2 = new GGBApplet(params2, true);
+    window.addEventListener("load", () => {
+      ggbApplet1.inject('ggb-element-1');
+      ggbApplet2.inject('ggb-element-2');
+    });
+  </script>
+  <!--GeoGebra embeding ends-->
+
+  <a href="fundamental_theorem_of_algebra.html" style="text-decoration: none;">
+    <p class="nextPage">The Fundamental Theorem of Algebra<i class="fa-solid fa-angles-right"></i></p>
+  </a>
+  <!-- Ends main content -->
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 ¡Hola!</strong>
+      </div>
+      <div class="modal-body">
+
+        <div w3-include-html="message-modal.html"></div>
+        
+        <br />
+      </div>
+
+      <div class="modal-footer">
+        ¡Gracias! 🙏 !Realmente aprecio tu apoyo! 🤗
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer data-type="footer">
+
+  <span id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <span class="hide-small">
+      <a href="https://github.com/complex-analysis"><i class="fa-solid fa-code"></i> Source</a>,
+      <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues"><i
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+    </span>
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-solid fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+
+  <br />
+
+  <a id="licence-link" rel="license" href="licencia.html">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong><span style="font-size: 0.9em;">ISBN: 978-0-6485736-2-3</span></strong><br>
+  <strong>
+    <span class="hide-small" style="font-size: 0.9em;">&copy; Juan Carlos Ponce Campuzano
+      2021-<script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 0.9em;">&copy; J.C. Ponce Campuzano
+      2021-<script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>

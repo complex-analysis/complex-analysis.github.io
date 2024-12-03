@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+
+<head>
+  <title>  El Teorema Fundamental del Álgebra
+</title>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Main info: Dublin core -->
+  <meta name="DC.Title" content="Análisis Complejo">
+  <meta name="DC.Creator" content="Juan Carlos Ponce Campuzano">
+  <meta name="DC.Date" content="26-01-2021">
+  <meta name="DC.Identifier" content="ISBN-13: 978-0-6485736-2-3">
+  <meta name="DC.Type" content="Recurso interactivo">
+  <meta name="DC.Format" content="HTML">
+  <meta name="DC.Language" content="es-mx">
+  <meta name="DC.Rights" content="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+
+  <!-- social media cards -->
+  <meta property="og:title" content="Análisis Complejo">
+  <meta property="og:description" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta property="og:url" content="https://complex-analysis.com/es.html">
+  <meta property="og:image" content="https://complex-analysis.com/images/complex_analysis_card-es.jpg">
+  <meta property="og:site_name" content="Complex Analysis">
+  <meta property="og:locale" content="es-mx">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta name="twitter:title" content="Análisis Complejo">
+  <meta name="twitter:description" content="Una introducción interactiva al estudio del análisis complejo.">
+  <meta name="twitter:site" content="@jcponcemath">
+  <meta name="twitter:image" content="https://complex-analysis.com/images/complex_analysis_card-es.jpg">
+  <meta name="twitter:creator" content="@jcponcemath">
+
+  <link rel="icon" type="image/png" href="../images/infinity32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../images/infinity16.png" sizes="16x16">
+
+  <link rel="stylesheet" href="css/style-es.css">
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HVPF4FLZCB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-HVPF4FLZCB');
+  </script>
+</head>
+
+<body data-type="book" id="top">
+
+  <div class="myLoader" id="loader">
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+    <div class="loadingMessage">Cargando...</div>
+  </div>
+
+<div class="fixed-bar" id="fixed-bar">
+    <div class="link-container">
+        <a href="formula_integral_de_cauchy.html" class="link" id="prev-link">
+            <span class="arrow"><i class="fa-solid fa-arrow-left"></i></span>
+        </a>
+        <span class="dark-mode-button" id="dark-mode-toggle"><i class="fa-regular fa-sun"></i></span>
+        <span class="support-top-button" id="donate"
+            onclick="document.getElementById('myModal').style.display='block'">
+            <i class="fa-regular fa-heart"></i></span>
+    </div>
+    <div class="link">
+        <a href="tabla_de_contenidos.html" class="link" id="center-link">
+            <span class="content-hover-previous">Fórmula Integral de Cauchy</span>
+            <span class="content-hover">Tabla de Contenidos</span>
+            <span class="content-original">Análisis Complejo</span>
+            <span class="content-hover-next">Series</span>
+        </a>
+    </div>
+    <a href="series.html" class="link" id="next-link">
+        <span class="arrow"><i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+
+
+  <!-- Main DIV Starts here -->
+  <div class="container">
+    <section data-type="chapter" id="fundamental-theorem-of-algebra">
+
+    <!-- Starts main content -->
+
+    <div w3-include-html="small_screen_message.html"></div>
+ 
+    <br><br>
+
+    <main>
+        <article>
+
+            
+
+            <h1>El Teorema Fundamental <br>del Álgebra</h1>
+            <div style="text-align: center!important;"><strong>¡Nota!</strong> Traducción en proceso.</div>
+            <hr>
+
+            
+            
+            <p>
+              Consider the polynomial
+            </p>
+            <div class="scroll-wrapper">
+              \begin{eqnarray}\label{example-001}
+              p(z) = z^8-2z^7+2z^6-4z^5+2z^4-2z^3-5z^2+4z-4
+              \end{eqnarray}
+            </div>
+
+            <p>
+              The <strong>Fundamental Theorem of Algebra</strong> states that: 
+              <em>Every nonconstant polynomial with complex coefficients 
+                has a root in the complex numbers.</em>
+            </p>
+
+            <figure>
+              <img src="../images/chp04/poly-001.jpg" alt="Polynomial of degree 8" title="Polynomial of degree 8" style="width:550px;">
+              <figcaption>
+                  Enhaced phase portrait of $p(z),$ with 
+                  level curves of $\abs{p(z)}.$
+                  <a href="https://complex-analysis.com/applets/p5js/domain-coloring/?expression=el44LTJ6XjcrMnpeNi00el41KzJ6XjQtMnpeMy01el4yKzR6LTQ=" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+              </figcaption>
+             </figure>
+
+            <p>
+              Figure 1 shows an <a href="domain_coloring.html">enhanced phase portrait</a>, with 
+              level curves of the modulus, of the polynomial defined in (\ref{example-001}).
+              The first thing to notice from this picture is that 
+              Fundamental Theorem of Algebra does, indeed, hold for $p(z).$
+              Recall that we can easly spot the roots, or zeros, of complex functions 
+              using enhanced phase portraits. We just need to look at the points 
+              where all the colors meet. In Figure 1 we can clearly see that there are 
+              six points where all the colors meet, which means that 
+              $p(z)$ has 6 roots. 
+              <strong>Why does $p(z),$ a polynomial of degree eight, have only six
+                roots?</strong> The reason is that two of the roots are <em>double roots</em>
+              (we also say that its <em>multiplicy is two</em>),
+              and this fact is also evident in the picture. The <em>single roots</em>
+              occur at
+              \[
+              -1, \;\; 2, \;\; \frac{-1\pm i \sqrt{7}}{2},
+              \]
+              and the double roots are at 
+              \[
+              \frac{1\pm i \sqrt{3}}{2}.
+              \]
+              The following applet shows all the roots. Furthermore, you can 
+              appreciate their multiplicity, which is indicated by the number 
+              of times the colors repeat. For example, for the double roots, the
+              <a href="https://en.wikipedia.org/wiki/Hue">hue colors</a> repeat twice, 
+              whereas at the single roots they repeat only once. Activate the 
+              check boxes to highlight the roots.
+            </p>
+
+            <div class="ggbElement" id="ggb-element-1"></div>
+            
+            <br>
+
+            <p>
+              Another fascinating property of the polynomial 
+              $p(z)$ can be visualized as follows. Consider a circle centered at the origin with radius
+              $r,$ chosen such that all the roots of $p(z)$
+              lie inside this circle. When this circle is mapped by 
+              $p(z),$ its image becomes a closed curve that wraps
+              around the origin exactly eight times.
+              This behavior is illustrated in the applet below. On the left, the roots of 
+              $p(z) $ and the circle are displayed. 
+              On the right, you can see the corresponding 
+              image of the circle, clearly showing the wrapping effect. 
+              Just drag the slider below.
+            </p>
+
+
+            <div class="ggbElement" id="ggb-element-2"></div>
+
+
+            <br>
+           
+
+           <hr>
+
+           
+            <h2>Proof &amp; historical notes</h2>
+
+            <p>
+              <a href="cauchy_integral_formula.html#cauchy-inequality">Cauchy's inequality</a> 
+              can be used to show the following result, named after the French mathematician 
+              <a href="https://en.wikipedia.org/wiki/Joseph_Liouville" target="_blank">Joseph Liouville</a>:
+            </p>
+
+            <div class="theorem">
+              <span style="font-style: normal!important;font-weight: bold!important;">(Liouville's Theorem)</span>
+              The only bounded entire functions are constants.
+            </div>
+
+            <div class="proof">
+              Suppose $f$ is entire and bounded, that is, $\abs{f(z)}\lt M$ for all $z.$
+              Then for any point $z_0,$ Cauchy's inequality gives 
+              \[
+              \abs{f'(z)}\leq \frac{M_r}{r}.
+              \]
+              By making $r$ arbitrarily large, we can make $\abs{f'(z)}$
+              as small as we wish. This means that $f'(z_0)= 0$ for all points 
+              $z_0$ in the complex plane. Hence, by 
+              <a href="complex_differentiation.html#derivative-zero" target="_blank">Theorem 3</a>
+              in the Complex Differentiation section, $f$ must be constant.
+            </div>
+
+            <p>
+              Now with the help of Liouville's Theorem, we can easily prove:
+            </p>
+            <div class="theorem">
+              <span style="font-style: normal!important;font-weight: bold!important;">(Fundamental Theorem of Algebra)</span>
+              Any polynomial 
+              \[
+              p(z)= a_n z^n+ a_{n-1}z^{n-1}+\cdots + a_1z+ a_0\quad (a_n\neq 0)
+              \]
+              of degree $n\geq 1$ has at least one zero. 
+            </div>
+
+            <div class="proof">
+              We establish this statement by contradiction. 
+              Suppose that $p(z)$ is <em>not</em> zero for any value of $z,$
+              then
+              \[
+              f(z) = \frac{1}{p(z)}
+              \]
+              is an entire function. 
+              Since $\abs{p(z)}\to \infty$ as 
+              $\abs{z}\to \infty,$ there exists $M,$ $R\gt 0$ such that 
+              $\abs{p(z)}\gt M$ if $\abs{z}\gt R.$ 
+              This implies that for $\abs{z}\gt R,$ 
+              \[
+              \abs{f(z)}  =  \abs{\frac{1}{p(z)}} \lt \frac{1}{M}.
+              \]
+              Now, $f$ is continuous on the region $\abs{z}\leq R,$ which is closed and bounded.
+              By <a href="continuity.html#bounded-function" target="_blank">Theorem 3</a>, in the Continuity section,
+              $f$ is also bounded for $\abs{z}\leq R.$ 
+              Hence $f(z)$ is bounded in the entire complex plane.
+              Liouville's Theorem then implies that $f(z)$ is a constant, 
+              and consequently $p(z)$ is a constant as well.   
+              But this is a contradiction. We conclude that there must 
+              exist at least one number $z$ for which $p(z) = 0.$
+              <p></p>
+            </div>
+
+            <p>
+              It follows in the usual way that any polynomial $p(z)$ of degree 
+              $n,$ with complex coefficients, can be expressed as a 
+              product of linear terms:
+              \begin{eqnarray}\label{factorized}
+              p(z) = c\left(z-\alpha_1\right)\left(z-\alpha_2\right)\cdots \left(z-\alpha_n\right),
+              \end{eqnarray}
+             where $c$ and $\alpha_k$ $(k=1,2,\ldots, n)$ are complex constants. 
+             Of course, some of the constants $\alpha_k$ in expression (\ref{factorized}) may
+             appear more than once, and it is clear that $p(z)$ cannot have 
+             more than $n$ distinct zeros.
+            </p>
+            
+
+            <p>
+              According to B. Fine &amp; G. Rosenberger 
+              [<a href="#fine1997">7</a>, Chapter 1],
+              the Fundamental Theorem of Algebra was first mentioned by Peter 
+              Roth of Nuremberg in 1608. However, it is also 
+              attributed to Albert Girard, who articulated the result in 1629. 
+              René Descartes later provided a clearer formulation in 1637, 
+              distinguishing between real and imaginary roots.
+              The first published proof of the theorem came from Jean 
+              le Rond d'Alembert in 1746, though it contained significant gaps. 
+              The first widely accepted proof was presented by Carl Friedrich Gauss 
+              in his 1797 Ph.D. thesis, published in 1799 [<a href="#gauss1799">8</a>].
+              Interestingly, modern scholars note that Gauss's original proof 
+              has as many gaps as d'Alembert's 
+              (see for example [<a href="#stillwell1989">12</a>, <a href="#velleman2015">14</a>]).
+              Nonetheless, Gauss went on to produce three more rigorous proofs: 
+              two published in 1816 and a final version, essentially a 
+              refinement of his first proof, presented in 1849 [<a href="#gauss1850">9</a>].
+            </p>
+
+            <div class="practice">
+              <p>
+                <strong>Outline of Gauss' original proof:</strong>
+                Since $p(z)$ is a complex numbers for any $z\in \C$ and since 
+                $z=x+iy$ with $x,y\in \R$ we have that 
+                \[
+                p(z) = u(x,y) + i v(x,y).
+                \]
+                The equations $u(x,y)=0$ and $v(x,y)=0$ then represent curves in the plane
+                $\R^2.$ By careful examination of the possible functions 
+                $u(x,y),$ $v(x,y)$ for a complex polynomial $p(z),$ Gauss showed 
+                that the curves $u(x,y)=0,$ $v(x,y)=0$ must have a common solution $(x_0, y_0).$
+                The complex number $z_0= x_0+iy_0$ is then the root of $p(z).$
+              </p>
+            </div>
+
+            <p>For example, Figure 2 shows the curves $u(x,y)=0$ and $v(x,y)=0$ for the 
+              our initial polynomial $p(z) = z^8-2z^7+2z^6-4z^5+2z^4-2z^3-5z^2+4z-4.$</p>
+
+            <figure>
+              <img src="../images/chp04/fta-gauss.svg" alt="Real and imaginary components of a polynomial" title="Real and imaginary components of a polynomial" style="width:70%">
+              <figcaption>
+                  The curves $u(x,y)=0$ (Red) and $v(x,y)=0$ (Blue) of $p(z).$
+                  The roots are represented with the points $Z_k$.
+              </figcaption>
+            </figure>
+
+            <!--
+              <figure>
+              <img src="../images/chp04/gauss-original.jpg" alt="Real and imaginary components of a fifth degree polynomial" title="Real and imaginary components of a fifth degree polynomial" style="width:60%">
+              <figcaption>
+                  Gauss' original picture made for a special equation of 
+                  fifth degree.
+              </figcaption>
+            </figure>
+            -->
+            <p>
+              Although it is argued that Gauss' first proofs of the 
+              Fundamental Theorem of Algebra also included some gaps, 
+              they still show an intuitive way why any complex 
+              polynomial should have a root. 
+              Nowadays there are many known proofs of this theorem, 
+              including proofs using methods of abstract algebra, analysis, and topology. 
+              The references include many papers and books containing proofs 
+              of this theorem, for example [<a href="#fine1997">7</a>] 
+              alone contains 11 proofs.
+            </p>
+
+            <br>
+
+
+            <hr>
+
+            <h2>References</h2>
+
+            <ol class="bbtex-list">
+              <li>Abian, A. (1986). A new proof of the fundamental theorem of algebra, <em>Caribbean J. Math.</em> <strong>5</strong>, no. 1, 9-12. <a href="https://link.springer.com/chapter/10.1007/BFb0121246" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li>Bennish, J. (1992). Another proof of the fundamental theorem of algebra, <em>Amer. Math. Monthly</em>, <strong>99</strong>, 426. <a href="https://doi.org/10.2307/30037388" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li>Boas, Jr., R. P. (1935). A proof of the fundamental theorem of algebra, <em>Amer. Math. Monthly</em>, <strong>42</strong>, 501-502. <a href="https://doi.org/10.2307/2300477" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li>Boas, Jr., R. P. (1964). Yet another proof of the fundamental theorem of algebra, <em>Amer. Math. Monthly</em>, <strong>71</strong>, 180. <a href="https://doi.org/10.2307/2311751" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li>Byl, J. (1999). A simple proof of the fundamental theorem of algebra, <em>Internat. J. Math. Ed. Sci. Tech.</em> <strong>30</strong>, no. 4, 602-603.</li>
+              <li>Fefferman, C. (1967). An easy proof of the fundamental theorem of algebra,  <em>Amer. Math. Monthly</em>, <strong>74</strong>, 854-855. <a href="https://doi.org/10.2307/2315823" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li id="fine1997">Fine, B. &amp; Rosenberger. G. (1997). <em>The Fundamental Theorem of Algebra</em>. New York: Springer-Verlag Inc. <a href="https://link.springer.com/book/10.1007/978-1-4612-1928-6" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li id="gauss1799">Gauss, C. F. (1799). <em>Demonstratio nova theorematis omnem functionem algebraicum rationalem integram unius variabilis in factores reales primi vel secundi gradus resolvi posse,</em> Helmstedt dissertation, reprinted in <strong>Werke</strong>, Vol. 3, 1-30. <a href="https://archive.org/details/werkecarlf03gausrich/mode/2up" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li id="gauss1850">Gauss, C. F. (1850). Beiträge zur Theorie der algebraischen Gleichungen". <em>Abhandlungen der Königlichen Gesellschaft der Wissenschaften zu Göttingen,</em> <strong>4:</strong> 34-35. <a href="https://gdz.sub.uni-goettingen.de/id/PPN235999628?tify=%7B%22pages%22%3A%5B77%5D%2C%22pan%22%3A%7B%22x%22%3A0.452%2C%22y%22%3A1.019%7D%2C%22view%22%3A%22info%22%2C%22zoom%22%3A0.456%7D" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li>Redheffer, R. M. (1964). What! Another note just on the fundamental theorem of algebra? <em>Amer. Math. Monthly</em>, <strong>71</strong>, 180-185. <a href="https://doi.org/10.2307/2311752" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li>Sen, A. (2000). Fundamental theorem of algebra—yet another proof, <em>Amer. Math. Monthly</em>, <strong>107</strong>, 842-843. <a href="https://doi.org/10.2307/2695742" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li id="stillwell1989">Stillwell, J. (1989).  <em>Mathematics and its History</em>. New York: Springer-Verlag.  <a href="https://link.springer.com/book/10.1007/978-1-4899-0007-4" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li>Velleman, D. J. (1997). Another proof of the fundamental theorem of algebra,   <em>Math. Mag.</em> <strong>70</strong>(1997), 216-217. <a href="https://doi.org/10.1080/0025570X.1997.11996539" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+              <li id="velleman2015">Vellemen, D. J. (2015). The Fundamental Theorem of Algebra: A Visual Approach, <em>The Mathematical Intelligencer,</em> Vol. 37, pp. 12-21. <a href="https://link.springer.com/article/10.1007/s00283-015-9572-7" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
+            </ol>
+           
+
+
+            <br>
+
+
+
+
+        </article>
+    </main>
+
+    <!--GeoGebra embeding-->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+    <script>
+        let params1 = {
+            "width": 770,
+            "height": 477,
+            "material_id": "wckedtxs",
+            "borderColor": "888888",
+            "playButton": false,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": false,
+            "showResetIcon": true
+        };
+        let params2 = {
+            "width": 782,
+            "height": 448,
+            "material_id": "r3jf9s8g",
+            "borderColor": "888888",
+            "playButton": false,
+            "showFullscreenButton": true,
+            "enableShiftDragZoom": false,
+            "showResetIcon": true
+        };
+       
+        let ggbApplet1 = new GGBApplet(params1, true);
+        let ggbApplet2 = new GGBApplet(params2, true);
+        window.addEventListener("load", () => {
+            ggbApplet1.inject('ggb-element-1');
+            ggbApplet2.inject('ggb-element-2');
+        });
+    </script>
+    <!--GeoGebra embeding ends-->
+
+    <a href="series.html" style="text-decoration: none;">
+        <p class="nextPage">Series<i class="fa-solid fa-angles-right"></i></p>
+    </a>
+    <!-- Ends main content -->
+
+</section>
+  </div>
+  <!-- Main DIV Ends here -->
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span><br />
+        <strong>👋 ¡Hola!</strong>
+      </div>
+      <div class="modal-body">
+
+        <div w3-include-html="message-modal.html"></div>
+        
+        <br />
+      </div>
+
+      <div class="modal-footer">
+        ¡Gracias! 🙏 !Realmente aprecio tu apoyo! 🤗
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Button to Top -->
+  <button onclick="topFunction()" id="toTop" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <hr>
+
+<footer data-type="footer">
+
+  <span id="footer-elements">
+    <span style="font-weight: bold;">[</span>
+    <a href="../"><i class="fa-solid fa-house"></i> Home</a>,
+    <span class="hide-small">
+      <a href="https://github.com/complex-analysis"><i class="fa-solid fa-code"></i> Source</a>,
+      <a href="https://github.com/complex-analysis/complex-analysis.github.io/issues"><i
+          class="fa-solid fa-lightbulb"></i> Issues</a>,
+    </span>
+    <span id="donate-footer" onclick="document.getElementById('myModal').style.display='block'">
+      <i class="fa-solid fa-heart"></i> Support</span>
+    <span style="font-weight: bold;">]</span>
+  </span>
+
+  <br />
+
+  <a id="licence-link" rel="license" href="licencia.html">
+    <i class="fa-brands fa-creative-commons"></i>
+    <i class="fa-brands fa-creative-commons-by"></i>
+    <i class="fa-brands fa-creative-commons-nc"></i>
+    <i class="fa-brands fa-creative-commons-sa"></i>
+  </a>
+
+  <br />
+
+  <strong><span style="font-size: 0.9em;">ISBN: 978-0-6485736-2-3</span></strong><br>
+  <strong>
+    <span class="hide-small" style="font-size: 0.9em;">&copy; Juan Carlos Ponce Campuzano
+      2021-<script>document.write(new Date().getFullYear());</script>
+    </span>
+    <span class="hide-medium hide-large" style="font-size: 0.9em;">&copy; J.C. Ponce Campuzano
+      2021-<script>document.write(new Date().getFullYear());</script>
+    </span>
+  </strong>
+
+</footer>
+  <script src="js/mathjax.js"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <script src="js/scripts.js"></script>
+  <script async src="js/prism.js"></script>
+</body>
+
+</html>
