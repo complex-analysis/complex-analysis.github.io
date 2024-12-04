@@ -100,16 +100,12 @@
     <main>
         <article>
 
-            
-
             <h1>El Teorema Fundamental <br>del Álgebra</h1>
-            <div style="text-align: center!important;"><strong>¡Nota!</strong> Traducción en proceso.</div>
+
             <hr>
 
-            
-            
             <p>
-              Consider the polynomial
+              Consideremos el polynomio
             </p>
             <div class="scroll-wrapper">
               \begin{eqnarray}\label{example-001}
@@ -118,48 +114,47 @@
             </div>
 
             <p>
-              The <strong>Fundamental Theorem of Algebra</strong> states that: 
-              <em>Every nonconstant polynomial with complex coefficients 
-                has a root in the complex numbers.</em>
+              El <strong>Teorema Fundamental del Álgebra</strong> establece que:
+              <em>Cada polinomio no constante con coeficientes complejos
+                tiene una raíz en los números complejos.</em>
             </p>
 
             <figure>
               <img src="../images/chp04/poly-001.jpg" alt="Polynomial of degree 8" title="Polynomial of degree 8" style="width:550px;">
               <figcaption>
-                  Enhaced phase portrait of $p(z),$ with 
-                  level curves of $\abs{p(z)}.$
+                  Retrato de fase mejorado de $p(z),$ con curvas de nivel de $\abs{p(z)}.$
                   <a href="https://complex-analysis.com/applets/p5js/domain-coloring/?expression=el44LTJ6XjcrMnpeNi00el41KzJ6XjQtMnpeMy01el4yKzR6LTQ=" target="_blank"><i class="fas fa-external-link-alt"></i></a>
               </figcaption>
              </figure>
 
-            <p>
-              Figure 1 shows an <a href="domain_coloring.html">enhanced phase portrait</a>, with 
-              level curves of the modulus, of the polynomial defined in (\ref{example-001}).
-              The first thing to notice from this picture is that 
-              Fundamental Theorem of Algebra does, indeed, hold for $p(z).$
-              Recall that we can easly spot the roots, or zeros, of complex functions 
-              using enhanced phase portraits. We just need to look at the points 
-              where all the colors meet. In Figure 1 we can clearly see that there are 
-              six points where all the colors meet, which means that 
-              $p(z)$ has 6 roots. 
-              <strong>Why does $p(z),$ a polynomial of degree eight, have only six
-                roots?</strong> The reason is that two of the roots are <em>double roots</em>
-              (we also say that its <em>multiplicy is two</em>),
-              and this fact is also evident in the picture. The <em>single roots</em>
-              occur at
+             <p>
+              La Figura 1 muestra un <a href="dominio_coloreado.html">retrato de fase mejorado</a>, con 
+              curvas de nivel del módulo, del polinomio definido en (\ref{example-001}). 
+              Lo primero que se nota en esta imagen es que, efectivamente, el 
+              Teorema Fundamental del Álgebra se cumple para $p(z).$ 
+              Recuerda que podemos identificar fácilmente las raíces, o ceros, de funciones complejas 
+              utilizando retratos de fase mejorados. Solo necesitamos buscar los puntos 
+              donde todos los colores se encuentran. En la Figura 1, podemos ver claramente que hay 
+              seis puntos donde todos los colores se encuentran, lo que significa que 
+              $p(z)$ tiene 6 raíces. 
+              <strong>¿Por qué $p(z),$ un polinomio de grado ocho, tiene solo seis raíces?</strong> 
+              La razón es que dos de las raíces son <em>raíces dobles</em> 
+              (también decimos que su <em>multiplicidad es dos</em>), 
+              y este hecho también es evidente en la imagen. Las <em>raíces simples</em> se encuentran en 
               \[
               -1, \;\; 2, \;\; \frac{-1\pm i \sqrt{7}}{2},
               \]
-              and the double roots are at 
+              y las raíces dobles están en 
               \[
               \frac{1\pm i \sqrt{3}}{2}.
               \]
-              The following applet shows all the roots. Furthermore, you can 
-              appreciate their multiplicity, which is indicated by the number 
-              of times the colors repeat. For example, for the double roots, the
-              <a href="https://en.wikipedia.org/wiki/Hue">hue colors</a> repeat twice, 
-              whereas at the single roots they repeat only once. Activate the 
-              check boxes to highlight the roots.
+              El siguiente applet muestra todas las raíces. Además, puedes 
+              apreciar su multiplicidad, la cual está indicada por el número 
+              de veces que los colores se repiten. Por ejemplo, en las raíces dobles, 
+              los <a href="https://en.wikipedia.org/wiki/Hue" target="_blank">colores del matiz</a> 
+              se repiten dos veces, mientras que en las raíces simples 
+              se repiten solo una vez. Activa las 
+              casillas para resaltar las raíces.
             </p>
 
             <div class="ggbElement" id="ggb-element-1"></div>
@@ -167,18 +162,21 @@
             <br>
 
             <p>
-              Another fascinating property of the polynomial 
-              $p(z)$ can be visualized as follows. Consider a circle centered at the origin with radius
-              $r,$ chosen such that all the roots of $p(z)$
-              lie inside this circle. When this circle is mapped by 
-              $p(z),$ its image becomes a closed curve that wraps
-              around the origin exactly eight times.
-              This behavior is illustrated in the applet below. On the left, the roots of 
-              $p(z) $ and the circle are displayed. 
-              On the right, you can see the corresponding 
-              image of the circle, clearly showing the wrapping effect. 
-              Just drag the slider below.
+              Otra propiedad fascinante del polinomio 
+              $p(z)$ se puede visualizar de la siguiente manera. 
+              Considera un círculo centrado en el origen con radio 
+              $r,$ elegido de manera que todas las raíces de $p(z)$ 
+              se encuentren dentro de este círculo. Cuando este círculo es transformado por 
+              $p(z),$ su imagen se convierte en una curva cerrada que se envuelve 
+              alrededor del origen exactamente ocho veces. 
+              Este comportamiento se ilustra en el applet a continuación.
+              A la izquierda, se muestran las raíces de 
+              $p(z)$ y el círculo. 
+              A la derecha, puedes ver la correspondiente 
+              imagen del círculo, mostrando claramente el efecto de envolvimiento. 
+              Simplemente arrastra el control deslizante de abajo.
             </p>
+            
 
 
             <div class="ggbElement" id="ggb-element-2"></div>
@@ -190,128 +188,133 @@
            <hr>
 
            
-            <h2>Proof &amp; historical notes</h2>
+            <h2>Demostración y notas históricas</h2>
 
             <p>
-              <a href="cauchy_integral_formula.html#cauchy-inequality">Cauchy's inequality</a> 
-              can be used to show the following result, named after the French mathematician 
+              La <a href="formula_integral_de_cauchy.html#cauchy-inequality">desigualdad de Cauchy</a> 
+              se puede usar para demostrar el siguiente resultado, nombrado en honor al matemático Francés
               <a href="https://en.wikipedia.org/wiki/Joseph_Liouville" target="_blank">Joseph Liouville</a>:
             </p>
 
             <div class="theorem">
-              <span style="font-style: normal!important;font-weight: bold!important;">(Liouville's Theorem)</span>
-              The only bounded entire functions are constants.
+              <span style="font-style: normal!important;font-weight: bold!important;">(Teorem de Liouville)</span>
+              Las únicas funciones enteras acotadas son constantes.
             </div>
 
             <div class="proof">
-              Suppose $f$ is entire and bounded, that is, $\abs{f(z)}\lt M$ for all $z.$
-              Then for any point $z_0,$ Cauchy's inequality gives 
+              Supongamos que $f$ es entera y acotada, es decir, $\abs{f(z)}\lt M$ para todo $z.$ 
+              Entonces, para cualquier punto $z_0,$ la desigualdad de Cauchy nos da 
               \[
               \abs{f'(z)}\leq \frac{M_r}{r}.
               \]
-              By making $r$ arbitrarily large, we can make $\abs{f'(z)}$
-              as small as we wish. This means that $f'(z_0)= 0$ for all points 
-              $z_0$ in the complex plane. Hence, by 
-              <a href="complex_differentiation.html#derivative-zero" target="_blank">Theorem 3</a>
-              in the Complex Differentiation section, $f$ must be constant.
+              Al hacer $r$ arbitrariamente grande, podemos hacer $\abs{f'(z)}$ 
+              tan pequeño como queramos. 
+              Esto significa que $f'(z_0)= 0$ para todos los puntos 
+              $z_0$ en el plano complejo. Por lo tanto, según 
+              <a href="diferenciacion_compleja.html#derivative-zero" target="_blank">el Teorema 3</a> 
+              en la sección de Diferenciación Compleja, $f$ debe ser constante.
             </div>
 
             <p>
-              Now with the help of Liouville's Theorem, we can easily prove:
+              Ahora con el Teorema de Liouville podemos demostrar fácilmente:
             </p>
             <div class="theorem">
-              <span style="font-style: normal!important;font-weight: bold!important;">(Fundamental Theorem of Algebra)</span>
-              Any polynomial 
+              <span style="font-style: normal!important; font-weight: bold!important;">(Teorema Fundamental del Álgebra)</span>
+              Todo polinomio 
               \[
               p(z)= a_n z^n+ a_{n-1}z^{n-1}+\cdots + a_1z+ a_0\quad (a_n\neq 0)
               \]
-              of degree $n\geq 1$ has at least one zero. 
+              de grado $n\geq 1$ tiene al menos un cero.
             </div>
-
+            
             <div class="proof">
-              We establish this statement by contradiction. 
-              Suppose that $p(z)$ is <em>not</em> zero for any value of $z,$
-              then
+              Demostraremos esta afirmación por contradicción. 
+              Supongamos que $p(z)$ <em>no</em> es cero para ningún valor de $z,$ 
+              entonces
               \[
               f(z) = \frac{1}{p(z)}
               \]
-              is an entire function. 
-              Since $\abs{p(z)}\to \infty$ as 
-              $\abs{z}\to \infty,$ there exists $M,$ $R\gt 0$ such that 
-              $\abs{p(z)}\gt M$ if $\abs{z}\gt R.$ 
-              This implies that for $\abs{z}\gt R,$ 
+              es una función entera. 
+              Dado que $\abs{p(z)}\to \infty$ cuando 
+              $\abs{z}\to \infty,$ existen $M$ y $R\gt 0$ tales que 
+              $\abs{p(z)}\gt M$ si $\abs{z}\gt R.$ 
+              Esto implica que para $\abs{z}\gt R,$ 
               \[
-              \abs{f(z)}  =  \abs{\frac{1}{p(z)}} \lt \frac{1}{M}.
+              \abs{f(z)} = \abs{\frac{1}{p(z)}} \lt \frac{1}{M}.
               \]
-              Now, $f$ is continuous on the region $\abs{z}\leq R,$ which is closed and bounded.
-              By <a href="continuity.html#bounded-function" target="_blank">Theorem 3</a>, in the Continuity section,
-              $f$ is also bounded for $\abs{z}\leq R.$ 
-              Hence $f(z)$ is bounded in the entire complex plane.
-              Liouville's Theorem then implies that $f(z)$ is a constant, 
-              and consequently $p(z)$ is a constant as well.   
-              But this is a contradiction. We conclude that there must 
-              exist at least one number $z$ for which $p(z) = 0.$
-              <p></p>
+              Ahora, $f$ es continua en la región $\abs{z}\leq R,$ la cual es cerrada y acotada. 
+              Según el <a href="continuidad.html#bounded-function" target="_blank">Teorema 3</a>, en la sección de Continuidad, 
+              $f$ también está acotada para $\abs{z}\leq R.$ 
+              Por lo tanto, $f(z)$ está acotada en todo el plano complejo. 
+              El Teorema de Liouville implica entonces que $f(z)$ es constante, 
+              y, en consecuencia, $p(z)$ también es constante.   
+              Pero esto es una contradicción. Concluimos que debe 
+              existir al menos un número $z$ para el cual $p(z) = 0.$
             </div>
-
+            
             <p>
-              It follows in the usual way that any polynomial $p(z)$ of degree 
-              $n,$ with complex coefficients, can be expressed as a 
-              product of linear terms:
+              Se deduce de la manera habitual que cualquier polinomio $p(z)$ de grado 
+              $n,$ con coeficientes complejos, puede expresarse como un 
+              producto de términos lineales:
               \begin{eqnarray}\label{factorized}
               p(z) = c\left(z-\alpha_1\right)\left(z-\alpha_2\right)\cdots \left(z-\alpha_n\right),
               \end{eqnarray}
-             where $c$ and $\alpha_k$ $(k=1,2,\ldots, n)$ are complex constants. 
-             Of course, some of the constants $\alpha_k$ in expression (\ref{factorized}) may
-             appear more than once, and it is clear that $p(z)$ cannot have 
-             more than $n$ distinct zeros.
+              donde $c$ y $\alpha_k$ $(k=1,2,\ldots, n)$ son constantes complejas. 
+              Por supuesto, algunas de las constantes $\alpha_k$ en 
+              la expresión (\ref{factorized}) pueden 
+              aparecer más de una vez, y es claro que $p(z)$ no puede tener 
+              más de $n$ ceros distintos.
+            </p>
+
+            <p>
+              Según B. Fine &amp; G. Rosenberger 
+              [<a href="#fine1997">7</a>, Capítulo 1], 
+              el Teorema Fundamental del Álgebra fue mencionado por primera vez por Peter 
+              Roth de Núremberg en 1608. Sin embargo, también se le atribuye a Albert Girard, 
+              quien enunció el resultado en 1629. 
+              Más tarde, René Descartes proporcionó una formulación más clara en 1637, 
+              distinguiendo entre raíces reales e imaginarias. 
+              La primera demostración publicada del teorema fue presentada por Jean 
+              le Rond d'Alembert en 1746, aunque contenía lagunas significativas. 
+              La primera demostración ampliamente aceptada fue presentada por Carl Friedrich Gauss 
+              en su tesis doctoral de 1797, publicada en 1799 [<a href="#gauss1799">8</a>]. 
+              Curiosamente, los investigadores modernos señalan que la demostración original de Gauss 
+              tiene tantas lagunas como la de d'Alembert 
+              (ver, por ejemplo, [<a href="#stillwell1989">12</a>, <a href="#velleman2015">14</a>]). 
+              No obstante, Gauss produjo tres demostraciones más rigurosas: 
+              dos publicadas en 1816 y una versión final, esencialmente una 
+              refinación de su primera demostración, presentada en 1849 [<a href="#gauss1850">9</a>].
             </p>
             
 
-            <p>
-              According to B. Fine &amp; G. Rosenberger 
-              [<a href="#fine1997">7</a>, Chapter 1],
-              the Fundamental Theorem of Algebra was first mentioned by Peter 
-              Roth of Nuremberg in 1608. However, it is also 
-              attributed to Albert Girard, who articulated the result in 1629. 
-              René Descartes later provided a clearer formulation in 1637, 
-              distinguishing between real and imaginary roots.
-              The first published proof of the theorem came from Jean 
-              le Rond d'Alembert in 1746, though it contained significant gaps. 
-              The first widely accepted proof was presented by Carl Friedrich Gauss 
-              in his 1797 Ph.D. thesis, published in 1799 [<a href="#gauss1799">8</a>].
-              Interestingly, modern scholars note that Gauss's original proof 
-              has as many gaps as d'Alembert's 
-              (see for example [<a href="#stillwell1989">12</a>, <a href="#velleman2015">14</a>]).
-              Nonetheless, Gauss went on to produce three more rigorous proofs: 
-              two published in 1816 and a final version, essentially a 
-              refinement of his first proof, presented in 1849 [<a href="#gauss1850">9</a>].
-            </p>
-
             <div class="practice">
               <p>
-                <strong>Outline of Gauss' original proof:</strong>
-                Since $p(z)$ is a complex numbers for any $z\in \C$ and since 
-                $z=x+iy$ with $x,y\in \R$ we have that 
+                <strong>Esquema de la demostración original de Gauss:</strong>
+                Dado que $p(z)$ es un número complejo para cualquier $z\in \C$ y dado que 
+                $z=x+iy$ con $x,y\in \R,$ tenemos que 
                 \[
                 p(z) = u(x,y) + i v(x,y).
                 \]
-                The equations $u(x,y)=0$ and $v(x,y)=0$ then represent curves in the plane
-                $\R^2.$ By careful examination of the possible functions 
-                $u(x,y),$ $v(x,y)$ for a complex polynomial $p(z),$ Gauss showed 
-                that the curves $u(x,y)=0,$ $v(x,y)=0$ must have a common solution $(x_0, y_0).$
-                The complex number $z_0= x_0+iy_0$ is then the root of $p(z).$
+                Las ecuaciones $u(x,y)=0$ y $v(x,y)=0$ representan entonces curvas en el plano 
+                $\R^2.$ Mediante un análisis cuidadoso de las posibles funciones 
+                $u(x,y),$ $v(x,y)$ para un polinomio complejo $p(z),$ Gauss demostró 
+                que las curvas $u(x,y)=0$ y $v(x,y)=0$ deben tener una solución común $(x_0, y_0).$
+                El número complejo $z_0= x_0+iy_0$ es entonces la raíz de $p(z).$
               </p>
             </div>
 
-            <p>For example, Figure 2 shows the curves $u(x,y)=0$ and $v(x,y)=0$ for the 
-              our initial polynomial $p(z) = z^8-2z^7+2z^6-4z^5+2z^4-2z^3-5z^2+4z-4.$</p>
+            <p>
+              Por ejemplo, la Figura 2 muestra las curvas $u(x,y)=0$ y $v(x,y)=0$ para nuestro polinomio inicial 
+              $p(z) = z^8-2z^7+2z^6-4z^5+2z^4-2z^3-5z^2+4z-4.$
+            </p>
+
+            
 
             <figure>
               <img src="../images/chp04/fta-gauss.svg" alt="Real and imaginary components of a polynomial" title="Real and imaginary components of a polynomial" style="width:70%">
               <figcaption>
-                  The curves $u(x,y)=0$ (Red) and $v(x,y)=0$ (Blue) of $p(z).$
-                  The roots are represented with the points $Z_k$.
+                Las curvas $u(x,y)=0$ (Rojo) y $v(x,y)=0$ (Azul) de $p(z).$  
+                Las raíces están representadas por los puntos $Z_k$.
               </figcaption>
             </figure>
 
@@ -325,15 +328,15 @@
             </figure>
             -->
             <p>
-              Although it is argued that Gauss' first proofs of the 
-              Fundamental Theorem of Algebra also included some gaps, 
-              they still show an intuitive way why any complex 
-              polynomial should have a root. 
-              Nowadays there are many known proofs of this theorem, 
-              including proofs using methods of abstract algebra, analysis, and topology. 
-              The references include many papers and books containing proofs 
-              of this theorem, for example [<a href="#fine1997">7</a>] 
-              alone contains 11 proofs.
+              Aunque se argumenta que las primeras demostraciones de Gauss del 
+              Teorema Fundamental del Álgebra también incluían algunas lagunas, 
+              aún muestran de manera intuitiva por qué cualquier polinomio complejo 
+              debe tener una raíz. 
+              Hoy en día, existen muchas demostraciones conocidas de este teorema, 
+              incluidas demostraciones que utilizan métodos de álgebra abstracta, análisis y topología. 
+              Las referencias incluyen muchos artículos y libros con demostraciones 
+              de este teorema; por ejemplo, [<a href="#fine1997">7</a>] 
+              por sí solo contiene 11 demostraciones.
             </p>
 
             <br>
@@ -341,7 +344,7 @@
 
             <hr>
 
-            <h2>References</h2>
+            <h2>Referencias</h2>
 
             <ol class="bbtex-list">
               <li>Abian, A. (1986). A new proof of the fundamental theorem of algebra, <em>Caribbean J. Math.</em> <strong>5</strong>, no. 1, 9-12. <a href="https://link.springer.com/chapter/10.1007/BFb0121246" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
@@ -359,13 +362,8 @@
               <li>Velleman, D. J. (1997). Another proof of the fundamental theorem of algebra,   <em>Math. Mag.</em> <strong>70</strong>(1997), 216-217. <a href="https://doi.org/10.1080/0025570X.1997.11996539" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
               <li id="velleman2015">Vellemen, D. J. (2015). The Fundamental Theorem of Algebra: A Visual Approach, <em>The Mathematical Intelligencer,</em> Vol. 37, pp. 12-21. <a href="https://link.springer.com/article/10.1007/s00283-015-9572-7" target="_blank"><i class="fas fa-external-link-alt"></i></a></li>
             </ol>
-           
-
-
+          
             <br>
-
-
-
 
         </article>
     </main>
