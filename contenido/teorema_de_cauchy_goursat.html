@@ -698,16 +698,18 @@
         </p>
 
         <div class="lemma">
-          If $\Delta$ is a triangular contour lying entirely within $D,$
-          then $\int_{\Delta} f(z)\,dz=0.$
+          Si $\Delta$ es un contorno triangular que yace completamente dentro de $D,$
+          entonces $\int_{\Delta} f(z)\,dz=0.$
         </div>
+        
+        
 
         <div class="proof">
-          Let $\Delta$ be the triangular contour shown in Figure 13.
-          The vertices of $\Delta$ are labeled $V_1,V_2$ and $V_3.$
-          We form smaller triangles $\Delta_1, \Delta_2,$ $\Delta_3$ and $\Delta_4$
-          by joining the midpoints $M_1,M_2$ and $M_3$ of the sides of $\Delta$
-          by straight line segments as shown in Figure 14. Then
+          Sea $\Delta$ el contorno triangular mostrado en la Figura 13.
+          Los vértices de $\Delta$ están etiquetados como $V_1, V_2$ y $V_3.$
+          Formamos triángulos más pequeños $\Delta_1, \Delta_2, \Delta_3$ y $\Delta_4$
+          uniendo los puntos medios $M_1, M_2$ y $M_3$ de los lados de $\Delta$
+          mediante segmentos de línea recta, como se muestra en la Figura 14. Entonces
           <div class="scroll-wrapper">
             \begin{eqnarray}\label{sumcontours}
             \int_{\Delta} f(z)\,dz = \int_{C_1} f(z)\,dz +\int_{C_2} f(z)\,dz +\int_{C_3} f(z)\,dz +\int_{C_4} f(z)\,dz.
@@ -718,20 +720,20 @@
             <figure>
               <img src="../images/chp04/cauchy-theorem-lemma-01-a.svg" alt="Triangle in D." title="Triangle in D." style="width:100%;">
               <figcaption>
-                Triangular contour $\Delta$ within $D.$
+                Contorno triangular $\Delta$ en el interior de $D.$
               </figcaption>
             </figure>
             <figure>
               <img src="../images/chp04/cauchy-theorem-lemma-01-b.svg" alt="Partition." title="Partition." style="width:100%;">
               <figcaption>
-                Triangular contours $C_k.$
+                Contornos triangulares $C_k.$
               </figcaption>
             </figure>
 
           </div>
 
           <p>
-            Using the triangle inequality we have
+            Usando la desigualdad triangular, tenemos
           </p>
           <div class="scroll-wrapper">
             \begin{eqnarray}\label{triangle01}
@@ -740,107 +742,115 @@
             \end{eqnarray}
           </div>
           <p>
-            Since the four quantities on the right side of the previous inequality
-            are nonnegative real numbers and, as a consequence, one of
-            them must be greater than or equal to the other three.
-            Let's denote the triangular contour of the integral
-            with the largest modulus by the symbol $\Delta_1.$ Thus
+            Dado que las cuatro cantidades del lado derecho de la desigualdad anterior
+            son números reales no negativos, y como consecuencia, una de ellas
+            debe ser mayor o igual a las otras tres.
+            Denotemos el contorno triangular de la integral
+            con el mayor módulo por el símbolo $\Delta_1.$ Así
             \begin{eqnarray}\label{triangle02}
             \left|\int_{\Delta} f(z)\,dz\right| \leq 4 \left|\int_{\Delta_1} f(z)\,dz\right| .
             \end{eqnarray}
           </p>
-
+          
           <p>
-            Now we repeat the foregoing process for the triangle $\Delta_1.$ That is,
-            we form triangles within $\Delta_1$ by joining the midpoints of its
-            sides by line segments in the same way as shown in Figure 14
-            and proceed to the equivalent of (\ref{sumcontours}) and (\ref{triangle01}).
-            The integral of $f$ along one of these new triangular contous, let's call it
-            $\Delta_2$ then satisifies
+            Ahora repetimos el proceso anterior para el triángulo $\Delta_1.$ Es decir,
+            formamos triángulos dentro de $\Delta_1$ uniendo los puntos medios de sus
+            lados mediante segmentos de línea de la misma manera que se muestra en la Figura 14
+            y procedemos con el equivalente de (\ref{sumcontours}) y (\ref{triangle01}).
+            La integral de $f$ a lo largo de uno de estos nuevos contornos triangulares, llamémoslo
+            $\Delta_2,$ entonces satisface
             \[
             \left|\int_{\Delta_1} f(z)\,dz\right| \leq 4 \left|\int_{\Delta_2} f(z)\,dz\right| .
             \]
           </p>
 
           <p>
-            We combine this last inequality with (\ref{triangle02}) to obtain
+            Combinamos esta última desigualdad con (\ref{triangle02}) para obtener
             \[
             \left|\int_{\Delta_1} f(z)\,dz\right| \leq 4 \left|\int_{\Delta_1} f(z)\,dz\right| \leq 4^2
             \left|\int_{\Delta_2} f(z)\,dz\right| .
             \]
           </p>
-
+          
           <p>
-            We continue in this way to obtain a sequence of "nested" triangular
-            contours $\Delta, \Delta_1, \Delta_2,\ldots,$ that is,
-            each triangle in the sequence is contained in the one immediately
-            preceding it. After $n$ steps we get
+            Continuamos de esta manera para obtener una secuencia 
+            de contornos triangulares "anidados" 
+            $\Delta, \Delta_1, \Delta_2, \ldots,$ es decir, 
+            cada triángulo en la secuencia está contenido 
+            en el inmediatamente anterior. Después de $n$ 
+            pasos obtenemos
             \begin{eqnarray}\label{bound4}
             \left|\int_{\Delta_1} f(z)\,dz\right| \leq 4^n \left|\int_{\Delta_n} f(z)\,dz\right| .
             \end{eqnarray}
           </p>
 
           <p>
-            Since the sequence triangular contours
-            $\Delta, \Delta_1, \Delta_2,\ldots,$ are nested, there exists
-            a point $z_0$ in the domain $D$ that is common to every
-            triangle in the sequence. Also, since $f$ is analytic, then $f'(z_0)$
-            exists. If we define
+            Dado que la secuencia de contornos triangulares
+            $\Delta, \Delta_1, \Delta_2, \ldots,$ está anidada, existe
+            un punto $z_0$ en el dominio $D$ que es común a cada
+            triángulo en la secuencia. Además, como $f$ es analítica, entonces $f'(z_0)$
+            existe. Si definimos
             \begin{eqnarray}\label{lambda}
             \Lambda(z) = \frac{f(z)-f(z_0)}{z-z_0} - f'(z_0),
             \end{eqnarray}
-            then $\left|\Lambda(z)\right|$ can be made arbitrarily small whenever
-            $z$ is sufficiently close to $z_0.$ This is true
-            because $f$ is analytic in $D$ and so the limit
+            entonces $\left|\Lambda(z)\right|$ puede hacerse arbitrariamente pequeño siempre que
+            $z$ esté lo suficientemente cerca de $z_0$. Esto es cierto
+            porque $f$ es analítica en $D$ y por lo tanto el límite
             \begin{eqnarray*}
             \lim_{z\to z_0}\frac{f(z)-f(z_0)}{z-z_0}
             \end{eqnarray*}
-            exists and is equal to $f'(z_0).$ In other words, for every $\epsilon\gt 0,$
-            there exist $\delta\gt 0$ such that
-          </p><div class="scroll-wrapper">
+            existe y es igual a $f'(z_0).$ En otras palabras, para cada $\epsilon \gt 0,$
+            existe $\delta \gt 0$ tal que
+          </p>
+          <div class="scroll-wrapper">
             \begin{eqnarray}\label{smallenough}
-            \left|\Lambda(z)\right|\lt \epsilon \quad \text{whenever}\quad \left|z-z_0\right|\lt \delta.
+            \left|\Lambda(z)\right|\lt \epsilon \quad \text{siempre que}\quad \left|z-z_0\right|\lt \delta.
             \end{eqnarray}
           </div>
-          We can solve (\ref{lambda}) for $f(z)$
-          and replace this value in the integrand in (\ref{bound4}) to obtain
-          <p></p>
+          <p>
+            Podemos resolver (\ref{lambda}) para $f(z)$
+            y reemplazar este valor en el integrando en (\ref{bound4}) para obtener
+          </p>
           <div class="scroll-wrapper">
             \begin{eqnarray}\label{expanded}
             \int_{\Delta_n}f(z)\,dz = f(z_0) \int_{\Delta_n}dz + f'(z_0)\int_{\Delta_n}(z-z_0)\,dz +
             \int_{\Delta_n}(z-z_0)\Lambda(z)\,dz.
             \end{eqnarray}
           </div>
+
           <p>
-            Since
+            Dado que
             \[
-            \int_{\Delta_n}dz =0 \quad \text{and}\quad \int_{\Delta_n}(z-z_0)\,dz=0
+            \int_{\Delta_n}dz =0 \quad \text{y}\quad \int_{\Delta_n}(z-z_0)\,dz=0
             \]
-            (Why?), the right side of (\ref{expanded}) reduces to
+            (¿Por qué?), el lado derecho de (\ref{expanded}) se reduce a
             \begin{eqnarray}\label{reduced}
             \int_{\Delta_n}f(z)\,dz = \int_{\Delta_n}(z-z_0)\Lambda(z)\,dz.
             \end{eqnarray}
           </p>
-
+          
           <p>
-            Now let $L$ and $L_1$ denote the lengths of the triangular contours $\Delta$ and $\Delta_1,$
-            respectively. Then, if we keep in mind how the triangle $\Delta_1$ was constructed,
-            it is a straightforward problem in similar triangles to show that
-            $L_1$ is related to $L$ by $L_1=\dfrac{1}{2}L.$ Likewise,
-            if $L_2$ is the legth of $\Delta_2,$ then $L_2=\dfrac{1}{2}L_1 = \dfrac{1}{2^2}L.$
-            In general we have that if $L_n$ is the length of $\Delta_n,$ then
+            Ahora, sea $L$ y $L_1$ las longitudes de los 
+            contornos triangulares $\Delta$ y $\Delta_1,$
+            respectivamente. Luego, si tenemos en cuenta 
+            cómo se construyó el triángulo $\Delta_1$,
+            es un problema sencillo en triángulos semejantes mostrar que
+            $L_1$ está relacionado con $L$ por $L_1=\dfrac{1}{2}L.$
+            Del mismo modo, si $L_2$ es la longitud de $\Delta_2,$ 
+            entonces $L_2=\dfrac{1}{2}L_1 = \dfrac{1}{2^2}L.$
+            En general, tenemos que si $L_n$ es la longitud de $\Delta_n,$ entonces
             $L_n= \dfrac{1}{2^n}L.$
           </p>
 
           <p>
-            For any $z\in \Delta_n,$ we have that
-            $\abs{z-z_0}\lt L_n,$ where $\ds L_n= \frac{1}{2^n}L.$
-            If we choose $n$ large enough so that
+            Para cualquier $z \in \Delta_n,$ tenemos que
+            $\abs{z-z_0}\lt L_n,$ donde $\ds L_n= \frac{1}{2^n}L.$
+            Si elegimos $n$ lo suficientemente grande para que
             \[
             \abs{z-z_0}\lt \frac{1}{2^n}L\lt \delta,
             \]
-            it then follows from (\ref{reduced}), (\ref{smallenough}) and the
-            <em>ML</em>-inequality
+            se sigue de (\ref{reduced}), (\ref{smallenough}) y la
+            <em>desigualdad ML</em> que
           </p>
           <div class="scroll-wrapper">
             \begin{eqnarray}\label{boundgeneral}
@@ -848,15 +858,16 @@
             \epsilon \cdot \frac{L}{2^n} = \frac{L^2}{4^n}\epsilon
             \end{eqnarray}
           </div>
-
+          
           <p>
-            Putting (\ref{bound4}) together with (\ref{boundgeneral}) gives us a bound for
-            the modulus of the integral on $\Delta:$
+            Al combinar (\ref{bound4}) con (\ref{boundgeneral}) obtenemos una cota para
+            el módulo de la integral sobre $\Delta:$
             \begin{eqnarray}\label{lastbound}
             \abs{\int_{\Delta}f(z)\,dz } \leq 4^n \frac{L^2}{4^n}\epsilon = L^2\epsilon.
             \end{eqnarray}
-            Since $\epsilon \gt 0$ can be made arbitrarily small, then $\abs{\int_{\Delta}f(z)\,dz}=0.$
-            Therefore
+            Dado que $\epsilon \gt 0$ puede hacerse arbitrariamente 
+            pequeño, entonces $\abs{\int_{\Delta}f(z)\,dz}=0.$
+            Por lo tanto,
             \begin{eqnarray*}
             \int_{\Delta}f(z)\,dz =0.
             \end{eqnarray*}
