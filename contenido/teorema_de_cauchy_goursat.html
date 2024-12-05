@@ -122,178 +122,182 @@
 
               
 
-                <h2>Cauchy's Theorem</h2>
+                <h2>Teorema de Cauchy</h2>
 
-               <p>
-                In 1825 the French mathematician Augustin-Louis Cauchy proved 
-                one of the most important theorems in complex analysis:
-               </p>
-
-               <div class="theorem">
-                <span style="font-style: normal!important;"><strong>(Cauchy's Theorem)</strong></span>
-                Suppose that $f$ is analytic, with the derivative $f'$
-                continuous on and inside a closed simple contour $C.$
-                Then
-                \[
-                \int_C f(z)\, dz = 0.
-                \]
-               </div>
+                <p>
+                  En 1825, el matemático francés Augustin-Louis Cauchy demostró
+                  uno de los teoremas más importantes en el análisis complejo:
+                </p>
+                
+                <div class="theorem">
+                  <span style="font-style: normal!important;"><strong>(Teorema de Cauchy)</strong></span>
+                  Supongamos que $f$ es analítica, con la derivada $f'$
+                  continua sobre y dentro de un contorno simple cerrado $C.$
+                  Entonces
+                  \[
+                  \int_C f(z)\, dz = 0.
+                  \]
+                </div>
+                
+               
 
               <figure>
                 <img src="../images/chp04/cauchy-theorem.svg" alt="Cauchy's Theorem" title="Cauchy's Theorem" style="width:60%;">
                 <figcaption>
-                    Cauchy's Theorem implies $\displaystyle \int_C f(z)\,dz =0.$
+                    El Teorema de Cauchy implica que $\displaystyle \int_C f(z)\,dz =0.$
                 </figcaption>
               </figure>
 
-               <p>
-                If the function is not analytic on the whole region inside $C,$
-                then the integral may or may not be $0.$ For instance, 
-                Let $C$ be the unit circle and $f(z)=1/z.$ Then $f$ is analytic
-                at all points except $z=0,$  and indeed the integral is
-                <em>not zero</em>. In fact,
+              <p>
+                Si la función no es analítica en toda la región dentro de $C,$
+                entonces la integral puede o no ser igual a $0.$ Por ejemplo,
+                sea $C$ el círculo unitario y $f(z)=1/z.$ Entonces $f$ es analítica
+                en todos los puntos excepto en $z=0,$ y, de hecho, la integral
+                <em>no es cero</em>. En efecto,
                 \[
                 \int_C \frac{1}{z}\,dz = 2\pi i,
                 \]
-                as shown in example 2 from the 
-                <a href="complex_integration.html">Complex Integration</a> section.
-                On the other hand, if $f(z) = 1/z^2,$ then $f$ is still analytic
-                at all points except $z=0,$ but now the integral <em>is</em> $0.$
-                This value results <em>not</em> from Cauchy's Theorem, since $f$
-                is not analytic everywhere inside $C,$ but rather from the fact that 
-                $f$ has an antiderivative on $\C\setminus \{0\}.$ That is, $f$ is 
-                the derivative of $F'(z)=-1/z.$
-               </p>
+                como se muestra en el ejemplo 2 de la sección 
+                <a href="integracion_compleja.html">Integración Compleja</a>.
+                Por otro lado, si $f(z) = 1/z^2,$ entonces $f$ sigue siendo analítica
+                en todos los puntos excepto en $z=0,$ pero ahora la integral <em>es</em> $0.$
+                Este valor no resulta de manera directa del Teorema de Cauchy, ya que $f$
+                no es analítica en toda la región dentro de $C,$ sino más bien del hecho de que 
+                $f$ tiene una antiderivada en $\C\setminus \{0\}.$ Es decir, $f$ es 
+                la derivada de $F'(z)=-1/z.$
+              </p>
 
-               <p>
-                <em>Proof of Theorem 1.</em> The proof of this theorem is an immediate consequence
-                of <strong>Green's theorem</strong> in the plane, which states that, for 
-                continuously differentiable functions $P(x,y)$ and $Q(x,y),$
-               </p>
-               <div class="scroll-wrapper">
+              <p>
+                <em>Demostración del Teorema 1.</em> La demostración de 
+                este teorema es una consecuencia inmediata 
+                del <strong>Teorema de Green</strong> en el plano, el cual establece que, para 
+                funciones $P(x,y)$ y $Q(x,y)$ continuamente diferenciables,
+              </p>
+              <div class="scroll-wrapper">
                 \begin{eqnarray}\label{green-theo}
                 \int_C P\,dx + Q\, dy &amp; =&amp; \iint_R \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dA
                 \end{eqnarray}
-               </div>
-               <p>
-                In Green's theorem, $R$ represents the <em>inside</em> 
-                of $C,$ $C$ is traversed in a counterclockwise direction, and 
-                $P$ and $Q$ are sufficiently smooth.
-               </p>
-               <p>Setting $f=u+iv,$ we have</p>
-               <div class="scroll-wrapper">
+              </div>
+              <p>
+                En el teorema de Green, $R$ representa el <em>interior</em> 
+                de $C,$ $C$ se recorre en sentido antihorario, y 
+                $P$ y $Q$ son funciones suficientemente suaves.
+              </p>
+              <p>Al establecer $f=u+iv,$ tenemos</p>
+              <div class="scroll-wrapper">
                 \begin{eqnarray*}
                 \int_C f(z)\,dz &amp; =&amp; \int_C \left(u+iv\right) \left(dx+idy\right)\\
                 &amp; =&amp; \int_C \left(u\,dx - v\,dy \right)  + i \int_C \left(u\, dy+v \,dx\right).
                 \end{eqnarray*}
-               </div>
-               <p>
-                By applying Green's theorem to each integral, we get
-               </p>
-               <div class="scroll-wrapper">
+              </div>
+              <p>
+                Aplicando el teorema de Green a cada integral, obtenemos
+              </p>
+              <div class="scroll-wrapper">
                 \begin{eqnarray*}
                 \int_C f(z)\,dz &amp; =&amp; \iint_R \left(-\frac{\partial v}{\partial x} - \frac{\partial u}{\partial y}\right) dA + i  \iint_R \left(\frac{\partial u}{\partial x} - \frac{\partial v}{\partial y}\right) dA \\
                 \end{eqnarray*}
-               </div>
-               <p>
-                Both intergrals, on the right side, are zero by the <a href="complex_differentiation.html">Cauchy-Riemann equations</a>. $\hspace{5pt} \blacksquare$
-               </p>
-
-               <p>Observe that once it has been established that the value 
-                of this integral is zero,
-                the orientation of $C$ becomes irrelevant.
-                The conclusion in Theorem 1 is also true if $C$ is taken in the
-                clockwise direction, since then we can use the fact that 
+              </div>
+              <p>
+                Ambas integrales en el lado derecho son 
+                cero debido a las <a href="diferenciacion_compleja.html">ecuaciones de Cauchy-Riemann</a>. $\hspace{5pt} \blacksquare$
+              </p>
+              
+              <p>
+                Observemos que, una vez establecido que el valor 
+                de esta integral es cero,
+                la orientación de $C$ se vuelve irrelevante.
+                La conclusión del Teorema 1 también es válida si $C$ se toma en 
+                sentido horario, ya que podemos usar el hecho de que 
                 \[
                 \int_C f(z)\,dz = - \int_{-C} f(z)\,dz.
                 \]
-               </p>
+              </p>
 
-               <div class="practice">
-                
-                <p><strong>Example 1:</strong>
-                  Consider the function $f(z)= \exp\left(z^3\right).$ If $C$ is 
-                  any simple closed countour, in either direction, then
+              <div class="practice">
+                <p><strong>Ejemplo 1:</strong>
+                  Considera la función $f(z)= \exp\left(z^3\right).$ Si $C$ es 
+                  cualquier contorno cerrado simple, en cualquier dirección, entonces
                   \[
                   \int_C \exp\left(z^3\right)\,dz =0.
                   \]
-                  In this case $f$ is the composition of two functions, both analytic everywhere.
-                  Thus, $f$ is also analytic and its derivative 
+                  En este caso, $f$ es la composición de dos funciones, 
+                  ambas analíticas en todo punto.
+                  Por lo tanto, $f$ también es analítica, y su derivada 
                   $f'(z) = 3z^2\exp\left(z^3\right)$
-                  is continuous everywhere.
+                  es continua en todo punto.
                 </p>
-               </div>
-               
-
+              </div>
+              
+          
             </div>
 
             <hr>
 
- 
-
             <div id="section2">
-              <h2>Cauchy-Goursat Theorem</h2>
+              <h2>Teorema de Cauchy-Goursat</h2>
 
               <p>
-                In 1900 the French mathematician 
+                En 1900, el matemático francés 
                 <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Goursat/" target="_blank">Edouard Goursat</a>
-                proved that the assumption of continuity of $f'$
-                is not necessary to reach the conclusion of <em>Cauchy's theorem</em>. 
-                The resulting modified version of Cauchy's theorem is known 
-                today as the <em>Cauchy-Goursat Theorem</em>. 
-                as we can expect,
-                with fewer hypotheses, the proof of this version of Cauchy's
-                theorem is more complicated than the one just presented.
-              </p> 
-
+                demostró que la suposición de continuidad de $f'$
+                no es necesaria para llegar a la conclusión del <em>teorema de Cauchy</em>. 
+                La versión modificada resultante del teorema de Cauchy se conoce hoy en día 
+                como el <em>Teorema de Cauchy-Goursat</em>. 
+                Como era de esperarse,
+                con menos hipótesis, la demostración de esta versión del teorema de Cauchy 
+                es más complicada que la que acabamos de presentar.
+              </p>
+              
               <div class="theorem">
-                <span style="font-style: normal!important;"><strong>(Cauchy-Goursat Theorem)</strong></span>
-                If a function $f$ is analytic at all points interior to and on a simple 
-                closed contour $C,$ then
+                <span style="font-style: normal!important;"><strong>(Teorema de Cauchy-Goursat)</strong></span>
+                Si una función $f$ es analítica en todos los puntos interiores a un contorno 
+                cerrado simple $C$ y en el propio contorno, entonces
                 \[
                 \int_C f(z) \, dz = 0.
                 \]
               </div>
-
+              
               <div class="practice">
-                  <p>
-                    <strong>Example 2:</strong>
-                    The function $f(z)=\exp(z)$ is entire and consequently
-                    is analytic at all points within and on any simple closed 
-                    contour $C.$ It follows from the Cauchy-Goursat Theorem that 
-                    \[
-                    \int_C \exp(z)\,dz = 0.
-                    \]
-                    Similarly, since  $\sin z,$ $\cos z$ and
-                  </p>
-                  <div class="scroll-wrapper">
-                    \begin{eqnarray*}
-                    p(z) = a_nz^n+ a_{n-1}z^{n-1} + \cdots + a_1 z + a_0, 
-                    \quad (n =0,1,2,\ldots)
-                    \end{eqnarray*}
-                   </div>
-                   <p>are entire, then</p>
-                  <div class="scroll-wrapper">
-                    \begin{eqnarray*}
-                    \int_C \sin z\,dz = 0,\quad \int_C \cos z\,dz = 0,\quad \int_C p(z)\,dz = 0.
-                    \end{eqnarray*}
-                   </div>
-                   <p>
-                    for any simple closed contour $C$
-                   </p>
+                <p>
+                  <strong>Ejemplo 2:</strong>
+                  La función $f(z)=\exp(z)$ es entera y, en consecuencia,
+                  es analítica en todos los puntos dentro y sobre cualquier contorno 
+                  cerrado simple $C.$ Se deduce del Teorema de Cauchy-Goursat que
+                  \[
+                  \int_C \exp(z)\,dz = 0.
+                  \]
+                  De manera similar, dado que $\sin z,$ $\cos z$ y
+                </p>
+                <div class="scroll-wrapper">
+                  \begin{eqnarray*}
+                  p(z) = a_nz^n+ a_{n-1}z^{n-1} + \cdots + a_1 z + a_0, 
+                  \quad (n =0,1,2,\ldots)
+                  \end{eqnarray*}
+                </div>
+                <p>son funciones enteras, entonces</p>
+                <div class="scroll-wrapper">
+                  \begin{eqnarray*}
+                  \int_C \sin z\,dz = 0,\quad \int_C \cos z\,dz = 0,\quad \int_C p(z)\,dz = 0.
+                  \end{eqnarray*}
+                </div>
+                <p>
+                  para cualquier contorno cerrado simple $C$.
+                </p>
               </div>
+              
 
               <div class="practice">
                 <p>
-                  <strong>Example 3:</strong>
-                  We can use Cauchy-Goursat Theorem to evaluate 
+                  <strong>Ejemplo 3:</strong>
+                  Podemos usar el Teorema de Cauchy-Goursat para evaluar 
                   \[
                   \int_C \frac{1}{z^2}\,dz,
                   \]
-                  where $C$ is the ellipse $(x-2)^2+\dfrac{1}{4}(y-5)^2=1.$
-                  Note that the function $f(z)=1/z^2$ is
-                  analytic everywhere except at $z=0.$ In this case, $z=0$ is not inside 
-                  or on the simple closed elliptical contour $C.$ Hence
+                  donde $C$ es la elipse $(x-2)^2+\dfrac{1}{4}(y-5)^2=1.$
+                  Observa que la función $f(z)=1/z^2$ es 
+                  analítica en todos los puntos excepto en $z=0.$ En este caso, $z=0$ no está dentro 
+                  ni sobre el contorno elíptico cerrado simple $C.$ Por lo tanto,
                   \[
                   \int_C \frac{1}{z^2}\,dz=0.
                   \]
@@ -303,8 +307,8 @@
                   <div class="ggbElement" id="ggb-element-1"></div>
                   <!--<img src="../images/chp04/cauchy-theorem-example-03.svg" alt="Cauchy-Goursat Theorem example" title="Cauchy-Goursat Theorem example" style="width:55%;">-->
                   <figcaption>
-                     The elliptical contour $C.$ Activate the box <code>Phase portrait</code> to show  
-                     the enhanced phase portrait of $f(z)=1/z^2,$ with level curves of the modulus.
+                    El contorno elíptico $C.$ Activa la casilla <code>Retrato de fases</code> para mostrar  
+                    el retrato de fases mejorado de $f(z)=1/z^2,$ con curvas de nivel del módulo.
                   </figcaption>
                 </figure>
             </div>
@@ -314,32 +318,33 @@
             <hr>
 
             <div id="section3">
-              <h2>Simply and multiply connected domains</h2>
-              
+
+              <h2>Dominios simplemente y múltiples conexos</h2>
               <p>
-                We say that a domain $D$ is <em>simply connected</em> if every simple 
-                closed contour $C$ lying entirely in $D$ can be shrunk to a point
-                without leaving $D.$ See Figure 3. In other words, if we draw 
-                any simple closed contour $C$ so that it lies entirely within 
-                a simply connected domain, then $C$ encloses only points of 
-                the domain $D.$ 
+                Decimos que un dominio $D$ es <em>simplemente conexo</em> si
+                todo contorno cerrado simple $C$ que se encuentra completamente
+                en $D$ puede contraerse a un punto sin salir de $D.$ Ver Figura 3. 
+                En otras palabras, si dibujamos cualquier contorno cerrado simple $C$ 
+                de modo que esté completamente contenido en un dominio simplemente 
+                conexo, entonces $C$ encierra únicamente puntos del dominio $D.$
               </p>
+
 
               <figure>
                 <img src="../images/chp04/cauchy-theorem-simply-connected.gif" alt="Simply connected" title="Simply connected" style="width:500px;">
                 <figcaption>
-                  Simply connected domain $D.$
+                  Dominio simplemente conexo $D.$
                 </figcaption>
               </figure>
 
+              <p>
+                En otras palabras, un dominio simplemente conexo no tiene "agujeros". 
+                Todo el plano complejo es un ejemplo de un dominio simplemente conexo; 
+                el anillo definido por $1 \lt |z| \lt 2$ no es simplemente conexo.
+              </p>
               
 
-              <p>
-                In other words, a simply connected domain has no "holes" in it. 
-                The entire complex plane is an example of a simply 
-                connected domain; the annulus defined by $1 \lt |z| \lt 2$ is 
-                not simply connected.
-              </p>
+              
 
               <figure id="annulus">
                 <img src="../images/chp04/annulus.svg" alt="Annulus" title="Annulus" style="width:55%;">
@@ -347,19 +352,21 @@
                     $1 \lt |z| \lt 2.$
                 </figcaption>
                </figure>
-                
-              <p>A domain that is not simply 
-                connected is called a <em>multiply connected</em> domain; that is, a 
-                multiply connected domain has "holes" in it. For example,
-                note in Figure 5
-                that if the curve $C$ enclosing the "hole" (on the left side)
-                is shrunk to a point, the curve would have to leave $D$ eventually. 
+
+               <p>
+                Un dominio que no es simplemente conexo se llama 
+                un dominio <em>multiplemente conexo</em>; es decir, 
+                un dominio multiplemente conexo tiene "agujeros". Por 
+                ejemplo, observa en la Figura 5 que si la curva $C$ que 
+                rodea el "agujero" (en el lado izquierdo) se reduce a 
+                un punto, la curva tendría que abandonar $D$ eventualmente.
               </p>
+
 
               <figure>
                 <img src="../images/chp04/cauchy-theorem-not-simply-connected.gif" alt="No simply connected" title="Not simply connected" style="width:500px;">
                 <figcaption>
-                  Not simply connected domain $D.$
+                  Dominio no simplemente conexo $D$.
                 </figcaption>
               </figure>
                 
