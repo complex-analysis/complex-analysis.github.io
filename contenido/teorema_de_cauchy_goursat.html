@@ -873,38 +873,39 @@
 
         <div class="practice">
           <p>
-            <strong>Exercise 2:</strong>
-            Use <strong>Lemma 7</strong> and the fact that any closed polygonal
-            contour $C$ can be "triangulated" to prove <strong>Lemma 8</strong>.
+            <strong>Ejercicio 2:</strong>
+            Usa el <strong>Lema 1</strong> y el hecho de que cualquier contorno
+            poligonal cerrado $C$ puede ser "triangulado" para demostrar el
+            <strong>Lema 2</strong>.
           </p>
 
           <div class="figure-container">
             <figure>
               <img src="../images/chp04/cauchy-theorem-lemma-02-a.svg" alt="Closed polygonal contour" title="Closed polygonal contour" style="width:100%;">
               <figcaption>
-                Closed polygonal contour $C$ within $D.$
+                Contorno poligonal cerrado $C$ dentro de $D.$
               </figcaption>
             </figure>
             <figure>
               <img src="../images/chp04/cauchy-theorem-lemma-02-b.svg" alt="Triangulation of the polygonal contour" title="Triangulation of the polygonal contour" style="width:100%;">
               <figcaption>
-                Triangulation of the polygonal contour $C.$
+                Triangulación del contorno poligonal $C.$
               </figcaption>
             </figure>
 
           </div>
 
           <p>
-            <strong>Remark:</strong>
-            Roughly, "triangulated" means that the closed polygon $C$ can be decomposed
-            into a finite number of triangles by adding lines as shown in
-            Figure 16.
-            Note that we can then proceed as in the proof of <strong>Lemma 7</strong>
-            and integrate twice along these added line segments but
-            in opposite directions. If the closed polygon $C$ has $n$ sides,
-            then it can be decomposed
-            into n triangles $C_1,C_2, \ldots, C_n$ and we would eventually arrive
-            at the following analogue of (\ref{sumcontours}):
+            <strong>Observación:</strong>
+            Aproximadamente, "triangulado" significa que el polígono cerrado $C$ puede descomponerse
+            en un número finito de triángulos añadiendo líneas como se muestra en
+            la Figura 16.
+            Nota que luego podemos proceder como en la demostración de la <strong>Lemma 1</strong>
+            e integrar dos veces a lo largo de estos segmentos de línea añadidos, pero
+            en direcciones opuestas. Si el polígono cerrado $C$ tiene $n$ lados,
+            entonces puede descomponerse
+            en $n$ triángulos $C_1, C_2, \ldots, C_n$ y eventualmente llegaremos
+            a la siguiente análoga de (\ref{sumcontours}):
             \[
             \int_C f(z)\,dz = \sum_{k=1}^{n} \int_{C_k}f(z)\,dz.
             \]
@@ -912,44 +913,46 @@
         </div>
 
         <p>
-          Now the Cauchy-Goursat Theorem can easily be proved using
-          <strong>Lemma 8</strong> and the fact that any closed contour
-          $C$ can be approximated to any desired degree of accuracy
-          by a closed polygonal path.
+          Ahora, el Teorema de Cauchy-Goursat puede demostrarse fácilmente usando
+          la <strong>Lemma 2</strong> y el hecho de que cualquier contorno cerrado
+          $C$ puede ser aproximado con el grado de precisión deseado
+          por una trayectoria cerrada poligonal.
         </p>
+        
+
 
         <figure>
           <img src="../images/chp04/cauchy-theorem-final-proof.gif" alt="Approximation by polygonal path" title="Approximation by polygonal path" style="width:550px;">
-          <figcaption>
-            The countour $C$ is approximated by a polygonal contour $P.$
-          </figcaption>
+            <figcaption>
+              El contorno $C$ es aproximado por un contorno poligonal $P.$
+            </figcaption>
         </figure>
 
         <p>
-          <em>Proof of Cauchy-Goursat Theorem.</em>
-          Consider a simple closed contour $C$ and $n$ points $z_1, z_2, \ldots, z_n$
-          on $C$ through wich a polygonal path $P$ has been constructed.
-          Then it can be shown that the difference
+          <em>Demostración del Teorema de Cauchy-Goursat.</em>
+          Consideremos un contorno cerrado simple $C$ y $n$ puntos $z_1, z_2, \ldots, z_n$
+          en $C$ a través de los cuales se ha construido un camino poligonal $P$.
+          Entonces se puede demostrar que la diferencia
           \[
           \abs{\int_C f(z)\,dz - \int_P f(z)\,dz}
           \]
-          can be made arbitrarily small as $n\to \infty.$
-          Thus, by <strong>Lemma 8</strong>, $\ds \int_P f(z)\,dz = 0$
-          for any $n.$ Therefore
+          puede hacerse arbitrariamente pequeña cuando $n \to \infty.$
+          Así, por el <strong>Lema 2</strong>, $\ds \int_P f(z)\,dz = 0$
+          para cualquier $n.$ Por lo tanto,
           $\ds \int_C f(z)\,dz=0.$ $\hspace{10pt}\blacksquare$
         </p>
 
-
         <p>
-          The Cauchy-Goursat Theorem has been established through various methods.
-          For instance, proofs have been constructed specifically for
-          rectangles or disks (see [<a href="#brown2009">3</a>, <a href="#marsden1999">10</a>]).
-          Beyond these approaches, many other proofs of the theorem have been developed.
-          Notably, John D. Dixon presented a concise and elegant proof relying only on
-          fundamental concepts of complex function theory in convex sets
+          El Teorema de Cauchy-Goursat ha sido establecido a través de varios métodos.
+          Por ejemplo, se han construido demostraciones específicamente para
+          rectángulos o discos (ver [<a href="#brown2009">3</a>, <a href="#marsden1999">10</a>]).
+          Más allá de estos enfoques, se han desarrollado muchas otras demostraciones del teorema.
+          Cabe destacar que John D. Dixon presentó una demostración concisa 
+          y elegante que depende únicamente de los conceptos fundamentales 
+          de la teoría de funciones complejas en conjuntos convexos
           [<a href="#dixon1971">6</a>].
-          Rudolf Výborný, on the other hand, offered a proof based on
-          differentiable homotopy [<a href="#vyborny1979">14</a>].
+          Por otro lado, Rudolf Výborný ofreció una demostración basada en
+          homotopía diferenciable [<a href="#vyborny1979">14</a>].
         </p>
 
       </div>
@@ -957,7 +960,7 @@
       <hr>
 
       <div id="section5">
-        <h2>References</h2>
+        <h2>Referencias</h2>
 
         <ol class="bbtex-list">
           <li id="bottazzini1984">Bottazzini, U. (1984). <em>The higher calculus: a history of real and complex analysis
