@@ -368,7 +368,7 @@
           if(newN!=N,
             N = newN;
             //The following line is DIRTY, but it makes the application run smooth for high degrees. :-)
-            //Nethertheless, it might cause render errors for high degree surfaces. In fact, only a subset of the surface is rendered.
+            //Nevertheless, it might cause render errors for high degree surfaces. In fact, only a subset of the surface is rendered.
             //Adapt limit according to hardware.
             //values of kind 4*n-1 are good values, as it means to use vectors of length 4*n.
             N = min(N,11);
@@ -428,7 +428,7 @@
           if(!intersect & id>0,
             s = gets(id); //s = floor(log_2(id))
             
-            //the intervals [a,b] are chossen such that (id in binary notation)
+            //the intervals [a,b] are chosen such that (id in binary notation)
             //id = 1   => [a,b]=[l,u]
             //id = 10  => [a,b]=[l,(u+l)/2]
             //id = 101 => [a,b]=[l,(u+3*l)/4]

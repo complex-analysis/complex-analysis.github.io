@@ -37,7 +37,7 @@ Some of the topics covered here are basic arithmetic of complex numbers, complex
 Riemann surfaces, limits, derivatives, domain coloring, analytic landscapes and 
 some applications of conformal mappings.
 
-What distinguishes this online book from other traditional texts in the first instance is the use of interactive applets that allow you to explore properties of complex numbers geometrically and analyze complex functions by using different techniques to visualize them. For the design of applets I used the following open-source softwares: [GeoGebra](https://geogebra.org/), [p5.js](https://p5js.org/), [Cindy.js](https://cindyjs.org/) and [MathCell](http://mathcell.org/).
+What distinguishes this online book from other traditional texts in the first instance is the use of interactive applets that allow you to explore properties of complex numbers geometrically and analyze complex functions by using different techniques to visualize them. For the design of applets I used the following open-source software: [GeoGebra](https://geogebra.org/), [p5.js](https://p5js.org/), [Cindy.js](https://cindyjs.org/) and [MathCell](http://mathcell.org/).
 
 Although I advocate for the use of computers as an aid to geometric reasoning,
 I highly encourage you to practice your problem solving skills by solving
@@ -48,7 +48,7 @@ Think of the computer as a physicist would his laboratory. It may be used
 to check existing ideas about our world, or as a tool to discover new phenomena
 which then poses new ideas or challenges for their explanation. 
 Throughout the sections I have provided detailed instructions (in some cases)
-to explore concepts and relationships about complex numbers using specific softwares, 
+to explore concepts and relationships about complex numbers using specific software, 
 nevertheless you must still keep in mind that computer hardware and software 
 are ephemeral things in comparison with mathematical ideas, which are timeless.
 
