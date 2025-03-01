@@ -285,7 +285,6 @@ polygonSeries.data.setAll([
   { id: "TC", value: 1 },
   { id: "PW", value: 1 },
   { id: "NR", value: 1 },
-
   // https://www.iban.com/country-codes
   { id: "AQ", value: 0 }, // Antartica
   { id: "CG", value: 0 }, // The Congo
@@ -299,7 +298,7 @@ polygonSeries.data.setAll([
   { id: "MQ", value: 0 }, // Martinique
   { id: "FK", value: 0 }, // Falkland Islands (the) [Malvinas]
 ]);
-
+ 
 var heatLegend = chart.children.push(am5.HeatLegend.new(root, {
   orientation: "vertical",
   startColor: am5.color("#9cc7e7"),
