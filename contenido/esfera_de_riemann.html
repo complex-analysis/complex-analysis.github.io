@@ -123,28 +123,45 @@
                     infinito.
                 </p>
 
-                <p>En contraste con la línea real, para la cual los símbolos $+\infty$ y $-\infty$
-                    se puede agregar, en el caso de los números complejos $\mathbb C$
-                    solo necesitamos un símbolo $\infty.$ La razón es que $\mathbb C$
-                    es un conjunto que no tienen un orden natural como $\mathbb R.$
-                    Formalmente agregamos el símbolo $\infty$ a $\mathbb C$ para obtener el
-                    <em>plano complejo extendido</em>, denotado por
-                    $\mathbb C^*=\mathbb C \cup \{\infty\},$ y definimos las operaciones
-                    con $\infty$ con las siguientes reglas
-                </p><div class="scroll-wrapper">
-                    \begin{eqnarray*}
-                    z+\infty&amp;=&amp;\infty\\
-                    z\cdot \infty&amp;=&amp;\infty \quad \quad \text{provided } z\neq 0\\
-                    \infty+\infty&amp;=&amp;\infty\\
-                    \infty\cdot\infty&amp;=&amp; \infty\\
-                    \frac{z}{\infty}&amp;=&amp;0
-                    \end{eqnarray*}
-                </div>
-                para $z\in \mathbb C.$ Notemos que algunas operaciones no están definidas:
-                <div class="scroll-wrapper">
-                    $$\frac{\infty}{\infty}\,,\quad 0\cdot \infty\,,\quad \infty-\infty\,,$$
-                </div>
-                y además no están definidas por las mismas razones que de su versión de números reales.<p></p>
+                <p>A diferencia de la recta real, a la que se pueden añadir 
+    $+\infty$ y $-\infty$, en $\mathbb{C}$ solo tenemos un 
+    $\infty.$ La razón es que $\mathbb{C}$ no tiene un 
+    orden natural como lo tiene $\mathbb{R}.$ Formalmente, 
+    añadimos un símbolo $\infty$ a $\mathbb{C}$ para obtener 
+    el <em>plano complejo extendido</em>, denotado por 
+    $\mathbb{C}^* = \mathbb{C} \cup \{\infty\}.$
+    Establecemos operaciones con $\infty$ definiendo:
+    <br>
+    <div class="scroll-wrapper">
+    \begin{eqnarray*}
+    z+\infty = \infty + z = \infty
+    \end{eqnarray*}
+    para todo $z \neq \infty,$ y 
+    <br>
+    \begin{eqnarray*}
+    z\cdot \infty = \infty \cdot z = \infty
+    \end{eqnarray*}
+    para todo $z \neq 0,$ incluyendo $z = \infty.$ 
+    Sin embargo, no es posible definir
+    <br>
+    \begin{eqnarray*}
+    \infty + \infty\,,\, \infty - \infty\,,\, 0\cdot \infty
+    \end{eqnarray*}
+    </div>
+    porque no hay interpretaciones algebraicas ni geométricas 
+    consistentes para estas operaciones.
+</p>
+
+<p>
+    Por convención especial también definimos:
+    <div class="scroll-wrapper">
+    \[
+    \dfrac{z}{0} = \infty\, \text{ para }\, z \neq 0
+    \;\text{ y }\; \dfrac{z}{\infty} = 0\, \text{ para }\, z \neq \infty.
+    \]
+    </div>
+    Los cocientes $\dfrac{0}{0}$ y $\dfrac{\infty}{\infty}$ no están definidos.
+</p>
 
                 <p>
                     El plano complejo extendido se puede mapear biyectivamente

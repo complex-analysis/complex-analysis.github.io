@@ -113,34 +113,52 @@
 
             <div id="section1">
                 <h2>The Point at infinity</h2>
-                <p>For some purposes it is convenient to introduce the <em>point at infinity</em>, denoted by $\infty,$
-                    in
-                    addition to the points $z\in \mathbb C.$ We must be careful in doing so, because it can lead to
-                    confusion
-                    and abuse of the symbol $\infty.$ However, with care it can be useful, if we want
-                    to be able to talk about infinite limits and limits at infinity.</p>
+                <p>For some purposes it is convenient to introduce the 
+                    <em>point at infinity</em>, denoted by $\infty,$
+                    in addition to the points $z\in \mathbb C.$ We must be 
+                    careful in doing so, because it can lead to
+                    confusion and abuse of the symbol $\infty.$ However, with care 
+                    it can be useful, if we want
+                    to be able to talk about infinite 
+                    limits and limits at infinity.</p>
 
-                <p>In contrast to the real line, to which $+\infty$ and $-\infty$ can be added, we have only one
+                <p>In contrast to the real line, to which $+\infty$ 
+                    and $-\infty$ can be added, we have only one
                     $\infty$ for
-                    $\mathbb C.$ The reason is that $\mathbb C$ has no natural ordering as $\mathbb R$ does. Formally we
-                    add a
-                    symbol $\infty$ to $\mathbb C$ to obtain the <em>extended complex plane</em>, denoted by $\mathbb
-                    C^*=\mathbb C \cup \{\infty\},$ and define operations with $\infty$ by the rules
-                </p><div class="scroll-wrapper">
+                    $\mathbb C.$ The reason is that $\mathbb C$ has no 
+                    natural ordering as $\mathbb R$ does. Formally we
+                    add a symbol $\infty$ to $\mathbb C$ to obtain the 
+                    <em>extended complex plane</em>, denoted by $\mathbb
+                    C^*=\mathbb C \cup \{\infty\}.$
+                    We establish operations with $\infty$ by setting
                     \begin{eqnarray*}
-                    z+\infty&amp;=&amp;\infty\\
-                    z\cdot \infty&amp;=&amp;\infty \quad \quad \text{provided } z\neq 0\\
-                    \infty+\infty&amp;=&amp;\infty\\
-                    \infty\cdot\infty&amp;=&amp; \infty\\
-                    \frac{z}{\infty}&amp;=&amp;0
+                    z+\infty = \infty + z =\infty
+                    \end{eqnarray*}
+                    for every $z\neq \infty,$ and 
+                    \begin{eqnarray*}
+                    z\cdot \infty = \infty \cdot z =\infty
+                    \end{eqnarray*}
+                    for all $z\neq 0,$ including $z= \infty.$ 
+                    However, it is not possible to define 
+                 <div class="scroll-wrapper">
+                    \begin{eqnarray*}
+                    \infty + \infty\,,\, \infty - \infty\,,\, 0\cdot  \infty
                     \end{eqnarray*}
                 </div>
+                 because there is no consistent algebraic
+                 or geometric interpretations for these operations.
+                 </p>
 
-                for $z\in \mathbb C.$ Notice that some operations are not defined:
-                <div class="scroll-wrapper">
-                    $$\frac{\infty}{\infty}\,,\quad 0\cdot \infty\,,\quad \infty-\infty\,,$$
-                </div>
-                and so forth are for the same reasons that they are in the calculus of real numbers.<p></p>
+                 <p>
+                    By special convention we also define 
+                    <div class="scroll-wrapper">
+                        \[
+                        \dfrac{z}{0}= \infty\, \text{ for }\, z\neq 0
+                        \;\text{ and }\;  \dfrac{z}{\infty} = 0\, \text{ for }\, z\neq \infty. 
+                        \]
+                    </div>
+                    The quotients $\dfrac{0}{0}$ and $ \dfrac{\infty}{\infty}$ are undefined.
+                </p>
 
                 <p>The extended complex plane can be mapped onto the
                     surface of a sphere whose south pole corresponds to the origin and whose north
