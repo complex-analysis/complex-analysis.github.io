@@ -156,14 +156,19 @@
             </div>
             <div class="proof">
 
-                Suppose that $\lim_{z\rightarrow z_0}f(z)=w_0$ and $\lim_{z\rightarrow z_0}f(z)=w_1$ with
-                $w_0\neq w_1.$ Let $2\varepsilon =|w_0-w_1|,$ so that $\varepsilon &gt;0.$
+                Suppose that $\ds \lim_{z\rightarrow z_0}f(z)=w_0$ 
+                and $\ds \lim_{z\rightarrow z_0}f(z)=w_1$ with
+                $w_0\neq w_1.$ Let $2\varepsilon =|w_0-w_1|,$ so 
+                that $\varepsilon &gt;0.$
                 There is a $\delta&gt;0$ such that $0\lt|z-z_0|\lt\delta$ implies that
                 $|f(z)-w_0|\lt\varepsilon$ and $|f(z)-w_1|\lt\varepsilon.$ Choose a point
                 $z$ different to $z_0$ (because $f$ is defined in a deleted
-                neighborhood of $z_0$). Then, using the triangle inequality,
-                $$|w_0-w_1|\leq |w_0-f(z)|+|f(z)-w_1|\lt2\varepsilon.$$
-                But this is a contradiction. Thus $w_0=w_1.$ $\quad \blacksquare$
+                neighborhood of $z_0$). Then, using the triangle inequality, 
+                we have
+                <div class="scroll-wrapper">
+                    $$2 \epsilon =  |w_0-w_1| =  |w_0 - f(z) + f(z) - w_1| \leq |w_0-f(z)|+|f(z)-w_1|\lt2\varepsilon.$$
+                </div>
+                But this is a contradiction. Thus $w_0=w_1.$ 
             </div>
 
 
@@ -173,18 +178,21 @@
                 </p>
                 <p>
                     <strong>Discussion:</strong>
-                    Let's take $\delta = 1.$ So $0\lt\left| z-z_0\right|\lt\delta=1$ implies that
+                    Consider $\delta \leq 1.$ So $0\lt\left| z-z_0\right|\lt\delta$ implies that
                 </p><div class="scroll-wrapper">
                     \begin{eqnarray*}
-                    \left| z^2-z_0^2\right|&amp;=&amp;\left| z-z_0\right|\left| z+z_0\right|\\&amp;\lt&amp;\left|
-                    z-z_0+2z_0\right|\\&amp;\lt&amp; \left| z-z_0\right|+2\left|z_0\right|\\
-                    &amp;\lt&amp;1+2\left|z_0\right|.
+                    \left| z^2-z_0^2\right|&amp;=&amp;\left| z-z_0\right|\left| z+z_0\right|\\
+                     &amp;\lt&amp; \delta \left| z+z_0\right|\\
+                     &amp;\lt&amp; \delta \left| z-z_0+2z_0\right|\\
+                    &amp;\lt&amp; \delta \big( \left| z-z_0\right|+2\left|z_0\right|\big) \\
+                    &amp;\lt&amp;\delta \big(1+2\left|z_0\right|\big).
                     \end{eqnarray*}
                 </div>
 
-                Now, if $\delta=\dfrac{\varepsilon}{1+2\left|z_0\right|},$ then $0\lt\left| z-z_0\right|\lt\delta$
+                Now, take $\delta = 1 $ or $\delta=\dfrac{\varepsilon}{1+2\left|z_0\right|},$ 
+                whichever is smaller. Then $0\lt\left| z-z_0\right|\lt\delta$
                 implies that
-                $$\left| z^2-z_0^2\right|\lt 1+2\left|z_0\right|\lt\varepsilon.$$
+                $$\left| z^2-z_0^2\right|\lt\varepsilon.$$
                 This means that
                 $$\left| z^2-z_0^2\right|\lt\varepsilon \quad\text{whenever}\quad 0\lt\left| z-z_0\right|\lt\delta$$
                 where $\delta=\min\left\{1,\dfrac{\varepsilon}{1+2\left|z_0\right|}\right\}.$
