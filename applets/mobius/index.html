@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Möbius transformations</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+  <canvas class="webgl"></canvas>
+
+  <footer class="footer">
+   Möbius transformations <br/>Inspired by <a href="https://www.shadertoy.com/view/4scfR2" target="_blank">neozhaoliang</a> 
+   <br/>
+  <div style="margin-top: 10px;">Type: <b id="mode-text">Loxodromic</b></div> 
+  </footer>
+
+ <div class="instructions">
+  
+  <p>Press <b>1, 2, 3, 4</b> to switch transformations</p>
+  <p>Press <b>5</b> to toggle the sphere</p>
+</div>
+  
+  <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@v0.183.2/build/three.module.min.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.183.2/examples/jsm/"
+          }
+        }
+  </script>
+  <script type="module" src="./script.js"></script>
+
+  
+</body>
+
+</html>
