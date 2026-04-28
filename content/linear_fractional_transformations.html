@@ -453,7 +453,9 @@
 
             <p>
               Thus, a Möbius transformation has either one or two fixed points
-              in the extended complex plane. This observation leads to a natural classification.
+              in the extended complex plane. The number and nature of the fixed points
+              (distinct or repeated) are determined by the discriminant of this quadratic.
+              This observation leads to a natural classification.
             </p>
 
             <h3>1. Transformations with two distinct fixed points</h3>
@@ -461,25 +463,33 @@
             <p>
               If the quadratic equation has two distinct solutions, then the transformation
               has two distinct fixed points. In this case, the transformation is conjugate
-              to a simple dilation or rotation of the form
+              to a simple dilation, rotation, or a combination of both, of the form
               \[
-              S(z) = kz, \qquad k \neq 0,1.
+              S(z) = kz, \qquad k \in \mathbb{C}\setminus\{0,1\}.
               \]
             </p>
 
             <ul>
               <li>
-                If $|k| \neq 1$, the transformation is called a <em>hyperbolic transformation</em>.
+                If $k > 0$ (real positive) and $k \neq 1$, the transformation is called a <em>hyperbolic
+                  transformation</em>.
+                In this case $|k| \neq 1$ and $k$ is real.
               </li>
               <li>
-                If $|k| = 1$ (but $k \neq 1$ to avoid the identity), the transformation is called an <em>elliptic
-                  transformation</em>.
+                If $|k| = 1$ but $k \neq 1$ (i.e., $k = e^{i\theta}$ with $\theta \not\equiv 0 \mod 2\pi$), the
+                transformation is called an <em>elliptic transformation</em>.
+              </li>
+              <li>
+                If $k$ is neither real positive nor of unit modulus (i.e., $k \notin \mathbb{R}^+$ and $|k| \neq 1$),
+                the transformation is called a <em>loxodromic transformation</em>.
+                Such transformations combine rotation and dilation.
               </li>
             </ul>
 
             <p>
-              Geometrically, these transformations preserve the set of circles and lines
-              and act as scalings or rotations after a suitable change of coordinates.
+              Geometrically, hyperbolic transformations act as scalings (stretching along geodesics),
+              elliptic transformations act as rotations, and loxodromic transformations are a composition of both.
+              All these preserve the set of circles and lines after a suitable change of coordinates.
             </p>
 
             <h3>2. Transformations with one (double) fixed point</h3>
@@ -512,34 +522,39 @@
             </p>
 
             <p>
-              After normalizing so that $ad-bc = 1$, the classification depends on the trace:
-              \[
-              \tau = a + d.
-              \]
+              Since multiplying the matrix by a nonzero scalar does not change the Möbius transformation,
+              we can <strong>normalize</strong> the matrix so that its determinant equals $1$
+              (i.e., work with $SL(2,\mathbb{C})$, the linear special group). After this normalization, the classification
+              depends on the value of the trace $\tau = a + d$:
             </p>
 
             <ul>
               <li>
-                <strong>Elliptic:</strong> $|\tau| < 2$ </li>
+                <strong>Elliptic:</strong> $\tau \in \mathbb{R}$ and $|\tau| < 2$. </li>
               <li>
-                <strong>Parabolic:</strong> $|\tau| = 2$
+                <strong>Parabolic:</strong> $\tau = \pm 2$ (the fixed point is unique).
               </li>
               <li>
-                <strong>Hyperbolic:</strong> $|\tau| > 2$
+                <strong>Hyperbolic:</strong> $\tau \in \mathbb{R}$ and $|\tau| > 2$.
+              </li>
+              <li>
+                <strong>Loxodromic:</strong> $\tau \notin \mathbb{R}$ (i.e., $\operatorname{Im}(\tau) \neq 0$).
               </li>
             </ul>
 
             <p>
               This classification is particularly important in geometry and dynamical systems,
               where it describes the qualitative behavior of iterates of the transformation.
+              Hyperbolic and loxodromic transformations exhibit chaotic behavior on the Riemann sphere,
+              while elliptic transformations are periodic, and parabolic transformations are
+              neither periodic nor chaotic but have a single neutral fixed point.
             </p>
 
             <p>
               The following animation provides a visual illustration
               of the classification of Möbius transformations.
-              Select the graphic view with mouse
+              Select the graphic view with the mouse
               and then press the keys:
-
             </p>
 
             <p style="text-align: center; margin-top: -5px;">
@@ -550,13 +565,13 @@
             </p>
 
             <iframe style="width: 100%; height: 450px; border: none;"
-              src="https://complex-analysis.com/applets/mobius/showcase.html"></iframe>
+              src="https://geometria-hiperbolica.github.io/sketches/mobius/showcase.html"></iframe>
             <div style="margin-top: -30px;">
               <p style="text-align: center;">
-
-                <a href="https://complex-analysis.com/applets/mobius/showcase.html" target="_blank">
+                <a href="https://geometria-hiperbolica.github.io/sketches/mobius/showcase.html" target="_blank">
                   Full screen
-                  <i class="fa fa-external-link-alt"></i></a>
+                  <i class="fa fa-external-link-alt"></i>
+                </a>
               </p>
             </div>
 
@@ -574,9 +589,13 @@
                 <summary><strong>Solution</strong></summary>
                 <p>
                 <ul>
-                  <li>Fixed points: $\dfrac{1\pm\sqrt{5}}{2}$</li>
+                  <li>Fixed points: $\dfrac{1\pm\sqrt{5}}{2}$ (two distinct real points).</li>
                   <li>
-                    Classification: <b>Hyperbolic</b>, since $|\tau| = 3 \gt 2,$
+                    Matrix form: $\begin{pmatrix} 2 & 1 \\ 1 & 1 \end{pmatrix}$, determinant $= 1$ (already normalized).
+                    Trace $\tau = 3 \in \mathbb{R}$, $|\tau| > 2$.
+                  </li>
+                  <li>
+                    Classification: <strong>Hyperbolic</strong>.
                   </li>
                 </ul>
                 </p>

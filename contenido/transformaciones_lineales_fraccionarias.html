@@ -456,7 +456,9 @@
 
             <p>
               Así, una transformación de Möbius tiene ya sea uno o dos puntos fijos
-              en el plano complejo extendido. Esta observación conduce a una clasificación natural.
+              en el plano complejo extendido. El número y la naturaleza de los puntos fijos
+              (distintos o repetidos) están determinados por el discriminante de esta cuadrática.
+              Esta observación conduce a una clasificación natural.
             </p>
 
             <h3>1. Transformaciones con dos puntos fijos distintos</h3>
@@ -464,25 +466,34 @@
             <p>
               Si la ecuación cuadrática tiene dos soluciones distintas, entonces la transformación
               tiene dos puntos fijos distintos. En este caso, la transformación es conjugada
-              a una simple dilatación o rotación de la forma
+              a una simple dilatación, rotación o combinación de ambas, de la forma
               \[
-              S(z) = kz, \qquad k \neq 0,1.
+              S(z) = kz, \qquad k \in \mathbb{C}\setminus\{0,1\}.
               \]
             </p>
 
             <ul>
               <li>
-                Si $|k| \neq 1$, la transformación se llama <em>transformación hiperbólica</em>.
+                Si $k > 0$ (real positivo) y $k \neq 1$, la transformación se llama <em>transformación hiperbólica</em>.
+                En este caso $|k| \neq 1$ y $k$ es real.
               </li>
               <li>
-                Si $|k| = 1$ (pero $k \neq 1$ para evitar la identidad), la transformación se llama <em>transformación
-                  elíptica</em>.
+                Si $|k| = 1$ pero $k \neq 1$ (es decir, $k = e^{i\theta}$ con $\theta \not\equiv 0 \mod 2\pi$), la
+                transformación se llama <em>transformación elíptica</em>.
+              </li>
+              <li>
+                Si $k$ no es real positivo ni tiene módulo unitario (es decir, $k \notin \mathbb{R}^+$ y $|k| \neq 1$),
+                la transformación se llama <em>transformación loxodrómica</em>.
+                Tales transformaciones combinan rotación y dilatación.
               </li>
             </ul>
 
             <p>
-              Geométricamente, estas transformaciones preservan el conjunto de círculos y rectas
-              y actúan como escalamientos o rotaciones después de un cambio de coordenadas adecuado.
+              Geométricamente, las transformaciones hiperbólicas actúan como escalamientos (estiramiento a lo largo de
+              geodésicas),
+              las transformaciones elípticas actúan como rotaciones, y las transformaciones loxodrómicas son una
+              composición de ambas.
+              Todas ellas preservan el conjunto de círculos y rectas después de un cambio de coordenadas adecuado.
             </p>
 
             <h3>2. Transformaciones con un punto fijo (doble)</h3>
@@ -515,26 +526,33 @@
             </p>
 
             <p>
-              Después de normalizar para que $ad-bc = 1$, la clasificación depende de la traza:
-              \[
-              \tau = a + d.
-              \]
+              Dado que multiplicar la matriz por un escalar no nulo no cambia la transformación de Möbius,
+              podemos <strong>normalizar</strong> la matriz para que su determinante sea igual a $1$
+              (es decir, trabajar con $SL(2,\mathbb{C})$, el grupo lineal especial). Después de esta normalización, la clasificación
+              depende del valor de la traza $\tau = a + d$:
             </p>
 
             <ul>
               <li>
-                <strong>Elíptica:</strong> $|\tau| < 2$ </li>
+                <strong>Elíptica:</strong> $\tau \in \mathbb{R}$ y $|\tau| < 2$. </li>
               <li>
-                <strong>Parabólica:</strong> $|\tau| = 2$
+                <strong>Parabólica:</strong> $\tau = \pm 2$ (el punto fijo es único).
               </li>
               <li>
-                <strong>Hiperbólica:</strong> $|\tau| > 2$
+                <strong>Hiperbólica:</strong> $\tau \in \mathbb{R}$ y $|\tau| > 2$.
+              </li>
+              <li>
+                <strong>Loxodrómica:</strong> $\tau \notin \mathbb{R}$ (es decir, $\operatorname{Im}(\tau) \neq 0$).
               </li>
             </ul>
 
             <p>
               Esta clasificación es particularmente importante en geometría y sistemas dinámicos,
               donde describe el comportamiento cualitativo de las iteraciones de la transformación.
+              Las transformaciones hiperbólicas y loxodrómicas exhiben un comportamiento caótico en la esfera de
+              Riemann,
+              mientras que las transformaciones elípticas son periódicas y las parabólicas no son
+              ni periódicas ni caóticas, sino que tienen un único punto fijo neutral.
             </p>
 
             <p>
@@ -552,10 +570,10 @@
             </p>
 
             <iframe style="width: 100%; height: 450px; border: none;"
-              src="https://complex-analysis.com/applets/mobius/showcase.html"></iframe>
+              src="https://geometria-hiperbolica.github.io/sketches/mobius/showcase.html"></iframe>
             <div style="margin-top: -30px;">
               <p style="text-align: center;">
-                <a href="https://complex-analysis.com/applets/mobius/showcase.html" target="_blank">
+                <a href="https://geometria-hiperbolica.github.io/sketches/mobius/showcase.html" target="_blank">
                   Pantalla completa
                   <i class="fa fa-external-link-alt"></i>
                 </a>
@@ -576,9 +594,13 @@
                 <summary><strong>Solución</strong></summary>
                 <p>
                 <ul>
-                  <li>Puntos fijos: $\dfrac{1\pm\sqrt{5}}{2}$</li>
+                  <li>Puntos fijos: $\dfrac{1\pm\sqrt{5}}{2}$ (dos puntos reales distintos).</li>
                   <li>
-                    Clasificación: <b>Hiperbólica</b>, ya que $|\tau| = 3 \gt 2$.
+                    Forma matricial: $\begin{pmatrix} 2 & 1 \\ 1 & 1 \end{pmatrix}$, determinante $= 1$ (ya
+                    normalizada). Traza $\tau = 3 \in \mathbb{R}$, $|\tau| > 2$.
+                  </li>
+                  <li>
+                    Clasificación: <strong>Hiperbólica</strong>.
                   </li>
                 </ul>
                 </p>
@@ -587,6 +609,7 @@
             </div>
 
           </div>
+
 
         </article>
       </main>
